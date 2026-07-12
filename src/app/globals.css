@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc; /* Slate 50 */
+  --foreground: #0f172a; /* Slate 900 */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --primary: #047857; /* Emerald 700 */
+  --primary-hover: #065f46; /* Emerald 800 */
+  --primary-light: #ecfdf5; /* Emerald 50 */
+  --secondary: #b45309; /* Amber 700 */
+  --secondary-hover: #92400e; /* Amber 800 */
+  --accent: #d97706; /* Amber 600 */
+  --muted: #475569; /* Slate 600 */
+  --nav-bg: rgba(248, 250, 252, 0.75);
+}
+
+.dark {
+  --background: #060a12; /* Deep Islamic emerald-night background */
+  --foreground: #f8fafc; /* Slate 50 */
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --card-border: rgba(30, 41, 59, 0.6);
+  --primary: #10b981; /* Emerald 500 */
+  --primary-hover: #059669; /* Emerald 600 */
+  --primary-light: #064e3b; /* Emerald 900 */
+  --secondary: #f59e0b; /* Amber 500 */
+  --secondary-hover: #d97706; /* Amber 600 */
+  --accent: #fbbf24; /* Amber 400 */
+  --muted: #94a3b8; /* Slate 400 */
+  --nav-bg: rgba(6, 10, 18, 0.75);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent: var(--accent);
+  --color-muted-text: var(--muted);
+  --color-nav-bg: var(--nav-bg);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism custom classes */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
