@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { TutorData, ContactData } from '@/data/db';
 import { Award, Globe, MessageSquare, ShieldCheck, BarChart2, Smile, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function TutorsPageClient({ 
   initialTutors,
@@ -111,9 +112,12 @@ export default function TutorsPageClient({
                     className="glass rounded-3xl border-card-border overflow-hidden flex flex-col hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 group"
                   >
                     <div className="relative h-64 w-full bg-foreground/5 overflow-hidden">
-                      <img
+                      <Image
                         src={tutor.photo}
                         alt={tutor.name}
+                        width={300}
+                        height={256}
+                        loading="lazy"
                         className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-md text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full text-foreground border border-card-border">

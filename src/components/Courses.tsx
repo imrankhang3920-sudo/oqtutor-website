@@ -7,6 +7,7 @@ import {
   GraduationCap, Smile, Languages, Sparkles, ChevronDown, ArrowUpRight 
 } from 'lucide-react';
 import { CourseData } from '@/data/db';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -69,9 +70,12 @@ export default function Courses({ data }: { data: CourseData[] }) {
               >
                 {/* Course Image Header */}
                 <div className="relative h-44 w-full bg-foreground/5 overflow-hidden">
-                  <img
+                  <Image
                     src={course.image}
                     alt={course.title}
+                    width={350}
+                    height={176}
+                    loading="lazy"
                     className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-background/80 backdrop-blur-md text-secondary border border-card-border">

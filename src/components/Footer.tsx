@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactData } from '@/data/db';
+import Image from 'next/image';
 
 export default function Footer({ data }: { data: ContactData }) {
   const quickLinks = [
@@ -76,7 +77,14 @@ export default function Footer({ data }: { data: ContactData }) {
           {/* Logo & About */}
           <div className="lg:col-span-4 flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2.5">
-              <img src="/logo.jpg" alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
+              <Image
+                src="/logo.jpg"
+                alt="OQTutor Logo"
+                width={40}
+                height={40}
+                loading="lazy"
+                className="rounded-full object-contain bg-white border border-card-border shrink-0"
+              />
               <span className="text-xl font-bold tracking-tight text-primary">
                 OQ<span className="text-secondary">Tutor</span>
               </span>
