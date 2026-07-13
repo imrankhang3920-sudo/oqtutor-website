@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const siteUrl = 'https://oqtutor.com';
+  const siteUrl = 'https://www.oqtutor.com';
   const canonicalUrl = `${siteUrl}/course/${course.slug}`;
 
   return {
@@ -78,19 +78,19 @@ export default async function CoursePage({ params }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://oqtutor.com/courses"
+        "item": "https://www.oqtutor.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": course.title,
-        "item": `https://oqtutor.com/course/${course.slug}`
+        "item": `https://www.oqtutor.com/course/${course.slug}`
       }
     ]
   };
@@ -103,7 +103,7 @@ export default async function CoursePage({ params }: Props) {
     "provider": {
       "@type": "Organization",
       "name": "Online Quran Tutor",
-      "sameAs": "https://oqtutor.com"
+      "sameAs": "https://www.oqtutor.com"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",

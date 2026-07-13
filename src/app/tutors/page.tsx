@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Certified Quran Tutors | Male & Female Teachers Online',
   description: 'Learn Quran with our certified male and female Quran teachers. Native Arabic and bilingual tutors, standard qualifications, and customized child-friendly pedagogy.',
   keywords: ['online quran teacher', 'male quran tutor', 'female quran teacher', 'qualified quran tutors', 'private quran teacher'],
+  alternates: {
+    canonical: '/tutors',
+  },
 };
 
 export default async function TutorsPage() {

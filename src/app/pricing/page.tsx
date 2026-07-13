@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Affordable Fee Plans | Online Quran Academy Packages',
   description: 'Online Quran learning pricing plans: Starter ($30/mo), Standard ($40/mo), and Premium ($50/mo). Get 15% family discounts and a 7-day money-back guarantee.',
   keywords: ['online quran classes fees', 'affordable quran tutor', 'quran learning prices', 'private quran lesson cost'],
+  alternates: {
+    canonical: '/pricing',
+  },
 };
 
 export default async function PricingPage() {
@@ -32,13 +35,13 @@ export default async function PricingPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Pricing",
-        "item": "https://oqtutor.com/pricing"
+        "item": "https://www.oqtutor.com/pricing"
       }
     ]
   };

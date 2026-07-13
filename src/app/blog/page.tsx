@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Quran Learning Blog & Tips | Online Quran Academy',
   description: 'Read parenting guides, Tajweed learning tips, Hifz techniques, and Islamic education resources written by certified scholars at OQTutor.',
   keywords: ['quran learning tips', 'tajweed guide online', 'islamic parenting', 'hifz techniques', 'learn noorani qaida'],
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 export default async function BlogPage() {

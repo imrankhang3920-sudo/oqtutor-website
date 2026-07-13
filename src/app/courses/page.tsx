@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: 'Quran & Arabic Courses | Online Quran Tutor',
   description: 'Structured online Quran courses: Noorani Qaida, Tajweed, Quran Reading, Hifz Program, Islamic Studies, Salah Course, and Arabic Reading for kids and adults.',
   keywords: ['learn quran online', 'quran classes for kids', 'quran classes for adults', 'quran with tajweed', 'noorani qaida online', 'hifz classes online'],
+  alternates: {
+    canonical: '/courses',
+  },
 };
 
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -49,13 +52,13 @@ export default async function CoursesPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://oqtutor.com/courses"
+        "item": "https://www.oqtutor.com/courses"
       }
     ]
   };

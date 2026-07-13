@@ -31,13 +31,13 @@ export default function TutorsPageClient({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Tutors",
-        "item": "https://oqtutor.com/tutors"
+        "item": "https://www.oqtutor.com/tutors"
       }
     ]
   };

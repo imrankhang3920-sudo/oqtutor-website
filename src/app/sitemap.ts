@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { readDB } from '@/data/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://oqtutor.com';
+  const baseUrl = 'https://www.oqtutor.com';
 
   // 1. Static pages of the website
   const staticRoutes = [

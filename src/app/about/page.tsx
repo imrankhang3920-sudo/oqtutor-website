@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'About Us & Our Mission | Online Quran Tutor',
   description: 'Learn about OQTutor, our mission, values, and why we are Europe’s leading online Quran tutoring academy for kids and adults.',
   keywords: ['online quran academy mission', 'about oqtutor', 'quran learning principles', 'islamic tutoring values'],
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default async function AboutPage() {
@@ -33,13 +36,13 @@ export default async function AboutPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About Us",
-        "item": "https://oqtutor.com/about"
+        "item": "https://www.oqtutor.com/about"
       }
     ]
   };

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Frequently Asked Questions | Online Quran Tutoring FAQ',
   description: 'Find answers to common questions about OQTutor: schedules, class timings, female teachers, pricing, siblings discounts, and free trial classes.',
   keywords: ['online quran academy FAQ', 'quran learning questions', 'online tajweed classes FAQ', 'hifz memorization answers'],
+  alternates: {
+    canonical: '/faq',
+  },
 };
 
 export default async function FAQPage() {

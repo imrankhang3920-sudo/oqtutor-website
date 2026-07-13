@@ -45,13 +45,13 @@ export default function BlogPageClient({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://oqtutor.com/blog"
+        "item": "https://www.oqtutor.com/blog"
       }
     ]
   };
