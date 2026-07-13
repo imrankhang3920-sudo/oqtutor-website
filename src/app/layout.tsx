@@ -96,6 +96,33 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+
+        {/* Organization Structured Data for Google Search Logo integration */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "OQTutor",
+              "url": "https://oqtutor.com",
+              "logo": "https://oqtutor.com/logo.jpg",
+              "image": "https://oqtutor.com/logo.jpg",
+              "description": "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
+              "sameAs": [
+                "https://web.facebook.com/profile.php?id=100093682086058",
+                "https://www.instagram.com/hadi.382011/"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+447490329339",
+                "contactType": "customer service",
+                "areaServed": "Worldwide",
+                "availableLanguage": ["English", "Arabic", "Urdu"]
+              }
+            })
+          }}
+        />
         
         {/* Google Analytics (gtag.js) */}
         <Script
