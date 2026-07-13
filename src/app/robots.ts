@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/admin/',
+      disallow: ['/admin/', '/api/', '/_next/'],
     },
     sitemap: 'https://www.oqtutor.com/sitemap.xml',
   };

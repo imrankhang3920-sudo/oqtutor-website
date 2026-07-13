@@ -52,13 +52,13 @@ export default async function CoursesPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.oqtutor.com"
+        "item": "https://oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://www.oqtutor.com/courses"
+        "item": "https://oqtutor.com/courses"
       }
     ]
   };

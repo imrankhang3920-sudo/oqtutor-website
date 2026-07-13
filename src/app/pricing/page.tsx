@@ -35,13 +35,13 @@ export default async function PricingPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.oqtutor.com"
+        "item": "https://oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Pricing",
-        "item": "https://www.oqtutor.com/pricing"
+        "item": "https://oqtutor.com/pricing"
       }
     ]
   };

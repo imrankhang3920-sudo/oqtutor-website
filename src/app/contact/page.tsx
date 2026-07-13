@@ -21,7 +21,7 @@ export default async function ContactPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Online Quran Tutor (OQTutor)",
-    "image": "https://www.oqtutor.com/logo.jpg",
+    "image": "https://oqtutor.com/logo.jpg",
     "telephone": dbData.contact.phone,
     "email": dbData.contact.email,
     "address": {

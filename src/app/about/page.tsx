@@ -36,13 +36,13 @@ export default async function AboutPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.oqtutor.com"
+        "item": "https://oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About Us",
-        "item": "https://www.oqtutor.com/about"
+        "item": "https://oqtutor.com/about"
       }
     ]
   };

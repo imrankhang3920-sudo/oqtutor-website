@@ -78,19 +78,19 @@ export default async function CoursePage({ params }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.oqtutor.com"
+        "item": "https://oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://www.oqtutor.com/courses"
+        "item": "https://oqtutor.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": course.title,
-        "item": `https://www.oqtutor.com/course/${course.slug}`
+        "item": `https://oqtutor.com/course/${course.slug}`
       }
     ]
   };
@@ -103,7 +103,7 @@ export default async function CoursePage({ params }: Props) {
     "provider": {
       "@type": "Organization",
       "name": "Online Quran Tutor",
-      "sameAs": "https://www.oqtutor.com"
+      "sameAs": "https://oqtutor.com"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",

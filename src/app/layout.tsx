@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "OQTutor Team" }],
   metadataBase: new URL("https://www.oqtutor.com"),
   alternates: {
-    canonical: "https://www.oqtutor.com",
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
     description: "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
-    url: "https://www.oqtutor.com",
+    url: "https://oqtutor.com",
     siteName: "OQTutor",
     locale: "en_US",
     type: "website",
@@ -105,9 +105,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "OQTutor",
-              "url": "https://www.oqtutor.com",
-              "logo": "https://www.oqtutor.com/logo.jpg",
-              "image": "https://www.oqtutor.com/logo.jpg",
+              "url": "https://oqtutor.com",
+              "logo": "https://oqtutor.com/logo.jpg",
+              "image": "https://oqtutor.com/logo.jpg",
               "description": "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
               "sameAs": [
                 "https://web.facebook.com/profile.php?id=100093682086058",
