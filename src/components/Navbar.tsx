@@ -32,7 +32,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2.5">
-            <img src="/logo.jpg" alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
+            <img src="/header_logo.jpg" alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
             <span className="text-xl font-bold tracking-tight text-primary">
               OQ<span className="text-secondary">Tutor</span>
             </span>
