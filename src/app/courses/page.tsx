@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { readDB } from '@/data/db';
+import Image from 'next/image';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -173,9 +174,12 @@ export default async function CoursesPage() {
                       <div className="relative max-w-md w-full">
                         <div className={`absolute inset-0 border-2 ${isEven ? 'border-secondary/20 translate-x-4' : 'border-primary/20 -translate-x-4'} rounded-3xl translate-y-4 -z-10`} />
                         <div className="glass p-4 rounded-3xl border-card-border shadow-xl overflow-hidden relative">
-                          <img
+                          <Image
                             src={course.image}
                             alt={course.title}
+                            width={450}
+                            height={300}
+                            loading="lazy"
                             className="w-full h-64 sm:h-72 object-cover rounded-2xl shadow-inner group-hover:scale-105 transition-transform duration-500"
                           />
                           {/* Floating Icon badge */}

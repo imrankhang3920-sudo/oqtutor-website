@@ -4,15 +4,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { HeroData } from '@/data/db';
+import Image from 'next/image';
 
 export default function Hero({ data }: { data: HeroData }) {
   return (
     <section id="home" className="relative min-h-0 md:min-h-[85vh] flex items-center justify-center overflow-hidden pt-6 pb-8 md:py-20">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700 scale-105"
-        style={{ backgroundImage: `url(${data.backgroundImage})` }}
-      >
+      {/* Background Image with Overlay (LCP Optimized) */}
+      <div className="absolute inset-0 overflow-hidden scale-105">
+        <Image
+          src={data.backgroundImage}
+          alt="Online Quran Classes Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center transition-all duration-700 opacity-15"
+        />
         <div className="absolute inset-0 bg-background/90 md:bg-gradient-to-r md:from-background md:via-background/80 md:to-transparent" />
       </div>
 

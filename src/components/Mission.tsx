@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Compass } from 'lucide-react';
 import { MissionData } from '@/data/db';
+import Image from 'next/image';
 
 export default function Mission({ data }: { data: MissionData }) {
   return (
@@ -26,9 +27,12 @@ export default function Mission({ data }: { data: MissionData }) {
               {/* Outer decorative borders */}
               <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
               <div className="glass p-3 rounded-3xl border-card-border overflow-hidden shadow-2xl relative">
-                <img
+                <Image
                   src={data.image}
                   alt="Our Quran Tutoring Mission"
+                  width={450}
+                  height={350}
+                  loading="lazy"
                   className="w-full rounded-2xl object-cover h-[350px] shadow-inner"
                 />
               </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import { AboutData } from '@/data/db';
+import Image from 'next/image';
 
 export default function About({ data }: { data: AboutData }) {
   return (
@@ -62,9 +63,12 @@ export default function About({ data }: { data: AboutData }) {
               {/* Outer decorative borders */}
               <div className="absolute inset-0 border-2 border-secondary/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
               <div className="glass p-3 rounded-3xl border-card-border overflow-hidden shadow-2xl relative">
-                <img
+                <Image
                   src={data.image}
                   alt="About Online Quran Tutor"
+                  width={450}
+                  height={350}
+                  loading="lazy"
                   className="w-full rounded-2xl object-contain h-[350px]"
                 />
               </div>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Globe, MessageSquare } from 'lucide-react';
 import { TutorData } from '@/data/db';
+import Image from 'next/image';
 
 export default function Tutors({ data }: { data: TutorData[] }) {
   const [filter, setFilter] = useState<'all' | 'male' | 'female'>('all');
@@ -70,9 +71,12 @@ export default function Tutors({ data }: { data: TutorData[] }) {
               >
                 {/* Photo container */}
                 <div className="relative h-64 w-full bg-foreground/5 overflow-hidden">
-                  <img
+                  <Image
                     src={tutor.photo}
                     alt={tutor.name}
+                    width={300}
+                    height={256}
+                    loading="lazy"
                     className="h-full w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-md text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full text-foreground border border-card-border">

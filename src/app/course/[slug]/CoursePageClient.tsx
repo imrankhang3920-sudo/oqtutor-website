@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { CourseData, ContactData } from '@/data/db';
+import Image from 'next/image';
 
 export default function CoursePageClient({
   course,
@@ -88,9 +89,12 @@ export default function CoursePageClient({
               <div className="relative max-w-sm w-full">
                 <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
                 <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
-                  <img
+                  <Image
                     src={course.image}
                     alt={course.title}
+                    width={400}
+                    height={320}
+                    priority
                     className="w-full rounded-2xl object-cover h-[320px] shadow-inner"
                   />
                   <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-md border border-card-border/60 text-center shadow-lg">
