@@ -78,7 +78,7 @@ export default function Footer({ data }: { data: ContactData }) {
           <div className="lg:col-span-4 flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2.5">
               <Image
-                src="/logo.jpg"
+                src="/footer_logo.jpg"
                 alt="OQTutor Logo"
                 width={40}
                 height={40}

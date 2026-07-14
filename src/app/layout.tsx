@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo_transparent.png", sizes: "any" }
+      { url: "/favicon.ico", sizes: "any" }
     ],
-    shortcut: "/logo_transparent.png",
-    apple: "/logo_transparent.png",
+    shortcut: "/favicon.ico",
+    apple: "/logo.jpg",
   },
   manifest: "/manifest.json",
   openGraph: {
