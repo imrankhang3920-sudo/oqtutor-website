@@ -20,7 +20,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
-  description: "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
+  description: "Learn Quran Online with certified male & female tutors. Online Quran Classes for kids in UK & adults: Tajweed, Hifz, Arabic, Islamic Studies. Free Trial Class!",
   keywords: [
     "Online Quran Tutor",
     "Quran Classes",
