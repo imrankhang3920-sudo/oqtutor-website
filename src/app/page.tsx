@@ -13,8 +13,32 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
+import { Metadata } from 'next';
+
 // Force dynamic rendering to fetch fresh data on every page load
 export const dynamic = 'force-dynamic';
+
+interface Props {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const resolvedParams = await searchParams;
+  const hasParams = Object.keys(resolvedParams).length > 0;
+
+  return {
+    alternates: {
+      canonical: 'https://www.oqtutor.com/',
+    },
+    robots: hasParams ? {
+      index: false,
+      follow: true,
+    } : {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function HomePage() {
   const dbData = readDB();
