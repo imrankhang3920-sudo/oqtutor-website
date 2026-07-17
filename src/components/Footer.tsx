@@ -20,11 +20,11 @@ export default function Footer({ data }: { data: ContactData }) {
   ];
 
   const coursesLinks = [
-    { name: 'Noorani Qaida', href: '/courses#course-1' },
-    { name: 'Quran Reading', href: '/courses#course-2' },
-    { name: 'Quran with Tajweed', href: '/courses#course-3' },
-    { name: 'Hifz-ul-Quran', href: '/courses#course-4' },
-    { name: 'Islamic Studies', href: '/courses#course-5' },
+    { name: 'Noorani Qaida', href: '/courses/noorani-qaida' },
+    { name: 'Quran Reading', href: '/courses/quran-reading' },
+    { name: 'Quran with Tajweed', href: '/courses/tajweed' },
+    { name: 'Hifz-ul-Quran', href: '/courses/quran-memorization-hifz' },
+    { name: 'Islamic Studies', href: '/courses/islamic-studies' },
   ];
 
   const socialLinks = [

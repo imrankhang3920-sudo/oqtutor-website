@@ -11,61 +11,70 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 1. Rename redirects for changed course slugs (singular /course/* to new plural /courses/* paths)
+      {
+        source: '/course/quran-with-tajweed',
+        destination: '/courses/tajweed',
+        permanent: true,
+      },
+      {
+        source: '/course/hifz-quran',
+        destination: '/courses/quran-memorization-hifz',
+        permanent: true,
+      },
+      {
+        source: '/course/online-quran-classes-for-kids',
+        destination: '/courses/quran-for-kids',
+        permanent: true,
+      },
+      {
+        source: '/course/online-quran-classes-for-adults',
+        destination: '/courses/quran-for-adults',
+        permanent: true,
+      },
+      // 2. Specific legacy /courses/* to new /courses/* re-mappings
+      {
+        source: '/courses/quran-with-tajweed',
+        destination: '/courses/tajweed',
+        permanent: true,
+      },
+      {
+        source: '/courses/hifz-quran',
+        destination: '/courses/quran-memorization-hifz',
+        permanent: true,
+      },
+      {
+        source: '/courses/online-quran-classes-for-kids',
+        destination: '/courses/quran-for-kids',
+        permanent: true,
+      },
+      {
+        source: '/courses/online-quran-classes-for-adults',
+        destination: '/courses/quran-for-adults',
+        permanent: true,
+      },
+      // 3. Old legacy WordPress mappings
       {
         source: '/courses/arabic',
-        destination: '/course/arabic-language',
-        permanent: true,
-      },
-      {
-        source: '/courses/tafseer',
-        destination: '/course/islamic-studies',
-        permanent: true,
-      },
-      {
-        source: '/courses/islamic-studies',
-        destination: '/course/islamic-studies',
-        permanent: true,
-      },
-      {
-        source: '/courses/noorani-qaida',
-        destination: '/course/noorani-qaida',
-        permanent: true,
-      },
-      {
-        source: '/courses/quran-reading',
-        destination: '/course/quran-reading',
-        permanent: true,
-      },
-      {
-        source: '/courses/tajweed',
-        destination: '/course/quran-with-tajweed',
+        destination: '/courses/arabic-language',
         permanent: true,
       },
       {
         source: '/courses/hifz',
-        destination: '/course/hifz-quran',
+        destination: '/courses/quran-memorization-hifz',
         permanent: true,
       },
       {
         source: '/courses/kids-quran',
-        destination: '/course/online-quran-classes-for-kids',
+        destination: '/courses/quran-for-kids',
         permanent: true,
       },
       {
         source: '/courses/adults-quran',
-        destination: '/course/online-quran-classes-for-adults',
+        destination: '/courses/quran-for-adults',
         permanent: true,
       },
-      {
-        source: '/courses/daily-duas',
-        destination: '/course/daily-duas',
-        permanent: true,
-      },
-      {
-        source: '/courses/salah-course',
-        destination: '/course/salah-course',
-        permanent: true,
-      },
+      // 4. Legacy tutor paths
       {
         source: '/tutor/:slug*',
         destination: '/tutors',
@@ -74,6 +83,12 @@ const nextConfig: NextConfig = {
       {
         source: '/tutors/:slug*',
         destination: '/tutors',
+        permanent: true,
+      },
+      // 5. General redirect: fallback to convert singular /course/:slug to plural /courses/:slug
+      {
+        source: '/course/:slug*',
+        destination: '/courses/:slug*',
         permanent: true,
       },
     ];

@@ -188,7 +188,7 @@
     {
       "id": "course-3",
       "title": "Quran with Tajweed",
-      "slug": "quran-with-tajweed",
+      "slug": "tajweed",
       "description": "Master the rules of Tajweed (pronunciation and articulation). Learn characteristics of letters, stopping rules, and elongation.",
       "icon": "Volume2",
       "image": "/quran-tajweed.jpg",
@@ -252,7 +252,7 @@
     {
       "id": "course-4",
       "title": "Quran Memorization (Hifz)",
-      "slug": "hifz-quran",
+      "slug": "quran-memorization-hifz",
       "description": "Memorize the Holy Quran step-by-step under the guidance of Huffaz with modern memorization and revision techniques.",
       "icon": "Heart",
       "image": "/quran-hifz.jpg",
@@ -316,7 +316,7 @@
     {
       "id": "course-9",
       "title": "Online Quran Classes for Kids",
-      "slug": "online-quran-classes-for-kids",
+      "slug": "quran-for-kids",
       "description": "Fun, interactive, and child-friendly online Quran classes designed specifically to keep young minds engaged.",
       "icon": "Smile",
       "image": "/mission-call.jpg",
@@ -380,7 +380,7 @@
     {
       "id": "course-10",
       "title": "Online Quran Classes for Adults",
-      "slug": "online-quran-classes-for-adults",
+      "slug": "quran-for-adults",
       "description": "Flexible, private one-on-one Quran reading and Tajweed lessons tailored for busy working professionals and adults.",
       "icon": "UserCheck",
       "image": "/tutor-ahmed.jpg",
@@ -694,6 +694,126 @@
         {
           "question": "How large is the vocabulary we learn?",
           "answer": "You will study over 300 of the most frequently repeated words in the Quran, covering about 50% of the text's vocabulary."
+        }
+      ]
+    },
+    {
+      "id": "course-7",
+      "title": "Quran Tafseer Course",
+      "slug": "tafseer",
+      "description": "Learn the contextual meaning, historical backgrounds, and deep interpretations (Tafseer) of the Holy Quran with certified Islamic scholars.",
+      "icon": "BookOpen",
+      "image": "/islamic-studies.jpg",
+      "duration": "30-45 Mins Per Session",
+      "suitableFor": "Intermediate & Advanced Students (Kids & Adults)",
+      "overview": "This course is designed for students who want to go beyond simple recitation and understand the deep wisdom, historical context, and divine messages contained in each Surah of the Holy Quran.",
+      "learningOutcomes": [
+        "Understand the translation and contextual meaning (Asbab al-Nuzul) of verses.",
+        "Deduce moral lessons and practical guidance from Quranic stories.",
+        "Learn the linguistic beauty and classical Arabic grammar used in the Quran.",
+        "Connect Quranic messages to modern daily life applications."
+      ],
+      "classStructure": "One-on-One customized study plans with verified scholars. Choose between 2, 3, or 5 days per week.",
+      "recommendedAge": "12 Years & Above",
+      "seoTitle": "Online Quran Tafseer Classes | Learn Quran Translation",
+      "metaDescription": "Study Online Quran Tafseer classes with certified scholars. Learn Quran translation, contexts, and interpretations from home. Register for a free trial class.",
+      "focusKeyword": "Online Quran Tafseer",
+      "secondaryKeywords": [
+        "Tafseer classes",
+        "Quran translation online",
+        "Learn Tafseer",
+        "Islamic scholars online"
+      ],
+      "whoShouldJoin": "Anyone who can read the Quran with basic Tajweed rules and wishes to understand the core meanings and messages of Allah.",
+      "benefits": [
+        "Personalized scholar attention",
+        "Flexible schedulings",
+        "Male & Female tutors available",
+        "Interactive online whiteboard sessions"
+      ],
+      "curriculumSteps": [
+        {
+          "title": "Step 1: Literal Translation",
+          "description": "Word-by-word literal translation of verses to build classical Arabic vocabulary."
+        },
+        {
+          "title": "Step 2: Contextual Analysis",
+          "description": "Studying the historical context and reasons of revelation (Asbab al-Nuzul)."
+        },
+        {
+          "title": "Step 3: Classic Interpretations",
+          "description": "Reviewing major classical Tafseer commentaries (e.g., Ibn Kathir, Jalalayn)."
+        }
+      ],
+      "teachingMethod": "Interactive screen sharing, digital whiteboard notes, and discussion-based learning.",
+      "faqs": [
+        {
+          "question": "Is there a prerequisite for the Tafseer course?",
+          "answer": "Yes, students should be able to read the Quran with basic fluency and Tajweed rules before joining."
+        },
+        {
+          "question": "Do you have female Tafseer teachers?",
+          "answer": "Yes, we have highly qualified female scholars (Alimas) available for sisters and children."
+        }
+      ]
+    },
+    {
+      "id": "course-8",
+      "title": "Female Quran Teacher Classes",
+      "slug": "female-quran-teacher",
+      "description": "Learn Quran with certified female tutors in a safe, comfortable, and private environment. Best online classes for sisters and kids.",
+      "icon": "Users",
+      "image": "/arabic-reading.jpg",
+      "duration": "30 Mins Per Session",
+      "suitableFor": "Sisters, Kids & Teenagers Worldwide",
+      "overview": "Our Female Quran Teacher course provides sister students and young children with a comfortable, private, and secure learning environment. Learn Tajweed, Hifz, or Arabic language from highly qualified female tutors.",
+      "learningOutcomes": [
+        "Recite Quran with perfect Tajweed rules under female scholar guidance.",
+        "Memorize Surahs (Hifz) with proper pronunciation.",
+        "Learn basic Islamic principles, duas, and salah performance.",
+        "Build confidence in reading Quran fluently."
+      ],
+      "classStructure": "One-on-one private sessions on Skype or Zoom. Completely customizable scheduling available 24/7.",
+      "recommendedAge": "4 Years & Above",
+      "seoTitle": "Online Quran Classes with Female Quran Tutors | OQTutor",
+      "metaDescription": "Learn Quran online with certified female Quran teachers. Private, safe, and comfortable one-on-one sessions for sisters and kids. Book a free trial class.",
+      "focusKeyword": "Female Quran Teacher",
+      "secondaryKeywords": [
+        "Female Quran tutor",
+        "learn Quran from sisters",
+        "online Quran classes for sisters",
+        "Quran teacher for kids"
+      ],
+      "whoShouldJoin": "Sister students of all ages, and young kids who feel more comfortable learning from patient female teachers.",
+      "benefits": [
+        "100% private one-on-one classes",
+        "Patient and child-friendly tutors",
+        "Flexible class times to fit your schedule",
+        "Certified Alimah and Qariahs"
+      ],
+      "curriculumSteps": [
+        {
+          "title": "Step 1: Tutor Matching",
+          "description": "We match you with a tutor whose teaching style and background match your goals."
+        },
+        {
+          "title": "Step 2: Trial Evaluation",
+          "description": "A free trial class to discuss your current level and establish a custom syllabus."
+        },
+        {
+          "title": "Step 3: Interactive Learning",
+          "description": "Standard custom sessions focusing on reading rules, memorization, and Islamic principles."
+        }
+      ],
+      "teachingMethod": "One-on-one interactive screen-sharing, digital whiteboard, and friendly encouragement.",
+      "faqs": [
+        {
+          "question": "Are your female teachers certified scholars?",
+          "answer": "Yes, all our female tutors are certified Alimas, Qariahs, or graduates from recognized Islamic institutions."
+        },
+        {
+          "question": "Can kids choose a female teacher?",
+          "answer": "Yes, both boys and girls of young ages can choose female teachers for a patient and nurturing class atmosphere."
         }
       ]
     }

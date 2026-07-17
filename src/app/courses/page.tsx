@@ -157,7 +157,7 @@ export default async function CoursesPage() {
                       {/* Call to Actions */}
                       <div className="flex flex-wrap gap-3">
                         <Link
-                          href={`/course/${course.slug}`}
+                          href={`/courses/${course.slug}`}
                           className="flex items-center space-x-2 px-5 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg transition-all"
                         >
                           <span>Explore Syllabus</span>

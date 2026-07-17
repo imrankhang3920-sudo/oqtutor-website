@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const dbData = readDB();
     const courseRoutes = dbData.courses.map((course) => ({
-      url: `${baseUrl}/course/${course.slug}`,
+      url: `${baseUrl}/courses/${course.slug}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,

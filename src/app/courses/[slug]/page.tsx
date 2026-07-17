@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const siteUrl = 'https://www.oqtutor.com';
-  const canonicalUrl = `${siteUrl}/course/${course.slug}`;
+  const canonicalUrl = `${siteUrl}/courses/${course.slug}`;
 
   return {
     title: course.seoTitle,
@@ -90,7 +90,7 @@ export default async function CoursePage({ params }: Props) {
         "@type": "ListItem",
         "position": 3,
         "name": course.title,
-        "item": `https://oqtutor.com/course/${course.slug}`
+        "item": `https://oqtutor.com/courses/${course.slug}`
       }
     ]
   };
