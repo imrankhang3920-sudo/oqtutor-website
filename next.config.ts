@@ -19,7 +19,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/course/hifz-quran',
-        destination: '/courses/quran-memorization-hifz',
+        destination: '/courses/hifz',
+        permanent: true,
+      },
+      {
+        source: '/course/quran-memorization-hifz',
+        destination: '/courses/hifz',
         permanent: true,
       },
       {
@@ -40,7 +45,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/courses/hifz-quran',
-        destination: '/courses/quran-memorization-hifz',
+        destination: '/courses/hifz',
+        permanent: true,
+      },
+      {
+        source: '/courses/quran-memorization-hifz',
+        destination: '/courses/hifz',
         permanent: true,
       },
       {
@@ -57,11 +67,6 @@ const nextConfig: NextConfig = {
       {
         source: '/courses/arabic',
         destination: '/courses/arabic-language',
-        permanent: true,
-      },
-      {
-        source: '/courses/hifz',
-        destination: '/courses/quran-memorization-hifz',
         permanent: true,
       },
       {

@@ -23,7 +23,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Noorani Qaida', href: '/courses/noorani-qaida' },
     { name: 'Quran Reading', href: '/courses/quran-reading' },
     { name: 'Quran with Tajweed', href: '/courses/tajweed' },
-    { name: 'Hifz-ul-Quran', href: '/courses/quran-memorization-hifz' },
+    { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
   ];
 

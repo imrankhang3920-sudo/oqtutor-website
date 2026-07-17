@@ -8,17 +8,17 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { 
   BookOpen, Volume2, Heart, Compass, Users, UserCheck, 
-  GraduationCap, Smile, Languages, Sparkles, Check, ArrowRight 
+  GraduationCap, Smile, Languages, Sparkles, ArrowRight 
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Quran & Arabic Courses | Online Quran Tutor',
-  description: 'Structured online Quran courses: Noorani Qaida, Tajweed, Quran Reading, Hifz Program, Islamic Studies, Salah Course, and Arabic Reading for kids and adults.',
+  title: 'Quran & Arabic Courses Index | Online Quran Tutor',
+  description: 'Explore our structured online Quran and Arabic courses. Select from Noorani Qaida, Tajweed, Quran Reading, Hifz, Tafseer, Islamic Studies, and female tutors.',
   keywords: ['learn quran online', 'quran classes for kids', 'quran classes for adults', 'quran with tajweed', 'noorani qaida online', 'hifz classes online'],
   alternates: {
-    canonical: '/courses',
+    canonical: 'https://www.oqtutor.com/courses',
   },
 };
 
@@ -64,7 +64,7 @@ export default async function CoursesPage() {
   };
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       {/* Insert JSON-LD Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -73,7 +73,7 @@ export default async function CoursesPage() {
 
       <Navbar adminLoggedIn={adminLoggedIn} />
 
-      <main className="flex-grow bg-background">
+      <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
           <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -85,127 +85,97 @@ export default async function CoursesPage() {
               Online Quran & Arabic Courses
             </h1>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-            <p className="mt-6 text-base sm:text-lg text-muted-text max-w-3xl mx-auto leading-relaxed">
-              We offer personalized one-on-one Quran classes designed for kids and adults. From learning how to read Arabic letters to mastering advanced Tajweed rules and Quran memorization (Hifz), our certified tutors guide you step-by-step.
+            <p className="mt-6 text-base sm:text-lg text-muted-text max-w-3xl mx-auto leading-relaxed font-normal">
+              Choose from our selection of premium, one-on-one online courses designed for children and adults. Click on any course category below to explore full details, syllabus steps, and curriculum guidelines.
             </p>
           </div>
         </section>
 
-        {/* Detailed Courses Sections */}
-        <section className="py-20">
+        {/* Categories Grid Section */}
+        <section className="py-20 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="space-y-24">
-              {dbData.courses.map((course, idx) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {dbData.courses.map((course) => {
                 const IconComponent = iconMap[course.icon] || BookOpen;
-                const isEven = idx % 2 === 0;
 
                 return (
                   <div
                     key={course.id}
-                    id={course.id}
-                    className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-b border-card-border/60 pb-20 last:border-0 last:pb-0`}
+                    className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col h-full hover:translate-y-[-6px] hover:shadow-xl transition-all duration-300 relative group"
                   >
-                    {/* Text Details */}
-                    <div className={`lg:col-span-7 ${isEven ? 'order-1' : 'order-1 lg:order-2'} flex flex-col items-start`}>
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="p-3 rounded-xl bg-primary/10 text-primary">
-                          <IconComponent className="h-6 w-6" />
-                        </div>
-                        <span className="text-xs font-bold text-secondary uppercase tracking-widest">
-                          {course.suitableFor}
-                        </span>
+                    {/* Header Image Cover */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        sizes="(max-w-7xl) 33vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        priority={course.slug === 'noorani-qaida' || course.slug === 'quran-reading'}
+                      />
+                      {/* Floating Category Icon badge */}
+                      <div className="absolute top-4 left-4 z-25 p-2.5 rounded-xl bg-background/95 backdrop-blur-md text-primary border border-card-border/80 shadow-md">
+                        <IconComponent className="h-5 w-5" />
                       </div>
+                    </div>
 
-                      <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+                    {/* Content Details */}
+                    <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                      <span className="text-[10px] font-bold text-secondary uppercase tracking-widest mb-2 block">
+                        {course.suitableFor}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {course.title}
-                      </h2>
-                      <div className="h-1 w-16 bg-secondary mt-3 mb-5 rounded-full" />
-
-                      <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6 font-normal">
-                        {course.overview}
+                      </h3>
+                      
+                      <p className="text-sm text-muted-text leading-relaxed font-normal mb-8 flex-grow line-clamp-3">
+                        {course.description}
                       </p>
 
-                      {/* Learning Outcomes */}
-                      <h3 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
-                        What You Will Learn (Learning Outcomes)
-                      </h3>
-                      <ul className="space-y-2.5 mb-8 w-full">
-                        {course.learningOutcomes.map((outcome, outcomeIdx) => (
-                          <li key={outcomeIdx} className="flex items-start space-x-3 text-sm text-foreground/80">
-                            <Check className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
-                            <span>{outcome}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* Course metadata tags */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full border-t border-card-border pt-6 text-xs text-muted-text mb-8">
-                        <div>
-                          <span className="block font-bold text-foreground/60 uppercase tracking-wider text-[10px]">Estimated Duration</span>
-                          <span className="font-semibold text-foreground mt-0.5 block">{course.duration}</span>
-                        </div>
-                        <div>
-                          <span className="block font-bold text-foreground/60 uppercase tracking-wider text-[10px]">Class Structure</span>
-                          <span className="font-semibold text-foreground mt-0.5 block">{course.classStructure}</span>
-                        </div>
-                        <div>
-                          <span className="block font-bold text-foreground/60 uppercase tracking-wider text-[10px]">Recommended Age</span>
-                          <span className="font-semibold text-foreground mt-0.5 block">{course.recommendedAge}</span>
-                        </div>
-                      </div>
-
-                      {/* Call to Actions */}
-                      <div className="flex flex-wrap gap-3">
+                      {/* Card Bottom CTA Link */}
+                      <div className="pt-4 border-t border-card-border/60 flex items-center justify-between">
+                        <span className="text-xs text-muted-text/80 font-medium">
+                          {course.duration}
+                        </span>
+                        
                         <Link
                           href={`/courses/${course.slug}`}
-                          className="flex items-center space-x-2 px-5 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg transition-all"
+                          className="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-hover group/link transition-all"
                         >
-                          <span>Explore Syllabus</span>
-                          <ArrowRight className="h-4 w-4" />
-                        </Link>
-                        <Link
-                          href="/contact"
-                          className="flex items-center space-x-2 px-5 py-3 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-semibold transition-all"
-                        >
-                          <span>Book Free Trial</span>
+                          <span>Learn More</span>
+                          <ArrowRight className="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                         </Link>
                       </div>
                     </div>
-
-                    {/* Course Picture Card */}
-                    <div className={`lg:col-span-5 ${isEven ? 'order-2' : 'order-2 lg:order-1'} flex justify-center`}>
-                      <div className="relative max-w-md w-full">
-                        <div className={`absolute inset-0 border-2 ${isEven ? 'border-secondary/20 translate-x-4' : 'border-primary/20 -translate-x-4'} rounded-3xl translate-y-4 -z-10`} />
-                        <div className="glass p-4 rounded-3xl border-card-border shadow-xl overflow-hidden relative">
-                          <Image
-                            src={course.image}
-                            alt={course.title}
-                            width={450}
-                            height={300}
-                            loading="lazy"
-                            className="w-full h-64 sm:h-72 object-cover rounded-2xl shadow-inner group-hover:scale-105 transition-transform duration-500"
-                          />
-                          {/* Floating Icon badge */}
-                          <div className="absolute top-8 left-8 p-3 rounded-xl bg-background/95 backdrop-blur-md text-primary border border-card-border/80 shadow-md">
-                            <IconComponent className="h-6 w-6" />
-                          </div>
-                          {/* Floating Mode badge */}
-                          <div className="absolute bottom-8 right-8 px-4 py-1.5 rounded-full bg-background/95 backdrop-blur-md text-foreground text-[10px] font-bold uppercase tracking-widest border border-card-border/80 shadow-md">
-                            100% 1-on-1 Class
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
                 );
               })}
             </div>
           </div>
         </section>
+
+        {/* Book Trial Quick CTA */}
+        <section className="py-12 bg-foreground/[0.01] border-t border-card-border">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">Not Sure Where to Begin?</h2>
+            <p className="text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed">
+              Book a 3-day free trial. Our certified scholars will evaluate your level, understand your personal learning pace, and recommend the best starting course.
+            </p>
+            <div className="flex justify-center pt-2">
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg transition-all duration-300 font-bold text-sm"
+              >
+                <span>Register for Trial</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer data={dbData.contact} />
-    </>
+    </div>
   );
 }
