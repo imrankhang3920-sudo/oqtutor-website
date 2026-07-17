@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { saveSubmission } from '@/lib/submissions';
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,41 +33,18 @@ export async function POST(request: NextRequest) {
     const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
-    const smtpTo = process.env.SMTP_TO || 'imrankhang3920@gmail.com';
+    const smtpTo = process.env.CONTACT_EMAIL || process.env.SMTP_TO || 'imrankhang3920@gmail.com';
 
     // Verify SMTP configuration exists
     const hasSmtpConfig = smtpUser && smtpPass && smtpPass !== 'your-gmail-app-password';
 
     if (!hasSmtpConfig) {
-      const errorMsg = 'SMTP credentials not configured or using default placeholders in .env.local';
-      console.warn(`[Contact Form] ${errorMsg}. Fallback: Saving to database.`);
-      
-      let dbRecord = null;
-      try {
-        // Save to database
-        dbRecord = saveSubmission({
-          studentName,
-          email,
-          phone,
-          age: age || 'Not specified',
-          country: country || 'Not specified',
-          course,
-          preferredTime: preferredTime || 'Not specified',
-          message: message || '',
-          ip: clientIp,
-          emailStatus: 'failed',
-          errorLog: errorMsg
-        });
-      } catch (dbError) {
-        console.error('[Contact Form] Fallback database save failed (Read-only filesystem?):', dbError);
-      }
-
-      return NextResponse.json({
-        success: true,
-        emailSent: false,
-        message: 'Your request has been successfully registered!',
-        submission: dbRecord
-      });
+      const errorMsg = 'SMTP server credentials are not configured or using default placeholders in environment variables.';
+      console.error(`[Contact Form] Configuration Error: ${errorMsg}`);
+      return NextResponse.json({ 
+        success: false, 
+        error: 'System SMTP credentials are not configured. Please verify SMTP settings in the project dashboard.' 
+      }, { status: 500 });
     }
 
     // Initialize transporter
@@ -156,61 +132,16 @@ Sender IP Address: ${clientIp}
     try {
       await transporter.sendMail(mailOptions);
       console.log(`[Contact Form] Email notification sent successfully to ${smtpTo} for ${studentName}`);
-      
-      let dbRecord = null;
-      try {
-        // Also save to database as sent record
-        dbRecord = saveSubmission({
-          studentName,
-          email,
-          phone,
-          age: age || 'Not specified',
-          country: country || 'Not specified',
-          course,
-          preferredTime: preferredTime || 'Not specified',
-          message: message || '',
-          ip: clientIp,
-          emailStatus: 'sent'
-        });
-      } catch (dbError) {
-        console.error('[Contact Form] Database save failed (Read-only filesystem?):', dbError);
-      }
-
       return NextResponse.json({
         success: true,
-        emailSent: true,
-        message: 'Your request has been successfully registered! We have received your booking details.',
-        submission: dbRecord
+        message: 'Your request has been successfully registered! We have received your booking details.'
       });
     } catch (sendError: any) {
       console.error('[Contact Form] SMTP sendMail failed:', sendError);
-      
-      let dbRecord = null;
-      try {
-        // Save failed email submission to database with error log
-        dbRecord = saveSubmission({
-          studentName,
-          email,
-          phone,
-          age: age || 'Not specified',
-          country: country || 'Not specified',
-          course,
-          preferredTime: preferredTime || 'Not specified',
-          message: message || '',
-          ip: clientIp,
-          emailStatus: 'failed',
-          errorLog: sendError?.message || String(sendError)
-        });
-      } catch (dbError) {
-        console.error('[Contact Form] Fallback database save failed (Read-only filesystem?):', dbError);
-      }
-
       return NextResponse.json({
-        success: true, // Still return success to front-end to ensure booking is registered
-        emailSent: false,
-        message: 'Your request was registered successfully! (Admin notification queued)',
-        submission: dbRecord
-      });
+        success: false,
+        error: `Failed to deliver email: ${sendError?.message || String(sendError)}`
+      }, { status: 500 });
     }
   } catch (error: any) {
     console.error('[Contact Form] Request processing failed:', error);
