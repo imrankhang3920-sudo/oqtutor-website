@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
+// Trigger Vercel rebuild to apply new SMTP environment variables
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
