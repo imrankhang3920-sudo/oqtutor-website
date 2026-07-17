@@ -24,6 +24,7 @@ export default function ContactPageClient({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const countries = [
     'United Kingdom',
@@ -68,9 +69,23 @@ export default function ContactPageClient({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
       setIsSuccess(true);
       setFormData({
         studentName: '',
@@ -83,8 +98,14 @@ export default function ContactPageClient({
         message: '',
       });
 
-      setTimeout(() => setIsSuccess(false), 6000);
-    }, 1500);
+      // Clear success notification after 10 seconds
+      setTimeout(() => setIsSuccess(false), 10000);
+    } catch (err: any) {
+      console.error('Contact Form submission error:', err);
+      setError(err?.message || 'Failed to submit form. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const breadcrumbSchema = {
@@ -164,6 +185,12 @@ export default function ContactPageClient({
                   <h3 className="text-xl font-bold text-foreground mb-2">Registration Form</h3>
                   <p className="text-xs text-muted-text mb-6">Provide student and preferred scheduling information.</p>
                   
+                  {error && (
+                    <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-semibold leading-relaxed">
+                      {error}
+                    </div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="sm:col-span-2">

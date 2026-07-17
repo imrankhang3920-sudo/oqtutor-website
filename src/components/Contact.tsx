@@ -16,6 +16,7 @@ export default function Contact({ data }: { data: ContactData }) {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const coursesList = [
     'Noorani Qaida',
@@ -29,10 +30,23 @@ export default function Contact({ data }: { data: ContactData }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
     
-    // Simulate API call for form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -42,9 +56,14 @@ export default function Contact({ data }: { data: ContactData }) {
         message: '',
       });
       
-      // Auto-hide success message after 5 seconds
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+      // Auto-hide success message after 10 seconds
+      setTimeout(() => setIsSuccess(false), 10000);
+    } catch (err: any) {
+      console.error('Contact Form submission error:', err);
+      setError(err?.message || 'Failed to submit form. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -132,6 +151,12 @@ export default function Contact({ data }: { data: ContactData }) {
             <div className="glass rounded-3xl border-card-border p-8 sm:p-10 shadow-2xl relative">
               <h3 className="text-2xl font-bold text-foreground mb-1">Book a Free Trial Class</h3>
               <p className="text-xs text-muted-text mb-8">No commitment, 100% free introduction class.</p>
+
+              {error && (
+                <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-semibold leading-relaxed">
+                  {error}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
