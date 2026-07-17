@@ -43,25 +43,30 @@ export async function POST(request: NextRequest) {
       const errorMsg = 'SMTP credentials not configured or using default placeholders in .env.local';
       console.warn(`[Contact Form] ${errorMsg}. Fallback: Saving to database.`);
       
-      // Save to database
-      const dbRecord = saveSubmission({
-        studentName,
-        email,
-        phone,
-        age: age || 'Not specified',
-        country: country || 'Not specified',
-        course,
-        preferredTime: preferredTime || 'Not specified',
-        message: message || '',
-        ip: clientIp,
-        emailStatus: 'failed',
-        errorLog: errorMsg
-      });
+      let dbRecord = null;
+      try {
+        // Save to database
+        dbRecord = saveSubmission({
+          studentName,
+          email,
+          phone,
+          age: age || 'Not specified',
+          country: country || 'Not specified',
+          course,
+          preferredTime: preferredTime || 'Not specified',
+          message: message || '',
+          ip: clientIp,
+          emailStatus: 'failed',
+          errorLog: errorMsg
+        });
+      } catch (dbError) {
+        console.error('[Contact Form] Fallback database save failed (Read-only filesystem?):', dbError);
+      }
 
       return NextResponse.json({
         success: true,
         emailSent: false,
-        message: 'Your request has been successfully registered! (Saved in local database)',
+        message: 'Your request has been successfully registered!',
         submission: dbRecord
       });
     }
@@ -152,19 +157,24 @@ Sender IP Address: ${clientIp}
       await transporter.sendMail(mailOptions);
       console.log(`[Contact Form] Email notification sent successfully to ${smtpTo} for ${studentName}`);
       
-      // Also save to database as sent record
-      const dbRecord = saveSubmission({
-        studentName,
-        email,
-        phone,
-        age: age || 'Not specified',
-        country: country || 'Not specified',
-        course,
-        preferredTime: preferredTime || 'Not specified',
-        message: message || '',
-        ip: clientIp,
-        emailStatus: 'sent'
-      });
+      let dbRecord = null;
+      try {
+        // Also save to database as sent record
+        dbRecord = saveSubmission({
+          studentName,
+          email,
+          phone,
+          age: age || 'Not specified',
+          country: country || 'Not specified',
+          course,
+          preferredTime: preferredTime || 'Not specified',
+          message: message || '',
+          ip: clientIp,
+          emailStatus: 'sent'
+        });
+      } catch (dbError) {
+        console.error('[Contact Form] Database save failed (Read-only filesystem?):', dbError);
+      }
 
       return NextResponse.json({
         success: true,
@@ -175,20 +185,25 @@ Sender IP Address: ${clientIp}
     } catch (sendError: any) {
       console.error('[Contact Form] SMTP sendMail failed:', sendError);
       
-      // Save failed email submission to database with error log
-      const dbRecord = saveSubmission({
-        studentName,
-        email,
-        phone,
-        age: age || 'Not specified',
-        country: country || 'Not specified',
-        course,
-        preferredTime: preferredTime || 'Not specified',
-        message: message || '',
-        ip: clientIp,
-        emailStatus: 'failed',
-        errorLog: sendError?.message || String(sendError)
-      });
+      let dbRecord = null;
+      try {
+        // Save failed email submission to database with error log
+        dbRecord = saveSubmission({
+          studentName,
+          email,
+          phone,
+          age: age || 'Not specified',
+          country: country || 'Not specified',
+          course,
+          preferredTime: preferredTime || 'Not specified',
+          message: message || '',
+          ip: clientIp,
+          emailStatus: 'failed',
+          errorLog: sendError?.message || String(sendError)
+        });
+      } catch (dbError) {
+        console.error('[Contact Form] Fallback database save failed (Read-only filesystem?):', dbError);
+      }
 
       return NextResponse.json({
         success: true, // Still return success to front-end to ensure booking is registered
