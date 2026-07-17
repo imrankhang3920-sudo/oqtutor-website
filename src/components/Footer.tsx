@@ -10,6 +10,7 @@ export default function Footer({ data }: { data: ContactData }) {
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Pricing Plans', href: '/pricing' },
     { name: 'Our Tutors', href: '/tutors' },
     { name: 'About Us', href: '/about' },

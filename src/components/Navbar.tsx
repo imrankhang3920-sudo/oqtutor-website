@@ -18,6 +18,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
   const menuItems = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Tutors', href: '/tutors' },
     { name: 'About Us', href: '/about' },
