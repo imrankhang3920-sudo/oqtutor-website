@@ -4,14 +4,30 @@ import ContactPageClient from './ContactPageClient';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Book Free Trial Class | Contact Online Quran Academy',
-  description: 'Book your 3 free trial online Quran classes. Form for parent name, student age, country selector, preferred times, and expert Tajweed or Hifz tutor matches.',
-  keywords: ['book free trial quran', 'contact quran tutor', 'quran classes UK Europe', 'register online quran'],
-  alternates: {
-    canonical: '/contact',
-  },
-};
+interface Props {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const resolvedParams = await searchParams;
+  const hasParams = Object.keys(resolvedParams).length > 0;
+
+  return {
+    title: 'Book Free Trial Class | Contact Online Quran Academy',
+    description: 'Book your 3 free trial online Quran classes. Form for parent name, student age, country selector, preferred times, and expert Tajweed or Hifz tutor matches.',
+    keywords: ['book free trial quran', 'contact quran tutor', 'quran classes UK Europe', 'register online quran'],
+    alternates: {
+      canonical: 'https://www.oqtutor.com/contact',
+    },
+    robots: hasParams ? {
+      index: false,
+      follow: true,
+    } : {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function ContactPage() {
   const dbData = readDB();
