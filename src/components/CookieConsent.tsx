@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { X, Shield, Settings, Info } from 'lucide-react';
+import { X, Shield, Settings, Cookie } from 'lucide-react';
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -21,6 +21,7 @@ export default function CookieConsent() {
 
     if (!consentCookie) {
       setShowBanner(true);
+      document.body.classList.add('cookie-banner-active');
     } else {
       try {
         const val = decodeURIComponent(consentCookie.split('=')[1]);
@@ -31,6 +32,11 @@ export default function CookieConsent() {
         console.error('Error parsing cookie consent:', e);
       }
     }
+
+    // Cleanup class on unmount
+    return () => {
+      document.body.classList.remove('cookie-banner-active');
+    };
   }, []);
 
   const setConsentCookie = (consentVal: typeof preferences) => {
@@ -41,23 +47,28 @@ export default function CookieConsent() {
     )}; expires=${expires.toUTCString()}; path=/; SameSite=Lax; Secure`;
   };
 
+  const dismissBanner = () => {
+    setShowBanner(false);
+    document.body.classList.remove('cookie-banner-active');
+  };
+
   const handleAcceptAll = () => {
     const allConsent = { essential: true, analytics: true, marketing: true };
     setPreferences(allConsent);
     setConsentCookie(allConsent);
-    setShowBanner(false);
+    dismissBanner();
   };
 
   const handleRejectNonEssential = () => {
     const minimalConsent = { essential: true, analytics: false, marketing: false };
     setPreferences(minimalConsent);
     setConsentCookie(minimalConsent);
-    setShowBanner(false);
+    dismissBanner();
   };
 
   const handleSavePreferences = () => {
     setConsentCookie(preferences);
-    setShowBanner(false);
+    dismissBanner();
     setShowSettingsModal(false);
   };
 
@@ -65,46 +76,49 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Cookie Banner */}
+      {/* Cookie Banner Bar */}
       {showBanner && (
         <div
           role="dialog"
           aria-label="Cookie Consent Banner"
-          className="fixed top-0 left-0 w-full bg-black text-white py-5 px-4 sm:px-6 lg:px-8 z-50 shadow-2xl border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 animate-slide-down"
+          className="fixed top-0 left-0 w-full bg-[#111111] text-white px-4 sm:px-6 lg:px-8 z-50 shadow-md border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs md:h-[50px] py-3 md:py-0 select-none"
         >
-          <div className="flex-1 max-w-4xl">
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
-              This website uses cookies to improve your experience, remember your preferences, analyze website traffic, and track ad conversions. By continuing to browse, you agree to our use of cookies.{' '}
-              <Link
-                href="/cookie-policy"
-                className="text-[#10B981] hover:text-[#0D9488] font-semibold underline underline-offset-2 ml-1"
-              >
-                Learn More
-              </Link>
-            </p>
+          {/* Left Text */}
+          <div className="flex items-center gap-2 max-w-4xl text-center md:text-left">
+            <Cookie className="h-4 w-4 text-[#10B981] shrink-0 hidden sm:inline" />
+            <span className="text-white/90 font-medium leading-relaxed">
+              This website uses cookies to improve your experience, remember your preferences, analyze website traffic, and track ad conversions. By continuing to browse, you agree to our use of cookies.
+            </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          {/* Right Controls */}
+          <div className="flex flex-wrap items-center justify-center gap-3.5 shrink-0">
+            <Link
+              href="/cookie-policy"
+              className="text-[#10B981] hover:text-[#0D9488] font-bold hover:underline transition-all whitespace-nowrap text-[11px]"
+            >
+              Learn More
+            </Link>
+
             <button
               onClick={() => setShowSettingsModal(true)}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/20 hover:border-[#10B981] hover:text-[#10B981] text-xs font-bold transition-all cursor-pointer bg-transparent"
+              className="text-white/70 hover:text-white font-semibold transition-colors bg-transparent border-0 cursor-pointer text-[11px]"
             >
-              <Settings className="h-3.5 w-3.5" />
-              <span>Cookie Settings</span>
+              Cookie Settings
             </button>
 
             <button
               onClick={handleRejectNonEssential}
-              className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 border border-transparent text-xs font-bold transition-all cursor-pointer text-white"
+              className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-transparent text-white text-[11px] font-bold transition-all cursor-pointer"
             >
-              Reject Non-Essential
+              Reject
             </button>
 
             <button
               onClick={handleAcceptAll}
-              className="px-5 py-2 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-xs font-bold shadow-md shadow-emerald-500/10 hover:shadow-lg transition-all cursor-pointer border border-transparent"
+              className="px-4.5 py-1.5 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-[11px] font-bold shadow-md shadow-emerald-500/10 hover:shadow-lg transition-all cursor-pointer border border-transparent"
             >
-              Accept All
+              Accept
             </button>
           </div>
         </div>
