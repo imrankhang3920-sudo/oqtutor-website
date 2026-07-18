@@ -72,7 +72,7 @@ Full Name: ${studentName}
 Email Address: ${email}
 Phone/WhatsApp: ${phone}
 Student Age: ${age || 'Not specified'}
-Country: ${country || 'Not specified'}
+Country: ${country || 'Not specified'} ${body.countryCode ? `(${body.countryCode})` : ''}
 Selected Course: ${course}
 Preferred Time Slot: ${preferredTime || 'Not specified'}
 Message: ${message || 'No message provided'}
@@ -107,7 +107,7 @@ Sender IP Address: ${clientIp}
               </tr>
               <tr>
                 <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Country:</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;">${country || 'Not specified'}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;">${country || 'Not specified'} ${body.countryCode ? `(${body.countryCode})` : ''}</td>
               </tr>
               <tr>
                 <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Selected Course:</td>

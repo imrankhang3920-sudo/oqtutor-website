@@ -1,22 +1,88 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ContactData } from '@/data/db';
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, ShieldCheck, ChevronDown, Search } from 'lucide-react';
+
+interface CountryItem {
+  code: string;
+  dialCode: string;
+  name: string;
+  flag: string;
+  format: string;
+}
+
+const countriesData: CountryItem[] = [
+  { code: 'GB', dialCode: '+44', name: 'United Kingdom', flag: '🇬🇧', format: 'xxxx xxxxxx' },
+  { code: 'US', dialCode: '+1', name: 'United States', flag: '🇺🇸', format: 'xxx-xxx-xxxx' },
+  { code: 'CA', dialCode: '+1', name: 'Canada', flag: '🇨🇦', format: 'xxx-xxx-xxxx' },
+  { code: 'AU', dialCode: '+61', name: 'Australia', flag: '🇦🇺', format: 'xxx xxx xxx' },
+  { code: 'PK', dialCode: '+92', name: 'Pakistan', flag: '🇵🇰', format: 'xxx xxxxxxx' },
+  { code: 'DE', dialCode: '+49', name: 'Germany', flag: '🇩🇪', format: 'xxxx xxxxxxx' },
+  { code: 'FR', dialCode: '+33', name: 'France', flag: '🇫🇷', format: 'x xx xx xx xx' },
+  { code: 'SA', dialCode: '+966', name: 'Saudi Arabia', flag: '🇸🇦', format: 'x xxx xxxx' },
+  { code: 'AE', dialCode: '+971', name: 'United Arab Emirates', flag: '🇦🇪', format: 'x xxx xxxx' },
+  { code: 'IE', dialCode: '+353', name: 'Ireland', flag: '🇮🇪', format: 'xx xxx xxxx' },
+  { code: 'NZ', dialCode: '+64', name: 'New Zealand', flag: '🇳🇿', format: 'xx xxx xxxx' },
+  { code: 'ZA', dialCode: '+27', name: 'South Africa', flag: '🇿🇦', format: 'xx xxx xxxx' },
+  { code: 'IN', dialCode: '+91', name: 'India', flag: '🇮🇳', format: 'xxxxx xxxxx' },
+  { code: 'SG', dialCode: '+65', name: 'Singapore', flag: '🇸🇬', format: 'xxxx xxxx' },
+  { code: 'MY', dialCode: '+60', name: 'Malaysia', flag: '🇲🇾', format: 'xx-xxx xxxx' },
+  { code: 'QA', dialCode: '+974', name: 'Qatar', flag: '🇶🇦', format: 'xxxx xxxx' },
+  { code: 'KW', dialCode: '+965', name: 'Kuwait', flag: '🇰🇼', format: 'xxxx xxxx' },
+  { code: 'OM', dialCode: '+968', name: 'Oman', flag: '🇴🇲', format: 'xxxx xxxx' },
+  { code: 'BH', dialCode: '+973', name: 'Bahrain', flag: '🇧🇭', format: 'xxxx xxxx' },
+  { code: 'NL', dialCode: '+31', name: 'Netherlands', flag: '🇳🇱', format: 'x xx xx xx' },
+  { code: 'BE', dialCode: '+32', name: 'Belgium', flag: '🇧🇪', format: 'xxx xx xx xx' },
+  { code: 'CH', dialCode: '+41', name: 'Switzerland', flag: '🇨🇭', format: 'xx xxx xx xx' },
+  { code: 'SE', dialCode: '+46', name: 'Sweden', flag: '🇸🇪', format: 'xx xxx xx xx' },
+  { code: 'NO', dialCode: '+47', name: 'Norway', flag: '🇳🇴', format: 'xxx xx xxx' },
+  { code: 'DK', dialCode: '+45', name: 'Denmark', flag: '🇩🇰', format: 'xx xx xx xx' },
+  { code: 'FI', dialCode: '+358', name: 'Finland', flag: '🇫🇮', format: 'xx xxx xxxx' },
+  { code: 'AT', dialCode: '+43', name: 'Austria', flag: '🇦🇹', format: 'xxx xxxxxxx' },
+  { code: 'IT', dialCode: '+39', name: 'Italy', flag: '🇮🇹', format: 'xxx xxxxxxx' },
+  { code: 'ES', dialCode: '+34', name: 'Spain', flag: '🇪🇸', format: 'xxx xxx xxx' },
+  { code: 'TR', dialCode: '+90', name: 'Turkey', flag: '🇹🇷', format: 'xxx xxx xxxx' },
+  { code: 'HK', dialCode: '+852', name: 'Hong Kong', flag: '🇭🇰', format: 'xxxx xxxx' },
+  { code: 'JP', dialCode: '+81', name: 'Japan', flag: '🇯🇵', format: 'xx xxxx xxxx' },
+];
+
+function formatPhoneNumber(value: string, format: string) {
+  const digits = value.replace(/\D/g, '');
+  let formatted = '';
+  let digitIndex = 0;
+  
+  for (let i = 0; i < format.length && digitIndex < digits.length; i++) {
+    if (format[i] === 'x') {
+      formatted += digits[digitIndex++];
+    } else {
+      formatted += format[i];
+    }
+  }
+  
+  return formatted;
+}
 
 export default function ContactPageClient({
   contactData
 }: {
   contactData: ContactData;
 }) {
+  const [selectedCountry, setSelectedCountry] = useState(countriesData[0]); // Default to UK
+  const [phoneVal, setPhoneVal] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const [formData, setFormData] = useState({
     studentName: '',
     email: '',
     phone: '',
     age: 'Under 5',
     country: 'United Kingdom',
+    countryCode: 'GB',
     course: 'Noorani Qaida',
     preferredTime: 'Morning (08:00 - 12:00)',
     message: '',
@@ -25,27 +91,6 @@ export default function ContactPageClient({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const countries = [
-    'United Kingdom',
-    'Germany',
-    'France',
-    'Belgium',
-    'Netherlands',
-    'Ireland',
-    'Italy',
-    'Spain',
-    'Sweden',
-    'Norway',
-    'Denmark',
-    'Switzerland',
-    'Austria',
-    'Other Europe',
-    'United States',
-    'Canada',
-    'Australia',
-    'Rest of World'
-  ];
 
   const courses = [
     'Noorani Qaida',
@@ -65,6 +110,92 @@ export default function ContactPageClient({
     'Night (20:00 - 24:00)',
     'Flexible / 24h Any Time'
   ];
+
+  // Auto-detect country based on Timezone and Geolocation IP API
+  useEffect(() => {
+    // 1. Timezone heuristic
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    let guessedCountry = countriesData.find(c => c.code === 'GB');
+
+    if (tz.includes('London')) guessedCountry = countriesData.find(c => c.code === 'GB');
+    else if (tz.includes('America/')) guessedCountry = countriesData.find(c => c.code === 'US');
+    else if (tz.includes('Canada/')) guessedCountry = countriesData.find(c => c.code === 'CA');
+    else if (tz.includes('Australia/')) guessedCountry = countriesData.find(c => c.code === 'AU');
+    else if (tz.includes('Europe/Berlin') || tz.includes('Europe/Munich')) guessedCountry = countriesData.find(c => c.code === 'DE');
+    else if (tz.includes('Europe/Paris')) guessedCountry = countriesData.find(c => c.code === 'FR');
+    else if (tz.includes('Karachi')) guessedCountry = countriesData.find(c => c.code === 'PK');
+    else if (tz.includes('Kolkata')) guessedCountry = countriesData.find(c => c.code === 'IN');
+    
+    if (guessedCountry) {
+      setSelectedCountry(guessedCountry);
+      setFormData(prev => ({
+        ...prev,
+        country: guessedCountry.name,
+        countryCode: guessedCountry.code
+      }));
+    }
+
+    // 2. Geolocation IP API check for absolute precision
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.country_code) {
+          const match = countriesData.find(c => c.code === data.country_code);
+          if (match) {
+            setSelectedCountry(match);
+            setFormData(prev => ({
+              ...prev,
+              country: match.name,
+              countryCode: match.code,
+              phone: `${match.dialCode} ${formatPhoneNumber(phoneVal, match.format)}`.trim()
+            }));
+          }
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  // Dropdown click outside listener
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleSelectCountry = (country: CountryItem) => {
+    setSelectedCountry(country);
+    setIsOpen(false);
+    setSearchQuery('');
+    
+    const formatted = formatPhoneNumber(phoneVal, country.format);
+    setPhoneVal(formatted);
+    
+    setFormData(prev => ({
+      ...prev,
+      phone: `${country.dialCode} ${formatted}`.trim(),
+      country: country.name,
+      countryCode: country.code
+    }));
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawVal = e.target.value;
+    const formatted = formatPhoneNumber(rawVal, selectedCountry.format);
+    setPhoneVal(formatted);
+    
+    setFormData(prev => ({
+      ...prev,
+      phone: `${selectedCountry.dialCode} ${formatted}`.trim(),
+      country: selectedCountry.name,
+      countryCode: selectedCountry.code
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -87,12 +218,14 @@ export default function ContactPageClient({
       }
 
       setIsSuccess(true);
+      setPhoneVal('');
       setFormData({
         studentName: '',
         email: '',
         phone: '',
         age: 'Under 5',
-        country: 'United Kingdom',
+        country: selectedCountry.name,
+        countryCode: selectedCountry.code,
         course: 'Noorani Qaida',
         preferredTime: 'Morning (08:00 - 12:00)',
         message: '',
@@ -107,6 +240,12 @@ export default function ContactPageClient({
       setIsSubmitting(false);
     }
   };
+
+  const filteredCountries = countriesData.filter(c =>
+    c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    c.dialCode.includes(searchQuery) ||
+    c.code.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -175,7 +314,7 @@ export default function ContactPageClient({
                       </p>
                       <button
                         onClick={() => setIsSuccess(false)}
-                        className="px-6 py-2.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-all"
+                        className="px-6 py-2.5 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-all cursor-pointer"
                       >
                         Submit Another Form
                       </button>
@@ -193,6 +332,8 @@ export default function ContactPageClient({
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      
+                      {/* Name - full width */}
                       <div className="sm:col-span-2">
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Student Full Name
@@ -206,9 +347,8 @@ export default function ContactPageClient({
                           className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                         />
                       </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {/* Email - half width */}
                       <div>
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Email Address
@@ -222,22 +362,79 @@ export default function ContactPageClient({
                           className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                         />
                       </div>
+
+                      {/* Phone - half width */}
                       <div>
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Phone / WhatsApp Number
                         </label>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="+44 7911 123456"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        />
-                      </div>
-                    </div>
+                        
+                        <div className="relative" ref={dropdownRef}>
+                          <div className="flex items-center w-full rounded-xl border border-card-border bg-background/50 text-foreground focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all">
+                            {/* Country dropdown trigger */}
+                            <button
+                              type="button"
+                              onClick={() => setIsOpen(!isOpen)}
+                              className="flex items-center gap-1.5 px-3 py-3 hover:bg-foreground/[0.04] transition-colors rounded-l-xl border-r border-card-border text-sm font-semibold select-none cursor-pointer text-foreground bg-transparent"
+                            >
+                              <span className="text-base leading-none">{selectedCountry.flag}</span>
+                              <span className="text-xs text-foreground/80 font-bold">{selectedCountry.dialCode}</span>
+                              <ChevronDown className="h-3 w-3 text-muted-text" />
+                            </button>
+                            
+                            {/* Phone Input field */}
+                            <input
+                              type="tel"
+                              required
+                              placeholder={selectedCountry.format.replace(/x/g, '9')}
+                              value={phoneVal}
+                              onChange={handlePhoneChange}
+                              className="w-full bg-transparent px-3 py-3 text-sm focus:outline-none placeholder-muted-text/50"
+                            />
+                          </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          {/* Country selector dropdown menu */}
+                          {isOpen && (
+                            <div className="absolute left-0 mt-2 w-72 max-h-64 bg-background border border-card-border rounded-2xl shadow-2xl p-2.5 z-20 flex flex-col animate-slide-down">
+                              <div className="relative flex items-center mb-2 px-1">
+                                <Search className="absolute left-3 h-3.5 w-3.5 text-muted-text pointer-events-none" />
+                                <input
+                                  type="text"
+                                  placeholder="Search country name or code..."
+                                  value={searchQuery}
+                                  onChange={(e) => setSearchQuery(e.target.value)}
+                                  className="w-full pl-8 pr-3 py-2 bg-foreground/[0.03] border border-card-border rounded-xl text-xs focus:outline-none placeholder-muted-text/70"
+                                />
+                              </div>
+                              
+                              <div className="overflow-y-auto flex-grow space-y-0.5 custom-scrollbar max-h-48">
+                                {filteredCountries.length > 0 ? (
+                                  filteredCountries.map((country, idx) => (
+                                    <button
+                                      key={idx}
+                                      type="button"
+                                      onClick={() => handleSelectCountry(country)}
+                                      className={`flex items-center gap-2 w-full px-3 py-1.5 rounded-xl text-xs hover:bg-foreground/[0.04] transition-colors cursor-pointer text-left ${
+                                        selectedCountry.code === country.code
+                                          ? 'bg-primary/10 text-primary font-bold'
+                                          : 'text-foreground'
+                                      }`}
+                                    >
+                                      <span className="text-base leading-none">{country.flag}</span>
+                                      <span className="font-semibold">{country.dialCode}</span>
+                                      <span className="text-muted-text truncate ml-1">{country.name}</span>
+                                    </button>
+                                  ))
+                                ) : (
+                                  <div className="text-[11px] text-muted-text text-center py-4">No countries found</div>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Age - half width */}
                       <div>
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Student Age Category
@@ -253,23 +450,8 @@ export default function ContactPageClient({
                           <option value="Adult (18+)">Adult (18+)</option>
                         </select>
                       </div>
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                          Country of Residence
-                        </label>
-                        <select
-                          value={formData.country}
-                          onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                        >
-                          {countries.map((cnt, idx) => (
-                            <option key={idx} value={cnt}>{cnt}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {/* Course - half width */}
                       <div>
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Select Quran Course
@@ -284,7 +466,9 @@ export default function ContactPageClient({
                           ))}
                         </select>
                       </div>
-                      <div>
+
+                      {/* Class Time - full width */}
+                      <div className="sm:col-span-2">
                         <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
                           Preferred Class Time
                         </label>
@@ -298,19 +482,21 @@ export default function ContactPageClient({
                           ))}
                         </select>
                       </div>
-                    </div>
 
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                        Special Instructions / Goals
-                      </label>
-                      <textarea
-                        rows={4}
-                        placeholder="Please state if you require a Female Tutor or have specific learning schedules..."
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                      />
+                      {/* Message - full width */}
+                      <div className="sm:col-span-2">
+                        <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
+                          Special Instructions / Goals
+                        </label>
+                        <textarea
+                          rows={4}
+                          placeholder="Please state if you require a Female Tutor or have specific learning schedules..."
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                        />
+                      </div>
+
                     </div>
 
                     <button
