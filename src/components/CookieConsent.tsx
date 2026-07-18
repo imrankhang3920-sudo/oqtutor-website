@@ -81,21 +81,21 @@ export default function CookieConsent() {
         <div
           role="dialog"
           aria-label="Cookie Consent Banner"
-          className="fixed top-0 left-0 w-full bg-[#111111] text-white px-4 sm:px-6 lg:px-8 z-50 shadow-md border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs md:h-[50px] py-3 md:py-0 select-none"
+          className="fixed top-0 left-0 w-full bg-[#111111] text-white px-4 sm:px-6 lg:px-8 z-50 shadow-md border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:h-[40px] py-2 md:py-0 select-none"
         >
           {/* Left Text */}
-          <div className="flex items-center gap-2 max-w-4xl text-center md:text-left">
-            <Cookie className="h-4 w-4 text-[#10B981] shrink-0 hidden sm:inline" />
-            <span className="text-white/90 font-medium leading-relaxed">
-              This website uses cookies to improve your experience, remember your preferences, analyze website traffic, and track ad conversions. By continuing to browse, you agree to our use of cookies.
+          <div className="flex items-center gap-1.5 shrink-0 text-left">
+            <Cookie className="h-3.5 w-3.5 text-[#10B981] shrink-0" />
+            <span className="text-white/90 font-medium">
+              We use cookies to improve your experience.
             </span>
           </div>
 
           {/* Right Controls */}
-          <div className="flex flex-wrap items-center justify-center gap-3.5 shrink-0">
+          <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
             <Link
               href="/cookie-policy"
-              className="text-[#10B981] hover:text-[#0D9488] font-bold hover:underline transition-all whitespace-nowrap text-[11px]"
+              className="text-[#10B981] hover:text-[#0D9488] font-bold hover:underline transition-colors"
             >
               Learn More
             </Link>
@@ -109,14 +109,14 @@ export default function CookieConsent() {
 
             <button
               onClick={handleRejectNonEssential}
-              className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-transparent text-white text-[11px] font-bold transition-all cursor-pointer"
+              className="px-3 py-1 rounded-full bg-transparent border border-white/30 hover:border-white/50 text-white text-[11px] font-bold transition-all cursor-pointer"
             >
               Reject
             </button>
 
             <button
               onClick={handleAcceptAll}
-              className="px-4.5 py-1.5 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-[11px] font-bold shadow-md shadow-emerald-500/10 hover:shadow-lg transition-all cursor-pointer border border-transparent"
+              className="px-3.5 py-1 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-[11px] font-bold transition-all cursor-pointer border border-transparent"
             >
               Accept
             </button>

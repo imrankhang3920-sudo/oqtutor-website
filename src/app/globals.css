@@ -65,20 +65,20 @@ body {
 
 /* Cookie consent banner spacing overrides */
 body.cookie-banner-active {
-  margin-top: 50px;
+  margin-top: 50px; /* 40px banner height + 10px gap space */
 }
 
 body.cookie-banner-active nav.sticky {
-  top: 50px !important;
+  top: 50px !important; /* 40px banner height + 10px gap space */
   transition: top 0.3s ease;
 }
 
 @media (max-width: 768px) {
   body.cookie-banner-active {
-    margin-top: 76px; /* Banner height adapts on mobile to fit wrapping elements */
+    margin-top: 86px; /* Banner height adapts on mobile to fit wrapping elements + 10px gap */
   }
   body.cookie-banner-active nav.sticky {
-    top: 76px !important;
+    top: 86px !important;
   }
 }
 
