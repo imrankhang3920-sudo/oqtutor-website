@@ -180,7 +180,7 @@ export default function Footer({ data }: { data: ContactData }) {
             <Link href="/privacy" className="hover:text-primary transition-colors font-medium">Privacy Policy</Link>
             <Link href="/about" className="hover:text-primary transition-colors font-medium">Terms & Conditions</Link>
             <Link href="/pricing" className="hover:text-primary transition-colors font-medium">Refund Policy</Link>
-            <Link href="/faq" className="hover:text-primary transition-colors font-medium">Cookie Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-primary transition-colors font-medium">Cookie Policy</Link>
           </div>
         </div>
       </div>
