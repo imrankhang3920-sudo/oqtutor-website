@@ -178,7 +178,7 @@ export default function Footer({ data }: { data: ContactData }) {
           <p suppressHydrationWarning>© {new Date().getFullYear()} OQTutor. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center sm:justify-end">
             <Link href="/privacy" className="hover:text-primary transition-colors font-medium">Privacy Policy</Link>
-            <Link href="/about" className="hover:text-primary transition-colors font-medium">Terms & Conditions</Link>
+            <Link href="/terms-and-conditions" className="hover:text-primary transition-colors font-medium">Terms & Conditions</Link>
             <Link href="/pricing" className="hover:text-primary transition-colors font-medium">Refund Policy</Link>
             <Link href="/cookie-policy" className="hover:text-primary transition-colors font-medium">Cookie Policy</Link>
           </div>
