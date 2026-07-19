@@ -1006,6 +1006,42 @@
   },
   "faqs": [
     {
+      "id": "faq-home-1",
+      "question": "Which is the best online Quran class for kids?",
+      "answer": "The best online Quran class for kids is a one-on-one interactive session taught by patient, certified scholars. OQTutor provides personalized 1-on-1 Quran classes with native Arab and certified teachers using engaging, visual slides tailored to children's learning paces.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-2",
+      "question": "How to teach Quran to kids online?",
+      "answer": "Teaching Quran online to children requires interactive digital tools, screen sharing, and engaging visuals. Tutors at OQTutor utilize split-screen slides for Noorani Qaida, audio repetitions, and rewarding milestones to keep young kids motivated and focused.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-3",
+      "question": "Which is the best online Quran course?",
+      "answer": "For beginners, the Noorani Qaida course is the absolute best online course as it builds a solid pronunciation foundation of Arabic letters. Intermediate and advanced students progress fastest through our structured Quran Recitation with Tajweed and Hifz programs.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-4",
+      "question": "What is the best Quran teaching app for kids?",
+      "answer": "While automated learning apps are useful for practice, direct human interaction is the most effective approach. OQTutor combines structured interactive presentation slides on Zoom or Skype with a live, certified 1-on-1 tutor who corrects letter exits (Makharij) in real time.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-5",
+      "question": "What is the best way for kids to learn the Quran?",
+      "answer": "Consistency is key. The best way for children to learn is through short, regular sessions (30 minutes, 2 to 3 times per week) with a dedicated tutor. This structure avoids cognitive fatigue, builds solid retention, and establishes a genuine love for Quranic learning.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-6",
+      "question": "How much do online Quran classes cost?",
+      "answer": "Online Quran tutoring is highly affordable. At OQTutor, subscription rates start between $30 to $50 per month, depending on class frequency. We also offer family package discounts of up to 15% for registering multiple siblings.",
+      "category": "pricing"
+    },
+    {
       "id": "faq-1",
       "question": "What is the right age for my child to start Quran classes?",
       "answer": "We recommend children start at 4.5 to 5 years old. At this age, children can follow instructions on screen. We use interactive, game-based learning models to keep them engaged.",
@@ -1078,193 +1114,193 @@
       "category": "tutors"
     },
     {
-      "id": "faq-13-english",
+      "id": "faq-13",
       "question": "Do your teachers speak English?",
       "answer": "Yes, all our tutors speak fluent English. This ensures smooth communication, especially for young kids in Western countries (like the USA, UK, Canada, and Australia) who only speak English.",
       "category": "tutors"
     },
     {
-      "id": "faq-13-arabic",
+      "id": "faq-14",
       "question": "Do your teachers speak Arabic?",
       "answer": "Yes, we have native Arab tutors from Egypt, Jordan, and Saudi Arabia who speak fluent Arabic. They are certified to teach classical Arabic, Tajweed, and Quran recitation with authentic pronunciation.",
       "category": "tutors"
     },
     {
-      "id": "faq-13-urdu",
+      "id": "faq-15",
       "question": "Do your teachers speak Urdu?",
       "answer": "Yes, we have dedicated bilingual tutors who speak fluent Urdu. This makes classes highly comfortable for children and adults from Pakistani backgrounds who prefer explanations in Urdu.",
       "category": "tutors"
     },
     {
-      "id": "faq-13-hindi",
+      "id": "faq-16",
       "question": "Do your teachers speak Hindi?",
       "answer": "Yes, several of our bilingual tutors communicate fluently in Hindi. This helps students from Indian backgrounds understand the meanings of verses and Tajweed explanations easily.",
       "category": "tutors"
     },
     {
-      "id": "faq-13-bengali",
+      "id": "faq-17",
       "question": "Do your teachers speak Bengali?",
       "answer": "Yes, we have qualified Bengali-speaking tutors in our faculty. If you prefer your child to learn Quran and Tajweed rules with explanations in Bengali, you can request it during registration.",
       "category": "tutors"
     },
     {
-      "id": "faq-14",
+      "id": "faq-18",
       "question": "Are your teachers trained to handle shy or slow learners?",
       "answer": "Yes, our tutors undergo special training in child psychology. They adapt their speed, tone, and teaching style to suit each child's individual pace, ensuring slow or shy students never feel pressured.",
       "category": "tutors"
     },
     {
-      "id": "faq-15",
+      "id": "faq-19",
       "question": "Where are your teachers from?",
       "answer": "Our teachers are based in Egypt, Pakistan, Jordan, and Saudi Arabia. They are selected for their excellent classical Arabic pronunciation, fluency in English, and strong academic credentials.",
       "category": "tutors"
     },
     {
-      "id": "faq-16",
+      "id": "faq-20",
       "question": "Do your teachers teach adults too?",
       "answer": "Yes, we have dedicated programs for adults (both brothers and sisters). Tutors cover Tajweed, conversational Arabic, advanced Fiqh, and Quran Tafseer tailored to adult schedules.",
       "category": "tutors"
     },
     {
-      "id": "faq-17",
+      "id": "faq-21",
       "question": "Can parents talk to the teacher directly?",
       "answer": "Yes. Parents can speak to the tutor for 5 minutes at the start or end of the class. However, all billing, schedule changes, and technical support must go through the academy coordinator.",
       "category": "tutors"
     },
     {
-      "id": "faq-18",
+      "id": "faq-22",
       "question": "Do teachers give homework?",
       "answer": "Yes, short homework assignments (like repeating a verse or reviewing a page of Noorani Qaida) are assigned to help students practice between classes and build a daily Quran routine.",
       "category": "tutors"
     },
     {
-      "id": "faq-19",
+      "id": "faq-23",
       "question": "How do you monitor teacher quality?",
       "answer": "We have an Academic Quality Assurance team that reviews recorded sessions (with consent) and class logs. Tutors receive continuous feedback and evaluation to maintain high teaching standards.",
       "category": "tutors"
     },
     {
-      "id": "faq-20",
+      "id": "faq-24",
       "question": "Do you train new teachers?",
       "answer": "Yes, every new tutor goes through an intensive 2-week training program covering child psychology, online interactive teaching tools, and virtual classroom management before they start teaching.",
       "category": "tutors"
     },
     {
-      "id": "faq-21",
+      "id": "faq-25",
       "question": "How do online Quran classes work?",
       "answer": "Classes are conducted via interactive video software (Zoom or Skype). The student and tutor log in, share screens to view the interactive syllabus, and practice pronunciation using real-time audio and video.",
       "category": "classes"
     },
     {
-      "id": "faq-22",
+      "id": "faq-26",
       "question": "Do you provide flexible class timings?",
       "answer": "Yes, we operate 24/7. You can select class times that fit your family schedule, including early mornings, after-school hours, or weekends. Timings can be rescheduled with prior notice.",
       "category": "classes"
     },
     {
-      "id": "faq-23",
+      "id": "faq-27",
       "question": "What if my child misses a class?",
       "answer": "If you notify the coordinator at least 4 hours in advance, we will schedule a makeup class. Missed classes without prior notice are counted as completed and are not eligible for makeup.",
       "category": "classes"
     },
     {
-      "id": "faq-24",
+      "id": "faq-28",
       "question": "Can we change class timing?",
       "answer": "Yes. You can change your permanent schedule or adjust class timings by contacting our support team or coordinator on WhatsApp or Email. We require 24 hours' notice for permanent schedule changes.",
       "category": "classes"
     },
     {
-      "id": "faq-25",
+      "id": "faq-29",
       "question": "What devices are needed for online Quran classes?",
       "answer": "You only need a laptop, tablet, or desktop computer, a stable internet connection, a webcam, and a headset (microphone and headphones). High-speed internet ensures clear audio transmission.",
       "category": "classes"
     },
     {
-      "id": "faq-26",
+      "id": "faq-30",
       "question": "Do you record classes?",
       "answer": "No, we do not record classes by default to protect student privacy. Recording is only done occasionally for internal teacher evaluation and training, with parent authorization.",
       "category": "classes"
     },
     {
-      "id": "faq-27",
+      "id": "faq-31",
       "question": "How do you ensure focus during online learning?",
       "answer": "Our tutors keep classes highly interactive. By utilizing screen writing tools, colorful virtual cards, short quizzes, and frequent direct questions, students stay actively engaged throughout the 30-minute session.",
       "category": "classes"
     },
     {
-      "id": "faq-28",
+      "id": "faq-32",
       "question": "Are online Quran classes effective for kids?",
       "answer": "Yes, they are highly effective. The 1-on-1 format ensures the student has 100% of the tutor's attention, leading to 3x faster progress compared to crowded local mosque classrooms.",
       "category": "classes"
     },
     {
-      "id": "faq-29",
+      "id": "faq-33",
       "question": "How long is each Quran class?",
       "answer": "Each lesson is 30 minutes. This duration is scientifically proven to keep children engaged and prevent fatigue, ensuring they retain what they learn.",
       "category": "classes"
     },
     {
-      "id": "faq-30",
+      "id": "faq-34",
       "question": "How can parents know the progress of their kids?",
       "answer": "Parents receive weekly or monthly progress reports via email. The reports outline verses covered, homework status, pronunciation progress (Tajweed), and general class behavior.",
       "category": "classes"
     },
     {
-      "id": "faq-31",
+      "id": "faq-35",
       "question": "How does OQTutor ensure the safety and comfort of girls during online sessions?",
       "answer": "We offer female tutors for girls and female students. Additionally, all our online sessions are governed by strict safety protocols, and parents are always welcome to sit in during lessons.",
       "category": "classes"
     },
     {
-      "id": "faq-32",
+      "id": "faq-36",
       "question": "What if I am waiting online and my tutor is not there?",
       "answer": "If your tutor does not join within 5 minutes, please message the official academy support desk on WhatsApp. We will investigate instantly, assign a backup tutor, or reschedule the class.",
       "category": "classes"
     },
     {
-      "id": "faq-33",
+      "id": "faq-37",
       "question": "How much do Quran classes cost?",
       "answer": "Pricing depends on the package selected (classes per week). Standard monthly subscriptions start from $30 to $50. There are no hidden fees, and you can cancel anytime.",
       "category": "pricing"
     },
     {
-      "id": "faq-34",
+      "id": "faq-38",
       "question": "Do you offer family discounts?",
       "answer": "Yes, we offer up to 15% discount for families enrolling two or more siblings. This discount is applied automatically during pricing plan checkout.",
       "category": "pricing"
     },
     {
-      "id": "faq-35",
+      "id": "faq-39",
       "question": "What payment methods do you accept?",
       "answer": "We accept all major credit/debit cards (Visa, MasterCard, Amex), PayPal, Stripe, and direct bank transfers. All payments are processed through secure gateways.",
       "category": "pricing"
     },
     {
-      "id": "faq-36",
+      "id": "faq-40",
       "question": "Do you charge registration fees?",
       "answer": "No, registration and account creation are completely free. We do not charge any admission or setup fees; you only pay the monthly class tuition.",
       "category": "pricing"
     },
     {
-      "id": "faq-37",
+      "id": "faq-41",
       "question": "Can I pause classes if needed?",
       "answer": "Yes. If you are traveling or on holiday, you can pause your subscription for up to 4 weeks. Notify our support desk at least 3 days before the start of the next billing cycle.",
       "category": "pricing"
     },
     {
-      "id": "faq-38",
+      "id": "faq-42",
       "question": "Do you offer refunds?",
       "answer": "Yes, we offer a 100% satisfaction guarantee. If you cancel your subscription within the first week of official classes, we will issue a full refund for the remaining unused classes.",
       "category": "pricing"
     },
     {
-      "id": "faq-39",
+      "id": "faq-43",
       "question": "How do I know my payment is secure?",
       "answer": "All transactions are encrypted and processed securely using PCI-DSS compliant gateways like Stripe and PayPal. OQTutor does not store your card details.",
       "category": "pricing"
     },
     {
-      "id": "faq-40",
+      "id": "faq-44",
       "question": "Are there hidden charges?",
       "answer": "No, there are absolutely no hidden costs, contracts, or termination fees. The fee you see on our pricing plan is exactly what you pay.",
       "category": "pricing"
