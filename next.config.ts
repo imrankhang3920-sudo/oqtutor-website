@@ -81,12 +81,12 @@ const nextConfig: NextConfig = {
       },
       // 4. Legacy tutor paths
       {
-        source: '/tutor/:slug*',
+        source: '/tutor/:slug+',
         destination: '/tutors',
         permanent: true,
       },
       {
-        source: '/tutors/:slug*',
+        source: '/tutors/:slug+',
         destination: '/tutors',
         permanent: true,
       },
