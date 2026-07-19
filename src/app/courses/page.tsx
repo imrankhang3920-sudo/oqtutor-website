@@ -63,12 +63,32 @@ export default async function CoursesPage() {
     ]
   };
 
+  // FAQ Schema for SEO Rich Snippets
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": dbData.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       {/* Insert JSON-LD Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Insert JSON-LD FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />
@@ -151,6 +171,45 @@ export default async function CoursesPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-background border-t border-card-border">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Got Questions?
+              </span>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-foreground">
+                Frequently Asked Questions
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm text-muted-text max-w-2xl mx-auto font-normal">
+                Have questions about our online Quran courses, class setups, tutors, or fees? Explore our direct answers below.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {dbData.faqs.map((faq, idx) => (
+                <details 
+                  key={faq.id || idx}
+                  className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+                >
+                  <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none">
+                    <span>{faq.question}</span>
+                    <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
+                      <svg className="h-5 w-5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>
