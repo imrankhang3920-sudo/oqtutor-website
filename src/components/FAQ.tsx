@@ -36,7 +36,7 @@ export default function FAQ({ data }: { data: FAQData[] }) {
 
         {/* Accordions */}
         <div className="space-y-4 mb-12">
-          {data.slice(0, 5).map((faq) => {
+          {data.slice(0, 6).map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div

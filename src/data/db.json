@@ -1006,6 +1006,42 @@
   },
   "faqs": [
     {
+      "id": "faq-home-1",
+      "question": "Which is the best online Quran class for kids?",
+      "answer": "The best online Quran class for kids is a one-on-one interactive session taught by patient, certified scholars. OQTutor provides personalized 1-on-1 Quran classes with native Arab and certified teachers using engaging, visual slides tailored to children's learning paces.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-2",
+      "question": "How to teach Quran to kids online?",
+      "answer": "Teaching Quran online to children requires interactive digital tools, screen sharing, and engaging visuals. Tutors at OQTutor utilize split-screen slides for Noorani Qaida, audio repetitions, and rewarding milestones to keep young kids motivated and focused.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-3",
+      "question": "Which is the best online Quran course?",
+      "answer": "For beginners, the Noorani Qaida course is the absolute best online course as it builds a solid pronunciation foundation of Arabic letters. Intermediate and advanced students progress fastest through our structured Quran Recitation with Tajweed and Hifz programs.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-4",
+      "question": "What is the best Quran teaching app for kids?",
+      "answer": "While automated learning apps are useful for practice, direct human interaction is the most effective approach. OQTutor combines structured interactive presentation slides on Zoom or Skype with a live, certified 1-on-1 tutor who corrects letter exits (Makharij) in real time.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-5",
+      "question": "What is the best way for kids to learn the Quran?",
+      "answer": "Consistency is key. The best way for children to learn is through short, regular sessions (30 minutes, 2 to 3 times per week) with a dedicated tutor. This structure avoids cognitive fatigue, builds solid retention, and establishes a genuine love for Quranic learning.",
+      "category": "classes"
+    },
+    {
+      "id": "faq-home-6",
+      "question": "How much do online Quran classes cost?",
+      "answer": "Online Quran tutoring is highly affordable. At OQTutor, subscription rates start between $30 to $50 per month, depending on class frequency. We also offer family package discounts of up to 15% for registering multiple siblings.",
+      "category": "pricing"
+    },
+    {
       "id": "faq-1",
       "question": "What is the recommended age for kids to start online Quran classes?",
       "answer": "We recommend children be at least 4.5 years old to start. At this age, children can follow instructions on screen. We use interactive, game-based learning models to keep them engaged.",
