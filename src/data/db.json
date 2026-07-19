@@ -1078,9 +1078,33 @@
       "category": "tutors"
     },
     {
-      "id": "faq-13",
-      "question": "Do your teachers speak English, Arabic, Urdu/Hindi, or Bengali?",
-      "answer": "Yes, our multilingual tutors speak fluent English, Arabic, Urdu/Hindi, and Bengali. This ensures smooth communication, especially for young kids in Western countries who only speak English.",
+      "id": "faq-13-english",
+      "question": "Do your teachers speak English?",
+      "answer": "Yes, all our tutors speak fluent English. This ensures smooth communication, especially for young kids in Western countries (like the USA, UK, Canada, and Australia) who only speak English.",
+      "category": "tutors"
+    },
+    {
+      "id": "faq-13-arabic",
+      "question": "Do your teachers speak Arabic?",
+      "answer": "Yes, we have native Arab tutors from Egypt, Jordan, and Saudi Arabia who speak fluent Arabic. They are certified to teach classical Arabic, Tajweed, and Quran recitation with authentic pronunciation.",
+      "category": "tutors"
+    },
+    {
+      "id": "faq-13-urdu",
+      "question": "Do your teachers speak Urdu?",
+      "answer": "Yes, we have dedicated bilingual tutors who speak fluent Urdu. This makes classes highly comfortable for children and adults from Pakistani backgrounds who prefer explanations in Urdu.",
+      "category": "tutors"
+    },
+    {
+      "id": "faq-13-hindi",
+      "question": "Do your teachers speak Hindi?",
+      "answer": "Yes, several of our bilingual tutors communicate fluently in Hindi. This helps students from Indian backgrounds understand the meanings of verses and Tajweed explanations easily.",
+      "category": "tutors"
+    },
+    {
+      "id": "faq-13-bengali",
+      "question": "Do your teachers speak Bengali?",
+      "answer": "Yes, we have qualified Bengali-speaking tutors in our faculty. If you prefer your child to learn Quran and Tajweed rules with explanations in Bengali, you can request it during registration.",
       "category": "tutors"
     },
     {
