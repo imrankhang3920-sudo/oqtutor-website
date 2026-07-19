@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, Users, Clock, UserCheck, Globe, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Users, Clock, UserCheck, Globe, DollarSign, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { FeatureData } from '@/data/db';
+import Link from 'next/link';
 
 const iconMap: Record<string, React.ComponentType<any>> = {
   Award,
@@ -139,6 +140,17 @@ export default function Features({ data }: { data: FeatureData[] }) {
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
+          </div>
+
+          {/* Section Action Button */}
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300 uppercase tracking-wider cursor-pointer"
+            >
+              <span>Get Started & Book Free Trial</span>
+              <ArrowRight className="h-4.5 w-4.5" />
+            </Link>
           </div>
         </div>
       </div>
