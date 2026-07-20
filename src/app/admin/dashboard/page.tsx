@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { verifyAdminToken } from '@/lib/auth';
-import { readDB } from '@/data/db';
+import { verifyAdminTokenPayload } from '@/lib/auth';
+import { getDBAsync } from '@/data/db';
 import AdminDashboardClient from './AdminDashboardClient';
 
 export const dynamic = 'force-dynamic';
@@ -9,13 +9,13 @@ export const dynamic = 'force-dynamic';
 export default async function AdminDashboardPage() {
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
-  const authorized = token ? verifyAdminToken(token) : false;
+  const user = token ? verifyAdminTokenPayload(token) : null;
 
-  if (!authorized) {
+  if (!user) {
     redirect('/admin/login');
   }
 
-  const initialData = readDB();
+  const initialData = await getDBAsync();
 
-  return <AdminDashboardClient initialData={initialData} />;
+  return <AdminDashboardClient initialData={initialData} userRole={user.role} username={user.username} />;
 }

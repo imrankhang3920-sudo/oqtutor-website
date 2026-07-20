@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 const DB_PATH = path.join(process.cwd(), 'src/data/db.json');
 
@@ -107,6 +108,29 @@ export interface BlogData {
   description: string;
   readTime: string;
   slug: string;
+  content?: string;
+}
+
+export interface SEOData {
+  siteTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  canonicalUrl: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string;
+  twitterTitle: string;
+  twitterDescription: string;
+}
+
+export interface SettingsData {
+  siteName: string;
+  logoUrl: string;
+  faviconUrl: string;
+  googleAnalyticsId: string;
+  enableTrialForm: boolean;
+  enableWhatsAppWidget: boolean;
+  adminRole: 'super_admin' | 'editor';
 }
 
 export interface DatabaseSchema {
@@ -121,23 +145,79 @@ export interface DatabaseSchema {
   contact: ContactData;
   faqs: FAQData[];
   blogs: BlogData[];
+  seo?: SEOData;
+  settings?: SettingsData;
 }
 
+let inMemoryCache: DatabaseSchema | null = null;
+
+// Synchronous read from memory cache or local db.json
 export function readDB(): DatabaseSchema {
+  if (inMemoryCache) {
+    return inMemoryCache;
+  }
   try {
     const fileContent = fs.readFileSync(DB_PATH, 'utf-8');
-    return JSON.parse(fileContent);
+    const data = JSON.parse(fileContent);
+    inMemoryCache = data;
+    return data;
   } catch (error) {
     console.error('Error reading database file:', error);
+    if (inMemoryCache) return inMemoryCache;
     throw new Error('Could not read data from database');
   }
 }
 
+// Async read: fetches from Supabase if configured, otherwise falls back to readDB()
+export async function getDBAsync(): Promise<DatabaseSchema> {
+  if (isSupabaseConfigured() && supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('content_store')
+        .select('data')
+        .eq('id', 'main')
+        .single();
+
+      if (data && data.data && !error) {
+        inMemoryCache = data.data as DatabaseSchema;
+        return inMemoryCache;
+      }
+    } catch (e) {
+      console.warn('Supabase fetch failed, falling back to local storage:', e);
+    }
+  }
+  return readDB();
+}
+
+// Synchronous/Safe write to memory cache and local db.json (gracefully handling Vercel EROFS)
 export function writeDB(data: DatabaseSchema): void {
+  inMemoryCache = data;
   try {
     fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
   } catch (error) {
-    console.error('Error writing database file:', error);
-    throw new Error('Could not write data to database');
+    console.warn('Local file system write skipped (Vercel read-only or permission error):', error);
+  }
+}
+
+// Async write: updates memory cache, attempts local db.json write, and syncs directly to Supabase cloud
+export async function writeDBAsync(data: DatabaseSchema): Promise<void> {
+  writeDB(data);
+
+  if (isSupabaseConfigured() && supabase) {
+    try {
+      const { error } = await supabase
+        .from('content_store')
+        .upsert({
+          id: 'main',
+          data: data,
+          updated_at: new Date().toISOString(),
+        });
+
+      if (error) {
+        console.error('Error writing to Supabase content_store:', error);
+      }
+    } catch (e) {
+      console.error('Failed to sync to Supabase:', e);
+    }
   }
 }

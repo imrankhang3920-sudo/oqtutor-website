@@ -3,34 +3,47 @@ import crypto from 'crypto';
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'; // Default fallback
+const EDITOR_USERNAME = process.env.EDITOR_USERNAME || 'editor';
+const EDITOR_PASSWORD = process.env.EDITOR_PASSWORD || 'editor123';
 const TOKEN_SECRET = process.env.TOKEN_SECRET || 'oqtutor_token_secret_key_12345';
 
-export function verifyAdminToken(token: string): boolean {
+export interface AdminPayload {
+  username: string;
+  role: 'super_admin' | 'editor';
+  exp: number;
+}
+
+export function verifyAdminTokenPayload(token: string): AdminPayload | null {
   try {
     const [payload, signature] = token.split('.');
-    if (!payload || !signature) return false;
+    if (!payload || !signature) return null;
     
     const expectedSignature = crypto
       .createHmac('sha256', TOKEN_SECRET)
       .update(payload)
       .digest('hex');
       
-    if (signature !== expectedSignature) return false;
+    if (signature !== expectedSignature) return null;
     
-    const decoded = JSON.parse(Buffer.from(payload, 'base64').toString('utf-8'));
+    const decoded: AdminPayload = JSON.parse(Buffer.from(payload, 'base64').toString('utf-8'));
     
-    // Check expiration (valid for 24 hours)
-    if (Date.now() > decoded.exp) return false;
+    // Check expiration (24 hours)
+    if (Date.now() > decoded.exp) return null;
     
-    return decoded.username === ADMIN_USERNAME;
+    return decoded;
   } catch {
-    return false;
+    return null;
   }
 }
 
-export function generateAdminToken(): string {
-  const payload = {
-    username: ADMIN_USERNAME,
+export function verifyAdminToken(token: string): boolean {
+  return verifyAdminTokenPayload(token) !== null;
+}
+
+export function generateAdminToken(username: string, role: 'super_admin' | 'editor' = 'super_admin'): string {
+  const payload: AdminPayload = {
+    username,
+    role,
     exp: Date.now() + 24 * 60 * 60 * 1000, // 24 hours
   };
   
@@ -49,6 +62,18 @@ export function isAdminAuthorized(req: NextRequest): boolean {
   return verifyAdminToken(token);
 }
 
-export function checkCredentials(username: string, password: string): boolean {
-  return username === ADMIN_USERNAME && password === ADMIN_PASSWORD;
+export function getAdminUserFromReq(req: NextRequest): AdminPayload | null {
+  const token = req.cookies.get('admin_token')?.value;
+  if (!token) return null;
+  return verifyAdminTokenPayload(token);
+}
+
+export function checkCredentials(username: string, password: string): { valid: boolean; role: 'super_admin' | 'editor' } {
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    return { valid: true, role: 'super_admin' };
+  }
+  if (username === EDITOR_USERNAME && password === EDITOR_PASSWORD) {
+    return { valid: true, role: 'editor' };
+  }
+  return { valid: false, role: 'editor' };
 }

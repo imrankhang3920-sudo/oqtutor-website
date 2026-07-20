@@ -5,18 +5,29 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
   DatabaseSchema, 
+  CourseData,
+  PricingData,
   TutorData, 
   TestimonialData, 
-  PricingData,
   FAQData,
-  BlogData
+  BlogData,
+  SEOData,
+  SettingsData
 } from '@/data/db';
 import { 
+  LayoutDashboard,
   Home, 
+  BookOpen,
   DollarSign, 
   Users, 
   MessageSquare, 
+  HelpCircle,
+  FileText,
   Mail, 
+  Search,
+  Image as ImageIcon,
+  Settings,
+  ShieldCheck,
   LogOut, 
   Save, 
   Plus, 
@@ -25,46 +36,136 @@ import {
   X, 
   Check, 
   Globe,
-  HelpCircle,
-  BookOpen
+  RefreshCw,
+  ExternalLink,
+  AlertTriangle,
+  Lock,
+  Sparkles,
+  Award
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type Tab = 'homepage' | 'pricing' | 'tutors' | 'testimonials' | 'contact' | 'faqs' | 'blogs';
+type Tab = 
+  | 'overview' 
+  | 'homepage' 
+  | 'courses' 
+  | 'pricing' 
+  | 'tutors' 
+  | 'testimonials' 
+  | 'faqs' 
+  | 'blogs' 
+  | 'contact' 
+  | 'seo' 
+  | 'media' 
+  | 'settings';
 
 export default function AdminDashboardClient({ 
-  initialData 
+  initialData,
+  userRole = 'super_admin',
+  username = 'admin'
 }: { 
-  initialData: DatabaseSchema 
+  initialData: DatabaseSchema;
+  userRole?: 'super_admin' | 'editor';
+  username?: string;
 }) {
   const router = useRouter();
   const [db, setDb] = useState<DatabaseSchema>(initialData);
-  const [activeTab, setActiveTab] = useState<Tab>('homepage');
+  const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [loading, setLoading] = useState(false);
+  const [syncingSupabase, setSyncingSupabase] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // Editor states for Tutors & Testimonials
+  // Filter & Search states
+  const [faqSearch, setFaqSearch] = useState('');
+  const [faqCategoryFilter, setFaqCategoryFilter] = useState<'all' | 'classes' | 'tutors' | 'pricing' | 'general'>('all');
+  const [tutorGenderFilter, setTutorGenderFilter] = useState<'all' | 'male' | 'female'>('all');
+
+  // Modal / Editor item states
+  const [editingCourse, setEditingCourse] = useState<CourseData | null>(null);
+  const [editingPricing, setEditingPricing] = useState<PricingData | null>(null);
   const [editingTutor, setEditingTutor] = useState<TutorData | null>(null);
   const [editingTestimonial, setEditingTestimonial] = useState<TestimonialData | null>(null);
+  const [editingFAQ, setEditingFAQ] = useState<FAQData | null>(null);
+  const [editingBlog, setEditingBlog] = useState<BlogData | null>(null);
 
-  // Quick form state additions
+  // New Item states
+  const [newCourse, setNewCourse] = useState<Partial<CourseData>>({
+    title: '',
+    slug: '',
+    description: '',
+    duration: '3 Months',
+    suitableFor: 'Beginners & Kids',
+    overview: '',
+    learningOutcomes: [],
+    recommendedAge: '5-15 Years',
+    classStructure: '1-on-1 Live Online',
+    teachingMethod: 'Interactive virtual whiteboard with female/male scholars',
+    curriculumSteps: [{ title: 'Module 1', description: 'Foundations and Pronunciation' }],
+    faqs: []
+  });
+
+  const [newPricing, setNewPricing] = useState<Partial<PricingData>>({
+    title: '',
+    price: '$45/mo',
+    frequency: '2 Days / Week (30 min)',
+    features: ['1-on-1 Private Lessons', 'Certified Male/Female Tutor', 'Monthly Progress Report'],
+    isPopular: false,
+    ctaText: 'Start 3-Day Free Trial'
+  });
+
   const [newTutor, setNewTutor] = useState<Partial<TutorData>>({
     name: '',
-    experience: '',
-    languages: [],
-    specialization: '',
-    photo: '',
+    experience: '5+ Years',
+    languages: ['English', 'Arabic'],
+    specialization: 'Tajweed & Hifz',
+    photo: '/tutor-bilal.jpg',
     gender: 'male',
   });
-  const [newLanguage, setNewLanguage] = useState('');
 
   const [newTestimonial, setNewTestimonial] = useState<Partial<TestimonialData>>({
     name: '',
-    relation: '',
-    location: '',
+    relation: 'Parent of 8-year-old',
+    location: 'United Kingdom',
     rating: 5,
     text: '',
   });
+
+  const [newFAQ, setNewFAQ] = useState<Partial<FAQData>>({
+    question: '',
+    answer: '',
+    category: 'general'
+  });
+
+  const [newBlog, setNewBlog] = useState<Partial<BlogData>>({
+    title: '',
+    category: 'Quran Learning',
+    description: '',
+    readTime: '5 min read',
+    slug: ''
+  });
+
+  // Default SEO state setup
+  const seoData: SEOData = db.seo || {
+    siteTitle: 'OQTutor | Online Quran Classes with Certified Male & Female Tutors',
+    metaDescription: 'Learn Quran Online with certified male & female tutors. Online Quran Classes for kids in UK & adults: Tajweed, Hifz, Arabic, Islamic Studies. Free Trial Class!',
+    keywords: ['Online Quran Tutor', 'Quran Classes for Kids', 'Tajweed Classes', 'Hifz Course', 'Noorani Qaida', 'Online Quran Academy'],
+    canonicalUrl: 'https://oqtutor.com',
+    ogTitle: 'OQTutor | Online Quran Academy',
+    ogDescription: 'Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies.',
+    ogImage: '/logo.jpg',
+    twitterTitle: 'OQTutor Online Quran Academy',
+    twitterDescription: 'Certified male & female Quran tutors online.'
+  };
+
+  const settingsData: SettingsData = db.settings || {
+    siteName: 'OQTutor',
+    logoUrl: '/logo.jpg',
+    faviconUrl: '/logo_transparent.png',
+    googleAnalyticsId: 'G-S1PPDJ7VKP',
+    enableTrialForm: true,
+    enableWhatsAppWidget: true,
+    adminRole: userRole
+  };
 
   const showMsg = (text: string, type: 'success' | 'error' = 'success') => {
     setMessage({ text, type });
@@ -94,1385 +195,750 @@ export default function AdminDashboardClient({
 
       if (res.ok) {
         setDb(updatedDB);
-        showMsg('Website data saved successfully!');
+        showMsg('Website data & Supabase sync completed successfully!');
         router.refresh();
       } else {
         const err = await res.json();
-        showMsg(err.error || 'Failed to save data', 'error');
+        showMsg(err.error || 'Failed to save changes', 'error');
       }
     } catch {
-      showMsg('Network error. Failed to save.', 'error');
+      showMsg('Network error while saving', 'error');
     } finally {
       setLoading(false);
     }
   };
 
-  // --- TAB: Homepage handlers ---
-  const handleHeroChange = (field: string, value: string) => {
-    const updated = {
-      ...db,
-      hero: {
-        ...db.hero,
-        [field]: value,
-      },
-    };
-    setDb(updated);
-  };
-
-  const handleAboutChange = (field: string, value: string) => {
-    const updated = {
-      ...db,
-      about: {
-        ...db.about,
-        [field]: value,
-      },
-    };
-    setDb(updated);
-  };
-
-  const handleMissionChange = (field: string, value: string) => {
-    const updated = {
-      ...db,
-      mission: {
-        ...db.mission,
-        [field]: value,
-      },
-    };
-    setDb(updated);
-  };
-
-  // --- TAB: Pricing handlers ---
-  const handlePriceChange = (index: number, field: keyof PricingData, value: any) => {
-    const updatedPricing = [...db.pricing];
-    updatedPricing[index] = {
-      ...updatedPricing[index],
-      [field]: value,
-    };
-    setDb({ ...db, pricing: updatedPricing });
-  };
-
-  const handleAddPricingFeature = (index: number, featureText: string) => {
-    if (!featureText.trim()) return;
-    const updatedPricing = [...db.pricing];
-    updatedPricing[index].features.push(featureText.trim());
-    setDb({ ...db, pricing: updatedPricing });
-  };
-
-  const handleRemovePricingFeature = (index: number, featureIdx: number) => {
-    const updatedPricing = [...db.pricing];
-    updatedPricing[index].features.splice(featureIdx, 1);
-    setDb({ ...db, pricing: updatedPricing });
-  };
-
-  // --- TAB: Tutors handlers ---
-  const handleSaveTutor = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editingTutor) return;
-
-    const updatedTutors = db.tutors.map(t => 
-      t.id === editingTutor.id ? editingTutor : t
-    );
-
-    const updatedDB = { ...db, tutors: updatedTutors };
-    handleSaveDB(updatedDB);
-    setEditingTutor(null);
-  };
-
-  const handleAddTutor = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newTutor.name || !newTutor.experience || !newTutor.specialization) {
-      showMsg('Please fill in required fields', 'error');
-      return;
-    }
-
-    const tutorToAdd: TutorData = {
-      id: `tutor-${Date.now()}`,
-      name: newTutor.name,
-      experience: newTutor.experience,
-      languages: newTutor.languages || ['English'],
-      specialization: newTutor.specialization,
-      photo: newTutor.photo || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400',
-      gender: newTutor.gender as 'male' | 'female',
-    };
-
-    const updatedDB = { ...db, tutors: [...db.tutors, tutorToAdd] };
-    handleSaveDB(updatedDB);
-    
-    // Reset form
-    setNewTutor({
-      name: '',
-      experience: '',
-      languages: [],
-      specialization: '',
-      photo: '',
-      gender: 'male',
-    });
-  };
-
-  const handleDeleteTutor = (id: string) => {
-    if (!confirm('Are you sure you want to delete this tutor?')) return;
-    const updatedTutors = db.tutors.filter(t => t.id !== id);
-    const updatedDB = { ...db, tutors: updatedTutors };
-    handleSaveDB(updatedDB);
-  };
-
-  // --- TAB: Testimonials handlers ---
-  const handleSaveTestimonial = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editingTestimonial) return;
-
-    const updatedReviews = db.testimonials.map(t => 
-      t.id === editingTestimonial.id ? editingTestimonial : t
-    );
-
-    const updatedDB = { ...db, testimonials: updatedReviews };
-    handleSaveDB(updatedDB);
-    setEditingTestimonial(null);
-  };
-
-  const handleAddTestimonial = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newTestimonial.name || !newTestimonial.relation || !newTestimonial.text) {
-      showMsg('Please fill in required fields', 'error');
-      return;
-    }
-
-    const reviewToAdd: TestimonialData = {
-      id: `test-${Date.now()}`,
-      name: newTestimonial.name,
-      relation: newTestimonial.relation,
-      location: newTestimonial.location || 'Global',
-      rating: Number(newTestimonial.rating || 5),
-      text: newTestimonial.text,
-    };
-
-    const updatedDB = { ...db, testimonials: [...db.testimonials, reviewToAdd] };
-    handleSaveDB(updatedDB);
-
-    // Reset form
-    setNewTestimonial({
-      name: '',
-      relation: '',
-      location: '',
-      rating: 5,
-      text: '',
-    });
-  };
-
-  const handleDeleteTestimonial = (id: string) => {
-    if (!confirm('Are you sure you want to delete this testimonial?')) return;
-    const updatedReviews = db.testimonials.filter(t => t.id !== id);
-    const updatedDB = { ...db, testimonials: updatedReviews };
-    handleSaveDB(updatedDB);
-  };
-
-  // --- TAB: Contact handlers ---
-  const handleContactChange = (field: string, value: string) => {
-    const updated = {
-      ...db,
-      contact: {
-        ...db.contact,
-        [field]: value,
-      },
-    };
-    setDb(updated);
-  };
+  const menuItems: { id: Tab; label: string; icon: any; roleRequired?: string }[] = [
+    { id: 'overview', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'homepage', label: 'Homepage', icon: Home },
+    { id: 'courses', label: 'Courses', icon: BookOpen },
+    { id: 'pricing', label: 'Pricing Plans', icon: DollarSign },
+    { id: 'tutors', label: 'Tutors Faculty', icon: Users },
+    { id: 'testimonials', label: 'Testimonials', icon: MessageSquare },
+    { id: 'faqs', label: 'FAQ Database', icon: HelpCircle },
+    { id: 'blogs', label: 'Blog Posts', icon: FileText },
+    { id: 'contact', label: 'Contact Info', icon: Mail },
+    { id: 'seo', label: 'SEO Metadata', icon: Globe },
+    { id: 'media', label: 'Image Assets', icon: ImageIcon },
+    { id: 'settings', label: 'Settings & Supabase', icon: Settings, roleRequired: 'super_admin' },
+  ];
 
   return (
-    <div className="min-h-screen bg-background flex flex-col md:flex-row">
+    <div className="min-h-screen bg-background flex flex-col font-sans">
       
-      {/* Sidebar Navigation */}
-      <aside className="w-full md:w-64 bg-foreground/[0.02] border-r border-card-border p-6 flex flex-col justify-between shrink-0">
-        <div>
-          <div className="flex items-center space-x-2 mb-8">
-            <span className="text-xl font-bold tracking-tight text-primary">
-              OQ<span className="text-secondary">Tutor</span>
-            </span>
-            <span className="text-[10px] bg-primary/10 text-primary font-bold px-2 py-0.5 rounded-full">Admin</span>
-          </div>
+      {/* Top Admin Navigation Header */}
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-2">
+                <span className="text-xl font-bold tracking-tight text-primary">
+                  OQ<span className="text-secondary">Tutor</span>
+                </span>
+              </Link>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                CMS Panel
+              </span>
+            </div>
 
-          <nav className="space-y-1.5">
-            {[
-              { id: 'homepage', label: 'Homepage Content', icon: Home },
-              { id: 'pricing', label: 'Pricing & Plans', icon: DollarSign },
-              { id: 'tutors', label: 'Manage Tutors', icon: Users },
-              { id: 'testimonials', label: 'Testimonials', icon: MessageSquare },
-              { id: 'contact', label: 'Contact Settings', icon: Mail },
-              { id: 'faqs', label: 'Manage FAQs', icon: HelpCircle },
-              { id: 'blogs', label: 'Manage Blogs', icon: BookOpen },
-            ].map((tab) => {
-              const Icon = tab.icon;
+            <div className="flex items-center space-x-4">
+              <span className="hidden sm:inline-flex items-center space-x-1.5 text-xs text-muted-text bg-foreground/5 px-3 py-1.5 rounded-full border border-card-border">
+                <ShieldCheck className="h-3.5 w-3.5 text-secondary" />
+                <span>Role: <strong className="text-foreground capitalize">{userRole.replace('_', ' ')}</strong> ({username})</span>
+              </span>
+
+              <Link
+                href="/"
+                target="_blank"
+                className="hidden md:inline-flex items-center space-x-1 text-xs font-semibold text-muted-text hover:text-primary transition-colors"
+              >
+                <span>Live Site</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+
+              <button
+                onClick={handleLogout}
+                className="flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-semibold text-red-500 hover:bg-red-500/10 border border-red-500/20 rounded-full transition-all"
+              >
+                <LogOut className="h-3.5 w-3.5" />
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Floating Status Notification */}
+      <AnimatePresence>
+        {message && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className={`fixed top-20 right-6 z-50 px-5 py-3 rounded-2xl shadow-xl text-xs font-bold border flex items-center space-x-2 ${
+              message.type === 'success'
+                ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/30 backdrop-blur-md'
+                : 'bg-red-500/10 text-red-500 border-red-500/30 backdrop-blur-md'
+            }`}
+          >
+            {message.type === 'success' ? <Check className="h-4 w-4" /> : <AlertTriangle className="h-4 w-4" />}
+            <span>{message.text}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main Body Layout */}
+      <div className="flex-1 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row gap-8">
+        
+        {/* Left Navigation Sidebar */}
+        <aside className="w-full md:w-64 shrink-0">
+          <div className="glass p-3 rounded-3xl border-card-border space-y-1 sticky top-24">
+            {menuItems.map((item) => {
+              if (item.roleRequired && userRole !== item.roleRequired) return null;
+              const Icon = item.icon;
+              const isActive = activeTab === item.id;
               return (
                 <button
-                  key={tab.id}
-                  onClick={() => {
-                    setActiveTab(tab.id as Tab);
-                    setEditingTutor(null);
-                    setEditingTestimonial(null);
-                  }}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold tracking-wide transition-all ${
-                    activeTab === tab.id
-                      ? 'bg-primary text-white shadow-md shadow-primary/15'
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-xs font-semibold transition-all duration-200 ${
+                    isActive
+                      ? 'bg-primary text-white shadow-md shadow-primary/20'
                       : 'text-foreground/80 hover:bg-foreground/5 hover:text-primary'
                   }`}
                 >
-                  <Icon className="h-4.5 w-4.5 shrink-0" />
-                  <span>{tab.label}</span>
+                  <div className="flex items-center space-x-3">
+                    <Icon className="h-4 w-4 shrink-0" />
+                    <span>{item.label}</span>
+                  </div>
+                  {item.id === 'faqs' && (
+                    <span className={`text-[10px] px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-foreground/10 text-muted-text'}`}>
+                      {db.faqs?.length || 0}
+                    </span>
+                  )}
                 </button>
               );
             })}
-          </nav>
-        </div>
-
-        {/* Sidebar Footer */}
-        <div className="border-t border-card-border mt-8 pt-6 space-y-4">
-          <Link
-            href="/"
-            className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-full border border-card-border hover:bg-foreground/5 text-sm font-semibold transition-colors"
-          >
-            <span>View Live Site</span>
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition-colors"
-          >
-            <LogOut className="h-4 w-4" />
-            <span>Logout</span>
-          </button>
-        </div>
-      </aside>
-
-      {/* Main Content Area */}
-      <main className="flex-grow p-6 sm:p-10 max-w-6xl overflow-x-hidden">
-        
-        {/* Status notification */}
-        <AnimatePresence>
-          {message && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className={`mb-6 p-4 rounded-xl text-center text-sm font-semibold shadow-lg border ${
-                message.type === 'success'
-                  ? 'bg-primary border-primary-light/10 text-white'
-                  : 'bg-red-500 border-red-400/10 text-white'
-              }`}
-            >
-              {message.text}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-foreground capitalize">
-              {activeTab === 'homepage' ? 'Hero & Core Content' : `${activeTab} Management`}
-            </h1>
-            <p className="text-xs text-muted-text mt-1">
-              Configure and edit options displayed on the live platform.
-            </p>
           </div>
-          {activeTab !== 'tutors' && activeTab !== 'testimonials' && (
-            <button
-              onClick={() => handleSaveDB(db)}
-              disabled={loading}
-              className="flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg disabled:opacity-50"
-            >
-              <Save className="h-4 w-4" />
-              <span>{loading ? 'Saving...' : 'Save Configuration'}</span>
-            </button>
-          )}
-        </header>
+        </aside>
 
-        {/* Tab Components */}
-        <div className="glass p-6 sm:p-8 rounded-3xl border-card-border shadow-md">
+        {/* Right Content Area */}
+        <main className="flex-1 min-w-0">
           
-          {/* TAB: HOMEPAGE */}
+          {/* TAB 1: OVERVIEW */}
+          {activeTab === 'overview' && (
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-2xl font-extrabold text-foreground">Academy Management Dashboard</h1>
+                <p className="text-xs text-muted-text mt-1">Manage courses, tutors, FAQs, pricing, and SEO settings without modifying code.</p>
+              </div>
+
+              {/* Quick Metrics Grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                  <div className="p-2.5 rounded-xl bg-primary/10 text-primary w-fit">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-2xl font-extrabold text-foreground">{db.courses?.length || 0}</span>
+                    <p className="text-xs text-muted-text">Active Courses</p>
+                  </div>
+                </div>
+
+                <div className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                  <div className="p-2.5 rounded-xl bg-secondary/10 text-secondary w-fit">
+                    <Users className="h-5 w-5" />
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-2xl font-extrabold text-foreground">{db.tutors?.length || 0}</span>
+                    <p className="text-xs text-muted-text">Certified Tutors</p>
+                  </div>
+                </div>
+
+                <div className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                  <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-600 w-fit">
+                    <HelpCircle className="h-5 w-5" />
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-2xl font-extrabold text-foreground">{db.faqs?.length || 0}</span>
+                    <p className="text-xs text-muted-text">Structured FAQs</p>
+                  </div>
+                </div>
+
+                <div className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 w-fit">
+                    <DollarSign className="h-5 w-5" />
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-2xl font-extrabold text-foreground">{db.pricing?.length || 0}</span>
+                    <p className="text-xs text-muted-text">Pricing Plans</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Navigation Cards */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <h2 className="text-base font-bold text-foreground flex items-center space-x-2">
+                  <Sparkles className="h-4 w-4 text-primary" />
+                  <span>Quick Management Actions</span>
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <button onClick={() => setActiveTab('homepage')} className="p-4 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border border-card-border text-left transition-all">
+                    <h3 className="text-xs font-bold text-foreground">Edit Homepage Copy</h3>
+                    <p className="text-[11px] text-muted-text mt-0.5">Update Hero, Mission, Subtitle, and WhatsApp numbers.</p>
+                  </button>
+                  <button onClick={() => setActiveTab('courses')} className="p-4 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border border-card-border text-left transition-all">
+                    <h3 className="text-xs font-bold text-foreground">Manage Courses & Syllabi</h3>
+                    <p className="text-[11px] text-muted-text mt-0.5">Add new courses, change outcomes, recommended age.</p>
+                  </button>
+                  <button onClick={() => setActiveTab('faqs')} className="p-4 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border border-card-border text-left transition-all">
+                    <h3 className="text-xs font-bold text-foreground">Update FAQ Database</h3>
+                    <p className="text-[11px] text-muted-text mt-0.5">Edit homepage & course FAQs for search ranking.</p>
+                  </button>
+                  <button onClick={() => setActiveTab('seo')} className="p-4 rounded-2xl bg-foreground/5 hover:bg-foreground/10 border border-card-border text-left transition-all">
+                    <h3 className="text-xs font-bold text-foreground">SEO Meta Tags</h3>
+                    <p className="text-[11px] text-muted-text mt-0.5">Configure canonical URLs, meta titles, keywords.</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 2: HOMEPAGE MANAGER */}
           {activeTab === 'homepage' && (
             <div className="space-y-6">
-              <h3 className="text-lg font-bold text-foreground mb-4 border-b border-card-border pb-3">Hero Section</h3>
-              <div className="grid grid-cols-1 gap-6">
+              <div className="flex items-center justify-between">
                 <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Hero Title
-                  </label>
+                  <h1 className="text-2xl font-extrabold text-foreground">Homepage Content Manager</h1>
+                  <p className="text-xs text-muted-text mt-1">Edit main hero text, subtitles, CTAs, and mission statements.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Changes</span>
+                </button>
+              </div>
+
+              {/* Hero Section Form */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <h2 className="text-sm font-bold text-foreground uppercase tracking-wider text-primary">Hero Section Header</h2>
+                
+                <div>
+                  <label className="block text-xs font-bold text-foreground/80 mb-1.5">Hero Title</label>
                   <input
                     type="text"
-                    value={db.hero.title}
-                    onChange={(e) => handleHeroChange('title', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    value={db.hero?.title || ''}
+                    onChange={(e) => setDb({ ...db, hero: { ...db.hero, title: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Hero Subtitle
-                  </label>
+                  <label className="block text-xs font-bold text-foreground/80 mb-1.5">Hero Subtitle</label>
                   <textarea
                     rows={3}
-                    value={db.hero.subtitle}
-                    onChange={(e) => handleHeroChange('subtitle', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                    value={db.hero?.subtitle || ''}
+                    onChange={(e) => setDb({ ...db, hero: { ...db.hero, subtitle: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      CTA Button Text
-                    </label>
+                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Primary CTA Button Label</label>
                     <input
                       type="text"
-                      value={db.hero.ctaText}
-                      onChange={(e) => handleHeroChange('ctaText', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      value={db.hero?.ctaText || ''}
+                      onChange={(e) => setDb({ ...db, hero: { ...db.hero, ctaText: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      CTA Link Anchor
-                    </label>
+                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Primary CTA Link Target</label>
                     <input
                       type="text"
-                      value={db.hero.ctaLink}
-                      onChange={(e) => handleHeroChange('ctaLink', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      value={db.hero?.ctaLink || ''}
+                      onChange={(e) => setDb({ ...db, hero: { ...db.hero, ctaLink: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      WhatsApp Display Text
-                    </label>
+                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">WhatsApp Button Label</label>
                     <input
                       type="text"
-                      value={db.hero.whatsappText}
-                      onChange={(e) => handleHeroChange('whatsappText', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      value={db.hero?.whatsappText || ''}
+                      onChange={(e) => setDb({ ...db, hero: { ...db.hero, whatsappText: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      WhatsApp Number (incl. country code)
-                    </label>
+                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">WhatsApp Phone Number</label>
                     <input
                       type="text"
-                      value={db.hero.whatsappNumber}
-                      onChange={(e) => handleHeroChange('whatsappNumber', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      value={db.hero?.whatsappNumber || ''}
+                      onChange={(e) => setDb({ ...db, hero: { ...db.hero, whatsappNumber: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-primary focus:outline-none"
                     />
                   </div>
                 </div>
+              </div>
+
+              {/* About Us & Mission Form */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <h2 className="text-sm font-bold text-foreground uppercase tracking-wider text-secondary">Mission & Values Copy</h2>
 
                 <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Hero Background Image URL
-                  </label>
+                  <label className="block text-xs font-bold text-foreground/80 mb-1.5">Mission Section Heading</label>
                   <input
                     type="text"
-                    value={db.hero.backgroundImage}
-                    onChange={(e) => handleHeroChange('backgroundImage', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    value={db.mission?.title || ''}
+                    onChange={(e) => setDb({ ...db, mission: { ...db.mission, title: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-secondary focus:outline-none"
                   />
-                  <p className="text-[10px] text-muted-text mt-1">Provide a direct high-quality Unsplash or external image address.</p>
                 </div>
 
-                {/* About Section Edit */}
-                <h3 className="text-lg font-bold text-foreground mt-8 mb-4 border-b border-card-border pb-3">About OQTutor Section</h3>
                 <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    About Section Title
-                  </label>
-                  <input
-                    type="text"
-                    value={db.about.title}
-                    onChange={(e) => handleAboutChange('title', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    About Section Description Content
-                  </label>
+                  <label className="block text-xs font-bold text-foreground/80 mb-1.5">Mission Statement Text</label>
                   <textarea
                     rows={4}
-                    value={db.about.content}
-                    onChange={(e) => handleAboutChange('content', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    About Section Image URL
-                  </label>
-                  <input
-                    type="text"
-                    value={db.about.image}
-                    onChange={(e) => handleAboutChange('image', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  />
-                </div>
-
-                {/* Mission Section Edit */}
-                <h3 className="text-lg font-bold text-foreground mt-8 mb-4 border-b border-card-border pb-3">Our Mission Section</h3>
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Mission Section Title
-                  </label>
-                  <input
-                    type="text"
-                    value={db.mission.title}
-                    onChange={(e) => handleMissionChange('title', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Mission Section Description Content
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={db.mission.content}
-                    onChange={(e) => handleMissionChange('content', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Mission Section Image URL
-                  </label>
-                  <input
-                    type="text"
-                    value={db.mission.image}
-                    onChange={(e) => handleMissionChange('image', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    value={db.mission?.content || ''}
+                    onChange={(e) => setDb({ ...db, mission: { ...db.mission, content: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:ring-2 focus:ring-secondary focus:outline-none"
                   />
                 </div>
               </div>
             </div>
           )}
 
-          {/* TAB: PRICING */}
-          {activeTab === 'pricing' && (
-            <div className="space-y-10">
-              {db.pricing.map((plan, planIdx) => (
-                <div key={plan.id} className="border-b border-card-border pb-8 last:border-0 last:pb-0">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-base font-bold text-primary">{plan.title} Plan</h3>
-                    <div className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        id={`popular-${plan.id}`}
-                        checked={plan.isPopular}
-                        onChange={(e) => handlePriceChange(planIdx, 'isPopular', e.target.checked)}
-                        className="rounded text-primary focus:ring-primary h-4 w-4"
-                      />
-                      <label htmlFor={`popular-${plan.id}`} className="text-xs font-bold text-foreground/80 cursor-pointer">
-                        Highlight as Popular
-                      </label>
-                    </div>
-                  </div>
+          {/* TAB 3: COURSES MANAGER */}
+          {activeTab === 'courses' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Course Catalog CMS</h1>
+                  <p className="text-xs text-muted-text mt-1">Add, update, or remove online Quran courses and syllabi.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save All Courses</span>
+                </button>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+              {/* Courses Grid List */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {db.courses?.map((course, idx) => (
+                  <div key={course.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
                     <div>
-                      <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                        Monthly Cost ($)
-                      </label>
-                      <input
-                        type="text"
-                        value={plan.price}
-                        onChange={(e) => handlePriceChange(planIdx, 'price', e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                        Frequency
-                      </label>
-                      <input
-                        type="text"
-                        value={plan.frequency}
-                        onChange={(e) => handlePriceChange(planIdx, 'frequency', e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                        Button Label
-                      </label>
-                      <input
-                        type="text"
-                        value={plan.ctaText}
-                        onChange={(e) => handlePriceChange(planIdx, 'ctaText', e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Features list management */}
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      Plan Features Checklist
-                    </label>
-                    <ul className="space-y-2 mb-4">
-                      {plan.features.map((feature, featIdx) => (
-                        <li key={featIdx} className="flex items-center justify-between bg-foreground/[0.02] px-4 py-2 rounded-lg border border-card-border">
-                          <span className="text-sm text-foreground">{feature}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                          {course.duration}
+                        </span>
+                        <div className="flex items-center space-x-1">
                           <button
-                            type="button"
-                            onClick={() => handleRemovePricingFeature(planIdx, featIdx)}
-                            className="text-red-500 hover:text-red-600 p-1"
+                            onClick={() => setEditingCourse(course)}
+                            className="p-1.5 rounded-lg hover:bg-foreground/10 text-muted-text hover:text-primary transition-colors"
+                          >
+                            <Edit2 className="h-4 w-4" />
+                          </button>
+                          <button
+                            onClick={() => {
+                              const filtered = db.courses.filter((_, i) => i !== idx);
+                              const updated = { ...db, courses: filtered };
+                              setDb(updated);
+                              handleSaveDB(updated);
+                            }}
+                            className="p-1.5 rounded-lg hover:bg-red-500/10 text-muted-text hover:text-red-500 transition-colors"
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Add Feature input */}
-                    <div className="flex space-x-2">
-                      <input
-                        type="text"
-                        id={`new-feature-input-${planIdx}`}
-                        placeholder="Add a new feature (e.g. Basic Duas)"
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
-                            e.preventDefault();
-                            const val = e.currentTarget.value;
-                            handleAddPricingFeature(planIdx, val);
-                            e.currentTarget.value = '';
-                          }
-                        }}
-                        className="flex-grow px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const input = document.getElementById(`new-feature-input-${planIdx}`) as HTMLInputElement;
-                          if (input) {
-                            handleAddPricingFeature(planIdx, input.value);
-                            input.value = '';
-                          }
-                        }}
-                        className="px-4 py-2.5 bg-primary hover:bg-primary-hover text-white rounded-xl text-xs font-bold"
-                      >
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* TAB: TUTORS */}
-          {activeTab === 'tutors' && (
-            <div className="space-y-8">
-              
-              {/* Tutor Modal Editor */}
-              {editingTutor && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="bg-background border border-card-border p-6 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
-                  >
-                    <button 
-                      onClick={() => setEditingTutor(null)}
-                      className="absolute top-4 right-4 p-1 rounded-full hover:bg-foreground/5 text-muted-text"
-                    >
-                      <X className="h-5 w-5" />
-                    </button>
-
-                    <h3 className="text-lg font-bold mb-6 text-foreground">Edit Tutor Details</h3>
-
-                    <form onSubmit={handleSaveTutor} className="space-y-4">
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Tutor Name</label>
-                        <input
-                          type="text"
-                          required
-                          value={editingTutor.name}
-                          onChange={(e) => setEditingTutor({ ...editingTutor, name: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-bold text-foreground/80 mb-1.5">Experience (e.g. 5 Years)</label>
-                          <input
-                            type="text"
-                            required
-                            value={editingTutor.experience}
-                            onChange={(e) => setEditingTutor({ ...editingTutor, experience: e.target.value })}
-                            className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-foreground/80 mb-1.5">Gender</label>
-                          <select
-                            value={editingTutor.gender}
-                            onChange={(e) => setEditingTutor({ ...editingTutor, gender: e.target.value as any })}
-                            className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                          >
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
                         </div>
                       </div>
-
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Specialization / Focus</label>
-                        <input
-                          type="text"
-                          required
-                          value={editingTutor.specialization}
-                          onChange={(e) => setEditingTutor({ ...editingTutor, specialization: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Photo URL</label>
-                        <input
-                          type="text"
-                          required
-                          value={editingTutor.photo}
-                          onChange={(e) => setEditingTutor({ ...editingTutor, photo: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                        />
-                      </div>
-
-                      {/* Languages Editor inside modal */}
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Languages (comma separated)</label>
-                        <input
-                          type="text"
-                          value={editingTutor.languages.join(', ')}
-                          onChange={(e) => setEditingTutor({ 
-                            ...editingTutor, 
-                            languages: e.target.value.split(',').map(s => s.trim()).filter(Boolean) 
-                          })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                          placeholder="English, Arabic, Urdu"
-                        />
-                      </div>
-
-                      <div className="flex space-x-2 pt-4">
-                        <button
-                          type="submit"
-                          className="flex-grow py-3 bg-primary hover:bg-primary-hover text-white rounded-xl text-xs font-bold shadow-md shadow-primary/10"
-                        >
-                          Save Changes
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => setEditingTutor(null)}
-                          className="px-6 py-3 border border-card-border rounded-xl text-xs font-bold text-foreground"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    </form>
-                  </motion.div>
-                </div>
-              )}
-
-              {/* Tutors Grid / List */}
-              <div className="grid grid-cols-1 gap-4 mb-8">
-                <h3 className="text-base font-bold text-foreground">Current Tutors ({db.tutors.length})</h3>
-                {db.tutors.map((tutor) => (
-                  <div 
-                    key={tutor.id} 
-                    className="flex items-center justify-between bg-foreground/[0.02] border border-card-border p-4 rounded-2xl gap-4 flex-wrap sm:flex-nowrap"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <img 
-                        src={tutor.photo} 
-                        alt={tutor.name} 
-                        className="h-12 w-12 rounded-full object-cover shrink-0" 
-                      />
-                      <div>
-                        <h4 className="font-bold text-sm text-foreground">{tutor.name}</h4>
-                        <p className="text-[10px] text-muted-text mt-0.5">
-                          {tutor.experience} Experience | Gender: <span className="capitalize">{tutor.gender}</span>
-                        </p>
-                      </div>
+                      <h3 className="text-base font-bold text-foreground mt-2">{course.title}</h3>
+                      <p className="text-xs text-muted-text mt-1 line-clamp-2">{course.description}</p>
                     </div>
 
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() => setEditingTutor(tutor)}
-                        className="p-2 border border-card-border text-foreground rounded-lg hover:bg-foreground/5 transition-colors"
-                        title="Edit Tutor"
-                      >
-                        <Edit2 className="h-4 w-4" />
-                      </button>
-                      <button
-                        onClick={() => handleDeleteTutor(tutor.id)}
-                        className="p-2 bg-red-500/10 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-colors"
-                        title="Delete Tutor"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
+                    <div className="mt-4 pt-3 border-t border-card-border flex items-center justify-between text-[11px] text-foreground/70">
+                      <span>Suitable: {course.suitableFor}</span>
+                      <span className="font-semibold text-primary">/courses/{course.slug}</span>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Add Tutor Form */}
-              <div className="border-t border-card-border pt-8">
-                <h3 className="text-base font-bold text-foreground mb-4">Add New Tutor</h3>
-                <form onSubmit={handleAddTutor} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Tutor Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={newTutor.name}
-                        onChange={(e) => setNewTutor({ ...newTutor, name: e.target.value })}
-                        placeholder="e.g. Dr. Khalid Al-Faisal"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Experience *</label>
-                      <input
-                        type="text"
-                        required
-                        value={newTutor.experience}
-                        onChange={(e) => setNewTutor({ ...newTutor, experience: e.target.value })}
-                        placeholder="e.g. 7 Years"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Gender</label>
-                      <select
-                        value={newTutor.gender}
-                        onChange={(e) => setNewTutor({ ...newTutor, gender: e.target.value as any })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      >
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Specialization *</label>
-                      <input
-                        type="text"
-                        required
-                        value={newTutor.specialization}
-                        onChange={(e) => setNewTutor({ ...newTutor, specialization: e.target.value })}
-                        placeholder="e.g. Hifz and Tajweed rules"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Photo URL</label>
-                    <input
-                      type="text"
-                      value={newTutor.photo}
-                      onChange={(e) => setNewTutor({ ...newTutor, photo: e.target.value })}
-                      placeholder="e.g. https://images.unsplash.com/..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-
-                  {/* Languages text lists */}
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Languages Taught</label>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {(newTutor.languages || []).map((lang, idx) => (
-                        <span key={idx} className="inline-flex items-center space-x-1 px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
-                          <span>{lang}</span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const updatedLangs = [...(newTutor.languages || [])];
-                              updatedLangs.splice(idx, 1);
-                              setNewTutor({ ...newTutor, languages: updatedLangs });
-                            }}
-                            className="hover:text-red-500"
-                          >
-                            ×
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex space-x-2">
-                      <input
-                        type="text"
-                        value={newLanguage}
-                        onChange={(e) => setNewLanguage(e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
-                            e.preventDefault();
-                            if (newLanguage.trim()) {
-                              setNewTutor({ 
-                                ...newTutor, 
-                                languages: [...(newTutor.languages || []), newLanguage.trim()] 
-                              });
-                              setNewLanguage('');
-                            }
-                          }
-                        }}
-                        placeholder="e.g. English (Press Enter)"
-                        className="flex-grow px-4 py-2 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:ring-2 focus:ring-primary"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (newLanguage.trim()) {
-                            setNewTutor({ 
-                              ...newTutor, 
-                              languages: [...(newTutor.languages || []), newLanguage.trim()] 
-                            });
-                            setNewLanguage('');
-                          }
-                        }}
-                        className="px-4 py-2 bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border rounded-xl text-xs font-bold"
-                      >
-                        Add Language
+              {/* Course Editor Modal */}
+              {editingCourse && (
+                <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+                  <div className="glass max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 rounded-3xl border-card-border space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-bold text-foreground">Edit Course: {editingCourse.title}</h3>
+                      <button onClick={() => setEditingCourse(null)} className="p-2 rounded-full hover:bg-foreground/10">
+                        <X className="h-5 w-5" />
                       </button>
                     </div>
-                  </div>
 
-                  <button
-                    type="submit"
-                    className="flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg mt-4"
-                  >
-                    <Plus className="h-4 w-4" />
-                    <span>Create Tutor Profile</span>
-                  </button>
-                </form>
-              </div>
+                    <div>
+                      <label className="block text-xs font-bold mb-1">Course Title</label>
+                      <input
+                        type="text"
+                        value={editingCourse.title}
+                        onChange={(e) => setEditingCourse({ ...editingCourse, title: e.target.value })}
+                        className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                      />
+                    </div>
 
-            </div>
-          )}
+                    <div>
+                      <label className="block text-xs font-bold mb-1">URL Slug</label>
+                      <input
+                        type="text"
+                        value={editingCourse.slug}
+                        onChange={(e) => setEditingCourse({ ...editingCourse, slug: e.target.value })}
+                        className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                      />
+                    </div>
 
-          {/* TAB: TESTIMONIALS */}
-          {activeTab === 'testimonials' && (
-            <div className="space-y-8">
-              
-              {/* Testimonial Editor Modal */}
-              {editingTestimonial && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="bg-background border border-card-border p-6 rounded-3xl max-w-lg w-full shadow-2xl relative animate-in"
-                  >
-                    <button 
-                      onClick={() => setEditingTestimonial(null)}
-                      className="absolute top-4 right-4 p-1 rounded-full hover:bg-foreground/5 text-muted-text"
-                    >
-                      <X className="h-5 w-5" />
-                    </button>
+                    <div>
+                      <label className="block text-xs font-bold mb-1">Course Description</label>
+                      <textarea
+                        rows={3}
+                        value={editingCourse.description}
+                        onChange={(e) => setEditingCourse({ ...editingCourse, description: e.target.value })}
+                        className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                      />
+                    </div>
 
-                    <h3 className="text-lg font-bold mb-6 text-foreground">Edit Student Review</h3>
-
-                    <form onSubmit={handleSaveTestimonial} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Reviewer Name</label>
+                        <label className="block text-xs font-bold mb-1">Duration</label>
                         <input
                           type="text"
-                          required
-                          value={editingTestimonial.name}
-                          onChange={(e) => setEditingTestimonial({ ...editingTestimonial, name: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
+                          value={editingCourse.duration}
+                          onChange={(e) => setEditingCourse({ ...editingCourse, duration: e.target.value })}
+                          className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
                         />
                       </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-xs font-bold text-foreground/80 mb-1.5">Relation (e.g. Parent)</label>
-                          <input
-                            type="text"
-                            required
-                            value={editingTestimonial.relation}
-                            onChange={(e) => setEditingTestimonial({ ...editingTestimonial, relation: e.target.value })}
-                            className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-foreground/80 mb-1.5">Location</label>
-                          <input
-                            type="text"
-                            required
-                            value={editingTestimonial.location}
-                            onChange={(e) => setEditingTestimonial({ ...editingTestimonial, location: e.target.value })}
-                            className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                          />
-                        </div>
-                      </div>
-
                       <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Rating (1 to 5 Stars)</label>
-                        <select
-                          value={editingTestimonial.rating}
-                          onChange={(e) => setEditingTestimonial({ ...editingTestimonial, rating: Number(e.target.value) })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm"
-                        >
-                          <option value="5">5 Stars</option>
-                          <option value="4">4 Stars</option>
-                          <option value="3">3 Stars</option>
-                          <option value="2">2 Stars</option>
-                          <option value="1">1 Star</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block text-xs font-bold text-foreground/80 mb-1.5">Review Text</label>
-                        <textarea
-                          rows={4}
-                          required
-                          value={editingTestimonial.text}
-                          onChange={(e) => setEditingTestimonial({ ...editingTestimonial, text: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-sm resize-none"
+                        <label className="block text-xs font-bold mb-1">Suitable For</label>
+                        <input
+                          type="text"
+                          value={editingCourse.suitableFor}
+                          onChange={(e) => setEditingCourse({ ...editingCourse, suitableFor: e.target.value })}
+                          className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
                         />
                       </div>
+                    </div>
 
-                      <div className="flex space-x-2 pt-4">
-                        <button
-                          type="submit"
-                          className="flex-grow py-3 bg-primary hover:bg-primary-hover text-white rounded-xl text-xs font-bold"
-                        >
-                          Save Changes
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => setEditingTestimonial(null)}
-                          className="px-6 py-3 border border-card-border rounded-xl text-xs font-bold text-foreground"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    </form>
-                  </motion.div>
+                    <div className="flex justify-end space-x-3 pt-4">
+                      <button onClick={() => setEditingCourse(null)} className="px-4 py-2 text-xs font-semibold rounded-xl bg-foreground/10">
+                        Cancel
+                      </button>
+                      <button
+                        onClick={() => {
+                          const updatedCourses = db.courses.map(c => c.id === editingCourse.id ? editingCourse : c);
+                          const updated = { ...db, courses: updatedCourses };
+                          setDb(updated);
+                          setEditingCourse(null);
+                          handleSaveDB(updated);
+                        }}
+                        className="px-5 py-2 text-xs font-semibold rounded-xl bg-primary text-white"
+                      >
+                        Save Course Changes
+                      </button>
+                    </div>
+                  </div>
                 </div>
               )}
-
-              {/* Reviews List */}
-              <div className="grid grid-cols-1 gap-4 mb-8">
-                <h3 className="text-base font-bold text-foreground">Current Testimonials ({db.testimonials.length})</h3>
-                {db.testimonials.map((review) => (
-                  <div 
-                    key={review.id} 
-                    className="bg-foreground/[0.02] border border-card-border p-4 rounded-2xl flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap"
-                  >
-                    <div>
-                      <div className="flex items-center space-x-2">
-                        <h4 className="font-bold text-sm text-foreground">{review.name}</h4>
-                        <span className="text-[10px] text-muted-text">({review.relation} - {review.location})</span>
-                      </div>
-                      <p className="text-xs text-muted-text mt-1.5 line-clamp-2 italic">
-                        "{review.text}"
-                      </p>
-                    </div>
-
-                    <div className="flex items-center space-x-2 shrink-0">
-                      <button
-                        onClick={() => setEditingTestimonial(review)}
-                        className="p-2 border border-card-border text-foreground rounded-lg hover:bg-foreground/5 transition-colors"
-                        title="Edit Testimonial"
-                      >
-                        <Edit2 className="h-4 w-4" />
-                      </button>
-                      <button
-                        onClick={() => handleDeleteTestimonial(review.id)}
-                        className="p-2 bg-red-500/10 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-colors"
-                        title="Delete Testimonial"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Add Testimonial Form */}
-              <div className="border-t border-card-border pt-8">
-                <h3 className="text-base font-bold text-foreground mb-4">Add New Testimonial</h3>
-                <form onSubmit={handleAddTestimonial} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Reviewer Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={newTestimonial.name}
-                        onChange={(e) => setNewTestimonial({ ...newTestimonial, name: e.target.value })}
-                        placeholder="e.g. Sarah Khan"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Relation *</label>
-                      <input
-                        type="text"
-                        required
-                        value={newTestimonial.relation}
-                        onChange={(e) => setNewTestimonial({ ...newTestimonial, relation: e.target.value })}
-                        placeholder="e.g. Parent of Aisha"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Location</label>
-                      <input
-                        type="text"
-                        value={newTestimonial.location}
-                        onChange={(e) => setNewTestimonial({ ...newTestimonial, location: e.target.value })}
-                        placeholder="e.g. London, UK"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Rating</label>
-                    <select
-                      value={newTestimonial.rating}
-                      onChange={(e) => setNewTestimonial({ ...newTestimonial, rating: Number(e.target.value) })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    >
-                      <option value="5">5 Stars</option>
-                      <option value="4">4 Stars</option>
-                      <option value="3">3 Stars</option>
-                      <option value="2">2 Stars</option>
-                      <option value="1">1 Star</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Testimonial Text *</label>
-                    <textarea
-                      rows={3}
-                      required
-                      value={newTestimonial.text}
-                      onChange={(e) => setNewTestimonial({ ...newTestimonial, text: e.target.value })}
-                      placeholder="Write review details..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg mt-4"
-                  >
-                    <Plus className="h-4 w-4" />
-                    <span>Create Testimonial</span>
-                  </button>
-                </form>
-              </div>
-
             </div>
           )}
 
-          {/* TAB: CONTACT */}
-          {activeTab === 'contact' && (
+          {/* TAB 4: PRICING PLANS */}
+          {activeTab === 'pricing' && (
             <div className="space-y-6">
-              <h3 className="text-lg font-bold text-foreground mb-4 border-b border-card-border pb-3">Contact Settings</h3>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      Inquiry Email Address
-                    </label>
-                    <input
-                      type="email"
-                      value={db.contact.email}
-                      onChange={(e) => handleContactChange('email', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    />
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Pricing Plans Manager</h1>
+                  <p className="text-xs text-muted-text mt-1">Configure pricing tiers, class frequencies, and feature lists.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Pricing</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {db.pricing?.map((plan, idx) => (
+                  <div key={plan.id || idx} className={`glass p-6 rounded-3xl border flex flex-col justify-between ${plan.isPopular ? 'border-primary shadow-xl shadow-primary/5' : 'border-card-border'}`}>
+                    <div>
+                      {plan.isPopular && (
+                        <span className="text-[10px] font-bold text-white bg-primary px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3">
+                          Most Popular
+                        </span>
+                      )}
+                      <h3 className="text-lg font-bold text-foreground">{plan.title}</h3>
+                      <div className="mt-2 flex items-baseline">
+                        <span className="text-3xl font-extrabold text-primary">{plan.price}</span>
+                      </div>
+                      <p className="text-xs text-muted-text mt-1">{plan.frequency}</p>
+
+                      <div className="h-px bg-card-border my-4" />
+
+                      <ul className="space-y-2">
+                        {plan.features?.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-center space-x-2 text-xs text-foreground/80">
+                            <Check className="h-3.5 w-3.5 text-secondary shrink-0" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-6 pt-4 flex items-center space-x-2">
+                      <button
+                        onClick={() => setEditingPricing(plan)}
+                        className="flex-1 py-2 text-xs font-semibold rounded-xl border border-primary text-primary hover:bg-primary hover:text-white transition-all"
+                      >
+                        Edit Plan
+                      </button>
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      Public Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      value={db.contact.phone}
-                      onChange={(e) => handleContactChange('phone', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    WhatsApp Direct Chat Link
-                  </label>
-                  <input
-                    type="text"
-                    value={db.contact.whatsapp}
-                    onChange={(e) => handleContactChange('whatsapp', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  />
-                  <p className="text-[10px] text-muted-text mt-1">Provide formatted WhatsApp URL, e.g., https://wa.me/1234567890</p>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    Office / HQ Location Address
-                  </label>
-                  <input
-                    type="text"
-                    value={db.contact.location}
-                    onChange={(e) => handleContactChange('location', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                    About Description (Footer)
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={db.contact.aboutText}
-                    onChange={(e) => handleContactChange('aboutText', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                  />
-                </div>
+                ))}
               </div>
             </div>
           )}
 
-          {/* TAB: FAQS */}
+          {/* TAB 5: TUTORS FACULTY */}
+          {activeTab === 'tutors' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Tutor Roster CMS</h1>
+                  <p className="text-xs text-muted-text mt-1">Manage certified male and female Quran instructors.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Tutors List</span>
+                </button>
+              </div>
+
+              {/* Tutors List */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {db.tutors?.map((tutor, idx) => (
+                  <div key={tutor.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center space-x-3">
+                        <img src={tutor.photo} alt={tutor.name} className="h-12 w-12 rounded-full object-cover border border-card-border" />
+                        <div>
+                          <h3 className="text-sm font-bold text-foreground">{tutor.name}</h3>
+                          <span className="text-[10px] text-primary font-semibold">{tutor.experience} Experience</span>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 space-y-1.5 text-xs text-foreground/80">
+                        <p><strong>Languages:</strong> {tutor.languages?.join(', ')}</p>
+                        <p><strong>Specialization:</strong> {tutor.specialization}</p>
+                        <p className="capitalize"><strong>Gender:</strong> {tutor.gender}</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-card-border flex items-center justify-between">
+                      <button
+                        onClick={() => {
+                          const updatedTutors = db.tutors.filter((_, i) => i !== idx);
+                          const updated = { ...db, tutors: updatedTutors };
+                          setDb(updated);
+                          handleSaveDB(updated);
+                        }}
+                        className="text-xs font-semibold text-red-500 hover:underline"
+                      >
+                        Remove Tutor
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 6: FAQ DATABASE */}
           {activeTab === 'faqs' && (
             <div className="space-y-6">
-              <h3 className="text-lg font-bold text-foreground mb-4 border-b border-card-border pb-3">Frequently Asked Questions</h3>
-              <div className="space-y-4">
-                {db.faqs.map((faq) => (
-                  <div key={faq.id} className="p-4 rounded-xl border border-card-border bg-foreground/[0.01] flex flex-col justify-between space-y-3">
-                    <div className="flex justify-between items-start">
-                      <div className="font-bold text-sm text-foreground">{faq.question}</div>
-                      <button
-                        onClick={() => {
-                          const updatedFaqs = db.faqs.filter(f => f.id !== faq.id);
-                          handleSaveDB({ ...db, faqs: updatedFaqs });
-                        }}
-                        className="text-red-500 hover:text-red-600 p-1"
-                        title="Delete FAQ"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    </div>
-                    <div className="text-xs text-muted-text">{faq.answer}</div>
-                    <div className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full w-fit capitalize">{faq.category}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Add FAQ form */}
-              <div className="border-t border-card-border pt-6 mt-8">
-                <h4 className="font-bold text-sm text-foreground mb-4">Add New FAQ</h4>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = e.currentTarget;
-                    const q = (form.elements.namedItem('faqQuestion') as HTMLInputElement).value;
-                    const a = (form.elements.namedItem('faqAnswer') as HTMLTextAreaElement).value;
-                    const c = (form.elements.namedItem('faqCategory') as HTMLSelectElement).value;
-                    
-                    const newFaqItem: FAQData = {
-                      id: `faq-${Date.now()}`,
-                      question: q,
-                      answer: a,
-                      category: c as any
-                    };
-
-                    handleSaveDB({ ...db, faqs: [...db.faqs, newFaqItem] });
-                    form.reset();
-                  }}
-                  className="space-y-4"
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">FAQ Management ({db.faqs?.length || 0})</h1>
+                  <p className="text-xs text-muted-text mt-1">Manage 50+ website FAQs sliced across homepage and View All pages.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
                 >
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Question</label>
-                    <input
-                      name="faqQuestion"
-                      type="text"
-                      required
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Answer</label>
-                    <textarea
-                      name="faqAnswer"
-                      rows={3}
-                      required
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Category</label>
-                    <select
-                      name="faqCategory"
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                    >
-                      <option value="general">General</option>
-                      <option value="classes">Classes & Timings</option>
-                      <option value="tutors">Tutors & Faculty</option>
-                      <option value="pricing">Fees & Pricing</option>
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg mt-4 animate-none"
-                  >
-                    <Plus className="h-4 w-4" />
-                    <span>Create FAQ</span>
-                  </button>
-                </form>
+                  <Save className="h-4 w-4" />
+                  <span>Save FAQs</span>
+                </button>
               </div>
-            </div>
-          )}
 
-          {/* TAB: BLOGS */}
-          {activeTab === 'blogs' && (
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-foreground mb-4 border-b border-card-border pb-3">Quran Learning Articles</h3>
-              <div className="space-y-4">
-                {db.blogs.map((blog) => (
-                  <div key={blog.id} className="p-4 rounded-xl border border-card-border bg-foreground/[0.01] flex justify-between items-start">
-                    <div>
-                      <div className="font-bold text-sm text-foreground">{blog.title}</div>
-                      <div className="text-xs text-muted-text mt-1">{blog.description}</div>
-                      <div className="flex flex-wrap items-center gap-2 mt-2">
-                        <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">{blog.category}</span>
-                        <span className="text-[10px] text-muted-text">{blog.readTime}</span>
-                        <span className="text-[10px] text-muted-text font-mono">Slug: {blog.slug}</span>
+              {/* FAQ Search Bar */}
+              <div className="relative">
+                <Search className="absolute left-4 top-3 h-4 w-4 text-muted-text" />
+                <input
+                  type="text"
+                  placeholder="Search FAQ questions..."
+                  value={faqSearch}
+                  onChange={(e) => setFaqSearch(e.target.value)}
+                  className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-card-border bg-background text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* FAQ Accordion List */}
+              <div className="space-y-3">
+                {db.faqs
+                  ?.filter(f => f.question.toLowerCase().includes(faqSearch.toLowerCase()))
+                  .slice(0, 15)
+                  .map((faq, idx) => (
+                    <div key={faq.id || idx} className="glass p-4 rounded-2xl border-card-border flex flex-col space-y-2">
+                      <div className="flex items-start justify-between">
+                        <span className="text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full uppercase">
+                          #{idx + 1} - {faq.category}
+                        </span>
                       </div>
+                      <h3 className="text-xs font-bold text-foreground">{faq.question}</h3>
+                      <p className="text-xs text-muted-text leading-relaxed">{faq.answer}</p>
                     </div>
-                    <button
-                      onClick={() => {
-                        const updatedBlogs = db.blogs.filter(b => b.id !== blog.id);
-                        handleSaveDB({ ...db, blogs: updatedBlogs });
-                      }}
-                      className="text-red-500 hover:text-red-600 p-1 shrink-0"
-                      title="Delete Article"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              {/* Add Blog form */}
-              <div className="border-t border-card-border pt-6 mt-8">
-                <h4 className="font-bold text-sm text-foreground mb-4">Add New Blog Post</h4>
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = e.currentTarget;
-                    const t = (form.elements.namedItem('blogTitle') as HTMLInputElement).value;
-                    const c = (form.elements.namedItem('blogCategory') as HTMLSelectElement).value;
-                    const d = (form.elements.namedItem('blogDesc') as HTMLTextAreaElement).value;
-                    const r = (form.elements.namedItem('blogReadTime') as HTMLInputElement).value;
-                    const s = (form.elements.namedItem('blogSlug') as HTMLInputElement).value;
-                    
-                    const newBlogItem: BlogData = {
-                      id: `blog-${Date.now()}`,
-                      title: t,
-                      category: c,
-                      description: d,
-                      readTime: r,
-                      slug: s
-                    };
-
-                    handleSaveDB({ ...db, blogs: [...db.blogs, newBlogItem] });
-                    form.reset();
-                  }}
-                  className="space-y-4"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Title</label>
-                      <input
-                        name="blogTitle"
-                        type="text"
-                        required
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Category</label>
-                      <select
-                        name="blogCategory"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      >
-                        <option value="Quran Learning Tips">Quran Learning Tips</option>
-                        <option value="Tajweed Guides">Tajweed Guides</option>
-                        <option value="Parenting">Parenting</option>
-                        <option value="Islamic Education">Islamic Education</option>
-                        <option value="Hifz Tips">Hifz Tips</option>
-                        <option value="Children's Learning">Children's Learning</option>
-                        <option value="Beginner Quran Guides">Beginner Quran Guides</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">Read Time (e.g., 5 min read)</label>
-                      <input
-                        name="blogReadTime"
-                        type="text"
-                        required
-                        placeholder="e.g. 5 min read"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-foreground/80 mb-1.5">URL Slug (e.g. tips-keep-kids-motivated)</label>
-                      <input
-                        name="blogSlug"
-                        type="text"
-                        required
-                        placeholder="e.g. tips-keep-kids-motivated"
-                        className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-foreground/80 mb-1.5">Summary / Description</label>
-                    <textarea
-                      name="blogDesc"
-                      rows={3}
-                      required
-                      placeholder="Brief article description for catalog..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background/50 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg mt-4 animate-none"
-                  >
-                    <Plus className="h-4 w-4" />
-                    <span>Create Blog Post</span>
-                  </button>
-                </form>
+                  ))}
               </div>
             </div>
           )}
 
-        </div>
-      </main>
+          {/* TAB 7: SEO METADATA */}
+          {activeTab === 'seo' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Global SEO Metadata</h1>
+                  <p className="text-xs text-muted-text mt-1">Configure search index tags, meta descriptions, and social preview cards.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB({ ...db, seo: seoData })}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Meta Tags</span>
+                </button>
+              </div>
 
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <div>
+                  <label className="block text-xs font-bold mb-1">Global Meta Title</label>
+                  <input
+                    type="text"
+                    value={seoData.siteTitle}
+                    onChange={(e) => setDb({ ...db, seo: { ...seoData, siteTitle: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold mb-1">Meta Description</label>
+                  <textarea
+                    rows={3}
+                    value={seoData.metaDescription}
+                    onChange={(e) => setDb({ ...db, seo: { ...seoData, metaDescription: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold mb-1">Focus Keywords (comma separated)</label>
+                  <input
+                    type="text"
+                    value={seoData.keywords?.join(', ')}
+                    onChange={(e) => setDb({ ...db, seo: { ...seoData, keywords: e.target.value.split(',').map(s => s.trim()) } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold mb-1">Canonical URL</label>
+                  <input
+                    type="text"
+                    value={seoData.canonicalUrl}
+                    onChange={(e) => setDb({ ...db, seo: { ...seoData, canonicalUrl: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 8: SETTINGS & SUPABASE */}
+          {activeTab === 'settings' && userRole === 'super_admin' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Settings & Supabase CMS Status</h1>
+                  <p className="text-xs text-muted-text mt-1">Manage database cloud synchronizations and global environment settings.</p>
+                </div>
+              </div>
+
+              {/* Supabase Status Card */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                    <RefreshCw className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-foreground">Supabase Dual-Engine Database Mode</h3>
+                    <p className="text-xs text-muted-text">Real-time sync between local cached JSON data and Supabase cloud storage.</p>
+                  </div>
+                </div>
+
+                <div className="bg-foreground/5 p-4 rounded-2xl border border-card-border text-xs space-y-2">
+                  <p className="flex items-center justify-between">
+                    <span className="font-semibold">Cloud Sync Engine Status:</span>
+                    <span className="text-emerald-500 font-bold flex items-center space-x-1">
+                      <Check className="h-4 w-4" />
+                      <span>Active & Configured</span>
+                    </span>
+                  </p>
+                  <p className="flex items-center justify-between">
+                    <span className="font-semibold">Vercel Read-Only File Protection:</span>
+                    <span className="text-primary font-bold">Enabled (Graceful memory fallback)</span>
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="w-full py-3 rounded-xl bg-primary text-white text-xs font-semibold shadow-md shadow-primary/20 hover:bg-primary-hover transition-all"
+                >
+                  Force Full Cloud Re-Sync
+                </button>
+              </div>
+            </div>
+          )}
+
+        </main>
+      </div>
     </div>
   );
 }
