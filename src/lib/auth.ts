@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 import crypto from 'crypto';
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'; // Default fallback
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'khan@3920'; // Default fallback
 const EDITOR_USERNAME = process.env.EDITOR_USERNAME || 'editor';
 const EDITOR_PASSWORD = process.env.EDITOR_PASSWORD || 'editor123';
 const TOKEN_SECRET = process.env.TOKEN_SECRET || 'oqtutor_token_secret_key_12345';
