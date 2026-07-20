@@ -134,11 +134,6 @@ export default function AdminLoginPage() {
               {loading ? 'Authenticating...' : 'Sign In'}
             </button>
           </form>
-
-          <div className="mt-6 text-center text-[10px] text-muted-text leading-relaxed">
-            <p>Default credentials (for demo verification):</p>
-            <p className="font-semibold text-foreground/80 mt-1">Username: <span className="text-primary font-bold">admin</span> | Password: <span className="text-secondary font-bold">khan@3920</span></p>
-          </div>
         </div>
       </div>
     </div>

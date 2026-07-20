@@ -72,54 +72,22 @@ export default function AdminDashboardClient({
   const [db, setDb] = useState<DatabaseSchema>(initialData);
   const [activeTab, setActiveTab] = useState<Tab>('overview');
   const [loading, setLoading] = useState(false);
-  const [syncingSupabase, setSyncingSupabase] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // Filter & Search states
+  // Search & Filters
   const [faqSearch, setFaqSearch] = useState('');
-  const [faqCategoryFilter, setFaqCategoryFilter] = useState<'all' | 'classes' | 'tutors' | 'pricing' | 'general'>('all');
-  const [tutorGenderFilter, setTutorGenderFilter] = useState<'all' | 'male' | 'female'>('all');
 
   // Modal / Editor item states
   const [editingCourse, setEditingCourse] = useState<CourseData | null>(null);
   const [editingPricing, setEditingPricing] = useState<PricingData | null>(null);
-  const [editingTutor, setEditingTutor] = useState<TutorData | null>(null);
-  const [editingTestimonial, setEditingTestimonial] = useState<TestimonialData | null>(null);
-  const [editingFAQ, setEditingFAQ] = useState<FAQData | null>(null);
-  const [editingBlog, setEditingBlog] = useState<BlogData | null>(null);
 
   // New Item states
-  const [newCourse, setNewCourse] = useState<Partial<CourseData>>({
+  const [newBlog, setNewBlog] = useState<Partial<BlogData>>({
     title: '',
-    slug: '',
+    category: 'Quran Learning',
     description: '',
-    duration: '3 Months',
-    suitableFor: 'Beginners & Kids',
-    overview: '',
-    learningOutcomes: [],
-    recommendedAge: '5-15 Years',
-    classStructure: '1-on-1 Live Online',
-    teachingMethod: 'Interactive virtual whiteboard with female/male scholars',
-    curriculumSteps: [{ title: 'Module 1', description: 'Foundations and Pronunciation' }],
-    faqs: []
-  });
-
-  const [newPricing, setNewPricing] = useState<Partial<PricingData>>({
-    title: '',
-    price: '$45/mo',
-    frequency: '2 Days / Week (30 min)',
-    features: ['1-on-1 Private Lessons', 'Certified Male/Female Tutor', 'Monthly Progress Report'],
-    isPopular: false,
-    ctaText: 'Start 3-Day Free Trial'
-  });
-
-  const [newTutor, setNewTutor] = useState<Partial<TutorData>>({
-    name: '',
-    experience: '5+ Years',
-    languages: ['English', 'Arabic'],
-    specialization: 'Tajweed & Hifz',
-    photo: '/tutor-bilal.jpg',
-    gender: 'male',
+    readTime: '5 min read',
+    slug: ''
   });
 
   const [newTestimonial, setNewTestimonial] = useState<Partial<TestimonialData>>({
@@ -128,20 +96,6 @@ export default function AdminDashboardClient({
     location: 'United Kingdom',
     rating: 5,
     text: '',
-  });
-
-  const [newFAQ, setNewFAQ] = useState<Partial<FAQData>>({
-    question: '',
-    answer: '',
-    category: 'general'
-  });
-
-  const [newBlog, setNewBlog] = useState<Partial<BlogData>>({
-    title: '',
-    category: 'Quran Learning',
-    description: '',
-    readTime: '5 min read',
-    slug: ''
   });
 
   // Default SEO state setup
@@ -155,16 +109,6 @@ export default function AdminDashboardClient({
     ogImage: '/logo.jpg',
     twitterTitle: 'OQTutor Online Quran Academy',
     twitterDescription: 'Certified male & female Quran tutors online.'
-  };
-
-  const settingsData: SettingsData = db.settings || {
-    siteName: 'OQTutor',
-    logoUrl: '/logo.jpg',
-    faviconUrl: '/logo_transparent.png',
-    googleAnalyticsId: 'G-S1PPDJ7VKP',
-    enableTrialForm: true,
-    enableWhatsAppWidget: true,
-    adminRole: userRole
   };
 
   const showMsg = (text: string, type: 'success' | 'error' = 'success') => {
@@ -778,7 +722,61 @@ export default function AdminDashboardClient({
             </div>
           )}
 
-          {/* TAB 6: FAQ DATABASE */}
+          {/* TAB 6: TESTIMONIALS MANAGER */}
+          {activeTab === 'testimonials' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Parent Reviews & Testimonials ({db.testimonials?.length || 0})</h1>
+                  <p className="text-xs text-muted-text mt-1">Manage parent reviews and student feedback displayed on homepage.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Testimonials</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {db.testimonials?.map((t, idx) => (
+                  <div key={t.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                          {'★'.repeat(t.rating)} ({t.rating}/5)
+                        </span>
+                        <button
+                          onClick={() => {
+                            const filtered = db.testimonials.filter((_, i) => i !== idx);
+                            const updated = { ...db, testimonials: filtered };
+                            setDb(updated);
+                            handleSaveDB(updated);
+                          }}
+                          className="p-1.5 rounded-lg hover:bg-red-500/10 text-muted-text hover:text-red-500 transition-colors"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-xs text-foreground/80 italic mt-3">"{t.text}"</p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-card-border flex items-center justify-between text-[11px]">
+                      <div>
+                        <p className="font-bold text-foreground">{t.name}</p>
+                        <p className="text-muted-text">{t.relation}</p>
+                      </div>
+                      <span className="font-semibold text-primary">{t.location}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 7: FAQ DATABASE */}
           {activeTab === 'faqs' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
@@ -828,7 +826,202 @@ export default function AdminDashboardClient({
             </div>
           )}
 
-          {/* TAB 7: SEO METADATA */}
+          {/* TAB 8: BLOG POSTS */}
+          {activeTab === 'blogs' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Blog Articles CMS ({db.blogs?.length || 0})</h1>
+                  <p className="text-xs text-muted-text mt-1">Publish, edit, or delete articles and guides.</p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => {
+                      const blog: BlogData = {
+                        id: `blog-${Date.now()}`,
+                        title: newBlog.title || 'New Quran Learning Article',
+                        category: newBlog.category || 'Quran Tips',
+                        description: newBlog.description || 'Comprehensive guide on Quran recitation.',
+                        readTime: newBlog.readTime || '5 min read',
+                        slug: newBlog.slug || `article-${Date.now()}`
+                      };
+                      const updated = { ...db, blogs: [blog, ...(db.blogs || [])] };
+                      setDb(updated);
+                      setNewBlog({ title: '', category: 'Quran Learning', description: '', readTime: '5 min read', slug: '' });
+                      handleSaveDB(updated);
+                    }}
+                    className="flex items-center space-x-1.5 px-4 py-2.5 rounded-full bg-secondary text-white text-xs font-semibold shadow-md"
+                  >
+                    <Plus className="h-4 w-4" />
+                    <span>Add Article</span>
+                  </button>
+                  <button
+                    onClick={() => handleSaveDB(db)}
+                    disabled={loading}
+                    className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                  >
+                    <Save className="h-4 w-4" />
+                    <span>Save Blogs</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Quick Add Form */}
+              <div className="glass p-5 rounded-3xl border-card-border space-y-3">
+                <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Quick Create New Blog</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  <input
+                    type="text"
+                    placeholder="Article Title"
+                    value={newBlog.title}
+                    onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Category (e.g. Tajweed)"
+                    value={newBlog.category}
+                    onChange={(e) => setNewBlog({ ...newBlog, category: e.target.value })}
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Read Time (e.g. 5 min read)"
+                    value={newBlog.readTime}
+                    onChange={(e) => setNewBlog({ ...newBlog, readTime: e.target.value })}
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                  <input
+                    type="text"
+                    placeholder="URL Slug (e.g. tajweed-tips-kids)"
+                    value={newBlog.slug}
+                    onChange={(e) => setNewBlog({ ...newBlog, slug: e.target.value })}
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+                <textarea
+                  rows={2}
+                  placeholder="Short description snippet..."
+                  value={newBlog.description}
+                  onChange={(e) => setNewBlog({ ...newBlog, description: e.target.value })}
+                  className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                />
+              </div>
+
+              {/* Blog Cards List */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {db.blogs?.map((blog, idx) => (
+                  <div key={blog.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full uppercase">
+                          {blog.category}
+                        </span>
+                        <div className="flex items-center space-x-1">
+                          <button
+                            onClick={() => {
+                              const filtered = db.blogs.filter((_, i) => i !== idx);
+                              const updated = { ...db, blogs: filtered };
+                              setDb(updated);
+                              handleSaveDB(updated);
+                            }}
+                            className="p-1.5 rounded-lg hover:bg-red-500/10 text-muted-text hover:text-red-500 transition-colors"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </button>
+                        </div>
+                      </div>
+                      <h3 className="text-sm font-bold text-foreground mt-2">{blog.title}</h3>
+                      <p className="text-xs text-muted-text mt-1 line-clamp-2">{blog.description}</p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-card-border flex items-center justify-between text-[11px] text-muted-text">
+                      <span>{blog.readTime}</span>
+                      <span className="font-semibold text-secondary">/blog/{blog.slug}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 9: CONTACT INFO */}
+          {activeTab === 'contact' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Contact Information Manager</h1>
+                  <p className="text-xs text-muted-text mt-1">Update primary academy email, phone number, WhatsApp link, and physical office address.</p>
+                </div>
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Contact Info</span>
+                </button>
+              </div>
+
+              <div className="glass p-6 rounded-3xl border-card-border space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold mb-1.5">Official Support Email</label>
+                    <input
+                      type="email"
+                      value={db.contact?.email || ''}
+                      onChange={(e) => setDb({ ...db, contact: { ...db.contact, email: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold mb-1.5">Phone Number</label>
+                    <input
+                      type="text"
+                      value={db.contact?.phone || ''}
+                      onChange={(e) => setDb({ ...db, contact: { ...db.contact, phone: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold mb-1.5">WhatsApp Direct Number / Link</label>
+                    <input
+                      type="text"
+                      value={db.contact?.whatsapp || ''}
+                      onChange={(e) => setDb({ ...db, contact: { ...db.contact, whatsapp: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold mb-1.5">Academy HQ Address / Location</label>
+                    <input
+                      type="text"
+                      value={db.contact?.location || ''}
+                      onChange={(e) => setDb({ ...db, contact: { ...db.contact, location: e.target.value } })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold mb-1.5">Footer About Text</label>
+                  <textarea
+                    rows={3}
+                    value={db.contact?.aboutText || ''}
+                    onChange={(e) => setDb({ ...db, contact: { ...db.contact, aboutText: e.target.value } })}
+                    className="w-full px-4 py-2.5 rounded-xl border border-card-border bg-background text-xs"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 10: SEO METADATA */}
           {activeTab === 'seo' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
@@ -890,7 +1083,43 @@ export default function AdminDashboardClient({
             </div>
           )}
 
-          {/* TAB 8: SETTINGS & SUPABASE */}
+          {/* TAB 11: IMAGE ASSET & MEDIA MANAGER */}
+          {activeTab === 'media' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Image Asset & Media Manager</h1>
+                  <p className="text-xs text-muted-text mt-1">Preview logos, favicons, course covers, and tutor profile pictures.</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { title: 'Brand Logo', url: '/logo.jpg', desc: 'Main Header & Footer Brand Emblem' },
+                  { title: 'Transparent Logo', url: '/logo_transparent.png', desc: 'Favicon & Transparent Overlay Logo' },
+                  { title: 'Mission Slide Image', url: '/mission-slide.png', desc: 'Homepage Our Mission Main Cover' },
+                  { title: 'Qari Bilal Photo', url: '/tutor-bilal.jpg', desc: 'Tutor Profile Photo' },
+                  { title: 'Sister Fatima Photo', url: '/tutor-female-icon-3.jpg', desc: 'Female Scholar Profile Photo' },
+                  { title: 'Qari Khaled Photo', url: '/tutor-khaled.jpg', desc: 'Male Scholar Profile Photo' },
+                ].map((asset, idx) => (
+                  <div key={idx} className="glass p-5 rounded-3xl border-card-border space-y-3">
+                    <div className="h-40 w-full rounded-2xl bg-foreground/5 overflow-hidden flex items-center justify-center border border-card-border relative">
+                      <img src={asset.url} alt={asset.title} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-foreground">{asset.title}</h3>
+                      <p className="text-[11px] text-muted-text mt-0.5">{asset.desc}</p>
+                      <code className="block mt-2 text-[10px] bg-foreground/5 px-2 py-1 rounded border border-card-border text-primary select-all">
+                        {asset.url}
+                      </code>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 12: SETTINGS & SUPABASE */}
           {activeTab === 'settings' && userRole === 'super_admin' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
