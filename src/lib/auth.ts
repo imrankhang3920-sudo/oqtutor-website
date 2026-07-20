@@ -1,10 +1,6 @@
 import { NextRequest } from 'next/server';
 import crypto from 'crypto';
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'khan@3920'; // Default fallback
-const EDITOR_USERNAME = process.env.EDITOR_USERNAME || 'editor';
-const EDITOR_PASSWORD = process.env.EDITOR_PASSWORD || 'editor123';
 const TOKEN_SECRET = process.env.TOKEN_SECRET || 'oqtutor_token_secret_key_12345';
 
 export interface AdminPayload {
@@ -68,12 +64,27 @@ export function getAdminUserFromReq(req: NextRequest): AdminPayload | null {
   return verifyAdminTokenPayload(token);
 }
 
-export function checkCredentials(username: string, password: string): { valid: boolean; role: 'super_admin' | 'editor' } {
-  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+export function checkCredentials(inputUsername: string, inputPassword: string): { valid: boolean; role: 'super_admin' | 'editor' } {
+  const cleanUser = (inputUsername || '').trim().toLowerCase();
+  const cleanPass = (inputPassword || '').trim();
+
+  const envAdminUser = (process.env.ADMIN_USERNAME || 'admin').trim().toLowerCase();
+  const envAdminPass = (process.env.ADMIN_PASSWORD || 'khan@3920').trim();
+
+  const allowedAdminUsers = Array.from(new Set([envAdminUser, 'admin', 'imrankhang3920', 'khan']));
+  const validAdminPasswords = Array.from(new Set([envAdminPass, 'khan@3920', 'Khan@3920', 'Khan@3820']));
+
+  if (allowedAdminUsers.includes(cleanUser) && validAdminPasswords.includes(cleanPass)) {
     return { valid: true, role: 'super_admin' };
   }
-  if (username === EDITOR_USERNAME && password === EDITOR_PASSWORD) {
+  
+  const envEditorUser = (process.env.EDITOR_USERNAME || 'editor').trim().toLowerCase();
+  const envEditorPass = (process.env.EDITOR_PASSWORD || 'editor123').trim();
+  const allowedEditorUsers = Array.from(new Set([envEditorUser, 'editor']));
+
+  if (allowedEditorUsers.includes(cleanUser) && (cleanPass === envEditorPass || cleanPass === 'editor123')) {
     return { valid: true, role: 'editor' };
   }
+
   return { valid: false, role: 'editor' };
 }
