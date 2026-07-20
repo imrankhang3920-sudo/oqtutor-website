@@ -2,46 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Compass, Award, Users, BookOpen, Globe, Laptop 
-} from 'lucide-react';
+import { Compass } from 'lucide-react';
 import { MissionData } from '@/data/db';
 import Image from 'next/image';
 
 export default function Mission({ data }: { data: MissionData }) {
-  const benefits = [
-    {
-      title: "Certified Male and Female Quran Teachers",
-      description: "Teachers with authentic Islamic knowledge and experience.",
-      icon: Award,
-      color: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20"
-    },
-    {
-      title: "One-on-One Online Quran Classes",
-      description: "Personal attention for kids, adults, and beginners.",
-      icon: Users,
-      color: "bg-blue-500/10 text-blue-600 border-blue-500/20"
-    },
-    {
-      title: "Complete Quran Learning Programs",
-      description: "Including Quran Reading, Tajweed, Noorani Qaida, Hifz, and Islamic Studies.",
-      icon: BookOpen,
-      color: "bg-amber-500/10 text-amber-600 border-amber-500/20"
-    },
-    {
-      title: "Flexible Quran Classes Worldwide",
-      description: "Convenient schedules for students in different countries and time zones.",
-      icon: Globe,
-      color: "bg-purple-500/10 text-purple-600 border-purple-500/20"
-    },
-    {
-      title: "Interactive Online Learning Experience",
-      description: "Virtual classrooms with progress tracking and regular feedback.",
-      icon: Laptop,
-      color: "bg-rose-500/10 text-rose-600 border-rose-500/20"
-    }
-  ];
-
   return (
     <section id="mission" className="py-20 md:py-28 relative overflow-hidden bg-background">
       {/* Decorative background vectors */}
@@ -50,8 +15,8 @@ export default function Mission({ data }: { data: MissionData }) {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* SECTION 1: OUR MISSION */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-28">
+        {/* OUR MISSION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Image Block (Left on desktop) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -114,54 +79,6 @@ export default function Mission({ data }: { data: MissionData }) {
               </p>
             </div>
           </motion.div>
-        </div>
-
-        {/* SECTION 2: WHY CHOOSE OQTUTOR */}
-        <div className="border-t border-card-border/60 pt-20">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 border border-secondary/20 rounded-full px-4.5 py-1.5 inline-block">
-              Academy Benefits
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-              Why Choose OQTutor Online Quran Academy?
-            </h2>
-            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-            <p className="mt-4 text-sm sm:text-base text-muted-text font-normal">
-              We stand out by delivering custom structured class packages, native bilingual scholars, and interactive learning tools.
-            </p>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, idx) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col items-start relative overflow-hidden group"
-                >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full translate-x-8 -translate-y-8 group-hover:scale-110 transition-transform duration-500" />
-                  
-                  {/* Floating Icon box */}
-                  <div className={`p-4 rounded-2xl border ${benefit.color} mb-6 shrink-0`}>
-                    <Icon className="h-6 w-6" />
-                  </div>
-
-                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {benefit.title}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
 
       </div>
