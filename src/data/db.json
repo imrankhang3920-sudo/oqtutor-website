@@ -1308,6 +1308,14 @@
   ],
   "blogs": [
     {
+      "id": "blog-usa-quran-classes",
+      "title": "Online Quran Classes USA: Learn the Quran Online with Certified Teachers",
+      "category": "Quran Learning Tips",
+      "description": "Comprehensive guide for Muslim families in the United States seeking qualified male and female online Quran tutors, Tajweed courses, and one-on-one Hifz programs.",
+      "readTime": "10 min read",
+      "slug": "online-quran-classes-usa"
+    },
+    {
       "id": "blog-1",
       "title": "7 Tips to Keep Kids Motivated in Online Quran Classes",
       "category": "Parenting",

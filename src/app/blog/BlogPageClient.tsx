@@ -156,7 +156,7 @@ export default function BlogPageClient({
                         <span>July 2026</span>
                       </span>
                       <Link
-                        href={`/contact`}
+                        href={`/blog/${blog.slug}`}
                         className="font-semibold text-primary hover:text-primary-hover flex items-center space-x-1"
                       >
                         <span>Read More</span>
