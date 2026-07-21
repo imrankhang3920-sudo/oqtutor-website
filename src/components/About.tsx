@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 import { AboutData } from '@/data/db';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function About({ data }: { data: AboutData }) {
   return (
     <section id="about" className="pt-10 pb-16 md:py-24 relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -30,14 +31,25 @@ export default function About({ data }: { data: AboutData }) {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-              {data.title}
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
+              About OQTutor – Trusted Online Quran Academy for Kids & Adults Worldwide
             </h2>
             <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
 
-            <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-              {data.content}
-            </p>
+            <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+              <p>
+                OQTutor is a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong> dedicated to providing high-quality <strong className="font-semibold text-foreground">Online Quran Classes</strong> for kids, adults, and new Muslims worldwide. We proudly serve students in the <strong className="font-semibold text-foreground">Online Quran Classes USA</strong>, <strong className="font-semibold text-foreground">Online Quran Classes UK</strong>, Canada, Australia, and many other countries through personalized one-to-one online Quran classes taught by experienced male and female <strong className="font-semibold text-foreground">Quran tutors</strong>.
+              </p>
+              <p>
+                Our qualified teachers specialize in <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, Quran Reading, <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>, <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz Quran</Link> (Quran Memorization), <strong className="font-semibold text-foreground">Islamic Studies</strong>, and Arabic Language. Every lesson is tailored to the student's age, learning level, and goals, creating an engaging, interactive, and effective learning experience.
+              </p>
+              <p>
+                At OQTutor, our mission is to make authentic Quran education accessible to every Muslim family. We offer flexible class schedules, affordable tuition plans, and a safe online learning environment where students can <strong className="font-semibold text-foreground">learn Quran online</strong> with confidence and build a lifelong connection with the Holy Quran.
+              </p>
+              <p>
+                Whether you are looking for <strong className="font-semibold text-foreground">Online Quran Classes for Kids</strong>, a qualified <strong className="font-semibold text-foreground">Online Quran Tutor</strong>, or a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong>, OQTutor is committed to helping every student achieve excellence in Quran learning through personalized one-to-one instruction.
+              </p>
+            </div>
 
             <div className="mt-8 grid grid-cols-2 gap-6 w-full max-w-md">
               <div className="p-4 bg-foreground/[0.02] border border-card-border rounded-2xl">
@@ -49,6 +61,26 @@ export default function About({ data }: { data: AboutData }) {
                 <span className="text-xs text-muted-text mt-1 block">Class Scheduling</span>
               </div>
             </div>
+
+            {/* Call To Action Block */}
+            <div className="mt-10 p-6 glass border border-primary/20 rounded-3xl bg-primary/5 w-full space-y-3">
+              <h3 className="text-lg font-bold text-foreground">
+                Start Your Quran Learning Journey Today
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                Join families around the world who trust OQTutor for professional Online Quran Classes. Book your Free Trial Class today and learn from experienced Quran tutors through personalized one-to-one lessons.
+              </p>
+              <div className="pt-2">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-xs font-semibold rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg transition-all duration-300"
+                >
+                  <span>Book Free Trial</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
           </motion.div>
 
           {/* Image Content */}
@@ -64,8 +96,8 @@ export default function About({ data }: { data: AboutData }) {
               <div className="absolute inset-0 border-2 border-secondary/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
               <div className="glass p-3 rounded-3xl border-card-border overflow-hidden shadow-2xl relative">
                 <Image
-                  src={data.image}
-                  alt="About Online Quran Tutor"
+                  src={data?.image || '/about-boy.png'}
+                  alt="About OQTutor – Trusted Online Quran Academy for Kids & Adults Worldwide"
                   width={450}
                   height={350}
                   loading="lazy"
