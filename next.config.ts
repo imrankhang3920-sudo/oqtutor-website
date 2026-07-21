@@ -96,6 +96,12 @@ const nextConfig: NextConfig = {
         destination: '/courses/:slug*',
         permanent: true,
       },
+      // 6. Legacy /cgi-bin requests redirect to homepage to prevent Vercel 403 response
+      {
+        source: '/cgi-bin/:slug*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
