@@ -67,6 +67,14 @@ export interface PricingData {
   ctaText: string;
 }
 
+export interface TutorReview {
+  studentName: string;
+  location: string;
+  rating: number;
+  date: string;
+  comment: string;
+}
+
 export interface TutorData {
   id: string;
   name: string;
@@ -75,6 +83,24 @@ export interface TutorData {
   specialization: string;
   photo: string;
   gender: 'male' | 'female';
+  country?: string;
+  countryFlag?: string;
+  rating?: number;
+  reviewsCount?: number;
+  hourlyRate?: number;
+  isOnline?: boolean;
+  isAvailableToday?: boolean;
+  subjects?: string[];
+  studentsTaught?: number;
+  lessonsCompleted?: number;
+  responseTime?: string;
+  nextAvailableSlot?: string;
+  bio?: string;
+  education?: string;
+  ijazahCertifications?: string[];
+  teachingStyle?: string;
+  videoUrl?: string;
+  reviewsList?: TutorReview[];
 }
 
 export interface TestimonialData {

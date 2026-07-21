@@ -874,101 +874,290 @@
   "tutors": [
     {
       "id": "tutor-1",
-      "name": "Muhammad Imran",
+      "name": "Qari Muhammad Imran",
       "experience": "10+ Years",
-      "languages": [
-        "Arabic",
-        "English"
-      ],
-      "specialization": "Hifz, Advanced Tajweed",
+      "languages": ["Arabic", "English"],
+      "specialization": "Hifz Program, Advanced Tajweed",
       "photo": "/tutor-ahmed.jpg",
-      "gender": "male"
+      "gender": "male",
+      "country": "Egypt",
+      "countryFlag": "🇪🇬",
+      "rating": 5.0,
+      "reviewsCount": 142,
+      "hourlyRate": 15,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": ["Hifz Program", "Tajweed Course", "Quran Reading"],
+      "studentsTaught": 210,
+      "lessonsCompleted": 4600,
+      "responseTime": "< 15 mins",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Certified Qari with an Ijazah in Hafs 'an 'Asim from Al-Azhar University. Specializes in guiding kids and adults through structured Quran memorization and precise Tajweed articulation.",
+      "education": "B.A. in Islamic Studies & Tajweed Sciences, Al-Azhar University, Cairo",
+      "ijazahCertifications": ["Ijazah Al-Qira'at Al-Ashr", "Sanad in Tajweed Rules", "Al-Azhar Teaching License"],
+      "teachingStyle": "Interactive, structured, and highly patient. Uses color-coded Mushafs and daily recitation revision routines to ensure long-term retention.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Tariq Mahmood",
+          "location": "Dallas, USA",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Qari Imran is an extraordinary teacher. My son completed 3 Juz with him in just 4 months with flawless Tajweed!"
+        },
+        {
+          "studentName": "Yousuf Ali",
+          "location": "London, UK",
+          "rating": 5,
+          "date": "1 month ago",
+          "comment": "Extremely punctual and patient. He knows exactly how to keep young boys focused during 30-minute online sessions."
+        }
+      ]
     },
     {
       "id": "tutor-2",
       "name": "Qaria Sumaira Younis",
       "experience": "8 Years",
-      "languages": [
-        "English",
-        "Urdu"
-      ],
+      "languages": ["English", "Urdu"],
       "specialization": "Noorani Qaida, Kids Islamic Studies",
       "photo": "/tutor-female-icon.jpg",
-      "gender": "female"
+      "gender": "female",
+      "country": "Pakistan",
+      "countryFlag": "🇵🇰",
+      "rating": 4.9,
+      "reviewsCount": 118,
+      "hourlyRate": 12,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": ["Noorani Qaida", "Islamic Studies", "Quran Reading"],
+      "studentsTaught": 185,
+      "lessonsCompleted": 3800,
+      "responseTime": "< 30 mins",
+      "nextAvailableSlot": "Today at 5:30 PM EST",
+      "bio": "Nurturing and experienced female tutor dedicated to teaching young toddlers and young girls basic Arabic letters, phonetics, daily Duas, and Islamic manners.",
+      "education": "Master's in Islamic Studies & Alimah Degree, Jamia Ashrafia",
+      "ijazahCertifications": ["Shahadat-ul-Alimiyyah", "Certificate in Early Childhood Islamic Pedagogy"],
+      "teachingStyle": "Uses fun digital flashcards, reward badges, prophetic stories, and gentle repetition to help kids fall in love with Quran learning.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Fatima Zahra",
+          "location": "Toronto, Canada",
+          "rating": 5,
+          "date": "3 days ago",
+          "comment": "Qaria Sumaira is like an older sister to my daughter. She made learning Noorani Qaida so engaging and joyful!"
+        }
+      ]
     },
     {
       "id": "tutor-3",
-      "name": "Qari Irfan",
+      "name": "Sheikh Qari Irfan",
       "experience": "12 Years",
-      "languages": [
-        "Arabic",
-        "English",
-        "Urdu"
-      ],
-      "specialization": "Quran Translation, Tafseer",
+      "languages": ["Arabic", "English", "Urdu"],
+      "specialization": "Quran Translation, Tafseer & Fiqh",
       "photo": "/tutor-irfan.jpg",
-      "gender": "male"
+      "gender": "male",
+      "country": "Jordan",
+      "countryFlag": "🇯🇴",
+      "rating": 5.0,
+      "reviewsCount": 165,
+      "hourlyRate": 18,
+      "isOnline": false,
+      "isAvailableToday": true,
+      "subjects": ["Quran Translation", "Tajweed Course", "Islamic Studies"],
+      "studentsTaught": 320,
+      "lessonsCompleted": 7200,
+      "responseTime": "< 1 hour",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Senior Islamic scholar specializing in adult Quran comprehension, word-for-word translation, Tajweed rules, and practical spiritual insights from the Holy Quran.",
+      "education": "M.A. in Usul al-Din & Quranic Exegesis, Yarmouk University, Jordan",
+      "ijazahCertifications": ["Ijazah in Ten Authentic Recitations", "Certificate in Classical Arabic Grammar"],
+      "teachingStyle": "Deeply analytical yet easy to follow. Perfect for adults and university students seeking conceptual clarity and spiritual depth.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Bilal Stevens",
+          "location": "Chicago, USA",
+          "rating": 5,
+          "date": "1 week ago",
+          "comment": "As a revert to Islam, Sheikh Irfan's classes helped me understand the meanings of the verses I recite in daily Salah. Highly recommended!"
+        }
+      ]
     },
     {
       "id": "tutor-4",
-      "name": "Aiman Shafeeq",
+      "name": "Ustadha Aiman Shafeeq",
       "experience": "6 Years",
-      "languages": [
-        "English",
-        "Arabic"
-      ],
+      "languages": ["English", "Arabic"],
       "specialization": "Hifz-ul-Quran, Tajweed for Sisters",
       "photo": "/tutor-female-icon-2.jpg",
-      "gender": "female"
+      "gender": "female",
+      "country": "Egypt",
+      "countryFlag": "🇪🇬",
+      "rating": 4.9,
+      "reviewsCount": 89,
+      "hourlyRate": 14,
+      "isOnline": true,
+      "isAvailableToday": false,
+      "subjects": ["Hifz Program", "Tajweed Course", "Noorani Qaida"],
+      "studentsTaught": 130,
+      "lessonsCompleted": 2900,
+      "responseTime": "< 20 mins",
+      "nextAvailableSlot": "Tomorrow at 3:00 PM EST",
+      "bio": "Certified Hafiza and Al-Azhar graduate providing gentle, high-precision Tajweed and memorization coaching exclusively for adult sisters and teenage girls.",
+      "education": "B.S. in Arabic & Islamic Studies, Al-Azhar University",
+      "ijazahCertifications": ["Ijazah Hafs 'an 'Asim", "Sanad in Classical Tajweed"],
+      "teachingStyle": "Encouraging, private, and precise. Focuses on vocal articulation, breath control, and daily revision schedules.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Aisha Patel",
+          "location": "Leicester, UK",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Sister Aiman has transformed my recitation. Her attention to subtle Makharij details is unmatched."
+        }
+      ]
     },
     {
       "id": "tutor-5",
-      "name": "Qari Ikram",
+      "name": "Qari Ikram Bilal",
       "experience": "7 Years",
-      "languages": [
-        "English",
-        "Arabic"
-      ],
+      "languages": ["English", "Arabic"],
       "specialization": "Noorani Qaida, Basic Tajweed",
       "photo": "/tutor-bilal.jpg",
-      "gender": "male"
+      "gender": "male",
+      "country": "Saudi Arabia",
+      "countryFlag": "🇸🇦",
+      "rating": 4.8,
+      "reviewsCount": 76,
+      "hourlyRate": 13,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": ["Noorani Qaida", "Quran Reading", "Tajweed Course"],
+      "studentsTaught": 140,
+      "lessonsCompleted": 3100,
+      "responseTime": "< 15 mins",
+      "nextAvailableSlot": "Today at 7:00 PM EST",
+      "bio": "Dynamic male Qari with native Arabic pronunciation, specializing in helping beginner boys and adults read Quran with proper letter connections and rhythm.",
+      "education": "Diploma in Tajweed & Qira'at, Islamic University of Madinah",
+      "ijazahCertifications": ["Madinah Tajweed Certificate", "Ijazah in Hafs"],
+      "teachingStyle": "Enthusiastic and clear. Uses step-by-step exercises to build student confidence quickly.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Omar Farooq",
+          "location": "Houston, USA",
+          "rating": 5,
+          "date": "1 month ago",
+          "comment": "Qari Ikram is great with young boys. My son looks forward to his classes every afternoon."
+        }
+      ]
     },
     {
       "id": "tutor-6",
-      "name": "Sumaira Khan",
+      "name": "Ustadha Sumaira Khan",
       "experience": "5 Years",
-      "languages": [
-        "English",
-        "Urdu"
-      ],
+      "languages": ["English", "Urdu"],
       "specialization": "Kids Quran Memorization & Hifz",
       "photo": "/tutor-female-icon-3.jpg",
-      "gender": "female"
+      "gender": "female",
+      "country": "Pakistan",
+      "countryFlag": "🇵🇰",
+      "rating": 4.9,
+      "reviewsCount": 94,
+      "hourlyRate": 11,
+      "isOnline": false,
+      "isAvailableToday": true,
+      "subjects": ["Hifz Program", "Noorani Qaida", "Islamic Studies"],
+      "studentsTaught": 115,
+      "lessonsCompleted": 2400,
+      "responseTime": "< 45 mins",
+      "nextAvailableSlot": "Today at 8:30 PM EST",
+      "bio": "Passionate female Hafiza dedicated to guiding children through Juz Amma memorization and foundational Islamic ethics with love and warmth.",
+      "education": "B.A. in Arabic Literature & Hifz Certificate",
+      "ijazahCertifications": ["Hafiz-ul-Quran Sanad", "Child Psychology Workshop Certificate"],
+      "teachingStyle": "Warm, patient, and methodical. Integrates daily revision cards and motivational incentives.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Rabia Ahmed",
+          "location": "Birmingham, UK",
+          "rating": 5,
+          "date": "3 weeks ago",
+          "comment": "My 8-year-old daughter memorized 15 Surahs in 3 months. Sister Sumaira is wonderfully patient!"
+        }
+      ]
     },
     {
       "id": "tutor-7",
-      "name": "Muhammad Ahmad",
+      "name": "Sheikh Muhammad Ahmad",
       "experience": "9 Years",
-      "languages": [
-        "Arabic",
-        "English"
-      ],
-      "specialization": "Islamic Studies, Tafseer",
+      "languages": ["Arabic", "English"],
+      "specialization": "Islamic Studies, Tafseer & Seerah",
       "photo": "/tutor-khaled.jpg",
-      "gender": "male"
+      "gender": "male",
+      "country": "Egypt",
+      "countryFlag": "🇪🇬",
+      "rating": 5.0,
+      "reviewsCount": 132,
+      "hourlyRate": 16,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": ["Islamic Studies", "Quran Translation", "Tajweed Course"],
+      "studentsTaught": 230,
+      "lessonsCompleted": 5100,
+      "responseTime": "< 10 mins",
+      "nextAvailableSlot": "Today at 6:00 PM EST",
+      "bio": "Al-Azhar scholar expert in Seerah, Hadith studies, Fiqh of Worship, and classical Tajweed rules for teenagers and adults.",
+      "education": "B.S. Faculty of Theology & Da'wah, Al-Azhar University",
+      "ijazahCertifications": ["Sanad in Al-Arba'in An-Nawawiyyah", "Al-Azhar Teaching Credentials"],
+      "teachingStyle": "Engaging storytelling style that brings prophetic history and Islamic ethics to life for Western Muslim youth.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Hamza Malik",
+          "location": "Melbourne, Australia",
+          "rating": 5,
+          "date": "1 week ago",
+          "comment": "Sheikh Ahmad's Seerah classes are the highlight of my week. Excellent command of English!"
+        }
+      ]
     },
     {
       "id": "tutor-8",
-      "name": "Rimshah Noor",
+      "name": "Qaria Rimshah Noor",
       "experience": "10 Years",
-      "languages": [
-        "English",
-        "Arabic",
-        "Punjabi"
-      ],
+      "languages": ["English", "Arabic", "Punjabi"],
       "specialization": "Advanced Tajweed & Sisters Classes",
       "photo": "/tutor-female-icon-4.jpg",
-      "gender": "female"
+      "gender": "female",
+      "country": "Pakistan",
+      "countryFlag": "🇵🇰",
+      "rating": 5.0,
+      "reviewsCount": 150,
+      "hourlyRate": 15,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": ["Tajweed Course", "Quran Reading", "Noorani Qaida"],
+      "studentsTaught": 260,
+      "lessonsCompleted": 5800,
+      "responseTime": "< 15 mins",
+      "nextAvailableSlot": "Today at 9:00 PM EST",
+      "bio": "Senior Qaria specializing in vocal training, breath management, stopping rules (Waqf), and advanced Tajweed for adult sisters.",
+      "education": "Alimah Fazilah & Master's in Tajweed Sciences",
+      "ijazahCertifications": ["Ijazah Qira'at", "Senior Tajweed Evaluator Certificate"],
+      "teachingStyle": "High-precision vocal coaching with immediate feedback. Ensures every letter is vocalized with perfect Makhraj.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "reviewsList": [
+        {
+          "studentName": "Sadiya Khan",
+          "location": "Atlanta, USA",
+          "rating": 5,
+          "date": "2 days ago",
+          "comment": "Qaria Rimshah is simply outstanding! Her Tajweed techniques helped me correct errors I made for years."
+        }
+      ]
     }
   ],
   "testimonials": [
