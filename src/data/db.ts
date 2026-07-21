@@ -84,10 +84,10 @@ export interface TutorData {
   photo: string;
   gender: 'male' | 'female';
   country?: string;
+  city?: string;
   countryFlag?: string;
   rating?: number;
   reviewsCount?: number;
-  hourlyRate?: number;
   isOnline?: boolean;
   isAvailableToday?: boolean;
   subjects?: string[];
@@ -99,8 +99,8 @@ export interface TutorData {
   education?: string;
   ijazahCertifications?: string[];
   teachingStyle?: string;
-  videoUrl?: string;
   reviewsList?: TutorReview[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface TestimonialData {
