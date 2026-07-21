@@ -206,7 +206,7 @@ export default function TutorsPageClient({
 
       <Navbar />
 
-      <main className="min-h-screen bg-slate-50/50 text-slate-800 font-sans">
+      <main suppressHydrationWarning className="min-h-screen bg-slate-50/50 text-slate-800 font-sans">
         
         {/* HERO SECTION */}
         <section className="bg-slate-900 text-white relative overflow-hidden py-16 lg:py-20 border-b border-slate-800">
