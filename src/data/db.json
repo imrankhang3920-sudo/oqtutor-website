@@ -875,43 +875,42 @@
     {
       "id": "tutor-1",
       "name": "Qari Muhammad Imran",
-      "experience": "4 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Program & Tajweed Sciences",
+      "photo": "/tutor-ahmed.jpg",
       "gender": "male",
       "country": "Pakistan",
       "city": "Lahore",
       "countryFlag": "🇵🇰",
       "rating": 5,
-      "reviewsCount": 50,
+      "reviewsCount": 55,
       "isOnline": true,
       "isAvailableToday": false,
       "subjects": [
-        "Noorani Qaida",
+        "Hifz Program",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 90,
-      "lessonsCompleted": 1800,
+      "studentsTaught": 110,
+      "lessonsCompleted": 2200,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Muhammad Imran is a highly dedicated Qari and Islamic educator based in Lahore, Pakistan. With 4 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Muhammad Imran is a certified Qari and Islamic scholar based in Lahore, Pakistan. With 5 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
       "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Muhammad Imran is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -919,51 +918,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Muhammad Imran teach beginner students?",
-          "answer": "Qari Muhammad Imran starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Muhammad Imran teach?",
+          "answer": "Qari Muhammad Imran teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-2",
       "name": "Qari Hafiz Irfan",
-      "experience": "5 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Translation & Tafseer",
+      "photo": "/tutor-irfan.jpg",
       "gender": "male",
       "country": "Pakistan",
       "city": "Islamabad",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 54,
+      "reviewsCount": 59,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Quran Translation",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 96,
-      "lessonsCompleted": 1920,
+      "studentsTaught": 117,
+      "lessonsCompleted": 2335,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Hafiz Irfan is a highly dedicated Qari and Islamic educator based in Islamabad, Pakistan. With 5 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Hafiz Irfan is a certified Qari and Islamic scholar based in Islamabad, Pakistan. With 6 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. in Quranic Sciences, IIUI Islamabad",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Hafiz Irfan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -971,50 +969,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Hafiz Irfan teach beginner students?",
-          "answer": "Qari Hafiz Irfan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Hafiz Irfan teach?",
+          "answer": "Qari Hafiz Irfan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-3",
       "name": "Qari Ikram Bilal",
-      "experience": "6 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Basic Tajweed",
+      "photo": "/tutor-bilal.jpg",
       "gender": "male",
       "country": "Pakistan",
       "city": "Rawalpindi",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 58,
+      "rating": 5,
+      "reviewsCount": 63,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Hifz Program",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 102,
-      "lessonsCompleted": 2040,
+      "studentsTaught": 124,
+      "lessonsCompleted": 2470,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Ikram Bilal is a highly dedicated Qari and Islamic educator based in Rawalpindi, Pakistan. With 6 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Ikram Bilal is a certified Qari and Islamic scholar based in Rawalpindi, Pakistan. With 7 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Diploma in Qira'at, Darul Uloom Karachi",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Ikram Bilal is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1022,51 +1020,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Ikram Bilal teach beginner students?",
-          "answer": "Qari Ikram Bilal starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Ikram Bilal teach?",
+          "answer": "Qari Ikram Bilal teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-4",
       "name": "Sheikh Muhammad Ahmad",
-      "experience": "7 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Islamic Studies & Prophetic Seerah",
+      "photo": "/tutor-khaled.jpg",
       "gender": "male",
       "country": "Pakistan",
       "city": "Peshawar",
       "countryFlag": "🇵🇰",
-      "rating": 5,
-      "reviewsCount": 62,
+      "rating": 4.9,
+      "reviewsCount": 67,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Quran Reading",
+        "Islamic Studies",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 108,
-      "lessonsCompleted": 2160,
+      "studentsTaught": 131,
+      "lessonsCompleted": 2605,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Muhammad Ahmad is a highly dedicated Qari and Islamic educator based in Peshawar, Pakistan. With 7 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Muhammad Ahmad is a certified Qari and Islamic scholar based in Peshawar, Pakistan. With 8 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Master's in Usul-ud-Din, IIUI",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Muhammad Ahmad is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1074,50 +1071,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Muhammad Ahmad teach beginner students?",
-          "answer": "Sheikh Muhammad Ahmad starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Muhammad Ahmad teach?",
+          "answer": "Sheikh Muhammad Ahmad teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-5",
       "name": "Qari Usman Ghani",
-      "experience": "8 Years",
+      "experience": "9 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Reading & Native Fluency",
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Faisalabad",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 66,
+      "rating": 5,
+      "reviewsCount": 71,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Islamic Studies",
+        "Quran Reading",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 114,
-      "lessonsCompleted": 2280,
+      "studentsTaught": 138,
+      "lessonsCompleted": 2740,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Usman Ghani is a highly dedicated Qari and Islamic educator based in Faisalabad, Pakistan. With 8 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "Alim Degree, Darul Uloom Deoband",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Usman Ghani is a certified Qari and Islamic scholar based in Faisalabad, Pakistan. With 9 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Hafiz & Qari Degree, Jamia Naeemia Lahore",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Usman Ghani is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1125,102 +1122,101 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Usman Ghani teach beginner students?",
-          "answer": "Qari Usman Ghani starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Usman Ghani teach?",
+          "answer": "Qari Usman Ghani teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-6",
-      "name": "Qari Tariq Jameel",
-      "experience": "9 Years",
+      "name": "Qari Tariq Jameel Al-Hafiz",
+      "experience": "10 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Revision & Retention",
+      "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Multan",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 70,
+      "reviewsCount": 75,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Translation",
+        "Hifz Revision",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 120,
-      "lessonsCompleted": 2400,
+      "studentsTaught": 145,
+      "lessonsCompleted": 2875,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Tariq Jameel is a highly dedicated Qari and Islamic educator based in Multan, Pakistan. With 9 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "Fazilat Degree, Nadwatul Ulama Lucknow",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Tariq Jameel Al-Hafiz is a certified Qari and Islamic scholar based in Multan, Pakistan. With 10 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Shahadat-ul-Alimiyyah, Jamia Tur Rasheed",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
-          "comment": "Qari Tariq Jameel is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
+          "comment": "Qari Tariq Jameel Al-Hafiz is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
         }
       ],
       "faqs": [
         {
-          "question": "How does Qari Tariq Jameel teach beginner students?",
-          "answer": "Qari Tariq Jameel starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Tariq Jameel Al-Hafiz teach?",
+          "answer": "Qari Tariq Jameel Al-Hafiz teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-7",
       "name": "Sheikh Bilal Hassan",
-      "experience": "10 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quranic Arabic & Grammar",
+      "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Quetta",
       "countryFlag": "🇵🇰",
       "rating": 5,
-      "reviewsCount": 74,
+      "reviewsCount": 79,
       "isOnline": true,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Daily Duas",
+        "Quranic Arabic",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 126,
-      "lessonsCompleted": 2520,
+      "studentsTaught": 152,
+      "lessonsCompleted": 3010,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Sheikh Bilal Hassan is a highly dedicated Qari and Islamic educator based in Quetta, Pakistan. With 10 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "B.S. in Arabic & Islamic Pedagogy, IIUI",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Sheikh Bilal Hassan is a certified Qari and Islamic scholar based in Quetta, Pakistan. With 11 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Arabic Language, Peshawar University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Bilal Hassan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1228,50 +1224,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Bilal Hassan teach beginner students?",
-          "answer": "Sheikh Bilal Hassan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Bilal Hassan teach?",
+          "answer": "Sheikh Bilal Hassan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-8",
       "name": "Qari Hamza Farooq",
-      "experience": "11 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Daily Duas",
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Gujranwala",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 78,
+      "reviewsCount": 83,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Arabic Language",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 132,
-      "lessonsCompleted": 2640,
+      "studentsTaught": 159,
+      "lessonsCompleted": 3145,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Hamza Farooq is a highly dedicated Qari and Islamic educator based in Gujranwala, Pakistan. With 11 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "Diploma in Qira'at Al-Ashr, Hathazari Chittagong",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Hamza Farooq is a certified Qari and Islamic scholar based in Gujranwala, Pakistan. With 12 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Qira'at Certificate, Jamia Islamia Faisalabad",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Hamza Farooq is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1279,51 +1275,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Hamza Farooq teach beginner students?",
-          "answer": "Qari Hamza Farooq starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Hamza Farooq teach?",
+          "answer": "Qari Hamza Farooq teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-9",
       "name": "Sheikh Asadullah Khan",
-      "experience": "12 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Translation & Daily Fiqh",
+      "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Sialkot",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 82,
+      "rating": 5,
+      "reviewsCount": 87,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Noorani Qaida",
+        "Quran Translation",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 138,
-      "lessonsCompleted": 2760,
+      "studentsTaught": 166,
+      "lessonsCompleted": 3280,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Sheikh Asadullah Khan is a highly dedicated Qari and Islamic educator based in Sialkot, Pakistan. With 12 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
-      "education": "Master's in Usul al-Din, Jamia Nizamia Hyderabad",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Sheikh Asadullah Khan is a certified Qari and Islamic scholar based in Sialkot, Pakistan. With 5 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.Phil Islamic Studies, GCU Lahore",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Asadullah Khan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1331,50 +1326,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Asadullah Khan teach beginner students?",
-          "answer": "Sheikh Asadullah Khan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Asadullah Khan teach?",
+          "answer": "Sheikh Asadullah Khan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-10",
       "name": "Qari Zubair Ahmed",
-      "experience": "4 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Program & Sabqi Revision",
+      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Bahawalpur",
       "countryFlag": "🇵🇰",
-      "rating": 5,
-      "reviewsCount": 86,
+      "rating": 4.9,
+      "reviewsCount": 91,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Hifz Program",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 144,
-      "lessonsCompleted": 2880,
+      "studentsTaught": 173,
+      "lessonsCompleted": 3415,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Zubair Ahmed is a highly dedicated Qari and Islamic educator based in Bahawalpur, Pakistan. With 4 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Zubair Ahmed is a certified Qari and Islamic scholar based in Bahawalpur, Pakistan. With 6 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alim Course, Jamia Farooqia Karachi",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Zubair Ahmed is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1382,50 +1377,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Zubair Ahmed teach beginner students?",
-          "answer": "Qari Zubair Ahmed starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Zubair Ahmed teach?",
+          "answer": "Qari Zubair Ahmed teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-11",
       "name": "Sheikh Rizwan Qureshi",
-      "experience": "5 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quranic Tafseer & Seerah",
+      "photo": "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Sargodha",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 90,
+      "rating": 5,
+      "reviewsCount": 95,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Hifz Program",
+        "Quranic Tafseer",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 150,
-      "lessonsCompleted": 3000,
+      "studentsTaught": 180,
+      "lessonsCompleted": 3550,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Sheikh Rizwan Qureshi is a highly dedicated Qari and Islamic educator based in Sargodha, Pakistan. With 5 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Sheikh Rizwan Qureshi is a certified Qari and Islamic scholar based in Sargodha, Pakistan. With 7 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Islamic Studies, Quetta University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Rizwan Qureshi is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1433,51 +1428,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Rizwan Qureshi teach beginner students?",
-          "answer": "Sheikh Rizwan Qureshi starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Rizwan Qureshi teach?",
+          "answer": "Sheikh Rizwan Qureshi teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-12",
       "name": "Qari Saad Tariq",
-      "experience": "6 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed Rules & Makharij Articulation",
+      "photo": "https://images.unsplash.com/photo-1506863539937-599585189286?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Sukkur",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 94,
+      "reviewsCount": 99,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Reading",
+        "Tajweed Rules",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 156,
-      "lessonsCompleted": 3120,
+      "studentsTaught": 187,
+      "lessonsCompleted": 3685,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Saad Tariq is a highly dedicated Qari and Islamic educator based in Sukkur, Pakistan. With 6 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Saad Tariq is a certified Qari and Islamic scholar based in Sukkur, Pakistan. With 8 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Qari Course, Wafaq-ul-Madaris Al-Arabia",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Saad Tariq is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1485,50 +1479,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Saad Tariq teach beginner students?",
-          "answer": "Qari Saad Tariq starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Saad Tariq teach?",
+          "answer": "Qari Saad Tariq teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-13",
       "name": "Sheikh Khurram Shahzad",
-      "experience": "7 Years",
+      "experience": "9 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1506863539937-599585189286?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Adult Quran Reading & Tajweed",
+      "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Abbottabad",
       "countryFlag": "🇵🇰",
       "rating": 5,
-      "reviewsCount": 98,
+      "reviewsCount": 103,
       "isOnline": true,
       "isAvailableToday": false,
       "subjects": [
-        "Islamic Studies",
+        "Adult Quran Reading",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 162,
-      "lessonsCompleted": 3240,
+      "studentsTaught": 194,
+      "lessonsCompleted": 3820,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Sheikh Khurram Shahzad is a highly dedicated Qari and Islamic educator based in Abbottabad, Pakistan. With 7 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Sheikh Khurram Shahzad is a certified Qari and Islamic scholar based in Abbottabad, Pakistan. With 9 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Islamic Culture, Punjab University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Khurram Shahzad is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1536,50 +1530,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Khurram Shahzad teach beginner students?",
-          "answer": "Sheikh Khurram Shahzad starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Khurram Shahzad teach?",
+          "answer": "Sheikh Khurram Shahzad teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-14",
       "name": "Qari Noman Siddiqui",
-      "experience": "8 Years",
+      "experience": "10 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Foundational Arabic & Phonics",
+      "photo": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Jhelum",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 102,
+      "reviewsCount": 107,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Translation",
+        "Foundational Arabic",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 168,
-      "lessonsCompleted": 3360,
+      "studentsTaught": 201,
+      "lessonsCompleted": 3955,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qari Noman Siddiqui is a highly dedicated Qari and Islamic educator based in Jhelum, Pakistan. With 8 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "Alim Degree, Darul Uloom Deoband",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qari Noman Siddiqui is a certified Qari and Islamic scholar based in Jhelum, Pakistan. With 10 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alim Degree, Jamia Hafsa",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Noman Siddiqui is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1587,51 +1581,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Noman Siddiqui teach beginner students?",
-          "answer": "Qari Noman Siddiqui starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Noman Siddiqui teach?",
+          "answer": "Qari Noman Siddiqui teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-15",
       "name": "Qari Adnan Yousuf",
-      "experience": "9 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Advanced Qira'at Al-Ashr",
+      "photo": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Pakistan",
       "city": "Karachi",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 106,
+      "rating": 5,
+      "reviewsCount": 111,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Daily Duas",
+        "Advanced Qira'at Al-Ashr",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 174,
-      "lessonsCompleted": 3480,
+      "studentsTaught": 208,
+      "lessonsCompleted": 4090,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Adnan Yousuf is a highly dedicated Qari and Islamic educator based in Karachi, Pakistan. With 9 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "Fazilat Degree, Nadwatul Ulama Lucknow",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Adnan Yousuf is a certified Qari and Islamic scholar based in Karachi, Pakistan. With 11 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Degree in Qira'at, Jamia Binoria",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Adnan Yousuf is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1639,50 +1632,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Adnan Yousuf teach beginner students?",
-          "answer": "Qari Adnan Yousuf starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Adnan Yousuf teach?",
+          "answer": "Qari Adnan Yousuf teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-16",
       "name": "Qaria Sumaira Younis",
-      "experience": "10 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Kids Learning",
+      "photo": "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Islamabad",
       "countryFlag": "🇵🇰",
-      "rating": 5,
-      "reviewsCount": 110,
+      "rating": 4.9,
+      "reviewsCount": 115,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Arabic Language",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 180,
-      "lessonsCompleted": 3600,
+      "studentsTaught": 215,
+      "lessonsCompleted": 4225,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Qaria Sumaira Younis is a highly dedicated Qaria and female instructor based in Islamabad, Pakistan. With 10 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "B.S. in Arabic & Islamic Pedagogy, IIUI",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Qaria Sumaira Younis is a certified Qaria and female instructor based in Islamabad, Pakistan. With 12 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Degree, Jamia Hafsa Islamabad",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qaria Sumaira Younis is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1690,51 +1683,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qaria Sumaira Younis teach beginner students?",
-          "answer": "Qaria Sumaira Younis starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qaria Sumaira Younis teach?",
+          "answer": "Qaria Sumaira Younis teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-17",
       "name": "Ustadha Aiman Shafeeq",
-      "experience": "11 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz-ul-Quran & Sisters Classes",
+      "photo": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Karachi",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 114,
+      "rating": 5,
+      "reviewsCount": 119,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Noorani Qaida",
+        "Hifz-ul-Quran",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 186,
-      "lessonsCompleted": 3720,
+      "studentsTaught": 222,
+      "lessonsCompleted": 4360,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Aiman Shafeeq is a highly dedicated Qaria and female instructor based in Karachi, Pakistan. With 11 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
-      "education": "Diploma in Qira'at Al-Ashr, Hathazari Chittagong",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Aiman Shafeeq is a certified Qaria and female instructor based in Karachi, Pakistan. With 5 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Shahadat-ul-Alimiyyah, Jamia Binoria",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Aiman Shafeeq is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1742,50 +1734,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Aiman Shafeeq teach beginner students?",
-          "answer": "Ustadha Aiman Shafeeq starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Aiman Shafeeq teach?",
+          "answer": "Ustadha Aiman Shafeeq teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-18",
       "name": "Ustadha Sumaira Khan",
-      "experience": "12 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Quran Memorization & Hifz",
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Lahore",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 118,
+      "reviewsCount": 123,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Kids Quran Memorization",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 192,
-      "lessonsCompleted": 3840,
+      "studentsTaught": 229,
+      "lessonsCompleted": 4495,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Sumaira Khan is a highly dedicated Qaria and female instructor based in Lahore, Pakistan. With 12 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "Master's in Usul al-Din, Jamia Nizamia Hyderabad",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Sumaira Khan is a certified Qaria and female instructor based in Lahore, Pakistan. With 6 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.A. in Arabic Literature, Punjab University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Sumaira Khan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1793,50 +1785,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Sumaira Khan teach beginner students?",
-          "answer": "Ustadha Sumaira Khan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Sumaira Khan teach?",
+          "answer": "Ustadha Sumaira Khan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-19",
       "name": "Qaria Rimshah Noor",
-      "experience": "4 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Advanced Tajweed & Vocal Articulation",
+      "photo": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Rawalpindi",
       "countryFlag": "🇵🇰",
       "rating": 5,
-      "reviewsCount": 122,
+      "reviewsCount": 127,
       "isOnline": true,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Hifz Program",
+        "Advanced Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 198,
-      "lessonsCompleted": 3960,
+      "studentsTaught": 236,
+      "lessonsCompleted": 4630,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qaria Rimshah Noor is a highly dedicated Qaria and female instructor based in Rawalpindi, Pakistan. With 4 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qaria Rimshah Noor is a certified Qaria and female instructor based in Rawalpindi, Pakistan. With 7 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Fazilah & Tajweed Specialist",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qaria Rimshah Noor is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1844,50 +1836,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qaria Rimshah Noor teach beginner students?",
-          "answer": "Qaria Rimshah Noor starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qaria Rimshah Noor teach?",
+          "answer": "Qaria Rimshah Noor teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-20",
       "name": "Ustadha Maryam Siddiqui",
-      "experience": "5 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Daily Supplications",
+      "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Peshawar",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 126,
+      "reviewsCount": 131,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Reading",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 204,
-      "lessonsCompleted": 4080,
+      "studentsTaught": 243,
+      "lessonsCompleted": 4765,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Maryam Siddiqui is a highly dedicated Qaria and female instructor based in Peshawar, Pakistan. With 5 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Maryam Siddiqui is a certified Qaria and female instructor based in Peshawar, Pakistan. With 8 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.S. Islamic Studies, Riphah University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Maryam Siddiqui is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1895,50 +1887,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Maryam Siddiqui teach beginner students?",
-          "answer": "Ustadha Maryam Siddiqui starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Maryam Siddiqui teach?",
+          "answer": "Ustadha Maryam Siddiqui teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-21",
       "name": "Qaria Sadia Parveen",
-      "experience": "6 Years",
+      "experience": "9 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed for Beginners & Kids",
+      "photo": "https://images.unsplash.com/photo-1492446845049-9c50cc313f00?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Faisalabad",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 130,
+      "rating": 5,
+      "reviewsCount": 135,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Islamic Studies",
+        "Tajweed for Beginners",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 210,
-      "lessonsCompleted": 4200,
+      "studentsTaught": 250,
+      "lessonsCompleted": 4900,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qaria Sadia Parveen is a highly dedicated Qaria and female instructor based in Faisalabad, Pakistan. With 6 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qaria Sadia Parveen is a certified Qaria and female instructor based in Faisalabad, Pakistan. With 9 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Course, Jamia Syeda Fatima",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qaria Sadia Parveen is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1946,50 +1938,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qaria Sadia Parveen teach beginner students?",
-          "answer": "Qaria Sadia Parveen starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qaria Sadia Parveen teach?",
+          "answer": "Qaria Sadia Parveen teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-22",
       "name": "Ustadha Zainab Bibi",
-      "experience": "7 Years",
+      "experience": "10 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Hifz & Character Building",
+      "photo": "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Multan",
       "countryFlag": "🇵🇰",
-      "rating": 5,
-      "reviewsCount": 134,
+      "rating": 4.9,
+      "reviewsCount": 139,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Quran Translation",
+        "Kids Hifz",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 216,
-      "lessonsCompleted": 4320,
+      "studentsTaught": 257,
+      "lessonsCompleted": 5035,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Zainab Bibi is a highly dedicated Qaria and female instructor based in Multan, Pakistan. With 7 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Zainab Bibi is a certified Qaria and female instructor based in Multan, Pakistan. With 10 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Hafiza & Alimah Degree, Multan",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Zainab Bibi is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -1997,50 +1989,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Zainab Bibi teach beginner students?",
-          "answer": "Ustadha Zainab Bibi starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Zainab Bibi teach?",
+          "answer": "Ustadha Zainab Bibi teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-23",
       "name": "Qaria Bushra Rashid",
-      "experience": "8 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Sisters Tajweed & Quran Reading",
+      "photo": "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Gujranwala",
       "countryFlag": "🇵🇰",
-      "rating": 4.9,
-      "reviewsCount": 138,
+      "rating": 5,
+      "reviewsCount": 143,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Daily Duas",
+        "Sisters Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 222,
-      "lessonsCompleted": 4440,
+      "studentsTaught": 264,
+      "lessonsCompleted": 5170,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qaria Bushra Rashid is a highly dedicated Qaria and female instructor based in Gujranwala, Pakistan. With 8 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "Alim Degree, Darul Uloom Deoband",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qaria Bushra Rashid is a certified Qaria and female instructor based in Gujranwala, Pakistan. With 11 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Course, Jamia Fatima-tuz-Zahra",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qaria Bushra Rashid is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2048,50 +2040,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Qaria Bushra Rashid teach beginner students?",
-          "answer": "Qaria Bushra Rashid starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qaria Bushra Rashid teach?",
+          "answer": "Qaria Bushra Rashid teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-24",
       "name": "Ustadha Hina Malik",
-      "experience": "9 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
         "Urdu"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Noorani Qaida & Prophetic Stories",
+      "photo": "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Sialkot",
       "countryFlag": "🇵🇰",
       "rating": 4.9,
-      "reviewsCount": 142,
+      "reviewsCount": 147,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Arabic Language",
+        "Kids Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 228,
-      "lessonsCompleted": 4560,
+      "studentsTaught": 271,
+      "lessonsCompleted": 5305,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Hina Malik is a highly dedicated Qaria and female instructor based in Sialkot, Pakistan. With 9 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "Fazilat Degree, Nadwatul Ulama Lucknow",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Hina Malik is a certified Qaria and female instructor based in Sialkot, Pakistan. With 12 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.Ed & Alimah Degree, Sialkot",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Hina Malik is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2099,51 +2091,50 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Hina Malik teach beginner students?",
-          "answer": "Ustadha Hina Malik starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Hina Malik teach?",
+          "answer": "Ustadha Hina Malik teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-25",
       "name": "Qaria Aisha Rehman",
-      "experience": "10 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Advanced Tajweed & Quran Reading",
+      "photo": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Pakistan",
       "city": "Lahore",
       "countryFlag": "🇵🇰",
       "rating": 5,
-      "reviewsCount": 146,
+      "reviewsCount": 151,
       "isOnline": true,
       "isAvailableToday": false,
       "subjects": [
-        "Noorani Qaida",
+        "Advanced Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 234,
-      "lessonsCompleted": 4680,
+      "studentsTaught": 278,
+      "lessonsCompleted": 5440,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qaria Aisha Rehman is a highly dedicated Qaria and female instructor based in Lahore, Pakistan. With 10 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
-      "education": "B.S. in Arabic & Islamic Pedagogy, IIUI",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qaria Aisha Rehman is a certified Qaria and female instructor based in Lahore, Pakistan. With 5 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Master's in Islamic Studies, IIUI",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qaria Aisha Rehman is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2151,51 +2142,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qaria Aisha Rehman teach beginner students?",
-          "answer": "Qaria Aisha Rehman starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qaria Aisha Rehman teach?",
+          "answer": "Qaria Aisha Rehman teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-26",
       "name": "Mawlana Qari Hafizul Islam",
-      "experience": "11 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Program & Tajweed",
+      "photo": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Dhaka",
       "countryFlag": "🇧🇩",
       "rating": 4.9,
-      "reviewsCount": 150,
+      "reviewsCount": 155,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Hifz Program",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 240,
-      "lessonsCompleted": 4800,
+      "studentsTaught": 285,
+      "lessonsCompleted": 5575,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Mawlana Qari Hafizul Islam is a highly dedicated Qari and Islamic educator based in Dhaka, Bangladesh. With 11 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "Diploma in Qira'at Al-Ashr, Hathazari Chittagong",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Mawlana Qari Hafizul Islam is a certified Qari and Islamic scholar based in Dhaka, Bangladesh. With 6 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Master's in Islamic Studies, Aliah Madrasah Dhaka",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Mawlana Qari Hafizul Islam is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2203,51 +2194,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Mawlana Qari Hafizul Islam teach beginner students?",
-          "answer": "Mawlana Qari Hafizul Islam starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Mawlana Qari Hafizul Islam teach?",
+          "answer": "Mawlana Qari Hafizul Islam teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-27",
       "name": "Qari Mahmudur Rahman",
-      "experience": "12 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Reading & Arabic Phonics",
+      "photo": "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Chittagong",
       "countryFlag": "🇧🇩",
-      "rating": 4.9,
-      "reviewsCount": 154,
+      "rating": 5,
+      "reviewsCount": 159,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Hifz Program",
+        "Quran Reading",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 246,
-      "lessonsCompleted": 4920,
+      "studentsTaught": 292,
+      "lessonsCompleted": 5710,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Mahmudur Rahman is a highly dedicated Qari and Islamic educator based in Chittagong, Bangladesh. With 12 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "Master's in Usul al-Din, Jamia Nizamia Hyderabad",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Mahmudur Rahman is a certified Qari and Islamic scholar based in Chittagong, Bangladesh. With 7 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Kamil Degree, Chittagong Islamic University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Mahmudur Rahman is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2255,50 +2246,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Mahmudur Rahman teach beginner students?",
-          "answer": "Qari Mahmudur Rahman starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Mahmudur Rahman teach?",
+          "answer": "Qari Mahmudur Rahman teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-28",
       "name": "Sheikh Tariqul Islam Al-Hafiz",
-      "experience": "4 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Translation & Tafseer",
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Sylhet",
       "countryFlag": "🇧🇩",
-      "rating": 5,
-      "reviewsCount": 158,
+      "rating": 4.9,
+      "reviewsCount": 163,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Quran Reading",
+        "Quran Translation",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 252,
-      "lessonsCompleted": 5040,
+      "studentsTaught": 299,
+      "lessonsCompleted": 5845,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Tariqul Islam Al-Hafiz is a highly dedicated Qari and Islamic educator based in Sylhet, Bangladesh. With 4 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Tariqul Islam Al-Hafiz is a certified Qari and Islamic scholar based in Sylhet, Bangladesh. With 8 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Islamic Studies, Rajshahi University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Tariqul Islam Al-Hafiz is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2306,51 +2298,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Tariqul Islam Al-Hafiz teach beginner students?",
-          "answer": "Sheikh Tariqul Islam Al-Hafiz starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Tariqul Islam Al-Hafiz teach?",
+          "answer": "Sheikh Tariqul Islam Al-Hafiz teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-29",
       "name": "Qari Saidul Hassan",
-      "experience": "5 Years",
+      "experience": "9 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Revision & Qira'at",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Rajshahi",
       "countryFlag": "🇧🇩",
-      "rating": 4.9,
-      "reviewsCount": 162,
+      "rating": 5,
+      "reviewsCount": 167,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Islamic Studies",
+        "Hifz Revision",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 258,
-      "lessonsCompleted": 5160,
+      "studentsTaught": 306,
+      "lessonsCompleted": 5980,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Saidul Hassan is a highly dedicated Qari and Islamic educator based in Rajshahi, Bangladesh. With 5 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Saidul Hassan is a certified Qari and Islamic scholar based in Rajshahi, Bangladesh. With 9 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Qari Degree, Hathazari Madrasah Chittagong",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Saidul Hassan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2358,50 +2350,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Saidul Hassan teach beginner students?",
-          "answer": "Qari Saidul Hassan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Saidul Hassan teach?",
+          "answer": "Qari Saidul Hassan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-30",
       "name": "Sheikh Mizanur Rahman",
-      "experience": "6 Years",
+      "experience": "10 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Islamic Studies & Fiqh",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Khulna",
       "countryFlag": "🇧🇩",
       "rating": 4.9,
-      "reviewsCount": 166,
+      "reviewsCount": 171,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Translation",
+        "Islamic Studies",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 264,
-      "lessonsCompleted": 5280,
+      "studentsTaught": 313,
+      "lessonsCompleted": 6115,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Mizanur Rahman is a highly dedicated Qari and Islamic educator based in Khulna, Bangladesh. With 6 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Mizanur Rahman is a certified Qari and Islamic scholar based in Khulna, Bangladesh. With 10 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Kamil Degree, Dhaka Aliah",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Mizanur Rahman is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2409,51 +2402,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Mizanur Rahman teach beginner students?",
-          "answer": "Sheikh Mizanur Rahman starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Mizanur Rahman teach?",
+          "answer": "Sheikh Mizanur Rahman teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-31",
       "name": "Qari Aminul Hoque",
-      "experience": "7 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Pronunciation",
+      "photo": "/tutor-female-icon.jpg",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Comilla",
       "countryFlag": "🇧🇩",
       "rating": 5,
-      "reviewsCount": 170,
+      "reviewsCount": 175,
       "isOnline": true,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Daily Duas",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 270,
-      "lessonsCompleted": 5400,
+      "studentsTaught": 320,
+      "lessonsCompleted": 6250,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Aminul Hoque is a highly dedicated Qari and Islamic educator based in Comilla, Bangladesh. With 7 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Aminul Hoque is a certified Qari and Islamic scholar based in Comilla, Bangladesh. With 11 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Shahadat-ul-Alimiyyah, Sylhet",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Aminul Hoque is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2461,50 +2454,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Aminul Hoque teach beginner students?",
-          "answer": "Qari Aminul Hoque starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Aminul Hoque teach?",
+          "answer": "Qari Aminul Hoque teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-32",
       "name": "Sheikh Nazmul Huda",
-      "experience": "8 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quranic Arabic & Grammar",
+      "photo": "/tutor-female-icon-2.jpg",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Mymensingh",
       "countryFlag": "🇧🇩",
       "rating": 4.9,
-      "reviewsCount": 174,
+      "reviewsCount": 179,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Arabic Language",
+        "Quranic Arabic",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 276,
-      "lessonsCompleted": 5520,
+      "studentsTaught": 327,
+      "lessonsCompleted": 6385,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Nazmul Huda is a highly dedicated Qari and Islamic educator based in Mymensingh, Bangladesh. With 8 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "Alim Degree, Darul Uloom Deoband",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Nazmul Huda is a certified Qari and Islamic scholar based in Mymensingh, Bangladesh. With 12 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Arabic, Dhaka University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Nazmul Huda is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2512,51 +2506,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Nazmul Huda teach beginner students?",
-          "answer": "Sheikh Nazmul Huda starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Nazmul Huda teach?",
+          "answer": "Sheikh Nazmul Huda teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-33",
       "name": "Qari Kazi Mustafizur Rahman",
-      "experience": "9 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed & Quran Recitation",
+      "photo": "/tutor-female-icon-3.jpg",
       "gender": "male",
       "country": "Bangladesh",
       "city": "Barisal",
       "countryFlag": "🇧🇩",
-      "rating": 4.9,
-      "reviewsCount": 178,
+      "rating": 5,
+      "reviewsCount": 183,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Noorani Qaida",
+        "Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 282,
-      "lessonsCompleted": 5640,
+      "studentsTaught": 334,
+      "lessonsCompleted": 6520,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Kazi Mustafizur Rahman is a highly dedicated Qari and Islamic educator based in Barisal, Bangladesh. With 9 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
-      "education": "Fazilat Degree, Nadwatul Ulama Lucknow",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Kazi Mustafizur Rahman is a certified Qari and Islamic scholar based in Barisal, Bangladesh. With 5 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Qari & Hafiz Degree, Dhaka",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Kazi Mustafizur Rahman is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2564,50 +2558,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Kazi Mustafizur Rahman teach beginner students?",
-          "answer": "Qari Kazi Mustafizur Rahman starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Kazi Mustafizur Rahman teach?",
+          "answer": "Qari Kazi Mustafizur Rahman teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-34",
       "name": "Sheikh Enamul Haque",
-      "experience": "10 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Daily Duas & Islamic Ethics",
+      "photo": "/tutor-female-icon-4.jpg",
       "gender": "male",
       "country": "Bangladesh",
-      "city": "Dhaka",
+      "city": "Bogra",
       "countryFlag": "🇧🇩",
-      "rating": 5,
-      "reviewsCount": 182,
+      "rating": 4.9,
+      "reviewsCount": 187,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Daily Duas",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 288,
-      "lessonsCompleted": 5760,
+      "studentsTaught": 341,
+      "lessonsCompleted": 6655,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Enamul Haque is a highly dedicated Qari and Islamic educator based in Dhaka, Bangladesh. With 10 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "B.S. in Arabic & Islamic Pedagogy, IIUI",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Enamul Haque is a certified Qari and Islamic scholar based in Bogra, Bangladesh. With 6 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alim Course, Tamirul Millat Dhaka",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Enamul Haque is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2615,50 +2610,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Enamul Haque teach beginner students?",
-          "answer": "Sheikh Enamul Haque starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Enamul Haque teach?",
+          "answer": "Sheikh Enamul Haque teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-35",
       "name": "Ustadha Nasreen Sultana",
-      "experience": "11 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Kids Quran",
+      "photo": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Dhaka",
       "countryFlag": "🇧🇩",
-      "rating": 4.9,
-      "reviewsCount": 186,
+      "rating": 5,
+      "reviewsCount": 191,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Hifz Program",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 294,
-      "lessonsCompleted": 5880,
+      "studentsTaught": 348,
+      "lessonsCompleted": 6790,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Nasreen Sultana is a highly dedicated Qaria and female instructor based in Dhaka, Bangladesh. With 11 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "Diploma in Qira'at Al-Ashr, Hathazari Chittagong",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Nasreen Sultana is a certified Qaria and female instructor based in Dhaka, Bangladesh. With 7 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Course, Jamia Shariyyah Malibagh Dhaka",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Nasreen Sultana is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2666,51 +2662,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Nasreen Sultana teach beginner students?",
-          "answer": "Ustadha Nasreen Sultana starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Nasreen Sultana teach?",
+          "answer": "Ustadha Nasreen Sultana teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-36",
       "name": "Ustadha Tasnim Akhtar",
-      "experience": "12 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
         "Bengali",
         "Arabic"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1609599006353-e629f1d40968?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed & Sisters Quran Classes",
+      "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Chittagong",
       "countryFlag": "🇧🇩",
       "rating": 4.9,
-      "reviewsCount": 190,
+      "reviewsCount": 195,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Reading",
+        "Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 300,
-      "lessonsCompleted": 6000,
+      "studentsTaught": 355,
+      "lessonsCompleted": 6925,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Tasnim Akhtar is a highly dedicated Qaria and female instructor based in Chittagong, Bangladesh. With 12 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "Master's in Usul al-Din, Jamia Nizamia Hyderabad",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Tasnim Akhtar is a certified Qaria and female instructor based in Chittagong, Bangladesh. With 8 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Shahadat-ul-Alimiyyah, Sylhet",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Tasnim Akhtar is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2718,50 +2714,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Tasnim Akhtar teach beginner students?",
-          "answer": "Ustadha Tasnim Akhtar starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Tasnim Akhtar teach?",
+          "answer": "Ustadha Tasnim Akhtar teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-37",
       "name": "Ustadha Sharmin Jahan",
-      "experience": "4 Years",
+      "experience": "9 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Daily Duas",
+      "photo": "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Sylhet",
       "countryFlag": "🇧🇩",
       "rating": 5,
-      "reviewsCount": 194,
+      "reviewsCount": 199,
       "isOnline": true,
       "isAvailableToday": false,
       "subjects": [
-        "Islamic Studies",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 306,
-      "lessonsCompleted": 6120,
+      "studentsTaught": 362,
+      "lessonsCompleted": 7060,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Sharmin Jahan is a highly dedicated Qaria and female instructor based in Sylhet, Bangladesh. With 4 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Sharmin Jahan is a certified Qaria and female instructor based in Sylhet, Bangladesh. With 9 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Degree, Comilla Islamic Center",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Sharmin Jahan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2769,50 +2766,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Sharmin Jahan teach beginner students?",
-          "answer": "Ustadha Sharmin Jahan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Sharmin Jahan teach?",
+          "answer": "Ustadha Sharmin Jahan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-38",
       "name": "Ustadha Afroza Begum",
-      "experience": "5 Years",
+      "experience": "10 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Quran & Islamic Etiquette",
+      "photo": "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Rajshahi",
       "countryFlag": "🇧🇩",
       "rating": 4.9,
-      "reviewsCount": 198,
+      "reviewsCount": 203,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Quran Translation",
+        "Kids Quran",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 312,
-      "lessonsCompleted": 6240,
+      "studentsTaught": 369,
+      "lessonsCompleted": 7195,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Afroza Begum is a highly dedicated Qaria and female instructor based in Rajshahi, Bangladesh. With 5 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Afroza Begum is a certified Qaria and female instructor based in Rajshahi, Bangladesh. With 10 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.A. Islamic Studies, Khulna",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Afroza Begum is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2820,50 +2818,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Afroza Begum teach beginner students?",
-          "answer": "Ustadha Afroza Begum starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Afroza Begum teach?",
+          "answer": "Ustadha Afroza Begum teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-39",
       "name": "Ustadha Jesmin Akter",
-      "experience": "6 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed Rules & Quran Reading",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Khulna",
       "countryFlag": "🇧🇩",
-      "rating": 4.9,
-      "reviewsCount": 202,
+      "rating": 5,
+      "reviewsCount": 207,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Daily Duas",
+        "Tajweed Rules",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 318,
-      "lessonsCompleted": 6360,
+      "studentsTaught": 376,
+      "lessonsCompleted": 7330,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Jesmin Akter is a highly dedicated Qaria and female instructor based in Khulna, Bangladesh. With 6 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Jesmin Akter is a certified Qaria and female instructor based in Khulna, Bangladesh. With 11 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Degree, Mymensingh",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Jesmin Akter is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2871,50 +2870,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Jesmin Akter teach beginner students?",
-          "answer": "Ustadha Jesmin Akter starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Jesmin Akter teach?",
+          "answer": "Ustadha Jesmin Akter teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-40",
       "name": "Ustadha Farhana Chowdhury",
-      "experience": "7 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
-        "Bengali"
+        "Bengali",
+        "Arabic"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Hifz & Daily Azkar",
+      "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "Bangladesh",
       "city": "Comilla",
       "countryFlag": "🇧🇩",
-      "rating": 5,
-      "reviewsCount": 206,
+      "rating": 4.9,
+      "reviewsCount": 211,
       "isOnline": false,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
-        "Arabic Language",
+        "Kids Hifz",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 324,
-      "lessonsCompleted": 6480,
+      "studentsTaught": 383,
+      "lessonsCompleted": 7465,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Farhana Chowdhury is a highly dedicated Qaria and female instructor based in Comilla, Bangladesh. With 7 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Farhana Chowdhury is a certified Qaria and female instructor based in Comilla, Bangladesh. With 12 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Fazilah, Chittagong",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Farhana Chowdhury is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2922,52 +2922,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Farhana Chowdhury teach beginner students?",
-          "answer": "Ustadha Farhana Chowdhury starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Farhana Chowdhury teach?",
+          "answer": "Ustadha Farhana Chowdhury teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-41",
       "name": "Qari Maulana Syed Owais",
-      "experience": "8 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
         "Hindi",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Advanced Tajweed & Hifz",
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "India",
       "city": "Hyderabad",
       "countryFlag": "🇮🇳",
-      "rating": 4.9,
-      "reviewsCount": 210,
+      "rating": 5,
+      "reviewsCount": 215,
       "isOnline": true,
-      "isAvailableToday": false,
+      "isAvailableToday": true,
       "subjects": [
-        "Noorani Qaida",
+        "Advanced Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 330,
-      "lessonsCompleted": 6600,
+      "studentsTaught": 390,
+      "lessonsCompleted": 7600,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Maulana Syed Owais is a highly dedicated Qari and Islamic educator based in Hyderabad, India. With 8 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Maulana Syed Owais is a certified Qari and Islamic scholar based in Hyderabad, India. With 5 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
       "education": "Alim Degree, Darul Uloom Deoband",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Maulana Syed Owais is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -2975,51 +2974,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Maulana Syed Owais teach beginner students?",
-          "answer": "Qari Maulana Syed Owais starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Maulana Syed Owais teach?",
+          "answer": "Qari Maulana Syed Owais teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-42",
       "name": "Sheikh Hafiz Rizwan Ahmed",
-      "experience": "9 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
         "Hindi",
         "Urdu"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Reading & Arabic",
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "India",
       "city": "Lucknow",
       "countryFlag": "🇮🇳",
       "rating": 4.9,
-      "reviewsCount": 214,
+      "reviewsCount": 219,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Quran Reading",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 336,
-      "lessonsCompleted": 6720,
+      "studentsTaught": 397,
+      "lessonsCompleted": 7735,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Hafiz Rizwan Ahmed is a highly dedicated Qari and Islamic educator based in Lucknow, India. With 9 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Hafiz Rizwan Ahmed is a certified Qari and Islamic scholar based in Lucknow, India. With 6 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
       "education": "Fazilat Degree, Nadwatul Ulama Lucknow",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Hafiz Rizwan Ahmed is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3027,52 +3026,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Hafiz Rizwan Ahmed teach beginner students?",
-          "answer": "Sheikh Hafiz Rizwan Ahmed starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Hafiz Rizwan Ahmed teach?",
+          "answer": "Sheikh Hafiz Rizwan Ahmed teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-43",
       "name": "Qari Mohammed Zeeshan",
-      "experience": "10 Years",
+      "experience": "7 Years",
       "languages": [
         "English",
         "Hindi",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Hifz Program & Systematic Revision",
-      "photo": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Hifz Program & Sabqi Revision",
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "India",
       "city": "Delhi",
       "countryFlag": "🇮🇳",
       "rating": 5,
-      "reviewsCount": 218,
+      "reviewsCount": 223,
       "isOnline": true,
-      "isAvailableToday": true,
+      "isAvailableToday": false,
       "subjects": [
         "Hifz Program",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 342,
-      "lessonsCompleted": 6840,
+      "studentsTaught": 404,
+      "lessonsCompleted": 7870,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Mohammed Zeeshan is a highly dedicated Qari and Islamic educator based in Delhi, India. With 10 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Hifz Program & Systematic Revision with perfect pronunciation and spiritual connection.",
-      "education": "B.S. in Arabic & Islamic Pedagogy, IIUI",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Mohammed Zeeshan is a certified Qari and Islamic scholar based in Delhi, India. With 7 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Qari Degree, Darul Uloom Hyderabad",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Qari Mohammed Zeeshan is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3080,133 +3078,28 @@
       ],
       "faqs": [
         {
-          "question": "How does Qari Mohammed Zeeshan teach beginner students?",
-          "answer": "Qari Mohammed Zeeshan starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Qari Mohammed Zeeshan teach?",
+          "answer": "Qari Mohammed Zeeshan teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-44",
       "name": "Sheikh Abdul Qadir Al-Hafiz",
-      "experience": "11 Years",
+      "experience": "8 Years",
       "languages": [
         "English",
         "Hindi",
         "Urdu"
       ],
-      "specialization": "Quran Reading & Native Fluency",
-      "photo": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Quran Translation & Tafseer",
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
       "gender": "male",
       "country": "India",
       "city": "Mumbai",
       "countryFlag": "🇮🇳",
       "rating": 4.9,
-      "reviewsCount": 222,
-      "isOnline": false,
-      "isAvailableToday": true,
-      "subjects": [
-        "Quran Reading",
-        "Quran Reading",
-        "Tajweed Course"
-      ],
-      "studentsTaught": 348,
-      "lessonsCompleted": 6960,
-      "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Abdul Qadir Al-Hafiz is a highly dedicated Qari and Islamic educator based in Mumbai, India. With 11 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Reading & Native Fluency with perfect pronunciation and spiritual connection.",
-      "education": "Diploma in Qira'at Al-Ashr, Hathazari Chittagong",
-      "ijazahCertifications": [
-        "Sanad in Tajweed Rules & Articulation",
-        "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
-      ],
-      "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
-      "reviewsList": [
-        {
-          "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
-          "rating": 5,
-          "date": "2 weeks ago",
-          "comment": "Sheikh Abdul Qadir Al-Hafiz is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "How does Sheikh Abdul Qadir Al-Hafiz teach beginner students?",
-          "answer": "Sheikh Abdul Qadir Al-Hafiz starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
-        }
-      ]
-    },
-    {
-      "id": "tutor-45",
-      "name": "Qari Imran Hussain",
-      "experience": "12 Years",
-      "languages": [
-        "English",
-        "Hindi",
-        "Urdu",
-        "Arabic"
-      ],
-      "specialization": "Islamic Studies & Prophetic Seerah",
-      "photo": "https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&auto=format&fit=crop&q=80",
-      "gender": "male",
-      "country": "India",
-      "city": "Kozhikode",
-      "countryFlag": "🇮🇳",
-      "rating": 4.9,
-      "reviewsCount": 226,
-      "isOnline": true,
-      "isAvailableToday": false,
-      "subjects": [
-        "Islamic Studies",
-        "Quran Reading",
-        "Tajweed Course"
-      ],
-      "studentsTaught": 354,
-      "lessonsCompleted": 7080,
-      "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Qari Imran Hussain is a highly dedicated Qari and Islamic educator based in Kozhikode, India. With 12 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Islamic Studies & Prophetic Seerah with perfect pronunciation and spiritual connection.",
-      "education": "Master's in Usul al-Din, Jamia Nizamia Hyderabad",
-      "ijazahCertifications": [
-        "Sanad in Tajweed Rules & Articulation",
-        "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
-      ],
-      "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
-      "reviewsList": [
-        {
-          "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
-          "rating": 5,
-          "date": "2 weeks ago",
-          "comment": "Qari Imran Hussain is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
-        }
-      ],
-      "faqs": [
-        {
-          "question": "How does Qari Imran Hussain teach beginner students?",
-          "answer": "Qari Imran Hussain starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
-        }
-      ]
-    },
-    {
-      "id": "tutor-46",
-      "name": "Sheikh Arshad Ali",
-      "experience": "4 Years",
-      "languages": [
-        "English",
-        "Hindi",
-        "Urdu"
-      ],
-      "specialization": "Quran Translation & Word-for-Word Tafseer",
-      "photo": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&auto=format&fit=crop&q=80",
-      "gender": "male",
-      "country": "India",
-      "city": "Bangalore",
-      "countryFlag": "🇮🇳",
-      "rating": 5,
-      "reviewsCount": 230,
+      "reviewsCount": 227,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
@@ -3214,22 +3107,126 @@
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 360,
-      "lessonsCompleted": 7200,
+      "studentsTaught": 411,
+      "lessonsCompleted": 8005,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Sheikh Arshad Ali is a highly dedicated Qari and Islamic educator based in Bangalore, India. With 4 years of professional online teaching experience, he has successfully guided students from the USA, UK, Canada, and Europe to master Quran Translation & Word-for-Word Tafseer with perfect pronunciation and spiritual connection.",
-      "education": "B.A. in Islamic Studies, Jamia Ashrafia Lahore",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Abdul Qadir Al-Hafiz is a certified Qari and Islamic scholar based in Mumbai, India. With 8 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Arabic, Aligarh Muslim University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Yousuf",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Sheikh Abdul Qadir Al-Hafiz is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What age groups does Sheikh Abdul Qadir Al-Hafiz teach?",
+          "answer": "Sheikh Abdul Qadir Al-Hafiz teaches both young children from age 4 and adult learners."
+        }
+      ]
+    },
+    {
+      "id": "tutor-45",
+      "name": "Qari Imran Hussain",
+      "experience": "9 Years",
+      "languages": [
+        "English",
+        "Hindi",
+        "Urdu"
+      ],
+      "specialization": "Tajweed Articulation & Makharij",
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80",
+      "gender": "male",
+      "country": "India",
+      "city": "Kozhikode",
+      "countryFlag": "🇮🇳",
+      "rating": 5,
+      "reviewsCount": 231,
+      "isOnline": true,
+      "isAvailableToday": true,
+      "subjects": [
+        "Tajweed Articulation",
+        "Quran Reading",
+        "Tajweed Course"
+      ],
+      "studentsTaught": 418,
+      "lessonsCompleted": 8140,
+      "responseTime": "< 15 mins",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Qari Imran Hussain is a certified Qari and Islamic scholar based in Kozhikode, India. With 9 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Fazilat Degree, Bhopal",
+      "ijazahCertifications": [
+        "Sanad in Tajweed Rules & Articulation",
+        "Ijazah in Hafs 'an 'Asim Recitation",
+        "OQTutor Certified Senior Faculty Member"
+      ],
+      "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
+      "reviewsList": [
+        {
+          "studentName": "Parent of Yousuf",
+          "location": "Chicago, USA",
+          "rating": 5,
+          "date": "2 weeks ago",
+          "comment": "Qari Imran Hussain is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What age groups does Qari Imran Hussain teach?",
+          "answer": "Qari Imran Hussain teaches both young children from age 4 and adult learners."
+        }
+      ]
+    },
+    {
+      "id": "tutor-46",
+      "name": "Sheikh Arshad Ali",
+      "experience": "10 Years",
+      "languages": [
+        "English",
+        "Hindi",
+        "Urdu"
+      ],
+      "specialization": "Quranic Arabic & Grammar",
+      "photo": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&auto=format&fit=crop&q=80",
+      "gender": "male",
+      "country": "India",
+      "city": "Bangalore",
+      "countryFlag": "🇮🇳",
+      "rating": 4.9,
+      "reviewsCount": 235,
+      "isOnline": false,
+      "isAvailableToday": false,
+      "subjects": [
+        "Quranic Arabic",
+        "Quran Reading",
+        "Tajweed Course"
+      ],
+      "studentsTaught": 425,
+      "lessonsCompleted": 8275,
+      "responseTime": "< 30 mins",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Sheikh Arshad Ali is a certified Qari and Islamic scholar based in Bangalore, India. With 10 years of professional online teaching experience, he has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "M.A. Islamic Culture, AMU Aligarh",
+      "ijazahCertifications": [
+        "Sanad in Tajweed Rules & Articulation",
+        "Ijazah in Hafs 'an 'Asim Recitation",
+        "OQTutor Certified Senior Faculty Member"
+      ],
+      "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
+      "reviewsList": [
+        {
+          "studentName": "Parent of Yousuf",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Sheikh Arshad Ali is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3237,51 +3234,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Sheikh Arshad Ali teach beginner students?",
-          "answer": "Sheikh Arshad Ali starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Sheikh Arshad Ali teach?",
+          "answer": "Sheikh Arshad Ali teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-47",
       "name": "Ustadha Fatima Anjum",
-      "experience": "5 Years",
+      "experience": "11 Years",
       "languages": [
         "English",
         "Hindi",
         "Urdu"
       ],
-      "specialization": "Daily Duas & Masnoon Supplications",
-      "photo": "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Noorani Qaida & Kids Learning",
+      "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "India",
       "city": "Hyderabad",
       "countryFlag": "🇮🇳",
-      "rating": 4.9,
-      "reviewsCount": 234,
+      "rating": 5,
+      "reviewsCount": 239,
       "isOnline": true,
       "isAvailableToday": true,
       "subjects": [
-        "Daily Duas",
+        "Noorani Qaida",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 366,
-      "lessonsCompleted": 7320,
+      "studentsTaught": 432,
+      "lessonsCompleted": 8410,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Fatima Anjum is a highly dedicated Qaria and female instructor based in Hyderabad, India. With 5 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Daily Duas & Masnoon Supplications with perfect pronunciation and spiritual connection.",
-      "education": "Shahadat-ul-Alimiyyah, Darul Uloom Karachi",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Fatima Anjum is a certified Qaria and female instructor based in Hyderabad, India. With 11 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Course, Jamia Nizamia Hyderabad",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Fatima Anjum is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3289,52 +3286,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Fatima Anjum teach beginner students?",
-          "answer": "Ustadha Fatima Anjum starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Fatima Anjum teach?",
+          "answer": "Ustadha Fatima Anjum teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-48",
       "name": "Ustadha Asma Naaz",
-      "experience": "6 Years",
+      "experience": "12 Years",
       "languages": [
         "English",
         "Hindi",
-        "Urdu",
-        "Arabic"
+        "Urdu"
       ],
-      "specialization": "Arabic Language & Grammar Fundamentals",
-      "photo": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Tajweed & Sisters Quran Classes",
+      "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "India",
       "city": "Lucknow",
       "countryFlag": "🇮🇳",
       "rating": 4.9,
-      "reviewsCount": 238,
+      "reviewsCount": 243,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Arabic Language",
+        "Tajweed",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 372,
-      "lessonsCompleted": 7440,
+      "studentsTaught": 439,
+      "lessonsCompleted": 8545,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Asma Naaz is a highly dedicated Qaria and female instructor based in Lucknow, India. With 6 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Arabic Language & Grammar Fundamentals with perfect pronunciation and spiritual connection.",
-      "education": "M.A. in Quranic Sciences, International Islamic University Islamabad",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Asma Naaz is a certified Qaria and female instructor based in Lucknow, India. With 12 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.A. Islamic Studies, Jamia Millia Islamia Delhi",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Asma Naaz is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3342,51 +3338,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Asma Naaz teach beginner students?",
-          "answer": "Ustadha Asma Naaz starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Asma Naaz teach?",
+          "answer": "Ustadha Asma Naaz teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-49",
       "name": "Ustadha Shabana Begum",
-      "experience": "7 Years",
+      "experience": "5 Years",
       "languages": [
         "English",
         "Hindi",
         "Urdu"
       ],
-      "specialization": "Noorani Qaida & Kids Foundation",
-      "photo": "https://images.unsplash.com/photo-1609599006353-e629f1d40968?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Hifz & Daily Duas",
+      "photo": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "India",
       "city": "Delhi",
       "countryFlag": "🇮🇳",
       "rating": 5,
-      "reviewsCount": 242,
+      "reviewsCount": 247,
       "isOnline": true,
       "isAvailableToday": false,
       "subjects": [
-        "Noorani Qaida",
+        "Kids Hifz",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 378,
-      "lessonsCompleted": 7560,
+      "studentsTaught": 446,
+      "lessonsCompleted": 8680,
       "responseTime": "< 15 mins",
-      "nextAvailableSlot": "Today at 4:30 PM EST",
-      "bio": "Ustadha Shabana Begum is a highly dedicated Qaria and female instructor based in Delhi, India. With 7 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Noorani Qaida & Kids Foundation with perfect pronunciation and spiritual connection.",
-      "education": "Kamil Degree in Tajweed, Aliah Madrasah Dhaka",
+      "nextAvailableSlot": "Today at 4:00 PM EST",
+      "bio": "Ustadha Shabana Begum is a certified Qaria and female instructor based in Delhi, India. With 5 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "Alimah Fazilah, Mumbai",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Shabana Begum is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3394,51 +3390,51 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Shabana Begum teach beginner students?",
-          "answer": "Ustadha Shabana Begum starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Shabana Begum teach?",
+          "answer": "Ustadha Shabana Begum teaches both young children from age 4 and adult learners."
         }
       ]
     },
     {
       "id": "tutor-50",
       "name": "Ustadha Nida Shireen",
-      "experience": "8 Years",
+      "experience": "6 Years",
       "languages": [
         "English",
         "Hindi",
         "Urdu"
       ],
-      "specialization": "Advanced Tajweed Rules & Makharij",
-      "photo": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&auto=format&fit=crop&q=80",
+      "specialization": "Kids Quran & Islamic Ethics",
+      "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&auto=format&fit=crop&q=80",
       "gender": "female",
       "country": "India",
       "city": "Aligarh",
       "countryFlag": "🇮🇳",
       "rating": 4.9,
-      "reviewsCount": 246,
+      "reviewsCount": 251,
       "isOnline": false,
       "isAvailableToday": true,
       "subjects": [
-        "Advanced Tajweed Rules",
+        "Kids Quran",
         "Quran Reading",
         "Tajweed Course"
       ],
-      "studentsTaught": 384,
-      "lessonsCompleted": 7680,
+      "studentsTaught": 453,
+      "lessonsCompleted": 8815,
       "responseTime": "< 30 mins",
-      "nextAvailableSlot": "Tomorrow at 11:00 AM EST",
-      "bio": "Ustadha Nida Shireen is a highly dedicated Qaria and female instructor based in Aligarh, India. With 8 years of professional online teaching experience, she has successfully guided students from the USA, UK, Canada, and Europe to master Advanced Tajweed Rules & Makharij with perfect pronunciation and spiritual connection.",
-      "education": "Alim Degree, Darul Uloom Deoband",
+      "nextAvailableSlot": "Tomorrow at 10:00 AM EST",
+      "bio": "Ustadha Nida Shireen is a certified Qaria and female instructor based in Aligarh, India. With 6 years of professional online teaching experience, she has guided hundreds of students in the USA, UK, and Canada to recite the Holy Quran with authentic Tajweed and spiritual devotion.",
+      "education": "B.A. Arabic, Bangalore University",
       "ijazahCertifications": [
         "Sanad in Tajweed Rules & Articulation",
         "Ijazah in Hafs 'an 'Asim Recitation",
-        "Verified OQTutor Senior Faculty Certification"
+        "OQTutor Certified Senior Faculty Member"
       ],
       "teachingStyle": "Interactive, patient, and student-focused. Uses color-coded Mushafs, visual phonetics boards, and gentle daily repetition to ensure fast progress.",
       "reviewsList": [
         {
           "studentName": "Parent of Zainab",
-          "location": "Houston, USA",
+          "location": "Chicago, USA",
           "rating": 5,
           "date": "2 weeks ago",
           "comment": "Ustadha Nida Shireen is wonderfully patient and punctual. Our child has made tremendous progress in just a few weeks!"
@@ -3446,8 +3442,8 @@
       ],
       "faqs": [
         {
-          "question": "How does Ustadha Nida Shireen teach beginner students?",
-          "answer": "Ustadha Nida Shireen starts with basic Arabic letter recognition, phonetics, and short exercises using interactive visual boards."
+          "question": "What age groups does Ustadha Nida Shireen teach?",
+          "answer": "Ustadha Nida Shireen teaches both young children from age 4 and adult learners."
         }
       ]
     }
