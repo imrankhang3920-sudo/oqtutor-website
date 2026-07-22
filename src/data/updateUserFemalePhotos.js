@@ -10,7 +10,7 @@ if (!fs.existsSync(publicTutorsDir)) {
 
 // Uploaded image mapping
 const uploads = [
-  { name: "Qaria Sumaira Younis", src: "media__1784737530607.jpg", filename: "qaria_sumaira_younis.jpg" },
+  { name: "Qaria Sumaira Younis", src: "media__1784745563390.jpg", filename: "qaria_sumaira_younis.jpg" },
   { name: "Ustadha Aiman Shafeeq", src: "media__1784737530660.jpg", filename: "ustadha_aiman_shafeeq.jpg" },
   { name: "Ustadha Sumaira Khan", src: "media__1784737530749.jpg", filename: "ustadha_sumaira_khan.jpg" },
   { name: "Qaria Rimshah Noor", src: "media__1784737530895.jpg", filename: "qaria_rimshah_noor.jpg" }
