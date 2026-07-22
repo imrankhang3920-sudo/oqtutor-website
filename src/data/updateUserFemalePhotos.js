@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const brainDir = "C:\\Users\\dell\\.gemini\\antigravity\\brain\\2eb707d2-d2f7-4a5a-acb2-373b4d36d1f4";
+const brainDir = "C:\\Users\\dell\\.gemini\\antigravity\\brain\\fce8ab64-8946-4797-b21e-6a560508541c\\.user_uploaded";
 const publicTutorsDir = path.join(__dirname, '../../public/tutors');
 
 if (!fs.existsSync(publicTutorsDir)) {
@@ -10,10 +10,10 @@ if (!fs.existsSync(publicTutorsDir)) {
 
 // Uploaded image mapping
 const uploads = [
-  { name: "Qaria Sumaira Younis", src: "media__1784655939617.jpg", filename: "qaria_sumaira_younis.jpg" },
-  { name: "Ustadha Aiman Shafeeq", src: "media__1784655939663.jpg", filename: "ustadha_aiman_shafeeq.jpg" },
-  { name: "Ustadha Sumaira Khan", src: "media__1784655939732.jpg", filename: "ustadha_sumaira_khan.jpg" },
-  { name: "Qaria Rimshah Noor", src: "media__1784655939843.jpg", filename: "qaria_rimshah_noor.jpg" }
+  { name: "Qaria Sumaira Younis", src: "media__1784737530607.jpg", filename: "qaria_sumaira_younis.jpg" },
+  { name: "Ustadha Aiman Shafeeq", src: "media__1784737530660.jpg", filename: "ustadha_aiman_shafeeq.jpg" },
+  { name: "Ustadha Sumaira Khan", src: "media__1784737530749.jpg", filename: "ustadha_sumaira_khan.jpg" },
+  { name: "Qaria Rimshah Noor", src: "media__1784737530895.jpg", filename: "qaria_rimshah_noor.jpg" }
 ];
 
 uploads.forEach(item => {
