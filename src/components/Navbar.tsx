@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
-import { Sun, Moon, Menu, X, Lock } from 'lucide-react';
+import { Sun, Moon, Menu, X, Lock, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
@@ -41,7 +41,39 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
+            {menuItems.slice(0, 5).map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            {/* Locations Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center space-x-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer bg-transparent py-2">
+                <span>Locations</span>
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+              <div className="absolute left-0 mt-0 w-44 rounded-xl border border-card-border bg-background p-1.5 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link
+                  href="/online-quran-classes-usa"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  🇺🇸 USA Classes
+                </Link>
+                <Link
+                  href="#"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  🇬🇧 UK Classes
+                </Link>
+              </div>
+            </div>
+
+            {menuItems.slice(5).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -112,7 +144,39 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
             className="md:hidden border-b border-card-border bg-background"
           >
             <div className="space-y-1 px-4 pb-6 pt-2">
-              {menuItems.map((item) => (
+              {menuItems.slice(0, 5).map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-lg px-3 py-3 text-base font-medium text-foreground/80 hover:bg-foreground/5 hover:text-primary transition-all"
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              {/* Mobile Locations Accordion/Group */}
+              <div className="px-3 py-2 space-y-2">
+                <span className="text-xs font-bold text-muted-text uppercase tracking-widest block mb-1">Our Locations</span>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    href="/online-quran-classes-usa"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center py-2 px-3 rounded-xl border border-card-border bg-foreground/[0.02] text-xs font-bold hover:text-primary transition-colors text-foreground"
+                  >
+                    🇺🇸 USA Classes
+                  </Link>
+                  <Link
+                    href="#"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center py-2 px-3 rounded-xl border border-card-border bg-foreground/[0.02] text-xs font-bold hover:text-primary transition-colors text-foreground"
+                  >
+                    🇬🇧 UK Classes
+                  </Link>
+                </div>
+              </div>
+
+              {menuItems.slice(5).map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

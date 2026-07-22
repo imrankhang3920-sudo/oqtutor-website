@@ -25,6 +25,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Quran with Tajweed', href: '/courses/tajweed' },
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
+    { name: 'Quran Classes USA', href: '/online-quran-classes-usa' },
   ];
 
   const socialLinks = [
