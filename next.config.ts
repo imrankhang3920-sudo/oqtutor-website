@@ -93,7 +93,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/tutors/:slug+',
+        source: '/tutors/:slug([^\\.]+)',
         destination: '/tutors',
         permanent: true,
       },
