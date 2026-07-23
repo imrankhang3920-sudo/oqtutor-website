@@ -10,7 +10,7 @@ if (!fs.existsSync(publicTutorsDir)) {
 
 // Uploaded image mapping
 const uploads = [
-  { name: "Qaria Sumaira Younis", src: "media__1784745563390.jpg", filename: "qaria_sumaira_younis.jpg" },
+  { name: "Qaria Sumaira Younis", src: "media__1784804803022.png", filename: "qaria_sumaira_younis.png" },
   { name: "Ustadha Aiman Shafeeq", src: "media__1784737530660.jpg", filename: "ustadha_aiman_shafeeq.jpg" },
   { name: "Ustadha Sumaira Khan", src: "media__1784737530749.jpg", filename: "ustadha_sumaira_khan.jpg" },
   { name: "Qaria Rimshah Noor", src: "media__1784737530895.jpg", filename: "qaria_rimshah_noor.jpg" },
@@ -28,7 +28,11 @@ const uploads = [
   { name: "Ustadha Farhana Chowdhury", src: "media__1784792002222.png", filename: "ustadha_farhana_chowdhury.png" },
   { name: "Ustadha Fatima Anjum", src: "media__1784792002277.png", filename: "ustadha_fatima_anjum.png" },
   { name: "Ustadha Asma Naaz", src: "media__1784792002360.png", filename: "ustadha_asma_naaz.png" },
-  { name: "Ustadha Shabana Begum", src: "media__1784792002454.png", filename: "ustadha_shabana_begum.png" }
+  { name: "Ustadha Shabana Begum", src: "media__1784792002454.png", filename: "ustadha_shabana_begum.png" },
+  { name: "Ustadha Nida Shireen", src: "media__1784804803062.png", filename: "ustadha_nida_shireen.png" },
+  { name: "Qari Hafiz Irfan", src: "media__1784804803187.png", filename: "qari_hafiz_irfan.png" },
+  { name: "Qari Saad Tariq", src: "media__1784804803266.png", filename: "qari_saad_tariq.png" },
+  { name: "Sheikh Khurram Shahzad", src: "media__1784804803349.png", filename: "sheikh_khurram_shahzad.png" }
 ];
 
 uploads.forEach(item => {
