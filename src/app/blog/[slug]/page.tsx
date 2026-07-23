@@ -4,6 +4,7 @@ import { readDB } from '@/data/db';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart } from 'lucide-react';
 
 interface Props {
@@ -52,6 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const isUSABlog = resolvedParams.slug === 'online-quran-classes-usa';
+  const isIllinoisBlog = resolvedParams.slug === 'how-online-quran-classes-help-busy-muslim-families-in-illinois';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -110,6 +112,8 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
             {isUSABlog ? (
               <ArticleContentUSA />
+            ) : isIllinoisBlog ? (
+              <ArticleContentIllinois />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -504,6 +508,305 @@ function ArticleContentUSA() {
             </h3>
             <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
               Join hundreds of Muslim families across the United States learning Quran online with certified male and female tutors.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Claim Your Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentIllinois() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium">
+          Life in Illinois moves fast. Between school, work, extracurricular activities, and family responsibilities, many Muslim parents struggle to find enough time for their children&#39;s Islamic education. While every parent wants their child to build a strong relationship with the Quran, attending in-person classes isn&#39;t always practical.
+        </p>
+        <p className="text-base text-muted-text">
+          Fortunately, <Link href="/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> have made Islamic education more accessible than ever. Whether you live in Chicago, Naperville, Aurora, Schaumburg, Bridgeview, or anywhere else in Illinois, your child can learn the Quran from qualified teachers without leaving home.
+        </p>
+        <p className="text-base text-muted-text">
+          In this guide, we&#39;ll explore why online Quran classes are becoming the preferred choice for busy Muslim families in Illinois and how they help children develop a lifelong connection with the Quran.
+        </p>
+      </section>
+
+      {/* Image 1 */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
+        <Image
+          src="/illinois-1.jpg"
+          alt="Hands holding tasbih beads over an open Holy Quran"
+          width={700}
+          height={400}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[350px]"
+        />
+      </div>
+
+      {/* Section 1 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Muslim Families in Illinois Prefer Online Quran Classes
+        </h2>
+        <p className="text-base text-muted-text">
+          Illinois is home to one of the largest Muslim communities in the United States. Many families value Islamic education but often face challenges balancing religious learning with modern life.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents usually manage:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-text list-disc pl-5">
+          <li>Full-time jobs and professional commitments</li>
+          <li>Rigorous school schedules and homework</li>
+          <li>Extracurricular activities and sports clubs</li>
+          <li>Weekend responsibilities and community events</li>
+        </ul>
+        <p className="text-base text-muted-text">
+          Adding regular travel to a local Quran academy can become stressful. Online Quran classes remove many of these obstacles while providing high-quality Islamic education. Instead of spending time driving to a learning center, children can join their lessons from home using a laptop, tablet, or smartphone.
+        </p>
+      </section>
+
+      {/* Section 2 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          The Challenges Muslim Parents Face in Illinois
+        </h2>
+        <p className="text-base text-muted-text">
+          Teaching Islam to children while living in a busy environment isn&#39;t always easy.
+        </p>
+        <div className="space-y-4">
+          <h3 className="text-lg font-bold text-foreground">Limited Time</h3>
+          <p className="text-sm text-muted-text">
+            Many parents leave for work early and return home in the evening. Finding a Quran class that matches everyone&#39;s schedule can be difficult.
+          </p>
+          <h3 className="text-lg font-bold text-foreground">Long Commutes</h3>
+          <p className="text-sm text-muted-text">
+            Families living in larger cities like Chicago often spend significant time commuting. Even nearby Quran centers may require extra travel during rush hour.
+          </p>
+          <h3 className="text-lg font-bold text-foreground">Busy School Calendars</h3>
+          <p className="text-sm text-muted-text">
+            Children already have homework, projects, and sports. Parents want Quran education to fit naturally into their daily routine instead of creating additional stress.
+          </p>
+          <h3 className="text-lg font-bold text-foreground">Limited Access to Qualified Teachers</h3>
+          <p className="text-sm text-muted-text">
+            Some neighborhoods have excellent Islamic centers, while others have very few qualified Quran teachers available. Families in smaller Illinois communities may struggle to find experienced instructors nearby.
+          </p>
+        </div>
+        <p className="text-base text-muted-text mt-4">
+          Online Quran learning solves each of these problems by bringing <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified Quran tutors</Link> directly into your home.
+        </p>
+      </section>
+
+      {/* Section 3 */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Benefits of Online Quran Classes for Illinois Families
+        </h2>
+        <p className="text-base text-muted-text">
+          Online learning offers much more than convenience. It creates a flexible, personalized, and effective learning experience.
+        </p>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground">Flexible Scheduling</h3>
+          <p className="text-base text-muted-text">
+            One of the biggest advantages is flexibility. Parents can choose lesson times that fit their family&#39;s routine, whether that&#39;s morning classes before school, evening lessons after homework, or weekend sessions. This consistency supports children&#39;s learning without sacrificing other commitments.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground">Learn From Home</h3>
+          <p className="text-base text-muted-text">
+            Weather in Illinois can be unpredictable. Heavy snow, rain, cold winters, and traffic delays make travel difficult. Online classes eliminate travel completely, letting children learn comfortably and safely from home.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground">One-on-One Attention</h3>
+          <p className="text-base text-muted-text">
+            Most online academies provide private classes. Instead of learning in a large group, each student receives the teacher&#39;s complete attention. This personalized approach helps students learn faster, ask questions confidently, and improve pronunciation.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground">Qualified Quran Teachers</h3>
+          <p className="text-base text-muted-text">
+            Online platforms connect students with experienced Quran teachers. Children can enroll in courses for <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, general <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading</Link>, master correct pronunciation in <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed classes</Link>, or start memorization with <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz program</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Image 2 */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
+        <Image
+          src="/illinois-2.jpg"
+          alt="Holy Quran on a traditional blue prayer rug with tasbih beads"
+          width={700}
+          height={400}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[350px]"
+        />
+      </div>
+
+      {/* Section 4 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Online Quran Classes Support Busy Parents
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran learning doesn&#39;t just benefit children; it makes life easier for parents too.
+        </p>
+        <ul className="space-y-3">
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Less Stress:</strong> No driving across town, rushing through dinner, or waiting in parking lots. Everything happens from home.</span>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Better Time Management:</strong> Parents can save transit hours and utilize them for homework help, meal preparation, or family time.</span>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Regular Progress Updates:</strong> Most online Quran academies provide monthly reports, attendance tracking, and direct feedback from the Qari.</span>
+          </li>
+        </ul>
+      </section>
+
+      {/* Section 5 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Children Stay More Engaged
+        </h2>
+        <p className="text-base text-muted-text">
+          Modern children enjoy learning with technology. Interactive online classes utilize screen sharing, digital Quran pages, color-coded Tajweed Mushafs, and visual learning tools. These features keep students focused, making sessions enjoyable and productive.
+        </p>
+      </section>
+
+      {/* Section 6 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Personalized Learning for Every Child
+        </h2>
+        <p className="text-base text-muted-text">
+          Every child learns differently. Some recognize Arabic letters quickly, while others need extra practice with pronunciation. Online Quran classes allow teachers to create custom lesson plans based on each student&#39;s goals and abilities, producing faster results than group classes.
+        </p>
+      </section>
+
+      {/* Section 7 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Building Strong Islamic Values at Home
+        </h2>
+        <p className="text-base text-muted-text">
+          Learning the Quran is about much more than reading Arabic words. Children also develop respect for parents, good manners, honesty, and kindness. Studying from home encourages parents to remain involved, which highly motivates the child.
+        </p>
+      </section>
+
+      {/* Section 8 */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Choosing the Right Online Quran Academy in Illinois
+        </h2>
+        <p className="text-base text-muted-text">
+          Before enrolling your child, consider these essential factors:
+        </p>
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-bold text-foreground">Qualified Teachers</h4>
+            <p className="text-xs text-muted-text mt-1">Choose an academy with experienced tutors who have strong knowledge of Tajweed and Islamic pedagogy.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">Flexible Timings</h4>
+            <p className="text-xs text-muted-text mt-1">Make sure class schedules fit your routine. The best academies offer lessons throughout the day.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">One-on-One Classes</h4>
+            <p className="text-xs text-muted-text mt-1">Private sessions help children receive individual attention and progress more quickly.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">Trial Classes</h4>
+            <p className="text-xs text-muted-text mt-1">A free trial helps evaluate teaching style, communication, technology, and your child&#39;s comfort level.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 9 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Online Quran Learning Is Growing Across Illinois
+        </h2>
+        <p className="text-base text-muted-text">
+          Muslim families in Chicago, Aurora, Naperville, Schaumburg, Bridgeview, Skokie, Lombard, and Morton Grove are embracing online Quran education because it combines convenience with quality. Your child can access experienced Quran teachers without long commutes or schedule conflicts.
+        </p>
+      </section>
+
+      {/* FAQs */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4">
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">Are online Quran classes effective for children?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Yes. With one-on-one instruction, qualified teachers, and interactive learning tools, many children learn faster than in traditional classroom settings.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">What age can children start online Quran classes?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Most children begin learning Noorani Qaida between the ages of four and six, although older beginners can start at any time.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">Do I need special equipment?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              No. A stable internet connection, a laptop, tablet, or smartphone, and headphones are usually enough.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">Can parents attend the classes?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Yes. Parents are welcome to observe lessons, especially for younger children, to monitor progress and encourage learning.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">Are evening classes available?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Yes, flexible schedules are available to accommodate busy school routines and parents&#39; jobs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Conclusion */}
+      <section className="space-y-4 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Final Thoughts
+        </h2>
+        <p className="text-base text-muted-text">
+          Balancing school, work, and family responsibilities can make Islamic education challenging for Muslim families in Illinois. However, online Quran classes have transformed the way children learn the Quran by making lessons flexible, accessible, and engaging.
+        </p>
+        <p className="text-base text-muted-text">
+          If you&#39;re looking for a practical way to help your child learn the Quran without disrupting your family&#39;s routine, online Quran classes are an excellent choice. They provide the flexibility busy Illinois families need while ensuring children receive a strong foundation in Quran recitation, Tajweed, and Islamic values.
+        </p>
+        <div className="pt-6">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Book Your Free Trial Quran Class Today
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Join families across Chicago, Naperville, Aurora, and all of Illinois learning Quran online with certified tutors.
             </p>
             <div className="pt-2">
               <Link
