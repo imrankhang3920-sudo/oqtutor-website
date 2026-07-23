@@ -18,7 +18,12 @@ const uploads = [
   { name: "Qaria Sadia Parveen", src: "media__1784749879949.jpg", filename: "qaria_sadia_parveen.jpg" },
   { name: "Ustadha Zainab Bibi", src: "media__1784749880320.png", filename: "ustadha_zainab_bibi.png" },
   { name: "Qaria Bushra Rashid", src: "media__1784749880439.jpg", filename: "qaria_bushra_rashid.jpg" },
-  { name: "Qari Muhammad Imran", src: "media__1784749880615.jpg", filename: "qari_muhammad_imran.jpg" }
+  { name: "Qari Muhammad Imran", src: "media__1784749880615.jpg", filename: "qari_muhammad_imran.jpg" },
+  { name: "Qaria Aisha Rehman", src: "media__1784788842092.png", filename: "qaria_aisha_rehman.png" },
+  { name: "Ustadha Nasreen Sultana", src: "media__1784788842108.png", filename: "ustadha_nasreen_sultana.png" },
+  { name: "Ustadha Tasnim Akhtar", src: "media__1784788842421.png", filename: "ustadha_tasnim_akhtar.png" },
+  { name: "Ustadha Sharmin Jahan", src: "media__1784788842434.png", filename: "ustadha_sharmin_jahan.png" },
+  { name: "Ustadha Afroza Begum", src: "media__1784788842925.png", filename: "ustadha_afroza_begum.png" }
 ];
 
 uploads.forEach(item => {
