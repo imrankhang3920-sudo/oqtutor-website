@@ -82,7 +82,7 @@ export default function Courses({ data }: { data: CourseData[] }) {
                     <IconComponent className="h-5 w-5" />
                   </div>
                   <Link
-                    href={`/course/${course.slug}`}
+                    href={`/courses/${course.slug}`}
                     className="absolute top-4 right-4 text-foreground/80 hover:text-primary transition-colors p-2 rounded-full bg-background/80 backdrop-blur-md border border-card-border"
                     aria-label="View course details"
                   >
@@ -93,7 +93,7 @@ export default function Courses({ data }: { data: CourseData[] }) {
                 <div className="p-6 sm:p-8 flex flex-col justify-between flex-grow">
                   <div>
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      <Link href={`/course/${course.slug}`}>
+                      <Link href={`/courses/${course.slug}`}>
                         {course.title}
                       </Link>
                     </h3>
@@ -103,7 +103,7 @@ export default function Courses({ data }: { data: CourseData[] }) {
                     </p>
 
                     <Link
-                      href={`/course/${course.slug}`}
+                      href={`/courses/${course.slug}`}
                       className="text-xs font-semibold text-primary hover:text-primary-hover hover:underline inline-flex items-center space-x-1 mb-6"
                     >
                       <span>Learn More</span>
