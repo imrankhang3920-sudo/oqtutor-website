@@ -668,7 +668,18 @@ export default function TutorsPageClient({
               {/* Scrollable Container */}
               <div>
                 {/* Header Banner */}
-                <div className="h-36 sm:h-48 w-full bg-gradient-to-r from-emerald-800 via-slate-900 to-emerald-950 relative overflow-hidden" />
+                <div className="h-36 sm:h-48 w-full relative overflow-hidden bg-slate-900">
+                  <Image
+                    src="/tutors/tutor_banner.png"
+                    alt="OQTutor Tutors Banner"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 768px"
+                    priority
+                    className="object-cover object-center"
+                  />
+                  {/* Subtle dark overlay to ensure readability */}
+                  <div className="absolute inset-0 bg-black/10" />
+                </div>
 
                 {/* Profile Header Details */}
                 <div className="px-6 sm:px-8 pb-6 relative -mt-16 sm:-mt-20 space-y-6">

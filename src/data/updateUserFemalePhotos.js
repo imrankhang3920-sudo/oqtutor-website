@@ -66,6 +66,15 @@ if (fs.existsSync(defaultFemaleSrc)) {
   console.log(`Copied default placeholder tutor-female-icon.jpg -> ustadha_hina_malik.jpg`);
 }
 
+// Copy backcover banner photo
+const bannerSrc = path.join(brainDir, 'media__1784894014025.png');
+const bannerDest = path.join(publicTutorsDir, 'tutor_banner.png');
+if (fs.existsSync(bannerSrc)) {
+  fs.copyFileSync(bannerSrc, bannerDest);
+  console.log(`Copied tutor backcover photo media__1784894014025.png -> tutor_banner.png`);
+}
+
+
 // Update db.json
 const dbPath = path.join(__dirname, 'db.json');
 const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
