@@ -30,7 +30,7 @@ const uploads = [
   { name: "Ustadha Asma Naaz", src: "media__1784792002360.png", filename: "ustadha_asma_naaz.png" },
   { name: "Ustadha Shabana Begum", src: "media__1784792002454.png", filename: "ustadha_shabana_begum.png" },
   { name: "Ustadha Nida Shireen", src: "media__1784804803062.png", filename: "ustadha_nida_shireen.png" },
-  { name: "Qari Hafiz Irfan", src: "media__1784804803187.png", filename: "qari_hafiz_irfan.png" },
+  { name: "Qari Hafiz Irfan", src: "media__1784877362075.jpg", filename: "qari_hafiz_irfan.jpg" },
   { name: "Qari Saad Tariq", src: "media__1784804803266.png", filename: "qari_saad_tariq.png" },
   { name: "Sheikh Khurram Shahzad", src: "media__1784804803349.png", filename: "sheikh_khurram_shahzad.png" },
   { name: "Qari Noman Siddiqui", src: "media__1784826907833.jpg", filename: "qari_noman_siddiqui.jpg" },
@@ -41,7 +41,10 @@ const uploads = [
   { name: "Qari Saidul Hassan", src: "media__1784875304109.png", filename: "qari_saidul_hassan.png" },
   { name: "Sheikh Mizanur Rahman", src: "media__1784875304214.png", filename: "sheikh_mizanur_rahman.png" },
   { name: "Qari Aminul Hoque", src: "media__1784875304321.png", filename: "qari_aminul_hoque.png" },
-  { name: "Sheikh Nazmul Huda", src: "media__1784875466712.png", filename: "sheikh_nazmul_huda.png" }
+  { name: "Sheikh Nazmul Huda", src: "media__1784875466712.png", filename: "sheikh_nazmul_huda.png" },
+  { name: "Qari Kazi Mustafizur Rahman", src: "media__1784877399164.png", filename: "qari_kazi_mustafizur_rahman.png" },
+  { name: "Sheikh Enamul Haque", src: "media__1784877399218.png", filename: "sheikh_enamul_haque.png" },
+  { name: "Qari Maulana Syed Owais", src: "media__1784877399349.png", filename: "qari_maulana_syed_owais.png" }
 ];
 
 uploads.forEach(item => {
