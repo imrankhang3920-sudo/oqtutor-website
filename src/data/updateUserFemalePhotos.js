@@ -36,7 +36,12 @@ const uploads = [
   { name: "Qari Noman Siddiqui", src: "media__1784826907833.jpg", filename: "qari_noman_siddiqui.jpg" },
   { name: "Qari Adnan Yousuf", src: "media__1784826907840.jpg", filename: "qari_adnan_yousuf.jpg" },
   { name: "Mawlana Qari Hafizul Islam", src: "media__1784826907859.jpg", filename: "mawlana_qari_hafizul_islam.jpg" },
-  { name: "Qari Mahmudur Rahman", src: "media__1784826907987.jpg", filename: "qari_mahmudur_rahman.jpg" }
+  { name: "Qari Mahmudur Rahman", src: "media__1784826907987.jpg", filename: "qari_mahmudur_rahman.jpg" },
+  { name: "Sheikh Tariqul Islam Al-Hafiz", src: "media__1784875304005.png", filename: "sheikh_tariqul_islam_al_hafiz.png" },
+  { name: "Qari Saidul Hassan", src: "media__1784875304109.png", filename: "qari_saidul_hassan.png" },
+  { name: "Sheikh Mizanur Rahman", src: "media__1784875304214.png", filename: "sheikh_mizanur_rahman.png" },
+  { name: "Qari Aminul Hoque", src: "media__1784875304321.png", filename: "qari_aminul_hoque.png" },
+  { name: "Sheikh Nazmul Huda", src: "media__1784875466712.png", filename: "sheikh_nazmul_huda.png" }
 ];
 
 uploads.forEach(item => {
