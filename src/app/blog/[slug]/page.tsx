@@ -54,6 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const isUSABlog = resolvedParams.slug === 'online-quran-classes-usa';
   const isIllinoisBlog = resolvedParams.slug === 'how-online-quran-classes-help-busy-muslim-families-in-illinois';
+  const isMotivationBlog = resolvedParams.slug === 'tips-keep-kids-motivated-online-quran';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -77,6 +78,52 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+
+      {isMotivationBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How long should an online Quran class be for kids?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We recommend 30-minute sessions. Young children have a short attention span, and 30 minutes keeps them focused without causing screen fatigue."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What age should my child start online Quran lessons?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most kids can start learning basic letters around the age of four to six. We begin with a gentle Noorani Qaida course using shape-matching and phonetics."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to sit with my child during class?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For younger children (ages 4–7), we recommend having a parent nearby for the first few sessions to help with technology and encourage focus. Older kids can usually study independently."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do we handle missed classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With our flexible scheduling systems, parents can notify tutors in advance to reschedule classes, ensuring your child never misses a lesson."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       <Navbar />
 
@@ -114,6 +161,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentUSA />
             ) : isIllinoisBlog ? (
               <ArticleContentIllinois />
+            ) : isMotivationBlog ? (
+              <ArticleContentMotivation />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -814,6 +863,372 @@ function ArticleContentIllinois() {
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
                 <span>Claim Your Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentMotivation() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium font-semibold">
+          7 Tips to Keep Kids Motivated in Online Quran Classes
+        </p>
+        <p className="text-base text-muted-text">
+          Raising Muslim children in Western countries like the United States is a beautiful journey filled with opportunities. However, it also presents unique parenting challenges. Many busy Muslim parents struggle to balance their children&#39;s secular schoolwork, sports, and extracurricular activities with consistent Islamic education. Finding time to drive to a local Islamic center or weekend school is often stressful and exhausting. 
+        </p>
+        <p className="text-base text-muted-text">
+          Fortunately, the rise of online Quran academies has changed everything. Now, families can easily connect with a qualified <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran teacher</Link> from the comfort of their homes. This convenience removes the stress of traffic and busy schedules. Yet, virtual learning introduces a new challenge: keeping young minds focused. Without the structure of a physical classroom, kids can lose interest.
+        </p>
+        <p className="text-base text-muted-text">
+          To help your child succeed, you must understand how to maintain their interest over time. In this comprehensive guide, we share <strong>7 Tips to Keep Kids Motivated in Online Quran Classes</strong>. These practical strategies will help your family establish a consistent, joyful, and effective Quran learning routine at home.
+        </p>
+      </section>
+
+      {/* Main Image Header */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
+        <Image
+          src="/motivated-kids-quran.jpg"
+          alt="A focused Muslim child learning the Quran online with a smiling Quran teacher on a laptop, bright home study setup"
+          width={700}
+          height={400}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[350px]"
+        />
+        <div className="p-3 bg-muted/20 text-center text-xs text-muted-text border-t border-card-border italic">
+          [Image: A focused Muslim child learning the Quran online with a smiling Quran teacher on a laptop]
+        </div>
+      </div>
+
+      {/* Why Kids Lose Interest */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Kids Lose Interest in Online Quran Classes
+        </h2>
+        <p className="text-base text-muted-text">
+          Before implementing motivational tips, parents must understand why children lose interest in virtual learning. Recognizing these common factors makes it much easier to solve them.
+        </p>
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-lg font-bold text-foreground">Screen Fatigue</h3>
+            <p className="text-sm text-muted-text">
+              Many children spend six to seven hours a day staring at screens for school. Adding another online class immediately after school can cause mental exhaustion and reduce their focus.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">Lack of Physical Interaction</h3>
+            <p className="text-sm text-muted-text">
+              Unlike a physical classroom where students interact with peers, virtual Quran classes are usually one-on-one. If the lesson feels like a passive lecture, the child will quickly zone out.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">Overwhelmingly Busy Schedules</h3>
+            <p className="text-sm text-muted-text">
+              Between homework, soccer practice, swimming, and household chores, children are often simply too tired to focus. A tired child cannot learn effectively.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">Unrealistic Parental Expectations</h3>
+            <p className="text-sm text-muted-text">
+              Sometimes parents expect kids to read fluently or memorize long Surahs immediately. When children feel they cannot meet these expectations, they get discouraged and give up.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 7 Tips */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          7 Tips to Keep Kids Motivated in Online Quran Classes
+        </h2>
+        <p className="text-base text-muted-text">
+          Motivating your child requires a blend of routine, positive reinforcement, and a supportive learning environment. Here are seven practical tips you can start using today:
+        </p>
+
+        {/* Tip 1 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">1</span>
+            <span>Set Small, Achievable Quran Goals</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            Setting massive goals like memorizing the entire Quran or completing <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida online</Link> in a month is overwhelming. Break the learning journey into tiny milestones instead. When goals are small, children feel they are making constant progress, which keeps them excited.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> Instead of saying, &quot;We need to finish this chapter this week,&quot; tell your child, &quot;Let&#39;s learn these three new Arabic letters today.&quot; Celebrate when they master those specific letters.
+          </div>
+        </div>
+
+        {/* Tip 2 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">2</span>
+            <span>Choose an Interactive Online Quran Teacher</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            The relationship between the student and the teacher is the foundation of successful learning. A strict, dry teaching style can alienate a child. You need a tutor who is patient, positive, and utilizes modern educational technology like digital whiteboards and learning games.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> At OQTutor, our qualified male and <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> keep kids engaged by using color-coded Mushafs, interactive quizzes, and storytelling to explain the meaning of the verses.
+          </div>
+        </div>
+
+        {/* Tip 3 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">3</span>
+            <span>Praise Every Single Achievement</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            Children thrive on praise. Positive reinforcement builds self-esteem and makes them associate Quran classes with happiness. Never focus only on mistakes; instead, highlight what they did correctly before gently correcting their errors.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> When your child reads a difficult verse with correct <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>, say: &quot;MashaAllah! You pronounced that letter perfectly from the throat. I am so proud of your hard work!&quot;
+          </div>
+        </div>
+
+        {/* Tip 4 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">4</span>
+            <span>Create a Consistent Learning Routine</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            Routine removes the daily struggle of negotiating. If classes happen at random times, children view them as an interruption. Set a consistent schedule and create a dedicated study space. Equip it with headphones, a reliable tablet or laptop, and a wooden stand (rehal) for the Quran.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> Schedule classes for every Monday and Wednesday at 5:00 PM. Have your child wash their hands, make Wudu, and sit in their dedicated learning corner ten minutes before the session starts.
+          </div>
+        </div>
+
+        {/* Tip 5 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">5</span>
+            <span>Make Quran Learning Fun and Connected</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            If children only memorize sounds without understanding, they will get bored. Connect Quran stories to their real lives. Use educational worksheets, digital games, and vocabulary puzzles to make the Arabic language feel alive.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> After they learn a short Surah, read the translation together. If they memorize Surah Al-Fil, tell them the exciting story of the army of elephants and discuss how Allah protects what is sacred.
+          </div>
+        </div>
+
+        {/* Tip 6 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">6</span>
+            <span>Involve Parents in the Learning Journey</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            Your child values what you value. If you leave them alone with the computer and never check in, they will perceive the class as just another chore. Sit with them, listen to their recitation, and let them see you reading the Quran as well.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> Ask your child to teach you what they learned in class. Say: &quot;Show me how your teacher explained this rule. Let&#39;s practice it together!&quot; This boosts their confidence immensely.
+          </div>
+        </div>
+
+        {/* Tip 7 */}
+        <div className="space-y-3">
+          <h3 className="text-xl font-bold text-foreground flex items-center space-x-2">
+            <span className="h-6 w-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold shrink-0">7</span>
+            <span>Reward Progress Without Creating Pressure</span>
+          </h3>
+          <p className="text-base text-muted-text">
+            Tangible incentive systems work wonders for children. Create a progress chart on the wall. Give them a sticker for every successful lesson, and promise a small reward when they accumulate a certain number of stickers. Ensure the rewards celebrate their effort rather than speed.
+          </p>
+          <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border italic text-xs text-muted-text">
+            <strong>Practical Example:</strong> Use a simple chart: 10 stickers = a trip to the local park or a small toy. Never compare their speed with other siblings or children. Focus entirely on their personal progress.
+          </div>
+        </div>
+      </section>
+
+      {/* PAA Section */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Answering Common Parenting Questions
+        </h2>
+
+        <div className="space-y-4">
+          <div className="p-5 glass rounded-2xl border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">How do you motivate students in online classes?</h3>
+            <p className="text-sm text-muted-text">
+              Motivating students online requires interactive elements, gamification, and active communication. Rather than speaking at a child for 30 minutes, tutors should ask questions, share screen-based games, use virtual stamps, and build a warm personal connection. Breaking the lesson into 10-minute segments prevents screen fatigue.
+            </p>
+          </div>
+
+          <div className="p-5 glass rounded-2xl border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">What is the motivation for learning the Quran?</h3>
+            <p className="text-sm text-muted-text">
+              For a Muslim, the ultimate motivation is seeking the pleasure of Allah SWT, earning rewards (Hasanat), and building a peaceful life. For young children, we translate these concepts into simple ideas: learning the Quran makes Allah and their parents happy, brings blessings into their rooms, and teaches them how to be kind and successful.
+            </p>
+          </div>
+
+          <div className="p-5 glass rounded-2xl border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">How do you teach online Quran classes?</h3>
+            <p className="text-sm text-muted-text">
+              Teaching Quran online effectively requires a specialized virtual platform with digital whiteboards, screen-sharing capabilities for the Mushaf, clear audio transmission, and video interaction. The tutor must use structured pedagogy, beginning with Arabic letter recognition in <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida online</Link>, transitioning to <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>, and then implementing formal <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link> and <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Quran memorization (Hifz)</Link>.
+            </p>
+          </div>
+
+          <div className="p-5 glass rounded-2xl border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">What is the 7 7 7 rule for children in Islam?</h3>
+            <p className="text-sm text-muted-text">
+              The <strong>7 7 7 rule</strong> is a popular framework shared in Islamic parenting discussions, though it is <em>not</em> an authentic hadith of the Prophet Muhammad (PBUH). Many families use it as a practical guide for developmental stages:
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5 text-xs text-muted-text">
+              <li><strong>First 7 Years (Ages 0–7):</strong> Focus on love, play, gentle nurturing, and building a warm emotional connection.</li>
+              <li><strong>Second 7 Years (Ages 7–14):</strong> Focus on formal teaching, discipline, practicing Salah, learning Quran, and instilling core values.</li>
+              <li><strong>Third 7 Years (Ages 14–21):</strong> Focus on friendship, mentoring, consulting them in decisions, and guiding them into adulthood.</li>
+            </ul>
+            <p className="text-sm text-muted-text">
+              While this framework provides helpful age-appropriate advice, Islamic parenting practices should always prioritize the Quran and the authentic Sunnah of the Prophet Muhammad (PBUH).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How OQTutor Helps */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How OQTutor Helps Children Stay Motivated
+        </h2>
+        <p className="text-base text-muted-text">
+          At <Link href="/about" className="text-primary font-semibold hover:underline">OQTutor</Link>, we understand that virtual Quran classes require a specialized approach for children in the West. We don&#39;t just teach; we inspire. Here is how we ensure your child remains enthusiastic about their studies:
+        </p>
+        <ul className="space-y-3 pt-2">
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">One-on-One Classes:</strong> Your child gets 100% of the teacher&#39;s attention. There are no distractions or waiting in line.</span>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Qualified Male & Female Teachers:</strong> You can select a dedicated <Link href="/tutors" className="text-primary font-semibold hover:underline">male or female tutor</Link> who is fluent in English and experienced with children.</span>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Flexible Scheduling:</strong> Busy schedules are never an issue. You can pick class times that fit seamlessly into your routine.</span>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong className="text-foreground">Regular Progress Reports:</strong> We keep parents fully informed with monthly updates, attendance tracking, and teacher feedback.</span>
+          </li>
+        </ul>
+      </section>
+
+      {/* Benefits of Online Quran Classes for Kids */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Benefits of Online Quran Classes for Kids
+        </h2>
+        <p className="text-base text-muted-text">
+          Enrolling your child in a reputable <Link href="/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran academy USA</Link> offers numerous advantages over traditional centers:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-sm text-muted-text">
+          <li><strong>Comfort and Safety:</strong> Children learn from their familiar home environment without transport concerns.</li>
+          <li><strong>Customized Pace:</strong> Tutors adjust the speed of lessons according to your child&#39;s unique capacity.</li>
+          <li><strong>Diverse Programs:</strong> From basic <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida online</Link> to advanced <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">online Hifz classes</Link>, all options are available in one place.</li>
+        </ul>
+      </section>
+
+      {/* Common Mistakes Parents Should Avoid */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Common Mistakes Parents Should Avoid
+        </h2>
+        <p className="text-base text-muted-text">
+          Sometimes parents inadvertently damage motivation by making simple mistakes:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-text list-disc pl-5">
+          <li><strong>Forcing Long Classes:</strong> 30-minute sessions are ideal. Avoid booking 60-minute classes for young children.</li>
+          <li><strong>Reacting with Anger:</strong> Never show frustration if your child struggles with pronunciation or forgets a lesson. Quran study should feel peaceful.</li>
+          <li><strong>Skipping Classes:</strong> Inconsistency tells children that Quran learning is not a priority. Maintain classes even during vacations.</li>
+        </ul>
+      </section>
+
+      {/* FAQs */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4">
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">How long should an online Quran class be for kids?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              We recommend 30-minute sessions. Young children have a short attention span, and 30 minutes keeps them focused without causing screen fatigue.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">What age should my child start online Quran lessons?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Most kids can start learning basic letters around the age of four to six. We begin with a gentle <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida course</Link> using shape-matching and phonetics.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">Do I need to sit with my child during class?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              For younger children (ages 4–7), we recommend having a parent nearby for the first few sessions to help with technology and encourage focus. Older kids can usually study independently.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-base font-bold text-foreground">How do we handle missed classes?</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              With our flexible scheduling systems, parents can notify tutors in advance to reschedule classes, ensuring your child never misses a lesson.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Takeaways Box */}
+      <div className="p-6 rounded-3xl bg-secondary/5 border border-secondary/20 space-y-3 my-8">
+        <h4 className="text-lg font-bold text-foreground flex items-center space-x-2">
+          <Heart className="h-5 w-5 text-secondary shrink-0" />
+          <span>5 Key Takeaways</span>
+        </h4>
+        <ol className="list-decimal pl-5 space-y-1.5 text-xs sm:text-sm text-muted-text font-medium">
+          <li><strong>Set manageable milestones:</strong> Celebrate small daily victories like memorizing a single line.</li>
+          <li><strong>Create a dedicated area:</strong> A quiet corner with headphones and a clean Quran stand (rehal) keeps them focused.</li>
+          <li><strong>Select interactive teachers:</strong> Engaging tutors prevent children from viewing classes as a chore.</li>
+          <li><strong>Be positive:</strong> Encourage effort rather than perfection, and avoid anger or comparison.</li>
+          <li><strong>Stay consistent:</strong> A regular routine builds a lifelong habit of connecting with the Quran.</li>
+        </ol>
+      </div>
+
+      {/* Conclusion & CTA */}
+      <section className="space-y-4 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Conclusion
+        </h2>
+        <p className="text-base text-muted-text">
+          Keeping your children engaged in religious studies requires patience, structure, and the right approach. By applying these <strong>7 Tips to Keep Kids Motivated in Online Quran Classes</strong>, you can transform your home into a harbor of Islamic learning. The goal is to build a beautiful, lifelong friendship between your child and the Holy Quran.
+        </p>
+        <p className="text-base text-muted-text">
+          At OQTutor, we are dedicated to helping Western Muslim families succeed. Let us guide your child on this sacred path with our experienced male and female Quran teachers.
+        </p>
+        <div className="pt-6">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Claim Your Free Trial Quran Class Today
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto font-medium">
+              Experience the difference of custom 1-on-1 online classes. Try a class with our native English-fluent scholars at no cost.
+            </p>
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
                 <ArrowRight className="h-4.5 w-4.5" />
               </Link>
             </div>
