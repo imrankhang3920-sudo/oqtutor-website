@@ -7,7 +7,6 @@ import About from '@/components/About';
 import Mission from '@/components/Mission';
 import Features from '@/components/Features';
 import Courses from '@/components/Courses';
-import Tutors from '@/components/Tutors';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -57,7 +56,6 @@ export default async function HomePage() {
         <Mission data={dbData.mission} />
         <Features data={dbData.features} />
         <Courses data={dbData.courses} />
-        <Tutors data={dbData.tutors.slice(0, 4)} />
         <Testimonials data={dbData.testimonials} />
         <FAQ data={dbData.faqs} />
         <Contact data={dbData.contact} />
