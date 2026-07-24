@@ -527,11 +527,11 @@ export default function TutorsPageClient({
                         <div className="flex-1 space-y-3">
                           <div className="flex flex-wrap items-center justify-between gap-2">
                             <div>
-                              <div className="flex items-center space-x-2">
-                                <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                              <div className="flex flex-wrap items-center gap-2">
+                                <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors leading-tight break-words max-w-full">
                                   {tutor.name}
                                 </h3>
-                                <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                                <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">
                                   <ShieldCheck className="h-3 w-3 text-emerald-600" />
                                   <span>Verified Qari</span>
                                 </span>
@@ -674,8 +674,8 @@ export default function TutorsPageClient({
                 <div className="px-6 sm:px-8 pb-6 relative -mt-16 sm:-mt-20 space-y-6">
                   
                   <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-                    <div className="flex items-end space-x-4">
-                      <div className="h-28 w-28 sm:h-36 sm:w-36 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-slate-100 relative shrink-0">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-6 text-center sm:text-left w-full sm:w-auto">
+                      <div className="h-28 w-28 sm:h-36 sm:w-36 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-slate-100 relative shrink-0 mx-auto sm:mx-0">
                         <Image
                           src={selectedTutor.photo}
                           alt={selectedTutor.name}
@@ -684,18 +684,18 @@ export default function TutorsPageClient({
                           className="h-full w-full object-cover object-top"
                         />
                       </div>
-                      <div>
-                        <div className="flex items-center space-x-2">
-                          <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">{selectedTutor.name}</h2>
-                          <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                      <div className="flex-1 min-w-0 w-full">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 justify-center sm:justify-start">
+                          <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-tight break-words max-w-full">{selectedTutor.name}</h2>
+                          <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0 w-fit">
                             <ShieldCheck className="h-3 w-3 text-emerald-600" />
                             <span>Verified Tutor</span>
                           </span>
                         </div>
-                        <p className="text-xs text-slate-500 font-medium mt-0.5">
+                        <p className="text-xs text-slate-500 font-medium mt-1">
                           {selectedTutor.countryFlag} {selectedTutor.city ? `${selectedTutor.city}, ` : ''}{selectedTutor.country} • {selectedTutor.experience} Experience
                         </p>
-                        <div className="flex items-center space-x-1 text-amber-500 text-xs font-bold mt-1">
+                        <div className="flex items-center justify-center sm:justify-start space-x-1 text-amber-500 text-xs font-bold mt-1">
                           <Star className="h-4 w-4 fill-amber-400" />
                           <span>{selectedTutor.rating || 5.0}</span>
                           <span className="text-slate-400 font-normal">({selectedTutor.reviewsCount || 80} reviews)</span>
