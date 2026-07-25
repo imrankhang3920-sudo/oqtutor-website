@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/terms-and-conditions',
     '/refund-policy',
     '/online-quran-classes-usa',
+    '/online-quran-classes-uk',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

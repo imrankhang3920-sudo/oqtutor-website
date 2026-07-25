@@ -26,6 +26,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
     { name: 'Quran Classes USA', href: '/online-quran-classes-usa' },
+    { name: 'Quran Classes UK', href: '/online-quran-classes-uk' },
   ];
 
   const socialLinks = [
