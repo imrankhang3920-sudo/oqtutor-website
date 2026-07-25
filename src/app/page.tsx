@@ -4,7 +4,6 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Mission from '@/components/Mission';
 import Features from '@/components/Features';
 import Courses from '@/components/Courses';
 import Testimonials from '@/components/Testimonials';
@@ -53,7 +52,6 @@ export default async function HomePage() {
       <main className="flex-grow">
         <Hero data={dbData.hero} />
         <About data={dbData.about} />
-        <Mission data={dbData.mission} />
         <Features data={dbData.features} />
         <Courses data={dbData.courses} />
         <Testimonials data={dbData.testimonials} />
