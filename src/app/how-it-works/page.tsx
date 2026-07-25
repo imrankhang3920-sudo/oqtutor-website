@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/how-it-works',
   },
+  openGraph: {
+    url: '/how-it-works',
+  },
 };
 
 export default async function HowItWorksPage() {

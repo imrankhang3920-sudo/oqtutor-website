@@ -28,6 +28,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     alternates: {
       canonical: 'https://www.oqtutor.com/',
     },
+    openGraph: {
+      url: 'https://www.oqtutor.com/',
+    },
     robots: hasParams ? {
       index: false,
       follow: true,
@@ -46,8 +49,33 @@ export default async function HomePage() {
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OQTutor",
+    "url": "https://www.oqtutor.com",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "image": "https://www.oqtutor.com/logo.jpg",
+    "description": "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
+    "sameAs": [
+      "https://web.facebook.com/profile.php?id=100093682086058",
+      "https://www.instagram.com/hadi.382011/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": dbData.contact?.phone || "+447490329339",
+      "contactType": "customer service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English", "Arabic", "Urdu"]
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Navbar adminLoggedIn={adminLoggedIn} />
       <main className="flex-grow">
         <Hero data={dbData.hero} />

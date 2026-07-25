@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.oqtutor.com/cookie-policy',
   },
+  openGraph: {
+    url: 'https://www.oqtutor.com/cookie-policy',
+  },
 };
 
 export default async function CookiePolicyPage() {

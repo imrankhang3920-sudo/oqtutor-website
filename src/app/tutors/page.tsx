@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/tutors',
   },
+  openGraph: {
+    url: '/tutors',
+  },
 };
 
 export default async function TutorsPage() {

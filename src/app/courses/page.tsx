@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.oqtutor.com/courses',
   },
+  openGraph: {
+    url: 'https://www.oqtutor.com/courses',
+  },
 };
 
 const iconMap: Record<string, React.ComponentType<any>> = {

@@ -40,6 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `https://www.oqtutor.com/blog/${blog.slug}`,
     },
+    openGraph: {
+      url: `https://www.oqtutor.com/blog/${blog.slug}`,
+    },
   };
 }
 

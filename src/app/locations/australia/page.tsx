@@ -19,6 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: "https://www.oqtutor.com/locations/australia",
     },
+    openGraph: {
+      url: "https://www.oqtutor.com/locations/australia",
+    },
   };
 }
 

@@ -34,7 +34,7 @@ export default function About({ data, mode = 'home' }: { data: AboutData; mode?:
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
               {mode === 'about'
                 ? "Our Approach to Quranic Education"
-                : "About OQTutor – Trusted Online Quran Academy for Kids & Adults Worldwide"}
+                : "Why Families Globally Choose OQTutor for Vetted 1-on-1 Quran Classes"}
             </h2>
             <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
 
@@ -57,16 +57,13 @@ export default function About({ data, mode = 'home' }: { data: AboutData; mode?:
               ) : (
                 <>
                   <p>
-                    OQTutor is a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong> dedicated to providing high-quality <strong className="font-semibold text-foreground">Online Quran Classes</strong> for kids, adults, and new Muslims worldwide. We proudly serve students in the <strong className="font-semibold text-foreground">Online Quran Classes USA</strong>, <strong className="font-semibold text-foreground">Online Quran Classes UK</strong>, Canada, Australia, and many other countries through personalized one-to-one online Quran classes taught by experienced male and female <strong className="font-semibold text-foreground">Quran tutors</strong>.
+                    We connect learners across the United States, United Kingdom, Canada, Australia, and worldwide with highly qualified Quran teachers. Our platform is designed for students of all ages and backgrounds, whether you are a parent seeking structured guidance for your children or an adult looking to refine your recitation style.
                   </p>
                   <p>
-                    Our qualified teachers specialize in <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, Quran Reading, <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>, <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz Quran</Link> (Quran Memorization), <strong className="font-semibold text-foreground">Islamic Studies</strong>, and Arabic Language. Every lesson is tailored to the student's age, learning level, and goals, creating an engaging, interactive, and effective learning experience.
+                    Classes are delivered 1-on-1 inside a modern, interactive virtual classroom that features digital learning materials and live feedback. Every scholar in our network holds verified credentials and is trained in patient, encouraging teaching methods, ensuring that students advance at their own pace with absolute confidence.
                   </p>
                   <p>
-                    At OQTutor, our mission is to make authentic Quran education accessible to every Muslim family. We offer flexible class schedules, affordable tuition plans, and a safe online learning environment where students can <strong className="font-semibold text-foreground">learn Quran online</strong> with confidence and build a lifelong connection with the Holy Quran.
-                  </p>
-                  <p>
-                    Whether you are looking for <strong className="font-semibold text-foreground">Online Quran Classes for Kids</strong>, a qualified <strong className="font-semibold text-foreground">Online Quran Tutor</strong>, or a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong>, OQTutor is committed to helping every student achieve excellence in Quran learning through personalized one-to-one instruction.
+                    With 24/7 scheduling, you can easily book sessions around school, work, and other commitments. OQTutor provides a safe, structured environment focused on building strong pronunciation skills, consistent revision, and a deep appreciation for the text, backed by progress updates and a satisfaction guarantee.
                   </p>
                 </>
               )}

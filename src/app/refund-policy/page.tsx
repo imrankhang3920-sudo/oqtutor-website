@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.oqtutor.com/refund-policy',
   },
+  openGraph: {
+    url: 'https://www.oqtutor.com/refund-policy',
+  },
 };
 
 export default async function RefundPolicyPage() {

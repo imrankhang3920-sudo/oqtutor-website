@@ -19,6 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: "https://www.oqtutor.com/online-quran-classes-uk",
     },
+    openGraph: {
+      url: "https://www.oqtutor.com/online-quran-classes-uk",
+    },
   };
 }
 

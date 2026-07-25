@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/pricing',
   },
+  openGraph: {
+    url: '/pricing',
+  },
 };
 
 export default async function PricingPage() {

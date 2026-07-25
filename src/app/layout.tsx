@@ -21,7 +21,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
-  description: "Learn Quran Online with certified male & female tutors. Online Quran Classes for kids in UK & adults: Tajweed, Hifz, Arabic, Islamic Studies. Free Trial Class!",
+  description: "Learn Quran online with certified tutors. Serving families in USA, UK, Canada, Australia, & worldwide. Tajweed, Hifz, & Noorani Qaida. Book your free trial!",
   keywords: [
     "Online Quran Tutor",
     "Quran Classes",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
     description: "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
-    url: "https://oqtutor.com",
+    url: "https://www.oqtutor.com",
     siteName: "OQTutor",
     locale: "en_US",
     type: "website",
@@ -100,32 +100,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        {/* Organization Structured Data for Google Search Logo integration */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "OQTutor",
-              "url": "https://oqtutor.com",
-              "logo": "https://oqtutor.com/logo.jpg",
-              "image": "https://oqtutor.com/logo.jpg",
-              "description": "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
-              "sameAs": [
-                "https://web.facebook.com/profile.php?id=100093682086058",
-                "https://www.instagram.com/hadi.382011/"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+447490329339",
-                "contactType": "customer service",
-                "areaServed": "Worldwide",
-                "availableLanguage": ["English", "Arabic", "Urdu"]
-              }
-            })
-          }}
-        />
+
         
         {/* Google Analytics (gtag.js) */}
         <Script

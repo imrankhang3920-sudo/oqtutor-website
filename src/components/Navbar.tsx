@@ -107,14 +107,16 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
               {!mounted ? <div className="h-5 w-5" /> : theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
 
-            {/* Admin Dashboard / Login Button */}
-            <Link
-              href={adminLoggedIn ? '/admin/dashboard' : '/admin/login'}
-              className="flex items-center space-x-1.5 px-4  h-10 text-xs font-semibold rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-            >
-              <Lock className="h-3.5 w-3.5" />
-              <span>{adminLoggedIn ? 'Dashboard' : 'Admin'}</span>
-            </Link>
+            {/* Admin Dashboard Button (Only visible if logged in) */}
+            {adminLoggedIn && (
+              <Link
+                href="/admin/dashboard"
+                className="flex items-center space-x-1.5 px-4  h-10 text-xs font-semibold rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                <Lock className="h-3.5 w-3.5" />
+                <span>Dashboard</span>
+              </Link>
+            )}
 
             {/* CTA Button */}
             <Link
@@ -212,14 +214,16 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 </Link>
               ))}
               <div className="border-t border-card-border mt-4 pt-4 flex flex-col space-y-3">
-                <Link
-                  href={adminLoggedIn ? '/admin/dashboard' : '/admin/login'}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center space-x-1.5 w-full py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
-                >
-                  <Lock className="h-4 w-4" />
-                  <span>{adminLoggedIn ? 'Admin Dashboard' : 'Admin Login'}</span>
-                </Link>
+                {adminLoggedIn && (
+                  <Link
+                    href="/admin/dashboard"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center space-x-1.5 w-full py-2.5 rounded-full border border-primary text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-all"
+                  >
+                    <Lock className="h-4 w-4" />
+                    <span>Admin Dashboard</span>
+                  </Link>
+                )}
                 <Link
                   href="#contact"
                   onClick={() => setIsOpen(false)}

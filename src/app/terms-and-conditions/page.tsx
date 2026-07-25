@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.oqtutor.com/terms-and-conditions',
   },
+  openGraph: {
+    url: 'https://www.oqtutor.com/terms-and-conditions',
+  },
 };
 
 export default async function TermsAndConditionsPage() {

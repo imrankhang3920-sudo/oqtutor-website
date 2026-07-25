@@ -19,6 +19,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     alternates: {
       canonical: 'https://www.oqtutor.com/contact',
     },
+    openGraph: {
+      url: 'https://www.oqtutor.com/contact',
+    },
     robots: hasParams ? {
       index: false,
       follow: true,
@@ -37,7 +40,7 @@ export default async function ContactPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Online Quran Tutor (OQTutor)",
-    "image": "https://oqtutor.com/logo.jpg",
+    "image": "https://www.oqtutor.com/logo.jpg",
     "telephone": dbData.contact.phone,
     "email": dbData.contact.email,
     "address": {

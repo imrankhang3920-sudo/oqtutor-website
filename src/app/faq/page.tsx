@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/faq',
   },
+  openGraph: {
+    url: '/faq',
+  },
 };
 
 export default async function FAQPage() {
