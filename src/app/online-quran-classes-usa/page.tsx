@@ -3,7 +3,6 @@ import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Tutors from '@/components/Tutors';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
@@ -151,9 +150,6 @@ export default async function USAQuranClassesPage() {
             </div>
           </div>
         </section>
-
-        {/* Tutors Section */}
-        <Tutors data={dbData.tutors.slice(0, 4)} />
 
         {/* Closing CTA Banner */}
         <section className="py-12 md:py-16 bg-background relative overflow-hidden">

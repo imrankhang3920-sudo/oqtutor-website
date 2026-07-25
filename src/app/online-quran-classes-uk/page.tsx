@@ -3,7 +3,6 @@ import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Tutors from '@/components/Tutors';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
@@ -418,8 +417,7 @@ export default async function UKQuranClassesPage() {
           </div>
         </section>
 
-        {/* Section 7: Tutors Grid */}
-        <Tutors data={dbData.tutors.slice(0, 4)} />
+
 
         {/* Section 8: FAQ Section */}
         <section className="py-20 border-t border-card-border bg-background">
