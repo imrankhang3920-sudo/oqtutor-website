@@ -28,6 +28,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Quran Classes USA', href: '/online-quran-classes-usa' },
     { name: 'Quran Classes UK', href: '/online-quran-classes-uk' },
     { name: 'Quran Classes Canada', href: '/online-quran-classes-canada' },
+    { name: 'Quran Classes Australia', href: '/locations/australia' },
   ];
 
   const socialLinks = [

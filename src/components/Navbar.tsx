@@ -76,6 +76,12 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 >
                   🇨🇦 Canada Classes
                 </Link>
+                <Link
+                  href="/locations/australia"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  🇦🇺 Australia Classes
+                </Link>
               </div>
             </div>
 
@@ -163,7 +169,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
 
               <div className="px-3 py-2 space-y-2">
                 <span className="text-xs font-bold text-muted-text uppercase tracking-widest block mb-1">Our Locations</span>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-4 gap-2">
                   <Link
                     href="/online-quran-classes-usa"
                     onClick={() => setIsOpen(false)}
@@ -184,6 +190,13 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                     className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
                     🇨🇦 Canada
+                  </Link>
+                  <Link
+                    href="/locations/australia"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
+                  >
+                    🇦🇺 Australia
                   </Link>
                 </div>
               </div>
