@@ -6,7 +6,7 @@ import { Compass } from 'lucide-react';
 import { MissionData } from '@/data/db';
 import Image from 'next/image';
 
-export default function Mission({ data }: { data: MissionData }) {
+export default function Mission({ data, mode = 'home' }: { data: MissionData; mode?: 'home' | 'about' }) {
   return (
     <section id="mission" className="py-20 md:py-28 relative overflow-hidden bg-background">
       {/* Decorative background vectors */}
@@ -55,28 +55,51 @@ export default function Mission({ data }: { data: MissionData }) {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
-              Our Mission: Providing the Best Online Quran Classes for Kids Worldwide
+              {mode === 'about'
+                ? "Inspiring a Lifelong Love for the Book of Allah"
+                : "Our Mission: Providing the Best Online Quran Classes for Kids Worldwide"}
             </h2>
             
-            <p className="mt-3 text-sm sm:text-base font-semibold text-secondary leading-relaxed">
-              Learn the Holy Quran Online with Certified Quran Teachers Through Personalized One-on-One Classes
+            <p className="mt-3 text-sm sm:text-base font-semibold text-secondary leading-relaxed font-normal">
+              {mode === 'about'
+                ? "Personalized, patient guidance structured around your family's routine"
+                : "Learn the Holy Quran Online with Certified Quran Teachers Through Personalized One-on-One Classes"}
             </p>
             
             <div className="h-1 w-20 bg-primary mt-4 mb-6 rounded-full" />
 
             <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-              <p>
-                Our mission is to make authentic Quran education accessible, engaging, and spiritually enriching for Muslims worldwide. We help children, adults, and new learners learn Quran reading, Tajweed, Noorani Qaida, Hifz (Quran memorization), and Islamic Studies through high-quality <strong className="text-foreground font-semibold">online Quran classes</strong>.
-              </p>
-              <p>
-                At OQTutor, we are committed to providing personalized one-on-one Quran lessons with qualified male and female <strong className="text-foreground font-semibold">Quran teachers</strong>. Our experienced tutors focus on proper Quran recitation, Tajweed rules, and Islamic values while creating a comfortable and interactive learning environment for every student.
-              </p>
-              <p>
-                Every Quran lesson is designed according to the student's learning level, goals, and schedule. Whether a student wants to start Quran learning from Noorani Qaida, improve Quran pronunciation, master <strong className="text-foreground font-semibold">Quran with Tajweed</strong>, memorize the Holy Quran (<strong className="text-foreground font-semibold">Hifz Quran classes</strong>), or strengthen Islamic knowledge, our <strong className="text-foreground font-semibold">online Quran academy</strong> provides a flexible and effective learning experience.
-              </p>
-              <p>
-                Our goal is to help students worldwide <strong className="text-foreground font-semibold">learn Quran online</strong> and build a strong and lifelong connection with the Book of Allah through authentic Islamic teachings and modern online learning methods.
-              </p>
+              {mode === 'about' ? (
+                <>
+                  <p>
+                    Our goal is to make religious education accessible, engaging, and spiritually meaningful. Through modern teaching platforms and individual attention, we help students build a solid foundation in recitation and understanding.
+                  </p>
+                  <p>
+                    We are committed to maintaining a high standard of instruction by employing certified scholars who are passionate about teaching. Every tutor focuses on building confidence and ensuring that classical rules of pronunciation are learned correctly and naturally.
+                  </p>
+                  <p>
+                    We believe that everyone's learning journey is unique. That is why our courses are structured to move at your pace, allowing you to focus on spelling, articulation, or deep memorization as your schedule permits.
+                  </p>
+                  <p>
+                    Ultimately, we aim to guide students toward a deeper connection with Islamic values and teachings, fostering a relationship with the Quran that continues to grow throughout their lives.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Our mission is to make authentic Quran education accessible, engaging, and spiritually enriching for Muslims worldwide. We help children, adults, and new learners learn Quran reading, Tajweed, Noorani Qaida, Hifz (Quran memorization), and Islamic Studies through high-quality <strong className="text-foreground font-semibold">online Quran classes</strong>.
+                  </p>
+                  <p>
+                    At OQTutor, we are committed to providing personalized one-on-one Quran lessons with qualified male and female <strong className="text-foreground font-semibold">Quran teachers</strong>. Our experienced tutors focus on proper Quran recitation, Tajweed rules, and Islamic values while creating a comfortable and interactive learning environment for every student.
+                  </p>
+                  <p>
+                    Every Quran lesson is designed according to the student's learning level, goals, and schedule. Whether a student wants to start Quran learning from Noorani Qaida, improve Quran pronunciation, master <strong className="text-foreground font-semibold">Quran with Tajweed</strong>, memorize the Holy Quran (<strong className="text-foreground font-semibold">Hifz Quran classes</strong>), or strengthen Islamic knowledge, our <strong className="text-foreground font-semibold">online Quran academy</strong> provides a flexible and effective learning experience.
+                  </p>
+                  <p>
+                    Our goal is to help students worldwide <strong className="text-foreground font-semibold">learn Quran online</strong> and build a strong and lifelong connection with the Book of Allah through authentic Islamic teachings and modern online learning methods.
+                  </p>
+                </>
+              )}
             </div>
           </motion.div>
         </div>

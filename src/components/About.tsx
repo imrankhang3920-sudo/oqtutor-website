@@ -7,7 +7,7 @@ import { AboutData } from '@/data/db';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function About({ data }: { data: AboutData }) {
+export default function About({ data, mode = 'home' }: { data: AboutData; mode?: 'home' | 'about' }) {
   return (
     <section id="about" className="pt-10 pb-16 md:py-24 relative overflow-hidden">
       {/* Decorative background */}
@@ -32,23 +32,44 @@ export default function About({ data }: { data: AboutData }) {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
-              About OQTutor – Trusted Online Quran Academy for Kids & Adults Worldwide
+              {mode === 'about'
+                ? "Our Approach to Quranic Education"
+                : "About OQTutor – Trusted Online Quran Academy for Kids & Adults Worldwide"}
             </h2>
             <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
 
             <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-              <p>
-                OQTutor is a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong> dedicated to providing high-quality <strong className="font-semibold text-foreground">Online Quran Classes</strong> for kids, adults, and new Muslims worldwide. We proudly serve students in the <strong className="font-semibold text-foreground">Online Quran Classes USA</strong>, <strong className="font-semibold text-foreground">Online Quran Classes UK</strong>, Canada, Australia, and many other countries through personalized one-to-one online Quran classes taught by experienced male and female <strong className="font-semibold text-foreground">Quran tutors</strong>.
-              </p>
-              <p>
-                Our qualified teachers specialize in <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, Quran Reading, <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>, <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz Quran</Link> (Quran Memorization), <strong className="font-semibold text-foreground">Islamic Studies</strong>, and Arabic Language. Every lesson is tailored to the student's age, learning level, and goals, creating an engaging, interactive, and effective learning experience.
-              </p>
-              <p>
-                At OQTutor, our mission is to make authentic Quran education accessible to every Muslim family. We offer flexible class schedules, affordable tuition plans, and a safe online learning environment where students can <strong className="font-semibold text-foreground">learn Quran online</strong> with confidence and build a lifelong connection with the Holy Quran.
-              </p>
-              <p>
-                Whether you are looking for <strong className="font-semibold text-foreground">Online Quran Classes for Kids</strong>, a qualified <strong className="font-semibold text-foreground">Online Quran Tutor</strong>, or a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong>, OQTutor is committed to helping every student achieve excellence in Quran learning through personalized one-to-one instruction.
-              </p>
+              {mode === 'about' ? (
+                <>
+                  <p>
+                    OQTutor is dedicated to offering personalized, one-to-one tutoring for students of all ages. We cater to children, adults, and new Muslims worldwide, with a strong presence in the United States, the UK, Europe, and beyond. Our sessions are designed to fit the unique needs of each learner, utilizing tailored lesson plans and qualified male and female tutors.
+                  </p>
+                  <p>
+                    Our teachers specialize in foundational lessons like <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, structured Quran reading, <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>, <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz Quran</Link> (Quran Memorization), and Islamic history. Every lesson is adjusted to the student's age, current learning level, and personal goals, creating a focused and supportive learning environment.
+                  </p>
+                  <p>
+                    Our teaching philosophy is built on creating a supportive, distraction-free environment. By offering flexible schedules and custom plans, we make it easy for families to fit religious education into their daily routines.
+                  </p>
+                  <p>
+                    Whether you are a parent seeking patient guidance for your children, or an adult learner looking to refine your pronunciation, our team is committed to helping you reach your learning goals step-by-step.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    OQTutor is a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong> dedicated to providing high-quality <strong className="font-semibold text-foreground">Online Quran Classes</strong> for kids, adults, and new Muslims worldwide. We proudly serve students in the <strong className="font-semibold text-foreground">Online Quran Classes USA</strong>, <strong className="font-semibold text-foreground">Online Quran Classes UK</strong>, Canada, Australia, and many other countries through personalized one-to-one online Quran classes taught by experienced male and female <strong className="font-semibold text-foreground">Quran tutors</strong>.
+                  </p>
+                  <p>
+                    Our qualified teachers specialize in <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, Quran Reading, <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>, <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz Quran</Link> (Quran Memorization), <strong className="font-semibold text-foreground">Islamic Studies</strong>, and Arabic Language. Every lesson is tailored to the student's age, learning level, and goals, creating an engaging, interactive, and effective learning experience.
+                  </p>
+                  <p>
+                    At OQTutor, our mission is to make authentic Quran education accessible to every Muslim family. We offer flexible class schedules, affordable tuition plans, and a safe online learning environment where students can <strong className="font-semibold text-foreground">learn Quran online</strong> with confidence and build a lifelong connection with the Holy Quran.
+                  </p>
+                  <p>
+                    Whether you are looking for <strong className="font-semibold text-foreground">Online Quran Classes for Kids</strong>, a qualified <strong className="font-semibold text-foreground">Online Quran Tutor</strong>, or a trusted <strong className="font-semibold text-foreground">Online Quran Academy</strong>, OQTutor is committed to helping every student achieve excellence in Quran learning through personalized one-to-one instruction.
+                  </p>
+                </>
+              )}
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-6 w-full max-w-md">
@@ -65,15 +86,19 @@ export default function About({ data }: { data: AboutData }) {
             {/* Call To Action Block */}
             <div className="mt-10 p-6 glass border border-primary/20 rounded-3xl bg-primary/5 w-full space-y-3">
               <h3 className="text-lg font-bold text-foreground">
-                Start Your Quran Learning Journey Today
+                {mode === 'about'
+                  ? "Start Your Learning Journey Today"
+                  : "Start Your Quran Learning Journey Today"}
               </h3>
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                Join families around the world who trust OQTutor for professional Online Quran Classes. Book your Free Trial Class today and learn from experienced Quran tutors through personalized one-to-one lessons.
+                {mode === 'about'
+                  ? "Join families around the world who trust OQTutor for structured, patient guidance. Book your Free Trial Class today to begin learning with our dedicated tutors through private one-to-one lessons."
+                  : "Join families around the world who trust OQTutor for professional Online Quran Classes. Book your Free Trial Class today and learn from experienced Quran tutors through personalized one-to-one lessons."}
               </p>
               <div className="pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-xs font-semibold rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-xs font-semibold rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-xl transition-all duration-300"
                 >
                   <span>Book Free Trial</span>
                   <ArrowRight className="h-4 w-4" />
