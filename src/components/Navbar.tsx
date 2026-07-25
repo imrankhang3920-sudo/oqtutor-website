@@ -70,6 +70,12 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 >
                   🇬🇧 UK Classes
                 </Link>
+                <Link
+                  href="/online-quran-classes-canada"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  🇨🇦 Canada Classes
+                </Link>
               </div>
             </div>
 
@@ -155,23 +161,29 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 </Link>
               ))}
 
-              {/* Mobile Locations Accordion/Group */}
               <div className="px-3 py-2 space-y-2">
                 <span className="text-xs font-bold text-muted-text uppercase tracking-widest block mb-1">Our Locations</span>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   <Link
                     href="/online-quran-classes-usa"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center py-2 px-3 rounded-xl border border-card-border bg-foreground/[0.02] text-xs font-bold hover:text-primary transition-colors text-foreground"
+                    className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
-                    🇺🇸 USA Classes
+                    🇺🇸 USA
                   </Link>
                   <Link
                     href="/online-quran-classes-uk"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center py-2 px-3 rounded-xl border border-card-border bg-foreground/[0.02] text-xs font-bold hover:text-primary transition-colors text-foreground"
+                    className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
-                    🇬🇧 UK Classes
+                    🇬🇧 UK
+                  </Link>
+                  <Link
+                    href="/online-quran-classes-canada"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
+                  >
+                    🇨🇦 Canada
                   </Link>
                 </div>
               </div>
