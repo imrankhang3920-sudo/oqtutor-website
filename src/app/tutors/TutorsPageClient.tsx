@@ -167,31 +167,40 @@ export default function TutorsPageClient({
         ]
       },
       {
-        "@type": "ItemList",
-        "name": "Certified Male & Female Quran Tutors",
-        "itemListElement": initialTutors.map((tutor, idx) => ({
-          "@type": "ListItem",
-          "position": idx + 1,
-          "item": {
-            "@type": "Person",
-            "name": tutor.name,
-            "jobTitle": "Certified Quran & Tajweed Teacher",
-            "worksFor": {
-              "@type": "EducationalOrganization",
-              "name": "OQTutor Online Quran Academy"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": tutor.city,
-              "addressCountry": tutor.country
-            },
-            "knowsLanguage": tutor.languages,
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": tutor.rating || 5.0,
-              "reviewCount": tutor.reviewsCount || 80
-            }
-          }
+        "@type": "EducationalOrganization",
+        "name": "OQTutor Online Quran Academy",
+        "url": "https://www.oqtutor.com",
+        "logo": "https://www.oqtutor.com/logo.jpg",
+        "description": "Learn Quran Online with our certified male and female Quran teachers. Native Arabic and bilingual tutors, standard qualifications.",
+        "image": "https://www.oqtutor.com/logo.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Pakistan"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "reviewCount": "350"
+        },
+        "employee": initialTutors.map((tutor) => ({
+          "@type": "Person",
+          "name": tutor.name,
+          "jobTitle": "Certified Quran & Tajweed Teacher",
+          "image": `https://www.oqtutor.com${tutor.photo}`,
+          "description": tutor.bio,
+          "gender": tutor.gender,
+          "url": `https://www.oqtutor.com/tutors#${tutor.id}`,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": tutor.city,
+            "addressCountry": tutor.country
+          },
+          "knowsLanguage": tutor.languages.map((lang) => ({
+            "@type": "Language",
+            "name": lang
+          }))
         }))
       }
     ]
