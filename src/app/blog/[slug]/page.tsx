@@ -24,11 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const isTutorBlog = resolvedParams.slug === 'select-right-online-quran-tutor';
+  const isTajweedBlog = resolvedParams.slug === 'beginners-guide-mastering-tajweed-rules';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog;
 
   return {
     title: `${blog.title} | OQTutor`,
     description: blog.description,
-    keywords: isTutorBlog
+    keywords: isGlobalBlog
       ? [
           'Online Quran Classes',
           'Learn Quran Online',
@@ -73,6 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isIllinoisBlog = resolvedParams.slug === 'how-online-quran-classes-help-busy-muslim-families-in-illinois';
   const isMotivationBlog = resolvedParams.slug === 'tips-keep-kids-motivated-online-quran';
   const isTutorBlog = resolvedParams.slug === 'select-right-online-quran-tutor';
+  const isTajweedBlog = resolvedParams.slug === 'beginners-guide-mastering-tajweed-rules';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -237,6 +240,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentMotivation />
             ) : isTutorBlog ? (
               <ArticleContentSelectTutor />
+            ) : isTajweedBlog ? (
+              <ArticleContentTajweed />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -1612,6 +1617,171 @@ function ArticleContentSelectTutor() {
             </div>
           </div>
         </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentTajweed() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium">
+          Learning to recite the Quran correctly is one of the most rewarding parts of studying Islam — and at the heart of correct recitation is <strong>Tajweed</strong>. For beginners, the word itself can feel intimidating, conjuring images of complicated Arabic terminology and strict rules. In reality, Tajweed is simply the set of guidelines that ensure every letter of the Quran is pronounced the way it was revealed — and it can absolutely be learned at home, at your own pace, with the right structure.
+        </p>
+        <p className="text-base text-muted-text">
+          This guide walks you through what Tajweed actually is, the core rules every beginner should start with, common mistakes to watch for, and how to build a practice routine that sticks.
+        </p>
+      </section>
+
+      {/* What Is Tajweed, and Why Does It Matter? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Is Tajweed, and Why Does It Matter?
+        </h2>
+        <p className="text-base text-muted-text">
+          Tajweed comes from the Arabic root meaning "to improve" or "to make excellent." Applied to Quran recitation, it means giving each letter its correct articulation point (Makhraj) and characteristics (Sifat), so that the meaning of the verse is preserved exactly as revealed.
+        </p>
+        <p className="text-base text-muted-text">
+          This isn't just a technical detail. In Arabic, a small mispronunciation can genuinely change the meaning of a word. Reciting without Tajweed isn't necessarily wrong — but reciting <em>with</em> Tajweed protects the integrity of the Quran's meaning and is considered part of doing justice to the text. This is why structured courses like <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed</Link> exist as a dedicated stage in a student's learning journey, rather than something picked up informally.
+        </p>
+      </section>
+
+      {/* Before Tajweed: Make Sure the Foundation Is Solid */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Before Tajweed: Make Sure the Foundation Is Solid
+        </h2>
+        <p className="text-base text-muted-text">
+          A common mistake beginners make is jumping into Tajweed rules before they can confidently recognize and connect Arabic letters. If you or your child are still learning the alphabet and basic letter joining, it's worth starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> first. Tajweed builds on that foundation — trying to learn both at once often leads to confusion and slower progress.
+        </p>
+        <p className="text-base text-muted-text">
+          Once letter recognition and basic <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link> fluency are comfortable, Tajweed rules start to make a lot more sense, because you're applying them to something you can already read.
+        </p>
+      </section>
+
+      {/* Core Tajweed Rules for Beginners */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Core Tajweed Rules for Beginners
+        </h2>
+        <p className="text-base text-muted-text">
+          You don't need to learn everything at once. Most structured courses introduce these concepts in roughly this order:
+        </p>
+
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-lg font-bold text-foreground">1. Makharij — Articulation Points</h3>
+            <p className="text-sm text-muted-text">
+              Every Arabic letter originates from a specific point in the mouth or throat — the lips, the tip of the tongue, the middle of the tongue, deep in the throat, and so on. Learning where each letter comes from is the first real Tajweed skill, because it's what prevents letters like "Seen (س)" and "Sheen (ش)," or "Dal (د)" and "Dhal (ذ)," from being confused.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">2. Noon Sakinah and Tanween Rules</h3>
+            <p className="text-sm text-muted-text">
+              When a "noon" with no vowel (نْ) or a tanween appears, four different rules can apply depending on the letter that follows: Izhar (clear pronunciation), Idgham (merging), Iqlab (changing to a "meem" sound), and Ikhfa (partial nasalization). These four rules cover a huge portion of everyday recitation, which is why they're usually taught early.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">3. Madd — Elongation Rules</h3>
+            <p className="text-sm text-muted-text">
+              Certain letters are stretched for a specific count of beats rather than pronounced quickly. Getting elongation right affects both the rhythm of recitation and, in some cases, the meaning — so this is a core skill rather than a stylistic choice.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">4. Qalqalah — The "Echoing" Letters</h3>
+            <p className="text-sm text-muted-text">
+              Five letters (ق ط ب ج د) carry a slight bouncing or echoing sound when they appear with a sukoon. It's subtle, but it's one of the more distinctive features of correctly recited Tajweed.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground">5. Heavy and Light Letters (Tafkhim and Tarqiq)</h3>
+            <p className="text-sm text-muted-text">
+              Some letters are pronounced with a "heavier," fuller mouth shape, while others stay light. Learning to distinguish between these adds depth and accuracy to recitation, especially for adult learners transitioning from casual reading to formal Tajweed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Mistakes Beginners Make */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Common Mistakes Beginners Make
+        </h2>
+        <ul className="space-y-3 pl-5 list-disc text-sm text-muted-text">
+          <li><strong>Rushing recitation</strong> before articulation points are solid, which locks in incorrect habits that are harder to unlearn later.</li>
+          <li><strong>Skipping Noorani Qaida</strong> and trying to apply Tajweed rules to letters that aren't yet being read fluently.</li>
+          <li><strong>Learning rules without a teacher's correction</strong> — Tajweed is difficult to self-audit, since many mistakes sound correct to the untrained ear.</li>
+          <li><strong>Treating Tajweed as memorization only</strong>, rather than practicing it out loud, repeatedly, with feedback.</li>
+        </ul>
+        <p className="text-base text-muted-text mt-4">
+          This last point is worth emphasizing: Tajweed is a spoken skill, not a reading-comprehension one. Understanding a rule intellectually and being able to apply it correctly while reciting are two different things, and only practice closes that gap.
+        </p>
+      </section>
+
+      {/* How to Build a Tajweed Practice Routine at Home */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How to Build a Tajweed Practice Routine at Home
+        </h2>
+        <ol className="space-y-4 pt-2">
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div>
+              <strong className="text-foreground">Start with short, frequent sessions:</strong> Fifteen to twenty minutes of focused practice, three to four times a week, tends to produce better results than one long weekly session.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div>
+              <strong className="text-foreground">Practice one rule at a time:</strong> Pick a single rule — say, Idgham — and find several examples of it in short surahs you already know, rather than trying to apply five new rules simultaneously.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div>
+              <strong className="text-foreground">Record yourself reciting:</strong> It's uncomfortable at first, but hearing your own recitation played back makes it much easier to notice where a letter isn't landing correctly.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+            <div>
+              <strong className="text-foreground">Get regular correction from a qualified teacher:</strong> This is the step that's genuinely difficult to replace. A <Link href="/tutors" className="text-primary font-semibold hover:underline">Tajweed instructor</Link> listening in real time can catch mistakes that are nearly impossible to hear in your own voice, and can adjust the pace of new rules to match how quickly you're absorbing them.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span>
+            <div>
+              <strong className="text-foreground">Revisit earlier rules regularly:</strong> Tajweed rules build on each other, so a quick weekly review of what you learned a month ago keeps the whole structure solid rather than fading.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      {/* Is It Ever Too Late to Start? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Is It Ever Too Late to Start?
+        </h2>
+        <p className="text-base text-muted-text">
+          No — Tajweed is learned successfully by children and adults alike, and adult learners often progress faster in some respects because they can understand the <em>why</em> behind a rule rather than only imitating a sound. What matters more than age is consistency and having a structured path to follow, ideally one that includes regular feedback from someone qualified to correct your recitation.
+        </p>
+      </section>
+
+      {/* Bringing It All Together */}
+      <section className="space-y-4 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Bringing It All Together
+        </h2>
+        <p className="text-base text-muted-text">
+          Tajweed can feel like a large body of rules from the outside, but it's learned the same way any spoken skill is: one piece at a time, with regular practice, and with correction from someone who can actually hear what you can't. Start with a solid foundation in letter recognition, work through the core rules in order, and prioritize consistent short sessions over occasional long ones.
+        </p>
+        <p className="text-base text-muted-text">
+          If you'd like guided, one-on-one support rather than learning Tajweed alone, you can <Link href="/contact" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified male or female Tajweed tutors, and see how a structured, personalized curriculum feels before committing to anything. For answers to other common questions from students and parents, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
+        </p>
       </section>
 
     </article>
