@@ -16,7 +16,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'About Us', href: '/about' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Book Trial', href: '/contact' },
+    { name: 'Book Trial', href: '/book-free-trial' },
   ];
 
   const coursesLinks = [

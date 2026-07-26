@@ -38,7 +38,7 @@ export default async function AustraliaQuranClassesPage() {
     title: "Online Quran Classes Australia",
     subtitle: "At OQTutor, we recognize that the Australian Muslim community is a beautifully diverse tapestry, representing dozens of cultural and linguistic backgrounds from Sydney's west to Melbourne's northern suburbs. Finding an online Quran teacher who respects your family's language heritage, teaching style preferences, and madhab-sensitivity can be a difficult task. We bridge this gap by prioritizing the perfect tutor-student match. Rather than offering a one-size-fits-all lesson, our platform pairs you with certified, bilingual scholars who understand your cultural context and adapt to your child's pace, helping families across Australia connect deeply with the Holy Quran.",
     ctaText: "Book Free Trial",
-    ctaLink: "/contact",
+    ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",

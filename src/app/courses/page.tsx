@@ -226,7 +226,7 @@ export default async function CoursesPage() {
             </p>
             <div className="flex justify-center pt-2">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="flex items-center gap-2 px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg transition-all duration-300 font-bold text-sm"
               >
                 <span>Register for Trial</span>

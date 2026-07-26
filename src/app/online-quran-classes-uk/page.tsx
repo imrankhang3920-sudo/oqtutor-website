@@ -38,7 +38,7 @@ export default async function UKQuranClassesPage() {
     title: "Online Quran Classes UK",
     subtitle: "Are you looking for professional, structured Online Quran Classes UK? At OQTutor, we understand the unique scheduling challenges that Muslim families face in the United Kingdom. Balancing state school timetables, after-school activities, and GMT/BST seasonal shifts can make attending a local mosque difficult. That is why our one-to-one classes are designed with maximum scheduling flexibility in mind. We offer custom sessions taught by certified male and female scholars directly from your home. Whether you are seeking basic recitation guides or advanced Tajweed programs, our courses provide a tailored experience that fits naturally into your family's weekly routine without any compromise.",
     ctaText: "Book Free Trial",
-    ctaLink: "/contact",
+    ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",

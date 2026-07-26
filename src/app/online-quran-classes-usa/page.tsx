@@ -38,7 +38,7 @@ export default async function USAQuranClassesPage() {
     title: "Online Quran Classes for Kids in USA",
     subtitle: "Looking for trusted online Quran classes for kids in USA? OQTutor connects Muslim families across America with certified, experienced Quran tutors who make learning the Quran engaging, structured, and easy for children. From Noorani Qaida to Tajweed and Hifz, our one-on-one online classes are designed around US family schedules, so your child can learn from home without compromising school or extracurricular commitments.",
     ctaText: "Book Free Trial",
-    ctaLink: "/contact",
+    ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
