@@ -23,20 +23,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const isTutorBlog = resolvedParams.slug === 'select-right-online-quran-tutor';
+
   return {
     title: `${blog.title} | OQTutor`,
     description: blog.description,
-    keywords: [
-      'Online Quran Classes USA',
-      'Learn Quran Online USA',
-      'Online Quran Academy USA',
-      'Quran Classes for Kids USA',
-      'Online Quran Tutor USA',
-      'Female Quran Teacher USA',
-      'Online Tajweed Classes',
-      'Online Hifz Classes',
-      'Noorani Qaida Online'
-    ],
+    keywords: isTutorBlog
+      ? [
+          'Online Quran Classes',
+          'Learn Quran Online',
+          'Online Quran Academy',
+          'Quran Classes for Kids',
+          'Online Quran Tutor',
+          'Female Quran Teacher',
+          'Online Tajweed Classes',
+          'Online Hifz Classes',
+          'Noorani Qaida Online'
+        ]
+      : [
+          'Online Quran Classes USA',
+          'Learn Quran Online USA',
+          'Online Quran Academy USA',
+          'Quran Classes for Kids USA',
+          'Online Quran Tutor USA',
+          'Female Quran Teacher USA',
+          'Online Tajweed Classes',
+          'Online Hifz Classes',
+          'Noorani Qaida Online'
+        ],
     alternates: {
       canonical: `https://www.oqtutor.com/blog/${blog.slug}`,
     },
@@ -1307,7 +1321,7 @@ function ArticleContentSelectTutor() {
       {/* Intro */}
       <section className="space-y-4">
         <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium">
-          Raising Muslim children in the United States comes with many blessings, but it also brings unique challenges. One of the most important duties parents have is providing a strong Islamic foundation for their children. In a busy society, finding a local teacher with the right skills and schedule can feel overwhelming. Many families now look to the internet to find the best online Quran classes. However, knowing <strong>how to choose the right online Quran tutor for your child</strong> is critical to their long-term motivation and spiritual growth.
+          Raising Muslim children in today's fast-paced world comes with many blessings, but it also brings unique challenges. One of the most important duties parents have is providing a strong Islamic foundation for their children. In a busy society, finding a local teacher with the right skills and schedule can feel overwhelming. Many families now look to the internet to find the best online Quran classes. However, knowing <strong>how to choose the right online Quran tutor for your child</strong> is critical to their long-term motivation and spiritual growth.
         </p>
         <p className="text-base text-muted-text">
           Many parents feel stressed when looking for an <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran teacher</Link> who fits their schedule, speaks fluent English, and connects well with kids. In this comprehensive guide, we will break down exactly how to evaluate tutor credentials, avoid common red flags, and select a tutor who inspires a lifetime love for the Holy Quran.
@@ -1345,13 +1359,13 @@ function ArticleContentSelectTutor() {
           <div>
             <h3 className="text-lg font-bold text-foreground">Experience Teaching Children</h3>
             <p className="text-sm text-muted-text">
-              Teaching adults is very different from teaching kids. Tutors who specialize as a <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">Quran tutor for kids</Link> use engaging visual slides, shape-matching games, and rewards to keep lessons fun and productive.
+              Teaching adults is very different from teaching kids. Tutors who specialize as a <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Quran tutor for kids</Link> use engaging visual slides, shape-matching games, and rewards to keep lessons fun and productive.
             </p>
           </div>
           <div>
             <h3 className="text-lg font-bold text-foreground">Patience and Communication Skills</h3>
             <p className="text-sm text-muted-text">
-              Learning a new language requires time and repetition. A great tutor is patient, never raises their voice, and uses encouraging words. They must speak fluent English so they can communicate clearly with children raised in the United States without language barriers.
+              Learning a new language requires time and repetition. A great tutor is patient, never raises their voice, and uses encouraging words. They must speak fluent English so they can communicate clearly with children raised in English-speaking countries without language barriers.
             </p>
           </div>
           <div>
@@ -1439,7 +1453,7 @@ function ArticleContentSelectTutor() {
           Features to Look for in an Online Quran Academy
         </h2>
         <p className="text-base text-muted-text">
-          Enrolling with a structured <Link href="/" className="text-primary font-semibold hover:underline">online Quran academy USA</Link> offers professional safeguards that private freelance tutors cannot match:
+          Enrolling with a structured <Link href="/" className="text-primary font-semibold hover:underline">online Quran academy</Link> offers professional safeguards that private freelance tutors cannot match:
         </p>
         <ul className="space-y-3 pt-2">
           <li className="flex items-start space-x-3 text-sm text-muted-text">
@@ -1456,21 +1470,21 @@ function ArticleContentSelectTutor() {
           </li>
           <li className="flex items-start space-x-3 text-sm text-muted-text">
             <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-            <span><strong className="text-foreground">Affordable and Encrypted Payments:</strong> Clear pricing tiers, family sibling discounts, and secure billing gateways like Stripe.</span>
+            <span><strong className="text-foreground">Affordable and Transparent Payments:</strong> Clear pricing tiers, family sibling discounts, and secure, transparent payment options.</span>
           </li>
         </ul>
       </section>
 
-      {/* Why Parents in the USA Prefer Online Quran Learning */}
+      {/* Why Families Worldwide Prefer Online Quran Learning */}
       <section className="space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Why Parents in the USA Prefer Online Quran Learning
+          Why Families Worldwide Prefer Online Quran Learning
         </h2>
         <p className="text-base text-muted-text">
-          Muslim families in metropolitan areas like Houston, Chicago, Naperville, Dallas, New York, and Los Angeles manage demanding schedules. Travel times during rush hour to reach a local masjid can cause severe burnout.
+          Muslim families living in busy metropolitan areas worldwide manage highly demanding schedules. Long commutes to a local mosque or Islamic center after school or work can cause severe burnout for both parents and children.
         </p>
         <p className="text-base text-muted-text">
-          Virtual classrooms remove these geographic limitations. Your family gains access to Al-Azhar qualified tutors from anywhere in the country. This convenience allows your child to learn Tajweed or progress on their <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz program</Link> in a calm, stress-free home environment.
+          Virtual classrooms remove these geographic limitations. Your family gains access to highly qualified tutors regardless of your location. This convenience allows your child to learn Tajweed or progress on their <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz program</Link> in a calm, stress-free home environment that fits your schedule.
         </p>
       </section>
 
@@ -1490,7 +1504,7 @@ function ArticleContentSelectTutor() {
               <tr className="border-b border-card-border/60 hover:bg-foreground/[0.01]">
                 <td className="p-4 text-sm font-semibold text-foreground">Qualifications</td>
                 <td className="p-4 text-xs text-muted-text">No verifiable credentials or degrees</td>
-                <td className="p-4 text-xs text-foreground font-medium">Certified scholars holding Al-Azhar/Islamic Studies degrees</td>
+                <td className="p-4 text-xs text-foreground font-medium">Certified scholars holding recognized Islamic Studies degrees</td>
               </tr>
               <tr className="border-b border-card-border/60 hover:bg-foreground/[0.01]">
                 <td className="p-4 text-sm font-semibold text-foreground">Format</td>
@@ -1526,7 +1540,7 @@ function ArticleContentSelectTutor() {
           <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
             <h3 className="text-base font-bold text-foreground">How do I choose an online Quran teacher?</h3>
             <p className="text-xs text-muted-text leading-relaxed">
-              Look for a tutor who holds an Al-Azhar or Islamic Studies degree, has extensive experience teaching children, and is fluent in English. Verify their background checks and always evaluate their teaching style through a free trial class.
+              Look for a tutor who holds a verified Islamic Studies degree, has extensive experience teaching children, and is fluent in English. Verify their background checks and always evaluate their teaching style through a free trial class.
             </p>
           </div>
           <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
@@ -1577,7 +1591,7 @@ function ArticleContentSelectTutor() {
           In conclusion, learning <strong>how to choose the right online Quran tutor for your child</strong> is one of the most impactful decisions you can make for their spiritual future. By focusing on verified scholars, child-friendly teaching methods, one-on-one sessions, and clear parent communication, you set your child up for a lifelong love of the Quran.
         </p>
         <p className="text-base text-muted-text">
-          At OQTutor, we make this search simple and safe. We match your family with Al-Azhar certified male and female tutors who specialize in one-on-one Quran classes for kids. 
+          At OQTutor, we make this search simple and safe. We match your family with certified male and female tutors who specialize in one-on-one Quran classes for kids. 
         </p>
         <div className="pt-6">
           <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
@@ -1585,7 +1599,7 @@ function ArticleContentSelectTutor() {
               Book Your Free Trial Quran Class Today
             </h3>
             <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto font-medium">
-              Join hundreds of Muslim families across the USA learning Quran online. Experience the difference of personalized, private one-on-one lessons.
+              Join hundreds of Muslim families worldwide learning Quran online. Experience the difference of personalized, private one-on-one lessons.
             </p>
             <div className="pt-2">
               <Link
