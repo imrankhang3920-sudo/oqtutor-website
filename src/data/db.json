@@ -27,33 +27,33 @@
     },
     {
       "id": "feat-2",
-      "title": "Male & Female Teachers",
-      "description": "We offer dedicated male and female tutors to ensure a comfortable, private, and customizable learning environment.",
+      "title": "Male & Female Tutors Available",
+      "description": "Choose a tutor your family is comfortable with — we offer both male and female Quran teachers for every course.",
       "icon": "Users"
     },
     {
       "id": "feat-3",
-      "title": "Flexible Timings",
-      "description": "Schedule classes at your convenience. We offer 24/7 sessions to fit into your busy daily schedule.",
+      "title": "Flexible 24/7 Scheduling",
+      "description": "Book classes at any time that fits your routine, across any time zone — mornings, evenings, or weekends.",
       "icon": "Clock"
     },
     {
       "id": "feat-4",
-      "title": "One-on-One Classes",
-      "description": "100% focused attention. Each student gets their own tutor for interactive, personalized learning.",
+      "title": "One-on-One Personalized Lessons",
+      "description": "Every class is 1-on-1, tailored to your child's pace, learning style, and current level — no group distractions.",
       "icon": "UserCheck"
     },
     {
       "id": "feat-5",
-      "title": "Worldwide Students",
-      "description": "Proudly teaching students across the USA, UK, Canada, Australia, Europe, and Middle East.",
-      "icon": "Globe"
+      "title": "Progress Reports & Tracking",
+      "description": "Parents receive regular updates on their child's recitation, memorization, and Tajweed progress.",
+      "icon": "TrendingUp"
     },
     {
       "id": "feat-6",
-      "title": "Affordable Pricing",
-      "description": "Premium quality education at competitive prices with family discounts and no long-term contracts.",
-      "icon": "DollarSign"
+      "title": "Free Trial, No Commitment",
+      "description": "Try free classes before you pay anything — see the teaching quality for yourself, risk-free.",
+      "icon": "Sparkles"
     }
   ],
   "courses": [
