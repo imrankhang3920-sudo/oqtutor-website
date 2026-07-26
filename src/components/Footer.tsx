@@ -101,7 +101,7 @@ export default function Footer({ data }: { data: ContactData }) {
           {/* Quick Links */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Quick Links</h3>
-            <ul className="space-y-3.5">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -118,7 +118,7 @@ export default function Footer({ data }: { data: ContactData }) {
           {/* Courses Links */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Our Courses</h3>
-            <ul className="space-y-3.5">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
               {coursesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
