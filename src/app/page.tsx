@@ -7,6 +7,7 @@ import About from '@/components/About';
 import Features from '@/components/Features';
 import Courses from '@/components/Courses';
 import Testimonials from '@/components/Testimonials';
+import BlogPreview from '@/components/BlogPreview';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -101,6 +102,7 @@ export default async function HomePage() {
         <Features data={dbData.features} />
         <Courses data={dbData.courses} />
         <Testimonials data={dbData.testimonials} />
+        <BlogPreview />
         <FAQ data={dbData.faqs} />
         <Contact data={dbData.contact} />
       </main>
