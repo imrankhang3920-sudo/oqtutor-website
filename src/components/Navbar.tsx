@@ -120,7 +120,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
 
             {/* CTA Button */}
             <Link
-              href="#contact"
+              href="/book-free-trial"
               className="flex items-center justify-center px-5 h-10 text-xs font-semibold rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
             >
               Book Trial
@@ -225,7 +225,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                   </Link>
                 )}
                 <Link
-                  href="#contact"
+                  href="/book-free-trial"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center w-full py-2.5 rounded-full bg-primary text-white text-sm font-semibold shadow-md shadow-primary/10"
                 >

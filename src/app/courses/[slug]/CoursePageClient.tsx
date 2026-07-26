@@ -57,7 +57,7 @@ export default function CoursePageClient({
               
               <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
                 >
                   <span>Book Free Trial Classes</span>
@@ -522,7 +522,7 @@ function NooraniQaidaContent({
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
                 >
                   <span>Book Free Trial Class</span>
@@ -774,7 +774,7 @@ function NooraniQaidaContent({
               } else if (idx === 6) { // Free trial
                 answerNode = (
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed pt-4 font-normal">
-                    Yes. You can try a class for free before committing to any monthly plan. <Link href="/contact" className="text-primary font-bold hover:underline">Book your free trial here</Link>.
+                    Yes. You can try a class for free before committing to any monthly plan. <Link href="/book-free-trial" className="text-primary font-bold hover:underline">Book your free trial here</Link>.
                   </p>
                 );
               }
@@ -821,7 +821,7 @@ function NooraniQaidaContent({
             <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
               >
                 Book a free trial class

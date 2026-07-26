@@ -94,7 +94,7 @@ export default function About({ data, mode = 'home' }: { data: AboutData; mode?:
               </p>
               <div className="pt-2">
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="inline-flex items-center justify-center space-x-2 px-6 py-3 text-xs font-semibold rounded-full bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-xl transition-all duration-300"
                 >
                   <span>Book Free Trial</span>

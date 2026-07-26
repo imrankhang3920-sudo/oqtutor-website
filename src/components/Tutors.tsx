@@ -113,7 +113,7 @@ export default function Tutors({ data }: { data: TutorData[] }) {
 
                   <div className="mt-6 pt-2">
                     <a
-                      href="#contact"
+                      href="/book-free-trial"
                       className="flex items-center justify-center w-full py-2.5 rounded-full border border-primary text-primary text-xs font-semibold hover:bg-primary hover:text-white transition-all duration-300"
                     >
                       Book Class with Tutor

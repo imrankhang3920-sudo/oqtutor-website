@@ -66,7 +66,7 @@ export default function Pricing({ data }: { data: PricingData[] }) {
 
                 <div className="mt-10">
                   <a
-                    href="#contact"
+                    href="/book-free-trial"
                     className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                       plan.isPopular
                         ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30'

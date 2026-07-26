@@ -160,7 +160,7 @@ export default function FAQPageClient({
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 hover:shadow-lg transition-all w-full sm:w-auto"
                 >
                   <span>Book Free Trial</span>

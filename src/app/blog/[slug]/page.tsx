@@ -257,10 +257,10 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 space-y-3">
                   <h3 className="text-lg font-bold text-foreground">Ready to Begin Your Quran Learning Journey?</h3>
                   <p className="text-sm text-muted-text">
-                    Experience the difference of personalized private tutoring. Book a <Link href="/contact" className="text-primary hover:underline font-semibold">free trial Quran class</Link> with our experienced tutors today.
+                    Experience the difference of personalized private tutoring. Book a <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial Quran class</Link> with our experienced tutors today.
                   </p>
                   <Link
-                    href="/contact"
+                    href="/book-free-trial"
                     className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md transition-all"
                   >
                     <span>Book Free Trial Class</span>
@@ -479,7 +479,7 @@ function ArticleContentUSA() {
           </li>
           <li className="flex items-start space-x-3 text-sm text-muted-text">
             <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-            <span><strong className="text-foreground">Risk-Free Trial:</strong> We invite every new family to test our teaching quality with a zero-obligation <Link href="/contact" className="text-primary font-semibold hover:underline">free trial Quran class</Link>.</span>
+            <span><strong className="text-foreground">Risk-Free Trial:</strong> We invite every new family to test our teaching quality with a zero-obligation <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial Quran class</Link>.</span>
           </li>
         </ul>
       </section>
@@ -524,7 +524,7 @@ function ArticleContentUSA() {
           <li className="flex items-start space-x-3 text-sm text-muted-text">
             <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
             <div>
-              <strong className="text-foreground">Book Your Free Trial:</strong> Fill out our quick 30-second form on <Link href="/contact" className="text-primary font-semibold hover:underline">Contact Us</Link> to select your preferred time slot.
+              <strong className="text-foreground">Book Your Free Trial:</strong> Fill out our quick 30-second form on <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">Book Free Trial</Link> to select your preferred time slot.
             </div>
           </li>
           <li className="flex items-start space-x-3 text-sm text-muted-text">
@@ -615,7 +615,7 @@ function ArticleContentUSA() {
           <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
             <h3 className="text-base font-bold text-foreground">How do I sign up for a free trial class?</h3>
             <p className="text-xs text-muted-text leading-relaxed">
-              Simply visit our <Link href="/contact" className="text-primary font-semibold hover:underline">Contact Us</Link> page, choose your preferred day and time, and submit the trial request form.
+              Simply visit our <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">Book Free Trial</Link> page, choose your preferred day and time, and submit the trial request form.
             </p>
           </div>
         </div>
@@ -630,7 +630,7 @@ function ArticleContentUSA() {
           Learning the Quran is a lifelong spiritual journey that brings peace, barakah, and guidance into your household. With <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>, your family can master Tajweed, Quran reading, and Hifz from the comfort of home under the direct mentorship of certified scholars.
         </p>
         <p className="text-base text-muted-text">
-          Take the first step today. Experience our world-class teaching quality firsthand by booking your zero-risk <Link href="/contact" className="text-primary font-semibold hover:underline">free trial Quran class</Link>.
+          Take the first step today. Experience our world-class teaching quality firsthand by booking your zero-risk <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial Quran class</Link>.
         </p>
         
         <div className="pt-6">
@@ -643,7 +643,7 @@ function ArticleContentUSA() {
             </p>
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
                 <span>Claim Your Free Trial Class</span>
@@ -942,7 +942,7 @@ function ArticleContentIllinois() {
             </p>
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
                 <span>Claim Your Free Trial Class</span>
@@ -1308,7 +1308,7 @@ function ArticleContentMotivation() {
             </p>
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
                 <span>Book Free Trial Class</span>
@@ -1612,7 +1612,7 @@ function ArticleContentSelectTutor() {
             </p>
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
                 <span>Book Free Trial Class</span>
@@ -1784,7 +1784,7 @@ function ArticleContentTajweed() {
           Tajweed can feel like a large body of rules from the outside, but it's learned the same way any spoken skill is: one piece at a time, with regular practice, and with correction from someone who can actually hear what you can't. Start with a solid foundation in letter recognition, work through the core rules in order, and prioritize consistent short sessions over occasional long ones.
         </p>
         <p className="text-base text-muted-text">
-          If you'd like guided, one-on-one support rather than learning Tajweed alone, you can <Link href="/contact" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified male or female Tajweed tutors, and see how a structured, personalized curriculum feels before committing to anything. For answers to other common questions from students and parents, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
+          If you'd like guided, one-on-one support rather than learning Tajweed alone, you can <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified male or female Tajweed tutors, and see how a structured, personalized curriculum feels before committing to anything. For answers to other common questions from students and parents, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
         </p>
       </section>
 
@@ -1916,7 +1916,7 @@ function ArticleContentHifz() {
           Hifz succeeds through structure, not intensity. Small daily chunks, out-loud recitation, a fixed schedule, real-time correction from a teacher, and — most importantly — protected revision time are what separate students who complete Hifz from those who stall partway through. None of these techniques require unusual talent; they require consistency applied over time.
         </p>
         <p className="text-base text-muted-text">
-          If you or your child are considering starting or restarting a Hifz journey, you can <Link href="/contact" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified Hifz tutors to build a personalized memorization and revision plan. For more guidance on getting started, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
+          If you or your child are considering starting or restarting a Hifz journey, you can <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified Hifz tutors to build a personalized memorization and revision plan. For more guidance on getting started, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
         </p>
       </section>
 

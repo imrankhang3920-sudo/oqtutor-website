@@ -1,0 +1,75 @@
+import { Metadata } from 'next';
+import { readDB } from '@/data/db';
+import BookFreeTrialClient from './BookFreeTrialClient';
+
+export const dynamic = 'force-dynamic';
+
+interface Props {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const resolvedParams = await searchParams;
+  const hasParams = Object.keys(resolvedParams).length > 0;
+
+  return {
+    title: 'Book 3 Free Trial Online Quran Classes | OQTutor',
+    description: 'Book your 3 free trial online Quran classes. Fill out our simple form with your name, WhatsApp number, preferred course, and scheduling timezone.',
+    keywords: ['book free trial quran', 'online quran classes trial', 'free quran trial', 'register online quran lessons'],
+    alternates: {
+      canonical: 'https://www.oqtutor.com/book-free-trial',
+    },
+    openGraph: {
+      url: 'https://www.oqtutor.com/book-free-trial',
+    },
+    robots: hasParams ? {
+      index: false,
+      follow: true,
+    } : {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export default async function BookFreeTrialPage() {
+  const dbData = readDB();
+
+  // Local Business Schema JSON-LD
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Online Quran Tutor (OQTutor)",
+    "image": "https://www.oqtutor.com/logo.jpg",
+    "telephone": dbData.contact.phone,
+    "email": dbData.contact.email,
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": dbData.contact.location
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <BookFreeTrialClient contactData={dbData.contact} />
+    </>
+  );
+}

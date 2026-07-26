@@ -169,7 +169,7 @@ export default async function USAQuranClassesPage() {
               </p>
               <div className="mt-8 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm"
                 >
                   <span>Book Free Trial Class</span>

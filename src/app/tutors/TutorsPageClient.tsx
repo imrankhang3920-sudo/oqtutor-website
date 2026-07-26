@@ -249,7 +249,7 @@ export default function TutorsPageClient({
                     className="w-full px-4 py-3 text-slate-800 text-sm font-normal focus:outline-none placeholder:text-slate-400 bg-transparent"
                   />
                   <Link
-                    href="/contact"
+                    href="/book-free-trial"
                     className="hidden sm:inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-all shrink-0"
                   >
                     <span>Book Free Trial</span>
@@ -619,7 +619,7 @@ export default function TutorsPageClient({
                               View Profile
                             </button>
                             <Link
-                              href="/contact"
+                              href="/book-free-trial"
                               className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition-all flex items-center space-x-1.5"
                             >
                               <span>Book Free Trial</span>
@@ -725,7 +725,7 @@ export default function TutorsPageClient({
 
                     <div className="flex items-center space-x-3 w-full sm:w-auto">
                       <Link
-                        href="/contact"
+                        href="/book-free-trial"
                         className="flex-1 sm:flex-initial text-center px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-lg shadow-emerald-600/20 transition-all"
                       >
                         Book Free Trial
@@ -915,7 +915,7 @@ export default function TutorsPageClient({
                   <span className="text-[10px] text-emerald-600 font-semibold">{selectedTutor.nextAvailableSlot || 'Available Today'}</span>
                 </div>
                 <Link
-                  href="/contact"
+                  href="/book-free-trial"
                   className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-lg shadow-emerald-600/20 transition-all flex items-center space-x-2"
                 >
                   <span>Book Free Trial Class</span>

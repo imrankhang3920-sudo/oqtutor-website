@@ -160,7 +160,7 @@ export default async function HowItWorksPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
               <Link
-                href="/contact"
+                href="/book-free-trial"
                 className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white shadow-lg shadow-primary/25 hover:shadow-xl transition-all duration-300 font-bold"
               >
                 <span>Book Free Trial</span>
