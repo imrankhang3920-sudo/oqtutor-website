@@ -12,21 +12,21 @@ interface BlogPreviewItem {
 const blogItems: BlogPreviewItem[] = [
   {
     image: '/tutor-guide.jpg',
-    category: 'Parent Guide',
-    title: 'How to Choose the Right Online Quran Tutor for Your Child',
-    link: '/blog/how-to-choose-online-quran-tutor',
+    category: 'Beginner Quran Guides',
+    title: 'How to Select the Right Online Quran Tutor for Your Family',
+    link: '/blog/select-right-online-quran-tutor',
   },
   {
     image: '/tajweed-basics.jpg',
-    category: 'Tajweed',
-    title: 'Tajweed Basics: A Beginner\'s Guide to Quran Recitation',
-    link: '/blog/tajweed-basics-beginners-guide',
+    category: 'Tajweed Guides',
+    title: 'A Beginner\'s Guide to Mastering Tajweed Rules at Home',
+    link: '/blog/beginners-guide-mastering-tajweed-rules',
   },
   {
     image: '/hifz-motivation.jpg',
-    category: 'Hifz',
-    title: '5 Tips to Keep Kids Motivated During Quran Memorization',
-    link: '/blog/hifz-motivation-tips-for-kids',
+    category: 'Hifz Tips',
+    title: 'Effective Hifz Techniques for Memorizing the Quran Remotely',
+    link: '/blog/effective-hifz-memorization-techniques',
   },
 ];
 
