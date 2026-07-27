@@ -71,8 +71,91 @@ export default async function HowItWorksPage() {
     },
   ];
 
+  const faqQuestions = [
+    {
+      question: 'How do online Quran classes work?',
+      answer: 'Online Quran classes are 1-on-1 interactive video sessions conducted via Zoom or Skype. Students share their screen with the tutor, read Noorani Qaida or Quran, and receive real-time pronunciation correction (Tajweed) from certified teachers.'
+    },
+    {
+      question: 'Is the trial class really free?',
+      answer: 'Yes, OQTutor offers a 3-day evaluation trial class completely free of charge. No credit card details, upfront registration fees, or long-term commitments are required to begin the trial.'
+    },
+    {
+      question: 'Can I choose a male or female tutor?',
+      answer: 'Yes, parents and students can select their preferred tutor gender. We offer qualified, certified male and female Quran teachers fluent in English to accommodate every family\'s privacy and comfort preferences.'
+    },
+    {
+      question: 'What if I don\'t like my tutor after the trial?',
+      answer: 'If you are not comfortable with your assigned tutor, we will arrange a different tutor immediately. Our academic coordinators work closely with you to find the perfect match for your child.'
+    }
+  ];
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Start Online Quran Classes with OQTutor",
+    "description": "Get started with our 1-on-1 online Quran classes in three simple steps. Learn Noorani Qaida, Tajweed, and Hifz from qualified tutors.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "url": "https://www.oqtutor.com/how-it-works#step-1",
+        "name": "Book a 3-Day Free Trial",
+        "itemListElement": [
+          {
+            "@type": "HowToDirection",
+            "text": "Fill out our simple trial registration form. Select your preferred class times, course (Noorani Qaida, Hifz, Tajweed, etc.), and choose between male or female certified tutors."
+          }
+        ]
+      },
+      {
+        "@type": "HowToStep",
+        "url": "https://www.oqtutor.com/how-it-works#step-2",
+        "name": "Attend the Evaluation Class",
+        "itemListElement": [
+          {
+            "@type": "HowToDirection",
+            "text": "Meet your tutor in a 30-minute free trial session via Zoom or Skype. The tutor will assess your current level, understand your learning pace, and outline a tailored curriculum path."
+          }
+        ]
+      },
+      {
+        "@type": "HowToStep",
+        "url": "https://www.oqtutor.com/how-it-works#step-3",
+        "name": "Select a Plan & Start Learning",
+        "itemListElement": [
+          {
+            "@type": "HowToDirection",
+            "text": "If you are satisfied with the trial classes, select a subscription package matching your desired frequency (2, 3, or 5 days a week) and begin your regular custom sessions."
+          }
+        ]
+      }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqQuestions.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Navbar adminLoggedIn={adminLoggedIn} />
       
       <main className="flex-grow py-16 md:py-24">
@@ -147,6 +230,48 @@ export default async function HowItWorksPage() {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <section className="py-16 md:py-24 border-b border-card-border/60 mb-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Frequently Asked Questions</h2>
+              <p className="mt-3 text-2xl sm:text-3xl font-extrabold text-foreground">
+                Common Questions About How It Works
+              </p>
+              <div className="h-1 w-16 bg-secondary mx-auto mt-3 rounded-full" />
+            </div>
+
+            <div className="space-y-4">
+              {faqQuestions.map((faq, idx) => (
+                <details
+                  key={idx}
+                  className="group glass rounded-2xl border border-card-border/60 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300 open:border-primary/20"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+                    <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors pr-4">
+                      {faq.question}
+                    </h3>
+                    <span className="shrink-0 transition duration-300 group-open:-rotate-180 text-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="mt-4 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-4">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Container */}
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
