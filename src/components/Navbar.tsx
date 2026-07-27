@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [mobileCoursesExpanded, setMobileCoursesExpanded] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   React.useEffect(() => {
@@ -41,7 +42,66 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.slice(0, 5).map((item) => (
+            <Link
+              href="/"
+              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            >
+              Home
+            </Link>
+
+            {/* Courses Dropdown */}
+            <div className="relative group flex items-center">
+              <Link
+                href="/courses"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2 pr-1"
+              >
+                Courses
+              </Link>
+              <button className="text-foreground/60 hover:text-primary transition-colors cursor-pointer bg-transparent py-2">
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+              
+              <div className="absolute left-0 top-full mt-0 w-48 rounded-xl border border-card-border bg-background p-1.5 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link
+                  href="/courses/noorani-qaida"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Noorani Qaida
+                </Link>
+                <Link
+                  href="/courses/quran-reading"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Quran Reading
+                </Link>
+                <Link
+                  href="/courses/tajweed"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Quran with Tajweed
+                </Link>
+                <Link
+                  href="/courses/hifz"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Hifz-ul-Quran
+                </Link>
+                <Link
+                  href="/courses/islamic-studies"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Islamic Studies
+                </Link>
+                <Link
+                  href="/courses/arabic-language"
+                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                >
+                  Arabic Language Course
+                </Link>
+              </div>
+            </div>
+
+            {menuItems.slice(2, 5).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -158,7 +218,88 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
             className="md:hidden border-b border-card-border bg-background"
           >
             <div className="space-y-1 px-4 pb-6 pt-2">
-              {menuItems.slice(0, 5).map((item) => (
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className="block rounded-lg px-3 py-3 text-base font-medium text-foreground/80 hover:bg-foreground/5 hover:text-primary transition-all"
+              >
+                Home
+              </Link>
+
+              {/* Courses Accordion Mobile */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setMobileCoursesExpanded(!mobileCoursesExpanded)}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-foreground/80 hover:bg-foreground/5 hover:text-primary transition-all text-left"
+                >
+                  <span>Courses</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileCoursesExpanded ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {mobileCoursesExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden pl-4 pr-3 py-1 space-y-1 bg-foreground/[0.01] rounded-lg"
+                    >
+                      <Link
+                        href="/courses/noorani-qaida"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Noorani Qaida
+                      </Link>
+                      <Link
+                        href="/courses/quran-reading"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Quran Reading
+                      </Link>
+                      <Link
+                        href="/courses/tajweed"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Quran with Tajweed
+                      </Link>
+                      <Link
+                        href="/courses/hifz"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Hifz-ul-Quran
+                      </Link>
+                      <Link
+                        href="/courses/islamic-studies"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Islamic Studies
+                      </Link>
+                      <Link
+                        href="/courses/arabic-language"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Arabic Language Course
+                      </Link>
+                      <Link
+                        href="/courses"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2.5 px-3 text-sm font-bold text-primary hover:bg-foreground/5 hover:text-primary-hover transition-all"
+                      >
+                        View All Courses &rarr;
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {menuItems.slice(2, 5).map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
