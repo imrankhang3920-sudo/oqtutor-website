@@ -13,9 +13,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Book Free Trial Class | Contact Online Quran Academy',
-    description: 'Book your 3 free trial online Quran classes. Form for parent name, student age, country selector, preferred times, and expert Tajweed or Hifz tutor matches.',
-    keywords: ['book free trial quran', 'contact quran tutor', 'quran classes UK Europe', 'register online quran'],
+    title: 'Contact Us | OQTutor Online Quran Academy',
+    description: 'Get in touch with OQTutor. Reach our 24/7 academic support team via email, phone, or live WhatsApp chat for any general inquiries.',
+    keywords: ['contact oqtutor', 'quran tutor phone number', 'support online quran', 'quran academy email'],
     alternates: {
       canonical: 'https://www.oqtutor.com/contact',
     },
