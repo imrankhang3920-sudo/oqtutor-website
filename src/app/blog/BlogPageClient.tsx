@@ -4,9 +4,66 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BlogData, ContactData } from '@/data/db';
 import { BookOpen, Clock, Calendar, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const getBlogImage = (slug: string): string => {
+  const mapping: Record<string, string> = {
+    'online-quran-classes-usa': '/online-quran-classes-usa.jpg',
+    'tips-keep-kids-motivated-online-quran': '/motivated-kids-watercolor.jpg',
+    'beginners-guide-mastering-tajweed-rules': '/tajweed-teacher.jpg',
+    'select-right-online-quran-tutor': '/tutor-guide.jpg',
+    'effective-hifz-memorization-techniques': '/hifz-quran-desk.png',
+    'role-parents-islamic-education-west': '/parents-role.jpg',
+    'why-noorani-qaida-essential': '/noorani-qaida.jpg',
+    'reciting-quran-tajweed-posture-breathing': '/quran-reading.jpg',
+    'common-pronunciation-mistakes-qaida': '/arabic-reading.jpg',
+    'consistent-hifz-quran-revision': '/quran-hifz.jpg',
+    'islamic-studies-homeschool-curriculum': '/islamic-studies.jpg',
+    'choosing-male-female-quran-teacher': '/tutor-ayesha.jpg',
+    'benefits-interactive-one-on-one-classes': '/about-boy.png',
+    'understanding-arabic-grammar-quran': '/quran-tajweed.jpg',
+    'prepare-child-first-online-class': '/motivated-kids-quran.jpg',
+    'quran-memorization-adults-never-late': '/quran-salah.jpg',
+    'teaching-salah-wudu-toddlers': '/daily-duas.jpg',
+    'tajweed-vs-tarteel-difference': '/tajweed-basics.jpg',
+    'virtues-reciting-quran-daily': '/arabic-reading.jpg',
+    'screen-time-spiritual-learning': '/mission-slide.png',
+    'read-arabic-fluidly-without-vowels': '/arabic-reading.jpg',
+    'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
+  };
+  return mapping[slug] || '/arabic-reading.jpg';
+};
+
+const getBlogImageAlt = (slug: string, title: string): string => {
+  const mapping: Record<string, string> = {
+    'online-quran-classes-usa': 'Online Quran tutor teaching kids online via video session in USA',
+    'tips-keep-kids-motivated-online-quran': 'Interactive online Quran classroom with teacher and student',
+    'beginners-guide-mastering-tajweed-rules': 'Certified teacher pointing at Tajweed rules chart on screen',
+    'select-right-online-quran-tutor': 'Father and son learning Quran online together using a laptop',
+    'effective-hifz-memorization-techniques': 'Copy of Holy Quran on desk next to laptop showing mountain backdrop',
+    'role-parents-islamic-education-west': 'Father sitting with son helping him with laptop online studies',
+    'why-noorani-qaida-essential': 'Noorani Qaida booklet open for basic learning',
+    'reciting-quran-tajweed-posture-breathing': 'Student reciting Quran with proper posture and breathing',
+    'common-pronunciation-mistakes-qaida': 'Arabic letters reading practice',
+    'consistent-hifz-quran-revision': 'Quran book on stand for Hifz revision',
+    'islamic-studies-homeschool-curriculum': 'Kids learning Islamic studies at home',
+    'choosing-male-female-quran-teacher': 'Certified female Quran tutor online',
+    'benefits-interactive-one-on-one-classes': 'Child smiling during one on one online Quran lesson',
+    'understanding-arabic-grammar-quran': 'Arabic text close up showing grammatical accents',
+    'prepare-child-first-online-class': 'Kid happily reading Quran before class',
+    'quran-memorization-adults-never-late': 'Adult memorizing Quran pages',
+    'teaching-salah-wudu-toddlers': 'Daily prayers and wudu teaching guides',
+    'tajweed-vs-tarteel-difference': 'Tajweed basics and rules illustration',
+    'virtues-reciting-quran-daily': 'Reading Quran daily for spiritual growth',
+    'screen-time-spiritual-learning': 'Balancing screen time and Islamic learning',
+    'read-arabic-fluidly-without-vowels': 'Reading fluid Arabic script without vowels',
+    'how-online-quran-classes-help-busy-muslim-families-in-illinois': 'Busy family in Illinois learning Quran online',
+  };
+  return mapping[slug] || title;
+};
 
 export default function BlogPageClient({
   initialBlogs,
@@ -126,35 +183,53 @@ export default function BlogPageClient({
                 {filteredBlogs.map((blog) => (
                   <div
                     key={blog.id}
-                    className="glass rounded-3xl border border-card-border p-6 flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 group"
+                    className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 group hover:-translate-y-1"
                   >
                     <div>
-                      {/* Meta information */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">
-                          {blog.category}
-                        </span>
-                        <div className="flex items-center space-x-1.5 text-[10px] text-muted-text font-medium">
-                          <Clock className="h-3.5 w-3.5 shrink-0" />
-                          <span>{blog.readTime}</span>
-                        </div>
+                      {/* Image Header */}
+                      <div className="relative h-48 w-full bg-foreground/5 overflow-hidden">
+                        <Image
+                          src={getBlogImage(blog.slug)}
+                          alt={getBlogImageAlt(blog.slug, blog.title)}
+                          fill
+                          sizes="(max-w-7xl) 33vw, 100vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
 
-                      {/* Header */}
-                      <h3 className="text-base font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors">
-                        {blog.title}
-                      </h3>
-                      
-                      <p className="text-xs text-muted-text leading-relaxed font-normal mb-6">
-                        {blog.description}
-                      </p>
+                      {/* Content Container */}
+                      <div className="p-6">
+                        {/* Category Tag */}
+                        <div className="mb-4">
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">
+                            {blog.category}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-base font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2 min-h-[2.75rem]">
+                          {blog.title}
+                        </h3>
+                        
+                        {/* Excerpt */}
+                        <p className="text-xs text-muted-text leading-relaxed font-normal mb-6 line-clamp-3">
+                          {blog.description}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="border-t border-card-border/60 pt-4 flex items-center justify-between text-xs">
-                      <span className="text-[10px] text-muted-text font-medium flex items-center space-x-1.5">
-                        <Calendar className="h-3.5 w-3.5" />
-                        <span>July 2026</span>
-                      </span>
+                    {/* Bottom Meta & Read More */}
+                    <div className="px-6 pb-6 pt-4 border-t border-card-border/60 flex items-center justify-between text-xs">
+                      <div className="flex items-center space-x-3 text-[10px] text-muted-text font-medium">
+                        <span className="flex items-center space-x-1.5">
+                          <Calendar className="h-3.5 w-3.5" />
+                          <span>July 2026</span>
+                        </span>
+                        <span className="flex items-center space-x-1.5">
+                          <Clock className="h-3.5 w-3.5 shrink-0" />
+                          <span>{blog.readTime}</span>
+                        </span>
+                      </div>
                       <Link
                         href={`/blog/${blog.slug}`}
                         className="font-semibold text-primary hover:text-primary-hover flex items-center space-x-1"
