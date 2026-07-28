@@ -33,6 +33,7 @@ const getBlogImage = (slug: string): string => {
     'screen-time-spiritual-learning': '/screen-time-learning.jpg',
     'read-arabic-fluidly-without-vowels': '/read-arabic-fluidly.jpg',
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
+    'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   };
   return mapping[slug] || '/arabic-reading.jpg';
 };
@@ -61,6 +62,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'screen-time-spiritual-learning': 'Boy studying online with laptop, writing notes in notebook',
     'read-arabic-fluidly-without-vowels': 'Man sitting in a mosque in white clothes reciting the Quran',
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': 'Busy family in Illinois learning Quran online',
+    'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
   };
   return mapping[slug] || title;
 };
