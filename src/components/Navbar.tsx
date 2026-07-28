@@ -25,6 +25,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
     { name: 'About Us', href: '/about' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Prayer Times', href: '/prayer-times' },
     { name: 'Contact', href: '/contact' },
   ];
 
