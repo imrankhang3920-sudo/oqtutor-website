@@ -13,8 +13,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Book 3 Free Trial Online Quran Classes | OQTutor',
-    description: 'Book your 3 free trial online Quran classes. Fill out our simple form with your name, WhatsApp number, preferred course, and scheduling timezone.',
+    title: 'Book 3-Day Free Trial Online Quran Classes | OQTutor',
+    description: 'Book a 3-day free trial of our online Quran classes. Choose your course, timezone, and tutor preference with no card details or contracts required.',
     keywords: ['book free trial quran', 'online quran classes trial', 'free quran trial', 'register online quran lessons'],
     alternates: {
       canonical: 'https://www.oqtutor.com/book-free-trial',

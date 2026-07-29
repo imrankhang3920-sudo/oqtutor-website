@@ -10,8 +10,8 @@ import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Affordable Fee Plans | Online Quran Academy Packages',
-  description: 'Online Quran learning pricing plans: Starter ($30/mo), Standard ($40/mo), and Premium ($50/mo). Get 15% family discounts and a 7-day money-back guarantee.',
+  title: 'Affordable Pricing Plans & Packages | Online Quran Academy',
+  description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
   keywords: ['online quran classes fees', 'affordable quran tutor', 'quran learning prices', 'private quran lesson cost'],
   alternates: {
     canonical: '/pricing',

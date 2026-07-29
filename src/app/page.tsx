@@ -26,10 +26,14 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
+    title: 'OQTutor | 1-on-1 Online Quran Classes for Kids & Adults',
+    description: 'Learn Quran online with certified male and female tutors. Serving USA, UK, Canada, and Australia. Private 1-on-1 Tajweed, Hifz, and Arabic. Free trial.',
     alternates: {
       canonical: 'https://www.oqtutor.com/',
     },
     openGraph: {
+      title: 'OQTutor | 1-on-1 Online Quran Classes for Kids & Adults',
+      description: 'Learn Quran online with certified male and female tutors. Serving USA, UK, Canada, and Australia. Private 1-on-1 Tajweed, Hifz, and Arabic. Free trial.',
       url: 'https://www.oqtutor.com/',
     },
     robots: hasParams ? {

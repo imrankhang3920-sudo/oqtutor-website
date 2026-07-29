@@ -13,8 +13,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Contact Us | OQTutor Online Quran Academy',
-    description: 'Get in touch with OQTutor. Reach our 24/7 academic support team via email, phone, or live WhatsApp chat for any general inquiries.',
+    title: 'Contact Us | OQTutor - Online Quran Academy',
+    description: 'Contact OQTutor for any questions regarding our online Quran classes, pricing, or schedules. Support is available 24/7 via phone, email, and WhatsApp.',
     keywords: ['contact oqtutor', 'quran tutor phone number', 'support online quran', 'quran academy email'],
     alternates: {
       canonical: 'https://www.oqtutor.com/contact',

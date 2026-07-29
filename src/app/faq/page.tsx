@@ -5,8 +5,8 @@ import FAQPageClient from './FAQPageClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Online Quran Tutoring FAQ',
-  description: 'Find answers to common questions about OQTutor: schedules, class timings, female teachers, pricing, siblings discounts, and free trial classes.',
+  title: 'Frequently Asked Questions | Online Quran Academy FAQ',
+  description: 'Find answers to common questions about OQTutor, including class schedules, timezone adjustments, choosing female teachers, pricing, and trial registrations.',
   keywords: ['online quran academy FAQ', 'quran learning questions', 'online tajweed classes FAQ', 'hifz memorization answers'],
   alternates: {
     canonical: '/faq',

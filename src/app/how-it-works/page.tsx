@@ -10,8 +10,8 @@ import { BookOpen, Calendar, Video, CheckCircle, ArrowRight, ShieldCheck, HeartH
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'How It Works | OQTutor - Online Quran Academy',
-  description: 'Learn how OQTutor works. Get started with our one-to-one online Quran classes, Tajweed, Hifz, and Islamic studies in 3 simple steps. Book your free trial today.',
+  title: 'How Online Quran Classes Work | Easy 3-Step Process | OQTutor',
+  description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
   keywords: ['how online quran classes work', 'learn quran online process', 'quran tutors trial class', 'oqtutor study steps'],
   alternates: {
     canonical: '/how-it-works',

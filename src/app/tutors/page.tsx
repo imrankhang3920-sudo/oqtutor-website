@@ -5,8 +5,8 @@ import TutorsPageClient from './TutorsPageClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Certified Quran Tutors | Male & Female Teachers Online',
-  description: 'Learn Quran with our certified male and female Quran teachers. Native Arabic and bilingual tutors, standard qualifications, and customized child-friendly pedagogy.',
+  title: 'Certified Male & Female Online Quran Teachers | OQTutor',
+  description: 'Study with certified male and female Quran tutors online. Our teachers hold authentic Ijazah qualifications. Select your preferred bilingual tutor.',
   keywords: ['online quran teacher', 'male quran tutor', 'female quran teacher', 'qualified quran tutors', 'private quran teacher'],
   alternates: {
     canonical: '/tutors',

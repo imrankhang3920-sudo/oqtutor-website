@@ -13,8 +13,8 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'About Us & Our Mission | Online Quran Tutor',
-  description: 'Learn about OQTutor, our mission, values, and why we are Europe’s leading online Quran tutoring academy for kids and adults.',
+  title: 'About OQTutor | Our Mission & Online Quran Academy Values',
+  description: 'Discover the mission and values behind OQTutor. We make structured online Quran learning accessible and engaging for Muslim families worldwide.',
   keywords: ['online quran academy mission', 'about oqtutor', 'quran learning principles', 'islamic tutoring values'],
   alternates: {
     canonical: '/about',
