@@ -1489,13 +1489,13 @@ function FemaleQuranTeacherContent({
   ];
 
   const courses = [
-    { name: "Noorani Qaida", level: "Absolute Beginners", focus: "Arabic letters, shapes, Harakat, and connection basics" },
-    { name: "Quran Reading", level: "Intermediate", focus: "Connecting words, rhythm, and waqf (pausing) rules" },
-    { name: "Quran with Tajweed", level: "Advanced", focus: "Phonetics, articulation points (makharij), and rules like Ghunnah" },
-    { name: "Hifz-ul-Quran", level: "Dedicated", focus: "Step-by-step memorization of chapters with structured revision" },
-    { name: "Islamic Studies", level: "All Ages", focus: "Fiqh (prayer rules), Seerah, Hadith, and Islamic manners" },
-    { name: "Daily Duas", level: "All Ages", focus: "Morning and evening Azkar, and prayers for daily protection" },
-    { name: "Arabic Basics", level: "Beginner", focus: "Building vocabulary, root words, and understanding Quranic text" }
+    { name: "Noorani Qaida", slug: "noorani-qaida", level: "Absolute Beginners", focus: "Arabic letters, shapes, Harakat, and connection basics" },
+    { name: "Quran Reading", slug: "quran-reading", level: "Intermediate", focus: "Connecting words, rhythm, and waqf (pausing) rules" },
+    { name: "Quran with Tajweed", slug: "tajweed", level: "Advanced", focus: "Phonetics, articulation points (makharij), and rules like Ghunnah" },
+    { name: "Hifz-ul-Quran", slug: "hifz", level: "Dedicated", focus: "Step-by-step memorization of chapters with structured revision" },
+    { name: "Islamic Studies", slug: "islamic-studies", level: "All Ages", focus: "Fiqh (prayer rules), Seerah, Hadith, and Islamic manners" },
+    { name: "Daily Duas", slug: "daily-duas", level: "All Ages", focus: "Morning and evening Azkar, and prayers for daily protection" },
+    { name: "Arabic Basics", slug: "arabic-language", level: "Beginner", focus: "Building vocabulary, root words, and understanding Quranic text" }
   ];
 
   const faqs = [
@@ -1599,7 +1599,7 @@ function FemaleQuranTeacherContent({
               </h1>
               <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
               <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
-                Learn Quran online with certified female Quran teachers. Our private, one-on-one classes provide a safe, private, and comfortable environment tailored for sisters, children, and reverts globally. Learn Noorani Qaida, Tajweed, or Hifz at your own pace.
+                Choosing the right path for Islamic education is one of the most important decisions a family can make. At OQTutor, we connect sisters, kids, and families with qualified <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> online. Our private, one-on-one sessions are designed to provide a comfortable, supportive, and safe learning environment. Tutors guide you step-by-step through our <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida Course</Link>, <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading Course</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed Course</Link>, and <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz Course</Link>, entirely at your own pace.
               </p>
               
               <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -1641,7 +1641,7 @@ function FemaleQuranTeacherContent({
                 <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
                 <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
                   <Image
-                    src="/female-quran-teacher.jpg"
+                    src="/female-teacher-girl.jpg"
                     alt="online female quran teacher conducting one-on-one class with a young girl"
                     width={400}
                     height={320}
@@ -1786,7 +1786,11 @@ function FemaleQuranTeacherContent({
               <tbody className="divide-y divide-card-border/40">
                 {courses.map((c, idx) => (
                   <tr key={idx} className="hover:bg-foreground/[0.01] transition-colors">
-                    <td className="px-6 py-4 font-bold text-foreground">{c.name}</td>
+                    <td className="px-6 py-4 font-bold text-foreground">
+                      <Link href={`/courses/${c.slug}`} className="text-primary hover:underline font-bold">
+                        {c.name}
+                      </Link>
+                    </td>
                     <td className="px-6 py-4 text-xs font-semibold text-secondary">{c.level}</td>
                     <td className="px-6 py-4 text-xs text-muted-text font-normal">{c.focus}</td>
                   </tr>
