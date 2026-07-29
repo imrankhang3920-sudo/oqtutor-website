@@ -79,7 +79,7 @@ export default function PrayerTimesClientPage({
       {/* 2. WIDGET DISPLAY SECTION */}
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-center">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-3xl">
             <PrayerTimesWidget />
           </div>
         </div>
