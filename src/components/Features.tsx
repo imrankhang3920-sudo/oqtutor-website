@@ -1,18 +1,51 @@
 import React from 'react';
 import { Award, Users, Clock, UserCheck, TrendingUp, Sparkles, ArrowRight } from 'lucide-react';
-import { FeatureData } from '@/data/db';
 import Link from 'next/link';
 
-const iconMap: Record<string, React.ComponentType<any>> = {
-  Award,
-  Users,
-  Clock,
-  UserCheck,
-  TrendingUp,
-  Sparkles,
-};
+export default function Features({ data }: { data?: any[] }) {
+  const features = [
+    {
+      id: "feat-1",
+      title: "Certified Tutors",
+      description: "Learn from qualified male and female Quran tutors with years of online teaching experience.",
+      icon: Award,
+      link: "/tutors",
+      cta: "Learn More →"
+    },
+    {
+      id: "feat-2",
+      title: "Male & Female Tutors Available",
+      description: "Choose a tutor that matches your family's preference and learning style.",
+      icon: Users,
+      link: "/tutors",
+      cta: "Meet Our Tutors →"
+    },
+    {
+      id: "feat-3",
+      title: "One-on-One Personalized Lessons",
+      description: "Every student receives personalized one-on-one Quran classes designed for their learning pace.",
+      icon: UserCheck,
+      link: "/courses",
+      cta: "View Courses →"
+    },
+    {
+      id: "feat-4",
+      title: "Progress Reports & Tracking",
+      description: "Receive regular progress reports so parents can monitor every student's improvement.",
+      icon: TrendingUp,
+      link: "/about",
+      cta: "How It Works →"
+    },
+    {
+      id: "feat-5",
+      title: "Free Trial, No Commitment",
+      description: "Book a free trial class today and experience our teaching before enrolling.",
+      icon: Sparkles,
+      link: "/free-trial",
+      cta: "Book Free Trial →"
+    }
+  ];
 
-export default function Features({ data }: { data: FeatureData[] }) {
   return (
     <section id="features" className="py-16 md:py-24 bg-foreground/[0.01] relative overflow-hidden">
       {/* Decorative vectors */}
@@ -31,21 +64,33 @@ export default function Features({ data }: { data: FeatureData[] }) {
           </p>
         </div>
 
-        {/* Minimal Feature Grid (Yoast-inspired) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 max-w-6xl mx-auto">
-          {data.map((feature) => {
-            const IconComponent = iconMap[feature.icon] || Award;
+        {/* Feature Grid with Stretched Links */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 sm:gap-x-12 sm:gap-y-12 max-w-6xl mx-auto">
+          {features.map((feature) => {
+            const IconComponent = feature.icon;
             return (
-              <div key={feature.id} className="flex flex-col items-start text-left space-y-3.5">
+              <div 
+                key={feature.id} 
+                className="group relative flex flex-col items-center text-center sm:items-start sm:text-left space-y-3.5 px-6 sm:px-0 w-full hover:-translate-y-1 active:scale-[0.98] transition-all duration-300"
+              >
                 <div className="text-primary">
                   <IconComponent className="h-7 w-7 stroke-[1.75]" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground tracking-tight">
-                  {feature.title}
+                  <Link 
+                    href={feature.link} 
+                    aria-label={`Learn more about ${feature.title}`}
+                    className="after:absolute after:inset-0 focus:outline-none hover:text-primary transition-colors"
+                  >
+                    {feature.title}
+                  </Link>
                 </h3>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                   {feature.description}
                 </p>
+                <div className="text-xs font-bold text-primary flex items-center gap-1 group-hover:text-primary-hover transition-colors">
+                  <span>{feature.cta}</span>
+                </div>
               </div>
             );
           })}

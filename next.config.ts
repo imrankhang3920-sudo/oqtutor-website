@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Redirect /free-trial to /book-free-trial
+      {
+        source: '/free-trial',
+        destination: '/book-free-trial',
+        permanent: true,
+      },
       // 1. Rename redirects for changed course slugs (singular /course/* to new plural /courses/* paths)
       {
         source: '/course/quran-with-tajweed',
