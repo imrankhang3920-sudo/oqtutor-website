@@ -25,6 +25,10 @@ export default function CoursePageClient({
     return <QuranReadingContent course={course} contactData={contactData} />;
   }
 
+  if (course.slug === 'female-quran-teacher') {
+    return <FemaleQuranTeacherContent course={course} contactData={contactData} />;
+  }
+
   const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
 
@@ -1404,6 +1408,543 @@ function QuranReadingContent({
           <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
             <h2 className="text-3xl font-extrabold text-foreground mb-4">Ready to Start?</h2>
+            <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/book-free-trial"
+                className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
+              >
+                Book a free trial class
+              </Link>
+              <Link
+                href="/courses"
+                className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+              >
+                Browse full range of courses
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
+
+function FemaleQuranTeacherContent({
+  course,
+  contactData
+}: {
+  course: any;
+  contactData: any;
+}) {
+  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  const toggleCurriculum = (idx: number) => {
+    setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
+  };
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIdx(openFaqIdx === idx ? null : idx);
+  };
+
+  const whyChooseItems = [
+    {
+      title: "Comfort and Privacy",
+      desc: "For adult sisters and teenage girls, studying the Quran online with a female instructor offers complete privacy. You can ask questions freely and recite aloud without wearing a formal hijab during your private session."
+    },
+    {
+      title: "Building Confidence",
+      desc: "Learning Arabic pronunciation or Tajweed rules can be intimidating. Many sisters and young children feel more relaxed and less self-conscious when practicing with a patient female instructor."
+    },
+    {
+      title: "Tailored Communication",
+      desc: "Our female tutors bring a nurturing touch to classes, which is highly beneficial for kids. For adult sisters, sharing the learning journey with another sister creates a peer-like bond where she can study comfortably."
+    },
+    {
+      title: "Respecting Religious Appropriateness",
+      desc: "In accordance with Islamic values regarding modesty, many women prefer to learn from female scholars, aligning with the rich historical tradition of female Islamic scholarship."
+    }
+  ];
+
+  const whoBenefitsItems = [
+    {
+      title: "Young Children",
+      desc: "Nurturing female instructors use digital games, slides, and positive rewards to keep young minds engaged."
+    },
+    {
+      title: "Teenage Girls",
+      desc: "Tutors act as positive spiritual role models, helping teenage girls navigate faith questions and memorize Surahs."
+    },
+    {
+      title: "Adult Sisters & Reverts",
+      desc: "A judgment-free space to learn the basics of Wudu, Salah, daily supplications, and recitation from scratch."
+    },
+    {
+      title: "Homeschooling Families",
+      desc: "Structured lesson tracking and progress reports that integrate seamlessly into home study portfolios."
+    }
+  ];
+
+  const courses = [
+    { name: "Noorani Qaida", level: "Absolute Beginners", focus: "Arabic letters, shapes, Harakat, and connection basics" },
+    { name: "Quran Reading", level: "Intermediate", focus: "Connecting words, rhythm, and waqf (pausing) rules" },
+    { name: "Quran with Tajweed", level: "Advanced", focus: "Phonetics, articulation points (makharij), and rules like Ghunnah" },
+    { name: "Hifz-ul-Quran", level: "Dedicated", focus: "Step-by-step memorization of chapters with structured revision" },
+    { name: "Islamic Studies", level: "All Ages", focus: "Fiqh (prayer rules), Seerah, Hadith, and Islamic manners" },
+    { name: "Daily Duas", level: "All Ages", focus: "Morning and evening Azkar, and prayers for daily protection" },
+    { name: "Arabic Basics", level: "Beginner", focus: "Building vocabulary, root words, and understanding Quranic text" }
+  ];
+
+  const faqs = [
+    {
+      question: "Can women teach the Quran to other women and children?",
+      answer: "Yes, women can teach the Quran to other women, sisters, and children of both genders. Historically, female scholars have played a vital role in preserving and teaching Islamic knowledge. Aisha (may Allah be pleased with her), the wife of the Prophet Muhammad (PBUH), was one of the leading scholars of her generation, teaching both men and women."
+    },
+    {
+      question: "How do online Quran classes with a female teacher work?",
+      answer: "Classes are conducted live online. Once you sign up and select a convenient time, you will receive a secure link to join a private virtual classroom. You and your teacher will interact via video and audio, sharing a digital Quran on the screen."
+    },
+    {
+      question: "Can I choose a specific female Quran teacher?",
+      answer: "Yes, you can request a specific teacher based on your language preferences, timezone, or course goals. During the registration process, simply mention your preferences, and we will pair you with the best match."
+    },
+    {
+      question: "Do you offer female Quran teachers for young boys?",
+      answer: "Yes, we offer female tutors for young boys (typically under the age of 10). Young children often respond very well to the patient, nurturing teaching style of our female educators."
+    },
+    {
+      question: "Do you offer free trial lessons?",
+      answer: "Yes, we offer 3 free trial classes. This allows you or your child to meet the teacher, experience a live one-on-one session, and receive an initial assessment before committing to a paid plan."
+    },
+    {
+      question: "How long is each class session?",
+      answer: "Each session is exactly 30 minutes long. This duration is optimized to maintain high focus and retention, especially for young children and busy adults."
+    },
+    {
+      question: "How many times a week should my child attend?",
+      answer: "We recommend 3 classes per week for consistent progress. However, we offer packages for 2, 3, or 5 days per week to fit your family's schedule and budget."
+    },
+    {
+      question: "What software do I need for the classes?",
+      answer: "You only need a device (computer, tablet, or smartphone) with a working internet connection, camera, and microphone. Classes are usually conducted via Zoom or Skype."
+    },
+    {
+      question: "Can adult sisters who are absolute beginners join?",
+      answer: "Yes, we welcome adult beginners of all ages. Our female tutors are highly patient and will start with you from the absolute basics, such as the pronunciation of single Arabic letters in Noorani Qaida."
+    },
+    {
+      question: "Is Tajweed included in the reading course?",
+      answer: "Yes, basic Tajweed rules are integrated into our Quran reading classes. If you wish to study Tajweed in-depth, we recommend our dedicated Quran with Tajweed course."
+    },
+    {
+      question: "Can I learn Quran memorization (Hifz) with a female teacher?",
+      answer: "Yes, we have certified female Hafiza teachers who specialize in Hifz. They will design a customized memorization and revision plan based on your goals."
+    },
+    {
+      question: "Are your female teachers fluent in English?",
+      answer: "Yes, all our female tutors speak fluent English and have extensive experience teaching students in the USA, UK, Canada, and Australia."
+    },
+    {
+      question: "How do you track my child's progress?",
+      answer: "We provide monthly progress reports detailing attendance, current surah progress, pronunciation accuracy, and teacher feedback."
+    },
+    {
+      question: "What if I am not satisfied with my teacher after starting?",
+      answer: "If you feel that the current teacher is not the right fit, you can contact our support team at any time. We will arrange a replacement teacher who matches your learning style."
+    },
+    {
+      question: "Do you offer weekend classes?",
+      answer: "Yes, we offer flexible slots on Saturdays and Sundays to accommodate families who are busy during the workweek."
+    },
+    {
+      question: "Do I need to buy any books or materials?",
+      answer: "No, all reading materials, including digital copies of Noorani Qaida and the Holy Quran, are provided online by the teacher during the class."
+    },
+    {
+      question: "How do I pay for the classes?",
+      answer: "Payments are processed securely online on a monthly subscription basis using credit/debit cards. There are no setup fees or hidden charges."
+    },
+    {
+      question: "Can revert sisters join the classes?",
+      answer: "Absolutely. We offer a supportive, welcoming environment for revert sisters. Our tutors will guide you patiently through prayer steps, basic Quran reading, and Islamic values."
+    },
+    {
+      question: "Do you offer family discounts?",
+      answer: "Yes, we offer sibling and family discounts for multiple registrations from the same household. Please contact our support team for custom pricing."
+    },
+    {
+      question: "How do you ensure student safety online?",
+      answer: "All classes are strictly private one-on-one sessions. We conduct criminal background checks on all our teachers and monitor virtual classrooms regularly to ensure a safe learning environment."
+    }
+  ];
+
+  return (
+    <main className="flex-grow bg-background text-foreground">
+      {/* 1. HERO SECTION */}
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Hero Content */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Sisters & Children Focus
+              </span>
+              <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Female Quran Teacher Online – Learn with Qualified Female Quran Tutors
+              </h1>
+              <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
+              <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
+                Learn Quran online with certified female Quran teachers. Our private, one-on-one classes provide a safe, private, and comfortable environment tailored for sisters, children, and reverts globally. Learn Noorani Qaida, Tajweed, or Hifz at your own pace.
+              </p>
+              
+              <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/book-free-trial"
+                  className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+                >
+                  <span>Book Free Trial Class</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+                >
+                  View Packages
+                </Link>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start text-xs text-muted-text border-t border-card-border/50 pt-8">
+                <div className="flex items-center space-x-2">
+                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  <span>DBS-Checked Staff</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="h-4 w-4 text-primary" />
+                  <span>Flexible 24/7 Hours</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Award className="h-4 w-4 text-primary" />
+                  <span>Ijazah Certified Scholars</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Hero Image Card */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative max-w-sm w-full">
+                <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
+                <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
+                  <Image
+                    src="/female-quran-teacher.jpg"
+                    alt="online female quran teacher conducting one-on-one class with a young girl"
+                    width={400}
+                    height={320}
+                    priority
+                    className="w-full rounded-2xl object-cover h-[320px] shadow-inner"
+                  />
+                  <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-md border border-card-border/60 text-center shadow-lg">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text block">Recommended For</span>
+                    <span className="text-sm font-bold text-foreground mt-0.5 block">Sisters & Kids under 10</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. WHY CHOOSE SECTION */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Why Choose Us?</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Benefits of Learning with a Female Tutor
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whyChooseItems.map((item, idx) => (
+              <div key={idx} className="glass p-8 rounded-3xl border-card-border hover:border-primary/20 transition-all duration-300">
+                <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. WHO CAN BENEFIT SECTION */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Target Students</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Who Can Benefit from These Classes?
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whoBenefitsItems.map((item, idx) => (
+              <div key={idx} className="glass p-6.5 rounded-2xl border-card-border hover:border-secondary/20 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-xs text-muted-text leading-relaxed font-normal">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. TEACHERS SECTION */}
+      <section className="py-20 border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Tutors Qualifications */}
+            <div>
+              <h2 className="text-3xl font-extrabold text-foreground mb-4">Meet Our Female Tutors</h2>
+              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal mb-6">
+                Our team consists of highly qualified, vetted female Quran scholars who are passionate about teaching. Tutors bring structural expertise, child-friendly teaching approaches, and patience to each online session.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span>**Certified Ijazah Holders**: Tutors hold classical certifications verifying correct pronunciation.</span>
+                </div>
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span>**Bilingual Instruction**: English and Arabic speaking educators prevent language barriers.</span>
+                </div>
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span>**Child-Centered Pedagogy**: Custom lesson plans keep kids active, excited, and engaged.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DBS Security Vetting Card */}
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center space-x-2">
+                <Users className="h-5 w-5 text-secondary" />
+                <span>Safeguarding & Security</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-6">
+                Safety is our highest priority. We conduct thorough identity checks, background screenings, and criminal record verifications (DBS checks in the UK, similar standards globally) on all our educators. Tutors operate in a safe learning environment monitored by our administrative team.
+              </p>
+              <div className="flex items-center space-x-4 border-t border-card-border/50 pt-6">
+                <div className="h-12 w-12 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold text-sm shrink-0">
+                  <ShieldCheck className="h-6 w-6 text-secondary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xs sm:text-sm">Vetted & Safe</h4>
+                  <p className="text-[10px] sm:text-xs text-muted-text">Peace of mind for homeschooling and family classes.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. COURSES TABLE SECTION */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Course Catalog</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              What You Can Study With Our Tutors
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="overflow-x-auto rounded-3xl border border-card-border glass shadow-xl">
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/10 border-b border-card-border text-primary font-bold">
+                  <th className="px-6 py-4.5 font-bold">Course Title</th>
+                  <th className="px-6 py-4.5 font-bold">Level</th>
+                  <th className="px-6 py-4.5 font-bold">Core Focus Area</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-card-border/40">
+                {courses.map((c, idx) => (
+                  <tr key={idx} className="hover:bg-foreground/[0.01] transition-colors">
+                    <td className="px-6 py-4 font-bold text-foreground">{c.name}</td>
+                    <td className="px-6 py-4 text-xs font-semibold text-secondary">{c.level}</td>
+                    <td className="px-6 py-4 text-xs text-muted-text font-normal">{c.focus}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. METHODOLOGY SECTION */}
+      <section className="py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Our Methodology</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Step-by-Step Learning Process
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="glass p-6 rounded-2xl border-card-border text-center">
+              <span className="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center mx-auto mb-4">1</span>
+              <h4 className="font-bold text-sm text-foreground mb-2">Initial Assessment</h4>
+              <p className="text-[11px] text-muted-text leading-relaxed">Tutor assesses reading levels and sets learning milestones.</p>
+            </div>
+            <div className="glass p-6 rounded-2xl border-card-border text-center">
+              <span className="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center mx-auto mb-4">2</span>
+              <h4 className="font-bold text-sm text-foreground mb-2">Customized Plan</h4>
+              <p className="text-[11px] text-muted-text leading-relaxed">Personalized curriculum based on your goals and schedule.</p>
+            </div>
+            <div className="glass p-6 rounded-2xl border-card-border text-center">
+              <span className="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center mx-auto mb-4">3</span>
+              <h4 className="font-bold text-sm text-foreground mb-2">Private 1-on-1 Classes</h4>
+              <p className="text-[11px] text-muted-text leading-relaxed">Live virtual classrooms utilizing digital boards and visual aids.</p>
+            </div>
+            <div className="glass p-6 rounded-2xl border-card-border text-center">
+              <span className="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center mx-auto mb-4">4</span>
+              <h4 className="font-bold text-sm text-foreground mb-2">Progress Reviews</h4>
+              <p className="text-[11px] text-muted-text leading-relaxed">Monthly progress reports and reviews to track development.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 7. COUNTRIES SERVED & WHY ONLINE WORKS */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Why Online Works */}
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <h3 className="text-xl font-bold text-foreground mb-4">Why Online Learning Works</h3>
+              <div className="h-1 w-12 bg-primary mb-6 rounded-full" />
+              <div className="space-y-4 text-xs sm:text-sm text-muted-text leading-relaxed">
+                <p>
+                  Online Quran learning provides ultimate convenience for busy Muslim families. By removing travel time, it allows kids and mothers to study consistently directly from home.
+                </p>
+                <p>
+                  Unlike group classes in local community centers where one teacher manages multiple children, OQTutor's one-to-one sessions guarantee 100% individual focus for the entire duration, boosting progress speed up to 3x.
+                </p>
+              </div>
+            </div>
+
+            {/* Countries served */}
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">International Communities Served</h3>
+                <div className="h-1 w-12 bg-secondary mb-6 rounded-full" />
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
+                  We serve Muslim families across the United States, Canada, the United Kingdom, Australia, and Europe. Our female Quran teachers adjust schedules to match your local timezone, fitting lessons around school runs and busy workdays.
+                </p>
+              </div>
+              <div className="border-t border-card-border/50 pt-4 flex flex-wrap gap-2 text-xs font-semibold text-foreground/80">
+                <span className="bg-foreground/5 border border-card-border px-3 py-1 rounded-full">🇺🇸 USA</span>
+                <span className="bg-foreground/5 border border-card-border px-3 py-1 rounded-full">🇨🇦 Canada</span>
+                <span className="bg-foreground/5 border border-card-border px-3 py-1 rounded-full">🇬🇧 UK</span>
+                <span className="bg-foreground/5 border border-card-border px-3 py-1 rounded-full">🇦🇺 Australia</span>
+                <span className="bg-foreground/5 border border-card-border px-3 py-1 rounded-full">🇪🇺 Europe</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQs SECTION */}
+      <section className="py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">FAQ</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Frequently Asked Questions
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq: { question: string; answer: string }, idx: number) => {
+              const isOpen = openFaqIdx === idx;
+              return (
+                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                  >
+                    <span className="text-sm sm:text-base font-bold pr-4">{faq.question}</span>
+                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 9. TESTIMONIAL & FINAL CTA */}
+      <section className="py-20 border-t border-card-border mb-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          
+          {/* Testimonial Placeholder */}
+          <div className="glass p-8 sm:p-10 rounded-3xl border border-card-border/60 text-center relative mb-16">
+            <div className="text-secondary text-5xl font-serif absolute -top-4 left-6">&ldquo;</div>
+            <p className="text-sm sm:text-base text-muted-text italic leading-relaxed pt-4 font-normal">
+              Finding a qualified female Quran teacher online who speaks fluent English was a game-changer for my daughters. They look forward to their classes every week, and I have peace of mind knowing they are in a safe, private, and professional learning environment.
+            </p>
+            <div className="mt-4 text-xs font-bold text-foreground">
+              - Sister Maryam (London, UK) — Placeholder Testimonial
+            </div>
+          </div>
+
+          {/* CTA Box */}
+          <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
+            <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Your Quranic Journey Today</h2>
             <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
