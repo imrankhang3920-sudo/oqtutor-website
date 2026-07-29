@@ -32,8 +32,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   };
 }
 
-export default async function BookFreeTrialPage() {
+export default async function BookFreeTrialPage({ searchParams }: Props) {
   const dbData = readDB();
+  const resolvedParams = await searchParams;
+  const plan = typeof resolvedParams.plan === 'string' ? resolvedParams.plan : undefined;
 
   // Local Business Schema JSON-LD
   const localBusinessSchema = {
@@ -69,7 +71,7 @@ export default async function BookFreeTrialPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <BookFreeTrialClient contactData={dbData.contact} />
+      <BookFreeTrialClient contactData={dbData.contact} selectedPlan={plan} />
     </>
   );
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactData } from '@/data/db';
 import Image from 'next/image';
+import { trackCloseConvertLead } from '@/lib/analytics';
 
 export default function Footer({ data }: { data: ContactData }) {
   const quickLinks = [
@@ -179,6 +180,7 @@ export default function Footer({ data }: { data: ContactData }) {
           href={data.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackCloseConvertLead('Floating Widget')}
           className="relative px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:-translate-y-0.5 active:translate-y-0 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center space-x-2.5 cursor-pointer font-bold"
           aria-label="Chat on WhatsApp"
         >

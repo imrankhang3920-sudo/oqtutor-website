@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { HeroData } from '@/data/db';
 import Image from 'next/image';
+import { trackCloseConvertLead } from '@/lib/analytics';
 
 export default function Hero({ data }: { data: HeroData }) {
   return (
@@ -83,6 +84,7 @@ export default function Hero({ data }: { data: HeroData }) {
               href={`https://wa.me/${data.whatsappNumber.replace(/[^0-9]/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCloseConvertLead('Homepage Hero')}
               className="flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full glass border-card-border hover:bg-foreground/5 text-foreground font-semibold transition-all duration-300 transform hover:-translate-y-0.5 text-center cursor-pointer text-sm sm:text-base"
             >
               <MessageCircle className="h-5 w-5 text-emerald-500 fill-emerald-500/20" />

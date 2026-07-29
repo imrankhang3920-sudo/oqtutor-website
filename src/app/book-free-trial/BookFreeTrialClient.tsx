@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ContactData } from '@/data/db';
 import { Send, ShieldCheck, ChevronDown, Search } from 'lucide-react';
+import { trackQualifyLead, trackPurchase } from '@/lib/analytics';
 
 interface CountryItem {
   code: string;
@@ -66,9 +67,11 @@ function formatPhoneNumber(value: string, format: string) {
 }
 
 export default function BookFreeTrialClient({
-  contactData
+  contactData,
+  selectedPlan
 }: {
   contactData: ContactData;
+  selectedPlan?: string;
 }) {
   const [selectedCountry, setSelectedCountry] = useState(countriesData[0]); // Default to UK
   const [phoneVal, setPhoneVal] = useState('');
@@ -110,6 +113,20 @@ export default function BookFreeTrialClient({
     'Night (20:00 - 24:00)',
     'Flexible / 24h Any Time'
   ];
+
+  useEffect(() => {
+    if (selectedPlan) {
+      let price = 0;
+      const lowerPlan = selectedPlan.toLowerCase();
+      if (lowerPlan.includes('starter')) price = 30;
+      else if (lowerPlan.includes('standard')) price = 40;
+      else if (lowerPlan.includes('premium')) price = 50;
+
+      if (price > 0) {
+        trackPurchase(selectedPlan, price);
+      }
+    }
+  }, [selectedPlan]);
 
   // Auto-detect country based on Timezone and Geolocation IP API
   useEffect(() => {
@@ -218,6 +235,7 @@ export default function BookFreeTrialClient({
       }
 
       setIsSuccess(true);
+      trackQualifyLead(formData.course, formData.country);
       setPhoneVal('');
       setFormData({
         studentName: '',
