@@ -33,14 +33,14 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Best Online Quran Classes in USA | Certified Male & Female Tutors | OQTutor',
-    description: 'Join OQTutor for one-to-one online Quran classes in the USA. Learn Noorani Qaida, Tajweed, Hifz, Quran Reading, and Islamic Studies with certified tutors. Book your free 3-day trial today.',
+    title: 'Learn Quran Online | 1-on-1 Online Quran Academy | OQTutor',
+    description: 'Master the Holy Quran online with certified male and female tutors. Custom 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies for kids & adults worldwide. Start your free 3-day trial.',
     alternates: {
       canonical: 'https://www.oqtutor.com/',
     },
     openGraph: {
-      title: 'Best Online Quran Classes in USA | Certified Male & Female Tutors | OQTutor',
-      description: 'Join OQTutor for one-to-one online Quran classes in the USA. Learn Noorani Qaida, Tajweed, Hifz, Quran Reading, and Islamic Studies with certified tutors. Book your free 3-day trial today.',
+      title: 'Learn Quran Online | 1-on-1 Online Quran Academy | OQTutor',
+      description: 'Master the Holy Quran online with certified male and female tutors. Custom 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies for kids & adults worldwide. Start your free 3-day trial.',
       url: 'https://www.oqtutor.com/',
     },
     robots: hasParams ? {
@@ -60,6 +60,13 @@ export default async function HomePage() {
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
+
+  // Custom global hero data to avoid duplicate USA H1 on homepage
+  const homepageHeroData = {
+    ...dbData.hero,
+    title: "Learn Quran Online with Certified Tutors Worldwide",
+    subtitle: "Master Quran reading, Tajweed rules, and Islamic Studies with qualified male and female teachers. Join interactive one-to-one live classes tailored for children and adults globally, with flexible 24/7 schedules and a risk-free 3-day free trial."
+  };
 
   // Schema Markup Data
   const organizationSchema = {
@@ -335,7 +342,7 @@ export default async function HomePage() {
       <Navbar adminLoggedIn={adminLoggedIn} />
       
       <main className="flex-grow">
-        <Hero data={dbData.hero} />
+        <Hero data={homepageHeroData} />
         
         {/* Why Choose OQTutor Section (CRO Focus & Target Keywords) */}
         <section id="why-choose-us" className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01]">

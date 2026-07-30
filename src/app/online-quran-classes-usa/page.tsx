@@ -15,8 +15,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes for Kids in USA | Certified Tutors – OQTutor",
-    description: "Enroll your child in online Quran classes for kids in USA with certified male & female tutors. Flexible US time zones, one-on-one classes, 3 free trial classes.",
+    title: "Best Online Quran Classes in USA | Certified Tutors | OQTutor",
+    description: "Join OQTutor for one-to-one online Quran classes in the USA. Study Noorani Qaida, Tajweed, Hifz, and Islamic Studies with certified tutors at flexible USA timings. Book your free 3-day trial today.",
     alternates: {
       canonical: "https://www.oqtutor.com/online-quran-classes-usa",
     },
@@ -34,10 +34,10 @@ export default async function USAQuranClassesPage() {
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
-  // Custom Hero Data matching USA specs
+  // Custom Hero Data matching USA specs to avoid duplicates
   const customHeroData = {
-    title: "Online Quran Classes for Kids in USA",
-    subtitle: "Looking for trusted online Quran classes for kids in USA? OQTutor connects Muslim families across America with certified, experienced Quran tutors who make learning the Quran engaging, structured, and easy for children. From Noorani Qaida to Tajweed and Hifz, our one-on-one online classes are designed around US family schedules, so your child can learn from home without compromising school or extracurricular commitments.",
+    title: "Online Quran Academy USA: 1-on-1 Live Classes with Certified Tutors",
+    subtitle: "Connect your household with certified male and female Quran tutors in the United States. We offer interactive, one-to-one online classes tailored around your children's school schedule and active family routines. Learn Noorani Qaida, master Tajweed rules, or start Hifz memorization with flexible US class timings (EST, CST, MST, PST) and a 3-day free trial class.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,

@@ -44,7 +44,22 @@ export default function Hero({ data }: { data: HeroData }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground"
           >
-            Online <span className="text-secondary">Quran</span> Classes in <span className="text-primary">USA</span>
+            {data.title.split(' ').map((word, idx) => {
+              const cleanWord = word.replace(/[^a-zA-Z0-9-]/g, '');
+              const isPrimaryColor = ['Worldwide', 'USA', 'Tutors', 'Academy', 'Classes'].includes(cleanWord);
+              const isSecondaryColor = ['Quran'].includes(cleanWord);
+              return (
+                <span key={idx}>
+                  {isPrimaryColor ? (
+                    <span className="text-primary">{word} </span>
+                  ) : isSecondaryColor ? (
+                    <span className="text-secondary">{word} </span>
+                  ) : (
+                    `${word} `
+                  )}
+                </span>
+              );
+            })}
           </motion.h1>
 
           <motion.p
@@ -53,7 +68,7 @@ export default function Hero({ data }: { data: HeroData }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 md:mt-6 text-base sm:text-xl text-muted-text max-w-2xl font-normal leading-relaxed"
           >
-            Learn Quran online with certified male and female tutors through one-to-one live classes for kids and adults. Start with a free 3-day trial and flexible USA class timings.
+            {data.subtitle}
           </motion.p>
 
           <motion.div
@@ -63,10 +78,10 @@ export default function Hero({ data }: { data: HeroData }) {
             className="mt-5 md:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto"
           >
             <a
-              href="#contact"
+              href={data.ctaLink || "#contact"}
               className="flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-0.5 text-center cursor-pointer text-sm sm:text-base"
             >
-              <span>Book Free Trial</span>
+              <span>{data.ctaText || "Book Free Trial"}</span>
               <ArrowRight className="h-5 w-5" />
             </a>
 
