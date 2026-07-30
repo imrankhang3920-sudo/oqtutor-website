@@ -36,8 +36,8 @@ export default async function USAQuranClassesPage() {
 
   // Custom Hero Data matching USA specs to avoid duplicates
   const customHeroData = {
-    title: "Online Quran Academy USA: 1-on-1 Live Classes with Certified Tutors",
-    subtitle: "Connect your household with certified male and female Quran tutors in the United States. We offer interactive, one-to-one online classes tailored around your children's school schedule and active family routines. Learn Noorani Qaida, master Tajweed rules, or start Hifz memorization with flexible US class timings (EST, CST, MST, PST) and a 3-day free trial class.",
+    title: "Empowering American Muslim Homes with Trusted 1-on-1 Online Quran Classes",
+    subtitle: "Designed specifically for American Muslim families, our academy fits religious learning seamlessly into busy US school schedules. We support EST, CST, MST, and PST zones, allowing your child to master Noorani Qaida, Tajweed rules, or Hifz from home. Book your 3-day free trial class today to connect with certified male and female Quran teachers.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
