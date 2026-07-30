@@ -30,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  // 2. Dynamic SEO course subpages
+  // 2. Dynamic SEO course subpages & 3. Dynamic blog subpages
   try {
     const dbData = readDB();
     const courseRoutes = dbData.courses.map((course) => ({
@@ -40,9 +40,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
-    return [...staticRoutes, ...courseRoutes];
+    const blogRoutes = (dbData.blogs || []).map((blog) => ({
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }));
+
+    return [...staticRoutes, ...courseRoutes, ...blogRoutes];
   } catch (error) {
-    console.error('Sitemap generator failed to read dynamic courses:', error);
+    console.error('Sitemap generator failed to read dynamic courses or blogs:', error);
     return staticRoutes;
   }
 }

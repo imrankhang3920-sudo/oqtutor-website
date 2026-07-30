@@ -34,6 +34,7 @@ const getBlogImage = (slug: string): string => {
     'read-arabic-fluidly-without-vowels': '/read-arabic-fluidly.jpg',
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
     'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
+    'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
   };
   return mapping[slug] || '/arabic-reading.jpg';
 };
@@ -63,6 +64,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'read-arabic-fluidly-without-vowels': 'Man sitting in a mosque in white clothes reciting the Quran',
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': 'Busy family in Illinois learning Quran online',
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
+    'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
   };
   return mapping[slug] || title;
 };
