@@ -33,14 +33,14 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Learn Quran Online | 1-on-1 Online Quran Academy | OQTutor',
-    description: 'Master the Holy Quran online with certified male and female tutors. Custom 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies for kids & adults worldwide. Start your free 3-day trial.',
+    title: 'Learn Quran Online in USA | Certified Tutors | OQTutor',
+    description: 'Master the Holy Quran online with certified male and female tutors in the USA. Individualized 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies tailored for children and adults. Start your free 3-day trial.',
     alternates: {
       canonical: 'https://www.oqtutor.com/',
     },
     openGraph: {
-      title: 'Learn Quran Online | 1-on-1 Online Quran Academy | OQTutor',
-      description: 'Master the Holy Quran online with certified male and female tutors. Custom 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies for kids & adults worldwide. Start your free 3-day trial.',
+      title: 'Learn Quran Online in USA | Certified Tutors | OQTutor',
+      description: 'Master the Holy Quran online with certified male and female tutors in the USA. Individualized 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies tailored for children and adults. Start your free 3-day trial.',
       url: 'https://www.oqtutor.com/',
     },
     robots: hasParams ? {
@@ -61,11 +61,11 @@ export default async function HomePage() {
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
-  // Custom global hero data to avoid duplicate USA H1 on homepage
+  // Custom US-focused hero data to avoid duplicate H1 and target US audience
   const homepageHeroData = {
     ...dbData.hero,
-    title: "Learn Quran Online with Certified Tutors Worldwide",
-    subtitle: "Master Quran reading, Tajweed rules, and Islamic Studies with qualified male and female teachers. Join interactive one-to-one live classes tailored for children and adults globally, with flexible 24/7 schedules and a risk-free 3-day free trial."
+    title: "Trusted Online Quran Academy for American Muslim Families",
+    subtitle: "Learn Quran online with certified male and female tutors through private 1-on-1 classes. Get high-quality lessons in Noorani Qaida, Tajweed, and Hifz customized around your family's schedule with a 3-day free trial."
   };
 
   // Schema Markup Data
@@ -227,14 +227,14 @@ export default async function HomePage() {
   const homepageFaqs = [
     {
       id: "hfaq-1",
-      question: "What is the best online Quran class in the USA for beginners?",
-      answer: "OQTutor is widely recognized as one of the best online Quran academies in the USA, offering personalized, one-to-one online Quran classes for absolute beginners. We specialize in Noorani Qaida, which forms the building block for correct pronunciation (Makharij). Our certified male and female Quran tutors guide students of all ages step-by-step to read Arabic fluently, ensuring a strong foundation from day one.",
+      question: "What is the best online Quran class for beginners?",
+      answer: "OQTutor is widely recognized as one of the best online Quran academies, offering personalized, one-to-one online Quran classes for absolute beginners. We specialize in Noorani Qaida, which forms the building block for correct pronunciation (Makharij). Our certified male and female Quran tutors guide students of all ages step-by-step to read Arabic fluently, ensuring a strong foundation from day one.",
       category: "general" as const
     },
     {
       id: "hfaq-2",
       question: "Do you offer certified female Quran tutors for children and sisters?",
-      answer: "Yes, OQTutor provides a dedicated team of certified female Quran tutors for kids and sisters. We understand the importance of comfort, safety, and privacy in Islamic learning. Our female teachers are highly qualified, hold verified degrees in Islamic Studies, are trained in modern digital teaching methodologies, and are fluent in English to support students across the USA.",
+      answer: "Yes, OQTutor provides a dedicated team of certified female Quran tutors for kids and sisters. We understand the importance of comfort, safety, and privacy in Islamic learning. Our female teachers are highly qualified, hold verified degrees in Islamic Studies, are trained in modern digital teaching methodologies, and are fluent in English to support students.",
       category: "tutors" as const
     },
     {
@@ -245,8 +245,8 @@ export default async function HomePage() {
     },
     {
       id: "hfaq-4",
-      question: "Can we choose our own class timings and adjust to USA time zones?",
-      answer: "Absolutely. OQTutor operates 24/7 to accommodate busy schedules across all USA time zones, including Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) times. Whether you prefer early morning lessons before school, afternoon classes, or weekend sessions, you can select times that fit your family's routine. You can also reschedule lessons with prior notice.",
+      question: "Can we choose our own class timings and adjust to our schedule?",
+      answer: "Absolutely. OQTutor operates 24/7 to accommodate busy schedules. Whether you prefer early morning lessons before school, afternoon classes, or weekend sessions, you can select times that fit your family's routine. You can also reschedule lessons with prior notice.",
       category: "classes" as const
     },
     {
@@ -275,7 +275,7 @@ export default async function HomePage() {
     },
     {
       id: "hfaq-9",
-      question: "How much do online Quran classes cost in the USA?",
+      question: "How much do online Quran classes cost?",
       answer: "Our pricing is highly competitive and structured into affordable monthly packages based on the number of classes per week. Since we believe quality Quranic education should be accessible to every family, we offer flexible subscription options with no hidden fees, no long-term contracts, and a money-back satisfaction guarantee. You can start with our 3-day free trial to see if it is the right fit.",
       category: "pricing" as const
     },
@@ -583,17 +583,17 @@ export default async function HomePage() {
               <div>
                 <span className="text-xs font-bold text-primary uppercase tracking-wider mb-3">Classes Available 24/7</span>
                 <h2 className="text-3xl font-bold tracking-tight text-foreground mb-4">
-                  Flexible USA Time Zones
+                  Flexible 24/7 Class Scheduling
                 </h2>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6 font-normal">
-                  Living in the United States means balancing busy school runs, job responsibilities, and homework schedules. That is why our online Quran academy does not enforce rigid schedules. We accommodate student bookings across all USA time zones.
+                  Living in a busy household means balancing school runs, job responsibilities, and homework schedules. That is why our online Quran academy does not enforce rigid timetables. We accommodate bookings 24 hours a day, 7 days a week.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { zone: "Eastern Time (EST)", desc: "Perfect for after-school/dinner slot" },
-                    { zone: "Central Time (CST)", desc: "Flexible afternoon & weekend spots" },
-                    { zone: "Mountain Time (MST)", desc: "Custom morning or late evening bookings" },
-                    { zone: "Pacific Time (PST)", desc: "Ideal for evening or early morning slots" }
+                    { zone: "24/7 Availability", desc: "Schedule lessons early morning, after school, or late evenings" },
+                    { zone: "Weekend Sessions", desc: "Dedicated Saturday and Sunday classes to keep weekdays free" },
+                    { zone: "Easy Rescheduling", desc: "Adjust or make up classes easily through your student portal" },
+                    { zone: "Self-Paced Learning", desc: "Progress at your natural speed without public pressure" }
                   ].map((item, idx) => (
                     <div key={idx} className="glass p-4 rounded-2xl border border-card-border">
                       <h4 className="font-bold text-xs sm:text-sm text-foreground mb-1">{item.zone}</h4>
