@@ -857,79 +857,117 @@ function QuranReadingContent({
   course: any;
   contactData: any;
 }) {
-  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
-
-  const toggleCurriculum = (idx: number) => {
-    setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
-  };
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIdx(openFaqIdx === idx ? null : idx);
   };
 
-  const curriculumPoints = [
+  const whoCanJoin = [
     {
-      title: "Connecting Verses (Word Bridging)",
-      desc: "Learn the rules to connect letters and words smoothly together, preventing stuttering or unnecessary breaks during recitation."
+      title: "Kids (Ages 4+)",
+      desc: "Patient, child-friendly teachers who use color-coded digital slides, interactive games, and positive reinforcement to make recitation fun."
     },
     {
-      title: "Pausing Rules (Waqf Symbols)",
-      desc: "Master the visual punctuation symbols (like small jeem, ta, mim, la) in the Quran to know where it is mandatory, preferred, or forbidden to pause."
+      title: "Adult Learners",
+      desc: "Private 1-on-1 sessions tailored to fit busy schedules, providing a supportive environment to build reading confidence."
     },
     {
-      title: "Short Surah Fluency (Juz Amma)",
-      desc: "Apply word-connection guidelines by reciting the final chapters of the Quran (sab’a, nas, falaq, etc.) with a steady, fluent rhythm."
+      title: "Beginners",
+      desc: "Start from absolute zero. Learn letter sounds and basic phonetics with our Noorani Qaida course before moving to verses."
     },
     {
-      title: "Continuous Quran Recitation",
-      desc: "Progressively move through longer Surahs, building reading stamina, visual word tracking speed, and recitation confidence."
+      title: "Reverts",
+      desc: "Receive patient guidance on reading short prayers, common Surahs for Salah, and daily supplications (Duas)."
+    },
+    {
+      title: "Sisters Seeking Female Tutors",
+      desc: "Private, comfortable environment with certified female teachers. Recite aloud from home without needing hijab in class."
     }
   ];
 
-  const whoShouldJoinList = [
-    {
-      title: "Graduates of Noorani Qaida",
-      desc: "Perfect for students who already know basic Arabic letters and vowels and are ready to connect them into full verses."
-    },
-    {
-      title: "Slow Readers Seeking Flow",
-      desc: "Ideal for kids or adults who struggle with stuttering or read word-by-word rather than reciting with flow."
-    },
-    {
-      title: "Adult Beginners & Reverts",
-      desc: "A private, 1-on-1 setup tailored for adult learners or converts to build confidence in reading the Quran."
-    },
-    {
-      title: "Self-Learners Needing Guidance",
-      desc: "Students who have tried learning independently but want qualified tutors to correct connection mistakes."
-    }
+  const roadmapSteps = [
+    { step: "1", title: "Assessment", desc: "Evaluate baseline reading and establish goals." },
+    { step: "2", title: "Arabic Letters", desc: "Master throat and mouth articulation points." },
+    { step: "3", title: "Noorani Qaida", desc: "Learn connection rules and joint shapes." },
+    { step: "4", title: "Word Reading", desc: "Transition into grouping letters smoothly." },
+    { step: "5", title: "Quran Reading", desc: "Begin reciting actual pages of the Quran." },
+    { step: "6", title: "Basic Tajweed", desc: "Apply basic stretching and pausing rules." },
+    { step: "7", title: "Fluent Recitation", desc: "Achieve independent flow and finish the Quran." }
   ];
 
-  const benefitsList = [
-    {
-      title: "1-on-1 Individualized Focus",
-      desc: "All classes are private. Tutors give 100% of their attention to your progress, correcting errors immediately in real-time."
-    },
-    {
-      title: "Certified Male & Female Scholars",
-      desc: "Study with qualified teachers who hold authentic Ijazah qualifications in Quran recitation."
-    },
-    {
-      title: "Flexible 24/7 Scheduling",
-      desc: "Pick session days and times that perfectly integrate with school semesters or busy working schedules."
-    },
-    {
-      title: "No Long-Term Commitments",
-      desc: "Pay month-to-month with family discounts. Modify or cancel your learning packages at any time."
-    }
+  const features = [
+    { name: "Live One-on-One Classes", Starter: "Yes (100% Focused)", Standard: "Yes (100% Focused)", Premium: "Yes (100% Focused)" },
+    { name: "Teacher Options", Starter: "Male or Female", Starter_Class: "text-secondary font-semibold text-xs", Standard: "Male or Female", Standard_Class: "text-secondary font-semibold text-xs", Premium: "Male or Female", Premium_Class: "text-secondary font-semibold text-xs" },
+    { name: "Curriculum Focus", Starter: "Noorani Qaida & Basic Reading", Starter_Class: "text-muted-text text-xs", Standard: "Reading + Islamic Studies & Duas", Standard_Class: "text-muted-text text-xs", Premium: "Reading + Custom Tafseer/Hifz", Premium_Class: "text-muted-text text-xs" },
+    { name: "Class Frequency", Starter: "3 Days / Week", Starter_Class: "text-foreground font-semibold text-xs", Standard: "5 Days / Week", Standard_Class: "text-foreground font-semibold text-xs", Premium: "Daily (7 Days / Week)", Premium_Class: "text-foreground font-semibold text-xs" },
+    { name: "Progress Tracking", Starter: "Monthly reports", Starter_Class: "text-muted-text text-xs", Standard: "Monthly reports + Homework support", Standard_Class: "text-muted-text text-xs", Premium: "Direct feedback & Priority support", Premium_Class: "text-muted-text text-xs" },
+    { name: "Pricing", Starter: "$30 / Month", Starter_Class: "text-primary font-bold text-xs", Standard: "$40 / Month", Standard_Class: "text-primary font-bold text-xs", Premium: "$50 / Month", Premium_Class: "text-primary font-bold text-xs" }
   ];
 
-  const achievementsList = [
-    "Read full Quranic verses fluently without hesitation or stutters",
-    "Identify and apply standard waqf rules (pausing symbols) correctly",
-    "Establish a consistent daily recitation routine",
-    "Prepare smoothly for advanced Tajweed classes"
+  const whyChooseUs = [
+    { title: "Student-Centered Pacing", desc: "If a child needs more time to master a concept, we slow down. We prioritize deep understanding over quick rushing." },
+    { title: "Vetted & DBS-Checked Tutors", desc: "Every teacher goes through rigid identity, qualification, and background record checks to ensure absolute safety." },
+    { title: "Encouraging Methodology", desc: "No strict discipline. Tutors build warm, friendly relationships with kids, motivating them with positive reinforcement." },
+    { title: "Affordable Family Packages", desc: "We offer flexible packages starting at $30/mo, plus sibling discounts to make Quranic education accessible." }
+  ];
+
+  const onlineBenefits = [
+    { title: "Save Travel Time", desc: "No more driving to physical centers during rush hour. Connect directly in seconds." },
+    { title: "Learn from Home", desc: "Comfortable, safe learning environment under direct parental supervision." },
+    { title: "Individual Attention", desc: "100% focused attention for the entire class, accelerating progress by up to 3x." },
+    { title: "Consistent Practice", desc: "Easy scheduling leads to fewer missed classes and reliable academic routines." }
+  ];
+
+  const faqs = [
+    {
+      question: "How can I learn Quran reading online?",
+      answer: "You can start by booking a free trial class on our website. You only need a device (computer, tablet, or smartphone) with an internet connection, a camera, and a microphone. Once matched, you will log in to a secure online classroom to study live one-on-one with your teacher."
+    },
+    {
+      question: "How long does it take to read the Quran fluently?",
+      answer: "The timeline varies depending on the student's age, consistency, and initial level. On average, a student attending 3 classes a week can learn to read the Quran fluently within 6 to 12 months."
+    },
+    {
+      question: "Do you teach adults and beginners?",
+      answer: "Yes, we welcome adult beginners and reverts of all ages. Our tutors are trained to teach mature students, adjusting pacing to match their schedules and learning style."
+    },
+    {
+      question: "Do you teach Noorani Qaida first?",
+      answer: "Yes, for absolute beginners who cannot read Arabic, we start with the Noorani Qaida Course to build letter recognition and connection skills."
+    },
+    {
+      question: "Are female teachers available?",
+      answer: "Yes, we have certified female Quran teachers available for sisters and children. You can select your preference during registration."
+    },
+    {
+      question: "How many classes per week do you recommend?",
+      answer: "We recommend 3 classes per week for optimal retention. However, we offer flexible packages for 2, 3, or 5 classes per week."
+    },
+    {
+      question: "What technology is required?",
+      answer: "A stable internet connection, a laptop or tablet, and Zoom or Skype software are all you need. All learning materials are provided digitally by the teacher."
+    },
+    {
+      question: "Do you offer a free trial?",
+      answer: "Yes, we offer a 3-day free trial with no card details or long-term contracts required."
+    },
+    {
+      question: "What ages do you teach?",
+      answer: "We teach students from age 4 to adults. For kids under 6, sessions focus on visual games and short letter-sound exercises."
+    },
+    {
+      question: "Can I change my class timings later?",
+      answer: "Yes, you can adjust your schedule or pause your subscription at any time. Simply contact our support team."
+    },
+    {
+      question: "Is Tajweed included in this course?",
+      answer: "Yes, basic Tajweed rules are integrated into the reading classes. For in-depth study, we recommend our Quran with Tajweed Course."
+    },
+    {
+      question: "Do you offer sibling or family discounts?",
+      answer: "Yes, we offer up to 15% discount for multiple family members registered from the same household."
+    }
   ];
 
   return (
@@ -943,14 +981,14 @@ function QuranReadingContent({
             {/* Left Content */}
             <div className="lg:col-span-7 text-center lg:text-left">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Course 2 — Reading Fluency
+                Reading Fluency Program
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Learn Quran Reading Online with Certified Tutors
+                Online Quran Reading Classes with Certified Quran Teachers
               </h1>
               <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
               <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
-                Develop native reading fluency and rhythm in reciting the Holy Quran. Our custom online Quran reading classes are designed to guide kids and adults through connecting Arabic letters into full words, managing breath control, and mastering waqf rules.
+                Start the journey of reading the Quran correctly. At OQTutor, we connect you with certified scholars for private, 1-on-1 lessons. Build recitation speed, connect words with flow, and master pausing (waqf) rules from the safety of home.
               </p>
               
               <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -958,14 +996,20 @@ function QuranReadingContent({
                   href="/book-free-trial"
                   className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
                 >
-                  <span>Book Free Trial Class</span>
+                  <span>Book Free Trial</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/pricing"
+                  href="/courses"
                   className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
                 >
-                  View Packages
+                  View Courses
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+                >
+                  Contact Us
                 </Link>
               </div>
 
@@ -973,35 +1017,39 @@ function QuranReadingContent({
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start text-xs text-muted-text border-t border-card-border/50 pt-8">
                 <div className="flex items-center space-x-2">
                   <ShieldCheck className="h-4 w-4 text-primary" />
-                  <span>No Setup Fees</span>
+                  <span>One-on-One Classes</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Users className="h-4 w-4 text-primary" />
+                  <span>Male & Female Teachers</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4 text-primary" />
-                  <span>Flexible Hours</span>
+                  <span>Flexible Schedule</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Award className="h-4 w-4 text-primary" />
-                  <span>Ijazah Certified Scholars</span>
+                  <span>Kids & Adults</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Image Card */}
+            {/* Right Graphic Card */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative max-w-sm w-full">
                 <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
                 <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
                   <Image
                     src="/quran-reading.jpg"
-                    alt="online Quran reading classes for kids"
+                    alt="online quran reading classes with a certified tutor explaining letters"
                     width={400}
                     height={320}
                     priority
                     className="w-full rounded-2xl object-cover h-[320px] shadow-inner"
                   />
                   <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-md border border-card-border/60 text-center shadow-lg">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text block">Recommended Age</span>
-                    <span className="text-sm font-bold text-foreground mt-0.5 block">Ages 6 and above</span>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text block">Featured Course</span>
+                    <span className="text-sm font-bold text-foreground mt-0.5 block">Learn Quran Reading Online</span>
                   </div>
                 </div>
               </div>
@@ -1011,76 +1059,195 @@ function QuranReadingContent({
         </div>
       </section>
 
-      {/* 2. COURSE DESCRIPTION */}
+      {/* 2. CONFIDENCE SECTION */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Detailed Description */}
-            <div className="lg:col-span-7">
-              <h2 className="text-3xl font-extrabold text-foreground mb-4">Course Description</h2>
-              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
-              
-              {/* Featured Snippet Definition */}
-              <p className="text-base sm:text-lg leading-relaxed text-foreground font-semibold mb-6 border-l-4 border-primary pl-4">
-                The online Quran reading stage is a focused training course designed to transition students from basic Arabic letter recognition to reading full Quranic verses smoothly by mastering letter connection and waqf rules.
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest text-center">Reading Flow</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Learn Quran Reading Online with Confidence
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div className="space-y-6 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+              <p>
+                The Holy Quran is the literal word of Allah, revealed in a specific style. Reciting the Quran correctly is a spiritual responsibility that ensures the meanings of the verses are preserved.
               </p>
-
-              <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                <p>
-                  This course represents the vital middle phase of Quranic learning. While the <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida course</Link> deals with the absolute basics of Arabic phonetics, alphabet recognition, and short vowels, it does not prepare a student to read continuous script. The Quran Reading course takes over exactly where the foundation ends, helping students build the visual tracking skills necessary to connect letters, bridge syllables, and develop a natural flow.
-                </p>
-                <p>
-                  We focus specifically on fluency. Unlike the advanced <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed course</Link>, which explores theoretical recitation rules (such as Noon and Meem Sakinah rules) and classical phonetics, the primary goal here is to establish reading flow. Students learn to recognize the standard written format of the Holy Quran, navigate the spacing of the pages, and build the physical breath control required for daily reading.
-                </p>
-                <p>
-                  Our certified tutors act as guides, reciting with you word-by-word. This continuous feedback corrects visual spelling errors and halts bad reading habits before they become deeply set, paving a direct, smooth path toward full <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Quran memorization</Link> or advanced Tajweed.
-                </p>
+              <p>
+                By enrolling in an <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran Academy</Link>, you bypass commute struggles and study in a comfortable home environment.
+              </p>
+              <p>
+                Our private, one-on-one sessions guarantee 100% focused attention, helping you correct mistakes immediately and build reading fluency up to 3x faster.
+              </p>
+            </div>
+            <div className="glass p-8 rounded-3xl border-card-border shadow-lg">
+              <h3 className="text-xl font-bold text-foreground mb-4">Why Personalized Instruction Matters</h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
+                Every student learns at a different pace. Our tutors patiently customize lessons, using positive reinforcement to make class the highlight of your child's day.
+              </p>
+              <div className="flex items-center space-x-3 text-xs sm:text-sm font-bold text-foreground">
+                <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                <span>Zero Peer Pressure or Distractions</span>
               </div>
             </div>
-
-            {/* Key details card */}
-            <div className="lg:col-span-5">
-              <div className="glass p-8 rounded-3xl border-card-border shadow-xl h-full flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">Key Stage Objective</h3>
-                  <div className="h-1 w-12 bg-primary mb-6 rounded-full" />
-                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    This course focuses purely on transition and stamina. By reading daily, students gain the confidence needed to open any page of the Holy Quran and recite it without fear. We prioritize the connection of words and the proper implementation of waqf rules.
-                  </p>
-                </div>
-                <div className="mt-8 border-t border-card-border/50 pt-6">
-                  <h4 className="text-xs font-bold text-muted-text uppercase tracking-wider mb-3">Course Parameters</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-2 text-xs">
-                      <Clock className="h-4.5 w-4.5 text-primary shrink-0" />
-                      <span>{course.duration} Duration</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs">
-                      <Users className="h-4.5 w-4.5 text-primary shrink-0" />
-                      <span>{course.suitableFor}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
-      {/* 3. WHO SHOULD JOIN */}
+      {/* 3. WHO CAN JOIN */}
       <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Enrollment Profile</h2>
-            <p className="mt-3 text-3xl font-extrabold text-foreground">Who Should Join This Course?</p>
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Eligibility</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Who Can Join Our Quran Reading Course?
+            </p>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whoShouldJoinList.map((item, idx) => (
-              <div key={idx} className="glass p-6.5 rounded-2xl border-card-border hover:border-primary/20 transition-all duration-300 flex flex-col justify-between">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {whoCanJoin.map((item, idx) => (
+              <div key={idx} className="glass p-6.5 rounded-2xl border-card-border hover:border-primary/20 transition-all duration-300">
+                <h3 className="text-base font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-xs text-muted-text leading-relaxed font-normal">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. WHAT YOU WILL LEARN */}
+      <section className="py-20 border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Curriculum</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              What You Will Learn
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-foreground mb-4">Core Foundations</h3>
+                <ul className="space-y-3.5 text-xs text-muted-text">
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Arabic Alphabet**: Articulate all letters correctly (Makharij).</span>
+                  </li>
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Noorani Qaida rules**: Master vowels, silent letters, and connection shapes.</span>
+                  </li>
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Word Bridging**: Read two, three, and four-letter words smoothly.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-foreground mb-4">Reading Fluency</h3>
+                <ul className="space-y-3.5 text-xs text-muted-text">
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Sentence Recitation**: Transition to reading full Quranic phrases smoothly.</span>
+                  </li>
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Basic Tajweed**: Apply core phonetics rules (Madd, Ghunnah, Qalqalah).</span>
+                  </li>
+                  <li className="flex items-start space-x-2.5">
+                    <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>**Confidence & Flow**: Learn pausing symbols (waqf) to recite with rhythm.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ROADMAP METHODOLOGY */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Roadmap</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Our Step-by-Step Learning Method
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-6xl mx-auto">
+            {roadmapSteps.map((step, idx) => (
+              <div key={idx} className="glass p-5 rounded-2xl border-card-border text-center flex flex-col items-center justify-between">
+                <span className="h-8 w-8 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center mb-3">
+                  {step.step}
+                </span>
+                <h4 className="font-bold text-xs text-foreground mb-1">{step.title}</h4>
+                <p className="text-[10px] text-muted-text leading-relaxed font-normal">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. COURSE FEATURES COMPARISON */}
+      <section className="py-20 border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Feature Comparison</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Course Features & Packages
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="overflow-x-auto rounded-3xl border border-card-border glass shadow-xl max-w-4xl mx-auto">
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/10 border-b border-card-border text-primary font-bold">
+                  <th className="px-6 py-4 font-bold">Feature Name</th>
+                  <th className="px-6 py-4 font-bold">Starter Plan</th>
+                  <th className="px-6 py-4 font-bold">Standard Plan</th>
+                  <th className="px-6 py-4 font-bold">Premium Plan</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-card-border/40">
+                {features.map((f, idx) => (
+                  <tr key={idx} className="hover:bg-foreground/[0.01] transition-colors">
+                    <td className="px-6 py-4 font-semibold text-foreground text-xs sm:text-sm">{f.name}</td>
+                    <td className={`px-6 py-4 ${f.Starter_Class || "text-muted-text text-xs"}`}>{f.Starter}</td>
+                    <td className={`px-6 py-4 ${f.Standard_Class || "text-muted-text text-xs"}`}>{f.Standard}</td>
+                    <td className={`px-6 py-4 ${f.Premium_Class || "text-muted-text text-xs"}`}>{f.Premium}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. WHY CHOOSE OQTUTOR */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Benefits</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Why Choose OQTutor?
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {whyChooseUs.map((item, idx) => (
+              <div key={idx} className="glass p-7 rounded-3xl border-card-border flex flex-col justify-between">
                 <div>
                   <h3 className="text-base font-bold text-foreground mb-3">{item.title}</h3>
                   <p className="text-xs text-muted-text leading-relaxed font-normal">{item.desc}</p>
@@ -1091,259 +1258,46 @@ function QuranReadingContent({
         </div>
       </section>
 
-      {/* 4. OUTCOMES & BENEFITS */}
+      {/* 8. ONLINE BENEFITS CARDS */}
       <section className="py-20 border-t border-card-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Why This Course?</h2>
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">UX Advantages</h2>
             <p className="mt-3 text-3xl font-extrabold text-foreground">
-              Core Benefits & Learning Outcomes
+              Benefits of Learning Quran Reading Online
             </p>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Outcomes */}
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center space-x-2.5">
-                <CheckCircle className="h-5.5 w-5.5 text-secondary" />
-                <span>What You Will Accomplish</span>
-              </h3>
-              <div className="space-y-4">
-                {achievementsList.map((outcome, idx) => (
-                  <div key={idx} className="flex items-start space-x-3.5 glass p-4.5 rounded-2xl border-card-border hover:border-secondary/20 transition-all duration-300">
-                    <div className="p-1 rounded-full bg-secondary/15 text-secondary shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4" />
-                    </div>
-                    <span className="text-xs sm:text-sm text-foreground/80 leading-relaxed font-normal">{outcome}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Benefits */}
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center space-x-2.5">
-                <Award className="h-5.5 w-5.5 text-primary" />
-                <span>Special Program Benefits</span>
-              </h3>
-              <div className="space-y-4">
-                {benefitsList.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start space-x-3.5 glass p-4.5 rounded-2xl border-card-border hover:border-primary/20 transition-all duration-300">
-                    <div className="p-1 rounded-full bg-primary/15 text-primary shrink-0 mt-0.5">
-                      <Award className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-foreground mb-1">{benefit.title}</h4>
-                      <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">{benefit.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 5. SYLLABUS BREAKDOWN */}
-      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Syllabus Breakdown</h2>
-            <p className="mt-3 text-3xl font-extrabold text-foreground">
-              What You Study Step-by-Step
-            </p>
-            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-          </div>
-
-          <div className="space-y-4">
-            {curriculumPoints.map((step, idx) => {
-              const isOpen = openCurriculumIdx === idx;
-              return (
-                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
-                  <button
-                    onClick={() => toggleCurriculum(idx)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
-                        {idx + 1}
-                      </span>
-                      <span className="text-sm sm:text-base font-bold">{step.title}</span>
-                    </div>
-                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
-                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
-                            {step.desc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. TEACHING METHOD & SCHOLARS */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Methodology */}
-            <div>
-              <h2 className="text-3xl font-extrabold text-foreground mb-4">Our Teaching Methodology</h2>
-              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
-              <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal mb-6">
-                Our approach focuses on guided, repetitive recitation in a private virtual space. Rather than recorded lectures or self-study materials, we utilize active feedback during one-on-one sessions to help students build reading rhythm and correct vowel sound deviations immediately.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3 text-xs sm:text-sm">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>**Word-by-Word Articulation**: The tutor recites and the student repeats, focusing on smooth letter connection rules.</span>
-                </div>
-                <div className="flex items-start space-x-3 text-xs sm:text-sm">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>**Visual Page Tracking**: Screen sharing displays color-coded Mushafs, highlighting exact symbols to ease eye strain.</span>
-                </div>
-                <div className="flex items-start space-x-3 text-xs sm:text-sm">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>**Stamina Building**: Gradually increasing the reading portion from 2 lines to full pages to build recitation breath control.</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Scholars info */}
-            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
-              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center space-x-2">
-                <Users className="h-5 w-5 text-secondary" />
-                <span>Male & Female Scholars</span>
-              </h3>
-              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-6">
-                We understand and respect cultural preferences. That is why we employ dedicated, certified male and female Quran scholars holding authentic Ijazah qualifications. Sisters and children can study with a dedicated <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teacher</Link>, while boys can be assigned male scholars.
-              </p>
-              <div className="flex items-center space-x-4 border-t border-card-border/50 pt-6">
-                {/* Fixed Avatar Icon Instead of Broken OQ String */}
-                <div className="h-12 w-12 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold text-sm shrink-0">
-                  <ShieldCheck className="h-6 w-6 text-secondary" />
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {onlineBenefits.map((item, idx) => (
+              <div key={idx} className="glass p-6.5 rounded-2xl border-card-border text-center flex flex-col justify-between hover:border-secondary/20 transition-all duration-300">
                 <div>
-                  <h4 className="font-bold text-xs sm:text-sm">Assigned Specifically</h4>
-                  <p className="text-[10px] sm:text-xs text-muted-text">Select your choice in the registration form.</p>
+                  <h3 className="text-sm font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-[11px] text-muted-text leading-relaxed font-normal">{item.desc}</p>
                 </div>
               </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 7. E-E-A-T TEACHER SIGNALS */}
-      <section className="py-16 bg-foreground/[0.005] border-y border-card-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-xl font-bold text-foreground">Qualified Teacher Standards</h3>
-            <div className="h-1 w-16 bg-primary mx-auto mt-3 rounded-full" />
-          </div>
-          <div className="glass p-8 rounded-2xl border-card-border space-y-4 text-xs sm:text-sm text-muted-text leading-relaxed">
-            <div className="flex items-start space-x-3">
-              <CheckCircle className="h-4.5 w-4.5 text-secondary shrink-0 mt-0.5" />
-              <span>**Verified Ijazah Holder**: All teachers hold a certified Ijazah in Quranic recitation, confirming they learned from qualified chains of scholars.</span>
-            </div>
-            <div className="flex items-start space-x-3">
-              <CheckCircle className="h-4.5 w-4.5 text-secondary shrink-0 mt-0.5" />
-              <span>**Academic Degrees**: Tutors hold degrees in Islamic Studies or Arabic Language from reputable institutes such as Al-Azhar University.</span>
-            </div>
-            <div className="flex items-start space-x-3">
-              <CheckCircle className="h-4.5 w-4.5 text-secondary shrink-0 mt-0.5" />
-              <span>**Fluent English Speakers**: Tutors possess 3+ years of experience teaching children in the USA, UK, Canada, and Australia, ensuring clear communication without language barriers.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. ONLINE VS SELF-LEARNING COMPARISON */}
-      <section className="py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Comparison Guide</h2>
-            <p className="mt-3 text-2xl sm:text-3xl font-extrabold text-foreground">
-              Online Quran Reading Classes vs. Self-Learning
-            </p>
-            <div className="h-1 w-16 bg-secondary mx-auto mt-3 rounded-full" />
-          </div>
-          <div className="glass p-8 rounded-3xl border-card-border shadow-md space-y-6 text-sm text-muted-text leading-relaxed font-normal">
-            <p>
-              Learning to read Quran fluently requires correct pronunciation feedback. While self-learning apps and recorded audio files help with single-letter spelling, they cannot correct you when you bridge letters incorrectly or ignore pausing symbols. Without a live teacher, students often memorize spelling deviations and mispronunciations without realizing it.
-            </p>
-            <p>
-              By enrolling in guided **online Quran reading classes**, you receive immediate, live corrections. This structured feedback trains your ear and speeds up letter connection progress, ensuring you learn to recite with natural rhythm up to 3x faster than self-study.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. SCHEDULE & TIMING BLOCK */}
-      <section className="py-12 bg-foreground/[0.005] border-y border-card-border">
+      {/* 9. WHY PARENTS TRUST OQTUTOR */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
-            <h2 className="text-3xl font-extrabold text-foreground mb-4">Flexible 24/7 Scheduling & Structure</h2>
-            <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
-            <p className="text-sm sm:text-base text-muted-text max-w-3xl mx-auto leading-relaxed font-normal mb-8">
-              All our classes are structured as **one-on-one sessions, running 30 minutes each, scheduled 3 to 5 times per week.** We operate 24 hours a day, 7 days a week, allowing you to select and modify class schedules that perfectly mesh with school, work, or university semesters.
+            <h2 className="text-3xl font-extrabold text-foreground mb-4">Why Parents Trust OQTutor</h2>
+            <div className="h-1 w-16 bg-primary mx-auto mb-6 rounded-full" />
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed max-w-3xl mx-auto font-normal">
+              Parental peace of mind is the core of our service. We prioritize transparent communication. Parents receive direct updates after every session, and they can request meetings with academic supervisors to adjust schedules or change teachers if necessary. Our patient, highly qualified educators ensure that children learn to love reading the Quran, rather than viewing it as a chore.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto text-left sm:text-center">
-              <div className="glass p-4 rounded-xl border-card-border/50">
-                <span className="text-primary font-bold text-base sm:text-lg block">30 Mins</span>
-                <span className="text-[10px] text-muted-text block mt-1">Class Duration</span>
-              </div>
-              <div className="glass p-4 rounded-xl border-card-border/50">
-                <span className="text-primary font-bold text-base sm:text-lg block">1-on-1</span>
-                <span className="text-[10px] text-muted-text block mt-1">Class Mode</span>
-              </div>
-              <div className="glass p-4 rounded-xl border-card-border/50">
-                <span className="text-primary font-bold text-base sm:text-lg block">24 / 7</span>
-                <span className="text-[10px] text-muted-text block mt-1">Availability</span>
-              </div>
-              <div className="glass p-4 rounded-xl border-card-border/50">
-                <span className="text-primary font-bold text-base sm:text-lg block">3 Days</span>
-                <span className="text-[10px] text-muted-text block mt-1">Free Trial</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* 10. PREREQUISITE & LINKING BLOCK */}
-      <section className="py-12">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-          <p>
-            Need to build your alphabet foundation first? Start with our <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida course</Link>. Ready to perfect your pronunciation rules after this stage? Explore our <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed course</Link>, or look into the <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz course</Link> to begin memorizing chapters. We serve students globally across our location pages in the <Link href="/online-quran-classes-usa" className="text-primary font-semibold hover:underline">USA</Link>, <Link href="/online-quran-classes-uk" className="text-primary font-semibold hover:underline">UK</Link>, <Link href="/online-quran-classes-canada" className="text-primary font-semibold hover:underline">Canada</Link>, and <Link href="/locations/australia" className="text-primary font-semibold hover:underline">Australia</Link>.
-          </p>
-        </div>
-      </section>
-
-      {/* 11. DYNAMIC COURSE FAQs */}
-      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+      {/* 10. FAQs SECTION */}
+      <section className="py-20 border-t border-card-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-xs font-bold text-primary uppercase tracking-widest">FAQ</h2>
             <p className="mt-3 text-3xl font-extrabold text-foreground">
@@ -1353,7 +1307,7 @@ function QuranReadingContent({
           </div>
 
           <div className="space-y-4">
-            {course.faqs.map((faq: { question: string; answer: string }, idx: number) => {
+            {faqs.map((faq: { question: string; answer: string }, idx: number) => {
               const isOpen = openFaqIdx === idx;
               return (
                 <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
@@ -1385,52 +1339,30 @@ function QuranReadingContent({
               );
             })}
           </div>
-
         </div>
       </section>
 
-      {/* 12. TESTIMONIAL & FINAL CTA */}
+      {/* 11. FINAL CTA */}
       <section className="py-20 border-t border-card-border mb-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          
-          {/* Testimonial Placeholder */}
-          <div className="glass p-8 sm:p-10 rounded-3xl border border-card-border/60 text-center relative mb-16">
-            <div className="text-secondary text-5xl font-serif absolute -top-4 left-6">&ldquo;</div>
-            <p className="text-sm sm:text-base text-muted-text italic leading-relaxed pt-4 font-normal">
-              OQTutor helped my son transition from single letters in Noorani Qaida to reciting full Quranic pages with confidence. His teacher is patient, speaks fluent English, and explains every pause symbol perfectly. It has saved us hours of driving every week.
-            </p>
-            <div className="mt-4 text-xs font-bold text-foreground">
-              - Sister Aisha (Houston, USA) — Placeholder Testimonial
-            </div>
-          </div>
-
-          {/* CTA Box */}
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
-            <h2 className="text-3xl font-extrabold text-foreground mb-4">Ready to Start?</h2>
+            <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Your Free Trial Today</h2>
             <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/book-free-trial"
-                className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
-              >
-                Book a free trial class
-              </Link>
-              <Link
-                href="/courses"
-                className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
-              >
-                Browse full range of courses
-              </Link>
-            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
+              Give your family the gift of structured Quranic education. Join thousands of Muslim families in the USA, UK, Canada, and Australia who trust OQTutor for 1-on-1 online classes. Book your 3-day free trial today with no commitments.
+            </p>
+            <Link
+              href="/book-free-trial"
+              className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
+            >
+              Book Your Free Trial Class
+            </Link>
           </div>
         </div>
       </section>
-
     </main>
   );
 }
-
 
 function FemaleQuranTeacherContent({
   course,
