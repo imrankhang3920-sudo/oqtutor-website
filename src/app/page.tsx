@@ -379,7 +379,7 @@ export default async function HomePage() {
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">Male & Female Tutors</h3>
                 <p className="text-sm text-muted-text leading-relaxed font-normal">
-                  We respect the modesty and cultural comfort of your household. OQTutor provides a large team of dedicated female Quran tutors for sisters and young children, ensuring comfortable, private interactive lessons.
+                  We respect the modesty and cultural comfort of your household. OQTutor provides a large team of dedicated <Link href="/tutors" className="text-primary hover:underline font-semibold">female Quran tutors</Link> for sisters and young children, ensuring comfortable, private interactive lessons.
                 </p>
               </div>
 
@@ -397,7 +397,7 @@ export default async function HomePage() {
             <div className="mt-12 text-center">
               <span className="text-sm text-muted-text inline-flex items-center gap-2">
                 <CheckCheck className="h-5 w-5 text-primary shrink-0" />
-                <span>Start today with our risk-free, 100% <strong>Free Trial Quran Class</strong>. No card details required.</span>
+                <span>Start today with our risk-free, 100% <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">Free Trial Quran Class</Link>. No card details required.</span>
               </span>
             </div>
           </div>
@@ -433,7 +433,7 @@ export default async function HomePage() {
                     Finding a structured and consistent religious education program in the United States can be challenging for busy Muslim parents. Driving to a physical Islamic center after school drains time, and large group sizes often mean children do not receive personal attention.
                   </p>
                   <p>
-                    Our specialized <strong>Quran Classes for Kids USA</strong> solve these challenges. We provide a focused, distraction-free digital classroom where young learners interact one-on-one with certified, patient Quran teachers. Lessons are adjusted to the child's age, emotional maturity, and initial learning level.
+                    Our specialized <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">Quran Classes for Kids USA</Link> solve these challenges. We provide a focused, distraction-free digital classroom where young learners interact one-on-one with certified, patient Quran teachers. Lessons are adjusted to the child's age, emotional maturity, and initial learning level.
                   </p>
                   <p>
                     Through visual resources, gamified learning elements, and positive reinforcement, we construct a healthy, encouraging environment that inspires a long-term connection with the Quran. Our tutors maintain regular, detailed communication with parents, providing monthly progress reports to track recitation speed and Tajweed rules.
@@ -563,7 +563,7 @@ export default async function HomePage() {
                   One-to-One Personalized Learning
                 </h2>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6 font-normal">
-                  Standard group classes in physical classrooms often force all students to advance at the exact same pace. In such environments, slower learners get left behind, while faster students get bored. OQTutor's <strong>one-to-one online Quran classes</strong> eliminate this issue. 
+                  Standard group classes in physical classrooms often force all students to advance at the exact same pace. In such environments, slower learners get left behind, while faster students get bored. OQTutor's <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">one-to-one online Quran classes</Link> eliminate this issue. 
                 </p>
                 <ul className="space-y-3">
                   {[
