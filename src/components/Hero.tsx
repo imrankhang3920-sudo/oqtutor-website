@@ -44,17 +44,7 @@ export default function Hero({ data }: { data: HeroData }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground"
           >
-            {data.title.split(' ').map((word, idx) => (
-              <span key={idx}>
-                {word === 'Male' || word === 'Female' || word === 'Expert' || word === 'Tutors' ? (
-                  <span className="text-primary">{word} </span>
-                ) : word === 'Quran' ? (
-                  <span className="text-secondary">{word} </span>
-                ) : (
-                  `${word} `
-                )}
-              </span>
-            ))}
+            Online <span className="text-secondary">Quran</span> Classes in <span className="text-primary">USA</span>
           </motion.h1>
 
           <motion.p
@@ -63,7 +53,7 @@ export default function Hero({ data }: { data: HeroData }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 md:mt-6 text-base sm:text-xl text-muted-text max-w-2xl font-normal leading-relaxed"
           >
-            {data.subtitle}
+            Learn Quran online with certified male and female tutors through one-to-one live classes for kids and adults. Start with a free 3-day trial and flexible USA class timings.
           </motion.p>
 
           <motion.div
@@ -73,22 +63,18 @@ export default function Hero({ data }: { data: HeroData }) {
             className="mt-5 md:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto"
           >
             <a
-              href={data.ctaLink}
+              href="#contact"
               className="flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-0.5 text-center cursor-pointer text-sm sm:text-base"
             >
-              <span>{data.ctaText}</span>
+              <span>Book Free Trial</span>
               <ArrowRight className="h-5 w-5" />
             </a>
 
             <a
-              href={`https://wa.me/${data.whatsappNumber.replace(/[^0-9]/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCloseConvertLead('Homepage Hero')}
+              href="#courses"
               className="flex items-center justify-center space-x-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full glass border-card-border hover:bg-foreground/5 text-foreground font-semibold transition-all duration-300 transform hover:-translate-y-0.5 text-center cursor-pointer text-sm sm:text-base"
             >
-              <MessageCircle className="h-5 w-5 text-emerald-500 fill-emerald-500/20" />
-              <span>{data.whatsappText}</span>
+              <span>Explore Courses</span>
             </a>
           </motion.div>
         </div>
