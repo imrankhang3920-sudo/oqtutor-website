@@ -40,6 +40,47 @@ export default function CoursePageClient({
     setOpenFaqIdx(openFaqIdx === idx ? null : idx);
   };
 
+  const renderTajweedFaqAnswer = (idx: number, defaultText: string) => {
+    if (idx === 1) {
+      return (
+        <>
+          Yes. Sisters and young children can be matched with one of our certified{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">
+            female scholars
+          </Link>
+          ; boys and men can request a male teacher. You choose your preference during registration.
+        </>
+      );
+    }
+    if (idx === 2) {
+      return (
+        <>
+          No — you need to already be able to read Quranic Arabic script at a basic level (completed through{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>{" "}
+          or our{" "}
+          <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">
+            Quran Reading course
+          </Link>
+          ). If you're starting from zero, we'll place you in that course first, then move you here.
+        </>
+      );
+    }
+    if (idx === 3) {
+      return (
+        <>
+          An app can show you the rule; only a live teacher can hear your voice and correct the exact spot where your pronunciation is off. Most Tajweed mistakes are inaudible to the reader themselves — that's the entire reason a{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+            1-on-1 teacher
+          </Link>{" "}
+          exists.
+        </>
+      );
+    }
+    return defaultText;
+  };
+
   return (
     <main className="flex-grow bg-background text-foreground">
       
@@ -147,7 +188,7 @@ export default function CoursePageClient({
                   <div className="space-y-3">
                     <h4 className="text-lg font-bold text-foreground">Why Tajweed Matters</h4>
                     <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                      Every letter mispronounced can quietly change the meaning of a word — which is why correct, measured recitation (tarteel) has always been the standard taught by scholars. A single online session with a qualified teacher can catch mistakes that go unnoticed for years of unsupervised reading.
+                      Every letter mispronounced can quietly change the meaning of a word — which is why correct, measured recitation (tarteel) has always been the standard taught by scholars. A single online session with a <Link href="/tutors" className="text-primary hover:underline font-semibold">qualified teacher</Link> can catch mistakes that go unnoticed for years of unsupervised reading.
                     </p>
                   </div>
                 </div>
@@ -165,7 +206,7 @@ export default function CoursePageClient({
                       <div className="glass p-4 rounded-2xl border border-card-border/65 bg-foreground/[0.005]">
                         <h4 className="font-bold text-xs sm:text-sm text-primary mb-1">Beginner Track</h4>
                         <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
-                          For students who can already read Arabic script (having completed Noorani Qaida or basic Quran Reading) but have never formally studied Tajweed rules.
+                          For students who can already read Arabic script (having completed <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link> or basic <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Quran Reading</Link>) but have never formally studied Tajweed rules.
                         </p>
                       </div>
                       <div className="glass p-4 rounded-2xl border border-card-border/65 bg-foreground/[0.005]">
@@ -175,7 +216,7 @@ export default function CoursePageClient({
                         </p>
                       </div>
                       <p className="text-[10px] sm:text-xs text-muted-text leading-relaxed font-medium italic pt-2">
-                        Not sure which track fits you? Our teachers assess your level in the first free trial class and place you accordingly — no separate placement test needed.
+                        Not sure which track fits you? Our teachers assess your level in the first <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial class</Link> and place you accordingly — no separate placement test needed.
                       </p>
                     </div>
                   ) : (
@@ -414,7 +455,7 @@ export default function CoursePageClient({
                     <span>Certified Through an Authentic Chain (Sanad)</span>
                   </h4>
                   <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
-                    Our Tajweed instructors hold Ijazah — a formal certification passed down through an unbroken chain of narration (sanad) tracing back to the Prophet Muhammad ﷺ. This isn't a certificate from a course; it's a scholarly license to teach and correct recitation, verified the same way it has been for over a thousand years.
+                    Our <Link href="/tutors" className="text-primary hover:underline font-semibold">Tajweed instructors</Link> hold Ijazah — a formal certification passed down through an unbroken chain of narration (sanad) tracing back to the Prophet Muhammad ﷺ. This isn't a certificate from a course; it's a scholarly license to teach and correct recitation, verified the same way it has been for over a thousand years.
                   </p>
                 </div>
               )}
@@ -523,7 +564,11 @@ export default function CoursePageClient({
                       >
                         <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
                           <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">
-                            {faq.answer}
+                            {course.slug === 'tajweed' ? (
+                              renderTajweedFaqAnswer(idx, faq.answer)
+                            ) : (
+                              faq.answer
+                            )}
                           </p>
                         </div>
                       </motion.div>
