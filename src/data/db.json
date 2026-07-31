@@ -271,31 +271,111 @@
       ],
       "curriculumSteps": [
         {
-          "title": "Noon and Meem Sakinah Rules",
-          "description": "Mastering nasalization (Ghunnah), concealment (Ikhfa), and absorption (Idghaam) rules."
+          "title": "Arabic letters & articulation points (Makharij al-Huroof)",
+          "description": "Mastering the physical articulation points (Makharij) of all 28 Arabic letters in the throat and mouth to ensure perfect sound production."
         },
         {
-          "title": "Echoing Sounds (Qalqalah)",
-          "description": "Learning how and when to bounce specific letters when they carry a stillness sign (Sukun)."
+          "title": "Characteristics of letters (Sifaat)",
+          "description": "Understanding the intrinsic qualities of letters, such as breath flow (Hams), vocal strength (Jahr), and soft/hard characteristics."
         },
         {
-          "title": "Elongation Rules (Madd)",
-          "description": "Understanding short and long breath expansions over specific vowel configurations."
+          "title": "Harakaat — Fat-hah, Kasrah, Dhammah",
+          "description": "Correctly pronouncing short vowel sounds without dragging them, preventing common mistakes in vowel lengths."
         },
         {
-          "title": "Practical Application",
-          "description": "Live reading of selected Quranic chapters under strict teacher supervision and certification."
+          "title": "Sukoon and Shaddah, Tanween",
+          "description": "Reading silent letters (Sukoon) and doubled letters (Shaddah) accurately, alongside double vowels (Tanween)."
+        },
+        {
+          "title": "Izhar (clear pronunciation)",
+          "description": "Pronouncing Noon Sakinah clearly when followed by throat letters."
+        },
+        {
+          "title": "Idghaam (merging) — with and without Ghunnah",
+          "description": "Merging the silent Noon into the next letter, with or without nasal sound (Ghunnah)."
+        },
+        {
+          "title": "Iqlab (conversion)",
+          "description": "Converting the sound of Noon Sakinah into a silent Meem when followed by the letter Baa."
+        },
+        {
+          "title": "Ikhfa (concealment)",
+          "description": "Concealing the sound of Noon Sakinah in the nasal cavity before fifteen specific letters."
+        },
+        {
+          "title": "Ghunnah (nasalization)",
+          "description": "Perfecting the nasal sound originating from the nasal passage, specifically on doubled Noon and Meem."
+        },
+        {
+          "title": "Qalqalah (echoing sound)",
+          "description": "Applying the echoing or bouncing sound on five specific letters when they carry a stillness sign (Sukoon)."
+        },
+        {
+          "title": "Rules of the letter Raa (thick/thin pronunciation)",
+          "description": "Understanding when to make the letter Raa thick (Tafkheem) or thin (Tarqeeq) based on surrounding vowels."
+        },
+        {
+          "title": "Lam of Allah — thick and thin",
+          "description": "Pronouncing the word 'Allah' with a heavy or light sound depending on the preceding vowel."
+        },
+        {
+          "title": "Madd Asli (natural elongation)",
+          "description": "Applying the basic two-count stretch on natural vowels (Alif, Waw, Ya)."
+        },
+        {
+          "title": "Madd Far'i and its types",
+          "description": "Mastering the secondary elongations caused by Hamzah or Sukoon, stretching sounds for 4 to 6 counts."
+        },
+        {
+          "title": "The very long Madd (Madd Laazim)",
+          "description": "Understanding the mandatory six-count elongation when a vowel letter is followed by a doubled or silent letter."
+        },
+        {
+          "title": "Waqf (rules of stopping)",
+          "description": "Learning how to stop at the end of verses or in the middle, and how to correctly silence final vowels."
+        },
+        {
+          "title": "Waqf signs in the Mushaf",
+          "description": "Recognizing stopping symbols (such as Meem, Jeem, Laa) printed in the Quran to prevent incorrect stops."
+        },
+        {
+          "title": "Ibtida' (rules of starting/resuming)",
+          "description": "Understanding how to resume reading after a stop without altering the context or meaning."
+        },
+        {
+          "title": "Reading full passages with applied rules",
+          "description": "Practicing recitation of comprehensive Quranic chapters with all Tajweed rules applied simultaneously."
+        },
+        {
+          "title": "Recorded practice and correction",
+          "description": "Recording and analyzing your own recitation with 1-on-1 teacher corrections to build muscle memory."
+        },
+        {
+          "title": "Matching a classical, scholarly recitation style",
+          "description": "Refining your tone and speed to resemble traditional reciters (Qurra) under strict scholar feedback."
         }
       ],
       "teachingMethod": "We combine theoretical explanation slides with heavy practical drilling during live class recitation, showing mouth positions via high-definition video call.",
       "faqs": [
         {
           "question": "Why is Tajweed important?",
-          "answer": "Tajweed preserves the authentic pronunciation of Quranic Arabic, protecting the reader from changing the meanings of Allah's words."
+          "answer": "Tajweed ensures the Quran is recited exactly as it was revealed. Mispronouncing letters can change a word's meaning entirely, so correct Tajweed protects both the accuracy and the reward of your recitation."
         },
         {
           "question": "Do female teachers teach sisters?",
-          "answer": "Yes, we have certified female scholars who teach Tajweed classes exclusively for sisters and kids."
+          "answer": "Yes. Sisters and young children can be matched with one of our certified female scholars; boys and men can request a male teacher. You choose your preference during registration."
+        },
+        {
+          "question": "Do I need to know Arabic before starting this course?",
+          "answer": "No — you need to already be able to read Quranic Arabic script at a basic level (completed through Noorani Qaida or our Quran Reading course). If you're starting from zero, we'll place you in that course first, then move you here."
+        },
+        {
+          "question": "How is this different from a free Tajweed app?",
+          "answer": "An app can show you the rule; only a live teacher can hear your voice and correct the exact spot where your pronunciation is off. Most Tajweed mistakes are inaudible to the reader themselves — that's the entire reason a 1-on-1 teacher exists."
+        },
+        {
+          "question": "Can adults join this course, or is it only for children?",
+          "answer": "Both. We regularly teach adults who learned to read Quran as children but never formally studied Tajweed, alongside children as young as 8."
         }
       ]
     },

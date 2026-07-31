@@ -136,6 +136,22 @@ export default function CoursePageClient({
               <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 Whether you are establishing basic recognition or correcting hidden vocal flaws in advanced chapters, our tailored syllabus provides clean, measurable progress reporting week by week.
               </p>
+              {course.slug === 'tajweed' && (
+                <div className="mt-10 pt-10 border-t border-card-border/50 space-y-8">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-foreground">What Is Tajweed?</h3>
+                    <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+                      The word Tajweed comes from the Arabic root <span className="italic font-medium text-foreground">jawwada</span>, meaning "to make excellent" or "to perfect." In practice, it is the set of rules that govern exactly how each letter of the Quran should be pronounced — its articulation point (makhraj), its characteristics (sifaat), and how it changes shape next to other letters. Reciting with Tajweed is not a stylistic choice; the majority of scholars consider it obligatory (fard) once a person is capable of learning it, since it is the only way to recite the Quran the way it was revealed and preserved.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-bold text-foreground">Why Tajweed Matters</h4>
+                    <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+                      Every letter mispronounced can quietly change the meaning of a word — which is why correct, measured recitation (tarteel) has always been the standard taught by scholars. A single online session with a qualified teacher can catch mistakes that go unnoticed for years of unsupervised reading.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Who should join Card */}
@@ -144,9 +160,29 @@ export default function CoursePageClient({
                 <div>
                   <h3 className="text-xl font-bold text-foreground mb-3">Who Should Join?</h3>
                   <div className="h-1 w-12 bg-primary mb-6 rounded-full" />
-                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    {course.whoShouldJoin}
-                  </p>
+                  {course.slug === 'tajweed' ? (
+                    <div className="space-y-4">
+                      <div className="glass p-4 rounded-2xl border border-card-border/65 bg-foreground/[0.005]">
+                        <h4 className="font-bold text-xs sm:text-sm text-primary mb-1">Beginner Track</h4>
+                        <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
+                          For students who can already read Arabic script (having completed Noorani Qaida or basic Quran Reading) but have never formally studied Tajweed rules.
+                        </p>
+                      </div>
+                      <div className="glass p-4 rounded-2xl border border-card-border/65 bg-foreground/[0.005]">
+                        <h4 className="font-bold text-xs sm:text-sm text-secondary mb-1">Intermediate/Advanced Track</h4>
+                        <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
+                          For students who already know the basic rules but want to correct ingrained mistakes, refine makharij, and match a classical, scholarly recitation style.
+                        </p>
+                      </div>
+                      <p className="text-[10px] sm:text-xs text-muted-text leading-relaxed font-medium italic pt-2">
+                        Not sure which track fits you? Our teachers assess your level in the first free trial class and place you accordingly — no separate placement test needed.
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                      {course.whoShouldJoin}
+                    </p>
+                  )}
                 </div>
                 <div className="mt-8 border-t border-card-border/50 pt-6">
                   <h4 className="text-xs font-bold text-muted-text uppercase tracking-wider mb-3">Key Details</h4>
@@ -157,7 +193,7 @@ export default function CoursePageClient({
                     </div>
                     <div className="flex items-center space-x-2 text-xs">
                       <Users className="h-4.5 w-4.5 text-primary shrink-0" />
-                      <span>{course.suitableFor}</span>
+                      <span>{course.slug === 'tajweed' ? 'All Levels' : course.suitableFor}</span>
                     </div>
                   </div>
                 </div>
@@ -233,44 +269,102 @@ export default function CoursePageClient({
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           </div>
 
-          <div className="space-y-4">
-            {course.curriculumSteps.map((step, idx) => {
-              const isOpen = openCurriculumIdx === idx;
-              return (
-                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
-                  <button
-                    onClick={() => toggleCurriculum(idx)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
-                        {idx + 1}
-                      </span>
-                      <span className="text-sm sm:text-base font-bold">{step.title}</span>
-                    </div>
-                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
-                  </button>
+          {course.slug === 'tajweed' ? (
+            <div className="space-y-8">
+              {[
+                { heading: "Foundations", steps: course.curriculumSteps.slice(0, 4), offset: 0 },
+                { heading: "Noon & Meem Sakinah Rules", steps: course.curriculumSteps.slice(4, 8), offset: 4 },
+                { heading: "Sound Rules", steps: course.curriculumSteps.slice(8, 12), offset: 8 },
+                { heading: "Madd (Elongation) Rules", steps: course.curriculumSteps.slice(12, 15), offset: 12 },
+                { heading: "Stopping & Starting", steps: course.curriculumSteps.slice(15, 18), offset: 15 },
+                { heading: "Practical Application", steps: course.curriculumSteps.slice(18, 21), offset: 18 }
+              ].map((group, groupIdx) => (
+                <div key={groupIdx} className="space-y-3">
+                  <h3 className="text-lg font-bold text-foreground/90 border-l-4 border-primary pl-3 mt-8 mb-4">
+                    {group.heading}
+                  </h3>
+                  <div className="space-y-3">
+                    {group.steps.map((step, stepIdx) => {
+                      const globalIdx = group.offset + stepIdx;
+                      const isOpen = openCurriculumIdx === globalIdx;
+                      return (
+                        <div key={globalIdx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                          <button
+                            onClick={() => toggleCurriculum(globalIdx)}
+                            className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                          >
+                            <div className="flex items-center space-x-4">
+                              <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
+                                {globalIdx + 1}
+                              </span>
+                              <span className="text-sm sm:text-base font-bold">{step.title}</span>
+                            </div>
+                            <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                          </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
-                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
-                            {step.description}
-                          </p>
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
+                                    {step.description}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      );
+                    })}
+                  </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {course.curriculumSteps.map((step, idx) => {
+                const isOpen = openCurriculumIdx === idx;
+                return (
+                  <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                    <button
+                      onClick={() => toggleCurriculum(idx)}
+                      className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
+                          {idx + 1}
+                        </span>
+                        <span className="text-sm sm:text-base font-bold">{step.title}</span>
+                      </div>
+                      <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25 }}
+                        >
+                          <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                            <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
+                              {step.description}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
         </div>
       </section>
@@ -312,6 +406,18 @@ export default function CoursePageClient({
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-6">
                 We understand and respect cultural preferences. That is why we employ dedicated, certified **male and female Quran scholars** holding authentic Ijazah qualifications. Sisters and children can study with female teachers, while boys can be assigned male scholars.
               </p>
+              {course.slug === 'tajweed' && (
+                <div className="mb-6 p-4.5 rounded-2xl bg-primary/5 border border-primary/20 text-foreground relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full blur-xl pointer-events-none" />
+                  <h4 className="font-extrabold text-xs sm:text-sm text-primary mb-1.5 flex items-center space-x-2">
+                    <Award className="h-4.5 w-4.5 text-secondary shrink-0" />
+                    <span>Certified Through an Authentic Chain (Sanad)</span>
+                  </h4>
+                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
+                    Our Tajweed instructors hold Ijazah — a formal certification passed down through an unbroken chain of narration (sanad) tracing back to the Prophet Muhammad ﷺ. This isn't a certificate from a course; it's a scholarly license to teach and correct recitation, verified the same way it has been for over a thousand years.
+                  </p>
+                </div>
+              )}
               <div className="flex items-center space-x-4 border-t border-card-border/50 pt-6">
                 <div className="h-12 w-12 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold text-sm shrink-0">
                   OQ
@@ -358,6 +464,26 @@ export default function CoursePageClient({
           </div>
         </div>
       </section>
+
+      {/* Etiquette of Recitation section for Tajweed */}
+      {course.slug === 'tajweed' && (
+        <section id="recitation-etiquette" className="py-16 md:py-20 relative overflow-hidden bg-background border-t border-card-border">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl max-w-3xl mx-auto relative overflow-hidden bg-foreground/[0.005]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full blur-2xl pointer-events-none" />
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block mb-4">
+                Islamic Adab
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-4">The Etiquette of Recitation</h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+                Tajweed is about more than pronunciation — traditional scholars also teach the <span className="italic font-medium text-foreground">adab</span> (etiquette) of recitation: reciting in a state of purity, facing the Qiblah where possible, reflecting on the meaning as you read, and giving the Quran your full attention. Your teacher will gently guide you in these practices alongside the technical rules.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 7. DYNAMIC COURSE FAQs */}
       <section className="py-20 bg-foreground/[0.005] border-t border-card-border mb-20">
