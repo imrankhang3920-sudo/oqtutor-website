@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/terms-and-conditions',
     '/refund-policy',
     '/online-quran-classes-usa',
+    '/online-quran-classes-usa/new-york',
     '/online-quran-classes-uk',
     '/online-quran-classes-canada',
     '/locations/australia',

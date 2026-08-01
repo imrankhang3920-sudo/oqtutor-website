@@ -27,6 +27,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
     { name: 'Quran Classes USA', href: '/online-quran-classes-usa' },
+    { name: 'Quran Classes New York', href: '/online-quran-classes-usa/new-york' },
     { name: 'Quran Classes UK', href: '/online-quran-classes-uk' },
     { name: 'Quran Classes Canada', href: '/online-quran-classes-canada' },
     { name: 'Quran Classes Australia', href: '/locations/australia' },

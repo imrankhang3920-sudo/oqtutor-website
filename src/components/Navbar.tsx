@@ -125,6 +125,12 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                   🇺🇸 USA Classes
                 </Link>
                 <Link
+                  href="/online-quran-classes-usa/new-york"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  └ New York
+                </Link>
+                <Link
                   href="/online-quran-classes-uk"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
@@ -340,6 +346,17 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                     className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
                     🇦🇺 Australia
+                  </Link>
+                </div>
+                {/* City/State Sub-links */}
+                <div className="pl-1 pt-1 flex flex-wrap gap-2">
+                  <span className="text-[10px] font-bold text-muted-text/80 self-center">USA Cities:</span>
+                  <Link
+                    href="/online-quran-classes-usa/new-york"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    New York
                   </Link>
                 </div>
               </div>
