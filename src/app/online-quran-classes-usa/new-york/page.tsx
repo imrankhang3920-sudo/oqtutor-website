@@ -33,6 +33,121 @@ export default async function NewYorkQuranClassesPage() {
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
+  const renderNewYorkFaqAnswer = (idx: number, defaultText: string) => {
+    if (idx === 0) {
+      return (
+        <>
+          Through a one-on-one online academy like{" "}
+          <Link href="/" className="text-primary hover:underline font-semibold">
+            OQTutor
+          </Link>
+          , where a live tutor teaches over video call on a schedule matched to your U.S. time zone — no travel required.
+        </>
+      );
+    }
+    if (idx === 1) {
+      return (
+        <>
+          The right starting course depends on current reading level:{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>{" "}
+          for true beginners,{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+            Tajweed classes
+          </Link>{" "}
+          for those who already read Arabic script, or a{" "}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">
+            Hifz track
+          </Link>{" "}
+          for memorization-focused students. A placement check (not a sales call) is the reliable way to know which one fits.
+        </>
+      );
+    }
+    if (idx === 2) {
+      return (
+        <>
+          Rates typically depend on classes per week and session length. See the sample{" "}
+          <Link href="#pricing" className="text-primary hover:underline font-semibold">
+            pricing table above
+          </Link>
+          ; ask for the current rate sheet before enrolling anywhere that won't show numbers up front.
+        </>
+      );
+    }
+    if (idx === 4) {
+      return (
+        <>
+          Online removes commute time and expands the pool of available tutors (including{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">
+            female tutors
+          </Link>
+          , which can be harder to find locally). In-person can suit families who prefer face-to-face accountability. Many New York families use online for weekday consistency and keep occasional in-person mosque classes for community connection.
+        </>
+      );
+    }
+    if (idx === 6) {
+      return (
+        <>
+          At minimum: a verifiable{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+            Ijazah
+          </Link>{" "}
+          (chain of certification) in Tajweed or Qira'ah, teaching experience with the age group in question, and — for children — a track record of patient, structured instruction rather than pure recitation drilling.
+        </>
+      );
+    }
+    if (idx === 7) {
+      return (
+        <>
+          Beginners typically start with{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>
+          : Arabic letters, sounds, and joining letters into words, before moving to full Quran reading with{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+            Tajweed rules
+          </Link>{" "}
+          layered in gradually.
+        </>
+      );
+    }
+    if (idx === 12) {
+      return (
+        <>
+          Yes, most academies — including OQTutor — offer{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">
+            female tutors
+          </Link>{" "}
+          for girls, women, and families who prefer that arrangement, alongside male tutors.
+        </>
+      );
+    }
+    if (idx === 15) {
+      return (
+        <>
+          Yes — a genuine trial should be a real class with a real tutor, not a sales consultation, and should end with a level recommendation in writing. You can book a free{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+            trial class
+          </Link>{" "}
+          directly on our site.
+        </>
+      );
+    }
+    if (idx === 16) {
+      return (
+        <>
+          Yes, structured{" "}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">
+            Hifz programs
+          </Link>{" "}
+          typically include daily new-memorization targets plus a recurring revision schedule so earlier portions aren't forgotten.
+        </>
+      );
+    }
+    return defaultText;
+  };
+
   const customHeroData = {
     title: "Online Quran Classes in New York",
     subtitle: "Most online Quran academies serving New York promise the same three things: flexible timing, male or female tutors, and a free trial. OQTutor starts one step earlier — a short placement check before your first paid class, so your child or you begin at the right level instead of restarting a generic Noorani Qaida track from page one. Every student gets a personal learning plan and a weekly progress note sent to the parent or student directly, not just a 'your child is doing great' message.",
@@ -236,7 +351,7 @@ export default async function NewYorkQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">1. You start at your actual level</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    New students take a 15-minute, no-obligation reading and Tajweed check before enrollment. A returning student who already reads fluently doesn't sit through beginner drills, and a true beginner isn't rushed into Tajweed rules before they're ready.
+                    New students take a 15-minute, no-obligation reading and <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed</Link> check before enrollment. A returning student who already reads fluently doesn't sit through beginner drills, and a true beginner isn't rushed into Tajweed rules before they're ready.
                   </p>
                 </div>
               </div>
@@ -260,7 +375,7 @@ export default async function NewYorkQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">3. Pricing is stated up front</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Below is a sample structure — no &quot;contact us for a quote&quot; requirement to compare options.
+                    Below is a sample structure (see the <Link href="#pricing" className="text-primary hover:underline font-semibold">pricing table below</Link>) — no &quot;contact us for a quote&quot; requirement to compare options.
                   </p>
                 </div>
               </div>
@@ -298,7 +413,7 @@ export default async function NewYorkQuranClassesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Noorani Qaida (Beginner Reading Foundation)</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
-                    Arabic letter recognition, correct pronunciation (makharij), and joining letters into words — the foundation before Tajweed. Typical age range: 4+.
+                    Arabic letter recognition, correct pronunciation (makharij), and joining letters into words — the foundation before <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed</Link>. Typical age range: 4+.
                   </p>
                 </div>
                 <Link
@@ -314,7 +429,7 @@ export default async function NewYorkQuranClassesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Quran Reading with Tajweed</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
-                    For students who've completed Qaida or already read Arabic script. Covers elongation rules, correct articulation points, and fluent recitation.
+                    For students who've completed <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link> or already read Arabic script. Covers elongation rules, correct articulation points, and fluent recitation.
                   </p>
                 </div>
                 <Link
@@ -435,15 +550,15 @@ export default async function NewYorkQuranClassesPage() {
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3 text-xs sm:text-sm text-muted-text font-normal">
                       <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>Male and female tutors — student or parent chooses.</span>
+                      <span>Male and female <Link href="/tutors" className="text-primary hover:underline font-semibold">tutors</Link> — student or parent chooses.</span>
                     </li>
                     <li className="flex items-start space-x-3 text-xs sm:text-sm text-muted-text font-normal">
                       <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>Certified credentials: official Ijazah chains and academic scholars.</span>
+                      <span>Certified credentials: official <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Ijazah chains</Link> and academic scholars.</span>
                     </li>
                     <li className="flex items-start space-x-3 text-xs sm:text-sm text-muted-text font-normal">
                       <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>Tutors who teach New York-based students regularly and work within EST/EDT scheduling, including early-morning and after-school slots.</span>
+                      <span><Link href="/tutors" className="text-primary hover:underline font-semibold">Tutors</Link> who teach New York-based students regularly and work within EST/EDT scheduling, including early-morning and after-school slots.</span>
                     </li>
                   </ul>
                 </div>
@@ -607,7 +722,7 @@ export default async function NewYorkQuranClassesPage() {
                     </span>
                   </summary>
                   <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3">
-                    {faq.acceptedAnswer.text}
+                    {renderNewYorkFaqAnswer(idx, faq.acceptedAnswer.text)}
                   </div>
                 </details>
               ))}
