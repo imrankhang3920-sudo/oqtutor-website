@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { readDB } from '@/data/db';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
   const blog = dbData.blogs?.find((b) => b.slug === resolvedParams.slug);
 
   if (!blog) {
-    notFound();
+    redirect('/blog');
   }
 
   const isUSABlog = resolvedParams.slug === 'online-quran-classes-usa';

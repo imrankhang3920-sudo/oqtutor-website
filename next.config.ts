@@ -17,6 +17,50 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 0. Redirect non-www to www canonical domain
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'oqtutor.com',
+          },
+        ],
+        destination: 'https://www.oqtutor.com/:path*',
+        permanent: true,
+      },
+      // Category redirects (WordPress legacy)
+      {
+        source: '/category/blog/:slug*',
+        destination: '/blog/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/category/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      // Date-based blog redirects (WordPress legacy)
+      {
+        source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug',
+        destination: '/blog/:slug',
+        permanent: true,
+      },
+      {
+        source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:year(\\d{4})/:month(\\d{2})',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/:year(\\d{4})',
+        destination: '/blog',
+        permanent: true,
+      },
       // Redirect /free-trial to /book-free-trial
       {
         source: '/free-trial',
