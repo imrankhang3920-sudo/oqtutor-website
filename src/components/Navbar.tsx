@@ -125,6 +125,18 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                   🇺🇸 USA Classes
                 </Link>
                 <Link
+                  href="/locations/usa"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  ├ USA State Hub
+                </Link>
+                <Link
+                  href="/locations/michigan"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  ├ Michigan
+                </Link>
+                <Link
                   href="/online-quran-classes-usa/new-york"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
@@ -350,7 +362,21 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 </div>
                 {/* City/State Sub-links */}
                 <div className="pl-1 pt-1 flex flex-wrap gap-2">
-                  <span className="text-[10px] font-bold text-muted-text/80 self-center">USA Cities:</span>
+                  <span className="text-[10px] font-bold text-muted-text/80 self-center">USA States/Cities:</span>
+                  <Link
+                    href="/locations/usa"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    USA Hub
+                  </Link>
+                  <Link
+                    href="/locations/michigan"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    Michigan
+                  </Link>
                   <Link
                     href="/online-quran-classes-usa/new-york"
                     onClick={() => setIsOpen(false)}
