@@ -247,7 +247,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Live, 1-on-1 Classes</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Every class is a real-time session between your child (or you) and a dedicated tutor — never pre-recorded video. Lessons are shaped around the student's current level and learning speed.
+                    Every class is a real-time session between your child (or you) and a dedicated <Link href="/tutors" className="text-primary hover:underline font-semibold">online Quran tutor</Link> — never pre-recorded video. Lessons are shaped around the student's current level and learning speed.
                   </p>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Experienced, Vetted Tutors</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Our tutors are trained in Tajweed and Quranic pedagogy and go through a rigorous evaluation process, so families can trust the quality of instruction.
+                    Our tutors are trained in <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed rules</Link> and Quranic pedagogy and go through a rigorous evaluation process, so families can trust the quality of instruction.
                   </p>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Male and Female Tutors Available</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Many families have a preference for their child or a female family member to learn with a female tutor. OQTutor lets you choose the tutor gender that is most comfortable.
+                    Many families have a preference for their child or a female family member to learn with a <Link href="/tutors" className="text-primary hover:underline font-semibold">female tutor</Link>. OQTutor lets you choose the tutor gender that is most comfortable.
                   </p>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Scheduling Built Around Michigan Life</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Between school pickups, work shifts, and evening prayers, Michigan families are busy. We offer morning, afternoon, evening, and weekend slots.
+                    Between school pickups, work shifts, and evening prayers, Michigan families are busy. We offer morning, afternoon, evening, and weekend slots so <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Quran learning</Link> fits into your routine.
                   </p>
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">No Commute, No Compromise</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Skip the drive across town. Learn from your living room, with the same quality of instruction — or better, thanks to advanced screen-sharing tools.
+                    Skip the drive across town. Learn from your living room with the same quality of instruction — or better, thanks to our interactive portal and screen-sharing tools for <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">pronunciation correction</Link>.
                   </p>
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Free Placement Trial</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Try a live class with an OQTutor teacher before you commit to a plan, so you and your child can see the teaching style firsthand.
+                    Try a live class with an OQTutor teacher before you commit to a plan, so you and your child can see the teaching style firsthand by booking a <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial class</Link>.
                   </p>
                 </div>
               </div>
@@ -424,7 +424,7 @@ export default async function MichiganQuranClassesPage() {
                 </h2>
                 <div className="h-1 w-16 bg-secondary rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                  OQTutor's online classes reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified tutor — only your schedule does.
+                  OQTutor's <Link href="/how-it-works" className="text-primary hover:underline font-semibold font-sans">online classes</Link> reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified <Link href="/tutors" className="text-primary hover:underline font-semibold font-sans">online tutor</Link> — only your schedule does. If you reside outside Michigan, explore regional directories like <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York Quran Classes</Link> or our national <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA Locations Hub</Link>.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
@@ -669,21 +669,21 @@ export default async function MichiganQuranClassesPage() {
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which city has the most Muslims in the USA?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  New York City has the largest Muslim population of any U.S. city, with estimates generally ranging from 600,000 to over 750,000 residents — and well over a million if you include the surrounding metro area. By concentration rather than raw numbers, Dearborn, Michigan takes the lead: over half its population identifies as Middle Eastern or North African, making it the most Muslim-concentrated city in the country.
+                  <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link> has the largest Muslim population of any U.S. city, with estimates generally ranging from 600,000 to over 750,000 residents — and well over a million if you include the surrounding metro area. By concentration rather than raw numbers, Dearborn, Michigan takes the lead: over half its population identifies as Middle Eastern or North African, making it the most Muslim-concentrated city in the country.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which US states have the most Muslims?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  New York, California, and Illinois have the largest Muslim populations by raw numbers, followed by New Jersey and Texas. Looking at Muslim residents as a share of total population, smaller states like Michigan, Maryland, and Minnesota rank higher — Michigan's Muslim community, centered around Dearborn, Detroit, Ann Arbor, and Hamtramck, makes up roughly 2.5–3% of the state's population.
+                  <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York</Link>, California, and Illinois have the largest Muslim populations by raw numbers, followed by New Jersey and Texas. Looking at Muslim residents as a share of total population across the <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA</Link>, smaller states like Michigan, Maryland, and Minnesota rank higher — Michigan's Muslim community, centered around Dearborn, Detroit, Ann Arbor, and Hamtramck, makes up roughly 2.5–3% of the state's population.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which cities in the US are Muslim-friendly?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  While there's no official ranking, the cities most known for established Muslim communities, mosques, and halal infrastructure are New York City, Chicago, Detroit/Dearborn, Los Angeles, Houston, and Philadelphia. Dearborn, Michigan stands out in particular — it's home to the Islamic Center of America, the largest mosque in North America, along with halal restaurants, bakeries, and Arabic signage throughout the city.
+                  While there's no official ranking, the cities most known for established Muslim communities, mosques, and halal infrastructure are <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link>, Chicago, Detroit/Dearborn, Los Angeles, Houston, and Philadelphia. Dearborn, Michigan stands out in particular — it's home to the Islamic Center of America, the largest mosque in North America, along with halal restaurants, bakeries, and Arabic signage throughout the city.
                 </p>
               </div>
 

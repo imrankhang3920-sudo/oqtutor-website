@@ -167,14 +167,14 @@ export default async function USALocationsHubPage() {
                     <Users className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h4 className="font-bold text-xs sm:text-sm text-foreground">1-on-1 Vetted Tutors</h4>
-                      <p className="text-[11px] sm:text-xs text-muted-text mt-1">Get 100% focused correction from certified female and male instructors.</p>
+                      <p className="text-[11px] sm:text-xs text-muted-text mt-1">Get 100% focused correction from certified <Link href="/tutors" className="text-primary hover:underline font-semibold">female and male instructors</Link>.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3 p-4 rounded-xl bg-background border border-card-border">
                     <Clock className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
                     <div>
                       <h4 className="font-bold text-xs sm:text-sm text-foreground">Time Zone Adaptive</h4>
-                      <p className="text-[11px] sm:text-xs text-muted-text mt-1">Schedule morning, evening, or weekend classes that fit around secular routines.</p>
+                      <p className="text-[11px] sm:text-xs text-muted-text mt-1">Schedule morning, evening, or weekend classes that fit around secular routines. Read <Link href="/how-it-works" className="text-primary hover:underline font-semibold">how it works</Link>.</p>
                     </div>
                   </div>
                 </div>
