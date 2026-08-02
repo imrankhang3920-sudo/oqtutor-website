@@ -2165,19 +2165,64 @@ function QuranForAdultsContent({
   const faqSchemaList = [
     {
       question: "Where can I learn Quran online in the USA?",
-      answer: "You can learn the Quran online from any city in the USA by enrolling in OQTutor. Our virtual learning academy serves adult students across all fifty states, supporting learners in Eastern, Central, Mountain, and Pacific time zones. Because our platform operates entirely online, your geographic location never limits your access to certified scholars. We match you with dedicated instructors who teach Noorani Qaida, advanced Tajweed rules, Quran memorization (Hifz), and translation through a secure digital portal. You only need a stable internet connection, a computer or tablet, and a quiet space in your home to begin. By removing the need to commute to a physical Islamic center, OQTutor makes it simple to integrate regular Quranic study into your busy American lifestyle."
+      answer: (
+        <span>
+          You can learn the Quran online from any city in the USA by enrolling in{" "}
+          <Link href="/how-it-works" className="text-primary hover:underline font-semibold">OQTutor</Link>. 
+          Our virtual learning academy serves adult students across all fifty states, supporting learners in Eastern, Central, Mountain, and Pacific time zones. Because our platform operates entirely online, your geographic location never limits your access to certified scholars. We match you with dedicated instructors who teach{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, 
+          advanced{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed rules</Link>, 
+          Quran{" "}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">memorization (Hifz)</Link>, 
+          and translation through a secure digital portal. You only need a stable internet connection, a computer or tablet, and a quiet space in your home to begin. By removing the need to commute to a physical Islamic center, OQTutor makes it simple to integrate regular Quranic study into your busy American lifestyle.
+        </span>
+      )
     },
     {
       question: "How much do online Quran classes cost?",
-      answer: "At OQTutor, we believe that high-quality Quranic education should remain affordable and transparent. Our flexible monthly plans start at $30 per month for three classes per week, which is ideal for students who want to maintain steady, gradual progress. For more frequent study, our Standard Plan offers five classes per week for $40 per month, while our Daily Plan provides seven sessions per week for $50 per month. All packages feature private, one-on-one sessions lasting thirty minutes each with a certified male or female tutor. We do not charge registration fees, and you are never locked into long-term contracts. You can pause, adjust, or cancel your subscription at any time directly through your student dashboard, ensuring your studies fit both your monthly budget and your lifestyle demands."
+      answer: (
+        <span>
+          At OQTutor, we believe that high-quality Quranic education should remain affordable and transparent. Our flexible{" "}
+          <Link href="/pricing" className="text-primary hover:underline font-semibold">monthly plans</Link>{" "}
+          start at $30 per month for three classes per week, which is ideal for students who want to maintain steady, gradual progress. For more frequent study, our Standard Plan offers five classes per week for $40 per month, while our Daily Plan provides seven sessions per week for $50 per month. All packages feature private, one-on-one sessions lasting thirty minutes each with a certified male or{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">female tutor</Link>. 
+          We do not charge registration fees, and you are never locked into long-term contracts. You can pause, adjust, or cancel your subscription at any time directly through your student dashboard, ensuring your studies fit both your monthly budget and your lifestyle demands.
+        </span>
+      )
     },
     {
       question: "Which online Quran course is the best?",
-      answer: "The best online Quran course is one that matches your current reading ability and aligns with your personal learning goals. If you cannot read the Arabic script yet, you should start with our Noorani Qaida course to learn correct letter recognition and pronunciation. For students who can read Arabic but make pronunciation mistakes, our Quran with Tajweed course is the ideal choice to master articulation points. If you want to commit specific Surahs to memory, you should select our Quran Memorization program. Adults who want to connect deeply with the meaning of the verses will benefit most from our Translation and Tafseer course. OQTutor helps you determine the perfect path by conducting a comprehensive reading assessment during your free trial session."
+      answer: (
+        <span>
+          The best online Quran course is one that matches your current reading ability and aligns with your personal learning goals. If you cannot read the Arabic script yet, you should start with our{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida course</Link>{" "}
+          to learn correct letter recognition and pronunciation. For students who can read Arabic but make pronunciation mistakes, our{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed course</Link>{" "}
+          is the ideal choice to master articulation points. If you want to commit specific Surahs to memory, you should select our{" "}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Quran Memorization program</Link>. 
+          Adults who want to connect deeply with the meaning of the verses will benefit most from our{" "}
+          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Translation and Tafseer course</Link>. 
+          OQTutor helps you determine the perfect path by conducting a comprehensive reading assessment during your{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial session</Link>.
+        </span>
+      )
     },
     {
       question: "Where can I find online Quran courses?",
-      answer: "You can find premium online Quran courses directly through the OQTutor website. We offer a structured selection of courses designed specifically for adults, reverts, and busy professionals living in the USA. Our courses cover everything from the basic Arabic alphabet to advanced Tajweed rules, intensive Hifz memorization, and word-by-word translation classes. By visiting our courses directory page, you can read the details of each syllabus and select the track that best fits your spiritual goals. When you are ready to begin, simply fill out our short registration form to schedule your live trial class. We will pair you with a certified tutor who will help customize the lessons to your unique learning speed and schedule."
+      answer: (
+        <span>
+          You can find premium online Quran courses directly through the{" "}
+          <Link href="/" className="text-primary hover:underline font-semibold">OQTutor website</Link>. 
+          We offer a structured selection of courses designed specifically for adults, reverts, and busy professionals living in the USA. Our courses cover everything from the basic Arabic alphabet to advanced Tajweed rules, intensive Hifz memorization, and word-by-word translation classes. By visiting our{" "}
+          <Link href="/courses" className="text-primary hover:underline font-semibold">courses directory page</Link>, 
+          you can read the details of each syllabus and select the track that best fits your spiritual goals. When you are ready to begin, simply fill out our short registration form to schedule your live{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">trial class</Link>. 
+          We will pair you with a{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">certified tutor</Link>{" "}
+          who will help customize the lessons to your unique learning speed and schedule.
+        </span>
+      )
     }
   ];
 
@@ -2198,7 +2243,12 @@ function QuranForAdultsContent({
                 Learn Quran with Tajweed: Online Quran Classes for Adults in the USA
               </h1>
               <p className="text-base sm:text-lg text-muted-text leading-relaxed font-normal">
-                Many adult Muslims living in the United States face unique challenges when attempting to resume or start their Quranic studies. Demanding career schedules, university coursework, family commitments, and the lack of local resources near their homes can make finding the time and matching support feel nearly impossible. OQTutor bridges this gap by offering private, live sessions that fit into your busy life. We help you learn to read, recite, and understand the Holy Book of Allah from the comfort of your home, at times that suit you.
+                Many adult Muslims living in the United States face unique challenges when attempting to resume or start their Quranic studies. Demanding career schedules, university coursework, family commitments, and the lack of local resources near their homes can make finding the time and matching support feel nearly impossible.{" "}
+                <Link href="/how-it-works" className="text-primary hover:underline font-semibold">OQTutor</Link>{" "}
+                bridges this gap by offering private, live sessions that fit into your busy life. We help you{" "}
+                <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">learn to read</Link>,{" "}
+                <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">recite</Link>,{" "}
+                and understand the Holy Book of Allah from the comfort of your home, at times that suit you.
               </p>
               
               <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -2254,7 +2304,10 @@ function QuranForAdultsContent({
               Stepping into a local Islamic school or community center as an adult beginner can sometimes feel intimidating. Traditional settings usually cater to young children, leaving adult learners with few choices that respect their maturity level and unique learning speeds.
             </p>
             <p>
-              Online platforms remove the geographic and logistical barriers of commuting in traffic or rushing after work. Instead of trying to keep pace with a group class, you work directly with your own tutor. You can ask questions without hesitation, repeat challenging sounds as many times as necessary, and schedule your lessons early in the morning before work or late at night.
+              <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Online platforms</Link>{" "}
+              remove the geographic and logistical barriers of commuting in traffic or rushing after work. Instead of trying to keep pace with a group class, you work directly with your{" "}
+              <Link href="/tutors" className="text-primary hover:underline font-semibold">own tutor</Link>.{" "}
+              You can ask questions without hesitation, repeat challenging sounds as many times as necessary, and schedule your lessons early in the morning before work or late at night.
             </p>
           </div>
         </div>
@@ -2289,10 +2342,16 @@ function QuranForAdultsContent({
               </h2>
               <div className="h-1 w-16 bg-secondary rounded-full" />
               <p className="text-base text-muted-text leading-relaxed font-normal">
-                Reciting the Quran correctly requires a proper understanding of Tajweed—the set of rules governing how each letter should be pronounced and articulated. Our team consists of qualified scholars who have graduated from prestigious Islamic institutions and hold authentic certifications (Ijazah) in recitation.
+                Reciting the Quran correctly requires a proper understanding of Tajweed—the set of rules governing how each letter should be pronounced and articulated. Our team consists of{" "}
+                <Link href="/tutors" className="text-primary hover:underline font-semibold">qualified scholars</Link>{" "}
+                who have graduated from prestigious Islamic institutions and hold authentic{" "}
+                <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">certifications (Ijazah)</Link>{" "}
+                in recitation.
               </p>
               <p className="text-base text-muted-text leading-relaxed font-normal">
-                These tutors understand the common difficulties English-speaking adults encounter, such as distinguishing between similar-sounding Arabic letters. They work patiently with you, correcting your tongue placement and articulation points (Makharij) in real time. With this personalized guidance, you develop clear pronunciation and build confidence in your recitation.
+                These tutors understand the common difficulties English-speaking adults encounter, such as distinguishing between similar-sounding Arabic letters. They work patiently with you, correcting your tongue placement and{" "}
+                <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">articulation points (Makharij)</Link>{" "}
+                in real time. With this personalized guidance, you develop clear pronunciation and build confidence in your recitation.
               </p>
             </div>
 
@@ -2425,19 +2484,83 @@ function QuranForAdultsContent({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { title: "One-on-One Classes", desc: "You receive the full, undivided attention of your teacher for the entire 30-minute session." },
-              { title: "Certified Teachers", desc: "Every instructor holds authentic credentials, ensuring you learn from scholars with verified chains of transmission." },
-              { title: "Male & Female Tutors", desc: "We respect your personal comfort and allow you to choose a tutor gender that matches your household preferences." },
-              { title: "Flexible Scheduling", desc: "Our classes run 24 hours a day, 7 days a week, making it easy to schedule lessons around shifting career or family demands." },
-              { title: "Affordable Fees", desc: "We offer low-cost monthly plans without binding contracts, making premium Quranic education accessible." },
-              { title: "Progress Tracking", desc: "Tutors provide clear, structured feedback after each session, helping you see your improvement over time." },
-              { title: "Free Trial", desc: "You can experience our interactive virtual portal and meet your matched tutor before enrolling in a paid package." },
-              { title: "Personalized Learning", desc: "We design a custom curriculum around your current reading level, interests, and spiritual goals." }
+              {
+                title: "One-on-One Classes",
+                desc: (
+                  <span>
+                    You receive the full, undivided attention of your{" "}
+                    <Link href="/tutors" className="text-primary hover:underline">teacher</Link>{" "}
+                    for the entire 30-minute session.
+                  </span>
+                )
+              },
+              {
+                title: "Certified Teachers",
+                desc: (
+                  <span>
+                    Every instructor holds authentic credentials, ensuring you learn from scholars with verified chains of transmission.
+                  </span>
+                )
+              },
+              {
+                title: "Male & Female Tutors",
+                desc: (
+                  <span>
+                    We respect your personal comfort and allow you to choose a tutor gender that matches your household preferences.
+                  </span>
+                )
+              },
+              {
+                title: "Flexible Scheduling",
+                desc: (
+                  <span>
+                    Our classes run 24 hours a day, 7 days a week, making it easy to{" "}
+                    <Link href="/how-it-works" className="text-primary hover:underline font-semibold">schedule lessons</Link>{" "}
+                    around shifting career or family demands.
+                  </span>
+                )
+              },
+              {
+                title: "Affordable Fees",
+                desc: (
+                  <span>
+                    We offer low-cost{" "}
+                    <Link href="/pricing" className="text-primary hover:underline font-semibold">monthly plans</Link>{" "}
+                    without binding contracts, making premium Quranic education accessible.
+                  </span>
+                )
+              },
+              {
+                title: "Progress Tracking",
+                desc: (
+                  <span>
+                    Tutors provide clear, structured feedback after each session, helping you see your improvement over time.
+                  </span>
+                )
+              },
+              {
+                title: "Free Trial",
+                desc: (
+                  <span>
+                    You can experience our interactive virtual portal and meet your matched{" "}
+                    <Link href="/tutors" className="text-primary hover:underline font-semibold">tutor</Link>{" "}
+                    before enrolling in a paid package.
+                  </span>
+                )
+              },
+              {
+                title: "Personalized Learning",
+                desc: (
+                  <span>
+                    We design a custom curriculum around your current reading level, interests, and spiritual goals.
+                  </span>
+                )
+              }
             ].map((item, idx) => (
               <div key={idx} className="glass p-6 rounded-2xl border border-card-border flex flex-col justify-between hover:shadow-md transition-shadow">
                 <div>
                   <h4 className="font-bold text-sm sm:text-base text-foreground mb-2 font-sans">{item.title}</h4>
-                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal font-sans">{item.desc}</p>
+                  <div className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal font-sans">{item.desc}</div>
                 </div>
               </div>
             ))}
@@ -2463,18 +2586,63 @@ function QuranForAdultsContent({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: "Beginners", desc: "Starting their Arabic reading journey from the very first letter." },
-              { title: "Busy Professionals", desc: "Who need flexible slots after business hours or on weekends." },
-              { title: "College Students", desc: "Managing heavy course loads who want to maintain their spiritual habits." },
-              { title: "Parents", desc: "Who wish to learn alongside their children or set a positive example at home." },
-              { title: "Reverts", desc: "Seeking a supportive, non-judgmental environment to learn daily prayers and basic Quran reading." },
-              { title: "Senior Adults", desc: "Looking for a patient, slow-paced study routine to enrich their retirement years." }
+              {
+                title: "Beginners",
+                desc: (
+                  <span>
+                    Starting their{" "}
+                    <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Arabic reading journey</Link>{" "}
+                    from the very first letter.
+                  </span>
+                )
+              },
+              {
+                title: "Busy Professionals",
+                desc: (
+                  <span>
+                    Who need flexible slots after business hours or on weekends.
+                  </span>
+                )
+              },
+              {
+                title: "College Students",
+                desc: (
+                  <span>
+                    Managing heavy course loads who want to maintain their spiritual habits.
+                  </span>
+                )
+              },
+              {
+                title: "Parents",
+                desc: (
+                  <span>
+                    Who wish to learn alongside their children or set a positive example at home.
+                  </span>
+                )
+              },
+              {
+                title: "Reverts",
+                desc: (
+                  <span>
+                    Seeking a supportive, non-judgmental environment to learn daily prayers and{" "}
+                    <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">basic Quran reading</Link>.
+                  </span>
+                )
+              },
+              {
+                title: "Senior Adults",
+                desc: (
+                  <span>
+                    Looking for a patient, slow-paced study routine to enrich their retirement years.
+                  </span>
+                )
+              }
             ].map((profile, idx) => (
               <div key={idx} className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-3.5 hover:shadow-md transition-shadow">
                 <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-bold text-xs sm:text-sm text-foreground mb-1 font-sans">{profile.title}</h4>
-                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal font-sans">{profile.desc}</p>
+                  <div className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal font-sans">{profile.desc}</div>
                 </div>
               </div>
             ))}
@@ -2497,11 +2665,49 @@ function QuranForAdultsContent({
 
           <div className="max-w-4xl mx-auto space-y-6">
             {[
-              { title: "Schedule a Free Trial", desc: "Tell us your current level and availability to book a live, one-on-one introduction session." },
-              { title: "Meet Your Tutor", desc: "Meet your instructor in our secure virtual classroom, where they will evaluate your reading level and discuss your goals." },
-              { title: "Select Your Schedule", desc: "Choose your weekly class frequency and pick the time slots that fit best with your calendar." },
-              { title: "Begin Regular Lessons", desc: "Log in to your personal dashboard at your scheduled times to start interactive, real-time sessions." },
-              { title: "Track Your Milestones", desc: "Review regular progress updates and adjust your learning speed whenever your schedule changes." }
+              {
+                title: "Schedule a Free Trial",
+                desc: (
+                  <span>
+                    Tell us your current level and availability to book a live,{" "}
+                    <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">one-on-one introduction session</Link>.
+                  </span>
+                )
+              },
+              {
+                title: "Meet Your Tutor",
+                desc: (
+                  <span>
+                    Meet your instructor in our secure virtual classroom, where they will evaluate your reading level and discuss your goals.
+                  </span>
+                )
+              },
+              {
+                title: "Select Your Schedule",
+                desc: (
+                  <span>
+                    Choose your weekly class frequency and pick the time slots that fit best with your calendar. Check our{" "}
+                    <Link href="/pricing" className="text-primary hover:underline font-semibold">pricing plans</Link>{" "}
+                    for details.
+                  </span>
+                )
+              },
+              {
+                title: "Begin Regular Lessons",
+                desc: (
+                  <span>
+                    Log in to your personal dashboard at your scheduled times to start interactive, real-time sessions.
+                  </span>
+                )
+              },
+              {
+                title: "Track Your Milestones",
+                desc: (
+                  <span>
+                    Review regular progress updates and adjust your learning speed whenever your schedule changes.
+                  </span>
+                )
+              }
             ].map((step, idx) => (
               <div key={idx} className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-4">
                 <span className="h-10 w-10 bg-primary/15 text-primary rounded-full flex items-center justify-center font-bold shrink-0 text-sm">
@@ -2509,7 +2715,7 @@ function QuranForAdultsContent({
                 </span>
                 <div>
                   <h4 className="font-bold text-sm sm:text-base text-foreground mb-1 font-sans">{step.title}</h4>
-                  <p className="text-xs sm:text-sm text-muted-text font-normal leading-relaxed font-sans">{step.desc}</p>
+                  <div className="text-xs sm:text-sm text-muted-text font-normal leading-relaxed font-sans">{step.desc}</div>
                 </div>
               </div>
             ))}
@@ -2532,7 +2738,9 @@ function QuranForAdultsContent({
 
           <div className="max-w-4xl mx-auto space-y-6 text-base text-muted-text leading-relaxed font-normal">
             <p>
-              Choosing online instruction provides practical advantages that physical schools cannot replicate. You save hours of travel time every week, allowing you to prioritize study rather than commuting. You also gain access to a global network of qualified scholars, bypassing the local limitations of your city or suburb.
+              Choosing online instruction provides practical advantages that physical schools cannot replicate. You save hours of travel time every week, allowing you to prioritize study rather than commuting. You also gain access to a global network of{" "}
+              <Link href="/tutors" className="text-primary hover:underline font-semibold">qualified scholars</Link>,{" "}
+              bypassing the local limitations of your city or suburb.
             </p>
             <p>
               Additionally, the digital classroom uses interactive screen-sharing, high-quality audio, and digital whiteboards. This setup makes it easy to follow the text, see visual corrections, and record your sessions for private review between classes.
@@ -2556,7 +2764,9 @@ function QuranForAdultsContent({
 
           <div className="max-w-4xl mx-auto space-y-6 text-base text-muted-text leading-relaxed font-normal">
             <p>
-              Perfecting your pronunciation is not just an academic exercise; it changes your relationship with your worship. Correct Tajweed ensures you do not inadvertently change the meanings of Arabic words during your prayers.
+              Perfecting your pronunciation is not just an academic exercise; it changes your relationship with your worship.{" "}
+              <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Correct Tajweed</Link>{" "}
+              ensures you do not inadvertently change the meanings of Arabic words during your prayers.
             </p>
             <p>
               Learning Tajweed also builds the confidence needed to recite aloud, join congregational prayers with ease, and pass correct recitation habits down to your children. By dedicating time to correcting your speech, you demonstrate devotion to the preservation of the Holy Book.
@@ -2576,7 +2786,7 @@ function QuranForAdultsContent({
               Simple &amp; Affordable Monthly Pricing
             </h2>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-            <p className="mt-4 text-xs sm:text-sm text-muted-text max-w-md mx-auto">
+            <p className="mt-4 text-xs sm:text-sm text-muted-text max-w-md mx-auto font-sans">
               No registration fees or locking contracts. All packages are billed in USD.
             </p>
           </div>
@@ -2715,7 +2925,7 @@ function QuranForAdultsContent({
                   </span>
                 </summary>
                 <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3 font-sans">
-                  <p>{faq.answer}</p>
+                  <div>{faq.answer}</div>
                 </div>
               </details>
             ))}
@@ -2749,4 +2959,3 @@ function QuranForAdultsContent({
     </main>
   );
 }
-
