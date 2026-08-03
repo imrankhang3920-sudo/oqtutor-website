@@ -33,14 +33,14 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const hasParams = Object.keys(resolvedParams).length > 0;
 
   return {
-    title: 'Learn Quran Online in USA | Certified Tutors | OQTutor',
-    description: 'Master the Holy Quran online with certified male and female tutors in the USA. Individualized 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies tailored for children and adults. Start your free 3-day trial.',
+    title: 'Learn Quran Online: Live 1-on-1 Classes in USA | OQTutor',
+    description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
     alternates: {
       canonical: 'https://www.oqtutor.com/',
     },
     openGraph: {
-      title: 'Learn Quran Online in USA | Certified Tutors | OQTutor',
-      description: 'Master the Holy Quran online with certified male and female tutors in the USA. Individualized 1-on-1 courses in Noorani Qaida, Tajweed, Hifz, and Islamic Studies tailored for children and adults. Start your free 3-day trial.',
+      title: 'Learn Quran Online: Live 1-on-1 Classes in USA | OQTutor',
+      description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
       url: 'https://www.oqtutor.com/',
     },
     robots: hasParams ? {
