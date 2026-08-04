@@ -94,14 +94,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
-        <ThemeProvider>
-          <CookieConsent />
-          {children}
-        </ThemeProvider>
-
-
-        
+      <head>
         {/* Google Analytics (gtag.js) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
@@ -142,6 +135,12 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
+        <ThemeProvider>
+          <CookieConsent />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
