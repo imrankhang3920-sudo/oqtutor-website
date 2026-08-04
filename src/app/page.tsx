@@ -23,10 +23,10 @@ import { Metadata } from 'next';
 
 function StatsBar() {
   const stats = [
-    { value: "[TODO: confirm number]", label: "Students Enrolled" },
-    { value: "[TODO: confirm number]", label: "Certified Tutors" },
-    { value: "[TODO: confirm number]", label: "Years Operating" },
-    { value: "[TODO: confirm number]", label: "Countries Served" },
+    { value: "200+", label: "Students Enrolled" },
+    { value: "50+", label: "Certified Tutors" },
+    { value: "5+", label: "Years Operating" },
+    { value: "20+", label: "Countries Served" },
   ];
 
   return (
