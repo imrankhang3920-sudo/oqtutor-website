@@ -247,10 +247,10 @@ export default async function TexasQuranClassesPage() {
                 <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
                 <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                   <p>
-                    Passionate Muslim parents in Texas understand how crucial structured Islamic education is during a child's formative years. However, finding the right local options can be difficult. Driving to a physical Islamic center or a tutor's home after a long school day drains valuable time, causes transport stress, and creates scheduling conflicts with school projects, sports, or family commitments.
+                    Passionate Muslim parents in Texas understand how crucial <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">structured Islamic education</Link> is during a child's formative years. However, finding the right local options can be difficult. Driving to a physical Islamic center or a tutor's home after a long school day drains valuable time, causes transport stress, and creates scheduling conflicts with school projects, sports, or family commitments.
                   </p>
                   <p>
-                    Choosing online Quran classes removes these geographic and time limitations. Your children can learn the Holy Quran from home without needing a local center. By utilizing an interactive digital portal, students connect live with a qualified tutor who dedicates their full attention to correct recitation.
+                    Choosing <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> removes these geographic and time limitations. Your children can learn the Holy Quran from home without needing a local center. By utilizing an interactive digital portal, students connect live with a <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified tutor</Link> who dedicates their full attention to <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">correct recitation</Link>.
                   </p>
                   <p>
                     Furthermore, parents remain in complete control. There is no travel across town, and lessons fit comfortably around your family's routine. Tutors adapt each session to match the child's initial learning level, keeping lessons engaging, encouraging, and highly interactive.
@@ -472,10 +472,10 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  Between school schedules, homework, sports, and family commitments, balancing extracurricular activities can feel overwhelming. OQTutor solves scheduling problems by operating around the clock. Whether you need early morning classes before school, mid-afternoon slots, or evening sessions after prayer times, we have available classes that fit.
+                  Between school schedules, homework, sports, and family commitments, balancing extracurricular activities can feel overwhelming. OQTutor solves scheduling problems by operating around the clock. Whether you need early morning classes before school, mid-afternoon slots, or evening sessions after prayer times, we have available classes that fit. Learn more about how we arrange sessions on our <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how it works page</Link>.
                 </p>
                 <p>
-                  Unlike traditional Islamic centers that operate on fixed schedules, online classes can be rescheduled easily with advance notice. This flexibility ensures that children never miss out on their Quranic education due to travel or seasonal routine shifts, keeping their progress steady throughout the year.
+                  Unlike traditional Islamic centers that operate on fixed schedules, <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> can be rescheduled easily with advance notice. This flexibility ensures that children never miss out on their Quranic education due to travel or seasonal routine shifts, keeping their progress steady throughout the year.
                 </p>
               </div>
             </div>
@@ -533,7 +533,7 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  Selecting the right instructor is critical to building a positive relationship between your child and the Holy Quran. Parents looking for an online tutor should look beyond basic memorization. An excellent teacher must possess extensive Tajweed knowledge, hold certified qualifications (Ijazah), and have experience teaching children.
+                  Selecting the right instructor is critical to building a positive relationship between your child and the Holy Quran. Parents looking for an <Link href="/tutors" className="text-primary font-semibold hover:underline">online tutor</Link> should look beyond basic memorization. An excellent teacher must possess extensive <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed knowledge</Link>, hold certified qualifications (Ijazah), and have experience teaching children.
                 </p>
                 <p>
                   Patience is equally important. Teaching Arabic phonetics remotely requires constant encouragement, clear explanations, and friendly, patient correction of pronunciation errors. Ensure the tutor provides transparent progress feedback after each lesson, allowing you to monitor development.
@@ -556,10 +556,10 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  High-quality religious education should be accessible to every family. We provide competitive, transparent monthly tiers structured around the number of sessions and study duration you choose. With no long-term contracts and no hidden registration costs, parents can manage their subscriptions flexibly.
+                  High-quality religious education should be accessible to every family. We provide competitive, transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">monthly tiers</Link> structured around the number of sessions and study duration you choose. With no long-term contracts and no hidden registration costs, parents can manage their subscriptions flexibly.
                 </p>
                 <p>
-                  Our classes provide outstanding value by eliminating travel expenses and providing private 1-on-1 instruction. We encourage parents to register for our 3-day free trial, letting your family test our portal and check teacher match quality before subscribing.
+                  Our classes provide outstanding value by eliminating travel expenses and providing private 1-on-1 instruction. We encourage parents to register for our <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link>, letting your family test our portal and check teacher match quality before subscribing.
                 </p>
               </div>
             </div>
@@ -613,7 +613,7 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  In a group classroom, a teacher must divide their attention among ten or twenty students. In contrast, our private one-on-one sessions ensure the tutor focuses entirely on a single child. This layout prevents children from picking up incorrect pronunciation habits and allows the tutor to address errors immediately.
+                  In a group classroom, a teacher must divide their attention among ten or twenty students. In contrast, our private <Link href="/how-it-works" className="text-primary font-semibold hover:underline">one-on-one sessions</Link> ensure the tutor focuses entirely on a single child. This layout prevents children from picking up incorrect pronunciation habits and allows the tutor to address errors immediately.
                 </p>
                 <p>
                   Private sessions also build greater confidence. Shy students feel comfortable asking questions, trying complex pronunciations, and repeating lessons until they achieve complete mastery. This focused guidance helps children learn up to three times faster than in standard group environments.
@@ -636,10 +636,10 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  Parental involvement plays a key role in online learning success. Parents can maintain motivation by establishing a consistent class routine and creating a quiet, distraction-free study space. Celebrate small achievements, such as memorizing a new Surah or mastering a complex Tajweed rule.
+                  Parental involvement plays a key role in online learning success. Parents can maintain <Link href="/blog/tips-keep-kids-motivated-online-quran" className="text-primary font-semibold hover:underline">motivation</Link> by establishing a consistent class routine and creating a quiet, distraction-free study space. Celebrate small achievements, such as memorizing a new Surah or mastering a complex Tajweed rule.
                 </p>
                 <p>
-                  Encourage short, daily revision sessions instead of long cramming periods. Most importantly, keep practice positive and patient, connecting lessons to everyday Islamic values and showing interest in what your child learns in each session.
+                  Encourage short, daily revision sessions instead of long cramming periods. Most importantly, keep practice positive and patient, connecting lessons to everyday Islamic values and showing interest in what your child learns in each session. Find more tips for parents on our <Link href="/blog" className="text-primary font-semibold hover:underline">educational blog</Link>.
                 </p>
               </div>
             </div>
