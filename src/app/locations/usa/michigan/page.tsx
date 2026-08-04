@@ -17,10 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Online Quran Classes in Michigan | Live 1-on-1 Tutors | OQTutor",
     description: "Learn Quran online in Michigan with OQTutor. Live one-on-one classes in Tajweed, Hifz, Noorani Qaida & Tafseer for kids and adults. Flexible hours, free trial class.",
     alternates: {
-      canonical: "https://www.oqtutor.com/locations/michigan",
+      canonical: "https://www.oqtutor.com/locations/usa/michigan",
     },
     openGraph: {
-      url: "https://www.oqtutor.com/locations/michigan",
+      url: "https://www.oqtutor.com/locations/usa/michigan",
     },
   };
 }
@@ -424,7 +424,7 @@ export default async function MichiganQuranClassesPage() {
                 </h2>
                 <div className="h-1 w-16 bg-secondary rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                  OQTutor's <Link href="/how-it-works" className="text-primary hover:underline font-semibold font-sans">online classes</Link> reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified <Link href="/tutors" className="text-primary hover:underline font-semibold font-sans">online tutor</Link> — only your schedule does. If you reside outside Michigan, explore regional directories like <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York Quran Classes</Link> or our national <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA Locations Hub</Link>.
+                  OQTutor's <Link href="/how-it-works" className="text-primary hover:underline font-semibold font-sans">online classes</Link> reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified <Link href="/tutors" className="text-primary hover:underline font-semibold font-sans">online tutor</Link> — only your schedule does. If you reside outside Michigan, explore regional directories like <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York Quran Classes</Link> or our national <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA Locations Hub</Link>.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
@@ -669,21 +669,21 @@ export default async function MichiganQuranClassesPage() {
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which city has the most Muslims in the USA?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link> has the largest Muslim population of any U.S. city, with estimates generally ranging from 600,000 to over 750,000 residents — and well over a million if you include the surrounding metro area. By concentration rather than raw numbers, Dearborn, Michigan takes the lead: over half its population identifies as Middle Eastern or North African, making it the most Muslim-concentrated city in the country.
+                  <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link> has the largest Muslim population of any U.S. city, with estimates generally ranging from 600,000 to over 750,000 residents — and well over a million if you include the surrounding metro area. By concentration rather than raw numbers, Dearborn, Michigan takes the lead: over half its population identifies as Middle Eastern or North African, making it the most Muslim-concentrated city in the country.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which US states have the most Muslims?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York</Link>, California, and Illinois have the largest Muslim populations by raw numbers, followed by New Jersey and Texas. Looking at Muslim residents as a share of total population across the <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA</Link>, smaller states like Michigan, Maryland, and Minnesota rank higher — Michigan's Muslim community, centered around Dearborn, Detroit, Ann Arbor, and Hamtramck, makes up roughly 2.5–3% of the state's population.
+                  <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York</Link>, California, and Illinois have the largest Muslim populations by raw numbers, followed by New Jersey and Texas. Looking at Muslim residents as a share of total population across the <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA</Link>, smaller states like Michigan, Maryland, and Minnesota rank higher — Michigan's Muslim community, centered around Dearborn, Detroit, Ann Arbor, and Hamtramck, makes up roughly 2.5–3% of the state's population.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
                 <h4 className="font-bold text-sm sm:text-base text-foreground font-sans">Which cities in the US are Muslim-friendly?</h4>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  While there's no official ranking, the cities most known for established Muslim communities, mosques, and halal infrastructure are <Link href="/online-quran-classes-usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link>, Chicago, Detroit/Dearborn, Los Angeles, Houston, and Philadelphia. Dearborn, Michigan stands out in particular — it's home to the Islamic Center of America, the largest mosque in North America, along with halal restaurants, bakeries, and Arabic signage throughout the city.
+                  While there's no official ranking, the cities most known for established Muslim communities, mosques, and halal infrastructure are <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York City</Link>, Chicago, Detroit/Dearborn, Los Angeles, Houston, and Philadelphia. Dearborn, Michigan stands out in particular — it's home to the Islamic Center of America, the largest mosque in North America, along with halal restaurants, bakeries, and Arabic signage throughout the city.
                 </p>
               </div>
 

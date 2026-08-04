@@ -279,7 +279,10 @@ export default function Contact({ data }: { data: ContactData }) {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-muted-text uppercase tracking-wider">Call Us</p>
-                    <a href={`tel:${data.phone.replace(/[^0-9+]/g, '')}`} className="text-base font-semibold text-foreground hover:text-primary transition-colors">
+                    <a 
+                      href={`tel:${data.phone.includes('|') ? data.phone.split('|')[0].replace(/[^0-9+]/g, '') : data.phone.replace(/[^0-9+]/g, '')}`} 
+                      className="text-base font-semibold text-foreground hover:text-primary transition-colors"
+                    >
                       {data.phone}
                     </a>
                   </div>
@@ -304,7 +307,7 @@ export default function Contact({ data }: { data: ContactData }) {
                   <MessageCircle className="h-8 w-8 text-emerald-500 fill-emerald-500/10 shrink-0" />
                   <div>
                     <h4 className="font-bold text-sm text-foreground">Need quick answers?</h4>
-                    <p className="text-xs text-muted-text">Chat with us directly on WhatsApp</p>
+                    <p className="text-xs text-muted-text">WhatsApp support available worldwide</p>
                   </div>
                 </div>
                 <a

@@ -29,6 +29,32 @@ const nextConfig: NextConfig = {
         destination: 'https://www.oqtutor.com/:path*',
         permanent: true,
       },
+      // 0.1 Standardized Location Redirects
+      {
+        source: '/online-quran-classes-usa',
+        destination: '/locations/usa',
+        permanent: true,
+      },
+      {
+        source: '/online-quran-classes-usa/new-york',
+        destination: '/locations/usa/new-york',
+        permanent: true,
+      },
+      {
+        source: '/locations/michigan',
+        destination: '/locations/usa/michigan',
+        permanent: true,
+      },
+      {
+        source: '/online-quran-classes-uk',
+        destination: '/locations/uk',
+        permanent: true,
+      },
+      {
+        source: '/online-quran-classes-canada',
+        destination: '/locations/canada',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',

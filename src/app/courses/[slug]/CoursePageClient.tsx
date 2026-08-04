@@ -1594,7 +1594,7 @@ function QuranReadingContent({
             <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Your Free Trial Today</h2>
             <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
-              Give your family the gift of structured Quranic education. Join thousands of Muslim families in the <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">USA</Link>, <Link href="/online-quran-classes-uk" className="text-primary hover:underline font-semibold">UK</Link>, <Link href="/online-quran-classes-canada" className="text-primary hover:underline font-semibold">Canada</Link>, and <Link href="/locations/australia" className="text-primary hover:underline font-semibold">Australia</Link> who trust OQTutor for 1-on-1 online classes. Book your 3-day free trial today with no commitments.
+              Give your family the gift of structured Quranic education. Join thousands of Muslim families in the <Link href="/locations/usa" className="text-primary hover:underline font-semibold">USA</Link>, <Link href="/locations/uk" className="text-primary hover:underline font-semibold">UK</Link>, <Link href="/locations/canada" className="text-primary hover:underline font-semibold">Canada</Link>, and <Link href="/locations/australia" className="text-primary hover:underline font-semibold">Australia</Link> who trust OQTutor for 1-on-1 online classes. Book your 3-day free trial today with no commitments.
             </p>
             <Link
               href="/book-free-trial"

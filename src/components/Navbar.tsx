@@ -119,37 +119,31 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
               </button>
               <div className="absolute left-0 mt-0 w-44 rounded-xl border border-card-border bg-background p-1.5 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <Link
-                  href="/online-quran-classes-usa"
+                  href="/locations/usa"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
                   🇺🇸 USA Classes
                 </Link>
                 <Link
-                  href="/locations/usa"
-                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
-                >
-                  ├ USA State Hub
-                </Link>
-                <Link
-                  href="/locations/michigan"
+                  href="/locations/usa/michigan"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
                   ├ Michigan
                 </Link>
                 <Link
-                  href="/online-quran-classes-usa/new-york"
+                  href="/locations/usa/new-york"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
                   └ New York
                 </Link>
                 <Link
-                  href="/online-quran-classes-uk"
+                  href="/locations/uk"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
                   🇬🇧 UK Classes
                 </Link>
                 <Link
-                  href="/online-quran-classes-canada"
+                  href="/locations/canada"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
                   🇨🇦 Canada Classes
@@ -332,21 +326,21 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                 <span className="text-xs font-bold text-muted-text uppercase tracking-widest block mb-1">Our Locations</span>
                 <div className="grid grid-cols-4 gap-2">
                   <Link
-                    href="/online-quran-classes-usa"
+                    href="/locations/usa"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
                     🇺🇸 USA
                   </Link>
                   <Link
-                    href="/online-quran-classes-uk"
+                    href="/locations/uk"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
                     🇬🇧 UK
                   </Link>
                   <Link
-                    href="/online-quran-classes-canada"
+                    href="/locations/canada"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center py-2 px-1 rounded-xl border border-card-border bg-foreground/[0.02] text-[10px] font-bold hover:text-primary transition-colors text-foreground text-center"
                   >
@@ -371,14 +365,14 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                     USA Hub
                   </Link>
                   <Link
-                    href="/locations/michigan"
+                    href="/locations/usa/michigan"
                     onClick={() => setIsOpen(false)}
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     Michigan
                   </Link>
                   <Link
-                    href="/online-quran-classes-usa/new-york"
+                    href="/locations/usa/new-york"
                     onClick={() => setIsOpen(false)}
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >

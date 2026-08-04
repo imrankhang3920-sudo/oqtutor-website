@@ -46,12 +46,12 @@ export default async function USALocationsHubPage() {
   const activeStates = [
     {
       name: "Michigan",
-      path: "/locations/michigan",
+      path: "/locations/usa/michigan",
       desc: "Serving Dearborn, Detroit, Hamtramck, Ann Arbor, Lansing, and Grand Rapids. Schedule classes easily around busy school and prayer timings."
     },
     {
       name: "New York",
-      path: "/online-quran-classes-usa/new-york",
+      path: "/locations/usa/new-york",
       desc: "Customized for Brooklyn, Queens, Manhattan, Staten Island, and Long Island. Flexible slots matching EST/EDT school routines."
     }
   ];
@@ -128,7 +128,7 @@ export default async function USALocationsHubPage() {
               </div>
               <p className="mt-6 text-xs text-center text-muted-text/80 font-normal">
                 Don't see your state? You can still register. Our general {" "}
-                <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">
+                <Link href="/locations/usa" className="text-primary hover:underline font-semibold">
                   Online Quran Classes USA
                 </Link>{" "}
                 program supports students in all 50 states.

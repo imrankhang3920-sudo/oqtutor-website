@@ -17,10 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Online Quran Classes in New York | Free Trial, 1-on-1",
     description: "Structured 1-on-1 online Quran classes for New York families. Certified male & female tutors, real progress reports, and a free trial — no long contracts.",
     alternates: {
-      canonical: "https://www.oqtutor.com/online-quran-classes-usa/new-york",
+      canonical: "https://www.oqtutor.com/locations/usa/new-york",
     },
     openGraph: {
-      url: "https://www.oqtutor.com/online-quran-classes-usa/new-york",
+      url: "https://www.oqtutor.com/locations/usa/new-york",
     },
   };
 }

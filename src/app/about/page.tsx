@@ -151,7 +151,7 @@ export default async function AboutPage() {
                     The local options were often impractical—long evening commutes to crowded mosques, group classrooms where individual pronunciation mistakes went unchecked, or a lack of qualified female teachers. We knew there had to be a better way to support families in the UK and Europe.
                   </p>
                   <p>
-                    Our solution was to build a bridge: connecting certified scholars and native speakers directly with students through high-quality, one-to-one virtual classrooms. Over the years, we have expanded our tutoring approach to serve families across borders, including specialized programs like our dedicated <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">USA Quran classes</Link>.
+                    Our solution was to build a bridge: connecting certified scholars and native speakers directly with students through high-quality, one-to-one virtual classrooms. Over the years, we have expanded our tutoring approach to serve families across borders, including specialized programs like our dedicated <Link href="/locations/usa" className="text-primary hover:underline font-semibold">USA Quran classes</Link>.
                   </p>
                   <p>
                     We regularly publish articles, guides, and tips for parents on our <Link href="/blog" className="text-primary hover:underline font-semibold">educational blog</Link> to help keep children motivated. Our platform exists to ensure that no matter where you live, high-quality, patient spiritual education is always within reach.

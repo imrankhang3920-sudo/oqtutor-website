@@ -26,12 +26,11 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Quran with Tajweed', href: '/courses/tajweed' },
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
-    { name: 'Quran Classes USA', href: '/online-quran-classes-usa' },
-    { name: 'USA Locations Hub', href: '/locations/usa' },
-    { name: 'Quran Classes Michigan', href: '/locations/michigan' },
-    { name: 'Quran Classes New York', href: '/online-quran-classes-usa/new-york' },
-    { name: 'Quran Classes UK', href: '/online-quran-classes-uk' },
-    { name: 'Quran Classes Canada', href: '/online-quran-classes-canada' },
+    { name: 'Quran Classes USA', href: '/locations/usa' },
+    { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
+    { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
+    { name: 'Quran Classes UK', href: '/locations/uk' },
+    { name: 'Quran Classes Canada', href: '/locations/canada' },
     { name: 'Quran Classes Australia', href: '/locations/australia' },
   ];
 
@@ -146,7 +145,10 @@ export default function Footer({ data }: { data: ContactData }) {
               </li>
               <li className="flex items-center space-x-3 text-sm text-muted-text">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <a href={`tel:${data.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-primary transition-colors">
+                <a 
+                  href={`tel:${data.phone.includes('|') ? data.phone.split('|')[0].replace(/[^0-9+]/g, '') : data.phone.replace(/[^0-9+]/g, '')}`} 
+                  className="hover:text-primary transition-colors"
+                >
                   {data.phone}
                 </a>
               </li>

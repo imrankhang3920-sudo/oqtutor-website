@@ -64,18 +64,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.jpg",
-        width: 512,
-        height: 512,
+        url: "https://www.oqtutor.com/logo.jpg",
+        width: 1200,
+        height: 630,
         alt: "OQTutor Logo",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
     description: "Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies for kids and adults worldwide.",
-    images: ["/logo.jpg"],
+    images: ["https://www.oqtutor.com/logo.jpg"],
   },
 };
 

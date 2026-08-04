@@ -912,7 +912,7 @@ function ArticleContentIllinois() {
           Life in Illinois moves fast. Between school, work, extracurricular activities, and family responsibilities, many Muslim parents struggle to find enough time for their children&#39;s Islamic education. While every parent wants their child to build a strong relationship with the Quran, attending in-person classes isn&#39;t always practical.
         </p>
         <p className="text-base text-muted-text">
-          Fortunately, <Link href="/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> have made Islamic education more accessible than ever. Whether you live in Chicago, Naperville, Aurora, Schaumburg, Bridgeview, or anywhere else in Illinois, your child can learn the Quran from qualified teachers without leaving home.
+          Fortunately, <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> have made Islamic education more accessible than ever. Whether you live in Chicago, Naperville, Aurora, Schaumburg, Bridgeview, or anywhere else in Illinois, your child can learn the Quran from qualified teachers without leaving home.
         </p>
         <p className="text-base text-muted-text">
           In this guide, we&#39;ll explore why online Quran classes are becoming the preferred choice for busy Muslim families in Illinois and how they help children develop a lifelong connection with the Quran.
@@ -1459,7 +1459,7 @@ function ArticleContentMotivation() {
           Benefits of Online Quran Classes for Kids
         </h2>
         <p className="text-base text-muted-text">
-          Enrolling your child in a reputable <Link href="/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran academy USA</Link> offers numerous advantages over traditional centers:
+          Enrolling your child in a reputable <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran academy USA</Link> offers numerous advantages over traditional centers:
         </p>
         <ul className="list-disc pl-5 space-y-2 text-sm text-muted-text">
           <li><strong>Comfort and Safety:</strong> Children learn from their familiar home environment without transport concerns.</li>

@@ -91,7 +91,7 @@ export default function ContactPageClient({
                     <div>
                       <p className="text-[10px] font-bold text-muted-text uppercase tracking-wider mb-1">Call Us</p>
                       <a 
-                        href={`tel:${contactData.phone.replace(/[^0-9+]/g, '')}`} 
+                        href={`tel:${contactData.phone.includes('|') ? contactData.phone.split('|')[0].replace(/[^0-9+]/g, '') : contactData.phone.replace(/[^0-9+]/g, '')}`} 
                         className="text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors"
                       >
                         {contactData.phone}

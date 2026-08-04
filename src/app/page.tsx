@@ -21,6 +21,39 @@ import {
 
 import { Metadata } from 'next';
 
+function StatsBar() {
+  const stats = [
+    { value: "[TODO: confirm number]", label: "Students Enrolled" },
+    { value: "[TODO: confirm number]", label: "Certified Tutors" },
+    { value: "[TODO: confirm number]", label: "Years Operating" },
+    { value: "[TODO: confirm number]", label: "Countries Served" },
+  ];
+
+  return (
+    <div className="relative z-20 -mt-6 sm:-mt-10 mb-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="glass p-6 md:p-8 rounded-3xl border border-card-border shadow-xl bg-background/50 backdrop-blur-md">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-card-border/40">
+          {stats.map((stat, idx) => (
+            <div 
+              key={idx} 
+              className={`flex flex-col items-center justify-center text-center p-2 ${
+                idx > 1 ? 'pt-6 md:pt-2' : idx > 0 ? 'pt-6 sm:pt-2 md:pt-2' : ''
+              } md:first:pt-2 md:pl-6 md:first:pl-2`}
+            >
+              <span className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight font-sans">
+                {stat.value}
+              </span>
+              <span className="text-[10px] sm:text-xs font-semibold text-muted-text uppercase tracking-wider mt-1.5 font-sans">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Force dynamic rendering to fetch fresh data on every page load
 export const dynamic = 'force-dynamic';
 
@@ -42,6 +75,20 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       title: 'Learn Quran Online: Live 1-on-1 Classes in USA | OQTutor',
       description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
       url: 'https://www.oqtutor.com/',
+      images: [
+        {
+          url: 'https://www.oqtutor.com/logo.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'OQTutor Logo',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Learn Quran Online: Live 1-on-1 Classes in USA | OQTutor',
+      description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
+      images: ['https://www.oqtutor.com/logo.jpg'],
     },
     robots: hasParams ? {
       index: false,
@@ -344,6 +391,8 @@ export default async function HomePage() {
       <main className="flex-grow">
         <Hero data={homepageHeroData} />
         
+        <StatsBar />
+        
         {/* Why Choose OQTutor Section (CRO Focus & Target Keywords) */}
         <section id="why-choose-us" className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01]">
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-secondary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
@@ -433,7 +482,7 @@ export default async function HomePage() {
                     Finding a structured and consistent religious education program in the United States can be challenging for busy Muslim parents. Driving to a physical Islamic center after school drains time, and large group sizes often mean children do not receive personal attention.
                   </p>
                   <p>
-                    Our specialized <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">Quran Classes for Kids USA</Link> solve these challenges. We provide a focused, distraction-free digital classroom where young learners interact one-on-one with certified, patient Quran teachers. Lessons are adjusted to the child's age, emotional maturity, and initial learning level.
+                    Our specialized <Link href="/locations/usa" className="text-primary hover:underline font-semibold">Quran Classes for Kids USA</Link> solve these challenges. We provide a focused, distraction-free digital classroom where young learners interact one-on-one with certified, patient Quran teachers. Lessons are adjusted to the child's age, emotional maturity, and initial learning level.
                   </p>
                   <p>
                     Through visual resources, gamified learning elements, and positive reinforcement, we construct a healthy, encouraging environment that inspires a long-term connection with the Quran. Our tutors maintain regular, detailed communication with parents, providing monthly progress reports to track recitation speed and Tajweed rules.
@@ -563,7 +612,7 @@ export default async function HomePage() {
                   One-to-One Personalized Learning
                 </h2>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6 font-normal">
-                  Standard group classes in physical classrooms often force all students to advance at the exact same pace. In such environments, slower learners get left behind, while faster students get bored. OQTutor's <Link href="/online-quran-classes-usa" className="text-primary hover:underline font-semibold">one-to-one online Quran classes</Link> eliminate this issue. 
+                  Standard group classes in physical classrooms often force all students to advance at the exact same pace. In such environments, slower learners get left behind, while faster students get bored. OQTutor's <Link href="/locations/usa" className="text-primary hover:underline font-semibold">one-to-one online Quran classes</Link> eliminate this issue. 
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -872,6 +921,17 @@ export default async function HomePage() {
                     </div>
                   </div>
                 </div>
+                
+                {/* 
+                <div className="mt-8 pt-6 border-t border-card-border/40 flex flex-wrap items-center gap-4">
+                  <span className="text-[10px] font-bold text-muted-text uppercase tracking-wider">Verified Trust Badges:</span>
+                  <div className="flex items-center space-x-3 opacity-60">
+                    <img src="/trustpilot-badge.png" alt="Trustpilot Rating" className="h-6 w-auto" />
+                    <img src="/google-reviews-badge.png" alt="Google Reviews" className="h-6 w-auto" />
+                    <img src="/ssl-secure-badge.png" alt="SSL Secure Connection" className="h-6 w-auto" />
+                  </div>
+                </div>
+                */}
               </div>
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative max-w-md w-full">
