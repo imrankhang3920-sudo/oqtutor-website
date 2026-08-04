@@ -134,7 +134,13 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                   href="/locations/usa/new-york"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
-                  └ New York
+                  ├ New York
+                </Link>
+                <Link
+                  href="/locations/usa/texas"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  └ Texas
                 </Link>
                 <Link
                   href="/locations/uk"
@@ -377,6 +383,13 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     New York
+                  </Link>
+                  <Link
+                    href="/locations/usa/texas"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    Texas
                   </Link>
                 </div>
               </div>

@@ -29,6 +29,7 @@ export default function Footer({ data }: { data: ContactData }) {
     { name: 'Quran Classes USA', href: '/locations/usa' },
     { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
     { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
+    { name: 'Quran Classes Texas', href: '/locations/usa/texas' },
     { name: 'Quran Classes UK', href: '/locations/uk' },
     { name: 'Quran Classes Canada', href: '/locations/canada' },
     { name: 'Quran Classes Australia', href: '/locations/australia' },

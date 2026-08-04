@@ -53,11 +53,15 @@ export default async function USALocationsHubPage() {
       name: "New York",
       path: "/locations/usa/new-york",
       desc: "Customized for Brooklyn, Queens, Manhattan, Staten Island, and Long Island. Flexible slots matching EST/EDT school routines."
+    },
+    {
+      name: "Texas",
+      path: "/locations/usa/texas",
+      desc: "Providing private 1-on-1 online classes across Houston, Dallas-Fort Worth, Austin, San Antonio, and Plano. Flexible times fit school routines."
     }
   ];
 
   const comingSoonStates = [
-    { name: "Texas (Houston, Dallas, Austin)" },
     { name: "California (Los Angeles, Bay Area, San Diego)" },
     { name: "Illinois (Chicago, Naperville, Aurora)" },
     { name: "Florida (Miami, Orlando, Tampa)" },
