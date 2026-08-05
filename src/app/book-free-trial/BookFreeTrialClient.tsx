@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ContactData } from '@/data/db';
 import { Send, ShieldCheck, ChevronDown, Search } from 'lucide-react';
-import { trackQualifyLead, trackPurchase } from '@/lib/analytics';
+import { trackQualifyLead, trackPurchase, trackFacebookEvent, trackGAEvent } from '@/lib/analytics';
 
 interface CountryItem {
   code: string;
