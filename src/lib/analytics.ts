@@ -18,6 +18,20 @@ export function trackGAEvent(eventName: string, params: Record<string, any> = {}
 }
 
 /**
+ * Utility function to send event tracking calls to Meta Pixel (fbq).
+ */
+export function trackFacebookEvent(eventName: string, params: Record<string, any> = {}) {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    try {
+      (window as any).fbq('track', eventName, params);
+      console.log(`[Meta Pixel Event Logged]: ${eventName}`, params);
+    } catch (err) {
+      console.error('Failed to log Meta Pixel event:', err);
+    }
+  }
+}
+
+/**
  * Track user initiating chat or direct contact (Converted Lead goal).
  * Fired on WhatsApp click actions.
  */
@@ -26,6 +40,12 @@ export function trackCloseConvertLead(channel: string = 'WhatsApp') {
     event_category: 'Lead Conversion',
     event_label: `Contact via ${channel}`,
     channel: channel
+  });
+
+  // Track Meta Pixel Contact Event
+  trackFacebookEvent('Contact', {
+    content_category: 'Lead Conversion',
+    content_name: `Contact via ${channel}`
   });
 }
 
@@ -39,6 +59,16 @@ export function trackQualifyLead(courseName: string, country: string) {
     event_label: 'Free Trial Form Submission',
     selected_course: courseName,
     student_country: country
+  });
+
+  // Track Meta Pixel Lead Event
+  trackFacebookEvent('Lead', {
+    content_category: 'Lead Capture',
+    content_name: 'Free Trial Form Submission',
+    currency: 'USD',
+    value: 0,
+    content_ids: [courseName.toLowerCase().replace(/\s+/g, '_')],
+    content_type: 'product'
   });
 }
 
@@ -59,5 +89,14 @@ export function trackPurchase(planTitle: string, price: number, currency: string
         quantity: 1
       }
     ]
+  });
+
+  // Track Meta Pixel InitiateCheckout Event (since clicking package CTA starts registration/checkout flow)
+  trackFacebookEvent('InitiateCheckout', {
+    content_name: planTitle,
+    value: price,
+    currency: currency,
+    content_ids: [planTitle.toLowerCase().replace(/\s+/g, '_')],
+    content_type: 'product'
   });
 }

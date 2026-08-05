@@ -80,6 +80,7 @@ export const metadata: Metadata = {
 };
 
 import Script from "next/script";
+import AnalyticsTrackers from "@/components/AnalyticsTrackers";
 
 export default function RootLayout({
   children,
@@ -145,6 +146,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         <ThemeProvider>
           <CookieConsent />
+          <AnalyticsTrackers />
           {children}
         </ThemeProvider>
       </body>
