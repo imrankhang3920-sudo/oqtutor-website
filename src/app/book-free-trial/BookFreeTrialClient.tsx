@@ -115,6 +115,18 @@ export default function BookFreeTrialClient({
   ];
 
   useEffect(() => {
+    trackGAEvent('book_free_trial_click', {
+      event_category: 'CTA Click',
+      event_label: 'Book Free Trial Button',
+    });
+
+    trackFacebookEvent('ViewContent', {
+      content_name: 'Book Free Trial Page',
+      content_category: 'CTA Click',
+    });
+  }, []);
+
+  useEffect(() => {
     if (selectedPlan) {
       let price = 0;
       const lowerPlan = selectedPlan.toLowerCase();
