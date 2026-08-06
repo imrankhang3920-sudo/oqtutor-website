@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { readDB } from '@/data/db';
+import { getDBAsync } from '@/data/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.oqtutor.com';
@@ -35,8 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2. Dynamic SEO course subpages & 3. Dynamic blog subpages
   try {
-    const dbData = readDB();
-    const courseRoutes = dbData.courses.map((course) => ({
+    const dbData = await getDBAsync();
+    const courseRoutes = (dbData.courses || []).map((course) => ({
       url: `${baseUrl}/courses/${course.slug}`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
