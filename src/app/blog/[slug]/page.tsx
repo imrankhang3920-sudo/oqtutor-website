@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart, AlertTriangle, Check, X, HelpCircle, Sparkles } from 'lucide-react';
+import PageRenderer from '@/components/PageRenderer';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -526,7 +527,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isUSABlog ? (
+            {blog.blocks && blog.blocks.length > 0 ? (
+              <PageRenderer blocks={blog.blocks} />
+            ) : isUSABlog ? (
               <ArticleContentUSA />
             ) : isIllinoisBlog ? (
               <ArticleContentIllinois />

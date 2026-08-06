@@ -9,35 +9,40 @@ import { BlogData, ContactData } from '@/data/db';
 import { BookOpen, Clock, Calendar, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const getBlogImage = (slug: string): string => {
-  const mapping: Record<string, string> = {
-    'online-quran-classes-usa': '/online-quran-classes-usa.jpg',
-    'tips-keep-kids-motivated-online-quran': '/motivated-kids-watercolor.jpg',
-    'beginners-guide-mastering-tajweed-rules': '/tajweed-teacher.jpg',
-    'select-right-online-quran-tutor': '/tutor-guide.jpg',
-    'effective-hifz-memorization-techniques': '/hifz-quran-desk.png',
-    'role-parents-islamic-education-west': '/parents-role.jpg',
-    'why-noorani-qaida-essential': '/noorani-qaida.jpg',
-    'reciting-quran-tajweed-posture-breathing': '/breathing-diaphragm.jpg',
-    'common-pronunciation-mistakes-qaida': '/pronunciation-mistakes-qaida.jpg',
-    'consistent-hifz-quran-revision': '/quran-hifz.jpg',
-    'islamic-studies-homeschool-curriculum': '/islamic-studies.jpg',
-    'choosing-male-female-quran-teacher': '/female-teacher-girl.jpg',
-    'how-to-choose-the-best-female-quran-teacher-online-for-your-child': '/female-teacher-blog-2.jpg',
-    'benefits-interactive-one-on-one-classes': '/interactive-one-on-one.jpg',
-    'understanding-arabic-grammar-quran': '/quran-posture-floor.jpg',
-    'prepare-child-first-online-class': '/motivated-kids-quran.jpg',
-    'quran-memorization-adults-never-late': '/adult-quran-memorization.jpg',
-    'teaching-salah-wudu-toddlers': '/salah-wudu-toddlers.jpg',
-    'tajweed-vs-tarteel-difference': '/tajweed-basics.jpg',
-    'virtues-reciting-quran-daily': '/virtues-reciting-daily.jpg',
-    'screen-time-spiritual-learning': '/screen-time-learning.jpg',
-    'read-arabic-fluidly-without-vowels': '/read-arabic-fluidly.jpg',
-    'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
-    'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
-    'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
-  };
-  return mapping[slug] || '/arabic-reading.jpg';
+const getBlogImage = (blogItem: BlogData | string): string => {
+  if (typeof blogItem === 'object') {
+    if (blogItem.coverImage) return blogItem.coverImage;
+    return mapping[blogItem.slug] || '/arabic-reading.jpg';
+  }
+  return mapping[blogItem] || '/arabic-reading.jpg';
+};
+
+const mapping: Record<string, string> = {
+  'online-quran-classes-usa': '/online-quran-classes-usa.jpg',
+  'tips-keep-kids-motivated-online-quran': '/motivated-kids-watercolor.jpg',
+  'beginners-guide-mastering-tajweed-rules': '/tajweed-teacher.jpg',
+  'select-right-online-quran-tutor': '/tutor-guide.jpg',
+  'effective-hifz-memorization-techniques': '/hifz-quran-desk.png',
+  'role-parents-islamic-education-west': '/parents-role.jpg',
+  'why-noorani-qaida-essential': '/noorani-qaida.jpg',
+  'reciting-quran-tajweed-posture-breathing': '/breathing-diaphragm.jpg',
+  'common-pronunciation-mistakes-qaida': '/pronunciation-mistakes-qaida.jpg',
+  'consistent-hifz-quran-revision': '/quran-hifz.jpg',
+  'islamic-studies-homeschool-curriculum': '/islamic-studies.jpg',
+  'choosing-male-female-quran-teacher': '/female-teacher-girl.jpg',
+  'how-to-choose-the-best-female-quran-teacher-online-for-your-child': '/female-teacher-blog-2.jpg',
+  'benefits-interactive-one-on-one-classes': '/interactive-one-on-one.jpg',
+  'understanding-arabic-grammar-quran': '/quran-posture-floor.jpg',
+  'prepare-child-first-online-class': '/motivated-kids-quran.jpg',
+  'quran-memorization-adults-never-late': '/adult-quran-memorization.jpg',
+  'teaching-salah-wudu-toddlers': '/salah-wudu-toddlers.jpg',
+  'tajweed-vs-tarteel-difference': '/tajweed-basics.jpg',
+  'virtues-reciting-quran-daily': '/virtues-reciting-daily.jpg',
+  'screen-time-spiritual-learning': '/screen-time-learning.jpg',
+  'read-arabic-fluidly-without-vowels': '/read-arabic-fluidly.jpg',
+  'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
+  'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
+  'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -194,12 +199,13 @@ export default function BlogPageClient({
                     <div>
                       {/* Image Header */}
                       <div className="relative h-48 w-full bg-foreground/5 overflow-hidden">
-                        <Image
-                          src={getBlogImage(blog.slug)}
+                        <img
+                          src={getBlogImage(blog)}
                           alt={getBlogImageAlt(blog.slug, blog.title)}
-                          fill
-                          sizes="(max-w-7xl) 33vw, 100vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/arabic-reading.jpg';
+                          }}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
 

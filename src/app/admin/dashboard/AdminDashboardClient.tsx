@@ -94,6 +94,7 @@ export default function AdminDashboardClient({
   const [editingCourse, setEditingCourse] = useState<CourseData | null>(null);
   const [editingPricing, setEditingPricing] = useState<PricingData | null>(null);
   const [editingPage, setEditingPage] = useState<CustomPageData | null>(null);
+  const [editingBlog, setEditingBlog] = useState<BlogData | null>(null);
 
   // New CMS Page state
   const [newPage, setNewPage] = useState<{ title: string; slug: string; metaTitle: string; metaDescription: string }>({
@@ -1253,28 +1254,44 @@ export default function AdminDashboardClient({
               <div className="flex items-center justify-between">
                 <div>
                   <h1 className="text-2xl font-extrabold text-foreground">Blog Articles CMS ({db.blogs?.length || 0})</h1>
-                  <p className="text-xs text-muted-text mt-1">Publish, edit, or delete articles and guides.</p>
+                  <p className="text-xs text-muted-text mt-1">Publish, edit rich content blocks, cover images, and tags for articles.</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => {
-                      const blog: BlogData = {
+                      const newArticle: BlogData = {
                         id: `blog-${Date.now()}`,
                         title: newBlog.title || 'New Quran Learning Article',
-                        category: newBlog.category || 'Quran Tips',
+                        category: newBlog.category || 'Quran Learning Tips',
                         description: newBlog.description || 'Comprehensive guide on Quran recitation.',
                         readTime: newBlog.readTime || '5 min read',
-                        slug: newBlog.slug || `article-${Date.now()}`
+                        slug: newBlog.slug ? newBlog.slug.toLowerCase().replace(/[^a-z0-9-]/g, '') : `article-${Date.now()}`,
+                        coverImage: '/blog-kids-usa-1.jpg',
+                        isPublished: true,
+                        publishedAt: new Date().toISOString(),
+                        blocks: [
+                          {
+                            id: `b_${Date.now()}`,
+                            type: 'heading',
+                            content: { text: newBlog.title || 'New Quran Learning Article', level: 1, align: 'left' },
+                          },
+                          {
+                            id: `b_${Date.now() + 1}`,
+                            type: 'paragraph',
+                            content: { text: newBlog.description || 'Enter article body content here using the block editor.' },
+                          },
+                        ],
                       };
-                      const updated = { ...db, blogs: [blog, ...(db.blogs || [])] };
+                      const updated = { ...db, blogs: [newArticle, ...(db.blogs || [])] };
                       setDb(updated);
-                      setNewBlog({ title: '', category: 'Quran Learning', description: '', readTime: '5 min read', slug: '' });
+                      setNewBlog({ title: '', category: 'Quran Learning Tips', description: '', readTime: '5 min read', slug: '' });
+                      setEditingBlog(newArticle);
                       handleSaveDB(updated);
                     }}
                     className="flex items-center space-x-1.5 px-4 py-2.5 rounded-full bg-secondary text-white text-xs font-semibold shadow-md"
                   >
                     <Plus className="h-4 w-4" />
-                    <span>Add Article</span>
+                    <span>Add & Edit Article</span>
                   </button>
                   <button
                     onClick={() => handleSaveDB(db)}
@@ -1282,7 +1299,7 @@ export default function AdminDashboardClient({
                     className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
                   >
                     <Save className="h-4 w-4" />
-                    <span>Save Blogs</span>
+                    <span>Save All Blogs</span>
                   </button>
                 </div>
               </div>
@@ -1295,29 +1312,33 @@ export default function AdminDashboardClient({
                     type="text"
                     placeholder="Article Title"
                     value={newBlog.title}
-                    onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
-                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                    onChange={(e) => {
+                      const title = e.target.value;
+                      const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                      setNewBlog({ ...newBlog, title, slug: newBlog.slug || slug });
+                    }}
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs font-semibold text-foreground"
                   />
                   <input
                     type="text"
-                    placeholder="Category (e.g. Tajweed)"
+                    placeholder="Category (e.g. Tajweed Guides)"
                     value={newBlog.category}
                     onChange={(e) => setNewBlog({ ...newBlog, category: e.target.value })}
-                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
                   />
                   <input
                     type="text"
                     placeholder="Read Time (e.g. 5 min read)"
                     value={newBlog.readTime}
                     onChange={(e) => setNewBlog({ ...newBlog, readTime: e.target.value })}
-                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
                   />
                   <input
                     type="text"
                     placeholder="URL Slug (e.g. tajweed-tips-kids)"
                     value={newBlog.slug}
                     onChange={(e) => setNewBlog({ ...newBlog, slug: e.target.value })}
-                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                    className="px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs font-mono text-foreground"
                   />
                 </div>
                 <textarea
@@ -1325,38 +1346,60 @@ export default function AdminDashboardClient({
                   placeholder="Short description snippet..."
                   value={newBlog.description}
                   onChange={(e) => setNewBlog({ ...newBlog, description: e.target.value })}
-                  className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs"
+                  className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
                 />
               </div>
 
-              {/* Blog Cards List */}
+              {/* Blog Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {db.blogs?.map((blog, idx) => (
-                  <div key={blog.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between">
+                  <div key={blog.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between space-y-3">
                     <div>
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full uppercase">
                           {blog.category}
                         </span>
+
                         <div className="flex items-center space-x-1">
+                          <Link
+                            href={`/blog/${blog.slug}`}
+                            target="_blank"
+                            className="p-1.5 rounded-lg hover:bg-foreground/5 text-muted-text hover:text-primary transition-colors"
+                            title="View Live Article"
+                          >
+                            <Eye className="h-4 w-4" />
+                          </Link>
+
+                          <button
+                            onClick={() => setEditingBlog(blog)}
+                            className="p-1.5 rounded-lg hover:bg-primary/10 text-muted-text hover:text-primary transition-colors"
+                            title="Edit Full Article Blocks"
+                          >
+                            <Edit2 className="h-4 w-4" />
+                          </button>
+
                           <button
                             onClick={() => {
-                              const filtered = db.blogs.filter((_, i) => i !== idx);
-                              const updated = { ...db, blogs: filtered };
-                              setDb(updated);
-                              handleSaveDB(updated);
+                              if (confirm(`Are you sure you want to delete article "${blog.title}"?`)) {
+                                const filtered = db.blogs.filter((_, i) => i !== idx);
+                                const updated = { ...db, blogs: filtered };
+                                setDb(updated);
+                                handleSaveDB(updated);
+                              }
                             }}
                             className="p-1.5 rounded-lg hover:bg-red-500/10 text-muted-text hover:text-red-500 transition-colors"
+                            title="Delete Article"
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
                       </div>
+
                       <h3 className="text-sm font-bold text-foreground mt-2">{blog.title}</h3>
-                      <p className="text-xs text-muted-text mt-1 line-clamp-2">{blog.description}</p>
+                      <p className="text-xs text-muted-text line-clamp-2 mt-1">{blog.description}</p>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-card-border flex items-center justify-between text-[11px] text-muted-text">
+                    <div className="pt-3 border-t border-card-border flex items-center justify-between text-[11px] text-muted-text">
                       <span>{blog.readTime}</span>
                       <span className="font-semibold text-secondary">/blog/{blog.slug}</span>
                     </div>
@@ -1668,7 +1711,120 @@ export default function AdminDashboardClient({
           </div>
         </div>
       )}
+
+      {/* Blog Article Block Editor Drawer / Modal */}
+      {editingBlog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/70 backdrop-blur-md animate-fadeIn">
+          <div className="bg-background border border-card-border rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-card-border flex items-center justify-between bg-card-bg">
+              <div className="flex items-center space-x-3">
+                <FileText className="h-5 w-5 text-primary" />
+                <div>
+                  <h3 className="text-base font-bold text-foreground">Article Editor — {editingBlog.title}</h3>
+                  <p className="text-xs font-mono text-secondary">/blog/{editingBlog.slug}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <Link
+                  href={`/blog/${editingBlog.slug}`}
+                  target="_blank"
+                  className="px-3 py-1.5 bg-foreground/10 text-foreground hover:text-primary text-xs font-semibold rounded-xl flex items-center space-x-1"
+                >
+                  <Eye className="h-3.5 w-3.5" />
+                  <span>Preview Live</span>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    const updatedBlogs = (db.blogs || []).map((b) =>
+                      b.id === editingBlog.id ? editingBlog : b
+                    );
+                    const updated = { ...db, blogs: updatedBlogs };
+                    setDb(updated);
+                    setEditingBlog(null);
+                    handleSaveDB(updated);
+                  }}
+                  className="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-hover transition-colors shadow-md"
+                >
+                  Save & Close
+                </button>
+
+                <button
+                  onClick={() => setEditingBlog(null)}
+                  className="p-1.5 rounded-full hover:bg-foreground/10 text-muted-text hover:text-foreground"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 overflow-y-auto flex-1 space-y-6">
+              {/* Article Meta settings */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 bg-card-bg p-4 rounded-2xl border border-card-border">
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">Article Title</label>
+                  <input
+                    type="text"
+                    value={editingBlog.title}
+                    onChange={(e) => setEditingBlog({ ...editingBlog, title: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">URL Slug</label>
+                  <input
+                    type="text"
+                    value={editingBlog.slug}
+                    onChange={(e) => setEditingBlog({ ...editingBlog, slug: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">Category</label>
+                  <input
+                    type="text"
+                    value={editingBlog.category}
+                    onChange={(e) => setEditingBlog({ ...editingBlog, category: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">Cover Image URL</label>
+                  <input
+                    type="text"
+                    value={editingBlog.coverImage || ''}
+                    onChange={(e) => setEditingBlog({ ...editingBlog, coverImage: e.target.value })}
+                    placeholder="e.g. /blog-kids-usa-1.jpg"
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[10px] font-bold text-muted-text uppercase">Short Description / Snippet</label>
+                <textarea
+                  rows={2}
+                  value={editingBlog.description}
+                  onChange={(e) => setEditingBlog({ ...editingBlog, description: e.target.value })}
+                  className="w-full mt-1 p-3 text-xs bg-background border border-card-border rounded-xl text-foreground"
+                />
+              </div>
+
+              {/* Article Content Blocks */}
+              <BlockEditor
+                blocks={editingBlog.blocks || []}
+                onChange={(updatedBlocks) => setEditingBlog({ ...editingBlog, blocks: updatedBlocks })}
+                mediaList={db.mediaLibrary || []}
+                onMediaUpdated={(updatedMedia) => setDb({ ...db, mediaLibrary: updatedMedia })}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
 }

@@ -70,12 +70,13 @@ export default function BlogPreview() {
             >
               {/* Image Header with Category Badge */}
               <div className="relative h-52 w-full bg-foreground/5 overflow-hidden">
-                <Image
+                <img
                   src={item.image}
                   alt={item.title}
-                  fill
-                  sizes="(max-w-7xl) 33vw, 100vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/arabic-reading.jpg';
+                  }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 z-10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary text-white rounded-full shadow-md">
                   {item.category}
