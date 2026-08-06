@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import fallbackDbData from '@/data/db.json';
 
 const DB_PATH = path.join(process.cwd(), 'src/data/db.json');
 
@@ -246,17 +247,20 @@ export interface DatabaseSchema {
 
 let inMemoryCache: DatabaseSchema | null = null;
 
-// Synchronous read from memory cache or local db.json
+// Synchronous read from memory cache or local db.json (with bundled JSON fallback)
 export function readDB(): DatabaseSchema {
+  if (inMemoryCache) {
+    return inMemoryCache;
+  }
   try {
     const fileContent = fs.readFileSync(DB_PATH, 'utf-8');
     const data = JSON.parse(fileContent);
     inMemoryCache = data;
     return data;
   } catch (error) {
-    console.error('Error reading database file:', error);
-    if (inMemoryCache) return inMemoryCache;
-    throw new Error('Could not read data from database');
+    console.warn('Vercel filesystem read bypassed, using bundled database fallback:', error);
+    inMemoryCache = fallbackDbData as unknown as DatabaseSchema;
+    return inMemoryCache;
   }
 }
 
