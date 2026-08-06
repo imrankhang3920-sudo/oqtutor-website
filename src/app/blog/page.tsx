@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { readDB } from '@/data/db';
+import { getDBAsync } from '@/data/db';
 import BlogPageClient from './BlogPageClient';
 
 export const dynamic = 'force-dynamic';
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const dbData = readDB();
+  const dbData = await getDBAsync();
 
-  return <BlogPageClient initialBlogs={dbData.blogs} contactData={dbData.contact} />;
+  return <BlogPageClient initialBlogs={dbData.blogs || []} contactData={dbData.contact} />;
 }

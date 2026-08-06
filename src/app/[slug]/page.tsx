@@ -15,8 +15,11 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if (!slug || slug.includes('.') || slug.startsWith('_') || slug.startsWith('api')) {
+    return { title: 'Page Not Found | OQTutor' };
+  }
   const db = await getDBAsync();
-  const page = (db.pages || []).find((p) => p.slug === slug && p.isPublished);
+  const page = (db?.pages || []).find((p) => p.slug === slug && p.isPublished);
 
   if (!page) {
     return {
@@ -40,8 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CustomPage({ params }: Props) {
   const { slug } = await params;
+  if (!slug || slug.includes('.') || slug.startsWith('_') || slug.startsWith('api')) {
+    notFound();
+  }
+
   const db = await getDBAsync();
-  const page = (db.pages || []).find((p) => p.slug === slug && p.isPublished);
+  const page = (db?.pages || []).find((p) => p.slug === slug && p.isPublished);
 
   if (!page) {
     notFound();

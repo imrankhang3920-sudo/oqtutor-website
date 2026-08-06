@@ -10,11 +10,11 @@ import { BookOpen, Clock, Calendar, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const getBlogImage = (blogItem: BlogData | string): string => {
-  if (typeof blogItem === 'object') {
+  if (typeof blogItem === 'object' && blogItem !== null) {
     if (blogItem.coverImage) return blogItem.coverImage;
-    return mapping[blogItem.slug] || '/arabic-reading.jpg';
+    return mapping[blogItem.slug || ''] || '/arabic-reading.jpg';
   }
-  return mapping[blogItem] || '/arabic-reading.jpg';
+  return mapping[(blogItem as string) || ''] || '/arabic-reading.jpg';
 };
 
 const mapping: Record<string, string> = {
@@ -46,7 +46,7 @@ const mapping: Record<string, string> = {
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
-  const mapping: Record<string, string> = {
+  const mappingAlt: Record<string, string> = {
     'online-quran-classes-usa': 'Online Quran tutor teaching kids online via video session in USA',
     'tips-keep-kids-motivated-online-quran': 'Interactive online Quran classroom with teacher and student',
     'beginners-guide-mastering-tajweed-rules': 'Certified teacher pointing at Tajweed rules chart on screen',
@@ -73,7 +73,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
     'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
   };
-  return mapping[slug] || title;
+  return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
 
 export default function BlogPageClient({
@@ -98,10 +98,15 @@ export default function BlogPageClient({
   ];
 
   // Filter logic: category filter + search query match
-  const filteredBlogs = initialBlogs.filter(blog => {
-    const matchesCategory = activeCategory === 'All' || blog.category.toLowerCase() === activeCategory.toLowerCase();
-    const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          blog.description.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredBlogs = (initialBlogs || []).filter(blog => {
+    if (!blog) return false;
+    const cat = (blog.category || '').toLowerCase();
+    const title = (blog.title || '').toLowerCase();
+    const desc = (blog.description || '').toLowerCase();
+    const query = (searchQuery || '').toLowerCase();
+
+    const matchesCategory = activeCategory === 'All' || cat === activeCategory.toLowerCase();
+    const matchesSearch = title.includes(query) || desc.includes(query);
     return matchesCategory && matchesSearch;
   });
 
