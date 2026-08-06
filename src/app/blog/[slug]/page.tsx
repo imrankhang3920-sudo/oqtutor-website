@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart } from 'lucide-react';
+import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart, AlertTriangle, Check, X, HelpCircle, Sparkles } from 'lucide-react';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -30,7 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isKidsUsaBlog = resolvedParams.slug === 'best-online-quran-classes-for-kids-in-usa';
   const isTarteelVsTajweedBlog = resolvedParams.slug === 'tajweed-vs-tarteel-difference';
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog;
+  const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog;
 
   const metaTitle = isOnlineVsInPersonBlog
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
@@ -94,6 +95,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isKidsUsaBlog = resolvedParams.slug === 'best-online-quran-classes-for-kids-in-usa';
   const isTarteelVsTajweedBlog = resolvedParams.slug === 'tajweed-vs-tarteel-difference';
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
+  const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -117,6 +119,60 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+
+      {isFemaleTeacherBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Where can I find a female Quran teacher online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Through dedicated academies and tutor directories. OQTutor's tutor directory lets you browse male and female teachers and compare their profiles before choosing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I choose the right Quran teacher?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Weigh qualifications, Tajweed knowledge, experience with children, communication style, patience, and schedule fit — then confirm your read with a trial class."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What makes a good teacher, generally?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A combination of subject knowledge, patience, clear communication, consistency, and the ability to adapt to how an individual student learns."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What's the best online Quran course for my child?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on level: beginners typically start with Noorani Qaida, children who already read move into Tajweed, and advanced students progress toward Hifz."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I find online Quran classes for kids specifically?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Look for academies with dedicated children's programs, female teacher options, one-on-one lessons, flexible scheduling, and a free trial class before you commit."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isMotivationBlog && (
         <script
@@ -490,6 +546,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentTarteelVsTajweed />
             ) : isChallengesBlog ? (
               <ArticleContentOvercomeChallenges />
+            ) : isFemaleTeacherBlog ? (
+              <ArticleContentFemaleTeacher />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -3660,6 +3718,575 @@ function ArticleContentOvercomeChallenges() {
                 <ArrowRight className="h-4.5 w-4.5" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentFemaleTeacher() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-foreground/90 font-medium">
+          Choosing the right Quran teacher shapes more than how fast your child memorizes Surahs — it shapes whether they grow up loving the Quran or dreading lesson time. A good female Quran teacher does more than correct Arabic letters; she builds pronunciation, Tajweed, confidence, and a lasting relationship with the Quran, all at once.
+        </p>
+        <p className="text-base leading-relaxed text-muted-text">
+          For many Muslim parents, a female teacher is the natural choice for daughters and younger children, who often feel more comfortable and open up faster in a class led by a woman. But with dozens of online academies competing for your attention, how do you actually tell a great teacher from an average one?
+        </p>
+        <p className="text-base leading-relaxed text-muted-text">
+          This guide walks through the qualities to look for, the questions to ask, and the red flags to avoid — so you can enroll with confidence instead of guesswork. When you&apos;re ready to start looking, you can <Link href="/tutors" className="text-primary font-semibold hover:underline">browse verified male and female Quran tutors on OQTutor</Link> and compare their experience, languages, and availability side by side.
+        </p>
+      </section>
+
+      {/* Featured Hero Image */}
+      <div className="relative my-6 overflow-hidden rounded-3xl border border-card-border shadow-xl">
+        <Image
+          src="/female-teacher-blog-2.jpg"
+          alt="Young Muslim girl enjoying online Quran class on a laptop with a female teacher"
+          width={900}
+          height={600}
+          className="w-full h-auto object-cover max-h-[460px] rounded-3xl"
+          priority
+        />
+      </div>
+
+      {/* Why the Right Teacher Matters More Than the Right Curriculum */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why the Right Teacher Matters More Than the Right Curriculum
+        </h2>
+        <p className="text-base text-muted-text">
+          Every child learns differently. Some need constant repetition; others grasp things quickly but check out the moment a lesson gets repetitive or too hard. The right teacher reads these differences and adjusts on the fly — something no fixed curriculum can do on its own.
+        </p>
+        <div className="p-6 rounded-2xl bg-card/60 border border-card-border shadow-sm space-y-3">
+          <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+            <CheckCircle className="h-5 w-5 text-primary" />
+            <span>A strong female Quran teacher will:</span>
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-foreground/90 pt-2">
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Teach to your child&apos;s actual age and level, not a generic script</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Correct pronunciation patiently, without embarrassing the child</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Explain Tajweed rules in language a child can picture and remember</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Keep lessons interactive rather than lecture-style</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Encourage attempts instead of punishing mistakes</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Communicate clearly and regularly with you as the parent</span>
+            </li>
+            <li className="flex items-start space-x-2 sm:col-span-2">
+              <span className="text-primary font-bold">•</span>
+              <span>Track progress and adjust pacing accordingly</span>
+            </li>
+          </ul>
+        </div>
+        <p className="text-base font-semibold text-foreground/90 italic pt-2">
+          The goal isn&apos;t finishing pages — it&apos;s building accuracy, confidence, and a habit that sticks long after the class ends.
+        </p>
+      </section>
+
+      {/* The 5 Qualities That Actually Predict a Good Teacher */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          The 5 Qualities That Actually Predict a Good Teacher
+        </h2>
+        <p className="text-base text-muted-text">
+          Every parent asks &ldquo;what should I look for?&rdquo; Here&apos;s what actually correlates with a child sticking with lessons and improving:
+        </p>
+
+        <div className="space-y-4 pt-2">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-black">1</span>
+              <span>Strong Quran and Tajweed Knowledge</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Pronunciation habits formed early are hard to unlearn later, so this isn&apos;t negotiable. Ask directly about her Quranic education, Tajweed training, and Ijazah.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-black">2</span>
+              <span>Genuine Patience</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Children forget letters, lose focus, and need the same explanation three times in a row. A teacher who stays calm through this — rather than showing frustration — is the one your child will keep showing up for.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-black">3</span>
+              <span>Real Experience with Children Specifically</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Teaching adults and teaching a seven-year-old are not the same skill. Ask how many years she&apos;s spent teaching children in your child&apos;s age range, not just teaching overall.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-black">4</span>
+              <span>Communication That Builds Up, Not Down</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Instead of &ldquo;you&apos;re doing this wrong,&rdquo; an effective teacher says what to fix and encourages another attempt. Watch for this tone in a trial class.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-black">5</span>
+              <span>The Ability to Motivate, Not Just Correct</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              The best teachers celebrate small wins, set achievable short-term goals, and help the child <em>see</em> their own progress — which is often more motivating than the lesson content itself.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-foreground/90">
+          <strong>Key Takeaway:</strong> A teacher can be excellent at Quran recitation and still be a poor fit for young learners if she&apos;s missing the teaching skills that go with it — knowledge and pedagogy are two different evaluations, and you need to check both.
+        </div>
+      </section>
+
+      {/* Does She Need an Ijazah? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Does She Need an Ijazah?
+        </h2>
+        <p className="text-base text-muted-text">
+          An Ijazah — formal certification in Quran recitation and Tajweed — is a meaningful credential, especially once your child moves past the basics into proper Tajweed rules. But it shouldn&apos;t be the only box you check.
+        </p>
+        <p className="text-base text-muted-text">
+          Ask how she approaches beginners, how she corrects pronunciation in real time, and how she builds reading fluency before advancing a student. <Link href="/tutors" className="text-primary font-semibold hover:underline">OQTutor&apos;s tutors</Link> are certified with Ijazah in Quran recitation and Tajweed, and full profiles are available to review before you commit to a trial.
+        </p>
+      </section>
+
+      {/* Matching the Teacher to Your Child's Age */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Matching the Teacher to Your Child&apos;s Age
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-5 rounded-2xl bg-card/60 border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Young Children (Ages 4-7)</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Need short, high-energy lessons with frequent praise — attention spans are the limiting factor, not ability. A structured starting point like the <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida course</Link> gives beginners a clear foundation in Arabic letters, vowels, and basic reading before moving further.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-card/60 border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">School-Age Children (Ages 8-12)</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Can typically handle more structure — this is usually when Quran reading, Tajweed rules, and light memorization start layering in together.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-card/60 border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Teenagers (Ages 13+)</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Respond better to a teacher who treats them with respect and works around their academic schedule, while still holding them accountable for consistency.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          There&apos;s no single &ldquo;hardest age&rdquo; to teach — young children bring short attention spans, teenagers bring competing priorities. The real question to ask a prospective teacher isn&apos;t &ldquo;is this age difficult?&rdquo; but <strong>&ldquo;how do you keep a student this age engaged?&rdquo;</strong> Her answer tells you more than any credential will.
+        </p>
+      </section>
+
+      {/* Mid-Article Image 1 */}
+      <div className="relative my-8 overflow-hidden rounded-3xl border border-card-border shadow-lg">
+        <Image
+          src="/female-teacher-blog-1.jpg"
+          alt="Smiling young Muslim girl attending 1-on-1 Quran class online"
+          width={900}
+          height={600}
+          className="w-full h-auto object-cover max-h-[440px] rounded-3xl"
+        />
+      </div>
+
+      {/* One-on-One or Group Classes? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          One-on-One or Group Classes?
+        </h2>
+        <p className="text-base text-muted-text">
+          One-on-one classes let a teacher catch pronunciation mistakes the moment they happen and adjust pacing to your child specifically — which matters most for younger or less confident readers. <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">OQTutor&apos;s one-on-one Quran reading classes</Link> pair your child with a dedicated teacher rather than splitting attention across a group.
+        </p>
+        <p className="text-base text-muted-text">
+          Group classes can still work well for confident, self-motivated students, but if your child needs extra reinforcement or gets lost easily in a crowd, one-on-one is usually the safer bet.
+        </p>
+      </section>
+
+      {/* What to Watch For in a Trial Class */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What to Watch For in a Trial Class
+        </h2>
+        <p className="text-base text-muted-text">
+          A trial class is the single best signal you&apos;ll get before committing. Don&apos;t just check whether your child got through a certain amount of material — watch <em>how</em> the lesson happened:
+        </p>
+        <ul className="space-y-2 text-sm text-foreground/90 pl-2">
+          <li className="flex items-start space-x-2">
+            <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+            <span>Does she speak to your child with warmth, not just efficiency?</span>
+          </li>
+          <li className="flex items-start space-x-2">
+            <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+            <span>Does she correct mistakes calmly, without making your child self-conscious?</span>
+          </li>
+          <li className="flex items-start space-x-2">
+            <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+            <span>Does she adjust once she sees your child&apos;s actual level?</span>
+          </li>
+          <li className="flex items-start space-x-2">
+            <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+            <span>Does she ask questions and keep your child actively involved, rather than just listening?</span>
+          </li>
+          <li className="flex items-start space-x-2">
+            <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+            <span>Does your child seem relaxed, or visibly tense?</span>
+          </li>
+        </ul>
+        <p className="text-sm font-semibold text-foreground/90 pt-1">
+          The quality of the interaction tells you far more than the page count covered.
+        </p>
+      </section>
+
+      {/* Mid-Article Image 2 */}
+      <div className="relative my-8 overflow-hidden rounded-3xl border border-card-border shadow-lg">
+        <Image
+          src="/female-teacher-blog-main.png"
+          alt="Dedicated student practicing Quran recitation at home during online lesson"
+          width={900}
+          height={600}
+          className="w-full h-auto object-cover max-h-[440px] rounded-3xl"
+        />
+      </div>
+
+      {/* 10 Questions Worth Asking Before You Enroll */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          10 Questions Worth Asking Before You Enroll
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {[
+            "What are your Quranic qualifications, and do you hold an Ijazah?",
+            "How many years have you taught children specifically?",
+            "What age groups do you usually teach?",
+            "Do you take on complete beginners?",
+            "How do you handle pronunciation correction without discouraging a child?",
+            "What keeps your students motivated over time?",
+            "How often will I get progress updates?",
+            "Which course would you recommend for my child's current level?",
+            "What happens if my child gets stuck on a particular lesson?",
+            "What's your policy on rescheduling or missed classes?"
+          ].map((q, idx) => (
+            <div key={idx} className="p-4 rounded-xl bg-card/40 border border-card-border flex items-start space-x-3">
+              <span className="px-2.5 py-1 rounded-md bg-secondary/15 text-secondary text-xs font-bold shrink-0">
+                Q{idx + 1}
+              </span>
+              <p className="text-xs sm:text-sm text-foreground/90 font-medium">{q}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-muted-text italic">
+          Her answers — not just her resume — tell you whether she&apos;s the right fit for your family.
+        </p>
+      </section>
+
+      {/* Choosing the Right Course for Your Child's Level */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Choosing the Right Course for Your Child&apos;s Level
+        </h2>
+        <div className="space-y-3">
+          <div className="p-4 rounded-xl glass border border-card-border flex items-start space-x-3">
+            <span className="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 text-xs font-bold shrink-0">Beginner</span>
+            <p className="text-xs sm:text-sm text-foreground/90">
+              Start with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> to build letter recognition and basic reading before anything else.
+            </p>
+          </div>
+          <div className="p-4 rounded-xl glass border border-card-border flex items-start space-x-3">
+            <span className="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-500 text-xs font-bold shrink-0">Intermediate</span>
+            <p className="text-xs sm:text-sm text-foreground/90">
+              <strong>Reads Quran but needs accuracy:</strong> Move into structured Tajweed lessons layered on top of the <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading course</Link>.
+            </p>
+          </div>
+          <div className="p-4 rounded-xl glass border border-card-border flex items-start space-x-3">
+            <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-500 text-xs font-bold shrink-0">Advanced</span>
+            <p className="text-xs sm:text-sm text-foreground/90">
+              <strong>Ready to memorize:</strong> Progress to the <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">online Hifz course</Link> once reading and Tajweed are solid.
+            </p>
+          </div>
+        </div>
+        <p className="text-sm text-muted-text">
+          A good teacher assesses your child&apos;s actual level before recommending a course — she shouldn&apos;t be placing every new student into the same starting program regardless of ability.
+        </p>
+      </section>
+
+      {/* Can an App Replace a Live Teacher? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Can an App Replace a Live Teacher?
+        </h2>
+        <p className="text-base text-muted-text">
+          Apps are useful for practice, repetition, and revision between lessons — but they can&apos;t listen to your child recite and correct pronunciation in real time the way a live teacher can. Most parents get the best results pairing an app for practice with live one-on-one classes for actual instruction and correction, rather than relying on either alone.
+        </p>
+      </section>
+
+      {/* Signs the Teacher Is Actually Working */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Signs the Teacher Is Actually Working
+        </h2>
+        <p className="text-base text-muted-text">
+          Look for gradual, visible movement in: letter recognition, word fluency, Quran reading pace, pronunciation accuracy, Tajweed application, and memorization retention. Just as importantly, watch your child&apos;s attitude — a child who becomes <em>more</em> willing to read aloud, rather than less, is showing real progress even before the technical skills catch up.
+        </p>
+        <p className="text-sm font-medium text-foreground/90">
+          Ask for regular feedback rather than waiting for it, and use that feedback to flag what needs more practice.
+        </p>
+      </section>
+
+      {/* Common Mistakes That Undermine Otherwise Good Teachers */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Common Mistakes That Undermine Otherwise Good Teachers
+        </h2>
+        <p className="text-base text-muted-text">
+          Even a highly qualified teacher can lose a student&apos;s interest if she:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-foreground/90">
+          {[
+            "Talks at the child rather than with them",
+            "Explains concepts in overly complex language",
+            "Moves faster than the child can absorb",
+            "Lets mistakes slide uncorrected",
+            "Over-focuses on memorization at the expense of understanding",
+            "Criticizes more than she encourages",
+            "Doesn't adjust to the child's actual pace",
+            "Skips regular updates to parents"
+          ].map((item, idx) => (
+            <div key={idx} className="p-3 rounded-lg bg-rose-500/5 border border-rose-500/15 flex items-center space-x-2 text-xs sm:text-sm">
+              <span className="text-rose-500 font-bold">✕</span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs sm:text-sm text-muted-text italic pt-1">
+          Watch for these specifically during the trial and first few real lessons — they&apos;re much easier to catch early than after months of enrollment.
+        </p>
+      </section>
+
+      {/* Comparing Teachers Side by Side */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Comparing Teachers Side by Side
+        </h2>
+        <div className="overflow-x-auto rounded-2xl border border-card-border glass shadow-sm">
+          <table className="w-full text-left text-xs sm:text-sm">
+            <thead className="bg-primary/10 border-b border-card-border text-foreground font-bold">
+              <tr>
+                <th className="p-3 sm:p-4">Factor</th>
+                <th className="p-3 sm:p-4">What to Check</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-card-border text-foreground/90">
+              <tr>
+                <td className="p-3 sm:p-4 font-semibold text-primary">Qualifications</td>
+                <td className="p-3 sm:p-4 text-muted-text">Quran, Tajweed, Ijazah</td>
+              </tr>
+              <tr className="bg-card/30">
+                <td className="p-3 sm:p-4 font-semibold text-primary">Experience</td>
+                <td className="p-3 sm:p-4 text-muted-text">Years taught, and specifically with your child&apos;s age group</td>
+              </tr>
+              <tr>
+                <td className="p-3 sm:p-4 font-semibold text-primary">Teaching style</td>
+                <td className="p-3 sm:p-4 text-muted-text">Patient, encouraging, interactive</td>
+              </tr>
+              <tr className="bg-card/30">
+                <td className="p-3 sm:p-4 font-semibold text-primary">Schedule</td>
+                <td className="p-3 sm:p-4 text-muted-text">Genuinely fits your family&apos;s routine</td>
+              </tr>
+              <tr>
+                <td className="p-3 sm:p-4 font-semibold text-primary">Course fit</td>
+                <td className="p-3 sm:p-4 text-muted-text">Matches your child&apos;s current level</td>
+              </tr>
+              <tr className="bg-card/30">
+                <td className="p-3 sm:p-4 font-semibold text-primary">Communication</td>
+                <td className="p-3 sm:p-4 text-muted-text">Clear, regular updates</td>
+              </tr>
+              <tr>
+                <td className="p-3 sm:p-4 font-semibold text-primary">Trial class</td>
+                <td className="p-3 sm:p-4 text-muted-text">Child came away comfortable, not just compliant</td>
+              </tr>
+              <tr className="bg-card/30">
+                <td className="p-3 sm:p-4 font-semibold text-primary">Progress tracking</td>
+                <td className="p-3 sm:p-4 text-muted-text">Ongoing assessment, not just verbal reassurance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Red Flags Worth Walking Away From */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Red Flags Worth Walking Away From
+        </h2>
+        <div className="p-6 rounded-2xl bg-rose-500/10 border border-rose-500/25 space-y-3">
+          <h3 className="text-lg font-bold text-rose-500 flex items-center space-x-2">
+            <AlertTriangle className="h-5 w-5" />
+            <span>Be cautious of a teacher who:</span>
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-foreground/90">
+            {[
+              "Can't clearly explain her own qualifications",
+              "Has no real experience teaching children",
+              "Criticizes or embarrasses students during lessons",
+              "Rarely corrects pronunciation",
+              "Never gives progress feedback unprompted",
+              "Cancels classes frequently",
+              "Makes lessons harder than the child's level calls for",
+              "Avoids communicating with parents"
+            ].map((rf, idx) => (
+              <li key={idx} className="flex items-start space-x-2">
+                <span className="text-rose-500 font-bold">•</span>
+                <span>{rf}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p className="text-sm font-semibold text-foreground/90">
+          Your child should come away from every class feeling respected and encouraged — not just &ldquo;finished.&rdquo;
+        </p>
+      </section>
+
+      {/* A Simple Final Checklist */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          A Simple Final Checklist
+        </h2>
+        <p className="text-base text-muted-text">Before enrolling, ask yourself:</p>
+        <div className="space-y-2">
+          {[
+            "Does she have strong Quranic and Tajweed knowledge?",
+            "Does she have real experience teaching children?",
+            "Is she genuinely patient, not just polite?",
+            "Does she communicate clearly with you?",
+            "Did your child feel comfortable with her?",
+            "Does her style match your child's personality?",
+            "Will she provide regular progress updates?",
+            "Does the schedule realistically fit your family?"
+          ].map((item, idx) => (
+            <div key={idx} className="p-3.5 rounded-xl glass border border-card-border flex items-center space-x-3">
+              <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center shrink-0">
+                <Check className="h-3.5 w-3.5 stroke-[3]" />
+              </div>
+              <span className="text-xs sm:text-sm text-foreground/90 font-medium">{item}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-muted-text pt-2">
+          If most answers are yes, you&apos;ve likely found a strong match. If you&apos;re ready to see this in practice, you can <Link href="/contact" className="text-primary font-semibold hover:underline">book a free trial class with OQTutor</Link> and run through this exact checklist yourself.
+        </p>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Where can I find a female Quran teacher online?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Through dedicated academies and tutor directories. <Link href="/tutors" className="text-primary font-semibold hover:underline">OQTutor&apos;s tutor directory</Link> lets you browse male and female teachers and compare their profiles before choosing.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How do I choose the right Quran teacher?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Weigh qualifications, Tajweed knowledge, experience with children, communication style, patience, and schedule fit — then confirm your read with a trial class.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What makes a good teacher, generally?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              A combination of subject knowledge, patience, clear communication, consistency, and the ability to adapt to how an individual student learns.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What&apos;s the best online Quran course for my child?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              It depends on level: beginners typically start with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, children who already read move into Tajweed, and advanced students progress toward <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link>.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How do I find online Quran classes for kids specifically?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Look for academies with dedicated children&apos;s programs, female teacher options, one-on-one lessons, flexible scheduling, and a free trial class before you commit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Thoughts */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Final Thoughts
+        </h2>
+        <p className="text-base leading-relaxed text-muted-text">
+          Choosing a female Quran teacher isn&apos;t just a scheduling decision — it&apos;s choosing who shapes your child&apos;s confidence, accuracy, and relationship with the Quran for years to come. Look past price and convenience alone, and weigh qualifications, patience, communication, and — most tellingly — how your child actually responds to her in a trial lesson.
+        </p>
+        <p className="text-base leading-relaxed text-muted-text">
+          When you&apos;re ready, <Link href="/tutors" className="text-primary font-semibold hover:underline">browse OQTutor&apos;s tutor directory</Link> or <Link href="/contact" className="text-primary font-semibold hover:underline">book a free trial class</Link> to find the right fit for your child.
+        </p>
+
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+          <h3 className="text-xl sm:text-2xl font-black text-foreground">Ready to Find the Perfect Female Quran Teacher?</h3>
+          <p className="text-sm text-muted-text max-w-xl mx-auto">
+            Book a 100% free trial session with one of our certified female Quran scholars today. No credit card required.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/contact"
+              className="px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2"
+            >
+              <span>Book Free Trial Class</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/tutors"
+              className="px-8 py-3 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-bold transition-all"
+            >
+              Browse Female Tutors
+            </Link>
           </div>
         </div>
       </section>

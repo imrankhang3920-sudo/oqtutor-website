@@ -179,9 +179,6 @@ let inMemoryCache: DatabaseSchema | null = null;
 
 // Synchronous read from memory cache or local db.json
 export function readDB(): DatabaseSchema {
-  if (inMemoryCache) {
-    return inMemoryCache;
-  }
   try {
     const fileContent = fs.readFileSync(DB_PATH, 'utf-8');
     const data = JSON.parse(fileContent);
