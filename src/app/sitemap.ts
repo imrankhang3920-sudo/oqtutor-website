@@ -50,9 +50,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...staticRoutes, ...courseRoutes, ...blogRoutes];
+    const customPageRoutes = (dbData.pages || [])
+      .filter((p) => p.isPublished)
+      .map((p) => ({
+        url: `${baseUrl}/${p.slug}`,
+        lastModified: new Date(p.updatedAt || Date.now()),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }));
+
+    return [...staticRoutes, ...courseRoutes, ...blogRoutes, ...customPageRoutes];
   } catch (error) {
-    console.error('Sitemap generator failed to read dynamic courses or blogs:', error);
+    console.error('Sitemap generator failed to read dynamic courses, blogs, or pages:', error);
     return staticRoutes;
   }
 }

@@ -386,7 +386,7 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
-      <Navbar adminLoggedIn={adminLoggedIn} />
+      <Navbar adminLoggedIn={adminLoggedIn} headerConfig={dbData.headerNav} />
       
       <main className="flex-grow">
         <Hero data={homepageHeroData} />
@@ -965,7 +965,7 @@ export default async function HomePage() {
         <Contact data={dbData.contact} />
       </main>
       
-      <Footer data={dbData.contact} />
+      <Footer data={dbData.contact} footerConfig={dbData.footerNav} />
     </>
   );
 }

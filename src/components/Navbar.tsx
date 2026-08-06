@@ -6,7 +6,15 @@ import { useTheme } from '@/context/ThemeContext';
 import { Sun, Moon, Menu, X, Lock, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
+import { HeaderNavData } from '@/data/db';
+
+export default function Navbar({ 
+  adminLoggedIn,
+  headerConfig 
+}: { 
+  adminLoggedIn?: boolean;
+  headerConfig?: HeaderNavData;
+}) {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [mobileCoursesExpanded, setMobileCoursesExpanded] = useState(false);
@@ -16,7 +24,7 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
     setMounted(true);
   }, []);
 
-  const menuItems = [
+  const defaultMenuItems = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
     { name: 'How It Works', href: '/how-it-works' },
@@ -28,13 +36,19 @@ export default function Navbar({ adminLoggedIn }: { adminLoggedIn?: boolean }) {
     { name: 'Contact', href: '/contact' },
   ];
 
+  const menuItems = headerConfig?.menuItems && headerConfig.menuItems.length > 0
+    ? headerConfig.menuItems.map(item => ({ name: item.label, href: item.url }))
+    : defaultMenuItems;
+
+  const logoSrc = headerConfig?.logoUrl || '/logo.jpg';
+
   return (
     <nav className="sticky top-0 z-50 w-full glass-nav transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2.5">
-            <img src="/logo.jpg" alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
+            <img src={logoSrc} alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
             <span className="text-xl font-bold tracking-tight text-primary">
               OQ<span className="text-secondary">Tutor</span>
             </span>

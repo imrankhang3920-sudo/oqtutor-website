@@ -3,11 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { ContactData } from '@/data/db';
+import { ContactData, FooterNavData } from '@/data/db';
 import Image from 'next/image';
 import { trackCloseConvertLead } from '@/lib/analytics';
 
-export default function Footer({ data }: { data: ContactData }) {
+export default function Footer({ 
+  data, 
+  footerConfig 
+}: { 
+  data: ContactData; 
+  footerConfig?: FooterNavData;
+}) {
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
@@ -168,7 +174,7 @@ export default function Footer({ data }: { data: ContactData }) {
 
         {/* Bottom footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-muted-text space-y-4 sm:space-y-0">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} OQTutor. All rights reserved.</p>
+          <p suppressHydrationWarning>{footerConfig?.copyrightText || `© ${new Date().getFullYear()} OQTutor. All rights reserved.`}</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center sm:justify-end">
             <Link href="/privacy" className="hover:text-primary transition-colors font-medium">Privacy Policy</Link>
             <Link href="/terms-and-conditions" className="hover:text-primary transition-colors font-medium">Terms & Conditions</Link>

@@ -12,7 +12,12 @@ import {
   FAQData,
   BlogData,
   SEOData,
-  SettingsData
+  SettingsData,
+  CustomPageData,
+  HeaderNavData,
+  FooterNavData,
+  MediaItemData,
+  PageBlock
 } from '@/data/db';
 import { 
   LayoutDashboard,
@@ -41,12 +46,20 @@ import {
   AlertTriangle,
   Lock,
   Sparkles,
-  Award
+  Award,
+  FileCode,
+  Layout,
+  Eye
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import MediaLibrary from '@/components/admin/MediaLibrary';
+import BlockEditor from '@/components/admin/BlockEditor';
+import ImagePickerModal from '@/components/admin/ImagePickerModal';
 
 type Tab = 
   | 'overview' 
+  | 'pages'
+  | 'header_footer'
   | 'homepage' 
   | 'courses' 
   | 'pricing' 
@@ -80,6 +93,43 @@ export default function AdminDashboardClient({
   // Modal / Editor item states
   const [editingCourse, setEditingCourse] = useState<CourseData | null>(null);
   const [editingPricing, setEditingPricing] = useState<PricingData | null>(null);
+  const [editingPage, setEditingPage] = useState<CustomPageData | null>(null);
+
+  // New CMS Page state
+  const [newPage, setNewPage] = useState<{ title: string; slug: string; metaTitle: string; metaDescription: string }>({
+    title: '',
+    slug: '',
+    metaTitle: '',
+    metaDescription: '',
+  });
+
+  // Header & Footer state setup
+  const headerNavState: HeaderNavData = db.headerNav || {
+    logoUrl: '/logo.jpg',
+    ctaText: 'Book Free Trial',
+    ctaLink: '/book-free-trial',
+    menuItems: [
+      { id: '1', label: 'Home', url: '/' },
+      { id: '2', label: 'Courses', url: '/courses' },
+      { id: '3', label: 'How It Works', url: '/how-it-works' },
+      { id: '4', label: 'Pricing', url: '/pricing' },
+      { id: '5', label: 'Tutors', url: '/tutors' },
+      { id: '6', label: 'About Us', url: '/about' },
+      { id: '7', label: 'FAQ', url: '/faq' },
+      { id: '8', label: 'Blog', url: '/blog' },
+      { id: '9', label: 'Contact', url: '/contact' },
+    ],
+  };
+
+  const footerNavState: FooterNavData = db.footerNav || {
+    aboutText: 'OQTutor provides personalized one-to-one online Quran classes with certified male and female tutors for kids and adults worldwide.',
+    copyrightText: `© ${new Date().getFullYear()} OQTutor. All rights reserved.`,
+    columns: [],
+    socialLinks: [
+      { platform: 'facebook', url: 'https://web.facebook.com/profile.php?id=100093682086058' },
+      { platform: 'instagram', url: 'https://www.instagram.com/hadi.382011/' },
+    ],
+  };
 
   // New Item states
   const [newBlog, setNewBlog] = useState<Partial<BlogData>>({
@@ -154,6 +204,8 @@ export default function AdminDashboardClient({
 
   const menuItems: { id: Tab; label: string; icon: any; roleRequired?: string }[] = [
     { id: 'overview', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'pages', label: 'Pages (CMS)', icon: FileCode },
+    { id: 'header_footer', label: 'Header & Footer', icon: Layout },
     { id: 'homepage', label: 'Homepage', icon: Home },
     { id: 'courses', label: 'Courses', icon: BookOpen },
     { id: 'pricing', label: 'Pricing Plans', icon: DollarSign },
@@ -348,7 +400,376 @@ export default function AdminDashboardClient({
             </div>
           )}
 
-          {/* TAB 2: HOMEPAGE MANAGER */}
+          {/* TAB: PAGES (CMS) */}
+          {activeTab === 'pages' && (
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Custom Pages CMS ({db.pages?.length || 0})</h1>
+                  <p className="text-xs text-muted-text mt-1">Create, edit, publish visual block-based pages with clean URLs.</p>
+                </div>
+
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>{loading ? 'Saving...' : 'Save All Pages'}</span>
+                </button>
+              </div>
+
+              {/* Create New Page Card */}
+              <div className="glass p-5 rounded-3xl border-card-border space-y-4">
+                <h3 className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center space-x-2">
+                  <Plus className="h-4 w-4 text-primary" />
+                  <span>Create New Custom Page</span>
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-[10px] text-muted-text font-bold uppercase">Page Title</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Tajweed Learning Guide"
+                      value={newPage.title}
+                      onChange={(e) => {
+                        const title = e.target.value;
+                        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+                        setNewPage({ ...newPage, title, slug: newPage.slug || slug });
+                      }}
+                      className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs font-semibold text-foreground"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] text-muted-text font-bold uppercase">URL Slug</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. tajweed-learning-guide"
+                      value={newPage.slug}
+                      onChange={(e) => setNewPage({ ...newPage, slug: e.target.value })}
+                      className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs font-mono text-foreground"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] text-muted-text font-bold uppercase">Meta Title (SEO)</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Tajweed Guide | Learn Quran Tajweed Rules Online"
+                      value={newPage.metaTitle}
+                      onChange={(e) => setNewPage({ ...newPage, metaTitle: e.target.value })}
+                      className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] text-muted-text font-bold uppercase">Meta Description (SEO)</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Complete guide on Tajweed rules for online Quran students."
+                      value={newPage.metaDescription}
+                      onChange={(e) => setNewPage({ ...newPage, metaDescription: e.target.value })}
+                      className="w-full px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!newPage.title || !newPage.slug) {
+                      showMsg('Please provide a Page Title and URL Slug', 'error');
+                      return;
+                    }
+                    const pageObj: CustomPageData = {
+                      id: `page_${Date.now()}`,
+                      title: newPage.title,
+                      slug: newPage.slug.toLowerCase().replace(/[^a-z0-9-]/g, ''),
+                      metaTitle: newPage.metaTitle || newPage.title,
+                      metaDescription: newPage.metaDescription || '',
+                      isPublished: true,
+                      blocks: [
+                        {
+                          id: `b_${Date.now()}`,
+                          type: 'heading',
+                          content: { text: newPage.title, level: 1, align: 'left' },
+                        },
+                        {
+                          id: `b_${Date.now() + 1}`,
+                          type: 'paragraph',
+                          content: { text: 'Welcome to this page. Add paragraph content using the block editor.' },
+                        },
+                      ],
+                      createdAt: new Date().toISOString(),
+                      updatedAt: new Date().toISOString(),
+                    };
+                    const updated = { ...db, pages: [pageObj, ...(db.pages || [])] };
+                    setDb(updated);
+                    setNewPage({ title: '', slug: '', metaTitle: '', metaDescription: '' });
+                    setEditingPage(pageObj);
+                    handleSaveDB(updated);
+                  }}
+                  className="px-5 py-2 rounded-xl bg-primary text-white text-xs font-semibold hover:bg-primary-hover shadow-md transition-all"
+                >
+                  Create & Launch Block Editor
+                </button>
+              </div>
+
+              {/* Pages Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(!db.pages || db.pages.length === 0) ? (
+                  <div className="col-span-full py-8 text-center border-2 border-dashed border-card-border rounded-3xl">
+                    <FileCode className="mx-auto h-10 w-10 text-muted-text/40 mb-2" />
+                    <p className="text-xs text-muted-text font-medium">No custom pages created yet.</p>
+                  </div>
+                ) : (
+                  db.pages.map((pg, idx) => (
+                    <div key={pg.id || idx} className="glass p-5 rounded-3xl border-card-border flex flex-col justify-between space-y-4">
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase ${pg.isPublished ? 'bg-emerald-500/10 text-emerald-600' : 'bg-amber-500/10 text-amber-600'}`}>
+                            {pg.isPublished ? 'Published' : 'Draft'}
+                          </span>
+
+                          <div className="flex items-center space-x-1">
+                            <Link
+                              href={`/${pg.slug}`}
+                              target="_blank"
+                              className="p-1.5 rounded-lg hover:bg-foreground/5 text-muted-text hover:text-primary transition-colors"
+                              title="View Page Live"
+                            >
+                              <Eye className="h-4 w-4" />
+                            </Link>
+
+                            <button
+                              onClick={() => setEditingPage(pg)}
+                              className="p-1.5 rounded-lg hover:bg-primary/10 text-muted-text hover:text-primary transition-colors"
+                              title="Edit Blocks"
+                            >
+                              <Edit2 className="h-4 w-4" />
+                            </button>
+
+                            <button
+                              onClick={() => {
+                                if (confirm(`Are you sure you want to delete page "${pg.title}"?`)) {
+                                  const filtered = (db.pages || []).filter((_, i) => i !== idx);
+                                  const updated = { ...db, pages: filtered };
+                                  setDb(updated);
+                                  handleSaveDB(updated);
+                                }
+                              }}
+                              className="p-1.5 rounded-lg hover:bg-red-500/10 text-muted-text hover:text-red-500 transition-colors"
+                              title="Delete Page"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </div>
+
+                        <h3 className="text-sm font-bold text-foreground mt-2">{pg.title}</h3>
+                        <p className="text-xs font-mono text-secondary mt-0.5">/{pg.slug}</p>
+                        <p className="text-xs text-muted-text mt-1 line-clamp-2">{pg.metaDescription || 'No description set.'}</p>
+                      </div>
+
+                      <div className="pt-3 border-t border-card-border flex items-center justify-between text-[11px] text-muted-text">
+                        <span>{pg.blocks?.length || 0} Content Blocks</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const updatedPages = (db.pages || []).map((p) =>
+                              p.id === pg.id ? { ...p, isPublished: !p.isPublished } : p
+                            );
+                            const updated = { ...db, pages: updatedPages };
+                            setDb(updated);
+                            handleSaveDB(updated);
+                          }}
+                          className="text-xs font-semibold text-primary hover:underline"
+                        >
+                          {pg.isPublished ? 'Unpublish' : 'Publish Live'}
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* TAB: HEADER & FOOTER EDITOR */}
+          {activeTab === 'header_footer' && (
+            <div className="space-y-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-2xl font-extrabold text-foreground">Header & Footer Settings</h1>
+                  <p className="text-xs text-muted-text mt-1">Customize website logo, navigation menu links, CTA buttons, and footer copyright.</p>
+                </div>
+
+                <button
+                  onClick={() => handleSaveDB(db)}
+                  disabled={loading}
+                  className="flex items-center space-x-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Header & Footer</span>
+                </button>
+              </div>
+
+              {/* Header Editor Box */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-6">
+                <h2 className="text-base font-bold text-foreground border-b border-card-border pb-3 flex items-center space-x-2">
+                  <Layout className="h-5 w-5 text-primary" />
+                  <span>Navigation Header Settings</span>
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-xs font-bold text-foreground">Site Logo Image URL</label>
+                    <input
+                      type="text"
+                      value={headerNavState.logoUrl}
+                      onChange={(e) => {
+                        const updated = {
+                          ...db,
+                          headerNav: { ...headerNavState, logoUrl: e.target.value },
+                        };
+                        setDb(updated);
+                      }}
+                      className="w-full mt-1 px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-bold text-foreground">Header CTA Button Text & Link</label>
+                    <div className="grid grid-cols-2 gap-2 mt-1">
+                      <input
+                        type="text"
+                        placeholder="Text (e.g. Book Free Trial)"
+                        value={headerNavState.ctaText}
+                        onChange={(e) => {
+                          const updated = {
+                            ...db,
+                            headerNav: { ...headerNavState, ctaText: e.target.value },
+                          };
+                          setDb(updated);
+                        }}
+                        className="px-3 py-1.5 rounded-xl border border-card-border bg-background text-xs"
+                      />
+                      <input
+                        type="text"
+                        placeholder="URL (e.g. /book-free-trial)"
+                        value={headerNavState.ctaLink}
+                        onChange={(e) => {
+                          const updated = {
+                            ...db,
+                            headerNav: { ...headerNavState, ctaLink: e.target.value },
+                          };
+                          setDb(updated);
+                        }}
+                        className="px-3 py-1.5 rounded-xl border border-card-border bg-background text-xs"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Navigation Menu Items Manager */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Navigation Links</h3>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const items = headerNavState.menuItems || [];
+                        const newItem = { id: `nav_${Date.now()}`, label: 'New Link', url: '/' };
+                        const updated = {
+                          ...db,
+                          headerNav: { ...headerNavState, menuItems: [...items, newItem] },
+                        };
+                        setDb(updated);
+                      }}
+                      className="flex items-center space-x-1 text-xs text-primary font-semibold hover:underline"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      <span>Add Link</span>
+                    </button>
+                  </div>
+
+                  <div className="space-y-2">
+                    {(headerNavState.menuItems || []).map((item, idx) => (
+                      <div key={item.id || idx} className="flex items-center gap-2 bg-background/60 p-2.5 rounded-xl border border-card-border">
+                        <input
+                          type="text"
+                          value={item.label}
+                          onChange={(e) => {
+                            const updatedItems = headerNavState.menuItems.map((m, i) =>
+                              i === idx ? { ...m, label: e.target.value } : m
+                            );
+                            setDb({ ...db, headerNav: { ...headerNavState, menuItems: updatedItems } });
+                          }}
+                          className="px-3 py-1.5 rounded-lg border border-card-border bg-background text-xs font-semibold w-1/3"
+                          placeholder="Label"
+                        />
+                        <input
+                          type="text"
+                          value={item.url}
+                          onChange={(e) => {
+                            const updatedItems = headerNavState.menuItems.map((m, i) =>
+                              i === idx ? { ...m, url: e.target.value } : m
+                            );
+                            setDb({ ...db, headerNav: { ...headerNavState, menuItems: updatedItems } });
+                          }}
+                          className="px-3 py-1.5 rounded-lg border border-card-border bg-background text-xs flex-1 font-mono"
+                          placeholder="URL (e.g. /about)"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const updatedItems = headerNavState.menuItems.filter((_, i) => i !== idx);
+                            setDb({ ...db, headerNav: { ...headerNavState, menuItems: updatedItems } });
+                          }}
+                          className="p-1.5 text-red-500 hover:bg-red-500/10 rounded-lg"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer Editor Box */}
+              <div className="glass p-6 rounded-3xl border-card-border space-y-6">
+                <h2 className="text-base font-bold text-foreground border-b border-card-border pb-3">
+                  Footer Settings
+                </h2>
+
+                <div>
+                  <label className="text-xs font-bold text-foreground">Footer About Text</label>
+                  <textarea
+                    rows={2}
+                    value={footerNavState.aboutText}
+                    onChange={(e) => {
+                      setDb({ ...db, footerNav: { ...footerNavState, aboutText: e.target.value } });
+                    }}
+                    className="w-full mt-1 p-3 rounded-xl border border-card-border bg-background text-xs text-foreground"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold text-foreground">Copyright Text</label>
+                  <input
+                    type="text"
+                    value={footerNavState.copyrightText}
+                    onChange={(e) => {
+                      setDb({ ...db, footerNav: { ...footerNavState, copyrightText: e.target.value } });
+                    }}
+                    className="w-full mt-1 px-3.5 py-2 rounded-xl border border-card-border bg-background text-xs text-foreground"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
           {activeTab === 'homepage' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
@@ -1083,39 +1504,24 @@ export default function AdminDashboardClient({
             </div>
           )}
 
-          {/* TAB 11: IMAGE ASSET & MEDIA MANAGER */}
+          {/* TAB: IMAGE ASSET & MEDIA MANAGER */}
           {activeTab === 'media' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h1 className="text-2xl font-extrabold text-foreground">Image Asset & Media Manager</h1>
-                  <p className="text-xs text-muted-text mt-1">Preview logos, favicons, course covers, and tutor profile pictures.</p>
+                  <h1 className="text-2xl font-extrabold text-foreground">Media Library & Image Manager</h1>
+                  <p className="text-xs text-muted-text mt-1">Upload, search, copy URLs, or remove image assets across your website.</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { title: 'Brand Logo', url: '/logo.jpg', desc: 'Main Header & Footer Brand Emblem' },
-                  { title: 'Transparent Logo', url: '/logo_transparent.png', desc: 'Favicon & Transparent Overlay Logo' },
-                  { title: 'Mission Slide Image', url: '/mission-slide.png', desc: 'Homepage Our Mission Main Cover' },
-                  { title: 'Qari Bilal Photo', url: '/tutor-bilal.jpg', desc: 'Tutor Profile Photo' },
-                  { title: 'Sister Fatima Photo', url: '/tutor-female-icon-3.jpg', desc: 'Female Scholar Profile Photo' },
-                  { title: 'Qari Khaled Photo', url: '/tutor-khaled.jpg', desc: 'Male Scholar Profile Photo' },
-                ].map((asset, idx) => (
-                  <div key={idx} className="glass p-5 rounded-3xl border-card-border space-y-3">
-                    <div className="h-40 w-full rounded-2xl bg-foreground/5 overflow-hidden flex items-center justify-center border border-card-border relative">
-                      <img src={asset.url} alt={asset.title} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div>
-                      <h3 className="text-xs font-bold text-foreground">{asset.title}</h3>
-                      <p className="text-[11px] text-muted-text mt-0.5">{asset.desc}</p>
-                      <code className="block mt-2 text-[10px] bg-foreground/5 px-2 py-1 rounded border border-card-border text-primary select-all">
-                        {asset.url}
-                      </code>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <MediaLibrary
+                mediaList={db.mediaLibrary || []}
+                onMediaUpdated={(updated) => {
+                  const updatedDB = { ...db, mediaLibrary: updated };
+                  setDb(updatedDB);
+                  handleSaveDB(updatedDB);
+                }}
+              />
             </div>
           )}
 
@@ -1168,6 +1574,101 @@ export default function AdminDashboardClient({
 
         </main>
       </div>
+
+      {/* CMS Page Block Editor Drawer / Modal */}
+      {editingPage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/70 backdrop-blur-md animate-fadeIn">
+          <div className="bg-background border border-card-border rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-card-border flex items-center justify-between bg-card-bg">
+              <div className="flex items-center space-x-3">
+                <FileCode className="h-5 w-5 text-primary" />
+                <div>
+                  <h3 className="text-base font-bold text-foreground">Block Editor — {editingPage.title}</h3>
+                  <p className="text-xs font-mono text-secondary">/{editingPage.slug}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <Link
+                  href={`/${editingPage.slug}`}
+                  target="_blank"
+                  className="px-3 py-1.5 bg-foreground/10 text-foreground hover:text-primary text-xs font-semibold rounded-xl flex items-center space-x-1"
+                >
+                  <Eye className="h-3.5 w-3.5" />
+                  <span>Preview Live</span>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    const updatedPages = (db.pages || []).map((p) =>
+                      p.id === editingPage.id ? editingPage : p
+                    );
+                    const updated = { ...db, pages: updatedPages };
+                    setDb(updated);
+                    setEditingPage(null);
+                    handleSaveDB(updated);
+                  }}
+                  className="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-hover transition-colors shadow-md"
+                >
+                  Save & Close
+                </button>
+
+                <button
+                  onClick={() => setEditingPage(null)}
+                  className="p-1.5 rounded-full hover:bg-foreground/10 text-muted-text hover:text-foreground"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 overflow-y-auto flex-1 space-y-6">
+              {/* Page Meta settings */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-card-bg p-4 rounded-2xl border border-card-border">
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">Page Title</label>
+                  <input
+                    type="text"
+                    value={editingPage.title}
+                    onChange={(e) => setEditingPage({ ...editingPage, title: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground font-bold"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">URL Slug</label>
+                  <input
+                    type="text"
+                    value={editingPage.slug}
+                    onChange={(e) => setEditingPage({ ...editingPage, slug: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold text-muted-text uppercase">SEO Meta Title</label>
+                  <input
+                    type="text"
+                    value={editingPage.metaTitle}
+                    onChange={(e) => setEditingPage({ ...editingPage, metaTitle: e.target.value })}
+                    className="w-full mt-1 px-3 py-1.5 text-xs bg-background border border-card-border rounded-lg text-foreground"
+                  />
+                </div>
+              </div>
+
+              {/* Block Editor */}
+              <BlockEditor
+                blocks={editingPage.blocks || []}
+                onChange={(updatedBlocks) => setEditingPage({ ...editingPage, blocks: updatedBlocks })}
+                mediaList={db.mediaLibrary || []}
+                onMediaUpdated={(updatedMedia) => setDb({ ...db, mediaLibrary: updatedMedia })}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
+}
 }

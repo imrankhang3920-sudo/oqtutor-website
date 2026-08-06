@@ -4131,5 +4131,32 @@
       "readTime": "10 min read",
       "slug": "how-to-choose-the-best-female-quran-teacher-online-for-your-child"
     }
-  ]
+  ],
+  "pages": [],
+  "headerNav": {
+    "logoUrl": "/logo.jpg",
+    "ctaText": "Book Free Trial",
+    "ctaLink": "/book-free-trial",
+    "menuItems": [
+      { "id": "nav-1", "label": "Home", "url": "/" },
+      { "id": "nav-2", "label": "Courses", "url": "/courses" },
+      { "id": "nav-3", "label": "How It Works", "url": "/how-it-works" },
+      { "id": "nav-4", "label": "Pricing", "url": "/pricing" },
+      { "id": "nav-5", "label": "Tutors", "url": "/tutors" },
+      { "id": "nav-6", "label": "About Us", "url": "/about" },
+      { "id": "nav-7", "label": "FAQ", "url": "/faq" },
+      { "id": "nav-8", "label": "Blog", "url": "/blog" },
+      { "id": "nav-9", "label": "Contact", "url": "/contact" }
+    ]
+  },
+  "footerNav": {
+    "aboutText": "OQTutor provides personalized one-to-one online Quran classes with certified male and female tutors for kids and adults worldwide.",
+    "copyrightText": "© 2026 OQTutor. All rights reserved.",
+    "columns": [],
+    "socialLinks": [
+      { "platform": "facebook", "url": "https://web.facebook.com/profile.php?id=100093682086058" },
+      { "platform": "instagram", "url": "https://www.instagram.com/hadi.382011/" }
+    ]
+  },
+  "mediaLibrary": []
 }

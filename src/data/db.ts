@@ -127,14 +127,79 @@ export interface FAQData {
   category: 'general' | 'pricing' | 'classes' | 'tutors';
 }
 
+export interface PageBlock {
+  id: string;
+  type: 'heading' | 'paragraph' | 'image' | 'button' | 'cta_banner' | 'features_grid' | 'html';
+  content: {
+    text?: string;
+    level?: 1 | 2 | 3;
+    imageUrl?: string;
+    altText?: string;
+    caption?: string;
+    buttonText?: string;
+    buttonUrl?: string;
+    buttonStyle?: 'primary' | 'secondary' | 'outline';
+    align?: 'left' | 'center' | 'right';
+    items?: { title: string; description: string; icon?: string }[];
+    html?: string;
+  };
+}
+
+export interface CustomPageData {
+  id: string;
+  title: string;
+  slug: string;
+  metaTitle: string;
+  metaDescription: string;
+  isPublished: boolean;
+  blocks: PageBlock[];
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface HeaderNavData {
+  logoUrl: string;
+  ctaText: string;
+  ctaLink: string;
+  menuItems: { id: string; label: string; url: string; isExternal?: boolean }[];
+}
+
+export interface FooterNavData {
+  aboutText: string;
+  copyrightText: string;
+  columns: {
+    title: string;
+    links: { label: string; url: string }[];
+  }[];
+  socialLinks: {
+    platform: 'facebook' | 'instagram' | 'twitter' | 'youtube' | 'whatsapp';
+    url: string;
+  }[];
+}
+
+export interface MediaItemData {
+  id: string;
+  name: string;
+  url: string;
+  size?: number;
+  type?: string;
+  createdAt: string;
+}
+
 export interface BlogData {
   id: string;
   title: string;
   category: string;
+  categories?: string[];
+  tags?: string[];
   description: string;
   readTime: string;
   slug: string;
   content?: string;
+  blocks?: PageBlock[];
+  coverImage?: string;
+  isPublished?: boolean;
+  publishedAt?: string;
 }
 
 export interface SEOData {
@@ -173,6 +238,10 @@ export interface DatabaseSchema {
   blogs: BlogData[];
   seo?: SEOData;
   settings?: SettingsData;
+  pages?: CustomPageData[];
+  headerNav?: HeaderNavData;
+  footerNav?: FooterNavData;
+  mediaLibrary?: MediaItemData[];
 }
 
 let inMemoryCache: DatabaseSchema | null = null;
