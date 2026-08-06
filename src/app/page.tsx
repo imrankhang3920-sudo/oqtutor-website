@@ -100,8 +100,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   };
 }
 
+import { getDBAsync } from '@/data/db';
+
 export default async function HomePage() {
-  const dbData = readDB();
+  const dbData = (await getDBAsync()) || {};
   
   // Check if admin is logged in
   const cookieStore = await cookies();
@@ -110,9 +112,14 @@ export default async function HomePage() {
 
   // Custom US-focused hero data to avoid duplicate H1 and target US audience
   const homepageHeroData = {
-    ...dbData.hero,
-    title: "Trusted Online Quran Academy for American Muslim Families",
-    subtitle: "Learn Quran online with certified male and female tutors through private 1-on-1 classes. Get high-quality lessons in Noorani Qaida, Tajweed, and Hifz customized around your family's schedule with a 3-day free trial."
+    ...(dbData.hero || {}),
+    title: dbData.hero?.title || "Trusted Online Quran Academy for American Muslim Families",
+    subtitle: dbData.hero?.subtitle || "Learn Quran online with certified male and female tutors through private 1-on-1 classes. Get high-quality lessons in Noorani Qaida, Tajweed, and Hifz customized around your family's schedule with a 3-day free trial.",
+    ctaText: dbData.hero?.ctaText || "Book Free Trial",
+    ctaLink: dbData.hero?.ctaLink || "/book-free-trial",
+    whatsappText: dbData.hero?.whatsappText || "Chat on WhatsApp",
+    whatsappNumber: dbData.hero?.whatsappNumber || "+923478704442",
+    backgroundImage: dbData.hero?.backgroundImage || "/logo.jpg"
   };
 
   // Schema Markup Data
@@ -953,7 +960,7 @@ export default async function HomePage() {
         </section>
 
         {/* Success Stories & Parent Testimonials */}
-        <Testimonials data={dbData.testimonials} />
+        <Testimonials data={dbData.testimonials || []} />
 
         {/* Blog Preview & Articles */}
         <BlogPreview />
@@ -962,10 +969,10 @@ export default async function HomePage() {
         <FAQ data={homepageFaqs} />
 
         {/* Contact Form Section (Book Trial) */}
-        <Contact data={dbData.contact} />
+        <Contact data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} />
       </main>
       
-      <Footer data={dbData.contact} footerConfig={dbData.footerNav} />
+      <Footer data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} footerConfig={dbData.footerNav} />
     </>
   );
 }
