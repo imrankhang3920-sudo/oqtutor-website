@@ -192,9 +192,10 @@ export default function BlogPageClient({
             {filteredBlogs.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredBlogs.map((blog) => (
-                  <div
+                  <Link
                     key={blog.id}
-                    className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300 group hover:-translate-y-1"
+                    href={`/blog/${blog.slug}`}
+                    className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-1 relative cursor-pointer"
                   >
                     <div>
                       {/* Image Header */}
@@ -242,15 +243,12 @@ export default function BlogPageClient({
                           <span>{blog.readTime}</span>
                         </span>
                       </div>
-                      <Link
-                        href={`/blog/${blog.slug}`}
-                        className="font-semibold text-primary hover:text-primary-hover flex items-center space-x-1"
-                      >
+                      <span className="font-semibold text-primary group-hover:text-primary-hover flex items-center space-x-1">
                         <span>Read More</span>
-                        <span>&rarr;</span>
-                      </Link>
+                        <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                      </span>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             ) : (
