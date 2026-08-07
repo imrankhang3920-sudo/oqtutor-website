@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/terms-and-conditions',
     '/refund-policy',
     '/locations/usa',
+    '/locations/usa/illinois',
     '/locations/usa/michigan',
     '/locations/usa/new-york',
     '/locations/usa/texas',

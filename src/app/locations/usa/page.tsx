@@ -45,6 +45,11 @@ export default async function USALocationsHubPage() {
 
   const activeStates = [
     {
+      name: "Illinois",
+      path: "/locations/usa/illinois",
+      desc: "Serving Chicago, Naperville, Schaumburg, Skokie, Evanston, Aurora, Joliet, and Springfield with flexible 1-on-1 online Quran classes."
+    },
+    {
       name: "Michigan",
       path: "/locations/usa/michigan",
       desc: "Serving Dearborn, Detroit, Hamtramck, Ann Arbor, Lansing, and Grand Rapids. Schedule classes easily around busy school and prayer timings."
@@ -63,7 +68,6 @@ export default async function USALocationsHubPage() {
 
   const comingSoonStates = [
     { name: "California (Los Angeles, Bay Area, San Diego)" },
-    { name: "Illinois (Chicago, Naperville, Aurora)" },
     { name: "Florida (Miami, Orlando, Tampa)" },
     { name: "New Jersey (Paterson, Jersey City, Clifton)" },
     { name: "Virginia (Fairfax, Alexandria, Richmond)" }
