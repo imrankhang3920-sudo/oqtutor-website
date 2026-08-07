@@ -139,6 +139,12 @@ export default function Navbar({
                   🇺🇸 USA Classes
                 </Link>
                 <Link
+                  href="/locations/usa/illinois"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  ├ Illinois
+                </Link>
+                <Link
                   href="/locations/usa/michigan"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
@@ -383,6 +389,13 @@ export default function Navbar({
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     USA Hub
+                  </Link>
+                  <Link
+                    href="/locations/usa/illinois"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    Illinois
                   </Link>
                   <Link
                     href="/locations/usa/michigan"
