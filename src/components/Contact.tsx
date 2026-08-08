@@ -95,6 +95,24 @@ export default function Contact({ data }: { data: ContactData }) {
     'Quran for Kids',
   ];
 
+  // Auto-detect course selection from URL campaign query parameters (e.g., ?source=ArabicLanguage&interest=Enrollment)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const sourceParam = params.get('source');
+      if (sourceParam) {
+        const normalizedSource = sourceParam.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const matched = coursesList.find(c => {
+          const normalizedCourse = c.toLowerCase().replace(/[^a-z0-9]/g, '');
+          return normalizedCourse.includes(normalizedSource) || normalizedSource.includes(normalizedCourse);
+        });
+        if (matched) {
+          setFormData(prev => ({ ...prev, course: matched }));
+        }
+      }
+    }
+  }, []);
+
   // Auto-detect country based on Timezone and Geolocation IP API
   useEffect(() => {
     // 1. Timezone heuristic
