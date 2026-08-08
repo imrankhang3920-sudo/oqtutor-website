@@ -8,10 +8,7 @@ interface Props {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-  const resolvedParams = await searchParams;
-  const hasParams = Object.keys(resolvedParams).length > 0;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Book 3-Day Free Trial Online Quran Classes | OQTutor',
     description: 'Book a 3-day free trial of our online Quran classes. Choose your course, timezone, and tutor preference with no card details or contracts required.',
@@ -22,10 +19,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     openGraph: {
       url: 'https://www.oqtutor.com/book-free-trial',
     },
-    robots: hasParams ? {
-      index: false,
-      follow: true,
-    } : {
+    robots: {
       index: true,
       follow: true,
     },

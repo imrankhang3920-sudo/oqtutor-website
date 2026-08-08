@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: "OQTutor Team" }],
   metadataBase: new URL("https://www.oqtutor.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.oqtutor.com/",
   },
   robots: {
     index: true,
@@ -49,10 +49,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo_transparent.png?v=2", sizes: "any" }
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo_transparent.png", type: "image/png" }
     ],
-    shortcut: "/logo_transparent.png?v=2",
-    apple: "/logo_transparent.png?v=2",
+    shortcut: "/favicon.ico",
+    apple: "/logo_transparent.png",
   },
   manifest: "/manifest.json",
   openGraph: {

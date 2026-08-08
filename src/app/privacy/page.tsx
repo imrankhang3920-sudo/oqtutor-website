@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   description: 'Read the privacy policy for OQTutor. Learn how we collect, protect, and use personal information for students worldwide studying Quran, Tajweed, and Islamic classes.',
   keywords: ['privacy policy oqtutor', 'quran academy privacy', 'online learning security', 'data protection quran class'],
   alternates: {
-    canonical: '/privacy',
+    canonical: 'https://www.oqtutor.com/privacy',
   },
   openGraph: {
-    url: '/privacy',
+    url: 'https://www.oqtutor.com/privacy',
   },
 };
 

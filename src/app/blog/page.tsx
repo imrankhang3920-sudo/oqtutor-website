@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description: 'Explore parenting guides, Tajweed learning tips, Quran memorization techniques, and articles on Islamic education written by certified OQTutor scholars.',
   keywords: ['quran learning tips', 'tajweed guide online', 'islamic parenting', 'hifz techniques', 'learn noorani qaida'],
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://www.oqtutor.com/blog',
   },
   openGraph: {
-    url: '/blog',
+    url: 'https://www.oqtutor.com/blog',
   },
 };
 

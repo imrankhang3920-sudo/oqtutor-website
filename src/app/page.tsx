@@ -57,14 +57,7 @@ function StatsBar() {
 // Force dynamic rendering to fetch fresh data on every page load
 export const dynamic = 'force-dynamic';
 
-interface Props {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-  const resolvedParams = await searchParams;
-  const hasParams = Object.keys(resolvedParams).length > 0;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Learn Quran Online: Live 1-on-1 Classes in USA | OQTutor',
     description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
@@ -90,10 +83,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       description: 'Learn Quran online with OQTutor. Our certified male and female tutors provide flexible, live 1-on-1 Quran classes for kids and adults in the USA. Try it free!',
       images: ['https://www.oqtutor.com/logo.jpg'],
     },
-    robots: hasParams ? {
-      index: false,
-      follow: true,
-    } : {
+    robots: {
       index: true,
       follow: true,
     },

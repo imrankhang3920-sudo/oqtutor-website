@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
   keywords: ['how online quran classes work', 'learn quran online process', 'quran tutors trial class', 'oqtutor study steps'],
   alternates: {
-    canonical: '/how-it-works',
+    canonical: 'https://www.oqtutor.com/how-it-works',
   },
   openGraph: {
-    url: '/how-it-works',
+    url: 'https://www.oqtutor.com/how-it-works',
   },
 };
 

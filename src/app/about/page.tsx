@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   description: 'Discover the mission and values behind OQTutor. We make structured online Quran learning accessible and engaging for Muslim families worldwide.',
   keywords: ['online quran academy mission', 'about oqtutor', 'quran learning principles', 'islamic tutoring values'],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://www.oqtutor.com/about',
   },
   openGraph: {
-    url: '/about',
+    url: 'https://www.oqtutor.com/about',
   },
 };
 

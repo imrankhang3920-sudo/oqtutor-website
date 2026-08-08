@@ -4,14 +4,7 @@ import ContactPageClient from './ContactPageClient';
 
 export const dynamic = 'force-dynamic';
 
-interface Props {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-  const resolvedParams = await searchParams;
-  const hasParams = Object.keys(resolvedParams).length > 0;
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Contact Us | OQTutor - Online Quran Academy',
     description: 'Contact OQTutor for any questions regarding our online Quran classes, pricing, or schedules. Support is available 24/7 via phone, email, and WhatsApp.',
@@ -22,10 +15,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     openGraph: {
       url: 'https://www.oqtutor.com/contact',
     },
-    robots: hasParams ? {
-      index: false,
-      follow: true,
-    } : {
+    robots: {
       index: true,
       follow: true,
     },

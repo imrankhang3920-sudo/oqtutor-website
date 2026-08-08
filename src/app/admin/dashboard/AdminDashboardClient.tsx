@@ -154,7 +154,7 @@ export default function AdminDashboardClient({
     siteTitle: 'OQTutor | Online Quran Classes with Certified Male & Female Tutors',
     metaDescription: 'Learn Quran Online with certified male & female tutors. Online Quran Classes for kids in UK & adults: Tajweed, Hifz, Arabic, Islamic Studies. Free Trial Class!',
     keywords: ['Online Quran Tutor', 'Quran Classes for Kids', 'Tajweed Classes', 'Hifz Course', 'Noorani Qaida', 'Online Quran Academy'],
-    canonicalUrl: 'https://oqtutor.com',
+    canonicalUrl: 'https://www.oqtutor.com',
     ogTitle: 'OQTutor | Online Quran Academy',
     ogDescription: 'Join OQTutor for one-to-one online Quran classes, Tajweed, Hifz, Noorani Qaida and Islamic Studies.',
     ogImage: '/logo.jpg',

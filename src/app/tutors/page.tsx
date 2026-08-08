@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description: 'Study with certified male and female Quran tutors online. Our teachers hold authentic Ijazah qualifications. Select your preferred bilingual tutor.',
   keywords: ['online quran teacher', 'male quran tutor', 'female quran teacher', 'qualified quran tutors', 'private quran teacher'],
   alternates: {
-    canonical: '/tutors',
+    canonical: 'https://www.oqtutor.com/tutors',
   },
   openGraph: {
-    url: '/tutors',
+    url: 'https://www.oqtutor.com/tutors',
   },
 };
 

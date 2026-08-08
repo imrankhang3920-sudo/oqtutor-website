@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description: 'Find answers to common questions about OQTutor, including class schedules, timezone adjustments, choosing female teachers, pricing, and trial registrations.',
   keywords: ['online quran academy FAQ', 'quran learning questions', 'online tajweed classes FAQ', 'hifz memorization answers'],
   alternates: {
-    canonical: '/faq',
+    canonical: 'https://www.oqtutor.com/faq',
   },
   openGraph: {
-    url: '/faq',
+    url: 'https://www.oqtutor.com/faq',
   },
 };
 
