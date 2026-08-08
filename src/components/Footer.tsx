@@ -33,6 +33,7 @@ export default function Footer({
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
     { name: 'Quran Classes USA', href: '/locations/usa' },
+    { name: 'Quran Classes Illinois', href: '/locations/usa/illinois' },
     { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
     { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
     { name: 'Quran Classes Texas', href: '/locations/usa/texas' },

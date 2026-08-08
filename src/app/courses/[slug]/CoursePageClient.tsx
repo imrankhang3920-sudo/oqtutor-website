@@ -464,8 +464,8 @@ export default function CoursePageClient({
                 </div>
               )}
               <div className="flex items-center space-x-4 border-t border-card-border/50 pt-6">
-                <div className="h-12 w-12 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold text-sm shrink-0">
-                  OQ
+                <div className="h-10 w-10 rounded-full bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
+                  <Users className="h-5 w-5" />
                 </div>
                 <div>
                   <h4 className="font-bold text-xs sm:text-sm">Assigned Specifically</h4>
