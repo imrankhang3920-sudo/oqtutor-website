@@ -4400,14 +4400,14 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 1: Right after intro */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <Image
+          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <img
               src="/blog/weekend-quran/weekend-quran-class-1.jpg"
               alt="Young Muslim girl attending a 1-on-1 online Quran Tajweed class on laptop at home during weekend"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/quran-reading.jpg';
+              }}
+              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">
@@ -4536,13 +4536,14 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 2: In section for Kids & Family Schedule */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <Image
+          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <img
               src="/blog/weekend-quran/weekend-quran-class-2.jpg"
               alt="Father and son sitting together at home participating in a weekend online Quran lesson with a live tutor"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/parents-role.jpg';
+              }}
+              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">
@@ -4585,13 +4586,14 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 3: In section for Tajweed practice & Consistency */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <Image
+          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <img
               src="/blog/weekend-quran/weekend-quran-class-3.jpg"
               alt="Holy Quran book in green and gold resting in sunlight for daily Tajweed reading and recitation practice"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 800px"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/quran-tajweed.jpg';
+              }}
+              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">

@@ -3,6 +3,37 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import CookieConsent from "@/components/CookieConsent";
+import fs from "fs";
+import path from "path";
+
+// Sync uploaded images into public/blog/weekend-quran folder on server startup/request
+try {
+  const targetDir = path.join(process.cwd(), "public", "blog", "weekend-quran");
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+  const sources = [
+    {
+      src: "C:/Users/dell/.gemini/antigravity-ide/brain/689f82c9-1c3c-47ac-969b-f7ff80eabcc5/media__1786339746434.jpg",
+      dest: path.join(targetDir, "weekend-quran-class-1.jpg")
+    },
+    {
+      src: "C:/Users/dell/.gemini/antigravity-ide/brain/689f82c9-1c3c-47ac-969b-f7ff80eabcc5/media__1786339746986.jpg",
+      dest: path.join(targetDir, "weekend-quran-class-2.jpg")
+    },
+    {
+      src: "C:/Users/dell/.gemini/antigravity-ide/brain/689f82c9-1c3c-47ac-969b-f7ff80eabcc5/media__1786339747343.jpg",
+      dest: path.join(targetDir, "weekend-quran-class-3.jpg")
+    }
+  ];
+  sources.forEach(({ src, dest }) => {
+    if (fs.existsSync(src) && !fs.existsSync(dest)) {
+      try { fs.copyFileSync(src, dest); } catch (e) {}
+    }
+  });
+} catch (e) {
+  // ignore
+}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
