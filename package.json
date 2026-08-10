@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node -e \"try{require('fs').unlinkSync('src/app/favicon.ico')}catch(e){}\"",
+    "prebuild": "node scripts/copy_uploaded_images.js && node -e \"try{require('fs').unlinkSync('src/app/favicon.ico')}catch(e){}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

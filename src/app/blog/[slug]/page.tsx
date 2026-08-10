@@ -7,6 +7,41 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart, AlertTriangle, Check, X, HelpCircle, Sparkles } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
+import fs from 'fs';
+import path from 'path';
+
+// Ensure weekend quran blog images exist in public/blog/weekend-quran
+try {
+  const targetDir = path.join(process.cwd(), 'public/blog/weekend-quran');
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+  const sourceFiles = [
+    {
+      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746434.jpg',
+      dest: path.join(targetDir, 'weekend-quran-class-1.jpg')
+    },
+    {
+      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746986.jpg',
+      dest: path.join(targetDir, 'weekend-quran-class-2.jpg')
+    },
+    {
+      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339747343.jpg',
+      dest: path.join(targetDir, 'weekend-quran-class-3.jpg')
+    }
+  ];
+  sourceFiles.forEach(({ src, dest }) => {
+    if (fs.existsSync(src)) {
+      try {
+        fs.copyFileSync(src, dest);
+      } catch (e) {
+        // ignore
+      }
+    }
+  });
+} catch (e) {
+  // ignore
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -4362,6 +4397,23 @@ function ArticleContentWeekendQuran() {
         <p className="text-base leading-relaxed text-muted-text">
           If school, work, and family life have made a daily Quran routine unrealistic, dedicating focused weekend sessions to reading and Tajweed is often more effective than squeezing in rushed weekday lessons anyway. The student isn&apos;t tired from a full school day, there&apos;s no homework competing for attention, and the lesson can actually take as long as it needs to.
         </p>
+
+        {/* Image 1: Right after intro */}
+        <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/blog/weekend-quran/weekend-quran-class-1.jpg"
+              alt="Young Muslim girl attending a 1-on-1 online Quran Tajweed class on laptop at home during weekend"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text mt-3 font-medium">
+            One-on-one weekend Quran classes give students focused attention to master Tajweed rules without weekday pressure.
+          </p>
+        </div>
       </section>
 
       {/* What a Weekend Tajweed Class Actually Looks Like */}
@@ -4481,6 +4533,23 @@ function ArticleContentWeekendQuran() {
             <p className="text-xs sm:text-sm text-muted-text">Ask whether the academy provides written progress notes after each class, not just a verbal &quot;he did well today.&quot; OQTutor tutors send parents monthly progress reports covering recitation speed and specific Tajweed points, so you&apos;re not guessing at what&apos;s actually improving.</p>
           </li>
         </ul>
+
+        {/* Image 2: In section for Kids & Family Schedule */}
+        <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/blog/weekend-quran/weekend-quran-class-2.jpg"
+              alt="Father and son sitting together at home participating in a weekend online Quran lesson with a live tutor"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text mt-3 font-medium">
+            Parents can easily observe their child&apos;s live recitation progress and Tajweed development during weekend sessions.
+          </p>
+        </div>
+
         <p className="text-base text-muted-text pt-2">
           If you&apos;re weighing options for a child specifically, our guide on <Link href="/blog/select-right-online-quran-tutor" className="text-primary font-semibold hover:underline">choosing the right online Quran tutor</Link> and our piece on <Link href="/blog/tips-keep-kids-motivated-online-quran" className="text-primary font-semibold hover:underline">keeping kids motivated in online classes</Link> both go deeper into this.
         </p>
@@ -4513,6 +4582,22 @@ function ArticleContentWeekendQuran() {
           <li><strong className="text-foreground">Track progress somewhere visible</strong> — a shared note, a simple checklist, or a parent dashboard — so improvement is obvious even when it&apos;s gradual.</li>
           <li><strong className="text-foreground">Don&apos;t skip weeks &quot;just this once.&quot;</strong> Skipped weekend sessions are far more likely to become skipped months than skipped weekday ones, since there&apos;s no weekly routine pulling you back.</li>
         </ul>
+
+        {/* Image 3: In section for Tajweed practice & Consistency */}
+        <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/blog/weekend-quran/weekend-quran-class-3.jpg"
+              alt="Holy Quran book in green and gold resting in sunlight for daily Tajweed reading and recitation practice"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text mt-3 font-medium">
+            Dedicating a fixed weekend block to reading the Holy Quran with correct Tajweed ensures steady spiritual growth.
+          </p>
+        </div>
       </section>
 
       {/* Frequently Asked Questions */}

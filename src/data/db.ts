@@ -249,6 +249,38 @@ let inMemoryCache: DatabaseSchema | null = null;
 
 // Synchronous read from memory cache or local db.json (with bundled JSON fallback)
 export function readDB(): DatabaseSchema {
+  try {
+    const targetDir = path.join(process.cwd(), 'public/blog/weekend-quran');
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
+    }
+    const sourceFiles = [
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746434.jpg',
+        dest: path.join(targetDir, 'weekend-quran-class-1.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746986.jpg',
+        dest: path.join(targetDir, 'weekend-quran-class-2.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339747343.jpg',
+        dest: path.join(targetDir, 'weekend-quran-class-3.jpg')
+      }
+    ];
+    sourceFiles.forEach(({ src, dest }) => {
+      if (fs.existsSync(src) && !fs.existsSync(dest)) {
+        try {
+          fs.copyFileSync(src, dest);
+        } catch (e) {
+          // ignore
+        }
+      }
+    });
+  } catch (e) {
+    // ignore
+  }
+
   if (inMemoryCache) {
     return inMemoryCache;
   }

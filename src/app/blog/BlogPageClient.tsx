@@ -43,7 +43,7 @@ const mapping: Record<string, string> = {
   'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
   'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
-  'weekend-quran-classes-tajweed-own-pace': '/quran-reading.jpg',
+  'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
