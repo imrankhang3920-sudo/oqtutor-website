@@ -120,6 +120,28 @@ export default async function USALocationsHubPage() {
               ))}
             </div>
 
+            {/* Dedicated Kids USA Feature Banner */}
+            <div className="max-w-4xl mx-auto mb-16 glass p-8 rounded-3xl border border-primary/30 bg-primary/5 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+              <div className="space-y-2 text-left">
+                <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block">
+                  Specialized Program for Kids
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+                  Online Quran Classes for Kids in USA
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text max-w-xl leading-relaxed">
+                  Interactive 1-on-1 online Quran classes tailored for children across EST, CST, and PST time zones. Certified English-speaking tutors, Noorani Qaida basics, Tajweed & Hifz.
+                </p>
+              </div>
+              <Link 
+                href="/online-quran-classes-for-kids-usa" 
+                className="shrink-0 inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-primary/20 hover:shadow-lg transition-all"
+              >
+                <span>View Kids Program</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
             {/* Coming Soon States */}
             <div className="max-w-4xl mx-auto glass p-8 rounded-3xl border border-card-border/60 bg-foreground/[0.005]">
               <h3 className="text-base font-bold text-foreground mb-6 flex items-center space-x-2">
@@ -138,6 +160,10 @@ export default async function USALocationsHubPage() {
                 Don't see your state? You can still register. Our general {" "}
                 <Link href="/locations/usa" className="text-primary hover:underline font-semibold">
                   Online Quran Classes USA
+                </Link>{" "}
+                or {" "}
+                <Link href="/online-quran-classes-for-kids-usa" className="text-primary hover:underline font-semibold">
+                  Kids Quran Classes USA
                 </Link>{" "}
                 program supports students in all 50 states.
               </p>
