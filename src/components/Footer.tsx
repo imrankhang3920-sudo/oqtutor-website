@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactData, FooterNavData } from '@/data/db';
 import Image from 'next/image';
 import { trackCloseConvertLead } from '@/lib/analytics';
+import TrustBox from '@/components/TrustBox';
 
 export default function Footer({ 
   data, 
@@ -168,6 +169,11 @@ export default function Footer({
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Trustpilot Review Collector Widget */}
+        <div className="py-4 mb-4 flex justify-center items-center">
+          <TrustBox className="w-full max-w-sm flex justify-center" />
         </div>
 
         {/* Divider */}

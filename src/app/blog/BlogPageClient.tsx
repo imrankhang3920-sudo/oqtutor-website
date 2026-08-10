@@ -43,6 +43,7 @@ const mapping: Record<string, string> = {
   'how-online-quran-classes-help-busy-muslim-families-in-illinois': '/illinois-1.jpg',
   'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
+  'weekend-quran-classes-tajweed-own-pace': '/quran-reading.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -72,6 +73,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': 'Busy family in Illinois learning Quran online',
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
     'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
+    'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };

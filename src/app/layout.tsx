@@ -174,6 +174,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         <ThemeProvider>
+          <Script
+            id="trustpilot-widget-script"
+            src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+            strategy="afterInteractive"
+          />
           <CookieConsent />
           <AnalyticsTrackers />
           {children}

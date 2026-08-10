@@ -32,12 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isTarteelVsTajweedBlog = resolvedParams.slug === 'tajweed-vs-tarteel-difference';
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog;
+  const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog;
 
   const metaTitle = isOnlineVsInPersonBlog
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
     : isKidsUsaBlog
     ? blog.title
+    : isWeekendQuranBlog
+    ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : `${blog.title} | OQTutor`;
 
   return {
@@ -97,6 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isTarteelVsTajweedBlog = resolvedParams.slug === 'tajweed-vs-tarteel-difference';
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
+  const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -120,6 +124,52 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+
+      {isWeekendQuranBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can a complete beginner start with weekend-only classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — starting with Noorani Qaida on weekends works the same as starting on weekdays. The foundation doesn't change; only the timing does."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it usually take to learn Tajweed properly?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends heavily on the student's starting point and how much they practice between lessons — there's no fixed timeline that applies to everyone, and be skeptical of any program that promises one."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is one weekend session a week enough, or should it be two?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "One focused session can work if practice happens between classes. Two sessions give more room for correction and repetition without relying as much on independent practice, which matters more for younger children."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I try a class before committing to a weekend schedule?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — a real trial should mean sitting in on an actual lesson with the tutor who'd be teaching regularly, not a sales call. You can book a free trial class to see how a session runs before deciding on a schedule."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isFemaleTeacherBlog && (
         <script
@@ -551,6 +601,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentOvercomeChallenges />
             ) : isFemaleTeacherBlog ? (
               <ArticleContentFemaleTeacher />
+            ) : isWeekendQuranBlog ? (
+              <ArticleContentWeekendQuran />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -4289,6 +4341,246 @@ function ArticleContentFemaleTeacher() {
               className="px-8 py-3 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-bold transition-all"
             >
               Browse Female Tutors
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentWeekendQuran() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Every student hits a different wall. Some kids sail through the Arabic alphabet and then get stuck on a single Tajweed rule for weeks. Some adults can read fluently but have never actually been corrected on their pronunciation, so mistakes they made at age eight are still there at thirty. A rigid, one-size-fits-all weekday schedule doesn&apos;t leave much room to slow down for the parts that need it — which is exactly the problem weekend classes solve.
+        </p>
+        <p className="text-base leading-relaxed text-muted-text">
+          If school, work, and family life have made a daily Quran routine unrealistic, dedicating focused weekend sessions to reading and Tajweed is often more effective than squeezing in rushed weekday lessons anyway. The student isn&apos;t tired from a full school day, there&apos;s no homework competing for attention, and the lesson can actually take as long as it needs to.
+        </p>
+      </section>
+
+      {/* What a Weekend Tajweed Class Actually Looks Like */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What a Weekend Tajweed Class Actually Looks Like
+        </h2>
+        <p className="text-base text-muted-text">
+          A weekend slot doesn&apos;t mean a lighter version of a regular class — it&apos;s the same one-on-one lesson, just placed somewhere it fits. A typical session moves through:
+        </p>
+        <ul className="space-y-2.5 text-sm text-muted-text pl-2">
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>A short recap of the last lesson&apos;s trouble spots</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>One new Tajweed rule or reading concept</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>Live reading practice, with the tutor correcting in real time</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>Repetition of the specific word or verse that caused the mistake</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>A quick note on what to review before the next class</span>
+          </li>
+        </ul>
+        <div className="p-5 rounded-2xl bg-primary/5 border border-primary/20 space-y-2 mt-4">
+          <p className="text-sm font-semibold text-foreground">
+            The part that matters most is the second-to-last step. A teacher who lets small pronunciation errors slide because &quot;it&apos;s close enough&quot; isn&apos;t really teaching Tajweed — they&apos;re just supervising reading. Correction in the moment, not after the fact, is what actually changes how a student recites.
+          </p>
+        </div>
+      </section>
+
+      {/* Is Weekend-Only Enough to Make Progress? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Is Weekend-Only Enough to Make Progress?
+        </h2>
+        <p className="text-base text-muted-text">
+          Yes, provided the time is used well. Two 45-minute weekend sessions with focused correction will usually beat five rushed 15-minute weekday sessions where the student is half paying attention. What matters more than frequency is:
+        </p>
+        <ol className="space-y-4 text-sm text-muted-text">
+          <li className="flex items-start space-x-3 p-4 rounded-2xl glass border border-card-border">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div>
+              <strong className="text-foreground">A teacher who actually assesses starting level first</strong>, rather than working through a generic syllabus. A student who&apos;s never read Arabic starts with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>; a student who reads but wants correct pronunciation moves into <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> directly.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 p-4 rounded-2xl glass border border-card-border">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div>
+              <strong className="text-foreground">Practice between sessions.</strong> Even five minutes of re-reading the previous lesson&apos;s verse on a weekday keeps the weekend session from starting at zero every time.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 p-4 rounded-2xl glass border border-card-border">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div>
+              <strong className="text-foreground">Realistic goals.</strong> Mastering one Tajweed rule properly is worth more than being &quot;introduced&quot; to five.
+            </div>
+          </li>
+        </ol>
+        <p className="text-base text-muted-text pt-2">
+          If Tajweed already feels comfortable and the goal shifts toward memorization, that&apos;s a natural next step into a structured <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz program</Link> — weekend-only Hifz works too, it just means memorization targets get set weekly instead of daily.
+        </p>
+      </section>
+
+      {/* Why Learning Pace Actually Matters Here */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Learning Pace Actually Matters Here
+        </h2>
+        <p className="text-base text-muted-text">
+          The reason personalized, weekend-friendly classes work better for a lot of students isn&apos;t the day of the week — it&apos;s the pacing. In a group class, the teacher has to pick one speed for everyone, which means:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border">
+            <p className="text-xs sm:text-sm text-muted-text">
+              <strong className="text-foreground block mb-1">Falling Behind:</strong> A student who needs more repetition on a Makharij point falls behind and starts guessing instead of correcting.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border">
+            <p className="text-xs sm:text-sm text-muted-text">
+              <strong className="text-foreground block mb-1">Losing Interest:</strong> A student who&apos;s already got it sits through material they don&apos;t need, and loses interest.
+            </p>
+          </div>
+        </div>
+        <p className="text-base text-muted-text">
+          One-on-one weekend lessons remove that trade-off entirely. If a child keeps mixing up a letter pair, the tutor can spend the whole session on just that instead of moving on to stay &quot;on schedule.&quot; That&apos;s the actual argument for going one-on-one — not convenience for its own sake, but that mistakes get caught and fixed instead of repeated for months.
+        </p>
+      </section>
+
+      {/* Is This a Good Setup for Kids Specifically? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Is This a Good Setup for Kids Specifically?
+        </h2>
+        <p className="text-base text-muted-text">
+          For kids with a full school week — homework, sports, weekday activities — yes, weekends are often the only time that isn&apos;t already spoken for. A few things make weekend classes work better for children specifically:
+        </p>
+        <ul className="space-y-3 text-sm text-muted-text">
+          <li className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <strong className="text-foreground text-base block">Shorter isn&apos;t always better.</strong>
+            <p className="text-xs sm:text-sm text-muted-text">A tired child rushed through 20 minutes learns less than a rested child given 40.</p>
+          </li>
+          <li className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <strong className="text-foreground text-base block">Consistency beats intensity.</strong>
+            <p className="text-xs sm:text-sm text-muted-text">The same time every Saturday or Sunday, week after week, builds the routine — an irregular schedule is the most common reason kids lose momentum.</p>
+          </li>
+          <li className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <strong className="text-foreground text-base block">Feedback parents can actually see.</strong>
+            <p className="text-xs sm:text-sm text-muted-text">Ask whether the academy provides written progress notes after each class, not just a verbal &quot;he did well today.&quot; OQTutor tutors send parents monthly progress reports covering recitation speed and specific Tajweed points, so you&apos;re not guessing at what&apos;s actually improving.</p>
+          </li>
+        </ul>
+        <p className="text-base text-muted-text pt-2">
+          If you&apos;re weighing options for a child specifically, our guide on <Link href="/blog/select-right-online-quran-tutor" className="text-primary font-semibold hover:underline">choosing the right online Quran tutor</Link> and our piece on <Link href="/blog/tips-keep-kids-motivated-online-quran" className="text-primary font-semibold hover:underline">keeping kids motivated in online classes</Link> both go deeper into this.
+        </p>
+      </section>
+
+      {/* What About Adults? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What About Adults?
+        </h2>
+        <p className="text-base text-muted-text">
+          Adults are usually the ones who benefit most from weekend flexibility, because their weekday schedule is the least negotiable. There&apos;s no separate &quot;adult beginner&quot; curriculum — an adult starting from zero follows the same Noorani Qaida and reading progression a child would, just often faster, since adult learners tend to grasp grammar-adjacent concepts (like why a rule applies) more quickly than young children do.
+        </p>
+        <p className="text-base text-muted-text">
+          The one thing that trips adults up more than kids: correcting recitation habits that have been in place for twenty or thirty years is genuinely harder than learning correctly the first time. It&apos;s normal for this to take longer than expected — that&apos;s not a sign of a bad program, it&apos;s just how habit correction works.
+        </p>
+      </section>
+
+      {/* Staying Consistent With a Weekend-Only Schedule */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Staying Consistent With a Weekend-Only Schedule
+        </h2>
+        <p className="text-base text-muted-text">
+          The biggest risk with weekend classes isn&apos;t the pace — it&apos;s the schedule quietly slipping. A few things that actually hold it together:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-text list-disc pl-5">
+          <li><strong className="text-foreground">Treat the time slot like a fixed appointment</strong>, not a &quot;whenever we&apos;re free&quot; block.</li>
+          <li><strong className="text-foreground">Review the previous lesson before the new one starts</strong>, even just for five minutes.</li>
+          <li><strong className="text-foreground">Track progress somewhere visible</strong> — a shared note, a simple checklist, or a parent dashboard — so improvement is obvious even when it&apos;s gradual.</li>
+          <li><strong className="text-foreground">Don&apos;t skip weeks &quot;just this once.&quot;</strong> Skipped weekend sessions are far more likely to become skipped months than skipped weekday ones, since there&apos;s no weekly routine pulling you back.</li>
+        </ul>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Can a complete beginner start with weekend-only classes?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Yes — starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> on weekends works the same as starting on weekdays. The foundation doesn&apos;t change; only the timing does.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How long does it usually take to learn Tajweed properly?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              It depends heavily on the student&apos;s starting point and how much they practice between lessons — there&apos;s no fixed timeline that applies to everyone, and be skeptical of any program that promises one.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Is one weekend session a week enough, or should it be two?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              One focused session can work if practice happens between classes. Two sessions give more room for correction and repetition without relying as much on independent practice, which matters more for younger children.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Can I try a class before committing to a weekend schedule?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Yes — a real trial should mean sitting in on an actual lesson with the tutor who&apos;d be teaching regularly, not a sales call. You can <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">book a free trial class</Link> to see how a session runs before deciding on a schedule.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Getting Started */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Getting Started
+        </h2>
+        <p className="text-base leading-relaxed text-muted-text">
+          If a weekday routine hasn&apos;t stuck, weekend classes with proper Tajweed correction are worth trying before assuming online Quran learning &quot;doesn&apos;t work&quot; for your family — often it&apos;s the schedule that was the problem, not the format.
+        </p>
+        <p className="text-base leading-relaxed text-muted-text">
+          You can see current course options on our <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing page</Link>, browse tutor profiles at <Link href="/tutors" className="text-primary font-semibold hover:underline">our tutors page</Link>, or check the <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ</Link> for specifics on scheduling and rescheduling before you book.
+        </p>
+
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+          <h3 className="text-xl sm:text-2xl font-black text-foreground">Start Learning Tajweed on Your Schedule</h3>
+          <p className="text-sm text-muted-text max-w-xl mx-auto">
+            Book a 100% free trial session with one of our certified online Quran tutors this weekend.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/book-free-trial"
+              className="px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2"
+            >
+              <span>Book Free Trial Class</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/pricing"
+              className="px-8 py-3 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-bold transition-all"
+            >
+              View Class Pricing
             </Link>
           </div>
         </div>
