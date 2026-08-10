@@ -7,41 +7,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart, AlertTriangle, Check, X, HelpCircle, Sparkles } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
-import fs from 'fs';
-import path from 'path';
-
-// Ensure weekend quran blog images exist in public/blog/weekend-quran
-try {
-  const targetDir = path.join(process.cwd(), 'public/blog/weekend-quran');
-  if (!fs.existsSync(targetDir)) {
-    fs.mkdirSync(targetDir, { recursive: true });
-  }
-  const sourceFiles = [
-    {
-      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746434.jpg',
-      dest: path.join(targetDir, 'weekend-quran-class-1.jpg')
-    },
-    {
-      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746986.jpg',
-      dest: path.join(targetDir, 'weekend-quran-class-2.jpg')
-    },
-    {
-      src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339747343.jpg',
-      dest: path.join(targetDir, 'weekend-quran-class-3.jpg')
-    }
-  ];
-  sourceFiles.forEach(({ src, dest }) => {
-    if (fs.existsSync(src)) {
-      try {
-        fs.copyFileSync(src, dest);
-      } catch (e) {
-        // ignore
-      }
-    }
-  });
-} catch (e) {
-  // ignore
-}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -4400,14 +4365,14 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 1: Right after intro */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <img
-              src="/blog/weekend-quran/weekend-quran-class-1.jpg"
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/quran-reading.jpg"
               alt="Young Muslim girl attending a 1-on-1 online Quran Tajweed class on laptop at home during weekend"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/quran-reading.jpg';
-              }}
-              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">
@@ -4536,14 +4501,13 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 2: In section for Kids & Family Schedule */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <img
-              src="/blog/weekend-quran/weekend-quran-class-2.jpg"
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/parents-role.jpg"
               alt="Father and son sitting together at home participating in a weekend online Quran lesson with a live tutor"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/parents-role.jpg';
-              }}
-              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">
@@ -4586,14 +4550,13 @@ function ArticleContentWeekendQuran() {
 
         {/* Image 3: In section for Tajweed practice & Consistency */}
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-foreground/5">
-            <img
-              src="/blog/weekend-quran/weekend-quran-class-3.jpg"
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/quran-tajweed.jpg"
               alt="Holy Quran book in green and gold resting in sunlight for daily Tajweed reading and recitation practice"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/quran-tajweed.jpg';
-              }}
-              className="w-full h-64 sm:h-96 object-cover rounded-2xl"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           <p className="text-xs text-center text-muted-text mt-3 font-medium">
