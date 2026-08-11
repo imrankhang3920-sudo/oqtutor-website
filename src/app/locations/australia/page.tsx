@@ -18,6 +18,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "Enroll in online Quran classes Australia. Custom tutor matching for Australia's diverse Muslim communities. One-on-one sessions, AUD pricing, free trial.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/australia",
+      languages: {
+        'en-AU': 'https://www.oqtutor.com/locations/australia',
+        'en-GB': 'https://www.oqtutor.com/locations/uk',
+        'en-US': 'https://www.oqtutor.com/locations/usa',
+        'en-CA': 'https://www.oqtutor.com/locations/canada',
+        'x-default': 'https://www.oqtutor.com/locations/usa',
+      },
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/australia",

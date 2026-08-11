@@ -31,6 +31,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "Find certified 1-on-1 online Quran classes by state in the USA. Study Noorani Qaida, Tajweed, Islamic Studies, and Hifz with flexible EST, CST, MST & PST schedules.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa",
+      languages: {
+        'en-US': 'https://www.oqtutor.com/locations/usa',
+        'en-GB': 'https://www.oqtutor.com/locations/uk',
+        'en-CA': 'https://www.oqtutor.com/locations/canada',
+        'en-AU': 'https://www.oqtutor.com/locations/australia',
+        'x-default': 'https://www.oqtutor.com/locations/usa',
+      },
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa",

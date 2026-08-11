@@ -14,13 +14,22 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes UK | One-to-One Vetted Tutors – OQTutor",
-    description: "Enroll in private online Quran classes UK with DBS-checked male & female tutors. Flexible UK timetables (GMT/BST), one-on-one sessions, free trial.",
+    title: "Online Quran Classes UK | One-to-One DBS Vetted Tutors – OQTutor",
+    description: "Enroll in private online Quran classes UK with DBS-checked male & female tutors. Flexible UK timetables (GMT/BST), one-on-one sessions, free trial & GBP pricing.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/uk",
+      languages: {
+        'en-GB': 'https://www.oqtutor.com/locations/uk',
+        'en-US': 'https://www.oqtutor.com/locations/usa',
+        'en-CA': 'https://www.oqtutor.com/locations/canada',
+        'en-AU': 'https://www.oqtutor.com/locations/australia',
+        'x-default': 'https://www.oqtutor.com/locations/usa',
+      },
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/uk",
+      title: "Online Quran Classes UK | One-to-One DBS Vetted Tutors – OQTutor",
+      description: "Enroll in private online Quran classes UK with DBS-checked male & female tutors. Flexible UK timetables (GMT/BST), one-on-one sessions, free trial & GBP pricing.",
     },
   };
 }
@@ -36,12 +45,69 @@ export default async function UKQuranClassesPage() {
   // Custom Hero Data matching UK requirements (intro: ~120 words)
   const customHeroData = {
     title: "Online Quran Classes UK",
-    subtitle: "Are you looking for professional, structured Online Quran Classes UK? At OQTutor, we understand the unique scheduling challenges that Muslim families face in the United Kingdom. Balancing state school timetables, after-school activities, and GMT/BST seasonal shifts can make attending a local mosque difficult. That is why our one-to-one classes are designed with maximum scheduling flexibility in mind. We offer custom sessions taught by certified male and female scholars directly from your home. Whether you are seeking basic recitation guides or advanced Tajweed programs, our courses provide a tailored experience that fits naturally into your family's weekly routine without any compromise.",
+    subtitle: "Are you looking for professional, structured Online Quran Classes UK? At OQTutor, we understand the unique scheduling challenges that Muslim families face across London, Birmingham, Manchester, Bradford, Leeds, Glasgow, and throughout the United Kingdom. Balancing state school timetables, after-school activities, and GMT/BST seasonal shifts can make attending a local madrasa or mosque difficult. That is why our one-to-one classes are designed with maximum UK scheduling flexibility in mind. We offer custom sessions taught by DBS-vetted male and female scholars directly from your home. Whether you are seeking basic Noorani Qaida recitation or advanced Tajweed and Hifz programs, our courses provide a tailored experience fitting naturally into your family's weekly routine.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
+  };
+
+  // Educational Organization Schema for UK
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor Online Quran Classes UK",
+    "url": "https://www.oqtutor.com/locations/uk",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Provider of certified 1-on-1 online Quran, Tajweed, and Islamic studies classes for kids and adults across the United Kingdom.",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "United Kingdom",
+        "identifier": "GB"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "UK Online Quran Tuition Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Starter UK Quran Class Plan",
+            "description": "3 sessions per week (30 mins each) with DBS-vetted male or female Quran tutor."
+          },
+          "price": "24.00",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Standard UK Quran Class Plan",
+            "description": "5 sessions per week (30 mins each) with DBS-vetted tutor, Tajweed & Islamic studies."
+          },
+          "price": "32.00",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Course",
+            "name": "Premium Daily UK Quran Class Plan",
+            "description": "Daily sessions (7/week) for intensive Hifz or Tajweed with dedicated teacher messaging."
+          },
+          "price": "40.00",
+          "priceCurrency": "GBP"
+        }
+      ]
+    }
   };
 
   // FAQ Schema
@@ -51,7 +117,7 @@ export default async function UKQuranClassesPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can we book a free trial class?",
+        "name": "Can we book a free trial class in the UK?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes! We offer a completely free trial lesson so you can experience our one-to-one teaching style, evaluate the virtual classroom, and get to know your tutor before starting a paid plan."
@@ -59,7 +125,7 @@ export default async function UKQuranClassesPage() {
       },
       {
         "@type": "Question",
-        "name": "What is the recommended starting age for kids?",
+        "name": "What is the recommended starting age for kids in the UK?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We recommend starting kids around age 4 or 5, beginning with Noorani Qaida to learn letter shapes and correct articulation in a fun, child-friendly format."
@@ -75,10 +141,10 @@ export default async function UKQuranClassesPage() {
       },
       {
         "@type": "Question",
-        "name": "How much do monthly classes cost?",
+        "name": "How much do monthly UK Quran classes cost in GBP (£)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our plans start at $30/month for 3 weekly classes. Standard plans with 5 weekly classes are $40/month, and premium daily plans are $50/month. Families can also avail sibling discounts."
+          "text": "Our UK plans start at £24/month for 3 weekly classes. Standard plans with 5 weekly classes are £32/month, and premium daily plans are £40/month. Families can also avail sibling discounts."
         }
       },
       {
@@ -130,6 +196,10 @@ export default async function UKQuranClassesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -302,75 +372,127 @@ export default async function UKQuranClassesPage() {
           </div>
         </section>
 
-        {/* Section 5: Fees & Plans (Dynamic Pricing) */}
+        {/* Section 5: Fees & Plans (UK GBP Pricing) */}
         <section className="py-20 border-t border-card-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">Clear Pricing</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-widest">Clear UK Pricing</span>
               <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground">
-                Online Quran Classes UK Fees
+                Online Quran Classes UK Fees (£ GBP)
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-                No contract, cancel anytime. Real prices dynamically fetched from our database. Plans are billed in USD (approximate GBP equivalents provided below).
+                Simple monthly plans tailored for UK families. Billed directly in British Pounds (£ GBP). Cancel anytime. No registration fees.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-              {dbData.pricing.map((plan) => {
-                const approxGbp = plan.price === "30" ? "24" : plan.price === "40" ? "32" : "40";
-                return (
-                  <div
-                    key={plan.id}
-                    className={`glass rounded-3xl border-card-border p-8 flex flex-col justify-between transition-all duration-300 relative ${
-                      plan.isPopular 
-                        ? 'ring-2 ring-primary bg-primary/[0.03] md:scale-105 shadow-xl shadow-primary/10 md:z-10' 
-                        : 'hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1'
-                    }`}
-                  >
-                    {plan.isPopular && (
-                      <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-md">
-                        Most Popular
-                      </div>
-                    )}
-
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">{plan.title}</h3>
-                      <div className="flex items-baseline mt-4 mb-1">
-                        <span className="text-4xl sm:text-5xl font-extrabold text-foreground">${plan.price}</span>
-                        <span className="text-sm text-muted-text ml-2">/ {plan.frequency}</span>
-                      </div>
-                      <span className="text-xs text-secondary font-medium block mb-6">
-                        (Approx. £{approxGbp} / month)
-                      </span>
-                      <div className="h-px bg-card-border w-full mb-6" />
-
-                      <ul className="space-y-4">
-                        {plan.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start space-x-3 text-sm text-foreground/80">
-                            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+              {[
+                {
+                  id: "uk-starter",
+                  title: "Starter Plan",
+                  price: "24",
+                  approxUsd: "30",
+                  frequency: "Month",
+                  features: [
+                    "3 Classes / Week",
+                    "30 Minutes sessions",
+                    "One-on-One UK timetabling",
+                    "DBS-Vetted Male & Female Tutors",
+                    "Noorani Qaida & Basic Recitation",
+                    "Flexible GMT/BST scheduling"
+                  ],
+                  isPopular: false,
+                  ctaText: "Book Free Trial"
+                },
+                {
+                  id: "uk-standard",
+                  title: "Standard Plan",
+                  price: "32",
+                  approxUsd: "40",
+                  frequency: "Month",
+                  features: [
+                    "5 Classes / Week",
+                    "30 Minutes sessions",
+                    "One-on-One UK timetabling",
+                    "DBS-Vetted Male & Female Tutors",
+                    "Structured Tajweed Rules",
+                    "Islamic Studies & Essential Duas",
+                    "Monthly Parent Progress Reports"
+                  ],
+                  isPopular: true,
+                  ctaText: "Book Free Trial"
+                },
+                {
+                  id: "uk-premium",
+                  title: "Premium Plan",
+                  price: "40",
+                  approxUsd: "50",
+                  frequency: "Month",
+                  features: [
+                    "Daily Classes (7/week)",
+                    "30 Minutes sessions",
+                    "One-on-One UK timetabling",
+                    "DBS-Vetted Male & Female Tutors",
+                    "Customized Hifz (Memorization)",
+                    "Quran Translation & Tafseer",
+                    "Direct Teacher Messaging",
+                    "Priority GMT/BST Support"
+                  ],
+                  isPopular: false,
+                  ctaText: "Book Free Trial"
+                }
+              ].map((plan) => (
+                <div
+                  key={plan.id}
+                  className={`glass rounded-3xl border-card-border p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                    plan.isPopular 
+                      ? 'ring-2 ring-primary bg-primary/[0.03] md:scale-105 shadow-xl shadow-primary/10 md:z-10' 
+                      : 'hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1'
+                  }`}
+                >
+                  {plan.isPopular && (
+                    <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                      Most Popular
                     </div>
+                  )}
 
-                    <div className="mt-10">
-                      <Link
-                        href="/book-free-trial"
-                        className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
-                          plan.isPopular
-                            ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30'
-                            : 'bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border'
-                        }`}
-                      >
-                        {plan.ctaText}
-                      </Link>
-                      <p className="text-[10px] text-center text-muted-text mt-3">Cancel anytime. 7-day money-back guarantee.</p>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">{plan.title}</h3>
+                    <div className="flex items-baseline mt-4 mb-1">
+                      <span className="text-4xl sm:text-5xl font-extrabold text-foreground">£{plan.price}</span>
+                      <span className="text-sm text-muted-text ml-2">/ {plan.frequency}</span>
                     </div>
+                    <span className="text-xs text-muted-text font-medium block mb-6">
+                      (Approx. ${plan.approxUsd} USD / month)
+                    </span>
+                    <div className="h-px bg-card-border w-full mb-6" />
+
+                    <ul className="space-y-4">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start space-x-3 text-sm text-foreground/80">
+                          <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                );
-              })}
+
+                  <div className="mt-10">
+                    <Link
+                      href="/book-free-trial"
+                      className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+                        plan.isPopular
+                          ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30'
+                          : 'bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border'
+                      }`}
+                    >
+                      {plan.ctaText}
+                    </Link>
+                    <p className="text-[10px] text-center text-muted-text mt-3">Cancel anytime. 7-day money-back guarantee.</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

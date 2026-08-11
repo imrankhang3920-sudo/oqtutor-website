@@ -18,6 +18,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "Enroll in private online Quran classes Canada with certified male & female tutors. Flexible schedules across all Canadian time zones, free trial, CAD pricing.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/canada",
+      languages: {
+        'en-CA': 'https://www.oqtutor.com/locations/canada',
+        'en-GB': 'https://www.oqtutor.com/locations/uk',
+        'en-US': 'https://www.oqtutor.com/locations/usa',
+        'en-AU': 'https://www.oqtutor.com/locations/australia',
+        'x-default': 'https://www.oqtutor.com/locations/usa',
+      },
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/canada",
