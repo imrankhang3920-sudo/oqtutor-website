@@ -28,10 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const siteUrl = 'https://www.oqtutor.com';
   const canonicalUrl = `${siteUrl}/courses/${course.slug}`;
+  const publishedTime = course.createdAt || '2025-01-15T00:00:00.000Z';
+  const modifiedTime = course.updatedAt || new Date().toISOString();
+  const authorName = course.authorName || 'Qari Imran Hussain (Ijazah Certified Senior Instructor)';
 
   return {
     title: course.seoTitle,
     description: course.metaDescription,
+    authors: [{ name: authorName }],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -39,7 +43,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: course.seoTitle,
       description: course.metaDescription,
       url: canonicalUrl,
-      type: 'website',
+      type: 'article',
+      publishedTime,
+      modifiedTime,
+      authors: [authorName],
       siteName: 'Online Quran Tutor',
       images: [
         {
@@ -100,10 +107,18 @@ export default async function CoursePage({ params }: Props) {
     "@type": "Course",
     "name": course.title,
     "description": course.description,
+    "url": `https://oqtutor.com/courses/${course.slug}`,
+    "inLanguage": "en",
+    "educationalCredentialAwarded": "Ijazah Certification",
     "provider": {
       "@type": "Organization",
       "name": "Online Quran Tutor",
       "sameAs": "https://oqtutor.com"
+    },
+    "author": {
+      "@type": "Person",
+      "name": course.authorName || "Qari Imran Hussain",
+      "jobTitle": "Senior Tajweed Instructor"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",
@@ -152,7 +167,7 @@ export default async function CoursePage({ params }: Props) {
       />
 
       <Navbar />
-      <CoursePageClient course={course} contactData={dbData.contact} />
+      <CoursePageClient course={course} contactData={dbData.contact} testimonials={dbData.testimonials || []} />
       <Footer data={dbData.contact} />
     </>
   );

@@ -377,7 +377,10 @@
           "question": "Can adults join this course, or is it only for children?",
           "answer": "Both. We regularly teach adults who learned to read Quran as children but never formally studied Tajweed, alongside children as young as 8."
         }
-      ]
+      ],
+      "updatedAt": "2026-08-11T00:00:00.000Z",
+      "createdAt": "2025-01-15T00:00:00.000Z",
+      "authorName": "Qari Imran Hussain (Ijazah Certified Senior Instructor)"
     },
     {
       "id": "course-4",
@@ -3611,6 +3614,22 @@
       "location": "Toronto, Canada",
       "rating": 5,
       "text": "We signed up both our children for Hifz-ul-Quran classes. The tutors are highly professional and provide weekly reports. The portal is easy to use, and customer support is very responsive."
+    },
+    {
+      "id": "test-tajweed-1",
+      "name": "[PLACEHOLDER — Student/Parent Name]",
+      "relation": "Tajweed Student",
+      "location": "[PLACEHOLDER — City, Country]",
+      "rating": 5,
+      "text": "[PLACEHOLDER — insert real student quote regarding Tajweed course progress and teacher feedback]"
+    },
+    {
+      "id": "test-tajweed-2",
+      "name": "[PLACEHOLDER — Student/Parent Name]",
+      "relation": "Tajweed Student",
+      "location": "[PLACEHOLDER — City, Country]",
+      "rating": 5,
+      "text": "[PLACEHOLDER — insert real student quote regarding mastering Makharij and Tajweed rules]"
     }
   ],
   "contact": {

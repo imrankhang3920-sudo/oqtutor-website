@@ -56,6 +56,9 @@ export interface CourseData {
   curriculumSteps: { title: string; description: string }[];
   teachingMethod: string;
   faqs: { question: string; answer: string }[];
+  updatedAt?: string;
+  createdAt?: string;
+  authorName?: string;
 }
 
 export interface PricingData {

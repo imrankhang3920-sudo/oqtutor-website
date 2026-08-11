@@ -4,18 +4,22 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BookOpen, Award, Clock, Calendar, Users, 
-  CheckCircle, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star
+  CheckCircle, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
+  Play, UserCheck, ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
-import { CourseData, ContactData } from '@/data/db';
+import { CourseData, ContactData, TestimonialData } from '@/data/db';
 import Image from 'next/image';
+import Testimonials from '@/components/Testimonials';
 
 export default function CoursePageClient({
   course,
-  contactData
+  contactData,
+  testimonials = []
 }: {
   course: CourseData;
   contactData: ContactData;
+  testimonials?: TestimonialData[];
 }) {
   if (course.slug === 'noorani-qaida') {
     return <NooraniQaidaContent course={course} contactData={contactData} />;
@@ -97,9 +101,17 @@ export default function CoursePageClient({
             
             {/* Left Hero Content */}
             <div className="lg:col-span-7 text-center lg:text-left">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Premium Curriculum
-              </span>
+              <div className="flex flex-wrap items-center gap-3 mb-3 justify-center lg:justify-start">
+                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                  Premium Curriculum
+                </span>
+                <span className="text-xs text-muted-text flex items-center space-x-1.5 bg-foreground/5 border border-card-border rounded-full px-3 py-1">
+                  <Calendar className="h-3.5 w-3.5 text-primary" />
+                  <span>
+                    Last updated: {course.updatedAt ? new Date(course.updatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : 'August 2026'}
+                  </span>
+                </span>
+              </div>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
                 {course.seoTitle}
               </h1>
@@ -141,8 +153,8 @@ export default function CoursePageClient({
               </div>
             </div>
 
-            {/* Right Hero Image Card */}
-            <div className="lg:col-span-5 flex justify-center">
+            {/* Right Hero Image & Video Card */}
+            <div className="lg:col-span-5 flex flex-col items-center">
               <div className="relative max-w-sm w-full">
                 <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
                 <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
@@ -160,6 +172,20 @@ export default function CoursePageClient({
                   </div>
                 </div>
               </div>
+
+              {/* Lightweight Video Placeholder Slot */}
+              {/* TODO: [USER REVIEW REQUIRED] Replace video placeholder with actual video embed URL when available */}
+              {course.slug === 'tajweed' && (
+                <div className="mt-6 max-w-sm w-full glass p-3 rounded-2xl border border-card-border bg-foreground/[0.01]">
+                  <div className="relative aspect-video rounded-xl bg-slate-900/90 flex flex-col items-center justify-center text-center p-4 border border-card-border/50 group cursor-pointer hover:border-primary/40 transition-all">
+                    <div className="h-10 w-10 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-2">
+                      <Play className="h-4 w-4 fill-white translate-x-0.5" />
+                    </div>
+                    <span className="text-xs font-bold text-white">Watch Tajweed Class Demo & Video Overview</span>
+                    <span className="text-[10px] text-slate-400 mt-0.5 font-mono">[PLACEHOLDER — Video URL pending]</span>
+                  </div>
+                </div>
+              )}
             </div>
 
           </div>
@@ -186,7 +212,17 @@ export default function CoursePageClient({
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-foreground">What Is Tajweed?</h3>
                     <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                      The word Tajweed comes from the Arabic root <span className="italic font-medium text-foreground">jawwada</span>, meaning "to make excellent" or "to perfect." In practice, it is the set of rules that govern exactly how each letter of the Quran should be pronounced — its articulation point (makhraj), its characteristics (sifaat), and how it changes shape next to other letters. Reciting with Tajweed is not a stylistic choice; the majority of scholars consider it obligatory (fard) once a person is capable of learning it, since it is the only way to recite the Quran the way it was revealed and preserved.
+                      The word{" "}
+                      <a
+                        href="https://en.wikipedia.org/wiki/Tajwid"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-semibold inline-flex items-center space-x-1"
+                      >
+                        <span>Tajweed</span>
+                        <ExternalLink className="h-3 w-3 inline" />
+                      </a>{" "}
+                      comes from the Arabic root <span className="italic font-medium text-foreground">jawwada</span>, meaning "to make excellent" or "to perfect." In practice, it is the set of rules that govern exactly how each letter of the Quran should be pronounced — its articulation point (makhraj), its characteristics (sifaat), and how it changes shape next to other letters. Reciting with Tajweed is not a stylistic choice; the majority of scholars consider it obligatory (fard) once a person is capable of learning it, since it is the only way to recite the Quran the way it was revealed and preserved.
                     </p>
                   </div>
                   <div className="space-y-3">
@@ -194,6 +230,19 @@ export default function CoursePageClient({
                     <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                       Every letter mispronounced can quietly change the meaning of a word — which is why correct, measured recitation (tarteel) has always been the standard taught by scholars. A single online session with a <Link href="/tutors" className="text-primary hover:underline font-semibold">qualified teacher</Link> can catch mistakes that go unnoticed for years of unsupervised reading.
                     </p>
+                    
+                    {/* Task 2: Quranic Citation */}
+                    <blockquote className="my-6 p-5 sm:p-6 rounded-2xl bg-primary/5 border-l-4 border-primary text-foreground space-y-3 font-serif relative">
+                      <div className="text-right text-xl sm:text-2xl font-bold leading-loose text-primary font-serif" dir="rtl">
+                        وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا
+                      </div>
+                      <p className="text-xs sm:text-sm italic text-foreground/90 font-sans">
+                        "And recite the Qur’an with measured recitation."
+                      </p>
+                      <footer className="text-[11px] font-sans text-muted-text font-medium text-right border-t border-primary/10 pt-2">
+                        — Surah Al-Muzzammil (73:4)
+                      </footer>
+                    </blockquote>
                   </div>
                 </div>
               )}
@@ -451,17 +500,43 @@ export default function CoursePageClient({
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-6">
                 We understand and respect cultural preferences. That is why we employ dedicated, certified **male and female Quran scholars** holding authentic Ijazah qualifications. Sisters and children can study with female teachers, while boys can be assigned male scholars.
               </p>
+              {/* TODO: [USER REVIEW REQUIRED] Verify or update course author/reviewer name and credentials below */}
               {course.slug === 'tajweed' && (
-                <div className="mb-6 p-4.5 rounded-2xl bg-primary/5 border border-primary/20 text-foreground relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full blur-xl pointer-events-none" />
-                  <h4 className="font-extrabold text-xs sm:text-sm text-primary mb-1.5 flex items-center space-x-2">
-                    <Award className="h-4.5 w-4.5 text-secondary shrink-0" />
-                    <span>Certified Through an Authentic Chain (Sanad)</span>
-                  </h4>
-                  <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
-                    Our <Link href="/tutors" className="text-primary hover:underline font-semibold">Tajweed instructors</Link> hold Ijazah — a formal certification passed down through an unbroken chain of narration (sanad) tracing back to the Prophet Muhammad ﷺ. This isn't a certificate from a course; it's a scholarly license to teach and correct recitation, verified the same way it has been for over a thousand years.
-                  </p>
-                </div>
+                <>
+                  <div className="mb-6 p-4 rounded-2xl bg-secondary/5 border border-secondary/20 flex items-center space-x-3.5">
+                    <div className="h-10 w-10 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold text-sm shrink-0">
+                      <UserCheck className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-secondary block">Reviewed & Curated By</span>
+                      <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                        {course.authorName || "Qari Imran Hussain (Ijazah Certified Senior Instructor)"}
+                      </h4>
+                      <p className="text-[10px] text-muted-text">Senior Tajweed Faculty & Ijazah Certificate Holder</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6 p-4.5 rounded-2xl bg-primary/5 border border-primary/20 text-foreground relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full blur-xl pointer-events-none" />
+                    <h4 className="font-extrabold text-xs sm:text-sm text-primary mb-1.5 flex items-center space-x-2">
+                      <Award className="h-4.5 w-4.5 text-secondary shrink-0" />
+                      <span>Certified Through an Authentic Chain (Sanad)</span>
+                    </h4>
+                    <p className="text-[11px] sm:text-xs text-muted-text leading-relaxed font-normal">
+                      Our <Link href="/tutors" className="text-primary hover:underline font-semibold">Tajweed instructors</Link> hold{" "}
+                      <a
+                        href="https://en.wikipedia.org/wiki/Ijazah"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-semibold inline-flex items-center space-x-0.5"
+                      >
+                        <span>Ijazah</span>
+                        <ExternalLink className="h-3 w-3 inline" />
+                      </a>{" "}
+                      — a formal certification passed down through an unbroken chain of narration (sanad) tracing back to the Prophet Muhammad ﷺ. This isn't a certificate from a course; it's a scholarly license to teach and correct recitation, verified the same way it has been for over a thousand years.
+                    </p>
+                  </div>
+                </>
               )}
               <div className="flex items-center space-x-4 border-t border-card-border/50 pt-6">
                 <div className="h-10 w-10 rounded-full bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
@@ -528,6 +603,17 @@ export default function CoursePageClient({
             </div>
           </div>
         </section>
+      )}
+
+      {/* Course Testimonials */}
+      {testimonials.length > 0 && (
+        <Testimonials
+          data={
+            course.slug === 'tajweed'
+              ? testimonials.filter((t) => t.id.includes('tajweed') || t.relation?.toLowerCase().includes('tajweed') || t.text?.toLowerCase().includes('tajweed'))
+              : testimonials
+          }
+        />
       )}
 
       {/* 7. DYNAMIC COURSE FAQs */}
