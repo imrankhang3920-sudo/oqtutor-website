@@ -667,154 +667,232 @@ export default async function HomePage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-base sm:text-lg text-muted-text">
-                Explore the structured curriculum of our six core Quranic and Islamic education tracks designed for children and adult learners in the USA.
+                Explore the structured curriculum of our <Link href="/courses" className="text-primary font-semibold hover:underline">six core Quranic &amp; Islamic education tracks</Link> designed for children and adult learners in the <Link href="/locations/usa" className="text-foreground font-semibold hover:text-primary transition-colors">USA</Link>, <Link href="/locations/uk" className="text-foreground font-semibold hover:text-primary transition-colors">UK</Link>, <Link href="/locations/canada" className="text-foreground font-semibold hover:text-primary transition-colors">Canada</Link>, and <Link href="/locations/australia" className="text-foreground font-semibold hover:text-primary transition-colors">Australia</Link>.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               
               {/* Noorani Qaida Course */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Level 1: Fundamentals</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Online Noorani Qaida Classes</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  The Noorani Qaida course is the absolute prerequisite for students starting their Quran journey. This program teaches kids and adults how to read Arabic words correctly, focusing on alphabet shapes, articulation points, and basic sound connections.
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Recognition and pronunciation of the 28 Arabic letters (Makhraj)",
-                    "Understanding joint letters and compound shape changes",
-                    "Mastering Harakat symbols (Fathah, Kasrah, Dammah)",
-                    "Learning Maddah extensions, Tanween double symbols, and Sukoon stops",
-                    "Merging rules to read full words and short verses confidently"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Level 1: Fundamentals</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/noorani-qaida" className="hover:text-primary transition-colors">
+                      Online Noorani Qaida Classes
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    The <Link href="/courses/noorani-qaida" className="text-primary font-medium hover:underline">Noorani Qaida course</Link> is the absolute prerequisite for students starting their Quran journey. This program teaches kids and adults how to read Arabic words correctly, focusing on alphabet shapes, articulation points, and basic sound connections.
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Recognition and pronunciation of the 28 Arabic letters (Makhraj)",
+                      "Understanding joint letters and compound shape changes",
+                      "Mastering Harakat symbols (Fathah, Kasrah, Dammah)",
+                      "Learning Maddah extensions, Tanween double symbols, and Sukoon stops",
+                      "Merging rules to read full words and short verses confidently"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/noorani-qaida"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Noorani Qaida Syllabus</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Tajweed Course */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Level 2: Recitation Rules</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Online Tajweed Classes</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  Tajweed means 'to beautify' or 'to perfect.' Our dedicated Tajweed courses teach the precise rules of Arabic pronunciation, ensuring that you recite the Quran exactly as it was revealed to the Prophet Muhammad (PBUH).
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Mastering the rules of Noon Sakinah and Tanween (Ikhfa, Idgham, Iqlab, Izhar)",
-                    "Learning the rules of Meem Sakinah (Nasalized extensions)",
-                    "Rules of Madd (extensions and prolongation types)",
-                    "Understanding articulation points (Makharij) and qualities (Sifat)",
-                    "Rules of heavy and light letters, stops, and breath control"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Level 2: Recitation Rules</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/tajweed" className="hover:text-primary transition-colors">
+                      Online Tajweed Classes
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    Tajweed means &apos;to beautify&apos; or &apos;to perfect.&apos; Our dedicated <Link href="/courses/tajweed" className="text-primary font-medium hover:underline">Tajweed courses</Link> teach the precise rules of Arabic pronunciation, ensuring that you recite the Quran exactly as it was revealed to the Prophet Muhammad (PBUH).
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Mastering the rules of Noon Sakinah and Tanween (Ikhfa, Idgham, Iqlab, Izhar)",
+                      "Learning the rules of Meem Sakinah (Nasalized extensions)",
+                      "Rules of Madd (extensions and prolongation types)",
+                      "Understanding articulation points (Makharij) and qualities (Sifat)",
+                      "Rules of heavy and light letters, stops, and breath control"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/tajweed"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Tajweed Course Syllabus</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Quran Reading Fluency */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Level 3: Flow & Confident Recitation</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Quran Reading Course</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  Once a student completes the Qaida foundation, they transition to reading the actual text of the Quran. This course focuses on building reading speed, flow, and confidence, eliminating hesitations and stutters while applying essential Tajweed rules in real-time.
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Reading directly from the Mushaf (standard Quranic script)",
-                    "Applying basic and advanced Tajweed rules dynamically",
-                    "Building recitation speed, vocal clarity, and breath allocation",
-                    "Overcoming common tongue-ties and pronunciation hesitations",
-                    "Learning correct Quranic stop symbols (Waqf) and continuation markers"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Level 3: Flow &amp; Confident Recitation</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/quran-reading" className="hover:text-primary transition-colors">
+                      Quran Reading Course
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    Once a student completes the Qaida foundation, they transition to reading the actual text of the Quran. Our <Link href="/courses/quran-reading" className="text-primary font-medium hover:underline">Quran Reading course</Link> focuses on building reading speed, flow, and confidence, eliminating hesitations while applying essential Tajweed rules in real-time.
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Reading directly from the Mushaf (standard Quranic script)",
+                      "Applying basic and advanced Tajweed rules dynamically",
+                      "Building recitation speed, vocal clarity, and breath allocation",
+                      "Overcoming common tongue-ties and pronunciation hesitations",
+                      "Learning correct Quranic stop symbols (Waqf) and continuation markers"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/quran-reading"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Quran Reading Syllabus</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Hifz Program */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Level 4: Quran Memorization</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Online Hifz Classes</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  Our structured Quran memorization program is designed for students who want to commit the entire Quran (or selected Surahs) to memory. Tutors implement classical memorization techniques with digital revision schedules.
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Daily new memorization targets (Sabaq) matching student ability",
-                    "Systematic revision of recently memorized verses (Sabqi)",
-                    "Continuous tracking and revision of older memorized parts (Manzil)",
-                    "Learning classical techniques to solidify memory retention",
-                    "Individual target checks and memory testing under certified Huffaz"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Level 4: Quran Memorization</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/hifz" className="hover:text-primary transition-colors">
+                      Online Hifz Classes
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    Our structured <Link href="/courses/hifz" className="text-primary font-medium hover:underline">Quran memorization program (Hifz)</Link> is designed for students who want to commit the entire Quran (or selected Surahs) to memory. Tutors implement classical memorization techniques with digital revision schedules.
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Daily new memorization targets (Sabaq) matching student ability",
+                      "Systematic revision of recently memorized verses (Sabqi)",
+                      "Continuous tracking and revision of older memorized parts (Manzil)",
+                      "Learning classical techniques to solidify memory retention",
+                      "Individual target checks and memory testing under certified Huffaz"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/hifz"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Hifz Program Details</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Islamic Studies */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Islamic Foundation</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Islamic Studies for Kids</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  Learning to read the Quran is only one part of a child's spiritual education. Our Islamic Studies course teaches young Muslims the fundamentals of their faith, practice, history, and values to build a solid Islamic character.
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Five pillars of Islam and Six Articles of Faith (Aqeedah)",
-                    "Step-by-step training for Wudu (ablution) and Salah (daily prayers)",
-                    "Memorizing essential daily Duas, Adhkar, and short Surahs",
-                    "Stories of the Prophets and the Seerah (life) of Prophet Muhammad (PBUH)",
-                    "Islamic values, manners (Adab), and moral character development (Akhlaq)"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Islamic Foundation</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/islamic-studies" className="hover:text-primary transition-colors">
+                      Islamic Studies for Kids
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    Learning to read the Quran is only one part of a child&apos;s spiritual education. Our <Link href="/courses/islamic-studies" className="text-primary font-medium hover:underline">Islamic Studies course</Link> teaches young Muslims the fundamentals of their faith, practice, history, and values to build a solid Islamic character.
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Five pillars of Islam and Six Articles of Faith (Aqeedah)",
+                      "Step-by-step training for Wudu (ablution) and Salah (daily prayers)",
+                      "Memorizing essential daily Duas, Adhkar, and short Surahs",
+                      "Stories of the Prophets and the Seerah (life) of Prophet Muhammad (PBUH)",
+                      "Islamic values, manners (Adab), and moral character development (Akhlaq)"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/islamic-studies"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Islamic Studies Syllabus</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Arabic Language Classes */}
-              <div className="glass p-8 rounded-3xl border border-card-border">
-                <span className="text-xs font-bold text-secondary uppercase">Language Mastery</span>
-                <h3 className="text-xl font-bold text-foreground mt-2 mb-4">Arabic Language Classes</h3>
-                <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
-                  Move beyond recitation to understand the meanings of the words you recite. This course teaches standard classical Arabic (Fusha), Quranic grammar, and vocabulary, allowing students to comprehend Quran verses directly.
-                </p>
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
-                  {[
-                    "Learning essential Quranic vocabulary and root words",
-                    "Understanding basic Arabic grammar (Nahw and Sarf)",
-                    "Translating short Surahs and common phrases used in prayer",
-                    "Developing basic reading, writing, and speaking skills in Arabic",
-                    "Building a direct cognitive connection to the word of Allah"
-                  ].map((pt, idx) => (
-                    <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{pt}</span>
-                    </div>
-                  ))}
+              <div className="glass p-8 rounded-3xl border border-card-border flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-bold text-secondary uppercase">Language Mastery</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-4">
+                    <Link href="/courses/arabic-language" className="hover:text-primary transition-colors">
+                      Arabic Language Classes
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                    Move beyond recitation to understand the meanings of the words you recite. Our <Link href="/courses/arabic-language" className="text-primary font-medium hover:underline">Arabic Language course</Link> teaches standard classical Arabic (Fusha), Quranic grammar, and vocabulary, allowing students to comprehend Quran verses directly.
+                  </p>
+                  <div className="space-y-2.5 mb-6">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Curriculum Highlights:</h4>
+                    {[
+                      "Learning essential Quranic vocabulary and root words",
+                      "Understanding basic Arabic grammar (Nahw and Sarf)",
+                      "Translating short Surahs and common phrases used in prayer",
+                      "Developing basic reading, writing, and speaking skills in Arabic",
+                      "Building a direct cognitive connection to the word of Allah"
+                    ].map((pt, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  href="/courses/arabic-language"
+                  className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group pt-4 border-t border-card-border/60"
+                >
+                  <span>Explore Full Arabic Language Course</span>
+                  <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
             </div>
