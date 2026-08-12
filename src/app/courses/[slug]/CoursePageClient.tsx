@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BookOpen, Award, Clock, Calendar, Users, 
   CheckCircle, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
-  Play, UserCheck, ExternalLink
+  UserCheck, ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import { CourseData, ContactData, TestimonialData } from '@/data/db';
@@ -173,19 +173,7 @@ export default function CoursePageClient({
                 </div>
               </div>
 
-              {/* Lightweight Video Placeholder Slot */}
-              {/* TODO: [USER REVIEW REQUIRED] Replace video placeholder with actual video embed URL when available */}
-              {course.slug === 'tajweed' && (
-                <div className="mt-6 max-w-sm w-full glass p-3 rounded-2xl border border-card-border bg-foreground/[0.01]">
-                  <div className="relative aspect-video rounded-xl bg-slate-900/90 flex flex-col items-center justify-center text-center p-4 border border-card-border/50 group cursor-pointer hover:border-primary/40 transition-all">
-                    <div className="h-10 w-10 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-2">
-                      <Play className="h-4 w-4 fill-white translate-x-0.5" />
-                    </div>
-                    <span className="text-xs font-bold text-white">Watch Tajweed Class Demo & Video Overview</span>
-                    <span className="text-[10px] text-slate-400 mt-0.5 font-mono">[PLACEHOLDER — Video URL pending]</span>
-                  </div>
-                </div>
-              )}
+
             </div>
 
           </div>
