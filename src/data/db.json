@@ -3617,19 +3617,19 @@
     },
     {
       "id": "test-tajweed-1",
-      "name": "[PLACEHOLDER — Student/Parent Name]",
-      "relation": "Tajweed Student",
-      "location": "[PLACEHOLDER — City, Country]",
+      "name": "Shahnaz Farooq",
+      "relation": "Parent of Student",
+      "location": "Australia",
       "rating": 5,
-      "text": "[PLACEHOLDER — insert real student quote regarding Tajweed course progress and teacher feedback]"
+      "text": "My daughter has been learning Iqra, Hifz, and Islamic Studies with OQTutor for over a year, and we have seen tremendous progress in her learning. She successfully completed the memorization of Juz 29 and Juz 30, which has been a wonderful achievement for her."
     },
     {
       "id": "test-tajweed-2",
-      "name": "[PLACEHOLDER — Student/Parent Name]",
-      "relation": "Tajweed Student",
-      "location": "[PLACEHOLDER — City, Country]",
+      "name": "Nadia Shahad",
+      "relation": "Parent of Student",
+      "location": "UK",
       "rating": 5,
-      "text": "[PLACEHOLDER — insert real student quote regarding mastering Makharij and Tajweed rules]"
+      "text": "I am extremely satisfied with OQTutor’s Quran classes. My children have successfully completed the Quran with them, and we have had a wonderful learning experience."
     }
   ],
   "contact": {
