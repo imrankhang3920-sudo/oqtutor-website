@@ -140,9 +140,9 @@ export default async function BlogPostPage({ params }: Props) {
                 "headline": "How to Build a Consistent Hifz Quran Revision Routine",
                 "description": "A practical guide to building a consistent daily Hifz Quran revision routine, covering Sabak, Manzil, and 10 proven revision strategies for students.",
                 "image": [
-                  "Hifz_Quran_classes.jpeg",
-                  "Online_Hifz_Quran_classes.jpeg",
-                  "Join_Hifz_Quran_course.jpeg"
+                  "quran-hifz.jpg",
+                  "hifz-motivation.jpg",
+                  "quran-reading.jpg"
                 ],
                 "author": {
                   "@type": "Organization",
@@ -4846,7 +4846,7 @@ function ArticleContentConsistentHifz() {
       <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
         <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
           <Image
-            src="/Hifz_Quran_classes.jpeg"
+            src="/quran-hifz.jpg"
             alt="young student reciting Quran during daily Hifz revision session"
             fill
             className="object-cover"
@@ -4933,7 +4933,7 @@ function ArticleContentConsistentHifz() {
           <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-6 overflow-hidden shadow-lg">
             <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
               <Image
-                src="/Online_Hifz_Quran_classes.jpeg"
+                src="/hifz-motivation.jpg"
                 alt="student revising Quran on a tablet before bed for daily Hifz streak"
                 fill
                 className="object-cover"
@@ -5064,7 +5064,7 @@ function ArticleContentConsistentHifz() {
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-6 overflow-hidden shadow-lg">
           <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
             <Image
-              src="/Join_Hifz_Quran_course.jpeg"
+              src="/quran-reading.jpg"
               alt="one-on-one online Hifz Quran class with teacher correcting Tajweed"
               fill
               className="object-cover"
