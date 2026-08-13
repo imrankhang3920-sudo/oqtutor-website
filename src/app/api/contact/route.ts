@@ -2,19 +2,38 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
-export async function GET() {
+function getSmtpCredentials() {
   const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
   const smtpPort = parseInt((process.env.SMTP_PORT || '587').trim(), 10);
   
-  const rawUser = process.env.EMAIL_USER || process.env.SMTP_USER || '';
-  const rawPass = process.env.EMAIL_PASS || process.env.SMTP_PASS || '';
+  const clean = (val?: string) => (val || '').trim().replace(/^["']|["']$/g, '');
+  const isPlaceholder = (val: string) => 
+    !val || val.includes('your_gmail') || val.includes('your-gmail') || val.includes('your_16_char');
 
-  const smtpUser = rawUser.trim().replace(/^["']|["']$/g, '');
-  let smtpPass = rawPass.trim().replace(/^["']|["']$/g, '');
-  
+  let smtpUser = clean(process.env.SMTP_USER);
+  if (isPlaceholder(smtpUser)) {
+    smtpUser = clean(process.env.EMAIL_USER);
+  }
+
+  let smtpPass = clean(process.env.SMTP_PASS);
+  if (isPlaceholder(smtpPass)) {
+    smtpPass = clean(process.env.EMAIL_PASS);
+  }
+
   if (smtpHost.includes('gmail')) {
     smtpPass = smtpPass.replace(/\s+/g, '');
   }
+
+  let smtpTo = clean(process.env.CONTACT_EMAIL);
+  if (isPlaceholder(smtpTo)) {
+    smtpTo = clean(process.env.SMTP_TO) || 'imrankhang3920@gmail.com';
+  }
+
+  return { smtpHost, smtpPort, smtpUser, smtpPass, smtpTo };
+}
+
+export async function GET() {
+  const { smtpHost, smtpPort, smtpUser, smtpPass } = getSmtpCredentials();
 
   const maskedUser = smtpUser ? (smtpUser.substring(0, 3) + '***@' + (smtpUser.split('@')[1] || '')) : 'NOT SET';
   const passLength = smtpPass ? `${smtpPass.length} characters` : '0 characters (NOT SET)';
@@ -22,7 +41,7 @@ export async function GET() {
   if (!smtpUser || !smtpPass) {
     return NextResponse.json({
       status: 'error',
-      message: 'SMTP credentials missing. Please set EMAIL_USER and EMAIL_PASS environment variables.',
+      message: 'SMTP credentials missing. Please set SMTP_USER/PASS or EMAIL_USER/PASS environment variables.',
       debug: { host: smtpHost, port: smtpPort, user: maskedUser, passLength }
     });
   }
@@ -48,7 +67,7 @@ export async function GET() {
       status: 'auth_failed',
       error: err?.message || String(err),
       debug: { host: smtpHost, port: smtpPort, user: maskedUser, passLength },
-      solution: 'Please ensure: 1) 2-Step Verification is enabled in Google Account Security, 2) You generated a 16-character Google App Password (not your main password), 3) EMAIL_USER matches the exact Gmail account that generated the App Password.'
+      solution: 'Please check: 1) 2-Step Verification is ON in Google Account, 2) You generated a 16-character Google App Password, 3) SMTP_USER matches the exact Gmail account that generated the App Password.'
     }, { status: 401 });
   }
 }
@@ -80,29 +99,13 @@ export async function POST(request: NextRequest) {
     const submissionDate = new Date().toLocaleString();
 
     // 3. SMTP configuration
-    const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
-    const smtpPort = parseInt((process.env.SMTP_PORT || '587').trim(), 10);
-    
-    // Support both EMAIL_USER / EMAIL_PASS and SMTP_USER / SMTP_PASS
-    const rawUser = process.env.EMAIL_USER || process.env.SMTP_USER || '';
-    const rawPass = process.env.EMAIL_PASS || process.env.SMTP_PASS || '';
-
-    // Sanitize user & pass (strip outer quotes and whitespace)
-    const smtpUser = rawUser.trim().replace(/^["']|["']$/g, '');
-    let smtpPass = rawPass.trim().replace(/^["']|["']$/g, '');
-    
-    // Auto-strip spaces from 16-character Gmail App Passwords (e.g., "abcd efgh ijkl mnop" -> "abcdefghijklmnop")
-    if (smtpHost.includes('gmail')) {
-      smtpPass = smtpPass.replace(/\s+/g, '');
-    }
-
-    const smtpTo = (process.env.CONTACT_EMAIL || process.env.SMTP_TO || 'imrankhang3920@gmail.com').trim().replace(/^["']|["']$/g, '');
+    const { smtpHost, smtpPort, smtpUser, smtpPass, smtpTo } = getSmtpCredentials();
 
     // Verify SMTP configuration exists
-    const hasSmtpConfig = Boolean(smtpUser && smtpPass && smtpPass !== 'your-gmail-app-password' && smtpPass !== 'your_16_char_google_app_password');
+    const hasSmtpConfig = Boolean(smtpUser && smtpPass);
 
     if (!hasSmtpConfig) {
-      const errorMsg = 'SMTP credentials are not configured. Please set EMAIL_USER (or SMTP_USER) and EMAIL_PASS (or SMTP_PASS) in your environment variables (.env / Vercel dashboard).';
+      const errorMsg = 'SMTP credentials are not configured. Please set SMTP_USER & SMTP_PASS (or EMAIL_USER & EMAIL_PASS) in environment variables.';
       console.error(`[Contact Form] Configuration Error: ${errorMsg}`);
       return NextResponse.json({ 
         success: false, 
