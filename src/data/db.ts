@@ -269,6 +269,18 @@ export function readDB(): DatabaseSchema {
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339747343.jpg',
         dest: path.join(targetDir, 'weekend-quran-class-3.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587063474.jpg',
+        dest: path.join(process.cwd(), 'public/Hifz_Quran_classes.jpeg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587064000.jpg',
+        dest: path.join(process.cwd(), 'public/Online_Hifz_Quran_classes.jpeg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587064137.jpg',
+        dest: path.join(process.cwd(), 'public/Join_Hifz_Quran_course.jpeg')
       }
     ];
     sourceFiles.forEach(({ src, dest }) => {
