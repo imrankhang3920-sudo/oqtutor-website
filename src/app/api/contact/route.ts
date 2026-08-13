@@ -2,7 +2,56 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
-// Trigger Vercel rebuild to apply new SMTP environment variables
+export async function GET() {
+  const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
+  const smtpPort = parseInt((process.env.SMTP_PORT || '587').trim(), 10);
+  
+  const rawUser = process.env.EMAIL_USER || process.env.SMTP_USER || '';
+  const rawPass = process.env.EMAIL_PASS || process.env.SMTP_PASS || '';
+
+  const smtpUser = rawUser.trim().replace(/^["']|["']$/g, '');
+  let smtpPass = rawPass.trim().replace(/^["']|["']$/g, '');
+  
+  if (smtpHost.includes('gmail')) {
+    smtpPass = smtpPass.replace(/\s+/g, '');
+  }
+
+  const maskedUser = smtpUser ? (smtpUser.substring(0, 3) + '***@' + (smtpUser.split('@')[1] || '')) : 'NOT SET';
+  const passLength = smtpPass ? `${smtpPass.length} characters` : '0 characters (NOT SET)';
+
+  if (!smtpUser || !smtpPass) {
+    return NextResponse.json({
+      status: 'error',
+      message: 'SMTP credentials missing. Please set EMAIL_USER and EMAIL_PASS environment variables.',
+      debug: { host: smtpHost, port: smtpPort, user: maskedUser, passLength }
+    });
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: { user: smtpUser, pass: smtpPass },
+    tls: { rejectUnauthorized: false },
+    connectionTimeout: 10000
+  } as SMTPTransport.Options);
+
+  try {
+    await transporter.verify();
+    return NextResponse.json({
+      status: 'success',
+      message: 'SMTP Server is ready and authenticated successfully!',
+      debug: { host: smtpHost, port: smtpPort, user: maskedUser, passLength }
+    });
+  } catch (err: any) {
+    return NextResponse.json({
+      status: 'auth_failed',
+      error: err?.message || String(err),
+      debug: { host: smtpHost, port: smtpPort, user: maskedUser, passLength },
+      solution: 'Please ensure: 1) 2-Step Verification is enabled in Google Account Security, 2) You generated a 16-character Google App Password (not your main password), 3) EMAIL_USER matches the exact Gmail account that generated the App Password.'
+    }, { status: 401 });
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,32 +80,49 @@ export async function POST(request: NextRequest) {
     const submissionDate = new Date().toLocaleString();
 
     // 3. SMTP configuration
-    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
-    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const smtpTo = process.env.CONTACT_EMAIL || process.env.SMTP_TO || 'imrankhang3920@gmail.com';
+    const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
+    const smtpPort = parseInt((process.env.SMTP_PORT || '587').trim(), 10);
+    
+    // Support both EMAIL_USER / EMAIL_PASS and SMTP_USER / SMTP_PASS
+    const rawUser = process.env.EMAIL_USER || process.env.SMTP_USER || '';
+    const rawPass = process.env.EMAIL_PASS || process.env.SMTP_PASS || '';
+
+    // Sanitize user & pass (strip outer quotes and whitespace)
+    const smtpUser = rawUser.trim().replace(/^["']|["']$/g, '');
+    let smtpPass = rawPass.trim().replace(/^["']|["']$/g, '');
+    
+    // Auto-strip spaces from 16-character Gmail App Passwords (e.g., "abcd efgh ijkl mnop" -> "abcdefghijklmnop")
+    if (smtpHost.includes('gmail')) {
+      smtpPass = smtpPass.replace(/\s+/g, '');
+    }
+
+    const smtpTo = (process.env.CONTACT_EMAIL || process.env.SMTP_TO || 'imrankhang3920@gmail.com').trim().replace(/^["']|["']$/g, '');
 
     // Verify SMTP configuration exists
-    const hasSmtpConfig = smtpUser && smtpPass && smtpPass !== 'your-gmail-app-password';
+    const hasSmtpConfig = Boolean(smtpUser && smtpPass && smtpPass !== 'your-gmail-app-password' && smtpPass !== 'your_16_char_google_app_password');
 
     if (!hasSmtpConfig) {
-      const errorMsg = 'SMTP server credentials are not configured or using default placeholders in environment variables.';
+      const errorMsg = 'SMTP credentials are not configured. Please set EMAIL_USER (or SMTP_USER) and EMAIL_PASS (or SMTP_PASS) in your environment variables (.env / Vercel dashboard).';
       console.error(`[Contact Form] Configuration Error: ${errorMsg}`);
       return NextResponse.json({ 
         success: false, 
-        error: 'System SMTP credentials are not configured. Please verify SMTP settings in the project dashboard.' 
+        error: errorMsg
       }, { status: 500 });
     }
+
+    const isPort465 = smtpPort === 465;
 
     // Initialize transporter
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465, // True for 465, false for 587
+      secure: isPort465, // True for 465 (SSL), false for 587 (TLS/STARTTLS)
       auth: {
         user: smtpUser,
         pass: smtpPass,
+      },
+      tls: {
+        rejectUnauthorized: false
       },
       connectionTimeout: 10000 // 10s timeout
     } as SMTPTransport.Options);
@@ -140,9 +206,25 @@ Sender IP Address: ${clientIp}
       });
     } catch (sendError: any) {
       console.error('[Contact Form] SMTP sendMail failed:', sendError);
+
+      const errorMessage = sendError?.message || String(sendError);
+      const isAuthError = 
+        sendError?.code === 'EAUTH' || 
+        sendError?.responseCode === 535 || 
+        errorMessage.includes('535') || 
+        errorMessage.includes('Invalid login') ||
+        errorMessage.includes('Username and Password not accepted');
+
+      if (isAuthError) {
+        return NextResponse.json({
+          success: false,
+          error: 'Gmail SMTP Authentication Failed (535-5.7.8). Please check: 1) 2-Step Verification MUST be ON in your Google Account. 2) Generate a 16-character Google App Password (Google Account > Security > 2-Step Verification > App Passwords). 3) Do NOT use your normal Gmail password. 4) Set EMAIL_USER (or SMTP_USER) and EMAIL_PASS (or SMTP_PASS) in your environment variables without quotes.'
+        }, { status: 401 });
+      }
+
       return NextResponse.json({
         success: false,
-        error: `Failed to deliver email: ${sendError?.message || String(sendError)}`
+        error: `Failed to deliver email: ${errorMessage}`
       }, { status: 500 });
     }
   } catch (error: any) {
