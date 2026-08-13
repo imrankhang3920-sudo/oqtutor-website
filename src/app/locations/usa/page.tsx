@@ -27,8 +27,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes in the USA | State Directory | OQTutor",
-    description: "Find certified 1-on-1 online Quran classes by state in the USA. Study Noorani Qaida, Tajweed, Islamic Studies, and Hifz with flexible EST, CST, MST & PST schedules.",
+    title: "Learn Quran From Home in the USA — Kids, Hifz & Tajweed, With a Teacher Who Actually Cares | OQTutor",
+    description: "Looking for a trusted online Quran academy in the USA — for yourself or your kids? Our qualified teachers (female teacher option available) offer one-on-one Tajweed, Hifz, and Quran reading classes, with flexible timing that fits your US schedule. From complete beginners to Hifz students, every lesson is personalized to the learner. Book a free trial class today.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa",
       languages: {
@@ -41,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa",
-      title: "Online Quran Classes in the USA | State Directory | OQTutor",
-      description: "Find certified 1-on-1 online Quran classes by state in the USA. Study Noorani Qaida, Tajweed, Islamic Studies, and Hifz with flexible EST, CST, MST & PST schedules.",
+      title: "Learn Quran From Home in the USA — Kids, Hifz & Tajweed, With a Teacher Who Actually Cares | OQTutor",
+      description: "Looking for a trusted online Quran academy in the USA — for yourself or your kids? Our qualified teachers (female teacher option available) offer one-on-one Tajweed, Hifz, and Quran reading classes, with flexible timing that fits your US schedule. From complete beginners to Hifz students, every lesson is personalized to the learner. Book a free trial class today.",
     },
   };
 }
@@ -56,8 +56,8 @@ export default async function USALocationsHubPage() {
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
   const customHeroData = {
-    title: "Online Quran Classes in the USA",
-    subtitle: "Welcome to OQTutor's United States national locations directory. We bring structured, one-on-one online Quran classes directly to Muslim families across America. All lessons are coordinated in your specific local time zone — including Eastern (EST/EDT), Central (CST/CDT), Mountain (MST/MDT), and Pacific (PST/PDT) zones. Find your state below to explore city-specific scheduling, pricing tiers, local review highlights, and matched Al-Azhar certified male and female scholars.",
+    title: "Learn Quran From Home in the USA — Kids, Hifz & Tajweed, With a Teacher Who Actually Cares",
+    subtitle: "Looking for a trusted online Quran academy in the USA — for yourself or your kids? Our qualified teachers (female teacher option available) offer one-on-one Tajweed, Hifz, and Quran reading classes, with flexible timing that fits your US schedule. From complete beginners to Hifz students, every lesson is personalized to the learner. Book a free trial class today.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
