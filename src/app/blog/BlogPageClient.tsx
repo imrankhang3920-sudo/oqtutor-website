@@ -44,6 +44,7 @@ const mapping: Record<string, string> = {
   'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
+  'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/choosing-online-quran-tutor-us-parents.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -74,6 +75,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
     'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
+    'what-us-parents-should-know-before-choosing-an-online-quran-tutor': 'Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };

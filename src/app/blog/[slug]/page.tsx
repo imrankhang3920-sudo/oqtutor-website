@@ -34,7 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog;
+  const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog;
 
   const metaTitle = isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
@@ -44,6 +45,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? blog.title
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
+    : isUSParentsTutorBlog
+    ? 'What US Parents Should Know Before Choosing an Online Quran Tutor | OQTutor'
     : `${blog.title} | OQTutor`;
 
   return {
@@ -105,6 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isChallengesBlog = resolvedParams.slug === 'how-to-overcome-common-challenges-in-online-quran-classes';
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
+  const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -731,6 +735,68 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
+      {isUSParentsTutorBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How much do online Quran classes cost?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It varies by academy, teacher experience, and whether classes are 1-on-1 or group. Ask what's included in the price rather than comparing numbers alone."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I find a qualified Quran tutor?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ask directly about Ijazah certification, formal Tajweed training, and specific experience teaching children — not just general teaching experience."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are online Quran classes effective for children?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, when the tutor is qualified and the format matches the child's age and attention span. A trial class is the best way to judge fit before committing."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long should a Quran class be?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Around 30 minutes for younger children, and up to 45–60 minutes for older children and teens."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is a female Quran teacher available?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most established academies offer both male and female tutors, which is worth asking about directly if it matters for your family."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can parents monitor progress?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ask whether the academy provides regular progress reports, whether parents can observe classes, and how milestones are tracked over time."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
       <Navbar />
 
       <main className="flex-grow bg-background py-16 sm:py-24">
@@ -791,6 +857,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentFemaleTeacher />
             ) : isWeekendQuranBlog ? (
               <ArticleContentWeekendQuran />
+            ) : isUSParentsTutorBlog ? (
+              <ArticleContentUSParentsTutor />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -5258,3 +5326,381 @@ function ArticleContentConsistentHifz() {
     </article>
   );
 }
+
+function ArticleContentUSParentsTutor() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Quick Answer Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Quick Answer</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium italic">
+          &quot;The best online Quran tutor for a child has strong Quran and Tajweed knowledge, real experience teaching children specifically, clear and regular communication with parents, a safe and well-structured learning environment, flexible scheduling around US time zones, and a teaching style that fits your child&apos;s age and personality.&quot;
+        </p>
+      </div>
+
+      <p className="text-base sm:text-lg font-medium text-foreground">
+        That&apos;s the short version. Here&apos;s what actually goes into making that decision well.
+      </p>
+
+      {/* Featured Header Card Image */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+          <Image
+            src="/choosing-online-quran-tutor-us-parents.jpg"
+            alt="Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          Selecting a qualified online Quran tutor requires looking beyond initial ratings to teacher background, age compatibility, and trial class dynamics.
+        </p>
+      </div>
+
+      {/* Section 1 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Choosing a Tutor Takes More Than Checking Reviews
+        </h2>
+        <p className="text-base text-muted-text">
+          A five-star rating tells you a family was satisfied — it doesn&apos;t tell you <em>why</em>, or whether that reason matters for your child. A tutor who was a great fit for a confident, memorization-focused 11-year-old might be the wrong fit for a shy 6-year-old still learning the alphabet.
+        </p>
+        <p className="text-base text-muted-text">
+          Reviews are a starting point, not a decision. What actually predicts a good fit is qualifications, teaching approach, and how the tutor performs in a real trial class with your own child.
+        </p>
+      </section>
+
+      {/* Section 2 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Makes a Qualified Quran Tutor?
+        </h2>
+        <p className="text-base text-muted-text">
+          Look past the generic word &quot;certified&quot; and ask specifics: Does the tutor hold an <strong>Ijazah in recitation</strong>? Have they studied Tajweed formally, with a documented chain of instruction?
+        </p>
+        <p className="text-base text-muted-text">
+          Have they taught children before, or only adults? Fluency in Arabic doesn&apos;t automatically translate into the patience and clarity needed to teach a young child correct pronunciation. A qualified tutor should be able to explain their own training path clearly when asked.
+        </p>
+      </section>
+
+      {/* Section 3 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Male vs. Female Quran Teachers
+        </h2>
+        <p className="text-base text-muted-text">
+          Many families have a preference here, and reputable academies offer both. For young children, the deciding factor is often simply which teacher builds rapport faster.
+        </p>
+        <p className="text-base text-muted-text">
+          For older girls, especially pre-teens and teens, many parents specifically prefer a <Link href="/tutors" className="text-primary font-semibold hover:underline">female teacher</Link> for comfort and modesty considerations. Neither choice is &quot;better&quot; — it depends on your child&apos;s age, comfort, and your family&apos;s preference.
+        </p>
+      </section>
+
+      {/* Section 4 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          1-on-1 vs. Group Classes
+        </h2>
+        <p className="text-base text-muted-text">
+          <strong>One-on-one classes</strong> offer full attention, faster pronunciation correction, and pacing built around your child alone — ideal for beginners, shy children, or anyone needing focused Tajweed correction.
+        </p>
+        <p className="text-base text-muted-text">
+          Group classes can work well for older, more confident students who benefit from peer motivation, and they&apos;re usually less expensive. If your child gets distracted easily or needs individual correction, 1-on-1 is generally the stronger starting point.
+        </p>
+      </section>
+
+      {/* Section 5 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Your Child Should Learn at Different Ages
+        </h2>
+        <p className="text-base text-muted-text">
+          A tutor who uses the same method regardless of age is a sign the program isn&apos;t actually individualized. Age-appropriate milestone expectations include:
+        </p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">Ages 4–6</span>
+            <h3 className="text-base font-bold text-foreground">Playful Foundations</h3>
+            <p className="text-sm text-muted-text">
+              Short, playful sessions focused on letter recognition, phonetics, and simple sounds without screen fatigue.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full inline-block">Ages 7–9</span>
+            <h3 className="text-base font-bold text-foreground">Structured Reading</h3>
+            <p className="text-sm text-muted-text">
+              Transitioning into structured Quran reading, basic word connection rules, and early Tajweed guidelines.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-emerald-500 uppercase tracking-wider px-2.5 py-1 bg-emerald-500/10 rounded-full inline-block">Ages 10–12</span>
+            <h3 className="text-base font-bold text-foreground">Fluency &amp; Advanced Tajweed</h3>
+            <p className="text-sm text-muted-text">
+              Building fluent recitation, mastering advanced Tajweed rules, and beginning structured Hifz memorization goals.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-amber-500 uppercase tracking-wider px-2.5 py-1 bg-amber-500/10 rounded-full inline-block">Teenagers</span>
+            <h3 className="text-base font-bold text-foreground">Independence &amp; Mentorship</h3>
+            <p className="text-sm text-muted-text">
+              Higher independence, deeper understanding of meanings, and a tutor who motivates rather than just instructs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How to Evaluate Tajweed Teaching Quality
+        </h2>
+        <p className="text-base text-muted-text">
+          Ask the tutor to walk you through how they correct pronunciation. Do they explain the <em>why</em> behind a rule, or just repeat the correct sound until the child copies it?
+        </p>
+        <p className="text-base text-muted-text">
+          Good Tajweed teaching involves explanation, repetition, and gentle correction — not just recitation modeling.
+        </p>
+      </section>
+
+      {/* Section 7 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Long Should a Class Be?
+        </h2>
+        <p className="text-base text-muted-text">
+          For young children, 30 minutes is usually the ceiling before attention drops. Older children and teens can often manage 45–60 minutes, especially with a mix of recitation, correction, and short breaks.
+        </p>
+        <p className="text-base text-muted-text">
+          If a program only offers one fixed class length regardless of age, that&apos;s worth questioning.
+        </p>
+      </section>
+
+      {/* Section 8 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Questions Parents Should Ask Before Enrolling
+        </h2>
+        <p className="text-base text-muted-text">
+          Before committing to any online Quran academy, parents should ask the following core questions:
+        </p>
+        <ul className="space-y-2 text-sm sm:text-base text-muted-text list-disc pl-5">
+          <li>What are the tutor&apos;s specific qualifications and teaching background with children?</li>
+          <li>How is daily or weekly student progress tracked and reported to parents?</li>
+          <li>What is the academy&apos;s policy if a class is missed or needs rescheduling?</li>
+          <li>Are both certified male and female Quran teachers available?</li>
+          <li>What specific technology or software is required for classes?</li>
+          <li>Is a free trial class offered before any financial commitment?</li>
+        </ul>
+      </section>
+
+      {/* Section 9 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What to Actually Evaluate During a Trial Class
+        </h2>
+        <p className="text-base text-muted-text">
+          Don&apos;t just ask &quot;did my child like it?&quot; Watch whether the tutor assessed your child&apos;s actual level before teaching, whether pacing matched your child&apos;s attention span, and whether corrections were clear and patient rather than rushed.
+        </p>
+        <p className="text-base text-muted-text">
+          A strong trial class feels like a real, individualized lesson — not a scripted sales demo.
+        </p>
+      </section>
+
+      {/* Section 10 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What&apos;s Reasonable to Pay
+        </h2>
+        <p className="text-base text-muted-text">
+          <Link href="/pricing" className="text-primary font-semibold hover:underline">Pricing</Link> varies by academy, class format, and teacher experience, and one-on-one classes generally cost more than group sessions.
+        </p>
+        <p className="text-base text-muted-text">
+          Rather than chasing the lowest price, ask what&apos;s actually included — curriculum structure, progress reports, makeup classes — since the cheapest option often cuts corners exactly there.
+        </p>
+      </section>
+
+      {/* Section 11 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Child Safety and Parent Communication
+        </h2>
+        <p className="text-base text-muted-text">
+          Ask directly whether tutors are background-checked, whether there&apos;s ongoing supervision of class quality, and whether parents can observe sessions, especially early on. A trustworthy academy should welcome these questions rather than deflect them.
+        </p>
+      </section>
+
+      {/* Section 12 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Technology and Classroom Quality
+        </h2>
+        <p className="text-base text-muted-text">
+          Confirm what platform is used, whether it&apos;s stable and easy for a child to navigate independently, and whether recordings or written notes are available for parents to review progress.
+        </p>
+      </section>
+
+      {/* Section 13 - Red Flags */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Warning Signs of a Poor Program
+        </h2>
+        <div className="p-6 rounded-3xl bg-amber-500/10 border border-amber-500/30 space-y-3">
+          <div className="flex items-center space-x-2 text-amber-600 dark:text-amber-400 font-bold text-base">
+            <AlertTriangle className="h-5 w-5" />
+            <span>Red Flags to Avoid</span>
+          </div>
+          <ul className="space-y-2 text-sm sm:text-base text-foreground/90 list-disc pl-5">
+            <li>Vague or non-existent answers about curriculum structure</li>
+            <li>No free trial class offered before requiring payment</li>
+            <li>High tutor turnover where teachers change frequently</li>
+            <li>Rigid scheduling with zero flexibility for US family routines</li>
+            <li>Pressure to commit to long-term contracts upfront</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Section 14 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How to Compare Two Academies
+        </h2>
+        <p className="text-base text-muted-text">
+          Use the same criteria for each: teacher qualifications, curriculum structure, class format, scheduling flexibility, pricing transparency, trial policy, and how progress is communicated.
+        </p>
+        <p className="text-base text-muted-text">
+          Comparing apples to apples makes the decision far clearer than comparing marketing pages.
+        </p>
+      </section>
+
+      {/* Section 15 - Final Parent Checklist */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Final Parent Checklist
+        </h2>
+        <p className="text-base text-muted-text">
+          Before enrolling, confirm you can answer these 6 essential items:
+        </p>
+        <div className="p-6 sm:p-8 rounded-3xl glass border border-primary/20 space-y-3 shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm sm:text-base text-foreground">
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>Tutor Qualifications:</strong> Verified Ijazah and experience with kids</span>
+            </div>
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>Curriculum &amp; Tracking:</strong> Structured milestones &amp; regular reports</span>
+            </div>
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>Class Format &amp; Duration:</strong> Suited specifically to your child&apos;s age</span>
+            </div>
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>US Time Zone Scheduling:</strong> Fits school and family routines</span>
+            </div>
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>Safety &amp; Openness:</strong> Background checks &amp; parent observation</span>
+            </div>
+            <div className="flex items-start space-x-3 p-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <span><strong>Transparent Cost:</strong> Clear pricing with no hidden fees</span>
+            </div>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-text text-center pt-3 border-t border-card-border font-medium">
+            If you can answer all six clearly, you&apos;re in a strong position to enroll with confidence.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 16 - Frequently Asked Questions */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-4">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How much do online Quran classes cost?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              It varies by academy, teacher experience, and whether classes are 1-on-1 or group. Ask what&apos;s included in the price rather than comparing numbers alone.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How do I find a qualified Quran tutor?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Ask directly about Ijazah certification, formal Tajweed training, and specific experience teaching children — not just general teaching experience.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Are online Quran classes effective for children?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Yes, when the tutor is qualified and the format matches the child&apos;s age and attention span. A trial class is the best way to judge fit before committing.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How long should a Quran class be?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Around 30 minutes for younger children, and up to 45–60 minutes for older children and teens.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Is a female Quran teacher available?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Most established academies offer both male and female tutors, which is worth asking about directly if it matters for your family.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How can parents monitor progress?</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Ask whether the academy provides regular progress reports, whether parents can observe classes, and how milestones are tracked over time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Summary / Call to Action */}
+      <section className="space-y-6">
+        <p className="text-base leading-relaxed text-muted-text">
+          The right tutor isn&apos;t necessarily the cheapest or the most heavily advertised one. It&apos;s the tutor who genuinely fits your child&apos;s age, current level, personality, and your family&apos;s schedule — and the clearest way to find out is to ask direct questions and pay close attention during the trial class.
+        </p>
+
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+          <h3 className="text-xl sm:text-2xl font-black text-foreground">Find the Right Online Quran Tutor for Your Child</h3>
+          <p className="text-sm text-muted-text max-w-xl mx-auto">
+            Experience a personalized, 1-on-1 session with a certified scholar. Schedule your free trial class today with zero obligation.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/book-free-trial"
+              className="px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2"
+            >
+              <span>Book Free Trial Class</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/tutors"
+              className="px-8 py-3 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-bold transition-all"
+            >
+              Browse Certified Tutors
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+

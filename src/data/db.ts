@@ -281,6 +281,10 @@ export function readDB(): DatabaseSchema {
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587064137.jpg',
         dest: path.join(process.cwd(), 'public/Join_Hifz_Quran_course.jpeg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e55aff35-3bc1-436b-a6c1-2fe8408ea8d8\\media__1786708406659.jpg',
+        dest: path.join(process.cwd(), 'public/choosing-online-quran-tutor-us-parents.jpg')
       }
     ];
     sourceFiles.forEach(({ src, dest }) => {
