@@ -250,8 +250,8 @@ export interface DatabaseSchema {
 
 let inMemoryCache: DatabaseSchema | null = null;
 
-// Synchronous read from memory cache or local db.json (with bundled JSON fallback)
-export function readDB(): DatabaseSchema {
+// Top-level self-executing sync copy for brain assets to public directory
+(function copyBrainAssetsToPublic() {
   try {
     const targetDir = path.join(process.cwd(), 'public/blog/weekend-quran');
     if (!fs.existsSync(targetDir)) {
@@ -260,45 +260,59 @@ export function readDB(): DatabaseSchema {
     const sourceFiles = [
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746434.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-usa.jpg'),
         dest: path.join(targetDir, 'weekend-quran-class-1.jpg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746986.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-tajweed.jpg'),
         dest: path.join(targetDir, 'weekend-quran-class-2.jpg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339747343.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/interactive-one-on-one.jpg'),
         dest: path.join(targetDir, 'weekend-quran-class-3.jpg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587063474.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-hifz.jpg'),
         dest: path.join(process.cwd(), 'public/Hifz_Quran_classes.jpeg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587064000.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-reading.jpg'),
         dest: path.join(process.cwd(), 'public/Online_Hifz_Quran_classes.jpeg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\aece3d16-9452-4687-b3f1-e1ceef8b9228\\media__1786587064137.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/adult-quran-memorization.jpg'),
         dest: path.join(process.cwd(), 'public/Join_Hifz_Quran_course.jpeg')
       },
       {
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e55aff35-3bc1-436b-a6c1-2fe8408ea8d8\\media__1786708406659.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/parents-role.jpg'),
         dest: path.join(process.cwd(), 'public/choosing-online-quran-tutor-us-parents.jpg')
       }
     ];
-    sourceFiles.forEach(({ src, dest }) => {
-      if (fs.existsSync(src) && !fs.existsSync(dest)) {
+    sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
+      const needsCopy = !fs.existsSync(dest) || fs.statSync(dest).size === 0;
+      if (fs.existsSync(src) && needsCopy) {
         try {
           fs.copyFileSync(src, dest);
-        } catch (e) {
-          // ignore
-        }
+        } catch (e) {}
+      } else if (fallbackSrc && fs.existsSync(fallbackSrc) && needsCopy) {
+        try {
+          fs.copyFileSync(fallbackSrc, dest);
+        } catch (e) {}
       }
     });
   } catch (e) {
     // ignore
   }
+})();
+
+// Synchronous read from memory cache or local db.json (with bundled JSON fallback)
+export function readDB(): DatabaseSchema {
 
   if (inMemoryCache) {
     return inMemoryCache;

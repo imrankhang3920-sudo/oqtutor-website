@@ -5350,8 +5350,8 @@ function ArticleContentUSParentsTutor() {
       <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
         <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
           <Image
-            src="/choosing-online-quran-tutor-us-parents.jpg"
-            alt="Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat"
+            src="/parents-role.jpg"
+            alt="Father and son sitting together at home using a laptop for online Quran tutor class"
             fill
             className="object-cover"
             priority

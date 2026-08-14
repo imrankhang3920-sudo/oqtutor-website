@@ -1,5 +1,12 @@
 import type { NextConfig } from "next";
 
+// Execute copy script for static blog images to public directory
+try {
+  require('./scripts/copy_all_images.js');
+} catch (e) {
+  // Ignore during static production builds if files already copied
+}
+
 const nextConfig: NextConfig = {
   images: {
     localPatterns: [

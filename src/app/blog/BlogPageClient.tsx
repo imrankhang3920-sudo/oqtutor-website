@@ -44,7 +44,7 @@ const mapping: Record<string, string> = {
   'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
-  'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/choosing-online-quran-tutor-us-parents.jpg',
+  'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/parents-role.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
