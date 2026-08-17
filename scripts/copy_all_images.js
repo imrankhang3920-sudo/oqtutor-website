@@ -41,6 +41,21 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e55aff35-3bc1-436b-a6c1-2fe8408ea8d8\\media__1786708406659.jpg',
     fallbackSrc: path.join(__dirname, '../public/parents-role.jpg'),
     dest: path.join(__dirname, '../public/choosing-online-quran-tutor-us-parents.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954231446.jpg',
+    fallbackSrc: path.join(__dirname, '../public/online-quran-classes-usa.jpg'),
+    dest: path.join(__dirname, '../public/online-quran-classes-usa-kids-adults-1.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954317989.jpg',
+    fallbackSrc: path.join(__dirname, '../public/tajweed-teacher.jpg'),
+    dest: path.join(__dirname, '../public/online-quran-classes-usa-kids-adults-2.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954374169.png',
+    fallbackSrc: path.join(__dirname, '../public/blog-kids-usa-2.png'),
+    dest: path.join(__dirname, '../public/online-quran-classes-usa-kids-adults-3.png')
   }
 ];
 

@@ -35,7 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog;
+  const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog;
 
   const metaTitle = isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
@@ -47,6 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : isUSParentsTutorBlog
     ? 'What US Parents Should Know Before Choosing an Online Quran Tutor | OQTutor'
+    : isUsaKidsAdultsBlog
+    ? 'Online Quran Classes in the USA for Kids and Adults | OQTutor'
     : `${blog.title} | OQTutor`;
 
   return {
@@ -109,6 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isFemaleTeacherBlog = resolvedParams.slug === 'how-to-choose-the-best-female-quran-teacher-online-for-your-child' || resolvedParams.slug === 'how-to-choose-best-female-quran-teacher-online';
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
+  const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -859,6 +863,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentWeekendQuran />
             ) : isUSParentsTutorBlog ? (
               <ArticleContentUSParentsTutor />
+            ) : isUsaKidsAdultsBlog ? (
+              <ArticleContentUsaKidsAdults />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -5698,6 +5704,452 @@ function ArticleContentUSParentsTutor() {
             </Link>
           </div>
         </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentUsaKidsAdults() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      
+      {/* Intro */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium">
+          Finding reliable <Link href="/courses" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link> can make Quran learning easier for Muslim families who have busy school, work, and family schedules. Instead of driving to a class, students can learn from home with a qualified teacher through a live online lesson.
+        </p>
+        <p className="text-base text-muted-text">
+          Today, families can choose programs for children, adults, beginners, Tajweed, and Hifz. The important part is not simply finding a class. It is finding a learning program that matches the student&apos;s age, level, goals, schedule, and learning style.
+        </p>
+        <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-muted-text space-y-1">
+          <span className="font-bold text-foreground block">Google Quality Guidelines</span>
+          <p>
+            Google also recommends creating helpful, reliable, people-first content that gives users a satisfying answer rather than content created mainly to manipulate rankings. Learn more in the <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Google Search Central Helpful Content Guidance</a>.
+          </p>
+        </div>
+      </section>
+
+      {/* Hero / Mid Image 1 Card */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
+        <Image
+          src="/online-quran-classes-usa-kids-adults-1.jpg"
+          alt="Young Muslim student learning Quran online via laptop with parents watching in background"
+          width={700}
+          height={400}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[380px]"
+        />
+        <div className="p-3 text-center bg-foreground/[0.02] text-xs text-muted-text border-t border-card-border font-medium">
+          Live one-on-one virtual Quran class environment for children and adults across the USA.
+        </div>
+      </div>
+
+      {/* Section 1 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Choose Online Quran Classes USA?
+        </h2>
+        <p className="text-base text-muted-text">
+          For many Muslim families, <Link href="/courses" className="text-primary font-semibold hover:underline">online Quran classes USA</Link> programs offer practical flexibility. A student can attend a lesson from home without spending time traveling to a physical classroom.
+        </p>
+        <p className="text-base text-muted-text">
+          A good online lesson can also provide direct interaction with a teacher. Students can read aloud, ask questions, receive pronunciation corrections, and follow a structured lesson plan.
+        </p>
+        <p className="text-base text-muted-text">
+          The key is consistency. Quran learning does not need to become another stressful item on the family calendar. A realistic schedule that students can follow regularly is often more useful than an ambitious schedule that lasts only a few days.
+        </p>
+
+        {/* Ayah Callout */}
+        <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 my-6">
+          <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+            <BookOpen className="h-5 w-5" />
+            <span>Divine Guidance from the Quran</span>
+          </div>
+          <p className="text-base text-foreground font-serif italic">
+            &ldquo;Recite what is manageable for you of the Quran.&rdquo;
+          </p>
+          <div className="text-xs text-muted-text font-medium pt-1">
+            — <a href="https://legacy.quran.com/73/20?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Surah Al Muzzammil 73:20 (Quran.com)</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Learn Quran Online in USA With a Structured Learning Plan
+        </h2>
+        <p className="text-base text-muted-text">
+          When families <Link href="/" className="text-primary font-semibold hover:underline">learn Quran online in USA</Link>, they may start at very different levels.
+        </p>
+        <p className="text-base text-muted-text">
+          A complete beginner may need to learn Arabic letters and basic pronunciation first. Another student may already read the Quran but need help improving Tajweed. An experienced reader may want to focus on memorization or revision.
+        </p>
+        <p className="text-base text-muted-text">
+          This is why a structured assessment matters.
+        </p>
+        <p className="text-base text-muted-text">
+          A suitable program may include <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link>, <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies</Link>, or Quran understanding. OQTutor provides one to one online Quran learning for children and adults, with programs covering Noorani Qaida, Quran reading, Tajweed, Hifz, and Islamic Studies. Visit <Link href="/" className="text-primary font-semibold hover:underline">OQTutor online Quran classes</Link> to view available programs.
+        </p>
+      </section>
+
+      {/* Section 3 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Are the Best Online Quran Classes in USA?
+        </h2>
+        <p className="text-base text-muted-text">
+          The best online Quran classes in USA are not necessarily the ones making the biggest promises. Families should look at the actual learning experience.
+        </p>
+        <p className="text-base text-muted-text font-semibold">
+          Consider these practical questions:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {[
+            "Does the teacher have relevant Quran teaching qualifications?",
+            "Can the teacher explain lessons clearly?",
+            "Does the student receive individual attention?",
+            "Is the schedule suitable for the family?",
+            "Can parents understand how their child is progressing?",
+            "Does the course match the student's current level?",
+            "Can the teacher correct pronunciation during live reading?"
+          ].map((question, index) => (
+            <div key={index} className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-start space-x-3">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm text-foreground font-medium">{question}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          These questions matter more than flashy claims.
+        </p>
+        <p className="text-base text-muted-text">
+          A review of current search results also shows that established online Quran programs commonly focus on areas such as Quran reading, Tajweed, Hifz, beginner education, children&apos;s classes, adult learning, female teachers, and flexible scheduling.
+        </p>
+      </section>
+
+      {/* Mid Image 2: Tutor Image */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
+        <Image
+          src="/online-quran-classes-usa-kids-adults-2.jpg"
+          alt="Certified male online Quran tutor wearing headset and taqiyah conducting live reading session"
+          width={700}
+          height={400}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[380px]"
+        />
+        <div className="p-3 text-center bg-foreground/[0.02] text-xs text-muted-text border-t border-card-border font-medium">
+          Qualified, English-fluent Quran teachers guide students through real-time audio and video correction.
+        </div>
+      </div>
+
+      {/* Section 4 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Online Quran Classes for Kids in USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Children often need a different teaching approach from adults. Long explanations can quickly lose a child&apos;s attention. A patient teacher, clear activities, regular practice, and age appropriate lessons can make the experience easier.
+        </p>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">Online Quran classes for kids in USA</Link> can introduce children to Quran reading step by step. Beginners may start with Arabic letters and basic reading skills before moving toward fluent Quran recitation.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents looking for online Quran classes for children in USA should also consider whether the teacher knows how to communicate with young learners.
+        </p>
+        <p className="text-base text-muted-text">
+          The goal is not simply to finish pages. Children should gradually develop accurate reading habits and a positive relationship with Quran learning.
+        </p>
+      </section>
+
+      {/* Mid Image 3: Poster Graphic */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-sm mx-auto">
+        <Image
+          src="/online-quran-classes-usa-kids-adults-3.png"
+          alt="Give Your Child The Gift of Quran poster showing one-on-one live classes with male and female teachers"
+          width={400}
+          height={600}
+          loading="lazy"
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+      {/* Section 5 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          One on One Quran Classes for Kids USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Individual attention can be especially useful when a child needs frequent correction.
+        </p>
+        <p className="text-base text-muted-text">
+          With <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">one on one Quran classes for kids USA</Link>, the teacher can focus on the child&apos;s reading instead of dividing attention among several students. This can help the teacher identify pronunciation problems, difficult letters, or areas where the child needs more practice.
+        </p>
+        <p className="text-base text-muted-text">
+          For parents comparing the best online Quran classes for kids in USA, teacher quality and student engagement should remain central considerations.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          OQTutor offers personalized one to one lessons and progress tracking for students.
+        </p>
+      </section>
+
+      {/* Section 6 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Online Quran Classes With Tajweed USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Correct Quran recitation involves more than recognizing Arabic letters. Students also need to learn how letters and sounds should be pronounced during recitation.
+        </p>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Online Quran classes with Tajweed USA</Link> programs can help students develop these skills through live reading and correction.
+        </p>
+        <p className="text-base text-muted-text">
+          Students searching for <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">learn Quran with Tajweed online USA</Link> may benefit from lessons that include practical recitation rather than only memorizing Tajweed terminology.
+        </p>
+        <p className="text-base text-muted-text">
+          A <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran Tajweed classes online USA</Link> program should gradually introduce relevant rules and give students opportunities to apply them while reading.
+        </p>
+        <p className="text-base text-muted-text">
+          For students who need focused support, an <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran teacher for Tajweed USA</Link> can listen to recitation and identify areas for improvement. Quran reading classes with Tajweed should therefore combine explanation, practice, listening, and correction.
+        </p>
+      </section>
+
+      {/* Section 7 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Online Quran Memorization Classes USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Hifz requires patience and regular revision. Memorizing new verses without reviewing previous portions can make long term retention difficult.
+        </p>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Online Quran memorization classes USA</Link> can provide a structured environment for students who want to memorize selected Surahs or work toward larger Hifz goals.
+        </p>
+        <p className="text-base text-muted-text">
+          An <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">online Hifz Quran classes USA</Link> program should include both new memorization and revision. A Quran memorization teacher online can listen to the student&apos;s recitation and identify mistakes during live sessions.
+        </p>
+        <p className="text-base text-muted-text">
+          For children, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">online Quran Hifz classes for kids USA</Link> should match the student&apos;s age, ability, and available practice time.
+        </p>
+        <p className="text-base text-muted-text">
+          Families considering private Hifz Quran classes online should ask how revision is handled. Memorization is not only about adding new verses. It is also about protecting what the student has already learned.
+        </p>
+      </section>
+
+      {/* Section 8 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Female Quran Teacher Online USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Some families prefer a female teacher for their daughters or younger children. Others simply find that a female teacher fits their family&apos;s preferences and learning environment.
+        </p>
+        <p className="text-base text-muted-text">
+          A <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teacher online USA</Link> can teach Quran reading, Tajweed, memorization, and other appropriate Quran courses depending on her qualifications and teaching experience. Read our guide on <Link href="/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child" className="text-primary font-semibold hover:underline">choosing the best female Quran teacher online</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents searching for a female Quran teacher for kids USA, an online Quran classes with female teacher USA program, or a female Quran tutor for children USA should check the teacher&apos;s qualifications, experience, communication style, and course structure.
+        </p>
+        <p className="text-base text-muted-text">
+          A private Quran teacher for kids online can also provide individualized attention when a child needs a more personal learning approach.
+        </p>
+      </section>
+
+      {/* Section 9 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Online Quran Classes for Adults in USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Adults often return to Quran learning after years away from formal study. Some may read Arabic slowly, while others may want to improve pronunciation or Tajweed.
+        </p>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Online Quran classes for adults in USA</Link> can make it possible to learn around work and family responsibilities.
+        </p>
+        <p className="text-base text-muted-text">
+          Adults who want to learn Quran online for adults USA may begin with basic reading before moving toward Tajweed or memorization.
+        </p>
+        <p className="text-base text-muted-text">
+          For new learners, Quran lessons for beginners online can provide a comfortable starting point. There is no reason to feel embarrassed about beginning with the basics. Every strong reading skill starts somewhere.
+        </p>
+        <p className="text-base text-muted-text">
+          Online Quran classes for beginners USA can include Arabic letters, joining letters, pronunciation, reading practice, and gradual Quran recitation.
+        </p>
+        <p className="text-base text-muted-text">
+          For students who want focused instruction, private Quran classes for adults USA can offer a more personalized learning experience.
+        </p>
+      </section>
+
+      {/* Section 10 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Quran Teacher Online USA: What Should You Look For?
+        </h2>
+        <p className="text-base text-muted-text">
+          Choosing a Quran teacher online USA is an important decision. A teacher should have suitable Quran education, communicate clearly, correct mistakes respectfully, and understand the student&apos;s learning level.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents should also look for evidence of how the program works. Clear course information, teacher profiles, contact details, and transparent policies can help build confidence.
+        </p>
+        <p className="text-base text-muted-text">
+          Google recommends making it clear who created content and providing trustworthy information that demonstrates expertise and experience.
+        </p>
+        <p className="text-base text-muted-text">
+          A good Quran learning platform should follow the same principle. Families deserve clear information rather than exaggerated promises.
+        </p>
+      </section>
+
+      {/* Section 11 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Online Quran Classes Across the USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Online learning removes many geographical barriers. Families can study from different parts of the country without needing a local Quran school nearby.
+        </p>
+        <p className="text-base text-muted-text">
+          This makes it possible to find online Quran classes in Texas, <Link href="/blog/how-online-quran-classes-help-busy-muslim-families-in-illinois" className="text-primary font-semibold hover:underline">online Quran classes in Illinois</Link>, online Quran classes in California, and online Quran classes in New York.
+        </p>
+        <p className="text-base text-muted-text">
+          Families can also search for online Quran classes in Florida, online Quran classes in New Jersey, online Quran classes in Michigan, and online Quran classes in Virginia.
+        </p>
+        <p className="text-base text-muted-text">
+          The location matters less when lessons take place online. What matters more is whether the teacher&apos;s availability matches the family&apos;s schedule and whether the student receives consistent instruction.
+        </p>
+      </section>
+
+      {/* Section 12 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How to Start Online Quran Learning in USA
+        </h2>
+        <p className="text-base text-muted-text">
+          Starting does not need to be complicated.
+        </p>
+        <ol className="space-y-3 pt-2">
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div>
+              <strong className="text-foreground">Identify Level:</strong> First, identify the student&apos;s current Quran reading level. Then decide whether the main goal is basic reading, Tajweed, memorization, or another area of Quran education.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div>
+              <strong className="text-foreground">Choose Suitable Teacher:</strong> Next, choose a teacher who matches the student&apos;s age and learning needs. Ask about lesson length, scheduling, curriculum, teacher qualifications, and progress monitoring.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text">
+            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div>
+              <strong className="text-foreground">Start Routine:</strong> Finally, start with a manageable routine.
+            </div>
+          </li>
+        </ol>
+
+        {/* Ayah Callout 2 */}
+        <div className="p-6 rounded-3xl bg-secondary/5 border border-secondary/20 space-y-3 my-6">
+          <div className="flex items-center space-x-2 text-secondary font-bold text-sm">
+            <BookOpen className="h-5 w-5" />
+            <span>Encouragement from Allah SWT</span>
+          </div>
+          <p className="text-base text-foreground font-serif italic">
+            &ldquo;Allah does not burden any soul beyond its capacity.&rdquo;
+          </p>
+          <div className="text-xs text-muted-text font-medium pt-1">
+            — <a href="https://legacy.quran.com/2/286?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-secondary font-semibold hover:underline">Surah Al Baqarah 2:286 (Quran.com)</a>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          That principle is a useful reminder for students and parents alike. Quran learning should encourage steady progress, not unnecessary pressure.
+        </p>
+      </section>
+
+      {/* Section 13 */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Start Your Quran Learning Journey
+        </h2>
+        <p className="text-base text-muted-text">
+          Reliable Quran classes online for Muslims in USA should combine qualified teaching, individual attention, clear learning goals, and a schedule that families can realistically maintain.
+        </p>
+        <p className="text-base text-muted-text">
+          Whether a child is learning the Arabic alphabet, an adult is returning to Quran reading, or a student is working toward Hifz, the right teacher can make the learning journey more organized and encouraging.
+        </p>
+        <p className="text-base text-muted-text">
+          The best approach is simple: choose a suitable level, learn from a qualified teacher, practice consistently, and keep improving one lesson at a time.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          That is what meaningful online Quran learning in USA should look like: accessible, structured, personal, and focused on helping students build a lasting connection with the Quran.
+        </p>
+
+        <div className="pt-6">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Begin Your Online Quran Class Today
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Join OQTutor for personalized 1-on-1 Quran lessons for kids and adults across the USA. Book your free trial session with no obligation.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/tutors"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>View Male &amp; Female Tutors</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sources */}
+      <section className="space-y-4 pt-6 border-t border-card-border">
+        <h3 className="text-lg font-bold text-foreground">Sources &amp; References</h3>
+        <ul className="space-y-2 text-xs sm:text-sm text-muted-text">
+          <li>
+            Google Search Central, Creating Helpful, Reliable, People First Content. {' '}
+            <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+              Google Search Central guidance
+            </a>
+          </li>
+          <li>
+            Google Search Central, SEO Starter Guide. {' '}
+            <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+              Google SEO Starter Guide
+            </a>
+          </li>
+          <li>
+            Google Search Central, Spam Policies. {' '}
+            <a href="https://developers.google.com/search/docs/essentials/spam-policies?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+              Google Search spam policies
+            </a>
+          </li>
+          <li>
+            Quran.com, Surah Al Muzzammil 73:20. {' '}
+            <a href="https://legacy.quran.com/73/20?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+              Quran 73:20
+            </a>
+          </li>
+          <li>
+            Quran.com, Surah Al Baqarah 2:286. {' '}
+            <a href="https://legacy.quran.com/2/286?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">
+              Quran 2:286
+            </a>
+          </li>
+        </ul>
       </section>
 
     </article>

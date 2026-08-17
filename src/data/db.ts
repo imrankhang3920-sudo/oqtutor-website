@@ -292,6 +292,21 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e55aff35-3bc1-436b-a6c1-2fe8408ea8d8\\media__1786708406659.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/parents-role.jpg'),
         dest: path.join(process.cwd(), 'public/choosing-online-quran-tutor-us-parents.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954231446.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-usa.jpg'),
+        dest: path.join(process.cwd(), 'public/online-quran-classes-usa-kids-adults-1.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954317989.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/tajweed-teacher.jpg'),
+        dest: path.join(process.cwd(), 'public/online-quran-classes-usa-kids-adults-2.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954374169.png',
+        fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-2.png'),
+        dest: path.join(process.cwd(), 'public/online-quran-classes-usa-kids-adults-3.png')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
