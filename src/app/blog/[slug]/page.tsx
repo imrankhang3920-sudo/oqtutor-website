@@ -822,7 +822,7 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
               <span className="flex items-center space-x-1.5">
                 <Calendar className="h-4 w-4 text-secondary" />
-                <span>Published July 2026</span>
+                <span>Published {blog.publishedAt || 'August 17, 2026'}</span>
               </span>
               <span className="flex items-center space-x-1.5">
                 <BookOpen className="h-4 w-4 text-emerald-500" />

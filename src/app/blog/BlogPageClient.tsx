@@ -247,7 +247,7 @@ export default function BlogPageClient({
                       <div className="flex items-center space-x-3 text-[10px] text-muted-text font-medium">
                         <span className="flex items-center space-x-1.5">
                           <Calendar className="h-3.5 w-3.5" />
-                          <span>July 2026</span>
+                          <span>{blog.publishedAt || 'August 17, 2026'}</span>
                         </span>
                         <span className="flex items-center space-x-1.5">
                           <Clock className="h-3.5 w-3.5 shrink-0" />
