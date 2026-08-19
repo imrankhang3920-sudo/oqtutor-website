@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
   const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
+  const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
   const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog;
 
   const metaTitle = isConsistentHifzBlog
@@ -50,6 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'What US Parents Should Know Before Choosing an Online Quran Tutor | OQTutor'
     : isUsaKidsAdultsBlog
     ? 'Online Quran Classes in the USA for Kids and Adults | OQTutor'
+    : isTexasBlog
+    ? 'Online Quran Classes in Texas | Live 1-to-1 Lessons'
     : `${blog.title} | OQTutor`;
 
   return {
@@ -113,6 +116,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
   const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
+  const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -865,6 +869,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentUSParentsTutor />
             ) : isUsaKidsAdultsBlog ? (
               <ArticleContentUsaKidsAdults />
+            ) : isTexasBlog ? (
+              <ArticleContentTexas />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -895,6 +901,102 @@ export default async function BlogPostPage({ params }: Props) {
 
       <Footer data={dbData.contact} />
     </>
+  );
+}
+
+function ArticleContentTexas() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        Texas is home to one of the largest Muslim communities in the country — an estimated 500,000 residents statewide, concentrated mostly around Houston and Dallas, according to a 2025 Texas Legislature resolution recognizing Muslim Heritage Month. With that many families spread across a state this size, the question isn't whether Quran education matters — it's how to fit it into a schedule that already includes school runs, sports practice, and two working parents.
+      </p>
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        That's the gap online Quran classes are built to close. At <a href="https://www.oqtutor.com/locations/usa/texas" className="text-primary font-semibold hover:underline">OQTutor</a>, students in Houston, Dallas, Austin, San Antonio, Fort Worth, and smaller Texas communities take live, one-to-one lessons over <a href="https://zoom.us" className="text-primary font-semibold hover:underline">Zoom</a> — Quran reading, Tajweed, Hifz, and Islamic Studies — without anyone getting in a car.
+      </p>
+
+      <section className="space-y-4">
+        <h2>Why Texas Families Are Moving Quran Lessons Home</h2>
+        <p>Driving to a physical academy twice a week sounds manageable until you're doing it for two or three kids on different schedules. Home-based lessons remove that entirely: the student logs in from a quiet room, and the lesson happens on whatever timeline the family sets.</p>
+        <p>This matters more in Texas than in a lot of states, simply because of geography. A family in a smaller city like Bryan-College Station or Corpus Christi doesn't have the same density of Islamic academies that Houston or Dallas does. Learning through <a href="https://oqtutor.com/how-it-works" className="text-primary font-semibold hover:underline">live one-to-one Quran classes</a> removes that geographic limit — the teacher's location stops mattering.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Choosing Between Online Quran Academies in Texas</h2>
+        <p>Not every online program is built the same way. Before enrolling, it's worth checking for four things:</p>
+        <ul>
+          <li><strong>Live, one-to-one instruction</strong> — not pre-recorded videos or group classes where your child waits their turn to read.</li>
+          <li><strong>Teachers who specialize by goal</strong> — a beginner reading teacher isn't the same as a Hifz teacher, and the two shouldn't be interchangeable.</li>
+          <li><strong>A real trial class</strong> — you should be able to sit in and judge the teacher's style before committing to a monthly plan.</li>
+          <li><strong>Visible progress tracking</strong> — parents should know what their child covered last week, not just that "class happened."</li>
+        </ul>
+        <p>OQTutor's <a href="https://oqtutor.com/free-trial" className="text-primary font-semibold hover:underline">free trial class</a> exists specifically for that fourth point — most families can tell within one session whether a teacher's pace and personality fit their child.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>How Kids Learn to Read Quran Online</h2>
+        <p>The progression is fairly standard regardless of platform: a child starts with Arabic letters and their sounds, moves into joining letters and basic Tajweed rules through <a href="https://oqtutor.com/courses/quran-reading" className="text-primary font-semibold hover:underline">Noorani Qaida</a>, and only then starts reading actual verses.</p>
+        <p>What changes the outcome isn't the curriculum — it's whether a teacher is listening in real time. A recorded app can show a child what a letter sounds like. It can't hear that same child mispronounce a <em>ghunnah</em> and correct it on the spot. That correction loop, repeated weekly, is the actual mechanism behind fluent reading — and it's the reason free apps tend to plateau where live instruction doesn't.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Are Free Quran Apps Enough for Texas Kids?</h2>
+        <p>Free resources have a real place — vocabulary drills, revision, background listening in the car. But they're a supplement, not a substitute for a teacher who can hear your child recite and catch mistakes before they become habits.</p>
+        <p>If you're weighing a paid class against free apps, compare on specifics: teacher qualifications, whether lessons are actually one-to-one, how scheduling works around Texas time zones, and whether there's a <a href="https://oqtutor.com/free-trial" className="text-primary font-semibold hover:underline">trial lesson</a> before you commit. Price shouldn't be the only variable.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Why Zoom, Specifically</h2>
+        <p>OQTutor runs lessons on <a href="https://zoom.us" className="text-primary font-semibold hover:underline">Zoom</a> because it handles the two things a live Quran lesson actually needs: stable audio for recitation and screen sharing for the Mushaf or Qaida page the student is reading from. Neither of those is exotic — but they're non-negotiable for a lesson built around listening closely to pronunciation.</p>
+        <p>The platform isn't what makes a lesson good, though. A well-run Islamic academy could use nearly any reliable video tool. What matters is the <a href="https://oqtutor.com/teachers" className="text-primary font-semibold hover:underline">teacher's qualifications</a>, how the curriculum is sequenced, and whether the student is actually being corrected in real time — Zoom is just the room the lesson happens in.</p>
+        <p>For younger children, it helps if a parent stays within earshot for the first few sessions — partly to keep the child focused, partly to troubleshoot Wi-Fi or headphones without derailing the lesson.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Quran Reading, Tajweed, and Hifz — Which One Fits</h2>
+        <p>Not every student needs the same course:</p>
+        <ul>
+          <li><strong>Quran Reading</strong> — for beginners building Arabic literacy and reading fluency from scratch.</li>
+          <li><a href="https://oqtutor.com/courses/tajweed" className="text-primary font-semibold hover:underline"><strong>Tajweed</strong></a> — for students who can already read but need to apply pronunciation rules correctly.</li>
+          <li><a href="https://oqtutor.com/courses/hifz" className="text-primary font-semibold hover:underline"><strong>Hifz</strong></a> — structured memorization with built-in revision, for students ready to commit to a longer-term program.</li>
+          <li><a href="https://oqtutor.com/courses/islamic-studies" className="text-primary font-semibold hover:underline"><strong>Islamic Studies</strong></a> — age-appropriate religious knowledge alongside Quran lessons, mostly for younger students.</li>
+        </ul>
+        <p>A teacher should assess the student's current level in the first session and place them accordingly — a program that skips this step and puts every new student in the same starting lesson is a red flag.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Male and Female Teachers, and Why the Choice Matters</h2>
+        <p>Some families want a female teacher for their daughter, particularly as she gets older; others have no preference either way. A program that only offers one option is quietly limiting who it can serve well.</p>
+        <p>Beyond gender, the more important filter is teaching ability with children specifically — patience, clear correction, and the ability to keep a seven-year-old's attention for 30 minutes are a different skill set from teaching an adult convert. <a href="https://oqtutor.com/teachers" className="text-primary font-semibold hover:underline"><strong>OQTutor's teacher roster</strong></a> is built around matching students to instructors on both fronts.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Making the Schedule Actually Stick</h2>
+        <p>The families who see the most progress aren't the ones with the most ambitious schedule — they're the ones with a schedule they can actually keep. Two consistent 30-minute sessions a week beats a daily hour that gets skipped by week three.</p>
+        <p>A few things that help:</p>
+        <ol>
+          <li>Pick a fixed day and time and treat it like any other recurring commitment — sports practice, a doctor's appointment.</li>
+          <li>Keep the learning space the same each time, ideally away from a TV or shared living room.</li>
+          <li>Ask a specific question after class ("What did you read today?") instead of a general one — it signals the lesson matters without turning into an interrogation.</li>
+          <li>Let a teacher slow down when a student needs it. Revision isn't falling behind.</li>
+        </ol>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Getting Started</h2>
+        <p>If your family is weighing <a href="https://www.oqtutor.com/locations/usa/texas" className="text-primary font-semibold hover:underline"><strong>online Quran classes in Texas</strong></a>, the fastest way to know if it'll work is to sit in on one. OQTutor's <a href="https://oqtutor.com/free-trial" className="text-primary font-semibold hover:underline"><strong>trial lesson</strong></a> puts your child (or you, if you're the student) in front of an actual teacher for a real class — no card required, no obligation to continue.</p>
+      </section>
+
+      <section className="space-y-4">
+        <h2>Frequently Asked Questions</h2>
+        <div className="space-y-5">
+          <p><strong>What should I look for in an online Quran class in Texas?</strong><br />Live one-to-one instruction, a teacher qualified in the specific area you need (reading, Tajweed, or Hifz), a real trial class, and some form of progress tracking parents can actually see.</p>
+          <p><strong>Is Zoom good for kids' Quran lessons?</strong><br />Yes, as long as a parent helps with setup beforehand — checking the connection, headphones, and a quiet spot — and stays nearby for the first few sessions with younger children.</p>
+          <p><strong>Can my child learn Quran for free instead?</strong><br />Free apps and videos work well for practice and revision, but they can't correct a child's recitation in real time the way a live teacher can. Most families use both — free tools for extra practice, a teacher for the actual instruction.</p>
+          <p><strong>Do OQTutor's Texas students need to match a specific time zone?</strong><br />Lessons are scheduled around Central Time, but teachers work across time zones, so families can usually find a slot that fits before or after school.</p>
+          <p><strong>Are female Quran teachers available for girls in Texas?</strong><br />Yes — OQTutor offers both male and female teachers, and families can request a preference when booking a <a href="https://oqtutor.com/free-trial" className="text-primary font-semibold hover:underline"><strong>trial class</strong></a>.</p>
+        </div>
+      </section>
+    </article>
   );
 }
 
