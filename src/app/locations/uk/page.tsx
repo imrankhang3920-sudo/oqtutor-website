@@ -44,8 +44,8 @@ export default async function UKQuranClassesPage() {
 
   // Custom Hero Data matching UK requirements (intro: ~120 words)
   const customHeroData = {
-    title: "Online Quran Classes UK",
-    subtitle: "Are you looking for professional, structured Online Quran Classes UK? At OQTutor, we understand the unique scheduling challenges that Muslim families face across London, Birmingham, Manchester, Bradford, Leeds, Glasgow, and throughout the United Kingdom. Balancing state school timetables, after-school activities, and GMT/BST seasonal shifts can make attending a local madrasa or mosque difficult. That is why our one-to-one classes are designed with maximum UK scheduling flexibility in mind. We offer custom sessions taught by DBS-vetted male and female scholars directly from your home. Whether you are seeking basic Noorani Qaida recitation or advanced Tajweed and Hifz programs, our courses provide a tailored experience fitting naturally into your family's weekly routine.",
+    title: "Online Quran Classes UK — One-to-One with DBS-Checked Tutors",
+    subtitle: "Learn the Quran online with personalized one-to-one lessons tailored to your age, level, and learning goals. Whether you're a beginner starting with Noorani Qaida, a parent seeking Quran classes for your child, or an adult refining your Tajweed, OQTutor connects you with DBS-vetted male and female tutors who fit your GMT/BST schedule.\n\nWe understand the reality of UK family life — between state school timetables, half-term breaks, and evening work commitments, a weekly madrasa class often isn't practical. Our flexible scheduling means you book lessons after school, on weekends, or during holidays, and reschedule without penalty if plans change. All sessions are one-to-one in our interactive virtual classroom, with real-time audio,",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
