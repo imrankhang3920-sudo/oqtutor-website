@@ -21,6 +21,9 @@ export default function CoursePageClient({
   contactData: ContactData;
   testimonials?: TestimonialData[];
 }) {
+  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
   if (course.slug === 'noorani-qaida') {
     return <NooraniQaidaContent course={course} contactData={contactData} />;
   }
@@ -37,8 +40,9 @@ export default function CoursePageClient({
     return <QuranForAdultsContent course={course} contactData={contactData} />;
   }
 
-  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
-  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+  if (course.slug === 'islamic-studies') {
+    return <IslamicStudiesContent course={course} contactData={contactData} />;
+  }
 
   const toggleCurriculum = (idx: number) => {
     setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
@@ -3024,6 +3028,616 @@ function QuranForAdultsContent({
               >
                 <span>Book a free trial class</span>
                 <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
+
+function IslamicStudiesContent({
+  course,
+  contactData
+}: {
+  course: CourseData;
+  contactData: ContactData;
+}) {
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIdx(openFaqIdx === idx ? null : idx);
+  };
+
+  const subjectsList = [
+    "Basic Islamic beliefs and principles",
+    "Quran and Quranic understanding",
+    "Hadith and Sunnah",
+    "Seerah of Prophet Muhammad ﷺ",
+    "Fiqh and everyday Islamic rulings",
+    "Islamic manners and character",
+    "Daily duas and supplications",
+    "Salah and other acts of worship",
+    "Islamic history",
+    "Stories of the Prophets",
+    "Practical guidance for Muslim children and families",
+  ];
+
+  const curriculumSections = [
+    {
+      number: "01",
+      title: "Islamic Beliefs and Aqeedah",
+      color: "primary",
+      content: "Students learn the basic beliefs of Islam in an age-appropriate way.",
+      topics: ["Oneness of Allah", "Articles of faith", "Prophets and Messengers", "Angels", "Divine Books", "Day of Judgment", "Qadr"],
+      note: "Children can gradually develop a strong foundation in Islamic belief instead of simply memorizing definitions.",
+    },
+    {
+      number: "02",
+      title: "Quran and Islamic Studies",
+      color: "secondary",
+      content: "Quran education can be connected with Islamic Studies to help students understand how Quranic teachings relate to everyday life.",
+      topics: ["Selected verses and their basic meanings", "Lessons from the Quran", "Practical ways to apply Islamic teachings"],
+      note: null,
+    },
+    {
+      number: "03",
+      title: "Hadith and Sunnah",
+      color: "primary",
+      content: "Students are introduced to authentic teachings from the Prophet Muhammad ﷺ and learn how Sunnah influences a Muslim's daily life.",
+      topics: ["Kindness and honesty", "Patience and respect for parents", "Good manners and responsibility"],
+      note: null,
+    },
+    {
+      number: "04",
+      title: "Seerah of Prophet Muhammad ﷺ",
+      color: "secondary",
+      content: "Learning the life of Prophet Muhammad ﷺ helps students understand Islamic values through real events.",
+      topics: ["Important stages of his life", "His character and relationship with companions and family", "Lessons Muslims can apply today"],
+      note: null,
+    },
+    {
+      number: "05",
+      title: "Fiqh and Daily Islamic Practice",
+      color: "primary",
+      content: "Students can learn practical Islamic guidance appropriate to their age and level.",
+      topics: ["Wudu", "Salah", "Fasting", "Cleanliness", "Islamic manners", "Halal and Haram basics", "Rights and responsibilities", "Daily Muslim practices"],
+      note: "The exact curriculum should be adjusted according to the student's needs and the teacher's qualified approach.",
+    },
+    {
+      number: "06",
+      title: "Islamic Manners and Character",
+      color: "secondary",
+      content: "Islamic education is not only about knowing information. Good character is an important part of Muslim life.",
+      topics: ["Respecting parents", "Being honest", "Helping others", "Keeping promises", "Speaking politely", "Showing kindness", "Controlling anger", "Being thankful", "Respecting teachers and elders"],
+      note: "These lessons help connect Islamic knowledge with everyday behavior.",
+    },
+  ];
+
+  const howItWorksSteps = [
+    { step: "1", title: "Choose your course", desc: "Select the Islamic Studies program that matches the student's age and learning objectives." },
+    { step: "2", title: "Discuss the student's level", desc: "The teacher or academy can identify what the student already knows and what they need to learn next." },
+    { step: "3", title: "Select a suitable schedule", desc: "Choose lesson times that work with your family's routine." },
+    { step: "4", title: "Attend live online classes", desc: "The student joins the class from home using an internet-connected device." },
+    { step: "5", title: "Follow a structured curriculum", desc: "Lessons progress systematically instead of jumping randomly between topics." },
+    { step: "6", title: "Review and practice", desc: "Students review previous lessons and apply what they learn in their daily lives." },
+  ];
+
+  const goodCourseFactors = [
+    { title: "Qualified Teachers", desc: "The teacher should have appropriate Islamic education and the ability to explain concepts clearly." },
+    { title: "Structured Curriculum", desc: "A good course should have a clear learning pathway rather than disconnected lessons." },
+    { title: "Age-Appropriate Teaching", desc: "A six-year-old and an adult beginner do not need the same teaching approach." },
+    { title: "Personalized Attention", desc: "One-to-one classes can make it easier for teachers to identify individual learning needs." },
+    { title: "Flexible Scheduling", desc: "Families should be able to choose suitable class times, especially when students live in different time zones." },
+    { title: "Progress Monitoring", desc: "Parents should know what their child is learning and how they are progressing." },
+    { title: "Clear Communication", desc: "Teachers should explain Islamic concepts in a simple and understandable manner without unnecessarily complicated terminology." },
+  ];
+
+  const kidsTopics = [
+    "Islamic basics",
+    "Short Surahs",
+    "Daily duas",
+    "Salah",
+    "Stories of the Prophets",
+    "Islamic manners",
+    "Basic Aqeedah",
+  ];
+
+  const whoCanJoin = [
+    { title: "Muslim Children", icon: "🧒" },
+    { title: "Teenagers", icon: "👦" },
+    { title: "Adults", icon: "👤" },
+    { title: "Beginners", icon: "📖" },
+    { title: "Students with Basic Islamic Knowledge", icon: "🎓" },
+    { title: "Busy Muslim Families", icon: "🏠" },
+    { title: "Muslims Living Abroad", icon: "🌍" },
+  ];
+
+  return (
+    <main className="flex-grow bg-background text-foreground">
+
+      {/* HERO */}
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Islamic Education
+              </span>
+              <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Online Islamic Studies Course – Learn Islam Online
+              </h1>
+              <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
+              <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
+                <strong className="text-foreground">Learn Islam online with a structured Online Islamic Studies Course designed for kids, teenagers, and adults.</strong>{" "}
+                Study essential Islamic knowledge through live, one-to-one classes covering Quran, Hadith, Seerah, Fiqh, Islamic manners, Duas, and everyday Muslim life. Flexible online lessons make it easier for students and families to learn from home with a qualified teacher.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/book-free-trial"
+                  className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+                >
+                  <span>Book Free Trial Class</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+                >
+                  View Packages
+                </Link>
+              </div>
+              <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start text-xs text-muted-text border-t border-card-border/50 pt-8">
+                <div className="flex items-center space-x-2">
+                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  <span>No Registration Contract</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="h-4 w-4 text-primary" />
+                  <span>Flexible Scheduling</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Award className="h-4 w-4 text-primary" />
+                  <span>Qualified Teachers</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative max-w-sm w-full">
+                <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
+                <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
+                  <Image
+                    src={course.image}
+                    alt="Online Islamic Studies Course"
+                    width={400}
+                    height={320}
+                    priority
+                    className="w-full rounded-2xl object-cover h-[320px] shadow-inner"
+                  />
+                  <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-md border border-card-border/60 text-center shadow-lg">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text block">Suitable For</span>
+                    <span className="text-sm font-bold text-foreground mt-0.5 block">Kids, Teens & Adults</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS AN ONLINE ISLAMIC STUDIES COURSE */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-2xl font-extrabold text-foreground mb-4">What Is an Online Islamic Studies Course?</h2>
+              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed mb-4 font-normal">
+                An <strong className="text-foreground">Online Islamic Studies Course</strong> is a structured program that teaches students the essential knowledge they need to understand and practice Islam. Classes are conducted online with a teacher, allowing students to learn from home at a convenient time.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-4">
+                Depending on the student's age and level, lessons may include:
+              </p>
+              <ul className="space-y-2">
+                {subjectsList.map((subject, idx) => (
+                  <li key={idx} className="flex items-start space-x-2 text-xs text-muted-text">
+                    <CheckCircle className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                    <span>{subject}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-muted-text leading-relaxed font-normal mt-4">
+                The goal is not simply to memorize information. Students should understand what they learn and gradually apply Islamic teachings in their daily lives.
+              </p>
+            </div>
+
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-2xl font-extrabold text-foreground mb-4">Why Learn Islamic Studies Online?</h2>
+              <div className="h-1 w-16 bg-primary mb-6 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed mb-4 font-normal">
+                Modern families often have busy schedules. School, homework, work, travel, and family responsibilities can make attending a traditional class difficult.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed mb-4 font-normal">
+                Online Islamic Studies classes provide a practical alternative.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3 p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-xs text-muted-text leading-relaxed font-normal">Students can learn from home without spending time traveling to a physical institute.</p>
+                </div>
+                <div className="flex items-start space-x-3 p-4 rounded-2xl bg-secondary/5 border border-secondary/10">
+                  <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
+                  <p className="text-xs text-muted-text leading-relaxed font-normal">Parents can choose lesson times that fit their family's routine, while students can receive personalized attention from their teacher.</p>
+                </div>
+                <div className="flex items-start space-x-3 p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-xs text-muted-text leading-relaxed font-normal">For children especially, one-to-one online learning can provide an environment where they can ask questions comfortably and learn at their own pace.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CURRICULUM SECTIONS */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Course Syllabus</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">What Do Students Learn in Islamic Studies Classes?</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm text-muted-text font-normal leading-relaxed">
+              The curriculum can be adapted according to the student's age, knowledge, and learning goals.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {curriculumSections.map((section, idx) => (
+              <div key={idx} className="glass rounded-3xl border-card-border p-8 sm:p-10 overflow-hidden">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+                  <div className={`h-14 w-14 rounded-2xl flex items-center justify-center font-extrabold text-lg shrink-0 ${section.color === 'primary' ? 'bg-primary/15 text-primary' : 'bg-secondary/15 text-secondary'}`}>
+                    {section.number}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-extrabold text-foreground mb-3">{section.title}</h3>
+                    <div className={`h-0.5 w-12 mb-4 rounded-full ${section.color === 'primary' ? 'bg-primary' : 'bg-secondary'}`} />
+                    <p className="text-sm text-muted-text leading-relaxed font-normal mb-4">{section.content}</p>
+                    <p className="text-xs font-bold text-foreground mb-3 uppercase tracking-wide">Topics may include:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                      {section.topics.map((topic, tIdx) => (
+                        <div key={tIdx} className="flex items-center space-x-2 text-xs text-muted-text">
+                          <div className={`h-1.5 w-1.5 rounded-full shrink-0 ${section.color === 'primary' ? 'bg-primary' : 'bg-secondary'}`} />
+                          <span>{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {section.note && (
+                      <p className="text-xs text-muted-text leading-relaxed italic border-l-2 border-card-border pl-3">{section.note}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* KIDS & ADULTS */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            {/* Kids */}
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block mb-4">
+                For Children
+              </span>
+              <h2 className="text-2xl font-extrabold text-foreground mb-3">Online Islamic Studies Course for Kids</h2>
+              <div className="h-1 w-16 bg-secondary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-4">
+                Children need Islamic education that is understandable, engaging, and appropriate for their age. An online Islamic Studies course for kids can introduce Islamic knowledge step by step rather than overwhelming them with advanced material.
+              </p>
+              <p className="text-xs font-bold text-foreground mb-3 uppercase tracking-wide">Younger students may begin with:</p>
+              <div className="grid grid-cols-2 gap-2 mb-4">
+                {kidsTopics.map((topic, idx) => (
+                  <div key={idx} className="flex items-center space-x-2 text-xs text-muted-text bg-foreground/[0.03] rounded-lg px-3 py-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span>{topic}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed font-normal italic">
+                As they grow, lessons can become more detailed and include Hadith, Seerah, Fiqh, Quranic understanding, and other areas of Islamic knowledge.
+              </p>
+            </div>
+
+            {/* Adults */}
+            <div className="glass p-8 sm:p-10 rounded-3xl border-card-border shadow-xl">
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 inline-block mb-4">
+                For Adults
+              </span>
+              <h2 className="text-2xl font-extrabold text-foreground mb-3">Online Islamic Studies for Adults</h2>
+              <div className="h-1 w-16 bg-primary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-4">
+                Islamic education is not limited to children. Adults who want to strengthen their understanding of Islam can also benefit from structured online lessons.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-4">
+                Depending on their goals, adult students may study Quranic understanding, Islamic beliefs, Fiqh, Seerah, Hadith, Islamic history, or practical aspects of Muslim life.
+              </p>
+              <div className="p-5 rounded-2xl bg-secondary/5 border border-secondary/20">
+                <h4 className="text-sm font-bold text-foreground mb-2 flex items-center space-x-2">
+                  <CheckCircle className="h-4 w-4 text-secondary shrink-0" />
+                  <span>One-to-One Online Islamic Studies Classes</span>
+                </h4>
+                <p className="text-xs text-muted-text leading-relaxed font-normal">
+                  One-to-one classes give students direct access to their teacher during the lesson. Instead of following the same pace as a large classroom, the teacher can focus on the student's individual needs — particularly useful for beginners, frequent questioners, or those needing flexible schedules.
+                </p>
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed font-normal mt-4 italic">
+                Online learning also makes it possible to schedule lessons around work and family responsibilities.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* WHO CAN JOIN */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Enrolling Students</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">Who Can Join an Online Islamic Studies Course?</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm text-muted-text leading-relaxed font-normal">
+              The course level should be selected according to the student's current knowledge rather than simply their age.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+            {whoCanJoin.map((item, idx) => (
+              <div key={idx} className="glass p-5 rounded-2xl border-card-border hover:border-primary/20 transition-all duration-300 text-center flex flex-col items-center gap-3">
+                <span className="text-3xl">{item.icon}</span>
+                <span className="text-xs sm:text-sm font-bold text-foreground leading-snug">{item.title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW DO CLASSES WORK */}
+      <section className="py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Getting Started</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">How Do Online Islamic Studies Classes Work?</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {howItWorksSteps.map((item, idx) => (
+              <div key={idx} className="glass p-6 rounded-2xl border-card-border hover:border-secondary/20 transition-all duration-300">
+                <div className="flex items-center space-x-3 mb-3">
+                  <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs font-extrabold flex items-center justify-center shrink-0">{item.step}</span>
+                  <h3 className="text-sm font-bold text-foreground">{item.title}</h3>
+                </div>
+                <p className="text-xs text-muted-text leading-relaxed font-normal pl-11">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT MAKES A GOOD COURSE */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Choosing Wisely</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">What Makes a Good Online Islamic Studies Course?</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm text-muted-text leading-relaxed font-normal">
+              When choosing an online Islamic Studies program, parents should look beyond price or advertising. Consider these factors:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {goodCourseFactors.map((factor, idx) => (
+              <div key={idx} className="glass p-6 rounded-2xl border-card-border hover:border-primary/20 transition-all duration-300">
+                <h3 className="text-sm font-bold text-foreground mb-3 flex items-center space-x-2">
+                  <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
+                  <span>{factor.title}</span>
+                </h3>
+                <p className="text-xs text-muted-text leading-relaxed font-normal pl-7">{factor.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TEACHING METHOD AND OQTUTOR */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-2xl font-extrabold text-foreground mb-3">How We Teach Islamic Studies Online</h2>
+              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
+              <div className="space-y-4">
+                {["Assess the student's current level", "Follow structured lessons", "Explain concepts and invite questions", "Review previous learning", "Connect knowledge with practical examples", "Monitor progress where appropriate"].map((step, idx) => (
+                  <div key={idx} className="flex items-start space-x-3">
+                    <span className="h-6 w-6 rounded-full bg-primary/15 text-primary text-xs font-bold flex items-center justify-center shrink-0">{idx + 1}</span>
+                    <p className="text-sm text-muted-text leading-relaxed">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="text-2xl font-extrabold text-foreground mb-3">Why Choose OQTutor for Islamic Studies?</h2>
+              <div className="h-1 w-16 bg-primary mb-6 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed mb-5">OQTutor provides online learning from home, a structured Islamic Studies curriculum, and lessons for children and adults. One-to-one classes allow the teacher to adapt explanations and pace to the student's needs.</p>
+              <div className="space-y-3">
+                {["Personalized online learning", "Flexible scheduling", "Male and female tutors available", "Free trial class", "Quran and Islamic Studies options"].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 text-sm text-muted-text">
+                    <CheckCircle className="h-4 w-4 text-secondary shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed mt-5">You can learn more about our <Link href="/tutors" className="text-primary hover:underline font-semibold">tutors</Link>, <Link href="/how-it-works" className="text-primary hover:underline font-semibold">how classes work</Link>, and <Link href="/pricing" className="text-primary hover:underline font-semibold">available packages</Link>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAMILIES ABROAD + FREQUENCY + BEGINNER + DIFFERENCE */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            {/* Families Abroad */}
+            <div className="glass p-8 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-xl font-extrabold text-foreground mb-3">Online Islamic Studies for Muslim Families Abroad</h2>
+              <div className="h-1 w-14 bg-secondary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-3">
+                For Muslim families living outside Muslim-majority countries, online Islamic education can provide convenient access to structured learning.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-3">
+                Parents may want their children to learn about Islam while also attending regular school and participating in other activities. Online classes can fit around those commitments.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal">
+                A well-organized course can help children develop Islamic knowledge consistently instead of relying only on occasional weekend lessons.
+              </p>
+            </div>
+
+            {/* Frequency */}
+            <div className="glass p-8 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-xl font-extrabold text-foreground mb-3">How Often Should Children Study Islamic Studies?</h2>
+              <div className="h-1 w-14 bg-primary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-3">
+                There is no single schedule that works for every child. Consistency is generally more useful than trying to fit a very long lesson into an already busy routine.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal mb-3">
+                For younger children, shorter and regular lessons may be easier to maintain. Older students may be comfortable with longer or more frequent sessions.
+              </p>
+              <div className="p-4 rounded-2xl bg-primary/5 border border-primary/10">
+                <p className="text-xs text-muted-text leading-relaxed font-normal">
+                  The ideal schedule depends on the child's age, attention span, current knowledge, and learning goals.
+                </p>
+              </div>
+            </div>
+
+            {/* Beginners */}
+            <div className="glass p-8 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-xl font-extrabold text-foreground mb-3">Is Online Islamic Studies Suitable for Beginners?</h2>
+              <div className="h-1 w-14 bg-secondary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-semibold text-foreground mb-3">
+                Yes. Online Islamic Studies can be suitable for beginners when the course starts with foundational concepts and progresses gradually.
+              </p>
+              <p className="text-sm text-muted-text leading-relaxed font-normal">
+                A beginner does not need to know Arabic or have advanced Islamic knowledge before starting. A good teacher can assess the student's level and begin with the basics.
+              </p>
+            </div>
+
+            {/* Difference between Quran and Islamic Studies */}
+            <div className="glass p-8 rounded-3xl border-card-border shadow-xl">
+              <h2 className="text-xl font-extrabold text-foreground mb-3">What Is the Difference Between Quran Classes and Islamic Studies?</h2>
+              <div className="h-1 w-14 bg-primary mb-5 rounded-full" />
+              <p className="text-sm text-muted-text leading-relaxed font-semibold text-foreground mb-3">
+                Quran classes primarily focus on learning and understanding the Quran, while Islamic Studies covers a broader range of Islamic knowledge.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start space-x-3 p-3 rounded-xl bg-foreground/[0.03]">
+                  <BookOpen className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-xs text-muted-text font-normal">Quran classes may focus on Quran reading, Tajweed, memorization, or translation.</p>
+                </div>
+                <div className="flex items-start space-x-3 p-3 rounded-xl bg-foreground/[0.03]">
+                  <CheckCircle className="h-4.5 w-4.5 text-secondary shrink-0 mt-0.5" />
+                  <p className="text-xs text-muted-text font-normal">Islamic Studies can include Quran, Hadith, Seerah, Fiqh, Aqeedah, Islamic history, manners, and practical Muslim life.</p>
+                </div>
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed font-normal mt-3 italic">
+                Students who want focused Quran reading can explore our <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Online Quran Reading course</Link>, while learners working on pronunciation can study <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>. Beginners may start with <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>; families can also explore <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Quran memorization</Link>.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">FAQ</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">Frequently Asked Questions</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+          <div className="space-y-4">
+            {course.faqs.map((faq, idx) => {
+              const isOpen = openFaqIdx === idx;
+              return (
+                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                  >
+                    <div className="flex items-center space-x-3.5 pr-4">
+                      <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
+                      <span className="text-xs sm:text-sm font-bold">{faq.question}</span>
+                    </div>
+                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">{faq.answer}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-20 border-t border-card-border mb-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full translate-x-8 translate-y-8" />
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-4">
+              Start Today
+            </span>
+            <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Learning Islamic Studies Online</h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+            <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal max-w-2xl mx-auto mb-8">
+              Islamic knowledge grows through consistent learning and practice. Whether you are looking for an <strong className="text-foreground">Online Islamic Studies Course for kids, teenagers, or adults</strong>, choosing a structured program can make the learning journey easier to manage. With personalized online lessons, flexible scheduling, and a curriculum suited to the student's level, families can make Islamic education a regular part of their routine.
+            </p>
+            <p className="text-sm font-semibold text-foreground mb-8">
+              Ready to start learning? Explore an Online Islamic Studies Course and choose a learning plan that fits your needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/book-free-trial"
+                className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+              >
+                <span>Book a Free Trial Class</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/courses"
+                className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+              >
+                Browse All Courses
               </Link>
             </div>
           </div>

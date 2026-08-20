@@ -102,6 +102,7 @@ export default async function CoursePage({ params }: Props) {
     ]
   };
 
+  const isIslamicStudies = course.slug === 'islamic-studies';
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -109,16 +110,10 @@ export default async function CoursePage({ params }: Props) {
     "description": course.description,
     "url": `https://oqtutor.com/courses/${course.slug}`,
     "inLanguage": "en",
-    "educationalCredentialAwarded": "Ijazah Certification",
     "provider": {
       "@type": "Organization",
       "name": "Online Quran Tutor",
       "sameAs": "https://oqtutor.com"
-    },
-    "author": {
-      "@type": "Person",
-      "name": course.authorName || "Qari Imran Hussain",
-      "jobTitle": "Senior Tajweed Instructor"
     },
     "hasCourseInstance": {
       "@type": "CourseInstance",
@@ -135,7 +130,15 @@ export default async function CoursePage({ params }: Props) {
         "@type": "Country",
         "name": "Global"
       }
-    }
+    },
+    ...(isIslamicStudies ? {} : {
+      "educationalCredentialAwarded": "Ijazah Certification",
+      "author": {
+        "@type": "Person",
+        "name": course.authorName || "Qari Imran Hussain",
+        "jobTitle": "Senior Tajweed Instructor"
+      }
+    })
   };
 
   const faqSchema = {

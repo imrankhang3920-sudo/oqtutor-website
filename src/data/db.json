@@ -601,16 +601,22 @@
       ],
       "classStructure": "One-on-One or custom family classes, 2 to 3 times per week.",
       "recommendedAge": "Ages 5 and above",
-      "seoTitle": "Online Islamic Studies Course | Learn Fiqh, Hadith & Seerah",
-      "metaDescription": "Learn Fiqh, Aqeedah, Islamic history, and Seerah of the Prophet (PBUH) online. Structured curriculum for kids and adults with certified tutors. Free trial.",
-      "focusKeyword": "Islamic Studies",
+      "seoTitle": "Online Islamic Studies Course | Learn Islam Online | OQTutor",
+      "metaDescription": "Learn Islamic Studies online with structured lessons for kids and adults. Study Aqeedah, Quran, Hadith, Seerah, Fiqh, Islamic manners and more with OQTutor.",
+      "focusKeyword": "Online Islamic Studies Course",
       "secondaryKeywords": [
-        "online Islamic studies",
-        "Islamic studies for kids",
+        "online Islamic studies for kids",
+        "Islamic studies online",
+        "learn Islam online",
+        "Islamic studies course for adults",
+        "online Islamic classes",
+        "Islamic studies for beginners",
         "learn Fiqh online",
-        "Islamic history course"
+        "Seerah course online",
+        "Hadith classes online",
+        "Islamic education online"
       ],
-      "whoShouldJoin": "Ideal for families and individuals living in Western countries who want to learn core Islamic knowledge, prophetic stories, clean habits, and moral values.",
+      "whoShouldJoin": "Ideal for Muslim children, teenagers, and adults — including beginners and busy families living abroad — who want to learn core Islamic knowledge, Quran, Hadith, Seerah, Fiqh, and moral values from a qualified teacher.",
       "benefits": [
         "Structured syllabus combining beliefs, history, ethics, and practice",
         "Qualified teachers presenting topics in clear, modern English",
@@ -619,33 +625,72 @@
       ],
       "curriculumSteps": [
         {
-          "title": "Aqeedah & Beliefs",
-          "description": "Understanding the six articles of faith and the oneness of Allah (Tawheed)."
+          "title": "Islamic Beliefs and Aqeedah",
+          "description": "Understanding the six articles of faith, oneness of Allah (Tawheed), Prophets and Messengers, Angels, Divine Books, Day of Judgment, and Qadr in an age-appropriate way."
         },
         {
-          "title": "Seerah & History",
-          "description": "Exploring the biography of Prophet Muhammad (PBUH) and stories of other prophets."
+          "title": "Quran and Islamic Studies",
+          "description": "Connecting selected Quranic verses with everyday Islamic life — learning basic meanings, lessons, and practical applications of Quranic teachings."
         },
         {
-          "title": "Fiqh (Rules of Worship)",
-          "description": "Learning how to perform Wudu, pray Salah, fast in Ramadan, and general clean habits."
+          "title": "Hadith and Sunnah",
+          "description": "Authentic teachings from the Prophet Muhammad ﷺ covering kindness, honesty, patience, respect for parents, good manners, and responsibility."
         },
         {
-          "title": "Akhlaq (Manners & Ethics)",
-          "description": "Fostering respect for parents, honesty, charity, and daily community etiquette."
+          "title": "Seerah of Prophet Muhammad ﷺ",
+          "description": "Exploring the biography of Prophet Muhammad ﷺ — his character, relationship with companions and family, and lessons Muslims can apply today."
+        },
+        {
+          "title": "Fiqh and Daily Islamic Practice",
+          "description": "Practical Islamic guidance covering Wudu, Salah, fasting, cleanliness, Islamic manners, Halal and Haram basics, rights and responsibilities, and daily Muslim practices."
+        },
+        {
+          "title": "Islamic Manners and Character (Akhlaq)",
+          "description": "Lessons on respecting parents, honesty, helping others, keeping promises, speaking politely, showing kindness, controlling anger, being thankful, and respecting teachers and elders."
         }
       ],
-      "teachingMethod": "We present history and ethics using interactive storybooks, video illustrations, worksheets, and engaging quizzes.",
+      "teachingMethod": "Lessons begin with an assessment of the student's level, followed by structured teacher explanations, questions, discussion, revision, and practical examples. One-to-one attention allows the teacher to adapt the pace and review progress where appropriate.",
       "faqs": [
         {
-          "question": "Is this course only for kids?",
-          "answer": "No. We have advanced versions of this course covering Fiqh and Seerah tailored for adult students."
+          "question": "What is an Online Islamic Studies Course?",
+          "answer": "An Online Islamic Studies Course is a structured program that teaches Islamic beliefs, Quran, Hadith, Seerah, Fiqh, Islamic manners, duas, and other essential areas of Islamic knowledge through live online lessons."
         },
         {
-          "question": "Can I combine this with Quran classes?",
-          "answer": "Yes, many parents choose a combined package of 15 mins Quran reading and 15 mins Islamic Studies."
+          "question": "Can children learn Islamic Studies online?",
+          "answer": "Yes. Children can learn Islamic Studies online through age-appropriate lessons with a qualified teacher. Courses can cover Islamic beliefs, Quran, duas, Salah, Seerah, Hadith, manners, and basic Fiqh."
+        },
+        {
+          "question": "What is the best way to learn Islamic Studies online?",
+          "answer": "The best approach is a structured course that matches the student's age, level, goals, and available schedule. Regular lessons with a teacher, opportunities to ask questions, revision, and practical application can make online learning more useful than disconnected lessons."
+        },
+        {
+          "question": "Can adults take Online Islamic Studies classes?",
+          "answer": "Yes. Online Islamic Studies programs can be designed for adults who want to improve their understanding of Islam, Quran, Hadith, Fiqh, Seerah, or other Islamic subjects."
+        },
+        {
+          "question": "Can Muslim children living abroad learn Islamic Studies online?",
+          "answer": "Yes. Muslim children living abroad can study Islamic Studies online from home, with lessons arranged around school, family commitments, and time-zone differences. A structured program can support regular learning when local options are limited or difficult to attend."
+        },
+        {
+          "question": "What subjects are taught in Islamic Studies?",
+          "answer": "Common subjects include Aqeedah, Quran, Hadith, Seerah, Fiqh, Islamic history, Islamic manners, duas, Salah, and practical Islamic knowledge."
+        },
+        {
+          "question": "How do online Islamic Studies classes work?",
+          "answer": "Students attend live lessons online with a teacher. The teacher follows a structured curriculum, explains the lesson, answers questions, gives practice or revision, and monitors the student's progress."
+        },
+        {
+          "question": "How often should children study Islamic Studies?",
+          "answer": "There is no single schedule for every child. Short, regular lessons are often easier for younger students to maintain, while older students may prefer longer or more frequent sessions. The right frequency depends on age, attention span, current knowledge, and learning goals."
+        },
+        {
+          "question": "Can Islamic Studies be combined with Quran classes?",
+          "answer": "Yes. Islamic Studies can be combined with Quran classes when that suits the student's goals. Quran courses generally focus on reading, Tajweed, memorization, or understanding the Quran, while Islamic Studies adds subjects such as Aqeedah, Hadith, Seerah, Fiqh, manners, and daily practices."
         }
-      ]
+      ],
+      "createdAt": "2025-01-15T00:00:00.000Z",
+      "updatedAt": "2026-08-20T00:00:00.000Z",
+      "authorName": "Qari Imran Hussain (Ijazah Certified Senior Instructor)"
     },
     {
       "id": "course-6",
