@@ -71,7 +71,7 @@ export default async function PrivacyPage() {
               <div className="mt-4 p-6 bg-foreground/[0.02] border border-card-border rounded-2xl space-y-2 text-sm">
                 <p><strong>Business Name:</strong> OQTutor</p>
                 <p><strong>Business Address:</strong> Bahawalpur, Punjab, Pakistan</p>
-                <p><strong>Email:</strong> <a href="mailto:imrankhang3920@gmail.com" className="text-primary hover:underline font-semibold">imrankhang3920@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:hello@oqtutor.com" className="text-primary hover:underline font-semibold">hello@oqtutor.com</a></p>
                 <p><strong>WhatsApp:</strong> <a href="https://wa.me/923478704442" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">+92 347 8704442</a> / <a href="tel:+12487826565" className="text-primary hover:underline font-semibold">+1 (248) 782-6565</a></p>
               </div>
             </section>
@@ -234,7 +234,7 @@ export default async function PrivacyPage() {
                 <li>Lodge a complaint with your local data protection authority</li>
               </ul>
               <p className="mt-4">
-                To exercise any of these rights, email <a href="mailto:imrankhang3920@gmail.com" className="text-primary hover:underline font-semibold">imrankhang3920@gmail.com</a>. We will respond within a reasonable time.
+                To exercise any of these rights, email <a href="mailto:hello@oqtutor.com" className="text-primary hover:underline font-semibold">hello@oqtutor.com</a>. We will respond within a reasonable time.
               </p>
             </section>
 
@@ -271,7 +271,7 @@ export default async function PrivacyPage() {
               <h2 className="text-xl font-bold text-foreground mb-4">14. Contact Us</h2>
               <p>Questions, requests, or concerns about this Privacy Policy or your data:</p>
               <div className="mt-4 p-6 bg-foreground/[0.02] border border-card-border rounded-2xl space-y-2">
-                <p><strong>Email:</strong> <a href="mailto:imrankhang3920@gmail.com" className="text-primary hover:underline font-semibold">imrankhang3920@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:hello@oqtutor.com" className="text-primary hover:underline font-semibold">hello@oqtutor.com</a></p>
                 <p><strong>WhatsApp:</strong> <a href="https://wa.me/923478704442" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Chat with us</a></p>
               </div>
             </section>

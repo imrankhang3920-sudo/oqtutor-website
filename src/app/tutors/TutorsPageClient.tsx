@@ -177,13 +177,6 @@ export default function TutorsPageClient({
           "@type": "PostalAddress",
           "addressCountry": "Pakistan"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "worstRating": "1",
-          "reviewCount": "350"
-        },
         "employee": initialTutors.map((tutor) => ({
           "@type": "Person",
           "name": tutor.name,

@@ -10,6 +10,7 @@ import {
   Award, HelpCircle, ArrowRight, ShieldCheck, Star 
 } from 'lucide-react';
 import CoursePageClient from './CoursePageClient';
+import { createCourseSchema } from '@/lib/structuredData';
 
 export const dynamic = 'force-dynamic';
 
@@ -102,44 +103,7 @@ export default async function CoursePage({ params }: Props) {
     ]
   };
 
-  const isIslamicStudies = course.slug === 'islamic-studies';
-  const courseSchema = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": course.title,
-    "description": course.description,
-    "url": `https://oqtutor.com/courses/${course.slug}`,
-    "inLanguage": "en",
-    "provider": {
-      "@type": "Organization",
-      "name": "Online Quran Tutor",
-      "sameAs": "https://oqtutor.com"
-    },
-    "hasCourseInstance": {
-      "@type": "CourseInstance",
-      "courseMode": "Online",
-      "duration": course.duration,
-      "courseWorkload": course.classStructure
-    },
-    "offers": {
-      "@type": "Offer",
-      "category": "Trial",
-      "price": "0.00",
-      "priceCurrency": "USD",
-      "eligibleRegion": {
-        "@type": "Country",
-        "name": "Global"
-      }
-    },
-    ...(isIslamicStudies ? {} : {
-      "educationalCredentialAwarded": "Ijazah Certification",
-      "author": {
-        "@type": "Person",
-        "name": course.authorName || "Qari Imran Hussain",
-        "jobTitle": "Senior Tajweed Instructor"
-      }
-    })
-  };
+  const courseSchema = createCourseSchema(course);
 
   const faqSchema = {
     "@context": "https://schema.org",

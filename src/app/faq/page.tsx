@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { readDB } from '@/data/db';
 import FAQPageClient from './FAQPageClient';
+import Script from 'next/script';
+import { createFaqPageSchema } from '@/lib/structuredData';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,23 +21,12 @@ export const metadata: Metadata = {
 export default async function FAQPage() {
   const dbData = readDB();
 
-  // Create FAQ Schema JSON-LD dynamically
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": dbData.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
+  const faqSchema = createFaqPageSchema(dbData.faqs);
 
   return (
     <>
-      <script
+      <Script
+        id="faq-page-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

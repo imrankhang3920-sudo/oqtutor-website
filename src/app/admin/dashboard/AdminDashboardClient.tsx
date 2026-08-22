@@ -51,6 +51,7 @@ import {
   Layout,
   Eye
 } from 'lucide-react';
+import { siteConfig } from '@/lib/structuredData';
 import { motion, AnimatePresence } from 'framer-motion';
 import MediaLibrary from '@/components/admin/MediaLibrary';
 import BlockEditor from '@/components/admin/BlockEditor';
@@ -127,8 +128,8 @@ export default function AdminDashboardClient({
     copyrightText: `© ${new Date().getFullYear()} OQTutor. All rights reserved.`,
     columns: [],
     socialLinks: [
-      { platform: 'facebook', url: 'https://web.facebook.com/profile.php?id=100093682086058' },
-      { platform: 'instagram', url: 'https://www.instagram.com/hadi.382011/' },
+      { platform: 'facebook', url: siteConfig.social.facebook },
+      { platform: 'instagram', url: siteConfig.social.instagram },
     ],
   };
 

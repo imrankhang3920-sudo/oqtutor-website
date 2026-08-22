@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
+import { siteConfig } from '@/lib/structuredData';
 
 function getSmtpCredentials() {
   const smtpHost = (process.env.SMTP_HOST || 'smtp.gmail.com').trim();
@@ -26,7 +27,7 @@ function getSmtpCredentials() {
 
   let smtpTo = clean(process.env.CONTACT_EMAIL);
   if (isPlaceholder(smtpTo)) {
-    smtpTo = clean(process.env.SMTP_TO) || 'imrankhang3920@gmail.com';
+    smtpTo = clean(process.env.SMTP_TO) || siteConfig.contactEmail;
   }
 
   return { smtpHost, smtpPort, smtpUser, smtpPass, smtpTo };

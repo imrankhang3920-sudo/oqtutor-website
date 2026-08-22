@@ -7,6 +7,7 @@ import { ContactData, FooterNavData } from '@/data/db';
 import Image from 'next/image';
 import { trackCloseConvertLead } from '@/lib/analytics';
 import TrustBox from '@/components/TrustBox';
+import { siteConfig } from '@/lib/structuredData';
 
 export default function Footer({ 
   data, 
@@ -45,7 +46,7 @@ export default function Footer({
 
   const socialLinks = [
     { 
-      href: 'https://web.facebook.com/profile.php?id=100093682086058', 
+      href: siteConfig.social.facebook,
       label: 'Facebook',
       svg: (
         <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -54,7 +55,7 @@ export default function Footer({
       )
     },
     { 
-      href: 'https://www.instagram.com/hadi.382011/', 
+      href: siteConfig.social.instagram,
       label: 'Instagram',
       svg: (
         <svg className="h-4 w-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24">

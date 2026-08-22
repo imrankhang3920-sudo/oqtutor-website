@@ -82,6 +82,7 @@ export const metadata: Metadata = {
 
 import Script from "next/script";
 import AnalyticsTrackers from "@/components/AnalyticsTrackers";
+import { organizationSchema } from '@/lib/structuredData';
 
 export default function RootLayout({
   children,
@@ -174,6 +175,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         <ThemeProvider>
+          <Script
+            id="organization-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
           <Script
             id="trustpilot-widget-script"
             src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"

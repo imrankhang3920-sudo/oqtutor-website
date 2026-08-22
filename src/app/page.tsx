@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 
 import { Metadata } from 'next';
+import { createFaqPageSchema, siteConfig } from '@/lib/structuredData';
+import Script from 'next/script';
 
 function StatsBar() {
   const stats = [
@@ -122,8 +124,8 @@ export default async function HomePage() {
     "image": "https://www.oqtutor.com/logo.jpg",
     "description": "OQTutor is a premier online Quran academy providing personalized 1-on-1 Quran classes with certified male and female tutors.",
     "sameAs": [
-      "https://web.facebook.com/profile.php?id=100093682086058",
-      "https://www.instagram.com/hadi.382011/"
+      siteConfig.social.facebook,
+      siteConfig.social.instagram
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -148,11 +150,6 @@ export default async function HomePage() {
       "addressRegion": "NY",
       "addressCountry": "US"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "184"
-    }
   };
 
   const websiteSchema = {
@@ -267,94 +264,9 @@ export default async function HomePage() {
     ]
   };
 
-  // High quality, local-intent target FAQs for Homepage & FAQ Schema
-  const homepageFaqs = [
-    {
-      id: "hfaq-1",
-      question: "What is the best online Quran class for beginners?",
-      answer: "OQTutor is widely recognized as one of the best online Quran academies, offering personalized, one-to-one online Quran classes for absolute beginners. We specialize in Noorani Qaida, which forms the building block for correct pronunciation (Makharij). Our certified male and female Quran tutors guide students of all ages step-by-step to read Arabic fluently, ensuring a strong foundation from day one.",
-      category: "general" as const
-    },
-    {
-      id: "hfaq-2",
-      question: "Do you offer certified female Quran tutors for children and sisters?",
-      answer: "Yes, OQTutor provides a dedicated team of certified female Quran tutors for kids and sisters. We understand the importance of comfort, safety, and privacy in Islamic learning. Our female teachers are highly qualified, hold verified degrees in Islamic Studies, are trained in modern digital teaching methodologies, and are fluent in English to support students.",
-      category: "tutors" as const
-    },
-    {
-      id: "hfaq-3",
-      question: "How do one-to-one online Quran classes compare to group classes?",
-      answer: "One-to-one online Quran classes offer significant advantages over traditional group classrooms. In a private session, the Quran tutor focuses 100% of their attention on a single student. This allows the teacher to adapt the pace to the student's unique learning speed, correct pronunciation mistakes instantly, and eliminate distractions. Students in private classes typically learn up to three times faster and build greater confidence.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-4",
-      question: "Can we choose our own class timings and adjust to our schedule?",
-      answer: "Absolutely. OQTutor operates 24/7 to accommodate busy schedules. Whether you prefer early morning lessons before school, afternoon classes, or weekend sessions, you can select times that fit your family's routine. You can also reschedule lessons with prior notice.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-5",
-      question: "How does the 3-day free trial Quran class work?",
-      answer: "Our free trial Quran class is designed to let you experience our teaching style with zero commitment. Simply fill out the registration form on our homepage. We will pair you with a certified tutor matching your preferences (male or female). You will receive three separate one-to-one live classes where the tutor assesses the student's level, discusses learning goals, and demonstrates our interactive portal.",
-      category: "general" as const
-    },
-    {
-      id: "hfaq-6",
-      question: "What age is appropriate for children to start learning the Quran online?",
-      answer: "We recommend children start online Quran classes around the age of 4 to 5. At this stage, kids can start learning the basics through our Noorani Qaida course, which is structured with engaging visual guides, colors, and interactive activities. For very young children, our tutors keep lessons short, friendly, and highly encouraging to build a positive relationship with the Holy Quran.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-7",
-      question: "What courses are offered at OQTutor's online Quran academy?",
-      answer: "OQTutor offers a comprehensive curriculum, including: (1) Online Noorani Qaida Classes for beginners, (2) Quran Reading Fluency, (3) Online Tajweed Classes to master recitation rules, (4) Online Hifz Classes for Quran memorization, (5) Islamic Studies for Kids (covering Salah, Wudu, Duas, and Fiqh), and (6) Arabic Language Classes. Every course is tailored to the student's level.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-8",
-      question: "How do you ensure child safety and privacy during online classes?",
-      answer: "Child safety is our top priority. All online sessions are conducted via secure, monitored virtual classrooms. Our Quality Assurance supervisors conduct periodic reviews and audits to maintain professional teaching standards. Furthermore, parents are encouraged to sit with their children during classes or monitor their progress through regular portal updates and performance reports.",
-      category: "general" as const
-    },
-    {
-      id: "hfaq-9",
-      question: "How much do online Quran classes cost?",
-      answer: "Our pricing is highly competitive and structured into affordable monthly packages based on the number of classes per week. Since we believe quality Quranic education should be accessible to every family, we offer flexible subscription options with no hidden fees, no long-term contracts, and a money-back satisfaction guarantee. You can start with our 3-day free trial to see if it is the right fit.",
-      category: "pricing" as const
-    },
-    {
-      id: "hfaq-10",
-      question: "Can adults enroll in your online Quran academy?",
-      answer: "Yes, we welcome adult learners of all ages and levels, including new Muslims and seniors. Our tutors design separate, customized lesson plans for adults that respect their learning speed and busy schedules. Whether you want to correct your Tajweed pronunciation, start memorizing selected Surahs, or learn the translation of the verses, we have experienced adult-focused tutors to guide you.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-11",
-      question: "What is the importance of learning Quran with Tajweed rules?",
-      answer: "Tajweed rules govern the correct pronunciation and articulation of Arabic letters during Quranic recitation. Reciting the Quran with correct Tajweed is a spiritual duty, as mispronouncing letters can change the meaning of the words. Our online Tajweed classes teach students the rules of stops, nasalization (Ghunnah), and articulation points, ensuring they recite beautifully and accurately.",
-      category: "classes" as const
-    },
-    {
-      id: "hfaq-12",
-      question: "How do you track and report a student's progress?",
-      answer: "We maintain detailed progress tracking for every student. After each lesson, the tutor logs the student's performance, attendance, and homework. At the end of every month, parents receive a comprehensive progress report outlining areas of strength and topics that require revision. This ensures transparency and helps parents stay actively involved in their child's learning journey.",
-      category: "general" as const
-    }
-  ];
+  const homepageFaqs = dbData.faqs;
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": homepageFaqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
+  const faqSchema = createFaqPageSchema(homepageFaqs);
 
   return (
     <>
@@ -378,7 +290,8 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
-      <script
+      <Script
+        id="homepage-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
@@ -517,6 +430,7 @@ export default async function HomePage() {
                     Our customized programs are divided into three distinct segments: basic literacy (Noorani Qaida), advanced recitation mastery (Tajweed), and structured memorization (Hifz). We understand that adults learn differently than children, which is why our certified teachers adopt a cooperative, peer-like coaching style.
                   </p>
                   <p>
+                    {/* TODO(content): This female tutor, privacy, and safety copy is duplicated in the "Certified Male & Female Quran Tutors Online" and "Safety & Privacy" sections and is scheduled for a copy rewrite. */}
                     We respect your busy calendars by allowing custom-timed sessions, session rescheduling, and customizable frequency. Our academy hosts certified female Quran tutors for sisters, guaranteeing 100% privacy and comfort during every live session.
                   </p>
                 </div>
@@ -981,6 +895,7 @@ export default async function HomePage() {
                     <Users className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                     <div>
                       <h4 className="font-bold text-sm text-foreground">Female Tutor Options</h4>
+                      {/* TODO(content): This female tutor, privacy, and safety copy is duplicated in the "Certified Male & Female Quran Tutors Online" and "Safety & Privacy" sections and is scheduled for a copy rewrite. */}
                       <p className="text-xs sm:text-sm text-muted-text font-normal">
                         We offer dedicated female tutors for young children and sisters, ensuring a secure and culturally appropriate environment.
                       </p>
