@@ -8,6 +8,7 @@ import { FAQData } from '@/data/db';
 
 export default function FAQ({ data }: { data: FAQData[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
+  const columnBreak = Math.ceil(data.length / 2);
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -35,8 +36,10 @@ export default function FAQ({ data }: { data: FAQData[] }) {
         </div>
 
         {/* Accordions */}
-        <div className="space-y-4 mb-12">
-          {data.map((faq) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
+          {[data.slice(0, columnBreak), data.slice(columnBreak)].map((column, columnIndex) => (
+            <div key={columnIndex} className="space-y-4">
+              {column.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
@@ -45,6 +48,9 @@ export default function FAQ({ data }: { data: FAQData[] }) {
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
+                  id={`faq-question-${faq.id}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${faq.id}`}
                   className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
                 >
                   <div className="flex items-center space-x-3.5 pr-4">
@@ -61,6 +67,9 @@ export default function FAQ({ data }: { data: FAQData[] }) {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={`faq-answer-${faq.id}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${faq.id}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -76,7 +85,9 @@ export default function FAQ({ data }: { data: FAQData[] }) {
                 </AnimatePresence>
               </div>
             );
-          })}
+              })}
+            </div>
+          ))}
         </div>
 
         {/* View All Button */}
