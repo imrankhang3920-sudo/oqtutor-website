@@ -11,7 +11,7 @@ export interface FAQItem {
   answer: string;
 }
 
-export const usaFaqList: FAQItem[] = [
+const defaultFaqList: FAQItem[] = [
   {
     id: "usa-faq-1",
     question: "What are the best online Quran classes in the USA?",
@@ -79,8 +79,9 @@ export const usaFaqList: FAQItem[] = [
   }
 ];
 
-export default function USAFaqAccordion() {
+export default function USAFaqAccordion({ items }: { items?: FAQItem[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
+  const faqList = items && items.length > 0 ? items : defaultFaqList;
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -110,7 +111,7 @@ export default function USAFaqAccordion() {
 
         {/* Accordions */}
         <div className="space-y-4 mb-12">
-          {usaFaqList.map((faq) => {
+          {faqList.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div

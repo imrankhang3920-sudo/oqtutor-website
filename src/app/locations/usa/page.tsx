@@ -4,7 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
-import USAFaqAccordion, { usaFaqList } from '@/components/USAFaqAccordion';
+import USAFaqAccordion from '@/components/USAFaqAccordion';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,11 +20,8 @@ import {
   Sparkles, 
   HeartHandshake, 
   CheckCheck, 
-  Video,
-  UserCheck,
-  Calendar,
-  Compass,
-  Star,
+  UserCheck, 
+  Compass, 
   FileText
 } from 'lucide-react';
 
@@ -73,20 +70,35 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function USALocationsHubPage() {
   const dbData = readDB();
   
-  // Check if admin is logged in
-  const cookieStore = await cookies();
-  const token = cookieStore.get('admin_token')?.value;
-  const adminLoggedIn = token ? verifyAdminToken(token) : false;
+  // Check if admin is logged in safely
+  let adminLoggedIn = false;
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('admin_token')?.value;
+    adminLoggedIn = token ? verifyAdminToken(token) : false;
+  } catch {
+    adminLoggedIn = false;
+  }
 
   // Exact single H1 and supporting intro
+  const heroFallback = dbData?.hero || {
+    title: "Online Quran Classes in the USA for Kids & Adults",
+    subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
+    ctaText: "Book Free Placement Trial",
+    ctaLink: "/book-free-trial",
+    whatsappText: "+1234567890",
+    whatsappNumber: "+1234567890",
+    backgroundImage: "/hero-bg.jpg",
+  };
+
   const customHeroData = {
     title: "Online Quran Classes in the USA for Kids & Adults",
     subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
-    whatsappText: dbData.hero.whatsappText,
-    whatsappNumber: dbData.hero.whatsappNumber,
-    backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
+    whatsappText: heroFallback.whatsappText || "",
+    whatsappNumber: heroFallback.whatsappNumber || "",
+    backgroundImage: heroFallback.backgroundImage || "/hero-bg.jpg",
   };
 
   const activeStates = [
@@ -262,11 +274,79 @@ export default async function USALocationsHubPage() {
     }
   ];
 
+  const usaFaqs = [
+    {
+      id: "usa-faq-1",
+      question: "What are the best online Quran classes in the USA?",
+      answer: "The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Look for an academy that assesses the student's entry level and offers a trial class so you can evaluate the teacher's patience and communication before committing."
+    },
+    {
+      id: "usa-faq-2",
+      question: "How do I choose an online Quran tutor for my child?",
+      answer: "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking a placement trial allows you to observe how your child interacts with the tutor in real time."
+    },
+    {
+      id: "usa-faq-3",
+      question: "Are online Quran classes suitable for beginners?",
+      answer: "Yes. Beginners of any age start with the Noorani Qaida curriculum, which introduces Arabic alphabet recognition, letter shapes, short vowels (Harakat), and articulation points (Makharij). With one-to-one instruction, tutors guide learners step by step from individual sounds to reading words and full verses without feeling rushed."
+    },
+    {
+      id: "usa-faq-4",
+      question: "Can children learn Quran online?",
+      answer: "Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home."
+    },
+    {
+      id: "usa-faq-5",
+      question: "Can adults learn Quran online?",
+      answer: "Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs, or studying Tafseer, lessons progress at your individual pace in complete privacy with male or female scholars."
+    },
+    {
+      id: "usa-faq-6",
+      question: "Do you offer one-to-one Quran lessons?",
+      answer: "Every standard class at OQTutor is conducted live one-to-one between a single student and teacher. This private format ensures 100% focused attention, immediate error correction, and a customized pace without the distractions or waiting times common in group environments."
+    },
+    {
+      id: "usa-faq-7",
+      question: "Can I choose a female Quran teacher?",
+      answer: "Yes. We have qualified female Quran teachers available for sisters and young children. Our female instructors hold verified Islamic credentials, are fluent in English, and provide a nurturing, private setting for learning Noorani Qaida, Tajweed, Quran reading, and Hifz."
+    },
+    {
+      id: "usa-faq-8",
+      question: "Do you offer Quran classes with Tajweed?",
+      answer: "Yes. Our Tajweed course covers articulation points (Makharij), Ghunnah, Ikhfa, Qalqalah, Madd, and stopping signs (Waqf). Tutors explain the rules clearly and listen closely during live recitation to correct pronunciation mistakes immediately as you read from the Mushaf."
+    },
+    {
+      id: "usa-faq-9",
+      question: "Do you offer Hifz classes?",
+      answer: "Yes. Our online Hifz program pairs students with certified Huffaz. Lessons follow a systematic daily cycle: memorizing new verses (Sabaq), revising recent pages (Sabqi), and reinforcing long-term retention (Manzil). Study plans are customized to match each student's capacity and schedule."
+    },
+    {
+      id: "usa-faq-10",
+      question: "What time are Quran lessons available?",
+      answer: "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with the ability to adjust times as routines change."
+    },
+    {
+      id: "usa-faq-11",
+      question: "How much do online Quran classes cost?",
+      answer: "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 minutes of private one-to-one instruction with no hidden fees or contracts."
+    },
+    {
+      id: "usa-faq-12",
+      question: "Is there a trial class?",
+      answer: "Yes. OQTutor provides a free trial class with no credit card or financial commitment required. During the session, the teacher assesses the student's current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals."
+    },
+    {
+      id: "usa-faq-13",
+      question: "How do online Quran classes work?",
+      answer: "After booking a trial, you connect with your assigned tutor via video conference (such as Zoom) using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
+    }
+  ];
+
   // Structured Data Schemas
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": usaFaqList.map(faq => ({
+    "mainEntity": usaFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -324,7 +404,7 @@ export default async function USALocationsHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <Navbar adminLoggedIn={adminLoggedIn} />
+      <Navbar adminLoggedIn={adminLoggedIn} headerConfig={dbData?.headerNav} />
 
       <main className="flex-grow">
         {/* Single H1 Hero Component */}
@@ -1005,7 +1085,7 @@ export default async function USALocationsHubPage() {
         </section>
 
         {/* Section 14: Frequently Asked Questions (AEO FAQ Section) */}
-        <USAFaqAccordion />
+        <USAFaqAccordion items={usaFaqs} />
 
         {/* Section 15: Start Learning the Quran Online (Final CTA) */}
         <section className="py-16 md:py-24 bg-background border-t border-card-border text-center relative overflow-hidden">
@@ -1039,7 +1119,7 @@ export default async function USALocationsHubPage() {
         </section>
       </main>
 
-      <Footer data={dbData.contact} />
+      <Footer data={dbData?.contact} footerConfig={dbData?.footerNav} />
     </>
   );
 }
