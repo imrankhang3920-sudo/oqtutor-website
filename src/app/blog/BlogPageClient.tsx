@@ -77,7 +77,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'how-online-quran-classes-help-busy-muslim-families-in-illinois': 'Busy family in Illinois learning Quran online',
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
     'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
-    'best-online-quran-classes-for-beginners': 'Student learning the Arabic alphabet and Noorani Qaida in a beginner online Quran class',
+    'best-online-quran-classes-for-beginners': 'Open Holy Quran on a wooden rehal stand with prayer beads on a prayer mat bathed in soft morning light',
       'best-online-quran-classes-usa-one-to-one-qualified-tutors': 'Student learning Quran online one-to-one with a qualified tutor in the USA',
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
     'what-us-parents-should-know-before-choosing-an-online-quran-tutor': 'Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat',
