@@ -38,8 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
   const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
+  const isBestUsaOneToOneBlog = resolvedParams.slug === 'best-online-quran-classes-usa-one-to-one-qualified-tutors';
   const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog;
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog;
 
   const metaTitle = isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
@@ -118,6 +119,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isWeekendQuranBlog = resolvedParams.slug === 'weekend-quran-classes-tajweed-own-pace';
   const isUSParentsTutorBlog = resolvedParams.slug === 'what-us-parents-should-know-before-choosing-an-online-quran-tutor';
   const isUsaKidsAdultsBlog = resolvedParams.slug === 'online-quran-classes-in-the-usa-for-kids-and-adults';
+  const isBestUsaOneToOneBlog = resolvedParams.slug === 'best-online-quran-classes-usa-one-to-one-qualified-tutors';
   const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
 
   const articleSchema = {
@@ -882,7 +884,7 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentWeekendQuranComplete />
             ) : isUSParentsTutorBlog ? (
               <ArticleContentUSParentsTutor />
-            ) : isUsaKidsAdultsBlog ? (
+            ) : isUsaKidsAdultsBlog || isBestUsaOneToOneBlog ? (
               <ArticleContentUsaKidsAdults />
             ) : isTexasBlog ? (
               <ArticleContentTexas />
