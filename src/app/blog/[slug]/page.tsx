@@ -6295,7 +6295,7 @@ function ArticleContentBestUsaOneToOne() {
       <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-lg relative bg-white max-w-2xl mx-auto">
         <Image
           src="/images/hero-quran-recitation.webp"
-          alt="Open Holy Quran resting on a wooden stand bathed in natural light"
+          alt="Muslim man wearing glasses and embroidered prayer cap holding and reciting from the Holy Quran"
           width={700}
           height={400}
           loading="lazy"
