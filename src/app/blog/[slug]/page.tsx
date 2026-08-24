@@ -1,11 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { readDB } from '@/data/db';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, UserCheck, Star, ShieldCheck, Heart, AlertTriangle, Check, X, HelpCircle, Sparkles } from 'lucide-react';
+import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, Heart, AlertTriangle, Check, Sparkles } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
 
 interface Props {
@@ -835,6 +837,19 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
 
+          {blog.coverImage && (
+            <div className="relative mb-10 h-64 sm:h-96 overflow-hidden rounded-3xl border border-card-border shadow-xl">
+              <Image
+                src={blog.coverImage}
+                alt={blog.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 896px"
+                className="object-cover"
+              />
+            </div>
+          )}
+
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
             {blog.blocks && blog.blocks.length > 0 ? (
@@ -864,7 +879,7 @@ export default async function BlogPostPage({ params }: Props) {
             ) : isFemaleTeacherBlog ? (
               <ArticleContentFemaleTeacher />
             ) : isWeekendQuranBlog ? (
-              <ArticleContentWeekendQuran />
+              <ArticleContentWeekendQuranComplete />
             ) : isUSParentsTutorBlog ? (
               <ArticleContentUSParentsTutor />
             ) : isUsaKidsAdultsBlog ? (
@@ -4714,7 +4729,7 @@ function ArticleContentFemaleTeacher() {
   );
 }
 
-function ArticleContentWeekendQuran() {
+function ArticleContentWeekendQuranComplete() {
   return (
     <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
       
@@ -4731,8 +4746,8 @@ function ArticleContentWeekendQuran() {
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
           <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
             <Image
-              src="/quran-reading.jpg"
-              alt="Young Muslim girl attending a 1-on-1 online Quran Tajweed class on laptop at home during weekend"
+              src="/blog/weekend-quran/weekend-quran-class-2.jpg"
+              alt="Student attending a one-to-one online Quran Tajweed class at home during the weekend"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 800px"
@@ -4867,8 +4882,8 @@ function ArticleContentWeekendQuran() {
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
           <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
             <Image
-              src="/parents-role.jpg"
-              alt="Father and son sitting together at home participating in a weekend online Quran lesson with a live tutor"
+              src="/blog/weekend-quran/weekend-quran-class-3.jpg"
+              alt="Family study corner prepared for a weekend online Quran lesson"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 800px"
@@ -4916,8 +4931,8 @@ function ArticleContentWeekendQuran() {
         <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
           <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
             <Image
-              src="/quran-tajweed.jpg"
-              alt="Holy Quran book in green and gold resting in sunlight for daily Tajweed reading and recitation practice"
+              src="/blog/weekend-quran/weekend-quran-class-1.jpg"
+              alt="Open Quran prepared for weekend Tajweed reading and recitation practice"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 800px"
