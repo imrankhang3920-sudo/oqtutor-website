@@ -48,6 +48,7 @@ const mapping: Record<string, string> = {
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
   'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-in-the-usa-for-kids-and-adults': '/online-quran-classes-usa-kids-adults-1.jpg',
+  'online-quran-classes-usa-for-adults': '/adult-quran-memorization.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -82,6 +83,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
     'what-us-parents-should-know-before-choosing-an-online-quran-tutor': 'Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat',
     'online-quran-classes-in-the-usa-for-kids-and-adults': 'Muslim child taking live online Quran lesson at home with parents watching',
+    'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
