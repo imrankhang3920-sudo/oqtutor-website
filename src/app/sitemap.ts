@@ -26,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/locations/usa/new-york',
     '/locations/usa/texas',
     '/locations/uk',
+    '/locations/uk/london',
     '/locations/canada',
     '/locations/australia',
   ].map((route) => ({

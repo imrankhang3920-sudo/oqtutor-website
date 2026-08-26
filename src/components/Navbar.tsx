@@ -169,6 +169,12 @@ export default function Navbar({
                   🇬🇧 UK Classes
                 </Link>
                 <Link
+                  href="/locations/uk/london"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  └ London
+                </Link>
+                <Link
                   href="/locations/canada"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
@@ -417,6 +423,23 @@ export default function Navbar({
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     Texas
+                  </Link>
+                </div>
+                <div className="pl-1 pt-1 flex flex-wrap gap-2">
+                  <span className="text-[10px] font-bold text-muted-text/80 self-center">UK Cities:</span>
+                  <Link
+                    href="/locations/uk"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    UK Hub
+                  </Link>
+                  <Link
+                    href="/locations/uk/london"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    London
                   </Link>
                 </div>
               </div>
