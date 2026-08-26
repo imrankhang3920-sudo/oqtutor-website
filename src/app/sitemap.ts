@@ -47,10 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const blogRoutes = (dbData.blogs || []).map((blog) => {
       let lastMod = new Date();
-      if (blog.updatedAt) {
-        lastMod = new Date(blog.updatedAt);
-      } else if (blog.publishedAt) {
-        lastMod = new Date(blog.publishedAt);
+      const rawDate = blog.updatedAt || blog.publishedAt;
+      if (rawDate) {
+        const parsed = new Date(rawDate);
+        if (!isNaN(parsed.getTime())) {
+          lastMod = parsed;
+        }
       }
       return {
         url: `${baseUrl}/blog/${blog.slug}`,

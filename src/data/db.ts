@@ -204,6 +204,7 @@ export interface BlogData {
   coverImage?: string;
   isPublished?: boolean;
   publishedAt?: string;
+  updatedAt?: string;
 }
 
 export interface SEOData {
