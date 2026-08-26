@@ -243,14 +243,24 @@ export default async function USALocationsHubPage() {
 
   const blogGuides = [
     {
-      title: "Best Online Quran Classes for Kids in USA",
-      desc: "A practical guide for parents evaluating teacher patience, lesson duration, and engagement strategies.",
-      link: "/blog/best-online-quran-classes-for-kids-in-usa"
+      title: "Online Quran Classes in the USA for Kids and Adults",
+      desc: "A comprehensive guide on curriculum tracks, scheduling flexibility, and verified one-to-one tutoring across the US.",
+      link: "/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+    },
+    {
+      title: "Online Quran Classes in Texas: A Real Guide for Busy Families",
+      desc: "How Muslim families in Houston, Dallas, Austin, and across Texas fit high-quality Quran lessons into busy routines.",
+      link: "/blog/online-quran-classes-texas"
     },
     {
       title: "What US Parents Should Know Before Choosing an Online Quran Tutor",
       desc: "Key questions to ask regarding credentials, scheduling flexibility, and one-on-one trial assessments.",
       link: "/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+    },
+    {
+      title: "Best Online Quran Classes for Kids in USA",
+      desc: "A practical guide for parents evaluating teacher patience, lesson duration, and engagement strategies.",
+      link: "/blog/best-online-quran-classes-for-kids-in-usa"
     },
     {
       title: "What Are the Best Online Quran Classes for Beginners?",
@@ -588,7 +598,7 @@ export default async function USALocationsHubPage() {
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>Read our guide on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link></span>
+                    <span>Read our guide on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link> and our complete overview of <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for kids and adults</Link></span>
                   </li>
                 </ul>
               </div>

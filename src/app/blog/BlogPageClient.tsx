@@ -49,6 +49,7 @@ const mapping: Record<string, string> = {
   'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-in-the-usa-for-kids-and-adults': '/online-quran-classes-usa-kids-adults-1.jpg',
   'online-quran-classes-usa-for-adults': '/adult-quran-memorization.jpg',
+  'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -84,6 +85,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'what-us-parents-should-know-before-choosing-an-online-quran-tutor': 'Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat',
     'online-quran-classes-in-the-usa-for-kids-and-adults': 'Muslim child taking live online Quran lesson at home with parents watching',
     'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
+    'online-quran-classes-texas': 'Young Muslim girl student taking live online Quran lessons with certified tutor in Texas',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };

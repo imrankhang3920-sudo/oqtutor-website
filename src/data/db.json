@@ -4557,6 +4557,7 @@
       "readTime": "10 min read",
       "slug": "what-us-parents-should-know-before-choosing-an-online-quran-tutor",
       "publishedAt": "July 22, 2026",
+      "updatedAt": "August 26, 2026",
       "coverImage": "/parents-role.jpg"
     },
     {
@@ -4567,7 +4568,8 @@
       "readTime": "11 min read",
       "slug": "online-quran-classes-in-the-usa-for-kids-and-adults",
       "coverImage": "/online-quran-classes-usa-kids-adults-1.jpg",
-      "publishedAt": "July 21, 2026"
+      "publishedAt": "July 21, 2026",
+      "updatedAt": "August 26, 2026"
     },
     {
       "id": "blog-best-online-quran-classes-usa-one-to-one",
@@ -4586,7 +4588,9 @@
       "description": "Live one-to-one Quran classes for kids & adults in Houston, Dallas, Austin & across Texas. Reading, Tajweed, Hifz on Zoom. Book a free trial.",
       "readTime": "12 min read",
       "slug": "online-quran-classes-texas",
-      "publishedAt": "August 19, 2026"
+      "coverImage": "/online-quran-classes-texas-girl.jpg",
+      "publishedAt": "August 19, 2026",
+      "updatedAt": "August 26, 2026"
     }
   ],
   "pages": [],

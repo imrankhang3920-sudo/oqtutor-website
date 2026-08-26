@@ -395,6 +395,86 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
           </div>
         </section>
 
+        {/* PARENT GUIDES & RESOURCES */}
+        <section className="py-16 border-t border-card-border/40 bg-foreground/[0.01]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Parent Resources
+              </span>
+              <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
+                Helpful Guides for US Muslim Families
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Link
+                href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full inline-block">
+                    Parenting Guide
+                  </span>
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    What US Parents Should Know Before Choosing an Online Quran Tutor
+                  </h3>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Credentials, trial class evaluation checklists, and key questions to ask before hiring an online Quran tutor.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
+                  <span>Read Guide</span>
+                  <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+
+              <Link
+                href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider px-2.5 py-1 bg-emerald-500/10 rounded-full inline-block">
+                    Curriculum Overview
+                  </span>
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    Online Quran Classes in the USA for Kids and Adults
+                  </h3>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Comprehensive overview of Noorani Qaida, Tajweed, and Hifz tracks for students of all ages across the United States.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
+                  <span>Read Guide</span>
+                  <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+
+              <Link
+                href="/blog/online-quran-classes-texas"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">
+                    State Guide
+                  </span>
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    Online Quran Classes in Texas: A Real Guide for Busy Families
+                  </h3>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    How families in Houston, Dallas, Austin, and across Texas fit high-quality Quran lessons into busy routines.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
+                  <span>Read Guide</span>
+                  <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* H2: FREQUENTLY ASKED QUESTIONS */}
         <section id="faq" className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

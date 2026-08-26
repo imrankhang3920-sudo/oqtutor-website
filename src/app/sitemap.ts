@@ -45,12 +45,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
-    const blogRoutes = (dbData.blogs || []).map((blog) => ({
-      url: `${baseUrl}/blog/${blog.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
-    }));
+    const blogRoutes = (dbData.blogs || []).map((blog) => {
+      let lastMod = new Date();
+      if (blog.updatedAt) {
+        lastMod = new Date(blog.updatedAt);
+      } else if (blog.publishedAt) {
+        lastMod = new Date(blog.publishedAt);
+      }
+      return {
+        url: `${baseUrl}/blog/${blog.slug}`,
+        lastModified: lastMod,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      };
+    });
 
     const customPageRoutes = (dbData.pages || [])
       .filter((p) => p.isPublished)
