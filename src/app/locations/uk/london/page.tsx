@@ -219,12 +219,12 @@ export default async function LondonQuranClassesPage() {
                   <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl translate-x-3 translate-y-3 -z-10" />
                   <div className="glass p-3 rounded-3xl border border-card-border shadow-2xl overflow-hidden bg-white">
                     <Image
-                      src="/online-quran-classes-uk.jpg"
+                      src="/online-quran-classes-london.jpg"
                       alt="Student in London studying Quran online with a certified tutor"
-                      width={500}
-                      height={380}
+                      width={600}
+                      height={600}
                       priority
-                      className="w-full h-auto rounded-2xl object-cover"
+                      className="w-full h-auto rounded-2xl object-cover aspect-square"
                     />
                     <div className="p-3 text-center text-xs text-muted-text font-medium bg-foreground/[0.01]">
                       1-on-1 personalized lessons tailored for families across Greater London.
