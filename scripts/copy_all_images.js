@@ -6,7 +6,22 @@ if (!fs.existsSync(weekendQuranDir)) {
   fs.mkdirSync(weekendQuranDir, { recursive: true });
 }
 
+const chooseBestKidsUsaDir = path.join(__dirname, '../public/blog/how-to-choose-best-online-quran-classes-for-kids-usa');
+if (!fs.existsSync(chooseBestKidsUsaDir)) {
+  fs.mkdirSync(chooseBestKidsUsaDir, { recursive: true });
+}
+
 const sourceFiles = [
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\f3e43cf5-203b-47ac-9bbe-4d9fa2bc2992\\.user_uploaded\\media_1787850301939.jpg',
+    fallbackSrc: path.join(__dirname, '../public/online-quran-classes-usa.jpg'),
+    dest: path.join(chooseBestKidsUsaDir, 'choose-best-online-quran-classes-kids-usa-mosque.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\f3e43cf5-203b-47ac-9bbe-4d9fa2bc2992\\.user_uploaded\\media_1787850359286.jpg',
+    fallbackSrc: path.join(__dirname, '../public/quran-reading.jpg'),
+    dest: path.join(chooseBestKidsUsaDir, 'choose-best-online-quran-classes-kids-usa-study-desk.jpg')
+  },
   {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\689f82c9-1c3c-47ac-969b-f7ff80eabcc5\\media__1786339746434.jpg',
     fallbackSrc: path.join(__dirname, '../public/online-quran-classes-usa.jpg'),
