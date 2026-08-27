@@ -308,6 +308,11 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\883e08f8-27c9-455e-9e9a-c314c1e15994\\.user_uploaded\\media_1786954374169.png',
         fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-2.png'),
         dest: path.join(process.cwd(), 'public/online-quran-classes-usa-kids-adults-3.png')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\04d3508f-da38-4880-98ea-2c6611ee59c3\\.user_uploaded\\media_1787795401502.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/adult-quran-memorization.jpg'),
+        dest: path.join(process.cwd(), 'public/online-quran-classes-usa-for-adults.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {

@@ -48,7 +48,7 @@ const mapping: Record<string, string> = {
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
   'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-in-the-usa-for-kids-and-adults': '/online-quran-classes-usa-kids-adults-1.jpg',
-  'online-quran-classes-usa-for-adults': '/adult-quran-memorization.jpg',
+  'online-quran-classes-usa-for-adults': '/online-quran-classes-usa-for-adults.jpg',
   'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
 };
 
