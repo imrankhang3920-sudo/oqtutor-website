@@ -62,7 +62,7 @@ export default function PageRenderer({ blocks }: { blocks: PageBlock[] }) {
             return (
               <div
                 key={block.id}
-                className={`prose prose-lg dark:prose-invert max-w-none text-foreground/90 leading-relaxed ${alignClass}`}
+                className={`prose prose-lg dark:prose-invert max-w-none text-foreground/90 leading-relaxed [&_a]:text-primary [&_a]:font-semibold [&_a]:underline hover:[&_a]:text-primary-hover ${alignClass}`}
                 dangerouslySetInnerHTML={{ __html: block.content.text || '' }}
               />
             );

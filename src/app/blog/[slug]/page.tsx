@@ -917,8 +917,8 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {blog.blocks && blog.blocks.length > 0 ? (
-              <PageRenderer blocks={blog.blocks} />
+            {isAdultUsaBlog ? (
+              <ArticleContentAdultUsa />
             ) : isConsistentHifzBlog ? (
               <ArticleContentConsistentHifz />
             ) : isUSABlog ? (
@@ -951,10 +951,10 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentUsaKidsAdults />
             ) : isBestUsaOneToOneBlog ? (
               <ArticleContentBestUsaOneToOne />
-            ) : isAdultUsaBlog ? (
-              <ArticleContentAdultUsa />
             ) : isTexasBlog ? (
               <ArticleContentTexas />
+            ) : blog.blocks && blog.blocks.length > 0 ? (
+              <PageRenderer blocks={blog.blocks} />
             ) : (
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-foreground font-medium">
@@ -1043,90 +1043,225 @@ export default async function BlogPostPage({ params }: Props) {
 function ArticleContentAdultUsa() {
   return (
     <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Insights for Adult Learners in the USA</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          There is no age limit for learning the Holy Quran. Whether you are starting with the Arabic alphabet from scratch, fixing Tajweed rules, or memorizing Surahs, OQTutor provides live 1-on-1 private instruction designed specifically around the busy lifestyles and work schedules of Muslim adults across the USA.
+        </p>
+      </div>
+
       <p className="text-base sm:text-lg leading-relaxed text-muted-text">
         There&apos;s no single age or moment when adult Quran learning is supposed to start. Some people are starting from the Arabic alphabet. Others are picking up lessons they dropped years ago. Others just want to recite better than they currently do.
       </p>
       <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        For most adults in the USA, the real obstacle isn&apos;t ability — it&apos;s fitting learning into a life that&apos;s already full. Work schedules shift, school deadlines pile up, and family responsibilities can make daily practice feel impossible unless the plan is built around real life.
+        For most adults in the USA, the real obstacle isn&apos;t ability — it&apos;s fitting learning into a life that&apos;s already full. Work schedules shift, university deadlines pile up, and family responsibilities can make consistent study feel challenging unless the program is built around your real life.
       </p>
       <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        OQTutor runs <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">online Quran classes for adults</Link> built around individual plans and live, <Link href="/tutors" className="text-primary font-semibold hover:underline">one-on-one instruction</Link>. The adult program covers <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>, <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">memorization</Link>, <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">translation &amp; Tafseer</Link>, and <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies</Link>.
+        That is why OQTutor runs specialized <Link href="/courses/quran-for-adults" className="text-primary font-bold hover:underline">online Quran classes for adults</Link> built around individual learning plans and live, <Link href="/tutors" className="text-primary font-bold hover:underline">one-on-one instruction</Link>. The adult curriculum spans foundational <Link href="/courses/noorani-qaida" className="text-primary font-bold hover:underline">Noorani Qaida</Link>, fluent <Link href="/courses/quran-reading" className="text-primary font-bold hover:underline">Quran reading</Link>, precision <Link href="/courses/tajweed" className="text-primary font-bold hover:underline">Tajweed rules</Link>, adult <Link href="/courses/hifz" className="text-primary font-bold hover:underline">Quran memorization (Hifz)</Link>, <Link href="/courses/tafseer" className="text-primary font-bold hover:underline">Quran translation &amp; Tafseer</Link>, and <Link href="/courses/islamic-studies" className="text-primary font-bold hover:underline">Islamic Studies</Link>.
       </p>
 
-      <section className="space-y-4">
-        <h2>Where Do You Find Online Quran Classes for Adults?</h2>
-        <p>Before choosing a program, ask whether it matches your actual level, your schedule, and your goals. The right adult program should be flexible enough to support a working professional, a parent, a student, or someone returning after years away.</p>
-        <p>OQTutor&apos;s <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">adult Quran program</Link> is built around live one-to-one lessons and an initial assessment before regular classes begin, starting with a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial placement class</Link>.</p>
-        <p>For families and adults in the US, time zones across EST, CST, MST, and PST are fully accommodated. OQTutor&apos;s <Link href="/locations/usa" className="text-primary font-semibold hover:underline">Online Quran Classes USA</Link> page covers that in more detail. You can also explore how digital learning compares to local mosques in our guide on <Link href="/blog/online-vs-in-person-quran-classes" className="text-primary font-semibold hover:underline">online vs. in-person Quran classes</Link>.</p>
-      </section>
+      {/* Featured Image Card */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg not-prose">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+          <Image
+            src="/online-quran-classes-usa-for-adults.jpg"
+            alt="Adult Muslim learner studying the Holy Quran online with a certified tutor in the USA"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          Live one-on-one Quran instruction tailored specifically for working adults and university students across US time zones.
+        </p>
+      </div>
 
       <section className="space-y-4">
-        <h2>How to Start Learning the Quran as an Adult</h2>
-        <p>Not every adult learner should begin in the same place. Start by asking what you already know and what you want to accomplish:</p>
-        <ul>
-          <li>Can I recognize Arabic letters?</li>
-          <li>Can I join letters into words?</li>
-          <li>Can I read Quranic text on my own?</li>
-          <li>Do I struggle with pronunciation?</li>
-          <li>Do I know basic Tajweed rules?</li>
-          <li>Do I understand what I&apos;m reciting?</li>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Where Do You Find Online Quran Classes for Adults?
+        </h2>
+        <p className="text-base text-muted-text">
+          Before picking a program, it helps to ask a few practical questions rather than going with whatever name is most familiar:
+        </p>
+        <ul className="space-y-2">
+          <li>Can I start from my actual level, not a default beginner track?</li>
+          <li>Will the lessons work around my work and family responsibilities?</li>
+          <li>Can I ask questions privately without feeling rushed or judged?</li>
+          <li>Can my pace change if I experience busy work periods?</li>
+          <li>Will a qualified scholar give me real-time feedback on pronunciation?</li>
         </ul>
-        <p>If you can&apos;t read Arabic yet, begin with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> to learn the alphabet, vowel signs, and word formation before moving into full Quran reading. For beginners wondering if it&apos;s too late, our guide on <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">Quran learning and memorization for adults</Link> explains why age is never a barrier.</p>
-        <p>If you already read Arabic, your focus may be fluency through <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading</Link>, pronunciation, mastering <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>, or memorization instead.</p>
+        <p className="text-base text-muted-text">
+          OQTutor&apos;s <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">adult Quran program</Link> is built around live, individual lessons where your initial reading level and goals are evaluated during a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial placement class</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          If you are in the United States and want to know how classes operate across Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones, our <Link href="/locations/usa" className="text-primary font-semibold hover:underline">Online Quran Classes USA</Link> hub explains scheduling in detail. You can also explore our comparison of <Link href="/blog/online-vs-in-person-quran-classes" className="text-primary font-semibold hover:underline">online vs. in-person Quran classes</Link> to see why remote 1-on-1 tutoring works best for adults.
+        </p>
       </section>
 
       <section className="space-y-4">
-        <h2>What Should You Learn First?</h2>
-        <p>It depends on your starting point.</p>
-        <p>If you can&apos;t read Arabic yet, begin with the fundamentals through <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>. If you can read but slowly, the priority is fluency. The <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading course</Link> is built for students working toward smoother reading of Quranic text.</p>
-        <p>If you read but make recurring pronunciation mistakes, live correction matters. A tutor listening in real time can catch the errors you would miss on your own. OQTutor&apos;s adult program includes <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed instruction</Link> with live correction from certified <Link href="/tutors" className="text-primary font-semibold hover:underline">male and female tutors</Link>.</p>
-        <p>If your reading is already solid, you can move toward <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed refinement</Link>, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">memorization (Hifz)</Link>, <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">translation &amp; Tafseer</Link>, or <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies</Link>.</p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Why Adult Learners Choose 1-on-1 Online Learning
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+              <span>100% Private, Judgment-Free Environment</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Many adults feel self-conscious practicing pronunciation in large groups. Private 1-on-1 sessions allow you to make mistakes, ask questions, and learn comfortably with certified <Link href="/tutors" className="text-primary font-semibold hover:underline">male or female tutors</Link>.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+              <span>Flexible Scheduling Across US Time Zones</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Choose morning, evening, or late-night slots that fit your work hours. Prefer studying on weekends? Learn at your speed with our dedicated <Link href="/blog/weekend-quran-classes-tajweed-own-pace" className="text-primary font-semibold hover:underline">weekend Quran classes</Link>.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+              <span>Customized Curriculum by Ability</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Skip what you already know. If you can read the alphabet, transition directly to fluent recitation in our <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading course</Link> or dive into <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+              <span>Affordable &amp; Transparent Plans</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Choose from 2, 3, 4, or 5 days per week options. Explore our full tuition breakdown on the <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing page</Link> with no hidden registration fees.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="space-y-4">
-        <h2>Coming Back to the Quran After Years Away</h2>
-        <p>Many adults are not true beginners. They learned as children, read a few Surahs, and then life happened. In those cases, the real missing piece is usually confidence rather than knowledge.</p>
-        <p>A teacher can assess where you actually stand before deciding where to begin during your <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial assessment class</Link>, which helps avoid the common traps of starting too far ahead or too far behind. With regular practice and <Link href="/pricing" className="text-primary font-semibold hover:underline">flexible scheduling options</Link>, fluency returns quickly.</p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Step-by-Step Quran Learning Progression for Adults
+        </h2>
+        <p className="text-base text-muted-text">
+          Not every adult starts from the same point. Here is how our structured learning tracks guide you from basic letter recognition to deep Quranic understanding:
+        </p>
+        <ol className="space-y-3 pt-2 list-none pl-0 not-prose">
+          <li className="flex items-start space-x-3 text-sm text-muted-text p-4 rounded-2xl glass border border-card-border">
+            <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div>
+              <strong className="text-foreground block text-base mb-1">
+                <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-bold">Noorani Qaida &amp; Arabic Phonics</Link>
+              </strong>
+              Ideal for total beginners and new Muslims (reverts). Master the 28 Arabic letters, articulation points (Makharij), short vowels (Fathah, Kasrah, Dammah), and compound letter connections.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text p-4 rounded-2xl glass border border-card-border">
+            <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div>
+              <strong className="text-foreground block text-base mb-1">
+                <Link href="/courses/quran-reading" className="text-primary hover:underline font-bold">Fluent Quran Reading (Nazra)</Link>
+              </strong>
+              Transition from individual words to continuous verse recitation. Build reading stamina, rhythm, and confidence across the 30 Juz of the Holy Quran.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text p-4 rounded-2xl glass border border-card-border">
+            <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div>
+              <strong className="text-foreground block text-base mb-1">
+                <Link href="/courses/tajweed" className="text-primary hover:underline font-bold">Mastering Tajweed Rules</Link>
+              </strong>
+              Learn the theoretical and practical rules of recitation: Noon Sakinah, Meem Sakinah, Ghunnah, Qalqalah, Madd elongations, and stopping signs (Waqf). Read our <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">beginner Tajweed guide</Link> for an overview.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text p-4 rounded-2xl glass border border-card-border">
+            <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+            <div>
+              <strong className="text-foreground block text-base mb-1">
+                <Link href="/courses/hifz" className="text-primary hover:underline font-bold">Quran Memorization (Hifz) for Adults</Link>
+              </strong>
+              Memorize selected chapters (Surah Al-Mulk, Surah Yaseen, Surah Al-Kahf, Juz Amma) or embark on full Hifz with structured Sabak and Manzil revision cycles. Read why <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">it is never too late for adults to memorize Quran</Link>.
+            </div>
+          </li>
+          <li className="flex items-start space-x-3 text-sm text-muted-text p-4 rounded-2xl glass border border-card-border">
+            <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span>
+            <div>
+              <strong className="text-foreground block text-base mb-1">
+                <Link href="/courses/tafseer" className="text-primary hover:underline font-bold">Quran Translation, Tafseer &amp; Islamic Studies</Link>
+              </strong>
+              Connect deeper with the divine message by understanding word-for-word translation, historical context, and practical daily lessons through our <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Tafseer course</Link> and <Link href="/courses/islamic-studies" className="text-primary hover:underline font-semibold">Islamic Studies</Link>.
+            </div>
+          </li>
+        </ol>
       </section>
 
       <section className="space-y-4">
-        <h2>What Usually Stops Adults From Starting?</h2>
-        <ul>
-          <li>&ldquo;I&apos;m too old for this.&rdquo; There is no age cutoff for learning the Quran. Read our insights on <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">adult Quran memorization</Link> for encouragement.</li>
-          <li>&ldquo;I learned before and forgot everything.&rdquo; You probably remember more than you think. Let an experienced tutor evaluate your reading during a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial session</Link>.</li>
-          <li>&ldquo;My reading isn&apos;t good enough.&rdquo; Mistakes are part of the process. A <Link href="/tutors" className="text-primary font-semibold hover:underline">one-on-one setting</Link> with dedicated scholars makes it easy to progress at your speed.</li>
-          <li>&ldquo;I don&apos;t know what level I need.&rdquo; A placement assessment will determine your exact starting level.</li>
-          <li>&ldquo;I keep putting it off.&rdquo; A realistic plan is better than waiting for the perfect moment. You can start with <Link href="/blog/weekend-quran-classes-tajweed-own-pace" className="text-primary font-semibold hover:underline">weekend Quran classes</Link> or flexible evening slots.</li>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Coming Back to the Quran After Years Away
+        </h2>
+        <p className="text-base text-muted-text">
+          A lot of adults aren&apos;t really beginners. They went to Quran classes as children, learned the alphabet, read several Surahs, and then life, university, or work took over.
+        </p>
+        <p className="text-base text-muted-text">
+          What is usually missing after a long break isn&apos;t knowledge — it is simply confidence.
+        </p>
+        <p className="text-base text-muted-text">
+          During your <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial assessment class</Link>, a qualified teacher assesses your reading level. This avoids the two most common pitfalls: starting too far ahead (getting overwhelmed by rusty fundamentals) or starting too far behind (getting bored repeating what you already know).
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Common Mindset Shifts for Adult Learners
+        </h2>
+        <ul className="space-y-3">
+          <li>
+            <strong className="text-foreground">&ldquo;I&apos;m too old to learn.&rdquo;</strong> The Prophet Muhammad (ﷺ) received revelation at age 40, and the Sahabah learned as adults. Age is an asset because adults bring intentional focus and dedication. Read our guide on <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">adult Quran memorization</Link>.
+          </li>
+          <li>
+            <strong className="text-foreground">&ldquo;I forgot everything I learned as a kid.&rdquo;</strong> You remember more than you think. Letter recognition and phonics muscle memory return surprisingly fast with live guidance from our <Link href="/tutors" className="text-primary font-semibold hover:underline">experienced tutors</Link>.
+          </li>
+          <li>
+            <strong className="text-foreground">&ldquo;I don&apos;t have enough time.&rdquo;</strong> Even just two 30-minute sessions per week create steady momentum without disrupting your routine. Check our customizable <Link href="/pricing" className="text-primary font-semibold hover:underline">monthly plans</Link>.
+          </li>
+          <li>
+            <strong className="text-foreground">&ldquo;My family wants to learn too.&rdquo;</strong> We offer multi-student family discounts and synchronized schedules for both adults and children. Learn more in our guide on <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary font-semibold hover:underline">Quran classes for kids and adults in the USA</Link>.
+          </li>
         </ul>
       </section>
 
-      <section className="space-y-4">
-        <h2>How to Choose Your Learning Goal</h2>
-        <p>Before signing up anywhere, try answering one question in a single sentence: &ldquo;What do I want to be able to do after studying the Quran?&rdquo;</p>
-        <p>Your answer could be: &ldquo;I want to read confidently without relying on anyone else&rdquo; — leading to our <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading course</Link>.</p>
-        <p>Or: &ldquo;I want better Tajweed&rdquo; — leading to our comprehensive <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed Course</Link> or our <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">beginner Tajweed guide</Link>.</p>
-        <p>Or: &ldquo;I want to understand what I&apos;m reciting&rdquo; — leading to <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Quran Translation &amp; Tafseer</Link> and <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies</Link>.</p>
-        <p>You can browse all available options on the <Link href="/courses" className="text-primary font-semibold hover:underline">courses page</Link> and check our transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link>.</p>
-      </section>
-
-      <section className="space-y-4">
-        <h2>Building a Plan You Can Actually Stick To</h2>
-        <p>Start with how much time you can genuinely protect each week, then build around that. Lesson frequency, practice time, long-term goals, and flexibility all matter more than trying to create the most intense schedule possible.</p>
-        <p>OQTutor&apos;s <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">adult program</Link> allows students to pick their weekly frequency and time slots on our <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link>, with progress reviewed as they go. This keeps learning sustainable instead of stressful.</p>
-      </section>
-
-      <section className="space-y-4">
-        <h2>Why a Personalized Path Makes More Sense for Adults</h2>
-        <p>Adult learners rarely fit into one box. One student might need help recognizing Arabic letters in <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>. Another has been reading for decades and just wants cleaner pronunciation through <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>. Someone else mainly cares about understanding the meaning behind the words through <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Tafseer</Link>.</p>
-        <p>Teaching all three the same way doesn&apos;t really work. OQTutor&apos;s adult program is built around each learner&apos;s reading level, interests, and goals — connecting you with certified male or <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> so the lesson responds to the person, not a fixed curriculum. Families with both children and adults learning together can also explore our guide on <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary font-semibold hover:underline">Quran classes for kids and adults in the USA</Link>.</p>
-      </section>
-
-      <section className="space-y-4">
-        <h2>Start From Where You Are</h2>
-        <p>You don&apos;t need to wait for life to slow down, and you don&apos;t need to feel behind because you&apos;re starting later than planned.</p>
-        <p>Whether you&apos;re opening the Quran for the first time, returning after years away, or sharpening a skill you already have, the right starting point is simply today.</p>
-        <p>OQTutor offers online Quran classes for adults across the USA, with personalized plans, live instruction, and different paths depending on your level and goals. You can <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">explore OQTutor&apos;s adult Quran classes</Link> or <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">book a free trial placement class</Link> to talk through your level and goals with a qualified teacher today. Have questions? Feel free to <Link href="/contact" className="text-primary font-semibold hover:underline">contact our academic team</Link> anytime.</p>
-      </section>
+      {/* CTA Box */}
+      <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-primary/15 via-card-bg to-secondary/15 border border-primary/30 text-center shadow-xl space-y-4 my-8 not-prose">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+          Ready to Start Your Quran Journey Today?
+        </h3>
+        <p className="text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed">
+          Book your 100% free, no-obligation trial class. Meet your dedicated tutor, assess your current reading level, and discuss a personalized learning schedule tailored to your life.
+        </p>
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="/book-free-trial"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/20 transition-all"
+          >
+            <span>Book Free Trial Class</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/courses/quran-for-adults"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full border border-card-border bg-card-bg hover:bg-card-border/30 text-foreground text-sm font-semibold transition-all"
+          >
+            <span>Explore Adult Course</span>
+          </Link>
+        </div>
+      </div>
     </article>
   );
 }
