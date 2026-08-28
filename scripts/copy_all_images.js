@@ -18,7 +18,7 @@ if (!fs.existsSync(childTimelineDir)) {
 
 const sourceFiles = [
   {
-    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787913896243.jpg',
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787914968931.jpg',
     fallbackSrc: path.join(__dirname, '../public/blog-kids-usa-1.jpg'),
     dest: path.join(childTimelineDir, 'child-quran-completion-timeline-cover.jpg')
   },
