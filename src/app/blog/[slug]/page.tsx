@@ -464,6 +464,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "headline": "How to Choose the Best Online Quran Classes for Kids in the USA: A Complete Parent Guide",
                   "description": "Learn how to choose the best online Quran classes for kids in the USA. Compare teachers, curriculum, one to one lessons, schedules, progress tracking, and online safety.",
                   "image": [
+                    "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg",
                     "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/choose-best-online-quran-classes-kids-usa-mosque.jpg",
                     "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/choose-best-online-quran-classes-kids-usa-study-desk.jpg"
                   ],

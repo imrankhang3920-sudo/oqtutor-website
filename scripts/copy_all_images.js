@@ -13,6 +13,11 @@ if (!fs.existsSync(chooseBestKidsUsaDir)) {
 
 const sourceFiles = [
   {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787910096938.jpg',
+    fallbackSrc: path.join(__dirname, '../public/blog-kids-usa-1.jpg'),
+    dest: path.join(chooseBestKidsUsaDir, 'how-to-choose-best-online-quran-classes-kids-usa-cover.jpg')
+  },
+  {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\f3e43cf5-203b-47ac-9bbe-4d9fa2bc2992\\.user_uploaded\\media_1787850301939.jpg',
     fallbackSrc: path.join(__dirname, '../public/online-quran-classes-usa.jpg'),
     dest: path.join(chooseBestKidsUsaDir, 'choose-best-online-quran-classes-kids-usa-mosque.jpg')
