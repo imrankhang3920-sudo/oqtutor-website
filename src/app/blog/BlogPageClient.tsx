@@ -50,6 +50,8 @@ const mapping: Record<string, string> = {
   'online-quran-classes-in-the-usa-for-kids-and-adults': '/online-quran-classes-usa-kids-adults-1.jpg',
   'online-quran-classes-usa-for-adults': '/online-quran-classes-usa-for-adults.jpg',
   'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
+  'how-to-choose-best-online-quran-classes-for-kids-usa': '/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg',
+  'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -86,6 +88,8 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'online-quran-classes-in-the-usa-for-kids-and-adults': 'Muslim child taking live online Quran lesson at home with parents watching',
     'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
     'online-quran-classes-texas': 'Young Muslim girl student taking live online Quran lessons with certified tutor in Texas',
+    'how-to-choose-best-online-quran-classes-for-kids-usa': 'Muslim American family smiling around laptop taking live online Quran lesson with female tutor',
+    'how-long-does-it-take-for-a-child-to-complete-the-quran-online': 'Young Muslim girl reciting Quran on wooden rehal during online Quran lesson with female tutor on laptop screen',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };

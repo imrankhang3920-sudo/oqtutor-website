@@ -11,7 +11,22 @@ if (!fs.existsSync(chooseBestKidsUsaDir)) {
   fs.mkdirSync(chooseBestKidsUsaDir, { recursive: true });
 }
 
+const childTimelineDir = path.join(__dirname, '../public/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online');
+if (!fs.existsSync(childTimelineDir)) {
+  fs.mkdirSync(childTimelineDir, { recursive: true });
+}
+
 const sourceFiles = [
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787913896243.jpg',
+    fallbackSrc: path.join(__dirname, '../public/blog-kids-usa-1.jpg'),
+    dest: path.join(childTimelineDir, 'child-quran-completion-timeline-cover.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787913988583.jpg',
+    fallbackSrc: path.join(__dirname, '../public/quran-reading.jpg'),
+    dest: path.join(childTimelineDir, 'quran-learning-milestones-progression.jpg')
+  },
   {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787910096938.jpg',
     fallbackSrc: path.join(__dirname, '../public/blog-kids-usa-1.jpg'),
