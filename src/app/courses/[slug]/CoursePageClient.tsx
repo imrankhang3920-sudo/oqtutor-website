@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BookOpen, Award, Clock, Calendar, Users, 
   CheckCircle, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
-  UserCheck, ExternalLink
+  UserCheck, ExternalLink, Sparkles, Globe, Heart, MessageSquare, Check, Compass, Laptop, Video, BookMarked, Lightbulb
 } from 'lucide-react';
 import Link from 'next/link';
 import { CourseData, ContactData, TestimonialData } from '@/data/db';
@@ -42,6 +42,10 @@ export default function CoursePageClient({
 
   if (course.slug === 'islamic-studies') {
     return <IslamicStudiesContent course={course} contactData={contactData} />;
+  }
+
+  if (course.slug === 'tafseer') {
+    return <TafseerCourseContent course={course} contactData={contactData} />;
   }
 
   const toggleCurriculum = (idx: number) => {
@@ -3647,3 +3651,809 @@ function IslamicStudiesContent({
     </main>
   );
 }
+
+function TafseerCourseContent({
+  course,
+  contactData
+}: {
+  course: CourseData;
+  contactData: ContactData;
+}) {
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIdx(openFaqIdx === idx ? null : idx);
+  };
+
+  const courseHighlights = [
+    {
+      icon: BookOpen,
+      title: "Word-by-Word Translation",
+      desc: "Understand the literal and contextual meaning of Quranic Arabic vocabulary."
+    },
+    {
+      icon: Compass,
+      title: "Context of Revelation",
+      desc: "Explore Asbab al-Nuzul and the historical circumstances behind each Surah."
+    },
+    {
+      icon: Users,
+      title: "1-on-1 Scholar Guidance",
+      desc: "Learn directly from certified male and female Islamic scholars at your own pace."
+    },
+    {
+      icon: Clock,
+      title: "Flexible Scheduling",
+      desc: "Choose lesson times that fit your family, work, or university routine 24/7."
+    },
+    {
+      icon: Laptop,
+      title: "Interactive Live Classes",
+      desc: "Discuss verse interpretations, ask questions freely, and study with digital notes."
+    },
+    {
+      icon: Lightbulb,
+      title: "Practical Daily Lessons",
+      desc: "Transform timeless Quranic principles into moral character, worship, and action."
+    }
+  ];
+
+  const learningAreas = [
+    {
+      id: "translation-meaning",
+      title: "Quran Translation and Meaning",
+      icon: BookOpen,
+      desc: "Connect directly with the words of Allah. Learn word-for-word translation and the core meanings of Arabic roots so you recognize key Quranic vocabulary naturally during recitation and daily prayer."
+    },
+    {
+      id: "context-verses",
+      title: "Context of Quranic Verses",
+      icon: Compass,
+      desc: "Study Asbab al-Nuzul (the historical reasons and circumstances of revelation). Understanding when, where, and why a verse was revealed provides the essential background to interpret its message accurately."
+    },
+    {
+      id: "themes-lessons",
+      title: "Quranic Themes and Lessons",
+      icon: Lightbulb,
+      desc: "Explore central Quranic themes including the oneness of Allah (Tawheed), moral character (Akhlaq), justice, family responsibilities, and the balance between worldly life and the Hereafter."
+    },
+    {
+      id: "quranic-stories",
+      title: "Understanding Quranic Stories",
+      icon: BookMarked,
+      desc: "Reflect on the profound narratives of the Prophets, including Prophet Ibrahim, Musa, Yusuf, and Isa (peace be upon them), drawing moral resilience and spiritual lessons for modern challenges."
+    },
+    {
+      id: "practical-guidance",
+      title: "Practical Guidance from the Quran",
+      icon: Sparkles,
+      desc: "Move beyond theoretical knowledge. Discover how Quranic injunctions guide personal decision-making, ethical business practices, parenting, mental peace, and relationships with others."
+    }
+  ];
+
+  const whoCanJoinList = [
+    {
+      title: "Adults & Busy Professionals",
+      desc: "Deepen your relationship with the Quran around demanding work and family schedules. Evening and weekend one-to-one sessions make consistent study convenient."
+    },
+    {
+      title: "Teenagers & Young Adults",
+      desc: "Build strong spiritual foundations, understand the wisdom behind Islamic values, and explore answers to modern questions through open, thoughtful discussion."
+    },
+    {
+      title: "Reverts & New Muslims",
+      desc: "Study Quranic translation and core concepts in a supportive, judgment-free environment with experienced teachers who explain meanings in clear English."
+    },
+    {
+      title: "Children & Young Learners",
+      desc: "Explore age-appropriate Tafseer focusing on inspiring Quranic stories, kindness, truthfulness, and essential moral lessons that nurture a love for Allah's book."
+    }
+  ];
+
+  const stepsList = [
+    {
+      number: "1",
+      title: "Book a Free Trial",
+      desc: "Register for a free 30-minute evaluation class with no credit card required. Tell us about your learning goals, background, and scheduling preferences."
+    },
+    {
+      number: "2",
+      title: "Meet Your Teacher",
+      desc: "Connect live with a certified male or female Quran scholar who assesses your current understanding and discusses the best starting point for your studies."
+    },
+    {
+      number: "3",
+      title: "Choose Your Learning Schedule",
+      desc: "Select the days and times that work best for your lifestyle. Choose 2, 3, 4, or 5 sessions per week with complete flexibility across all major time zones."
+    },
+    {
+      number: "4",
+      title: "Follow a Personalized Learning Plan",
+      desc: "Progress through a tailored curriculum, whether you want to focus on Juz Amma, selected thematic Surahs, or a comprehensive verse-by-verse Tafseer."
+    },
+    {
+      number: "5",
+      title: "Learn, Ask Questions, and Reflect",
+      desc: "Participate in live interactive discussions, review screen-shared commentary notes, and ask questions freely in a supportive one-to-one environment."
+    }
+  ];
+
+  const tafseerFaqs = [
+    {
+      question: "What is Quran Tafseer?",
+      answer: "Quran Tafseer is the in-depth explanation and interpretation of the Holy Quran. While a basic translation converts Arabic words into another language, Tafseer explains the historical context (Asbab al-Nuzul), linguistic nuances, underlying themes, and practical guidance behind every verse, helping students understand the divine message deeply."
+    },
+    {
+      question: "Can I learn Quran Tafseer online?",
+      answer: "Yes, you can learn Quran Tafseer online effectively through live one-to-one classes with certified scholars. Digital whiteboards, screen-shared Arabic texts, and direct two-way audio and video allow you to study word-by-word meanings, discuss verse interpretations, and ask questions comfortably from home."
+    },
+    {
+      question: "Do I need to know Arabic to study Tafseer?",
+      answer: "No prior Arabic language knowledge is required to begin our Tafseer course. Classes are taught in clear English (or Urdu if preferred). Tutors translate words into accessible language, explain classical Arabic root words simply, and provide easy-to-understand explanations suitable for beginners."
+    },
+    {
+      question: "What is the difference between Quran translation and Tafseer?",
+      answer: "Quran translation provides a direct, literal rendering of Arabic words into English. Tafseer goes much further by explaining why verses were revealed, exploring linguistic context, analyzing thematic connections, and detailing practical real-world lessons, giving you the complete story and wisdom behind the text."
+    },
+    {
+      question: "What do you learn in a Quran Tafseer course?",
+      answer: "In our online Quran Tafseer course, you learn word-for-word translation, verse-by-verse commentary, reasons of revelation (Asbab al-Nuzul), thematic lessons, stories of the Prophets, and practical everyday guidance, helping you apply Quranic values to personal, family, and spiritual life."
+    },
+    {
+      question: "Are Quran Tafseer classes available for adults?",
+      answer: "Yes, we offer specialized Tafseer programs for adult learners, including university students, working professionals, busy parents, and reverts. Lessons are scheduled around your availability with customized learning plans tailored to your prior knowledge and personal spiritual goals."
+    },
+    {
+      question: "Do you offer one-to-one Quran Tafseer classes?",
+      answer: "Yes, all OQTutor Tafseer classes are conducted on a private one-to-one basis. This ensures personalized pacing, dedicated teacher attention, and a safe, private setting where you can freely ask questions, discuss verse meanings, and reflect without feeling rushed."
+    },
+    {
+      question: "Can I choose a male or female Tafseer teacher?",
+      answer: "Yes, students have full flexibility to choose between certified male scholars and qualified female Quran teachers (Alimas). Sisters and young children can learn with dedicated female instructors in a supportive and comfortable environment."
+    },
+    {
+      question: "How do online Quran Tafseer classes work?",
+      answer: "Classes take place via live interactive video on Zoom or Google Meet. You connect directly with your dedicated instructor, view shared Quranic texts and commentary notes on screen, review word-by-word meanings, and engage in open discussions at your chosen weekly schedule."
+    },
+    {
+      question: "Is Tafseer suitable for children?",
+      answer: "Yes, we offer an age-appropriate Tafseer curriculum for children and teenagers. Rather than complex theological debates, lessons focus on inspiring stories of the Prophets, moral values, kindness, honesty, and relatable real-life lessons that build a strong Islamic identity."
+    },
+    {
+      question: "How long does it take to learn Quran Tafseer?",
+      answer: "The duration depends on your study goals and class frequency. Completing foundational Tafseer of Juz Amma (Juz 30) or selected famous Surahs typically takes 3 to 6 months. A comprehensive verse-by-verse study of the entire Quran spans 1.5 to 3 years of consistent weekly classes."
+    }
+  ];
+
+  return (
+    <main className="flex-grow bg-background text-foreground">
+      
+      {/* 1. HERO SECTION */}
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Copy */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+                <BookOpen className="h-4 w-4" />
+                <span>Live 1-on-1 Personalized Mentorship</span>
+              </div>
+
+              {/* Single H1 */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15]">
+                Online Quran Tafseer Classes | Learn Quran with Meaning &amp; Explanation
+              </h1>
+
+              <p className="text-base sm:text-lg text-muted-text leading-relaxed font-normal">
+                Connect deeply with the words of Allah. Our personalized <strong>online Quran Tafseer classes</strong> guide you through word-by-word translation, historical context, verse explanations, and practical life lessons with certified male and female Islamic scholars from the comfort of your home.
+              </p>
+
+              {/* Badges / Highlights */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <UserCheck className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">1-on-1 Classes</span>
+                </div>
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <Award className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">Certified Scholars</span>
+                </div>
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <Clock className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">Flexible Schedules</span>
+                </div>
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <Users className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">Male &amp; Female Tutors</span>
+                </div>
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <Globe className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">Global Time Zones</span>
+                </div>
+                <div className="p-3 rounded-2xl bg-card border border-card-border flex items-center space-x-2.5">
+                  <ShieldCheck className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-xs font-semibold text-foreground">Free Trial Class</span>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+                <Link
+                  href="/book-free-trial"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/25 hover:shadow-xl transition-all duration-300 inline-flex items-center justify-center space-x-2 text-center"
+                >
+                  <span>Book a Free Trial Class</span>
+                  <ArrowRight className="h-4.5 w-4.5" />
+                </Link>
+                <Link
+                  href="/courses"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-sm font-semibold transition-all duration-300 text-center"
+                >
+                  Explore All Quran Courses
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Featured Card with Image */}
+            <div className="lg:col-span-5">
+              <div className="glass p-6 rounded-3xl border border-card-border shadow-2xl relative overflow-hidden space-y-5">
+                <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden border border-card-border">
+                  <Image
+                    src={course.image || "/islamic-studies.jpg"}
+                    alt="Online Quran Tafseer class with a teacher explaining Quranic meanings"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 450px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <span className="text-xs font-bold uppercase tracking-wider text-secondary block">Curated Islamic Curriculum</span>
+                    <h3 className="text-base font-bold">Understanding the Divine Message</h3>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2 text-xs text-muted-text">
+                  <div className="flex justify-between items-center py-1 border-b border-card-border/60">
+                    <span className="font-medium text-foreground">Course Format</span>
+                    <span className="font-semibold text-primary">Live 1-on-1 Online</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1 border-b border-card-border/60">
+                    <span className="font-medium text-foreground">Suitable For</span>
+                    <span className="font-semibold">Adults, Teens &amp; Kids (10+)</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1 border-b border-card-border/60">
+                    <span className="font-medium text-foreground">Session Length</span>
+                    <span className="font-semibold">30 or 45 Minutes</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <span className="font-medium text-foreground">Languages</span>
+                    <span className="font-semibold">English &amp; Urdu</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. COURSE HIGHLIGHTS GRID */}
+      <section className="py-16 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Course Highlights
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Why Learn Quran Tafseer with OQTutor?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Our online Tafseer course offers a structured, supportive pathway to help you understand every Surah with clarity and depth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courseHighlights.map((item, idx) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="glass p-6 sm:p-7 rounded-3xl border border-card-border hover:border-primary/40 transition-all duration-300 space-y-3"
+                >
+                  <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                    <IconComp className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WHAT IS QURAN TAFSEER? */}
+      <section className="py-16 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 inline-block">
+              Foundational Understanding
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              What Is Quran Tafseer?
+            </h2>
+            <div className="h-1 w-16 bg-secondary mx-auto rounded-full" />
+          </div>
+
+          <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+            <p>
+              The word <em>Tafseer</em> originates from the Arabic root <em>Fassara</em>, which means to explain, clarify, and uncover what is hidden. While recitation focuses on the accurate vocalization of Arabic script, <strong>Quran Tafseer</strong> is the branch of Islamic knowledge dedicated to explaining the meanings, interpretations, historical circumstances, and underlying wisdom of the Quranic text.
+            </p>
+            <p>
+              Allah revealed the Holy Quran as a source of light, reflection, and life guidance. In Surah Sad (38:29), Allah describes the Quran as a blessed book revealed so that people may reflect upon its verses and people of understanding may take heed. Studying Tafseer bridges the gap between simply reading words and experiencing the transformative power of the divine message.
+            </p>
+            <p>
+              When you learn Tafseer, your daily Salah becomes more focused, your connection with Allah grows deeper, and the verses you recite provide immediate peace and direction during life's decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. WHAT WILL YOU LEARN IN OUR ONLINE QURAN TAFSEER COURSE? */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Curriculum &amp; Scope
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              What Will You Learn in Our Online Quran Tafseer Course?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Our comprehensive Tafseer curriculum is organized into five core learning pillars designed to build deep comprehension step by step.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {learningAreas.map((area, idx) => {
+              const IconComp = area.icon;
+              return (
+                <div
+                  key={area.id}
+                  className="glass p-6 sm:p-8 rounded-3xl border border-card-border hover:border-primary/40 transition-all duration-300 flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6"
+                >
+                  <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <IconComp className="h-6 w-6" />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <span className="text-xs font-bold text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
+                        Module 0{idx + 1}
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">{area.title}</h3>
+                    </div>
+                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                      {area.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 text-center space-y-3">
+            <h4 className="text-base font-bold text-foreground">Looking to Strengthen Your Reading Foundation First?</h4>
+            <p className="text-xs sm:text-sm text-muted-text max-w-2xl mx-auto">
+              If you want to practice reading fluency or refine pronunciation alongside your Tafseer studies, explore our <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Quran Reading course</Link>, master rules with our <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed classes</Link>, or study broader topics with our <Link href="/courses/islamic-studies" className="text-primary hover:underline font-semibold">Islamic Studies program</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. QURAN TRANSLATION VS. TAFSEER: WHAT IS THE DIFFERENCE? */}
+      <section className="py-20 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 inline-block">
+              Key Distinction
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Quran Translation vs. Tafseer: What Is the Difference?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Many learners wonder whether reading an English translation is enough or if studying Tafseer is necessary.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Translation Card */}
+            <div className="glass p-7 sm:p-8 rounded-3xl border border-card-border space-y-4">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
+                <span>Literal Translation</span>
+              </div>
+              <h3 className="text-xl font-extrabold text-foreground">Quran Translation</h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                A translation conveys the literal meaning of Arabic words in another language, such as English or Urdu. It provides a helpful initial understanding of what the words say on the surface.
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-muted-text pt-2">
+                <li className="flex items-start space-x-2">
+                  <Check className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                  <span>Word-for-word literal rendering</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <Check className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                  <span>Basic surface meaning in English</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <Check className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                  <span>Quick reference during daily recitation</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Tafseer Card */}
+            <div className="glass p-7 sm:p-8 rounded-3xl border-2 border-primary/30 bg-primary/[0.02] space-y-4 shadow-lg">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                <span>In-Depth Explanation</span>
+              </div>
+              <h3 className="text-xl font-extrabold text-foreground">Quranic Tafseer</h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                Tafseer explains <em>why</em> the verse was revealed, its historical context, linguistic depth, legal wisdom, thematic connections, and how to apply its timeless message to your daily life.
+              </p>
+              <ul className="space-y-2 text-xs sm:text-sm text-muted-text pt-2">
+                <li className="flex items-start space-x-2">
+                  <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>Historical context and Asbab al-Nuzul</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>Classical Arabic linguistic nuances</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>Actionable moral and spiritual guidance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. WHO CAN JOIN OUR QURAN TAFSEER CLASSES? */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Open to All Learners
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Who Can Join Our Quran Tafseer Classes?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Our one-to-one format allows our teachers to adapt the course content to your personal background, age, and spiritual goals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {whoCanJoinList.map((item, idx) => (
+              <div
+                key={idx}
+                className="glass p-6 sm:p-7 rounded-3xl border border-card-border space-y-3 hover:border-primary/40 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pl-11">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. ONE-TO-ONE ONLINE QURAN TAFSEER CLASSES */}
+      <section className="py-16 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Personalized Learning
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              One-to-One Online Quran Tafseer Classes
+            </h2>
+            <div className="h-1 w-16 bg-primary mx-auto rounded-full" />
+          </div>
+
+          <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+            <p>
+              Studying Tafseer in a large group or listening to pre-recorded lectures can leave you with unanswered questions and an overwhelming pace. That is why OQTutor conducts all Tafseer lessons on a private, <strong>one-to-one</strong> basis.
+            </p>
+            <p>
+              In private classes, your teacher focuses entirely on your comprehension. You can pause to ask about a specific word, discuss how a historical event relates to a personal situation, and move at a pace that feels natural and enriching.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LEARN QURAN TAFSEER WITH MALE OR FEMALE TEACHERS */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 inline-block">
+              Qualified Scholars
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Learn Quran Tafseer with Male or Female Teachers
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Comfort and trust are essential when studying Islamic knowledge. We provide students with full freedom to choose their instructor.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="glass p-7 rounded-3xl border border-card-border space-y-4">
+              <div className="h-12 w-12 rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center">
+                <Users className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Certified Male Scholars</h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                Graduates from reputable Islamic institutions with formal training in Quranic sciences, classical Arabic, and Hadith commentary.
+              </p>
+              <Link href="/tutors" className="text-xs font-semibold text-primary hover:underline inline-flex items-center space-x-1">
+                <span>View male Quran tutors</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="glass p-7 rounded-3xl border border-card-border space-y-4">
+              <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                <UserCheck className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Dedicated Female Scholars (Alimas)</h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                Qualified female teachers for sisters and children who prefer studying in a private, supportive, and dedicated environment.
+              </p>
+              <Link href="/courses/female-quran-teacher" className="text-xs font-semibold text-primary hover:underline inline-flex items-center space-x-1">
+                <span>Explore female Quran teacher classes</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. FLEXIBLE ONLINE TAFSEER CLASSES */}
+      <section className="py-16 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-6 text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+            Convenient Scheduling
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            Flexible Online Tafseer Classes
+          </h2>
+          <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal max-w-2xl mx-auto">
+            Whether you are located in the <Link href="/locations/usa" className="text-primary hover:underline font-semibold">USA</Link>, Canada, the UK, Europe, or Australia, our faculty is available 24/7 across multiple time zones. Choose between 2, 3, 4, or 5 sessions per week, and reschedule easily if unexpected family or work commitments arise. Check our straightforward <Link href="/pricing" className="text-primary hover:underline font-semibold">pricing plans</Link> with no long-term contracts.
+          </p>
+        </div>
+      </section>
+
+      {/* 10. HOW DO ONLINE QURAN TAFSEER CLASSES WORK? */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Simple 5-Step Process
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              How Do Online Quran Tafseer Classes Work?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Getting started is straightforward. Here is how your online Tafseer journey unfolds:
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {stepsList.map((step) => (
+              <div
+                key={step.number}
+                className="glass p-6 sm:p-7 rounded-3xl border border-card-border flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-5"
+              >
+                <div className="h-10 w-10 rounded-2xl bg-primary text-white font-extrabold text-sm flex items-center justify-center shrink-0">
+                  {step.number}
+                </div>
+                <div className="space-y-1.5">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. WHY STUDY QURAN TAFSEER ONLINE? */}
+      <section className="py-16 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/10 border border-secondary/20 rounded-full px-3.5 py-1 inline-block">
+              Modern Educational Value
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Why Study Quran Tafseer Online?
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Online learning brings authentic Islamic scholarship directly into your home.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-muted-text">
+            <div className="p-6 rounded-3xl bg-card border border-card-border space-y-2">
+              <h4 className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+                <ShieldCheck className="h-5 w-5 text-primary" />
+                <span>Comfort &amp; Safe Learning from Home</span>
+              </h4>
+              <p className="leading-relaxed">
+                Learn in a relaxed, comfortable home environment without spending hours in traffic or rearranging busy household schedules.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-card border border-card-border space-y-2">
+              <h4 className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+                <Award className="h-5 w-5 text-primary" />
+                <span>Access to Verified Global Scholars</span>
+              </h4>
+              <p className="leading-relaxed">
+                Connect with qualified teachers who hold formal degrees in Islamic sciences and classical Arabic, regardless of where you live.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-card border border-card-border space-y-2">
+              <h4 className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+                <Clock className="h-5 w-5 text-primary" />
+                <span>Personalized Pacing</span>
+              </h4>
+              <p className="leading-relaxed">
+                Spend as much time as you need on intricate Surahs or foundational concepts without feeling rushed by a classroom syllabus.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-card border border-card-border space-y-2">
+              <h4 className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+                <MessageSquare className="h-5 w-5 text-primary" />
+                <span>Direct Dialogue &amp; Open Questions</span>
+              </h4>
+              <p className="leading-relaxed">
+                Engage in two-way discussion where you can ask sensitive questions and explore the context behind verses openly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. WHAT MAKES OQTUTOR'S TAFSEER COURSE DIFFERENT? */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Our Approach
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              What Makes OQTutor&apos;s Tafseer Course Different?
+            </h2>
+            <div className="h-1 w-16 bg-primary mx-auto rounded-full" />
+          </div>
+
+          <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+            <p>
+              At OQTutor, we believe Islamic education should be engaging, accessible, and intellectually rewarding. Our online Quran Tafseer classes emphasize <strong>practical application</strong> rather than dry memorization of historical dates.
+            </p>
+            <p>
+              We pair classical scholarly sources (such as Tafseer Ibn Kathir, Tafseer Jalalayn, and classical Arabic lexicons) with modern pedagogical methods, digital whiteboard notes, and clear English explanations. Our tutors foster a welcoming, respectful environment where students of all ages feel encouraged to learn and reflect.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. START LEARNING QURAN TAFSEER ONLINE (CTA) */}
+      <section className="py-16 bg-foreground/[0.01] border-t border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-6 shadow-xl">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block">
+              Begin Your Journey
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Start Learning Quran Tafseer Online
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text max-w-xl mx-auto leading-relaxed font-normal">
+              Study Quranic meanings, context, and guidance with personalized online Tafseer classes. Experience live one-on-one lessons with certified scholars today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
+              <Link
+                href="/book-free-trial"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center justify-center space-x-2"
+              >
+                <span>Book a Free Trial</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/courses"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all text-center"
+              >
+                Browse All Courses
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 14. FREQUENTLY ASKED QUESTIONS */}
+      <section className="py-20 bg-background">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1 inline-block">
+              Common Inquiries
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-sm sm:text-base text-muted-text">
+              Direct answers to key questions about studying Quran Tafseer online.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {tafseerFaqs.map((faq, idx) => {
+              const isOpen = openFaqIdx === idx;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-3xl border border-card-border bg-card overflow-hidden transition-colors"
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                  >
+                    <div className="flex items-center space-x-3.5 pr-4">
+                      <HelpCircle className="h-5 w-5 text-primary shrink-0" />
+                      <span className="text-xs sm:text-sm font-bold">{faq.question}</span>
+                    </div>
+                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
