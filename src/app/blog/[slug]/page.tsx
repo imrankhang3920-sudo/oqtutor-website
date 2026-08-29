@@ -791,6 +791,7 @@ export default async function BlogPostPage({ params }: Props) {
                 "headline": "How Do You Know Your Child Is Ready to Start Learning the Quran?",
                 "description": "Discover practical signs your child is ready to start learning the Quran, developmental age guidelines, foundational learning pathways from Noorani Qaida to Tajweed, and expert parent tips.",
                 "image": [
+                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg",
                   "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/oq-tutor-child-readiness-online-guidance.jpg",
                   "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/quran-mushaf-tasbih-child-learning.jpg"
                 ],

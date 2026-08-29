@@ -323,6 +323,11 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\b80b1fae-0654-49d1-ad62-a142b3cf8c1a\\.user_uploaded\\media_1787972399788.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/quran-tajweed.jpg'),
         dest: path.join(process.cwd(), 'public/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/quran-mushaf-tasbih-child-learning.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\b80b1fae-0654-49d1-ad62-a142b3cf8c1a\\.user_uploaded\\media_1787974316889.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
