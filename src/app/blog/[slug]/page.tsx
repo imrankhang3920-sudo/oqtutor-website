@@ -43,9 +43,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
   const isChooseBestKidsUsaBlog = resolvedParams.slug === 'how-to-choose-best-online-quran-classes-for-kids-usa';
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
+  const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
   const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog;
 
-  const metaTitle = isChildTimelineBlog
+  const metaTitle = isChildReadinessBlog
+    ? 'How Do You Know Your Child Is Ready to Start Learning the Quran? | OQTutor'
+    : isChildTimelineBlog
     ? 'How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timeline & Parent Guide)'
     : isChooseBestKidsUsaBlog
     ? 'How to Choose the Best Online Quran Classes for Kids in the USA'
@@ -68,7 +71,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: blog.description,
-    keywords: isChildTimelineBlog
+    keywords: isChildReadinessBlog
+      ? [
+          'how do you know your child is ready to start learning the Quran',
+          'when should child start learning Quran',
+          'what age to start learning Quran for child',
+          'signs child is ready for Quran',
+          'online Quran classes for kids',
+          'Noorani Qaida for kids',
+          'beginner Quran learning for kids',
+          'how to teach child Quran at home',
+          'online Quran tutor for kids',
+          'Quran reading for children',
+          'child Quran readiness checklist',
+          'online Tajweed classes for kids'
+        ]
+      : isChildTimelineBlog
       ? [
           'how long does it take for a child to complete the Quran online',
           'how long does it take to learn Quran for kids',
@@ -176,6 +194,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isTexasBlog = resolvedParams.slug === 'online-quran-classes-texas';
   const isChooseBestKidsUsaBlog = resolvedParams.slug === 'how-to-choose-best-online-quran-classes-for-kids-usa';
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
+  const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -761,6 +780,141 @@ export default async function BlogPostPage({ params }: Props) {
         </>
       )}
 
+      {isChildReadinessBlog && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "How Do You Know Your Child Is Ready to Start Learning the Quran?",
+                "description": "Discover practical signs your child is ready to start learning the Quran, developmental age guidelines, foundational learning pathways from Noorani Qaida to Tajweed, and expert parent tips.",
+                "image": [
+                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/oq-tutor-child-readiness-online-guidance.jpg",
+                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/quran-mushaf-tasbih-child-learning.jpg"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "OQTutor Senior Scholars",
+                  "url": "https://www.oqtutor.com/tutors"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "OQTutor Online Quran Academy",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.oqtutor.com/logo.jpg"
+                  }
+                },
+                "datePublished": "2026-08-29",
+                "dateModified": "2026-08-29",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran"
+                }
+              })
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How do you know your child is ready to start learning the Quran?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "A child is ready to begin Quran learning when they can focus on a short activity for 5-10 minutes, follow simple instructions, repeat phonetic sounds, and show curiosity about the Quran without feeling overwhelmed."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is there a fixed Islamic age to start learning the Quran?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No, there is no fixed Islamic age before or after which a child must begin. Scholarly consensus from Darul Iftaa notes that children develop at different rates, and readiness matters far more than an arbitrary calendar age."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What should a young child learn first in Quran?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "A beginner child starts with Arabic letter recognition and sounds through Noorani Qaida, followed by joining letters into words, short Surah recitation from Juz Amma, and foundational Tajweed rules."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What if my child is 4 or 5 and not ready for formal Quran classes?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Do not rush or panic. You can continue natural Quran exposure at home through listening to melodious recitations, daily short duas, and family prayer routines while gradually introducing alphabet games."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is it too late to start Quran learning if my child is 8, 10, or older?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Not at all. Older children often learn faster because of better focus, cognitive maturity, and communication skills. A level assessment helps place them at the right starting point."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is online Quran learning effective for young kids?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, live 1-on-1 online classes are highly effective for children because lessons are customized to their attention span, mistakes are corrected in real time, and qualified teachers keep lessons interactive and positive."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What should I do if my child resists or does not want to learn?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Identify the underlying cause, such as tiredness after school, lesson timing, session length, or teaching style. Keep lessons short (20-30 minutes), offer warm praise, and choose an encouraging, patient tutor."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.oqtutor.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://www.oqtutor.com/blog"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "How Do You Know Your Child Is Ready to Start Learning the Quran?",
+                    "item": "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran"
+                  }
+                ]
+              })
+            }}
+          />
+        </>
+      )}
+
       {isFemaleTeacherBlog && (
         <script
           type="application/ld+json"
@@ -1242,7 +1396,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isChildTimelineBlog ? (
+            {isChildReadinessBlog ? (
+              <ArticleContentChildReadiness />
+            ) : isChildTimelineBlog ? (
               <ArticleContentChildCompletionTimeline />
             ) : isChooseBestKidsUsaBlog ? (
               <ArticleContentChooseBestKidsUsa />
@@ -8427,6 +8583,654 @@ function ArticleContentChildCompletionTimeline() {
     </article>
   );
 }
+
+function ArticleContentChildReadiness() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 not-prose shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Quick Summary &amp; Core Takeaway</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          There is no single mandatory age for a child to begin learning the Quran. Readiness is determined by developmental signals — such as listening for 5 to 10 minutes, repeating sounds, following simple instructions, and showing natural curiosity. Starting with gentle phonics through <Link href="/courses/noorani-qaida" className="text-primary font-bold hover:underline">Noorani Qaida</Link> builds a lifelong, loving relationship with the Holy Book.
+        </p>
+      </div>
+
+      {/* Quick Navigation Box */}
+      <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-foreground font-bold text-sm">
+          <ListChecks className="h-4 w-4 text-primary" />
+          <span>Table of Contents: In This Parent Guide</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-muted-text">
+          <a href="#is-there-a-fixed-age" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>1. Is There a Fixed Age to Start Quran?</span>
+          </a>
+          <a href="#seven-signs-of-readiness" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>2. 7 Signs Your Child Is Ready</span>
+          </a>
+          <a href="#what-to-learn-first" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>3. What Should a Child Learn First?</span>
+          </a>
+          <a href="#child-not-ready-at-four-or-five" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>4. If Your 4 or 5-Year-Old Isn&apos;t Ready</span>
+          </a>
+          <a href="#what-if-child-is-older" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>5. What If Your Child Is Older?</span>
+          </a>
+          <a href="#preparing-child-at-home" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>6. How Parents Can Prepare at Home</span>
+          </a>
+          <a href="#is-online-quran-suitable" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>7. Is Online Learning Suitable for Young Kids?</span>
+          </a>
+          <a href="#child-resistance" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>8. What If My Child Does Not Want to Learn?</span>
+          </a>
+          <a href="#readiness-checklist" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>9. Simple Parent Readiness Checklist</span>
+          </a>
+          <a href="#faq-section" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>10. Frequently Asked Questions</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Many Muslim parents want their children to grow up with a strong connection to the Quran. But one question often comes first: <strong>How do you know your child is ready to start learning the Quran?</strong>
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          There is no single age that works for every child. Children develop their language, attention, confidence, and ability to follow instructions at different rates. An age on the calendar can give parents a general reference, but it cannot tell the whole story.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          A better approach is to look at your child&apos;s readiness.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          A child may be ready when they can listen for a short period, follow simple instructions, repeat sounds, recognize some letters, and take part in a lesson without feeling overwhelmed. At the same time, early exposure to the Quran can begin naturally through listening and family routines without turning it into formal study.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          The goal is not to rush a child through a syllabus. It is to build a positive and lasting relationship with the Quran.
+        </p>
+      </section>
+
+      {/* Featured Visual Banner: OQ Tutor Child Readiness */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl not-prose bg-background">
+        <div className="relative h-72 sm:h-[450px] w-full">
+          <Image
+            src="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/oq-tutor-child-readiness-online-guidance.jpg"
+            alt="OQ Tutor Online Learning and Guidance for Children - Parents and kids learning Quran and practicing prayer at home"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="object-cover"
+          />
+        </div>
+        <div className="p-4 text-center bg-foreground/[0.02] text-xs sm:text-sm text-muted-text border-t border-card-border font-medium">
+          Personalized online Quran learning: live guidance, gentle encouragement, and interactive lesson tools adapted to every child&apos;s individual cognitive stage.
+        </div>
+      </div>
+
+      {/* Section 1: Is There a Fixed Age to Start Learning the Quran? */}
+      <section id="is-there-a-fixed-age" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Is There a Fixed Age to Start Learning the Quran?
+        </h2>
+        <p className="text-base text-muted-text">
+          No fixed age applies to every child.
+        </p>
+        <p className="text-base text-muted-text">
+          A scholarly answer from <a href="https://daruliftaa.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Darul Iftaa</a> explains that there is no fixed Islamic age before or after which children must or must not be taught the Quran. It emphasizes that children differ in their mental ability, understanding, and development.
+        </p>
+        <p className="text-base text-muted-text">
+          This is an important distinction for parents.
+        </p>
+        <p className="text-base text-muted-text">
+          Starting early can be beneficial for a child who is interested and ready to participate. However, starting later does not mean a child has missed the opportunity to learn. A child who begins at seven, eight, ten, or later can still develop strong Quran reading skills with suitable teaching and consistent practice.
+        </p>
+        
+        {/* Hadith Callout Box */}
+        <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 my-6 not-prose">
+          <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+            <Award className="h-5 w-5" />
+            <span>The Prophetic Honor of Quran Learning</span>
+          </div>
+          <p className="text-base sm:text-lg text-foreground font-serif italic">
+            &ldquo;The best among you are those who learn the Qur&apos;an and teach it.&rdquo;
+          </p>
+          <div className="text-xs text-muted-text font-medium pt-1">
+            — Recorded in <a href="https://sunnah.com/bukhari:5027" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Sahih al-Bukhari 5027 (Sunnah.com)</a>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          So instead of asking only, <em>&ldquo;Is my child old enough?&rdquo;</em> parents can ask a much more useful question:
+        </p>
+        <div className="p-5 rounded-2xl bg-secondary/10 border border-secondary/20 text-center font-bold text-foreground text-base sm:text-lg">
+          &ldquo;Can my child participate in a simple Quran lesson comfortably and consistently?&rdquo;
+        </div>
+      </section>
+
+      {/* Section 2: 7 Signs Your Child May Be Ready to Learn the Quran */}
+      <section id="seven-signs-of-readiness" className="space-y-6 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          7 Signs Your Child May Be Ready to Learn the Quran
+        </h2>
+        <p className="text-base text-muted-text font-medium">
+          Readiness does not mean that a child must already know Arabic letters or be able to read the Quran. The first stage of learning is where those skills are developed. Here are practical signs that indicate readiness:
+        </p>
+
+        <div className="space-y-4 pt-2 not-prose">
+          {/* Sign 1 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">1</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Can Pay Attention for a Short Lesson
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Young children do not need to sit perfectly still for a long period. That would be expecting a lot from a small human who can become fascinated by a spoon for five minutes.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              What matters is whether your child can focus on one activity for a reasonable period with gentle guidance. The <a href="https://www.cdc.gov/ncbddd/actearly/milestones/milestones-5yr.html" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">CDC Child Development Milestones</a> note that by age five, most children can pay attention for about five to ten minutes during activities such as story time or arts and crafts.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              This does not mean every Quran lesson should last only five to ten minutes. It simply shows why expectations should match the child&apos;s developmental stage. If your child can listen to a short story, repeat something you say, or complete a simple activity with guidance, they may be ready to begin gentle Quran learning.
+            </p>
+          </div>
+
+          {/* Sign 2 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">2</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Can Follow Simple Instructions
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              A beginner Quran lesson usually involves simple instructions: <em>Listen. Repeat. Look at the letter. Say the sound. Try again.</em>
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              A child does not need advanced academic skills to follow these steps. They simply need enough understanding to participate. The CDC lists following rules and taking turns among developmental milestones commonly seen by age five.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Parents can observe similar abilities during everyday activities: Can your child follow a simple instruction? Can they take turns? Can they listen when you explain something? If the answer is usually yes, your child may be ready for structured learning.
+            </p>
+          </div>
+
+          {/* Sign 3 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">3</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Can Repeat Sounds or Words
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Quran reading begins with learning Arabic letters and their sounds. A child does not need to pronounce everything perfectly before starting — in fact, that is what teaching is for.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              A child who enjoys repeating words, sounds, short duas, or Quranic verses may already be developing an important learning habit. Parents can gently observe this during everyday Quran exposure. If your child hears a short Surah and tries to repeat part of it, that curiosity can become a natural starting point.
+            </p>
+          </div>
+
+          {/* Sign 4 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">4</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Shows Interest in the Quran
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Interest can be a powerful signal. Perhaps your child asks what you are reading. Maybe they want to sit beside you during Quran recitation. Perhaps they try to repeat a Surah they hear regularly in Salah or in the car.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              These moments do not mean your child needs intensive formal lessons immediately. They simply show that the Quran has caught their attention. Parents can respond by encouraging that curiosity rather than turning it into pressure. A simple response such as, <em>&ldquo;Would you like to learn this letter with me?&rdquo;</em> can be much more effective than announcing a serious lesson when the child is already thinking about something else.
+            </p>
+          </div>
+
+          {/* Sign 5 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">5</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Is Comfortable Learning From an Adult
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Whether the teacher is a parent, local teacher, or an <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran tutor</Link>, the child needs to feel reasonably comfortable with the learning environment.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Some children are naturally social. Others need time to warm up. A shy child is not necessarily unready. Give the child time to become familiar with the teacher, lesson format, and expectations. A patient teacher can make a significant difference, especially during the first few lessons.
+            </p>
+          </div>
+
+          {/* Sign 6 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">6</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Can Handle Gentle Correction
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Learning to read the Quran involves repetition and correction. A child may pronounce a letter incorrectly several times before getting it right. That is normal learning, not failure.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              The important question is whether your child can hear a correction and try again without becoming extremely frustrated. Parents and teachers should keep corrections calm and encouraging. The purpose of correction is to improve pronunciation, not to make a child afraid of making mistakes.
+            </p>
+          </div>
+
+          {/* Sign 7 */}
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <div className="flex items-center space-x-3">
+              <span className="h-8 w-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-bold shrink-0">7</span>
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                Your Child Can Follow a Simple Routine
+              </h3>
+            </div>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Consistency matters more than trying to complete a large amount of material in one sitting. A child who can follow a simple daily or weekly routine may find structured Quran learning easier.
+            </p>
+            <p className="text-sm text-muted-text leading-relaxed">
+              The routine does not need to be complicated: A lesson. A little practice. Some revision. Then a break. The goal is to make Quran learning a normal part of life rather than an event that creates stress every time it appears on the calendar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: What Should a Child Learn First? */}
+      <section id="what-to-learn-first" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Should a Child Learn First?
+        </h2>
+        <p className="text-base text-muted-text">
+          Once a child is ready, the next question is usually what to teach first.
+        </p>
+        <p className="text-base text-muted-text">
+          For a child who does not yet know how to read Arabic, the foundation normally begins with recognizing Arabic letters and learning their sounds.
+        </p>
+        <p className="text-base text-muted-text">
+          A structured beginner pathway can then move toward <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, joining letters and basic reading skills before progressing toward fluent <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link> and more developed <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          OQTutor&apos;s beginner guides similarly present a learning path from the Arabic alphabet to Noorani Qaida, word formation, Quran reading, Tajweed, and greater fluency (see our <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">guide to mastering Tajweed rules</Link>).
+        </p>
+        <p className="text-base text-muted-text">
+          The important point is not to rush the stages. A child who still struggles to recognize letters does not need to worry about advanced Tajweed terminology. Build the foundation first.
+        </p>
+
+        {/* 4-Step Pathway Visual Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4 not-prose">
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="text-xs font-bold text-primary uppercase tracking-wider">Step 1</div>
+            <div className="font-bold text-foreground text-base">Arabic Alphabet</div>
+            <p className="text-xs text-muted-text">
+              Recognizing shapes, individual letter names, and articulation points (Makharij).
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="text-xs font-bold text-primary uppercase tracking-wider">Step 2</div>
+            <div className="font-bold text-foreground text-base">Noorani Qaida</div>
+            <p className="text-xs text-muted-text">
+              Vowels (Harakat), Tanween, Sukoon, Tashdeed, and letter connections.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="text-xs font-bold text-primary uppercase tracking-wider">Step 3</div>
+            <div className="font-bold text-foreground text-base">Juz Amma Reading</div>
+            <p className="text-xs text-muted-text">
+              Reading short Surahs, blending words smoothly, and building recitation rhythm.
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="text-xs font-bold text-primary uppercase tracking-wider">Step 4</div>
+            <div className="font-bold text-foreground text-base">Tajweed &amp; Fluency</div>
+            <p className="text-xs text-muted-text">
+              Rules of Ghunnah, Ikhfa, Qalqalah, elongation (Madd), and full Nazra completion.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mid-Article Image: Ornate Holy Quran with Tasbih */}
+      <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl not-prose bg-background">
+        <div className="relative h-72 sm:h-[450px] w-full">
+          <Image
+            src="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/quran-mushaf-tasbih-child-learning.jpg"
+            alt="Holy Quran Mushaf with black and gold Tasbih prayer beads for daily Islamic family routine and recitation"
+            fill
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 896px"
+            className="object-cover"
+          />
+        </div>
+        <div className="p-4 text-center bg-foreground/[0.02] text-xs sm:text-sm text-muted-text border-t border-card-border font-medium">
+          Building a loving, lifelong bond with the Holy Quran begins with simple daily routines, active listening, and gentle encouragement.
+        </div>
+      </div>
+
+      {/* Section 4: What If My Child Is Four or Five but Does Not Seem Ready? */}
+      <section id="child-not-ready-at-four-or-five" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What If My Child Is Four or Five but Does Not Seem Ready?
+        </h2>
+        <p className="text-base text-muted-text font-semibold">
+          Do not panic. Age does not automatically create readiness.
+        </p>
+        <p className="text-base text-muted-text">
+          The <a href="https://www.healthychildren.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">American Academy of Pediatrics</a> explains that children develop social and psychological skills at different rates and recommends looking carefully at individual development when considering readiness for school.
+        </p>
+        <p className="text-base text-muted-text">
+          The same principle is useful when parents think about Quran learning.
+        </p>
+        <p className="text-base text-muted-text">
+          If your child struggles to sit through a lesson, cannot yet follow simple instructions, or becomes consistently distressed by formal learning, you can slow down.
+        </p>
+        <p className="text-base text-muted-text">
+          That does not mean stopping Quran exposure. You can continue with listening to recitation, short Surahs, simple duas, and positive family routines while gradually introducing letters and short learning activities (like those covered in our <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies for kids</Link>).
+        </p>
+        <p className="text-base text-muted-text">
+          Sometimes the best preparation for formal learning is simply becoming comfortable around learning.
+        </p>
+      </section>
+
+      {/* Section 5: What If My Child Is Older? */}
+      <section id="what-if-child-is-older" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What If My Child Is Older?
+        </h2>
+        <p className="text-base text-muted-text">
+          There is no reason to feel that you have waited too long.
+        </p>
+        <p className="text-base text-muted-text">
+          An older child may actually bring useful strengths to Quran learning. They may understand instructions more easily, communicate their difficulties more clearly, and have a longer attention span.
+        </p>
+        <p className="text-base text-muted-text">
+          The teaching approach may simply need to change. A child who already recognizes Arabic letters might not need to spend extensive time on the alphabet. Another child may need to review the basics despite being older.
+        </p>
+        <p className="text-base text-muted-text">
+          This is why a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">level assessment</Link> can be more useful than choosing lessons based only on age. The question should be: <strong>&ldquo;What can my child do now?&rdquo;</strong> Then the teacher can decide what should come next. (Read our guide on <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">how long it takes for a child to complete the Quran online</Link> for realistic timelines).
+        </p>
+      </section>
+
+      {/* Section 6: How Parents Can Prepare a Child for Quran Learning */}
+      <section id="preparing-child-at-home" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Parents Can Prepare a Child for Quran Learning
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not need to turn the home into a classroom before the first lesson. A few simple habits can help:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 not-prose">
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <Heart className="h-5 w-5 shrink-0" />
+              <span>1. Create a Positive Quran Routine</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Let your child see the Quran as part of normal family life. Listening to recitation, watching parents read, and making time for Quran can help children understand that it is something valued in the home.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <ShieldCheck className="h-5 w-5 shrink-0" />
+              <span>2. Keep Expectations Realistic</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              A young child will not learn at the same pace as an older student. Avoid comparing siblings, cousins, classmates, or children on social media. Every child has a different starting point.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <Sparkles className="h-5 w-5 shrink-0" />
+              <span>3. Praise Effort and Improvement</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              If your child correctly identifies a letter after several attempts, recognize the progress. If they remember something from the previous lesson, notice it. Small improvements are still improvements. Check out our <Link href="/blog/tips-keep-kids-motivated-online-quran" className="text-primary font-semibold hover:underline">tips to keep kids motivated in online Quran</Link>.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <UserCheck className="h-5 w-5 shrink-0" />
+              <span>4. Choose an Appropriate Teacher</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The teacher should understand the Quran and know how to teach children at their level. A good children&apos;s Quran lesson matches current ability rather than rushing through a fixed schedule. Browse our verified <Link href="/tutors" className="text-primary font-semibold hover:underline">male and female Quran tutors</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Is Online Quran Learning Suitable for a Young Child? */}
+      <section id="is-online-quran-suitable" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Is Online Quran Learning Suitable for a Young Child?
+        </h2>
+        <p className="text-base text-muted-text">
+          It can be, but suitability depends on the child and the teaching approach.
+        </p>
+        <p className="text-base text-muted-text">
+          Our dedicated <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> guide explains that children can begin with Noorani Qaida and progress according to their age and learning pace. (See also: <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">How to choose the best online Quran classes for kids in the USA</Link>).
+        </p>
+        <p className="text-base text-muted-text">
+          For an online lesson, parents should pay particular attention to whether the child can engage with the teacher, follow instructions, and remain comfortable during the session.
+        </p>
+        <p className="text-base text-muted-text">
+          A short <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial class</Link> or assessment can help parents observe how their child responds before committing to a regular schedule. The purpose is not simply to put a child in front of a screen. The purpose is to create an effective teacher-and-student learning relationship.
+        </p>
+      </section>
+
+      {/* Section 8: What If My Child Does Not Want to Learn? */}
+      <section id="child-resistance" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What If My Child Does Not Want to Learn?
+        </h2>
+        <p className="text-base text-muted-text">
+          This is one of the most important questions parents can ask.
+        </p>
+        <p className="text-base text-muted-text">
+          Resistance does not always mean a child is incapable of learning. The problem may be the lesson length, teaching style, timing, difficulty level, or simply tiredness.
+        </p>
+        <p className="text-base text-muted-text">
+          Try to identify the reason before assuming the child is not ready. If a child has just returned from school, is hungry, or wants to play, a Quran lesson may feel like the final boss of the day.
+        </p>
+        <p className="text-base text-muted-text">
+          Changing the timing, reducing the immediate demand, or choosing a different tutor (such as a nurturing <Link href="/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child" className="text-primary font-semibold hover:underline">female Quran teacher</Link>) may help. If the child continues to struggle, speak with the teacher and reassess the learning approach.
+        </p>
+      </section>
+
+      {/* Section 9: A Simple Readiness Checklist for Parents */}
+      <section id="readiness-checklist" className="space-y-6 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <CheckCircle2 className="h-7 w-7 text-primary" />
+          <span>A Simple Readiness Checklist for Parents</span>
+        </h2>
+        <p className="text-base text-muted-text font-medium">
+          Before starting formal Quran lessons, ask yourself these seven practical questions:
+        </p>
+
+        <div className="space-y-3 not-prose">
+          {[
+            'Can my child listen to a short activity for 5 to 10 minutes?',
+            'Can my child follow simple instructions like "Look at the letter" or "Repeat after me"?',
+            'Can my child repeat sounds or words they hear in everyday speech?',
+            'Does my child show curiosity or interest about the Quran at home?',
+            'Can my child accept gentle correction without extreme frustration?',
+            'Can my child participate in a simple daily or weekly routine?',
+            'Does my child feel reasonably comfortable interacting with a teacher?'
+          ].map((item, index) => (
+            <div key={index} className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center space-x-3">
+              <div className="h-6 w-6 rounded-full bg-primary/10 border border-primary/30 text-primary flex items-center justify-center shrink-0">
+                <Check className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-sm font-medium text-foreground">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-2 not-prose">
+          <div className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span>How to Interpret Your Results</span>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+            <strong>If you answered yes to most questions:</strong> Your child is likely ready to begin gentle, structured Quran lessons such as <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>.
+          </p>
+          <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+            <strong>If you answered no to several questions:</strong> That does not mean you must wait indefinitely. It simply means you may need to begin more gently with daily Quran audio exposure, short bedtime duas, and playful alphabet recognition games.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 10: Frequently Asked Questions */}
+      <section id="faq-section" className="space-y-6 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions About Child Quran Readiness</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What age should a child start learning the Quran?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              There is no mandatory age. Most children begin gentle phonics and Noorani Qaida between ages 4 and 6. However, readiness (attention span, ability to repeat sounds, following simple instructions) is much more important than an age on the calendar.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How do I know if my 4 or 5 year old is ready for Quran lessons?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              If your child can sit for 5 to 10 minutes, listen to instructions, repeat basic letter sounds, and shows curiosity about the Quran, they are ready for short, gentle 20-30 minute lessons.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What should a beginner child learn first in Quran?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              A beginner child starts with Arabic alphabet recognition and phonetic articulation points (Makharij) using Noorani Qaida, followed by word joining, short Surah recitation from Juz Amma, and basic Tajweed rules.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Is it too late to start Quran learning if my child is 8, 10, or older?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Not at all. Older children often learn faster due to greater cognitive maturity, better communication, and longer attention spans. A personalized level assessment ensures lessons match their exact starting level.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How can parents prepare a young child for Quran at home?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Play beautiful recitation in the house, let your child watch you pray and read Quran, teach short daily duas, praise small efforts, and keep expectations relaxed and positive.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Is online Quran learning effective for young kids?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes, live one-on-one online Quran classes are highly effective because the teacher focuses 100% on the child, catches pronunciation mistakes immediately, and uses interactive digital tools designed for children.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What should I do if my child resists or does not want to learn?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Examine the root cause: check if they are tired after school, hungry, or overwhelmed by lesson length. Keep lessons to 20-30 minutes, praise effort, and choose a warm, patient teacher.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 11: Final Thoughts & CTA */}
+      <section className="space-y-4 pt-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Final Thoughts: Focus on Readiness, Not Comparison
+        </h2>
+        <p className="text-base text-muted-text font-medium">
+          The right time to start learning the Quran is not determined by one magic number.
+        </p>
+        <p className="text-base text-muted-text">
+          Some children are ready for structured learning at a young age. Others need more time. What matters is whether the child can participate comfortably, respond to instruction, and gradually build the skills needed for Quran reading.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents should focus on readiness, not comparison. Start with the child&apos;s current ability. Build the foundation patiently. Keep lessons appropriate for the child&apos;s stage. Encourage progress without turning every mistake into a major event.
+        </p>
+        <p className="text-base text-muted-text">
+          Most importantly, help your child associate the Quran with love, learning, patience, and consistency. The aim is not simply to finish a book or complete a level. It is to help a child develop a lasting relationship with the Quran.
+        </p>
+        <p className="text-base text-muted-text">
+          For families looking for structured support, a qualified Quran teacher can assess the child&apos;s current level and recommend an appropriate starting point. <Link href="/" className="text-primary font-bold hover:underline">OQTutor</Link> provides one-to-one online Quran learning for children with lessons adapted to the learner&apos;s age and level.
+        </p>
+
+        {/* Call to Action Card */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Book a Free Assessment &amp; Trial Lesson for Your Child
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              See how your child responds to gentle 1-on-1 guidance with our Ijazah-certified male and female scholars. No commitment required.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/online-quran-classes-for-kids-usa"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore Kids Quran Classes</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
 
 
 
