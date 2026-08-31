@@ -10,7 +10,7 @@ import {
   Award, HelpCircle, ArrowRight, ShieldCheck, Star 
 } from 'lucide-react';
 import CoursePageClient from './CoursePageClient';
-import { createCourseSchema } from '@/lib/structuredData';
+import { createCourseSchema, createFaqPageSchema, createBreadcrumbSchema } from '@/lib/structuredData';
 
 export const dynamic = 'force-dynamic';
 
@@ -78,45 +78,14 @@ export default async function CoursePage({ params }: Props) {
   }
 
   // Generate Schemas
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.oqtutor.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Courses",
-        "item": "https://www.oqtutor.com/courses"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": course.title,
-        "item": `https://www.oqtutor.com/courses/${course.slug}`
-      }
-    ]
-  };
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Courses', url: '/courses' },
+    { name: course.title, url: `/courses/${course.slug}` },
+  ]);
 
   const courseSchema = createCourseSchema(course);
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": course.faqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
+  const faqSchema = createFaqPageSchema(course.faqs || []);
 
   return (
     <>

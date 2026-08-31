@@ -188,23 +188,6 @@ export default async function TexasQuranClassesPage() {
     ]
   };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OQTutor",
-    "url": "https://www.oqtutor.com",
-    "logo": "https://www.oqtutor.com/logo.jpg",
-    "image": "https://www.oqtutor.com/logo.jpg",
-    "description": "OQTutor is a premier online Quran academy providing personalized 1-on-1 Quran classes with certified male and female tutors.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": dbData.contact?.phone || "+12487826565",
-      "contactType": "customer service",
-      "areaServed": "Worldwide",
-      "availableLanguage": ["English", "Arabic", "Urdu"]
-    }
-  };
-
   return (
     <>
       <script
@@ -214,10 +197,6 @@ export default async function TexasQuranClassesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />

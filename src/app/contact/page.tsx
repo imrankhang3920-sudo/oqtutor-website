@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { readDB } from '@/data/db';
 import ContactPageClient from './ContactPageClient';
+import { createContactPageSchema, createBreadcrumbSchema } from '@/lib/structuredData';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,39 +26,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ContactPage() {
   const dbData = readDB();
 
-  // Local Business Schema JSON-LD
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Online Quran Tutor (OQTutor)",
-    "image": "https://www.oqtutor.com/logo.jpg",
-    "telephone": dbData.contact.phone,
-    "email": dbData.contact.email,
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": dbData.contact.location
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  };
+  const contactPageSchema = createContactPageSchema(dbData.contact);
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ContactPageClient contactData={dbData.contact} />
     </>

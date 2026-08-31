@@ -175,23 +175,6 @@ export default async function IllinoisQuranClassesPage() {
     ]
   };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OQTutor Online Quran Academy",
-    "url": "https://www.oqtutor.com",
-    "logo": "https://www.oqtutor.com/logo.jpg",
-    "image": "https://www.oqtutor.com/logo.jpg",
-    "description": "OQTutor provides live 1-on-1 online Quran classes for kids and adults in Illinois with certified male and female tutors.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": dbData.contact?.phone || "+447490329339",
-      "contactType": "customer service",
-      "areaServed": "US-IL",
-      "availableLanguage": ["English", "Arabic", "Urdu"]
-    }
-  };
-
   const illinoisCities = [
     "Chicago", "Naperville", "Schaumburg", "Skokie", "Evanston", 
     "Aurora", "Joliet", "Orland Park", "Oak Lawn", "Bolingbrook", 
@@ -217,10 +200,6 @@ export default async function IllinoisQuranClassesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />

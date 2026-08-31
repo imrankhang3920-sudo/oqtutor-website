@@ -395,8 +395,7 @@ export default async function USALocationsHubPage() {
     "areaServed": {
       "@type": "Country",
       "name": "United States"
-    },
-    "serviceType": "Online Quran Classes USA"
+    }
   };
 
   return (

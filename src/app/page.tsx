@@ -115,53 +115,12 @@ export default async function HomePage() {
   };
 
   // Schema Markup Data
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OQTutor",
-    "url": "https://www.oqtutor.com",
-    "logo": "https://www.oqtutor.com/logo.jpg",
-    "image": "https://www.oqtutor.com/logo.jpg",
-    "description": "OQTutor is a premier online Quran academy providing personalized 1-on-1 Quran classes with certified male and female tutors.",
-    "sameAs": [
-      siteConfig.social.facebook,
-      siteConfig.social.instagram
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": dbData.contact?.phone || "+447490329339",
-      "contactType": "customer service",
-      "areaServed": "Worldwide",
-      "availableLanguage": ["English", "Arabic", "Urdu"]
-    }
-  };
-
-  const educationalOrganizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "OQTutor Online Quran Academy",
-    "url": "https://www.oqtutor.com",
-    "logo": "https://www.oqtutor.com/logo.jpg",
-    "image": "https://www.oqtutor.com/logo.jpg",
-    "description": "Premium online Quran school offering customized 1-on-1 Tajweed, Hifz, Quran Reading, Noorani Qaida, and Islamic Studies classes for kids and adults globally.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "addressCountry": "US"
-    },
-  };
-
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "OQTutor",
     "url": "https://www.oqtutor.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.oqtutor.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "description": "Online Quran academy providing personalized 1-on-1 Quran, Tajweed, and Islamic Studies classes with certified male and female tutors."
   };
 
   const breadcrumbSchema = {
@@ -180,104 +139,32 @@ export default async function HomePage() {
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "OQTutor Quran Programs & Courses",
-    "description": "Personalized online Quranic curriculum designed for students in the USA and worldwide.",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Course",
-          "name": "Online Noorani Qaida Classes",
-          "description": "Master basic Arabic letters, spelling rules, and correct pronunciation (Makhraj) to build a foundation for fluent Quran reading.",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Course",
-          "name": "Online Tajweed Classes",
-          "description": "Learn the rules of recitation (Tajweed) online, including pronunciation, pauses, nasalization, and elongations to recite like a certified scholar.",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Course",
-          "name": "Quran Reading Classes",
-          "description": "Develop high-level reading fluency directly from the Mushaf, improving pronunciation speed and overcoming recitation hesitations.",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Course",
-          "name": "Online Hifz Classes",
-          "description": "One-on-one Quran memorization program led by certified Huffaz, offering customized revision paths and memory testing.",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Course",
-          "name": "Islamic Studies for Kids",
-          "description": "Broad Islamic education curriculum covering Wudu, Salah, daily Duas, Islamic history, and moral characters (Akhlaq).",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Course",
-          "name": "Arabic Language Classes",
-          "description": "Learn Quranic and classical Arabic reading, writing, grammar, and vocabulary to directly understand the holy text.",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "OQTutor"
-          }
+    "name": "OQTutor Online Quran Courses",
+    "description": "Personalized online Quranic curriculum designed for students worldwide.",
+    "itemListElement": (dbData.courses || []).slice(0, 8).map((c, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "item": {
+        "@type": "Course",
+        "name": c.title,
+        "description": c.description,
+        "url": `https://www.oqtutor.com/courses/${c.slug}`,
+        "educationalLevel": c.suitableFor || "All Ages",
+        "inLanguage": ["en", "ar"],
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "OQTutor",
+          "url": "https://www.oqtutor.com"
         }
       }
-    ]
+    }))
   };
 
   const homepageFaqs = dbData.faqs;
-
   const faqSchema = createFaqPageSchema(homepageFaqs);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrganizationSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

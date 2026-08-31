@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, Heart, AlertTriangle, Check, Sparkles, ShieldCheck, Award, Users, Star, UserCheck, CheckCircle2, ChevronRight, Video, Globe, Laptop, HelpCircle, ListChecks, MapPin, Compass } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
+import { createBlogPostSchema, createBreadcrumbSchema } from '@/lib/structuredData';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -196,21 +197,12 @@ export default async function BlogPostPage({ params }: Props) {
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": blog.title,
-    "description": blog.description,
-    "publisher": {
-      "@type": "Organization",
-      "name": "OQTutor Online Quran Academy",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.oqtutor.com/logo.jpg"
-      }
-    },
-    "mainEntityOfPage": `https://www.oqtutor.com/blog/${blog.slug}`
-  };
+  const articleSchema = createBlogPostSchema(blog);
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    { name: blog.title, url: `/blog/${blog.slug}` },
+  ]);
 
   return (
     <>
@@ -218,46 +210,19 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       {isConsistentHifzBlog && (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "How to Build a Consistent Hifz Quran Revision Routine",
-                "description": "A practical guide to building a consistent daily Hifz Quran revision routine, covering Sabak, Manzil, and 10 proven revision strategies for students.",
-                "image": [
-                  "Hifz Quran classes.jpeg",
-                  "Online Hifz Quran classes.jpeg",
-                  "Join Hifz Quran course.jpeg"
-                ],
-                "author": {
-                  "@type": "Organization",
-                  "name": "OQTutor Online Quran Academy"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "OQTutor Online Quran Academy"
-                },
-                "datePublished": "2026-07-01",
-                "dateModified": "2026-08-13",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://www.oqtutor.com/blog/consistent-hifz-quran-revision"
-                }
-              })
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
                   {
                     "@type": "Question",
                     "name": "What age to start Hifz?",
@@ -398,7 +363,6 @@ export default async function BlogPostPage({ params }: Props) {
               })
             }}
           />
-        </>
       )}
 
       {isWeekendQuranBlog && (
@@ -502,418 +466,221 @@ export default async function BlogPostPage({ params }: Props) {
       )}
 
       {isChooseBestKidsUsaBlog && (
-          <>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "Article",
-                  "headline": "How to Choose the Best Online Quran Classes for Kids in the USA: A Complete Parent Guide",
-                  "description": "Learn how to choose the best online Quran classes for kids in the USA. Compare teachers, curriculum, one to one lessons, schedules, progress tracking, and online safety.",
-                  "image": [
-                    "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg",
-                    "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/choose-best-online-quran-classes-kids-usa-mosque.jpg",
-                    "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa/choose-best-online-quran-classes-kids-usa-study-desk.jpg"
-                  ],
-                  "author": {
-                    "@type": "Organization",
-                    "name": "OQTutor Senior Scholars",
-                    "url": "https://www.oqtutor.com/tutors"
-                  },
-                  "publisher": {
-                    "@type": "Organization",
-                    "name": "OQTutor Online Quran Academy",
-                    "logo": {
-                      "@type": "ImageObject",
-                      "url": "https://www.oqtutor.com/logo.jpg"
-                    }
-                  },
-                  "datePublished": "2026-08-27",
-                  "dateModified": "2026-08-27",
-                  "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa"
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the best age for kids to start online Quran classes in the USA?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most children can comfortably start online Quran classes between ages 4 and 6, beginning with Noorani Qaida phonics, letter recognition, and short interactive 30-minute sessions that match their attention span."
                   }
-                })
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": "What is the best age for kids to start online Quran classes in the USA?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Most children can comfortably start online Quran classes between ages 4 and 6, beginning with Noorani Qaida phonics, letter recognition, and short interactive 30-minute sessions that match their attention span."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "How much do online Quran classes for kids typically cost in the US?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Online Quran classes in the USA generally range from $35 to $90 per month depending on class frequency (e.g., 2 to 5 one-on-one sessions per week). Quality academies offer free trial assessments with transparent pricing and no lock-in contracts."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Are online Quran classes as effective as in-person mosque classes for children?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, and often more effective for pronunciation and Tajweed. In a 1-on-1 online class, the tutor listens exclusively to your child for the entire 30 minutes, catching every subtle mistake immediately, unlike crowded group classes where each child only recites for 2-3 minutes."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Can I request a female Quran teacher for my daughter or young son?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. OQTutor provides certified female Quran teachers with Ijazah credentials, offering a comfortable, nurturing learning environment for young girls and children."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "What software or equipment is needed for online Quran classes?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "All you need is a laptop, tablet, or desktop computer with a working webcam, a reliable internet connection, a comfortable headset with a microphone, and Zoom or Microsoft Teams."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "How long does it take for a child to complete Noorani Qaida online?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "With 3 to 4 one-on-one classes per week and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before moving on to fluent Quran reading."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "How do I know if my child is making genuine progress in Quran recitation?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Look for regular teacher feedback, monthly progress reports, your child's increasing ability to recognize new Arabic words independently, and improved clarity in daily Salah recitation."
-                      }
-                    }
-                  ]
-                })
-              }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "BreadcrumbList",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": 1,
-                      "name": "Home",
-                      "item": "https://www.oqtutor.com"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "Blog",
-                      "item": "https://www.oqtutor.com/blog"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 3,
-                      "name": "How to Choose the Best Online Quran Classes for Kids in the USA",
-                      "item": "https://www.oqtutor.com/blog/how-to-choose-best-online-quran-classes-for-kids-usa"
-                    }
-                  ]
-                })
-              }}
-            />
-          </>
-        )}
+                },
+                {
+                  "@type": "Question",
+                  "name": "How are online Quran teachers vetted for child safety?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Reputable online Quran academies conduct identity verification, background screening, tajweed evaluations, and safeguarding checks before assigning teachers to young children."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should I choose one to one Quran classes or group classes for my child?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "One to one online Quran classes are significantly more effective because the teacher focuses 100% of the time on your child's pronunciation, attention span, and individual learning pace without distractions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can American kids learn Quran with correct Tajweed online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Experienced online tutors use visual whiteboards, color-coded Quran pages, and real-time audio corrections to help non-native Arabic speaking children master makharij and Tajweed rules easily."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much do online Quran classes for kids cost in the USA?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Online Quran tuition for US families typically ranges from $30 to $50 per month depending on weekly class frequency (such as 3, 5, or daily 30-minute sessions) with no long-term contracts."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for a child to complete Noorani Qaida online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With 3 to 4 one-on-one classes per week and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before moving on to fluent Quran reading."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I know if my child is making genuine progress in Quran recitation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Look for regular teacher feedback, monthly progress reports, your child's increasing ability to recognize new Arabic words independently, and improved clarity in daily Salah recitation."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isChildTimelineBlog && (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timeline & Parent Guide)",
-                "description": "Discover how long it takes for a child to complete the Quran online. Explore realistic timelines from Noorani Qaida to full Quran recitation, daily practice schedules, factors affecting progress, and proven tips for parents.",
-                "image": [
-                  "https://www.oqtutor.com/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg",
-                  "https://www.oqtutor.com/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/quran-learning-milestones-progression.jpg"
-                ],
-                "author": {
-                  "@type": "Organization",
-                  "name": "OQTutor Senior Scholars",
-                  "url": "https://www.oqtutor.com/tutors"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "OQTutor Online Quran Academy",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.oqtutor.com/logo.jpg"
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How long does it take a child to complete the Quran online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On average, a child takes between 1.5 to 2.5 years to complete reading the entire Quran (Nazra) online with proper Tajweed rules, assuming 3 to 4 live one-to-one lessons weekly alongside 15 to 20 minutes of daily home revision."
                   }
                 },
-                "datePublished": "2026-08-28",
-                "dateModified": "2026-08-28",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://www.oqtutor.com/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online"
+                {
+                  "@type": "Question",
+                  "name": "Can a child complete the Quran in one year?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, older children between ages 9 and 14 who already read Arabic fluently and attend 5 classes weekly with daily self-practice can finish reading in 12 months. For younger beginners starting from Noorani Qaida, an 18 to 24 month timeline ensures superior pronunciation without cognitive fatigue."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How many pages of Quran should a child read daily?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Beginner students usually read half a page to 1 page daily during early stages. As fluency builds, children comfortably read 2 to 4 pages daily during their scheduled practice session."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long should kids spend learning Quran each day?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ideal daily commitment is 30 minutes for a live one-to-one class plus 15 to 20 minutes of relaxed review at home. Short, focused daily practice produces far better retention than long weekend marathons."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "At what age should a child start learning Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Children can begin basic Arabic letter sounds and Noorani Qaida as early as age 4 to 6. Ages 6 to 8 represent the sweet spot where cognitive focus and speech articulation align for rapid phonetic mastery."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How many days a week should a child attend Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Taking 3 to 4 classes per week is optimal for steady progress. 2 classes per week works for lighter schedules, while 5 classes per week provides the fastest track for intensive memorization or accelerated reading."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to learn Quran with Tajweed?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Learning foundational Tajweed principles alongside reading takes approximately 6 to 12 months. Deepening advanced rules like advanced elongation (Madd) and throat letters happens continuously throughout the full completion journey."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can children learn Quran online effectively?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, private one-to-one online classes are proven to be highly effective because the child receives 100 percent dedicated teacher attention, digital screen sharing tools, and customized pacing without classroom distractions."
+                  }
                 }
-              })
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                  {
-                    "@type": "Question",
-                    "name": "How long does it take a child to complete the Quran online?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "On average, a child takes between 1.5 to 2.5 years to complete reading the entire Quran (Nazra) online with proper Tajweed rules, assuming 3 to 4 live one-to-one lessons weekly alongside 15 to 20 minutes of daily home revision."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Can a child complete the Quran in one year?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Yes, older children between ages 9 and 14 who already read Arabic fluently and attend 5 classes weekly with daily self-practice can finish reading in 12 months. For younger beginners starting from Noorani Qaida, an 18 to 24 month timeline ensures superior pronunciation without cognitive fatigue."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "How many pages of Quran should a child read daily?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Beginner students usually read half a page to 1 page daily during early stages. As fluency builds, children comfortably read 2 to 4 pages daily during their scheduled practice session."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "How long should kids spend learning Quran each day?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "The ideal daily commitment is 30 minutes for a live one-to-one class plus 15 to 20 minutes of relaxed review at home. Short, focused daily practice produces far better retention than long weekend marathons."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "At what age should a child start learning Quran?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Children can begin basic Arabic letter sounds and Noorani Qaida as early as age 4 to 6. Ages 6 to 8 represent the sweet spot where cognitive focus and speech articulation align for rapid phonetic mastery."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "How many days a week should a child attend Quran classes?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Taking 3 to 4 classes per week is optimal for steady progress. 2 classes per week works for lighter schedules, while 5 classes per week provides the fastest track for intensive memorization or accelerated reading."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "How long does it take to learn Quran with Tajweed?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Learning foundational Tajweed principles alongside reading takes approximately 6 to 12 months. Deepening advanced rules like advanced elongation (Madd) and throat letters happens continuously throughout the full completion journey."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Can children learn Quran online effectively?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Yes, private one-to-one online classes are proven to be highly effective because the child receives 100 percent dedicated teacher attention, digital screen sharing tools, and customized pacing without classroom distractions."
-                    }
-                  }
-                ]
-              })
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://www.oqtutor.com"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Blog",
-                    "item": "https://www.oqtutor.com/blog"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "How Long Does It Take for a Child to Complete the Quran Online?",
-                    "item": "https://www.oqtutor.com/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online"
-                  }
-                ]
-              })
-            }}
-          />
-        </>
+              ]
+            })
+          }}
+        />
       )}
 
       {isChildReadinessBlog && (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "How Do You Know Your Child Is Ready to Start Learning the Quran?",
-                "description": "Discover practical signs your child is ready to start learning the Quran, developmental age guidelines, foundational learning pathways from Noorani Qaida to Tajweed, and expert parent tips.",
-                "image": [
-                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg",
-                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/oq-tutor-child-readiness-online-guidance.jpg",
-                  "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/quran-mushaf-tasbih-child-learning.jpg"
-                ],
-                "author": {
-                  "@type": "Organization",
-                  "name": "OQTutor Senior Scholars",
-                  "url": "https://www.oqtutor.com/tutors"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "OQTutor Online Quran Academy",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.oqtutor.com/logo.jpg"
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do you know your child is ready to start learning the Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A child is ready to begin Quran learning when they can focus on a short activity for 5-10 minutes, follow simple instructions, repeat phonetic sounds, and show curiosity about the Quran without feeling overwhelmed."
                   }
                 },
-                "datePublished": "2026-08-29",
-                "dateModified": "2026-08-29",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran"
+                {
+                  "@type": "Question",
+                  "name": "Is there a fixed Islamic age to start learning the Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, there is no fixed Islamic age before or after which a child must begin. Scholarly consensus from Darul Iftaa notes that children develop at different rates, and readiness matters far more than an arbitrary calendar age."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should a young child learn first in Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A beginner child starts with Arabic letter recognition and sounds through Noorani Qaida, followed by joining letters into words, short Surah recitation from Juz Amma, and foundational Tajweed rules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What if my child is 4 or 5 and not ready for formal Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Do not rush or panic. You can continue natural Quran exposure at home through listening to melodious recitations, daily short duas, and family prayer routines while gradually introducing alphabet games."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is it too late to start Quran learning if my child is 8, 10, or older?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not at all. Older children often learn faster because of better focus, cognitive maturity, and communication skills. A level assessment helps place them at the right starting point."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is online Quran learning effective for young kids?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, live 1-on-1 online classes are highly effective for children because lessons are customized to their attention span, mistakes are corrected in real time, and qualified teachers keep lessons interactive and positive."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should I do if my child resists or does not want to learn?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Identify the underlying cause, such as tiredness after school, lesson timing, session length, or teaching style. Keep lessons short (20-30 minutes), offer warm praise, and choose an encouraging, patient tutor."
+                  }
                 }
-              })
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                  {
-                    "@type": "Question",
-                    "name": "How do you know your child is ready to start learning the Quran?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "A child is ready to begin Quran learning when they can focus on a short activity for 5-10 minutes, follow simple instructions, repeat phonetic sounds, and show curiosity about the Quran without feeling overwhelmed."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Is there a fixed Islamic age to start learning the Quran?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "No, there is no fixed Islamic age before or after which a child must begin. Scholarly consensus from Darul Iftaa notes that children develop at different rates, and readiness matters far more than an arbitrary calendar age."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What should a young child learn first in Quran?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "A beginner child starts with Arabic letter recognition and sounds through Noorani Qaida, followed by joining letters into words, short Surah recitation from Juz Amma, and foundational Tajweed rules."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What if my child is 4 or 5 and not ready for formal Quran classes?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Do not rush or panic. You can continue natural Quran exposure at home through listening to melodious recitations, daily short duas, and family prayer routines while gradually introducing alphabet games."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Is it too late to start Quran learning if my child is 8, 10, or older?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Not at all. Older children often learn faster because of better focus, cognitive maturity, and communication skills. A level assessment helps place them at the right starting point."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Is online Quran learning effective for young kids?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Yes, live 1-on-1 online classes are highly effective for children because lessons are customized to their attention span, mistakes are corrected in real time, and qualified teachers keep lessons interactive and positive."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What should I do if my child resists or does not want to learn?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Identify the underlying cause, such as tiredness after school, lesson timing, session length, or teaching style. Keep lessons short (20-30 minutes), offer warm praise, and choose an encouraging, patient tutor."
-                    }
-                  }
-                ]
-              })
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://www.oqtutor.com"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Blog",
-                    "item": "https://www.oqtutor.com/blog"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "How Do You Know Your Child Is Ready to Start Learning the Quran?",
-                    "item": "https://www.oqtutor.com/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran"
-                  }
-                ]
-              })
-            }}
-          />
-        </>
+              ]
+            })
+          }}
+        />
       )}
 
       {isFemaleTeacherBlog && (

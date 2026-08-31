@@ -145,56 +145,22 @@ export default function TutorsPageClient({
       .slice(0, 3);
   }, [selectedTutor, initialTutors]);
 
-  // Schema.org Person & Breadcrumb
+  // Schema.org Breadcrumb
   const schemaData = {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "BreadcrumbList",
+    "itemListElement": [
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.oqtutor.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tutors Directory",
-            "item": "https://www.oqtutor.com/tutors"
-          }
-        ]
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oqtutor.com"
       },
       {
-        "@type": "EducationalOrganization",
-        "name": "OQTutor Online Quran Academy",
-        "url": "https://www.oqtutor.com",
-        "logo": "https://www.oqtutor.com/logo.jpg",
-        "description": "Learn Quran Online with our certified male and female Quran teachers. Native Arabic and bilingual tutors, standard qualifications.",
-        "image": "https://www.oqtutor.com/logo.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "Pakistan"
-        },
-        "employee": initialTutors.map((tutor) => ({
-          "@type": "Person",
-          "name": tutor.name,
-          "jobTitle": "Certified Quran & Tajweed Teacher",
-          "image": `https://www.oqtutor.com${tutor.photo}`,
-          "description": tutor.bio,
-          "gender": tutor.gender,
-          "url": `https://www.oqtutor.com/tutors#${tutor.id}`,
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": tutor.city,
-            "addressCountry": tutor.country
-          },
-          "knowsLanguage": tutor.languages.map((lang) => ({
-            "@type": "Language",
-            "name": lang
-          }))
-        }))
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tutors Directory",
+        "item": "https://www.oqtutor.com/tutors"
       }
     ]
   };
