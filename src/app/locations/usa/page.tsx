@@ -209,7 +209,7 @@ export default async function USALocationsHubPage() {
       tag: "Dedicated Students",
       description: "Structured daily memorization (Sabaq) paired with systematic revision (Sabqi & Manzil) led by certified Huffaz.",
       icon: Award,
-      link: "/courses/memorization",
+      link: "/courses/hifz",
       anchorText: "Explore Our Hifz Quran Program"
     },
     {

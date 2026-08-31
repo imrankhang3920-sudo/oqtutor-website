@@ -384,65 +384,79 @@
     },
     {
       "id": "course-4",
-      "title": "Online Quran Tafseer Classes – Understand the Quran with Meaning & Explanation",
+      "title": "Online Quran Memorization Classes (Hifz) | Memorize Quran Online",
       "slug": "hifz",
-      "description": "Learn the Quran online with Tafseer and clear explanations from qualified Quran teachers. OQTutor offers personalized online Quran Tafseer classes for kids and adults, helping students understand the meaning, context, lessons, and guidance of the Quran. Study from home with flexible schedules and one-on-one live classes designed for your learning level.",
-      "icon": "Heart",
+      "description": "Memorize the Holy Quran online with certified Huffaz and Qaris. Structured 1-on-1 Hifz classes for kids and adults with daily Sabaq, Sabqi, and Manzil revision plans. Start your free trial.",
+      "icon": "Award",
       "image": "/quran-hifz.jpg",
-      "duration": "Flexible (Custom pace)",
-      "suitableFor": "Intermediate & Advanced",
-      "overview": "Learn the Quran online with Tafseer and clear explanations from qualified Quran teachers. OQTutor offers personalized online Quran Tafseer classes for kids and adults, helping students understand the meaning, context, lessons, and guidance of the Quran. Study from home with flexible schedules and one-on-one live classes designed for your learning level.",
+      "duration": "2-4 Years (Custom Pace)",
+      "suitableFor": "Kids & Adults (Intermediate to Advanced)",
+      "overview": "Our Online Quran Memorization (Hifz) program provides a structured, one-on-one memorization curriculum designed for kids and adults. Under the guidance of certified Huffaz and scholars, students memorize selected Surahs, Juz Amma, or the entire Holy Quran using the classical three-tier revision method (Sabaq, Sabqi, Manzil) with proper Tajweed rules.",
       "learningOutcomes": [
-        "Memorize selected Surahs or the entire Quran with Tajweed",
-        "Establish a solid revision schedule (Manzil and Sabqi)",
-        "Master memory retention and mental discipline skills",
-        "Receive standard graduation certificate on Hifz completion"
+        "Memorize selected Surahs, specific Juz, or the entire Holy Quran with proper Tajweed",
+        "Master the classical three-tier revision system (Sabaq, Sabqi, Manzil) for solid long-term retention",
+        "Develop strong mental discipline, focus, and accurate recitation rhythm",
+        "Receive standard completion evaluation and graduation certification"
       ],
-      "classStructure": "One-on-One customized sessions, 3 to 7 times per week.",
-      "recommendedAge": "Ages 7 and above",
-      "seoTitle": "Online Quran Tafseer Classes – Understand the Quran with Meaning & Explanation",
-      "metaDescription": "Learn the Quran online with Tafseer and clear explanations from qualified Quran teachers. OQTutor offers personalized online Quran Tafseer classes for kids and adults, helping students understand the meaning, context, lessons, and guidance of the Quran. Study from home with flexible schedules and one-on-one live classes designed for your learning level.",
-      "focusKeyword": "Hifz Quran",
+      "classStructure": "One-on-One customized sessions, 3 to 6 times per week (30 to 45 mins).",
+      "recommendedAge": "Ages 6 and above",
+      "seoTitle": "Online Quran Memorization Classes (Hifz) | Memorize Quran Online",
+      "metaDescription": "Memorize the Holy Quran online with certified Huffaz. Personalized 1-on-1 Hifz classes for kids and adults with daily Sabaq, Sabqi & Manzil revision. Book a free trial.",
+      "focusKeyword": "Hifz Quran online",
       "secondaryKeywords": [
         "online Hifz classes",
         "memorize Quran online",
         "Quran memorization for kids",
-        "Hifz program online"
+        "Hifz program online",
+        "Quran memorization course",
+        "online Hifz course"
       ],
-      "whoShouldJoin": "Aimed at intermediate to advanced students who can recite the Quran fluently with basic Tajweed rules and are committed to memorizing pages or the entire Book of Allah.",
+      "whoShouldJoin": "Designed for students of all ages who can read the Quran fluently with basic Tajweed rules and are committed to memorizing short Surahs, selected chapters, or the complete Quran.",
       "benefits": [
-        "Custom-tailored memorization plans adapted to the student's memory capability",
-        "Systematic revision models (Sabqi, Sabqee, Manzil) to prevent forgetting",
-        "Constant encouragement and spiritual companionship from Huffaz teachers",
-        "Progress dashboards to track pages memorized and memorization quality"
+        "Custom-tailored memorization pace adapted to each student's memory capacity",
+        "Systematic daily revision system (Sabaq, Sabqi, Manzil) preventing forgetfulness",
+        "One-on-one personal guidance and encouragement from verified Huffaz scholars",
+        "Regular milestone testing and progress tracking reports for parents"
       ],
       "curriculumSteps": [
         {
-          "title": "New Memorization (Sabq)",
-          "description": "Daily memorizing of new verses under teacher guidance to ensure correct recitation."
+          "title": "New Lesson (Sabaq)",
+          "description": "Daily memorization of new verses with strict Tajweed and pronunciation accuracy verified by the tutor before committing to memory."
         },
         {
           "title": "Recent Revision (Sabqi)",
-          "description": "Revising the last 5-10 pages memorized to solidify recent neural memory connections."
+          "description": "Daily revision of the most recently memorized pages (last 5-10 pages) to cement new memory connections."
         },
         {
-          "title": "Old Revision (Manzil)",
-          "description": "Reviewing older parts of the Quran to ensure long-term retention and fluent recall."
+          "title": "Older Revision (Manzil)",
+          "description": "Systematic revision of older memorized Juz and Surahs on a rotating cycle to ensure lifetime retention."
         },
         {
-          "title": "Hifz Assessment",
-          "description": "Regular oral examinations to check memory strength and award Quran graduation certificates."
+          "title": "Hifz Evaluation & Certification",
+          "description": "Regular oral assessments by senior scholars and issuance of completion certificates upon finishing target milestones or full Hifz."
         }
       ],
-      "teachingMethod": "Our teachers use interactive memorization grids, audio recording reviews, and progressive daily checklists to maintain motivation.",
+      "teachingMethod": "We use structured one-on-one live video sessions with interactive memorization grids, audio recording reviews, and progressive daily checklists to maintain consistency and spiritual motivation.",
       "faqs": [
         {
-          "question": "Can I memorize only a few short Surahs?",
-          "answer": "Yes! We have short-term Hifz programs for memorizing Juz Amma, selected Surahs (like Ya-Sin, Al-Mulk, Kahf), or full Hifz."
+          "question": "Can I memorize only selected Surahs or Juz Amma instead of full Hifz?",
+          "answer": "Yes. We offer flexible tracks including Juz Amma memorization, selected famous Surahs (such as Surah Yaseen, Al-Mulk, Al-Kahf, Ar-Rahman), or full Quran memorization."
         },
         {
-          "question": "How long does full Hifz take?",
-          "answer": "It varies. With 5 classes per week, dedicated students usually complete the entire Quran memorization in 2 to 4 years."
+          "question": "What are the prerequisites for joining the Hifz program?",
+          "answer": "Students must be able to read the Holy Quran fluently with basic Tajweed rules. If a student is still learning to read, we recommend starting with our Noorani Qaida or Quran Reading course first."
+        },
+        {
+          "question": "How long does it take to complete Quran memorization online?",
+          "answer": "With consistent attendance (4 to 5 classes per week) and daily home revision, dedicated students typically complete full Quran memorization in 2 to 4 years. Short-term Surah memorization goals can be achieved in 3 to 6 months."
+        },
+        {
+          "question": "Are female Quran teachers available for sisters and girls memorizing Quran?",
+          "answer": "Yes. We provide certified female Huffaz and Qariahs for sisters and young girls who prefer learning with a female tutor in a comfortable, private setting."
+        },
+        {
+          "question": "How do you ensure the student does not forget previously memorized Surahs?",
+          "answer": "We strictly follow the classical Sabaq (new lesson), Sabqi (recent revision), and Manzil (cumulative revision) method. Every lesson begins with revision of old verses before any new verses are memorized."
         }
       ]
     },

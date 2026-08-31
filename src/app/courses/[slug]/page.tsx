@@ -86,19 +86,19 @@ export default async function CoursePage({ params }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://oqtutor.com"
+        "item": "https://www.oqtutor.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://oqtutor.com/courses"
+        "item": "https://www.oqtutor.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": course.title,
-        "item": `https://oqtutor.com/courses/${course.slug}`
+        "item": `https://www.oqtutor.com/courses/${course.slug}`
       }
     ]
   };

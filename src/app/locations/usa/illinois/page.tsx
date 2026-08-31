@@ -163,18 +163,12 @@ export default async function IllinoisQuranClassesPage() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Locations",
+        "name": "USA",
         "item": "https://www.oqtutor.com/locations/usa"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "USA Locations",
-        "item": "https://www.oqtutor.com/locations/usa"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
         "name": "Illinois",
         "item": "https://www.oqtutor.com/locations/usa/illinois"
       }

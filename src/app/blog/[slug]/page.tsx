@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { Metadata } from 'next';
-import { redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { readDB } from '@/data/db';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -171,7 +171,7 @@ export default async function BlogPostPage({ params }: Props) {
   const blog = dbData.blogs?.find((b) => b.slug === resolvedParams.slug);
 
   if (!blog) {
-    redirect('/blog');
+    notFound();
   }
 
   const isUSABlog = resolvedParams.slug === 'online-quran-classes-usa';

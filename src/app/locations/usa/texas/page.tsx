@@ -176,18 +176,12 @@ export default async function TexasQuranClassesPage() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Locations",
+        "name": "USA",
         "item": "https://www.oqtutor.com/locations/usa"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "USA Locations",
-        "item": "https://www.oqtutor.com/locations/usa"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
         "name": "Texas",
         "item": "https://www.oqtutor.com/locations/usa/texas"
       }
