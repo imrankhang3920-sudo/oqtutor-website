@@ -45,9 +45,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isChooseBestKidsUsaBlog = resolvedParams.slug === 'how-to-choose-best-online-quran-classes-for-kids-usa';
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
+  const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
   const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog;
 
-  const metaTitle = isChildReadinessBlog
+  const metaTitle = isMistakesBlog
+    ? 'Common Quran Reading Mistakes Children Make & How to Correct Them'
+    : isChildReadinessBlog
     ? 'How Do You Know Your Child Is Ready to Start Learning the Quran? | OQTutor'
     : isChildTimelineBlog
     ? 'How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timeline & Parent Guide)'
@@ -72,7 +75,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: blog.description,
-    keywords: isChildReadinessBlog
+    keywords: isMistakesBlog
+      ? [
+          'common Quran reading mistakes in children',
+          'Quran reading mistakes children make',
+          'how to correct Quran reading mistakes',
+          'Arabic letters pronunciation mistakes',
+          'Noorani Qaida mistakes and correction',
+          'similar Arabic letters confusion',
+          'Tajweed mistakes in kids',
+          'reading Quran from memory mistake',
+          'online Quran classes for kids',
+          'Quran reading classes for children',
+          'learn Quran with Tajweed online',
+          'child Quran practice routine',
+          'Arabic harakat short vowels mistakes',
+          'Waqf rules for children'
+        ]
+      : isChildReadinessBlog
       ? [
           'how do you know your child is ready to start learning the Quran',
           'when should child start learning Quran',
@@ -196,6 +216,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isChooseBestKidsUsaBlog = resolvedParams.slug === 'how-to-choose-best-online-quran-classes-for-kids-usa';
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
+  const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -214,6 +235,76 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isMistakesBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are the most common Quran reading mistakes in children?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common mistakes include confusing similar Arabic letters, incorrect pronunciation, vowel errors, problems with Sukoon and Shaddah, incorrect elongation, rushing through verses, inappropriate stopping, and difficulty applying Tajweed rules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I improve my child's Quran reading?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use short and consistent practice sessions, encourage reading aloud, focus on specific mistakes, repeat difficult words, and seek qualified teacher feedback when pronunciation problems continue."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "At what age should children start learning Quran reading?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no single correct age for every child. Readiness depends on the child's language development, attention span, ability to recognize letters, and learning environment. A structured beginner program can introduce Quran reading gradually."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should children learn Tajweed while learning to read Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Basic Tajweed concepts can be introduced progressively as children develop their reading foundation. Children who are still learning Arabic letters may benefit from strengthening that foundation before moving into more advanced recitation rules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can an online Quran teacher correct my child's pronunciation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. In a live one-on-one class, a teacher can listen to the child's recitation and correct pronunciation, articulation, and reading mistakes in real time."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Noorani Qaida useful for children who struggle with Quran reading?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Noorani Qaida provides a structured foundation for Arabic letters, vowel marks, connections, and basic reading patterns before a student progresses to longer Quranic passages."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for a child to improve Quran reading?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It varies from child to child. Progress depends on the starting level, consistency, age, practice habits, and the type of mistakes involved. Regular short practice and appropriate teacher feedback generally provide a more useful path than focusing on a fixed timeline."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isConsistentHifzBlog && (
         <script
@@ -1164,7 +1255,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isChildReadinessBlog ? (
+            {isMistakesBlog ? (
+              <ArticleContentMistakesChildrenMake />
+            ) : isChildReadinessBlog ? (
               <ArticleContentChildReadiness />
             ) : isChildTimelineBlog ? (
               <ArticleContentChildCompletionTimeline />
@@ -8998,6 +9091,818 @@ function ArticleContentChildReadiness() {
     </article>
   );
 }
+
+function ArticleContentMistakesChildrenMake() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 not-prose shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Summary: Common Quran Reading Mistakes &amp; Fixes</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          Learning to read the Quran is a step-by-step journey where mistakes are a completely natural part of the process. The key is early, gentle identification before errors turn into deep habits. By addressing similar-looking letters, throat makharij, short vowels, and memorization dependency through structured <Link href="/courses/noorani-qaida" className="text-primary font-bold hover:underline">Noorani Qaida</Link> and live one-on-one <Link href="/courses/quran-reading" className="text-primary font-bold hover:underline">Quran reading guidance</Link>, children develop lasting confidence and authentic Tajweed.
+        </p>
+      </div>
+
+      {/* Quick Navigation Box */}
+      <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-foreground font-bold text-sm">
+          <ListChecks className="h-4 w-4 text-primary" />
+          <span>Table of Contents: In This Guide</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-muted-text">
+          <a href="#quick-answer" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Quick Answer: Common Mistakes Summary</span>
+          </a>
+          <a href="#mistake-1-similar-letters" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>1. Confusing Similar Arabic Letters</span>
+          </a>
+          <a href="#mistake-2-throat-mouth-letters" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>2. Mispronouncing Throat &amp; Mouth Letters</span>
+          </a>
+          <a href="#mistake-3-short-vowels" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>3. Confusing Short Vowels (Harakat)</span>
+          </a>
+          <a href="#mistake-4-sukoon-shaddah" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>4. Errors With Sukoon &amp; Shaddah</span>
+          </a>
+          <a href="#mistake-5-madd-elongation" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>5. Stretching Letters (Madd) Errors</span>
+          </a>
+          <a href="#mistake-6-rushing" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>6. Rushing Through Words and Verses</span>
+          </a>
+          <a href="#mistake-7-waqf-stopping" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>7. Stopping in the Wrong Place (Waqf)</span>
+          </a>
+          <a href="#mistake-8-ignoring-tajweed" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>8. Ignoring Basic Tajweed Rules</span>
+          </a>
+          <a href="#mistake-9-reading-from-memory" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>9. Reading From Memory Instead of Looking</span>
+          </a>
+          <a href="#mistake-10-repeating-mistakes" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>10. Repeating Errors Without Realizing</span>
+          </a>
+          <a href="#parents-help-at-home" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How Parents Can Help at Home</span>
+          </a>
+          <a href="#practice-routine" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>A 10-Minute Daily Practice Routine</span>
+          </a>
+          <a href="#faq-section" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Frequently Asked Questions</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Learning to read the Quran is a gradual journey. Children do not become confident reciters overnight, and making mistakes is a normal and necessary part of learning.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          The important thing is to identify mistakes early, correct them gently, and give children enough structured practice to build accurate, lasting reading habits.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Some children struggle with similar-looking Arabic letters. Others confuse short and long vowel sounds, rush through words, stop at the wrong places, or pronounce certain letters incorrectly. These problems can become harder to change if they are repeated for months without correction.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          The good news is that most reading difficulties can improve quickly with patient instruction, regular practice, and appropriate guidance.
+        </p>
+      </section>
+
+      {/* Quick Answer Callout */}
+      <section id="quick-answer" className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 space-y-4 not-prose shadow-sm scroll-mt-24">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Award className="h-6 w-6 text-primary shrink-0" />
+          <span>Quick Answer: What Are the Most Common Quran Reading Mistakes Children Make?</span>
+        </h2>
+        <p className="text-base text-foreground/90 leading-relaxed font-medium">
+          Children commonly make mistakes with <strong>Arabic letter pronunciation, similar-looking letters, vowel sounds, letter connections, elongation (Madd), stopping and starting (Waqf), and basic Tajweed rules</strong>.
+        </p>
+        <p className="text-sm text-muted-text leading-relaxed">
+          The best way to correct these mistakes is to identify the exact problem, practice it separately, then apply the correction while reading Quranic words and verses. A qualified Quran teacher can listen to a child&apos;s recitation and provide immediate correction rather than allowing an incorrect pronunciation to become a permanent habit.
+        </p>
+      </section>
+
+      {/* Prophetic Hadith Box */}
+      <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+          <Heart className="h-5 w-5" />
+          <span>The Reward for Striving in Quran Recitation</span>
+        </div>
+        <p className="text-base sm:text-lg text-foreground font-serif italic">
+          &ldquo;The one who is proficient in the recitation of the Qur&apos;an will be with the honorable and obedient scribes (angels), and he who recites the Qur&apos;an and finds it difficult, and stammers over it, will have a double reward.&rdquo;
+        </p>
+        <div className="text-xs text-muted-text font-medium pt-1">
+          — Recorded in <a href="https://sunnah.com/muslim:798a" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Sahih Muslim 798a (Sunnah.com)</a>
+        </div>
+      </div>
+
+      {/* 10 Core Mistakes Breakdown */}
+      <div className="space-y-12">
+
+        {/* Mistake 1 */}
+        <section id="mistake-1-similar-letters" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">1</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Confusing Similar-Looking Arabic Letters
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Arabic contains letters that can look remarkably similar, particularly to young beginners learning Arabic as a second language.
+          </p>
+          <p className="text-base text-muted-text font-medium">
+            For example, children may initially confuse letter families such as:
+          </p>
+
+          {/* Letter Pairs Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 not-prose pt-2">
+            {[
+              { pair: 'ب ، ت ، ث', label: 'Baa, Taa, Thaa (Dot Count)' },
+              { pair: 'ج ، ح ، خ', label: 'Jeem, Haa, Khaa (Throat & Belly)' },
+              { pair: 'د ، ذ', label: 'Daal, Dhaal (Sharp vs Soft)' },
+              { pair: 'ر ، ز', label: 'Raa, Zaa (Rolling vs Whistle)' },
+              { pair: 'س ، ش', label: 'Seen, Sheen (Three Dots)' },
+              { pair: 'ص ، ض', label: 'Saad, Daad (Heavy S vs Heavy D)' },
+              { pair: 'ط ، ظ', label: 'Taa, Zaa (Heavy T vs Heavy Z)' },
+              { pair: 'ع ، غ', label: 'Ayn, Ghayn (Deep Throat vs Guttural)' }
+            ].map((item, idx) => (
+              <div key={idx} className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border text-center space-y-1.5 hover:border-primary/40 transition-colors">
+                <div className="text-2xl font-bold text-primary font-arabic">{item.pair}</div>
+                <div className="text-[11px] text-muted-text font-medium">{item.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-base text-muted-text">
+            The dots and articulation points are vital. Simply recognizing the general outline or curve of a letter is not enough for accurate recitation.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Practice similar letters side by side rather than teaching them in isolation weeks apart. Ask the child to:
+            </p>
+            <ol className="space-y-1.5 text-sm text-muted-text list-decimal list-inside font-medium pl-1">
+              <li><strong>Identify the letter:</strong> Look at where the dots are placed (above or below).</li>
+              <li><strong>Say its sound:</strong> Articulate the phonetic sound clearly.</li>
+              <li><strong>Compare it:</strong> Contrast it directly with its sibling letter.</li>
+              <li><strong>Read with vowels:</strong> Apply Fathah, Kasrah, and Dammah.</li>
+              <li><strong>Read in a word:</strong> Spot it at the beginning, middle, and end of a word.</li>
+            </ol>
+            <p className="text-xs sm:text-sm text-muted-text pt-1">
+              Short, repeated practice is far more effective than trying to memorize a large batch of letters at once. Children developing their foundation benefit immensely from structured <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida instruction</Link> before moving into longer Quran passages. (See our guide on <Link href="/blog/why-noorani-qaida-essential" className="text-primary font-semibold hover:underline">why Noorani Qaida is essential for Quran recitation</Link>).
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 2 */}
+        <section id="mistake-2-throat-mouth-letters" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">2</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Mispronouncing Letters From the Throat or Mouth (Makharij)
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Some Arabic letters require articulation points (Makharij) that do not exist in the English alphabet. This is especially challenging for children raised in Western and English-speaking environments.
+          </p>
+          <p className="text-base text-muted-text">
+            Letters such as <strong className="text-primary font-arabic text-xl">ح ، خ ، ع ، غ ، ق</strong> demand specific muscle coordination in the deep throat, middle throat, and back of the tongue. A child might recognize the letter visually on the page but substitute an easy English sound (such as pronouncing <em className="text-foreground font-semibold">ح</em> as a soft English &apos;h&apos;, or <em className="text-foreground font-semibold">ع</em> as a plain &apos;a&apos;).
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Avoid simply telling a child, <em>&ldquo;That&apos;s wrong.&rdquo;</em> Instead, follow this guided coaching method:
+            </p>
+            <ul className="space-y-2 text-sm text-muted-text">
+              <li className="flex items-start space-x-2">
+                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span><strong>Demonstrate the sound:</strong> Produce the exact sound clearly at a slow pace.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span><strong>Explain the origin:</strong> Explain where the sound comes from (e.g. middle of the throat vs back of the mouth).</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span><strong>Active listening:</strong> Have the child listen carefully before they try to speak.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span><strong>Slow repetition:</strong> Ask them to repeat it three times slowly.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span><strong>Vowel variations:</strong> Practice the letter with Fathah, Kasrah, and Dammah.</span>
+              </li>
+            </ul>
+            <p className="text-xs sm:text-sm text-muted-text pt-1">
+              Pronunciation is nearly impossible to master from reading text alone. OQTutor&apos;s <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading curriculum</Link> integrates Arabic letter articulation points as an essential core foundation. Read our detailed guide on <Link href="/blog/common-pronunciation-mistakes-qaida" className="text-primary font-semibold hover:underline">common pronunciation mistakes in Noorani Qaida and how to fix them</Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 3 */}
+        <section id="mistake-3-short-vowels" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">3</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Confusing Short Vowels (Harakat)
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Arabic vowel marks (<strong>Harakat</strong>) determine the exact meaning and grammatical structure of Quranic words. Children often confuse the three primary short vowels:
+          </p>
+          <ul className="space-y-1">
+            <li><strong>Fathah ( َ )</strong> — &lsquo;a&rsquo; sound above the letter</li>
+            <li><strong>Kasrah ( ِ )</strong> — &lsquo;ee/i&rsquo; sound below the letter</li>
+            <li><strong>Dammah ( ُ )</strong> — &lsquo;oo/u&rsquo; sound above the letter</li>
+          </ul>
+          <p className="text-base text-muted-text">
+            A child may identify the consonant accurately (such as &lsquo;Baa&rsquo;) but guess the vowel randomly because they are rushing or looking only at the letter shape.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Step back from longer verses and isolate vowel patterns:
+            </p>
+            <div className="p-4 rounded-xl bg-background border border-card-border text-center space-y-2">
+              <div className="text-xs text-muted-text font-bold uppercase tracking-wider">Step 1: Single Letter Vowel Drill</div>
+              <div className="text-2xl sm:text-3xl font-bold text-primary font-arabic space-x-4 rtl:space-x-reverse">
+                <span>بَ</span> — <span>بِ</span> — <span>بُ</span>
+              </div>
+            </div>
+            <div className="p-4 rounded-xl bg-background border border-card-border text-center space-y-2">
+              <div className="text-xs text-muted-text font-bold uppercase tracking-wider">Step 2: Two-Letter Connected Vowel Drill</div>
+              <div className="text-2xl sm:text-3xl font-bold text-primary font-arabic space-x-4 rtl:space-x-reverse">
+                <span>بَتَ</span> — <span>بِتِ</span> — <span>بُتُ</span>
+              </div>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text">
+              The goal is helping the child connect the visual symbol (stroke above, stroke below, curl above) with its corresponding sound automatically without hesitation.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 4 */}
+        <section id="mistake-4-sukoon-shaddah" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">4</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Making Errors With Sukoon (Jazm) and Shaddah (Tashdeed)
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Sukoon ( ْ ) indicates the absence of a vowel, while Shaddah ( ّ ) indicates that a letter is doubled—the first instance carrying a Sukoon and the second carrying a Harakah.
+          </p>
+          <p className="text-base text-muted-text">
+            Young readers frequently struggle here because their attention is focused on recognizing single letters. They may either overlook the Sukoon entirely (adding an accidental vowel sound) or pronounce a Shaddah letter as a weak, single letter without the necessary emphasis and hold.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Practice marked letters slowly in two-letter words first before combining them into longer Quranic words. For Shaddah, teach the child that the tongue &ldquo;parks&rdquo; on the letter momentarily for emphasis before releasing into the vowel. Avoid overwhelming young learners with complex grammatical terms early on—focus first on the physical acoustic rhythm.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 5 */}
+        <section id="mistake-5-madd-elongation" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">5</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Stretching Letters for Too Long or Not Long Enough (Madd Rules)
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Another frequent stumbling block is <strong>Madd</strong>, or elongation.
+          </p>
+          <p className="text-base text-muted-text">
+            Some children stretch vowels randomly whenever they want their recitation to sound melodious. Others read every single vowel with the exact same flat length, failing to distinguish between a 1-count short vowel and a 2-count, 4-count, or 6-count Madd. Neither extreme produces correct Quranic recitation.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Teach children to recognize the letters of Madd (Alif preceded by Fathah, Yaa preceded by Kasrah, and Waaw preceded by Dammah) along with special wavy Madd symbols. Start with controlled 2-count exercises using rhythmic finger counting before introducing extended 4 to 6-count Madd.
+            </p>
+            <p className="text-xs sm:text-sm text-muted-text">
+              OQTutor&apos;s structured <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed curriculum</Link> breaks down Madd into clear, bite-sized rules so students master duration with precision and confidence. Learn more in our <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">beginner guide to mastering Tajweed rules</Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 6 */}
+        <section id="mistake-6-rushing" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">6</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Rushing Through Words and Verses
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Many young students mistakenly believe that reading quickly is proof of reading well. When a child rushes, they often:
+          </p>
+          <ul className="space-y-1">
+            <li>Skip intermediate sounds and Tanween</li>
+            <li>Miss vowel indicators</li>
+            <li>Ignore essential Tajweed rules</li>
+            <li>Slur letter exits unclearly</li>
+            <li>Gasp for breath and stop abruptly without regard to meaning</li>
+          </ul>
+
+          <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 not-prose">
+            <div className="font-bold text-foreground text-base sm:text-lg flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary" />
+              <span>The 5-Step Practice Method for Rushing Readers</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 text-center text-xs font-bold">
+              <div className="p-3 rounded-xl bg-background border border-card-border text-foreground">1. Read Slowly</div>
+              <div className="p-3 rounded-xl bg-background border border-card-border text-primary">2. Listen to Tutor</div>
+              <div className="p-3 rounded-xl bg-background border border-card-border text-foreground">3. Repeat Line</div>
+              <div className="p-3 rounded-xl bg-background border border-card-border text-primary">4. Correct Errors</div>
+              <div className="p-3 rounded-xl bg-background border border-card-border text-foreground">5. Read Again</div>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Always master accuracy on a short passage before allowing reading speed to increase. Natural fluency always follows precision; speed without precision only reinforces bad habits.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 7 */}
+        <section id="mistake-7-waqf-stopping" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">7</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Stopping in the Wrong Place (Waqf and Ibtida&apos;)
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Children frequently stop whenever they run out of breath, hit a difficult multi-syllable word, or simply feel like pausing. However, Quranic recitation has precise rules governing where stopping (<strong>Waqf</strong>) and restarting (<strong>Ibtida&apos;</strong>) are permissible to preserve the sacred meaning.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Introduce basic Waqf symbols gradually (such as <strong>مـ</strong> for compulsory stop, <strong>ج</strong> for permissible stop, and <strong>لا</strong> for do not stop). Teach children that punctuation marks in the Mushaf carry meaning. A live teacher demonstrates where to breathe, when to go back one or two words before continuing, and how stopping at proper junctures preserves the beauty and message of the Ayah.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 8 */}
+        <section id="mistake-8-ignoring-tajweed" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">8</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Ignoring Basic Tajweed Rules
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            A child may become reasonably comfortable pronouncing individual Arabic letters while still ignoring fundamental Tajweed rules such as:
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 not-prose">
+            {['Ghunnah (Nasalization)', 'Qalqalah (Echoing Sound)', 'Ikhfa (Hiding Sound)', 'Idghaam (Merging)', 'Noon Sakinah Rules', 'Meem Sakinah Rules', 'Heavy vs Light Letters', 'Lafz-ul-Jalalah Rules'].map((rule, idx) => (
+              <div key={idx} className="p-3 rounded-xl bg-foreground/[0.02] border border-card-border text-center text-xs font-semibold text-foreground">
+                {rule}
+              </div>
+            ))}
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>How to Correct It</span>
+            </h3>
+            <p className="text-sm text-muted-text">
+              Do not teach every rule simultaneously. Introduce one concept at a time using a 3-week progressive habit timeline:
+            </p>
+            <div className="space-y-2 text-xs sm:text-sm text-muted-text">
+              <div className="p-3 rounded-xl bg-background border border-card-border flex items-center space-x-3">
+                <span className="font-bold text-primary">Week 1:</span>
+                <span>Focus exclusively on Qalqalah letters (ق ، ط ، ب ، ج ، د) across short Surahs.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-background border border-card-border flex items-center space-x-3">
+                <span className="font-bold text-primary">Week 2:</span>
+                <span>Review Qalqalah and introduce 2-count Ghunnah on Noon and Meem Mushaddad.</span>
+              </div>
+              <div className="p-3 rounded-xl bg-background border border-card-border flex items-center space-x-3">
+                <span className="font-bold text-primary">Week 3:</span>
+                <span>Apply both rules consistently during daily passage reading.</span>
+              </div>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text pt-1">
+              For children who need systematic guidance, OQTutor offers a dedicated <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed program</Link> covering articulation, recitation rules, and practical application.
+            </p>
+          </div>
+        </section>
+
+        {/* Mistake 9: Featured Image Section */}
+        <section id="mistake-9-reading-from-memory" className="space-y-6 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">9</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Reading From Memory Instead of Looking Carefully
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Children who have memorized short Surahs from Juz Amma often recite rapidly from memory while barely looking at the Mushaf in front of them.
+          </p>
+          <p className="text-base text-muted-text">
+            Memorization is a profound blessing, but relying completely on memory can mask severe reading weaknesses. A child may know what comes next purely from auditory memory without actually recognizing the written Arabic letters or Harakat on the page.
+          </p>
+
+          {/* User Provided Infographic Image */}
+          <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-2xl not-prose bg-background">
+            <div className="relative h-80 sm:h-[500px] w-full">
+              <Image
+                src="/blog/common-quran-reading-mistakes-children-make/reading-from-memory-mistake.jpg"
+                alt="Reading from memory instead of looking carefully - Quran reading mistake infographic showing a young boy reciting and key learning principles"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 896px"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-4 sm:p-6 bg-foreground/[0.02] border-t border-card-border">
+              <div className="font-bold text-foreground text-sm sm:text-base text-center mb-3">
+                &ldquo;Good intention is not enough, careful reading brings perfection.&rdquo;
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs text-muted-text font-medium">
+                <div className="p-2.5 rounded-xl bg-background border border-card-border">Overconfidence leads to mistakes</div>
+                <div className="p-2.5 rounded-xl bg-background border border-card-border">Always look at words carefully</div>
+                <div className="p-2.5 rounded-xl bg-background border border-card-border">Tajweed rules missed when guessing</div>
+                <div className="p-2.5 rounded-xl bg-background border border-card-border">Build the habit of focused reading</div>
+                <div className="p-2.5 rounded-xl bg-background border border-card-border col-span-2 sm:col-span-1">Accuracy is better than speed</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-4 not-prose">
+            <h3 className="font-bold text-foreground text-base sm:text-lg flex items-center space-x-2">
+              <Eye className="h-5 w-5 text-primary" />
+              <span>How to Test and Correct It: The Mushaf Diagnostic Checklist</span>
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Periodically test your child by pointing to a random Ayah or asking them to track each word with their finger. This evaluates six vital foundational skills:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { title: 'Word Recognition', desc: 'Can they recognize individual words without rhythm cues?' },
+                { title: 'Letter Recognition', desc: 'Can they spot middle and end letter forms?' },
+                { title: 'Harakat Precision', desc: 'Are short vowels read accurately without guessing?' },
+                { title: 'Reading Fluency', desc: 'Does the voice match what the eye is seeing?' },
+                { title: 'Makharij & Tajweed', desc: 'Are pronunciation rules applied deliberately?' },
+                { title: 'Visual Tracking', desc: 'Does the finger move in sync with recitation?' }
+              ].map((item, idx) => (
+                <div key={idx} className="p-3.5 rounded-2xl bg-background border border-card-border space-y-1">
+                  <div className="text-xs font-bold text-primary">{item.title}</div>
+                  <p className="text-[11px] text-muted-text leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mistake 10 */}
+        <section id="mistake-10-repeating-mistakes" className="space-y-4 scroll-mt-24">
+          <div className="flex items-center space-x-3 border-b border-card-border pb-3">
+            <span className="h-9 w-9 rounded-full bg-primary text-white text-base flex items-center justify-center font-extrabold shrink-0">10</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight m-0">
+              Repeating the Same Mistake Without Realizing It
+            </h2>
+          </div>
+          <p className="text-base text-muted-text">
+            Perhaps the single biggest obstacle in Quran learning is not making a mistake once—it is repeating that mistake dozens of times until the incorrect sound feels normal and automatic.
+          </p>
+          <p className="text-base text-muted-text">
+            Children cannot easily hear their own pronunciation errors because the inaccurate sound has become their internal benchmark.
+          </p>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+            <h3 className="font-bold text-foreground text-base flex items-center space-x-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <span>The 5-Step Immediate Gentle Correction Protocol</span>
+            </h3>
+            <ol className="space-y-2 text-sm text-muted-text list-decimal list-inside font-medium">
+              <li><strong>Pause immediately:</strong> Stop the student gently right where the error happened.</li>
+              <li><strong>Model the correct sound:</strong> The tutor pronounces the correct word clearly twice.</li>
+              <li><strong>Student repetition:</strong> Have the child repeat the word slowly.</li>
+              <li><strong>Read in context:</strong> Re-read the entire sentence with the corrected word.</li>
+              <li><strong>Spiral review:</strong> Return to that exact word later in the lesson.</li>
+            </ol>
+            <p className="text-xs sm:text-sm text-muted-text pt-2">
+              This is why personalized one-on-one instruction with a dedicated tutor is so valuable. In a private lesson, the teacher addresses the child&apos;s exact weaknesses rather than moving ahead at a group pace. Browse our verified <Link href="/tutors" className="text-primary font-semibold hover:underline">male and female Quran tutors</Link>.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      {/* Section: How Parents Can Help at Home */}
+      <section id="parents-help-at-home" className="space-y-6 scroll-mt-24 pt-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Can Parents Help Children Improve Quran Reading at Home?
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not need to be certified Quran scholars to support their child&apos;s reading progress. A consistent, encouraging home environment makes a tremendous difference.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose">
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <Clock className="h-5 w-5 shrink-0" />
+              <span>1. Keep Practice Short and Consistent</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Ten focused minutes every day is far more productive than an exhausting 45-minute marathon once a week when a child is tired or frustrated.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <Volume2 className="h-5 w-5 shrink-0" />
+              <span>2. Ask the Child to Read Aloud</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Silent reading hides pronunciation errors and skipped vowels. Listening to your child recite aloud makes it easy to spot confusion early.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <ShieldCheck className="h-5 w-5 shrink-0" />
+              <span>3. Don&apos;t Correct Every Mistake at Once</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Target the two most frequent errors per session. Over-correcting ten things at the same time can make a child anxious and reluctant to read.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <Sparkles className="h-5 w-5 shrink-0" />
+              <span>4. Celebrate Improvement</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Instead of saying &ldquo;You keep making this mistake,&rdquo; say: <em>&ldquo;That letter sounded much clearer today! Let&apos;s practice it once more.&rdquo;</em> Confidence creates resilience.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-5 rounded-2xl bg-primary/5 border border-primary/20 not-prose space-y-2">
+          <div className="font-bold text-foreground text-sm sm:text-base flex items-center space-x-2">
+            <CheckCircle className="h-4 w-4 text-primary" />
+            <span>5. Follow the Teacher&apos;s Specific Recommendations</span>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+            When your tutor identifies a specific letter or Tajweed rule for homework, reinforce that exact skill during home practice. Alignment between teacher lessons and home review accelerates results. Read our guide on <Link href="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran" className="text-primary font-semibold hover:underline">how to know if your child is ready to start Quran</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: 10-Minute Daily Practice Routine */}
+      <section id="practice-routine" className="space-y-6 scroll-mt-24 pt-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>A Simple 10-Minute Daily Quran Practice Routine</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents looking for a practical, low-stress routine can implement this 10-minute structured framework:
+        </p>
+
+        <div className="space-y-3 not-prose">
+          {[
+            { time: '2 Minutes', title: 'Letter & Makhraj Review', desc: 'Focus on 1 or 2 difficult letters (e.g. ح vs ه or ع vs ء) with different vowel marks.', color: 'bg-blue-500/10 text-blue-600 border-blue-500/20' },
+            { time: '3 Minutes', title: 'Word-Level Practice', desc: 'Read 5 to 10 isolated words containing those target letters to build phonetic accuracy.', color: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20' },
+            { time: '3 Minutes', title: 'Quran Passage Reading', desc: 'Read a short passage or half a page slowly from the Mushaf, tracking with a finger.', color: 'bg-purple-500/10 text-purple-600 border-purple-500/20' },
+            { time: '1 Minute', title: 'Gentle Target Correction', desc: 'Revisit only the specific words where hesitation or mistakes occurred.', color: 'bg-amber-500/10 text-amber-600 border-amber-500/20' },
+            { time: '1 Minute', title: 'Praise & Encouragement', desc: 'Highlight one specific improvement made during the session and end with high spirits.', color: 'bg-rose-500/10 text-rose-600 border-rose-500/20' }
+          ].map((step, idx) => (
+            <div key={idx} className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center space-x-3">
+                <span className={`px-3 py-1 rounded-full text-xs font-bold border ${step.color} shrink-0`}>
+                  {step.time}
+                </span>
+                <span className="font-bold text-foreground text-sm sm:text-base">{step.title}</span>
+              </div>
+              <p className="text-xs sm:text-sm text-muted-text sm:max-w-md">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section: When Should a Child Learn Tajweed & Online Quran Classes */}
+      <section className="space-y-6 pt-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          When Should a Child Learn Tajweed?
+        </h2>
+        <p className="text-base text-muted-text">
+          Children do not need to wait until they are advanced readers before learning Tajweed. Basic pronunciation and core articulation rules are introduced progressively as their reading foundation develops.
+        </p>
+        <p className="text-base text-muted-text">
+          However, instruction must match the child&apos;s developmental capacity. A beginner struggling with letter shapes needs foundational phonics first. A child who can read connected words fluently is ready for structured Tajweed rules.
+        </p>
+        <p className="text-base text-muted-text">
+          OQTutor&apos;s progressive pathway separates foundational <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> from intermediate <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link> and advanced <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>, allowing every child to advance at their personal pace. See our guide on <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">realistic Quran completion timelines for children</Link>.
+        </p>
+      </section>
+
+      {/* Section: When to Consider a Quran Teacher */}
+      <section className="space-y-6 pt-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          When Should Parents Consider a Qualified Quran Teacher?
+        </h2>
+        <p className="text-base text-muted-text">
+          Consider getting professional teacher support when a child:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
+          {[
+            'Repeatedly mispronounces the same throat or mouth letters',
+            'Cannot distinguish similar Arabic letter pairs',
+            'Struggles with basic short vowel marks (Harakat)',
+            'Rushes and skips sounds during recitation',
+            'Has difficulty applying basic Tajweed rules',
+            'Loses confidence or becomes frustrated when reading aloud',
+            'Has practiced independently at home without noticeable improvement'
+          ].map((item, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center space-x-2.5">
+              <Check className="h-4 w-4 text-primary shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-foreground">{item}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-base text-muted-text pt-2">
+          For young learners, our specialized <Link href="/courses/quran-for-kids" className="text-primary font-bold hover:underline">online Quran classes for kids</Link> feature gentle, child-friendly certified male and female scholars who turn reading into an engaging and joyful experience.
+        </p>
+      </section>
+
+      {/* Section: Frequently Asked Questions */}
+      <section id="faq-section" className="space-y-6 scroll-mt-24 pt-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What are the most common Quran reading mistakes in children?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Common mistakes include confusing similar Arabic letters, incorrect throat pronunciation (Makharij), vowel errors (Harakat), problems with Sukoon and Shaddah, incorrect elongation (Madd), rushing through verses, stopping in wrong places (Waqf), and reciting from memory without looking at the text.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How can I improve my child&apos;s Quran reading at home?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Use short 10-minute daily practice sessions, encourage reading aloud, focus on one or two specific mistakes per session, repeat tricky words, and seek qualified teacher feedback when pronunciation challenges persist.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              At what age should children start learning Quran reading?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              There is no single mandatory age. Most children begin gentle Noorani Qaida phonics between ages 4 and 6. Readiness—such as paying attention for 5 to 10 minutes and repeating sounds—matters much more than a calendar date.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Should children learn Tajweed while learning to read Quran?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes, basic Tajweed concepts can be introduced progressively as children develop their reading foundation. Children still learning alphabet letters focus on pronunciation first before tackling theoretical rules.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Can an online Quran teacher correct my child&apos;s pronunciation?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes. In live one-on-one classes, an expert teacher listens to the child&apos;s recitation in real time, spots pronunciation and articulation errors instantly, and guides the student with visual tools.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Is Noorani Qaida useful for children who struggle with Quran reading?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes. Noorani Qaida provides a structured, phonetic foundation for Arabic letters, vowel marks, letter connections, and rhythm before a student progresses to longer Quranic passages.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How long does it take for a child to improve Quran reading?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Progress depends on consistency, starting level, and practice habits. With regular 3 to 4 short sessions weekly and teacher feedback, children show noticeable improvement within weeks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Thoughts & CTA */}
+      <section className="space-y-4 pt-6 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Final Thoughts
+        </h2>
+        <p className="text-base text-muted-text font-medium">
+          Quran reading mistakes are a natural part of learning. The goal is not to make children fearful of errors, but to help them recognize, correct, and replace them with accurate recitation habits.
+        </p>
+        <p className="text-base text-muted-text">
+          The most effective approach combines <strong>patient teaching, regular practice, immediate gentle correction, and warm encouragement</strong>.
+        </p>
+        <p className="text-base text-muted-text">
+          Start with the basics. Focus on one or two problems at a time. Give your child enough repetition to build confidence, and avoid turning Quran practice into a source of pressure.
+        </p>
+        <p className="text-base text-muted-text">
+          For families across the United States and worldwide seeking structured support, <Link href="/locations/usa" className="text-primary font-bold hover:underline">OQTutor Online Quran Classes USA</Link> offers dedicated pathways for <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>, <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, and <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">Quran classes for kids</Link> with qualified male and female scholars.
+        </p>
+
+        {/* Call to Action Card */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Book a Free Assessment &amp; Trial Quran Class for Your Child
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Experience gentle, live 1-on-1 recitation correction with verified male and female scholars. Free trial, no obligation.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/courses/quran-for-kids"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore Kids Quran Classes</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
 
 
 

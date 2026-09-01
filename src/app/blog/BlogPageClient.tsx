@@ -52,6 +52,8 @@ const mapping: Record<string, string> = {
   'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
   'how-to-choose-best-online-quran-classes-for-kids-usa': '/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg',
   'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
+  'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': '/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg',
+  'common-quran-reading-mistakes-children-make': '/blog/common-quran-reading-mistakes-children-make/reading-from-memory-mistake.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -90,6 +92,8 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'online-quran-classes-texas': 'Young Muslim girl student taking live online Quran lessons with certified tutor in Texas',
     'how-to-choose-best-online-quran-classes-for-kids-usa': 'Muslim American family smiling around laptop taking live online Quran lesson with female tutor',
     'how-long-does-it-take-for-a-child-to-complete-the-quran-online': 'Young Muslim girl reciting Quran on wooden rehal during online Quran lesson with female tutor on laptop screen',
+    'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': 'Muslim child reading Quran with parents and practicing prayer at home',
+    'common-quran-reading-mistakes-children-make': 'Young Muslim boy reciting Holy Quran on wooden stand and avoiding reading from memory mistakes',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
