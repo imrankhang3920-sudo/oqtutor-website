@@ -338,6 +338,11 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\df6479f8-8329-4ae5-9267-97b080ee822c\\.user_uploaded\\media_1788282591808.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/quran-reading.jpg'),
         dest: path.join(process.cwd(), 'public/blog/common-quran-reading-mistakes-children-make/common-quran-reading-mistakes-cover.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\df6479f8-8329-4ae5-9267-97b080ee822c\\.user_uploaded\\media_1788282889606.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/parents-role.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/common-quran-reading-mistakes-children-make/how-parents-help-improve-quran-reading-at-home.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {

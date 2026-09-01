@@ -9648,6 +9648,32 @@ function ArticleContentMistakesChildrenMake() {
           Parents do not need to be certified Quran scholars to support their child&apos;s reading progress. A consistent, encouraging home environment makes a tremendous difference.
         </p>
 
+        {/* Parent Support Infographic Banner */}
+        <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-2xl not-prose bg-background">
+          <div className="relative h-80 sm:h-[500px] w-full">
+            <Image
+              src="/blog/common-quran-reading-mistakes-children-make/how-parents-help-improve-quran-reading-at-home.jpg"
+              alt="How Parents Help Improve Children's Quran Reading at Home - Mother and child learning Quran together with step-by-step home guidelines"
+              fill
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 896px"
+              className="object-cover"
+            />
+          </div>
+          <div className="p-4 sm:p-6 bg-foreground/[0.02] border-t border-card-border">
+            <div className="font-bold text-foreground text-sm sm:text-base text-center mb-3">
+              &ldquo;Parental support and consistent practice lead to success. Be patient — make it a positive bonding experience.&rdquo;
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs text-muted-text font-medium">
+              <div className="p-2.5 rounded-xl bg-background border border-card-border">Lead by Example</div>
+              <div className="p-2.5 rounded-xl bg-background border border-card-border">Daily Schedule</div>
+              <div className="p-2.5 rounded-xl bg-background border border-card-border">Track with Fingers</div>
+              <div className="p-2.5 rounded-xl bg-background border border-card-border">Listen Together</div>
+              <div className="p-2.5 rounded-xl bg-background border border-card-border col-span-2 sm:col-span-1">Celebrate Progress</div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose">
           <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
             <div className="flex items-center space-x-2 text-primary font-bold text-base">
