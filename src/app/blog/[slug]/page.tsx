@@ -7,7 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, Heart, AlertTriangle, Check, Sparkles, ShieldCheck, Award, Users, Star, UserCheck, CheckCircle2, ChevronRight, Video, Globe, Laptop, HelpCircle, ListChecks, MapPin, Compass } from 'lucide-react';
+import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, Heart, AlertTriangle, Check, Sparkles, ShieldCheck, Award, Users, Star, UserCheck, CheckCircle2, ChevronRight, Video, Globe, Laptop, HelpCircle, ListChecks, MapPin, Compass, Eye, Volume2 } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
 import { createBlogPostSchema, createBreadcrumbSchema } from '@/lib/structuredData';
 
