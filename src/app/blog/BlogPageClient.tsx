@@ -53,7 +53,7 @@ const mapping: Record<string, string> = {
   'how-to-choose-best-online-quran-classes-for-kids-usa': '/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg',
   'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
   'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': '/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg',
-  'common-quran-reading-mistakes-children-make': '/blog/common-quran-reading-mistakes-children-make/reading-from-memory-mistake.jpg',
+  'common-quran-reading-mistakes-children-make': '/blog/common-quran-reading-mistakes-children-make/common-quran-reading-mistakes-cover.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {

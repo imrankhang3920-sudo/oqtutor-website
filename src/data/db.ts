@@ -335,7 +335,7 @@ let inMemoryCache: DatabaseSchema | null = null;
         dest: path.join(process.cwd(), 'public/blog/common-quran-reading-mistakes-children-make/reading-from-memory-mistake.jpg')
       },
       {
-        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\df6479f8-8329-4ae5-9267-97b080ee822c\\.user_uploaded\\media_1788281106346.jpg',
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\df6479f8-8329-4ae5-9267-97b080ee822c\\.user_uploaded\\media_1788282591808.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/quran-reading.jpg'),
         dest: path.join(process.cwd(), 'public/blog/common-quran-reading-mistakes-children-make/common-quran-reading-mistakes-cover.jpg')
       }
