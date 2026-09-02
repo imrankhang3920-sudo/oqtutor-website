@@ -76,7 +76,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'prepare-child-first-online-class': 'Kid happily reading Quran before class',
     'quran-memorization-adults-never-late': 'Adult man at a desk reading Quran with a lamp and a cup of tea',
     'teaching-salah-wudu-toddlers': 'Girl student wearing a white hijab sitting on a carpet, making dua in front of an open Quran',
-    'tajweed-vs-tarteel-difference': 'Tajweed basics and rules illustration',
+    'tajweed-vs-tarteel-difference': 'Student learning Quran recitation principles and Tajweed rules with a tutor',
     'virtues-reciting-quran-daily': 'Boy sitting on the floor reciting Quran under warm sunlight',
     'screen-time-spiritual-learning': 'Boy studying online with laptop, writing notes in notebook',
     'read-arabic-fluidly-without-vowels': 'Man sitting in a mosque in white clothes reciting the Quran',

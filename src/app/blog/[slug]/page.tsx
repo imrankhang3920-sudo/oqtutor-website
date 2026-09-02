@@ -62,6 +62,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
     : isKidsUsaBlog
     ? 'Online Quran Classes for Kids in USA | Parent Guide | OQTutor'
+    : isTarteelVsTajweedBlog
+    ? "Tajweed vs Tarteel: What's the Difference? | OQTutor"
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : isUSParentsTutorBlog
@@ -1092,6 +1094,76 @@ export default async function BlogPostPage({ params }: Props) {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. Classes can be scheduled during after-school afternoon hours, early evenings, or weekend mornings across Eastern, Central, Mountain, and Pacific time zones to fit seamlessly around public school, homework, and sports."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isTarteelVsTajweedBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is Tarteel the same as Tajweed?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Tajweed and Tarteel are distinct yet complementary concepts. Tajweed refers to the precise rules and mechanics of Arabic pronunciation, articulation points (Makharij), and phonetic characteristics (Sifat). Tarteel refers to reciting the Quran in a measured, distinct, and deliberate manner with reflection and contemplation, as commanded in Quran 73:4."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Tarteel mean reading slowly?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Tarteel does not simply mean reciting slowly. While measured pacing naturally results from Tarteel, true Tarteel emphasizes reciting without rushing, articulating each letter distinctly, pausing appropriately, and contemplating the meaning of the verses."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Tajweed important for Quran recitation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Tajweed preserves the authentic pronunciation of the Quranic text as revealed. Correct application of Tajweed rules prevents mispronunciations that could alter word meanings, ensuring the Quran is recited accurately and respectfully."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I learn Tajweed and Tarteel together?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Students learn Tajweed rules for phonetic accuracy while practicing Tarteel by reciting at a measured pace, avoiding haste, and reflecting on the meaning. A qualified teacher helps align correct pronunciation with deliberate recitation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What are the three common speeds of Quran recitation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Classical scholars identify three recognized recitation speeds: Tahqiq (a slow, meticulous pace used primarily for teaching and practice), Tadwir (a moderate, medium pace common in daily prayers), and Hadr (a swift pace used for revision), all of which must strictly maintain proper Tajweed rules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between Murattal and Mujawwad?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Murattal is a straightforward, measured recitation style focused on clear, consistent reading for study and devotion. Mujawwad is an elaborate, melodic style featuring dynamic vocal modulations used in formal gatherings and recitation assemblies. Both styles require strict adherence to Tajweed."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between Tajweed, Tarteel and Tilawah?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tilawah is the general act of reciting the Quran. Tajweed provides the foundational rules for accurate letter pronunciation and phonetic characteristics. Tarteel describes the commanded manner of reciting in a clear, measured, and reflective state."
                   }
                 }
               ]
@@ -4443,227 +4515,462 @@ function ArticleContentKidsUsa() {
 
 function ArticleContentTarteelVsTajweed() {
   return (
-    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
       
       {/* Introduction */}
       <section className="space-y-4">
-        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-          Ask a handful of Quran students to explain the difference between Tajweed and Tarteel, and you'll usually get one of three answers: they're the same thing, Tajweed is the rules and Tarteel is reciting slowly, or Tarteel is the beautiful melodic recitation you hear from famous reciters while Tajweed is the &quot;boring&quot; technical part beginners have to get through first.
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          When learning how to recite the Holy Quran, students often encounter the terms <strong>Tajweed</strong> and <strong>Tarteel</strong>. While both are essential to proper Quranic recitation, they are not synonyms. Tajweed refers to the rules and mechanics of correct Arabic pronunciation and articulation, ensuring every letter is pronounced from its authentic source. Tarteel, on the other hand, describes reciting the Quran in a measured, clear, and deliberate manner that encourages reflection and understanding.
         </p>
-        <p className="text-base leading-relaxed text-muted-text">
-          None of those answers is quite complete — and the third one has it backwards. Understanding how these two terms actually relate to each other is one of the most useful things a student can learn early on, because it changes how you practice from day one.
+        <p className="text-base text-muted-text leading-relaxed">
+          Understanding the distinction between these two concepts helps students focus not only on technical phonetic accuracy, but also on the contemplative spirit with which the Quran was revealed to be recited.
         </p>
       </section>
 
-      {/* The Short Answer */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          The Short Answer
+      {/* Quick Answer */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 not-prose shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary shrink-0" />
+          <span>Quick Answer</span>
+        </div>
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+          What Is the Difference Between Tajweed and Tarteel?
         </h2>
-        <p className="text-base text-muted-text font-medium italic p-4 bg-foreground/[0.02] border-l-4 border-primary rounded-r-xl">
-          &quot;Tajweed is a set of technical rules. Tarteel is a manner of reciting that the Quran itself commands.&quot;
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          Tajweed and Tarteel are closely related aspects of Quranic recitation, but they describe different dimensions. <strong>Tajweed</strong> provides the foundational rules and principles for correct letter pronunciation, articulation points, and phonetic characteristics. <strong>Tarteel</strong> refers to reciting the Quran in a measured, clear, and deliberate manner with contemplation, as commanded in Quran 73:4. In short, Tajweed ensures phonetic accuracy, while Tarteel emphasizes the manner, pace, and attentiveness of recitation.
         </p>
-        <p className="text-base text-muted-text">
-          <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> governs <em>how</em> each letter is pronounced — where it originates in the mouth, how long a sound is held, when it merges with a neighboring letter, when it's hidden or nasalized. Tarteel is the broader instruction to recite unhurriedly and clearly, with your understanding keeping pace with your tongue.
-        </p>
-        
-        <div className="my-8 rounded-3xl overflow-hidden shadow-lg border border-card-border bg-white p-2">
+      </div>
+
+      {/* Featured Article Image 1 */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
           <Image
             src="/tajweed-vs-tarteel-1.jpg"
-            alt="Quran student reflecting inside a beautiful mosque with sunbeams"
-            width={800}
-            height={500}
-            className="w-full rounded-2xl object-cover aspect-[16/10]"
+            alt="Student reflecting on Quran verses during a measured recitation session"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 800px"
           />
         </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          Tajweed builds accurate letter pronunciation, while Tarteel allows the reciter to recite with calm reflection and presence of heart.
+        </p>
+      </div>
 
+      {/* Section 1: What Is Tajweed? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Is Tajweed?
+        </h2>
         <p className="text-base text-muted-text">
-          They aren't competing methods or alternative styles you choose between. Tarteel is the goal. Tajweed is the technical component that makes reaching that goal possible. You can't recite with true Tarteel while mispronouncing the letters — but you absolutely can apply every Tajweed rule with textbook precision while racing through the page and absorbing nothing. That second scenario — correct pronunciation with no reflection — is far more common than most students realize.
+          Linguistically, the word <em>Tajweed</em> (تجويد) originates from the Arabic root <em>j-w-d</em> (ج-و-د), which means to make something excellent, proficient, or beautiful. In Islamic terminology, Tajweed is the applied science of giving every Arabic letter its rightful pronunciation by observing its intrinsic characteristics and rules.
+        </p>
+        <p className="text-base text-muted-text">
+          As a structured discipline, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> encompasses several core phonetic areas:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose pt-1">
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
+            <h3 className="text-sm font-bold text-foreground">1. Makharij al-Huruf (Articulation Points)</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              The specific anatomical origins of Arabic letters—from the throat, tongue, lips, nasal cavity, or oral cavity.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
+            <h3 className="text-sm font-bold text-foreground">2. Sifat al-Huruf (Letter Characteristics)</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              The unique phonetic qualities of letters, such as heaviness (Tafkheem), lightness (Tarqeeq), whisper (Hams), or strength (Shiddah).
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
+            <h3 className="text-sm font-bold text-foreground">3. Rules of Madd (Prolongation)</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              The duration for extending long vowels (2, 4, 5, or 6 counts) based on neighboring letters and hamzah triggers.
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
+            <h3 className="text-sm font-bold text-foreground">4. Ghunnah &amp; Nasalization Rules</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Rules governing Noon Sakinah and Tanween (Izhar, Idgham, Iqlab, Ikhfa), as well as Meem Sakinah and Qalqalah (echoing sounds).
+            </p>
+          </div>
+        </div>
+        <p className="text-base text-muted-text">
+          Because Tajweed deals with precise acoustic and physical articulation, self-study through books or apps alone is rarely sufficient. A <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified Quran teacher</Link> is essential to listen to your recitation, identify subtle phonetic errors, and provide direct real-time correction.
         </p>
       </section>
 
-      {/* What Tajweed Actually Is */}
+      {/* Section 2: What Is Tarteel? */}
       <section className="space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          What Tajweed Actually Is
+          What Is Tarteel?
         </h2>
         <p className="text-base text-muted-text">
-          Tajweed comes from the Arabic root <em>j-w-d</em>, meaning to make something excellent or bring it to its best form. As a discipline, it covers:
+          Unlike Tajweed, which developed as a formal codified discipline by classical phonetic scholars, <em>Tarteel</em> (ترتيل) is a direct divine command found within the Quran itself. In Surah Al-Muzzammil, Allah commands:
         </p>
-        <ul className="space-y-2 list-disc pl-5 text-base text-muted-text">
-          <li><strong>Makharij al-Huruf</strong> — the precise articulation point of each letter</li>
-          <li><strong>Sifat al-Huruf</strong> — the qualities that distinguish similar-sounding letters</li>
-          <li><strong>Madd</strong> — rules of vowel prolongation</li>
-          <li><strong>Ghunnah</strong> — nasalization</li>
-          <li><strong>Idgham, Izhar, Ikhfa, Iqlab</strong> — what happens when certain letters meet</li>
-        </ul>
-        <p className="text-base text-muted-text">
-          Tajweed is, in short, technical. There's a right answer and a wrong answer: either a letter is articulated from its correct point or it isn't; either a prolongation is held for the correct count or it isn't. Because of this, Tajweed can be taught, tested, and corrected — but it's very difficult to learn purely from a book. A <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified teacher</Link> needs to hear you recite and tell you what your tongue is actually doing, which is often different from what you think you're doing.
-        </p>
-      </section>
-
-      {/* What Tarteel Actually Is */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          What Tarteel Actually Is
-        </h2>
-        <p className="text-base text-muted-text">
-          Unlike Tajweed, Tarteel isn't a subject you study — it's a command that appears directly in the Quran, in Surah Al-Muzzammil:
-        </p>
-        <blockquote className="border-l-4 border-secondary pl-4 italic text-base text-muted-text py-1">
-          &quot;...and recite the Quran (properly) in a measured way.&quot; — Quran 73:4
+        <blockquote className="border-l-4 border-secondary pl-4 italic text-base text-muted-text py-2 my-4 bg-foreground/[0.02] rounded-r-xl">
+          <p className="font-arabic text-lg sm:text-xl text-foreground not-italic mb-2 text-right dir-rtl">
+            وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا
+          </p>
+          <span>&quot;...and recite the Quran in a measured, distinct manner.&quot; — Surah Al-Muzzammil (73:4)</span>
         </blockquote>
         <p className="text-base text-muted-text">
-          The root <em>r-t-l</em> carries the sense of things being well-ordered and evenly spaced — classical commentators used the same root to describe a mouth with teeth set slightly apart rather than crowded together. Applied to recitation, that image becomes: nothing rushed, nothing crammed together, each letter distinct and given its place.
-        </p>
-
-        <div className="my-8 rounded-3xl overflow-hidden shadow-lg border border-card-border bg-white p-2">
-          <Image
-            src="/tajweed-vs-tarteel-2.jpg"
-            alt="Minarets and mosque silhouette at sunset"
-            width={800}
-            height={450}
-            className="w-full rounded-2xl object-cover aspect-[16/9]"
-          />
-        </div>
-
-        <p className="text-base text-muted-text">
-          Classical commentary on this verse makes clear that Tarteel is not simply &quot;reading slowly.&quot; It means reciting without haste, pronouncing the letters clearly, and — critically — reflecting on the meaning as you go. One well-known companion of the Prophet ﷺ described the failure mode bluntly: don't scatter the Quran like sand, and don't race through it the way you'd race through poetry.
+          Linguistically, the root <em>r-t-l</em> conveys the idea of organization, symmetry, and even spacing. In the context of Quran recitation, Tarteel means reciting without undue haste, giving each letter and word its distinct clarity, pausing at natural junctures, and engaging the heart with the meanings being recited.
         </p>
         <p className="text-base text-muted-text">
-          So Tarteel answers a different question than Tajweed does. Tajweed asks, &quot;Am I pronouncing this correctly?&quot; Tarteel asks, &quot;Is this actually landing — am I receiving it the way it was meant to be received?&quot;
+          Importantly, Tarteel is not merely &quot;reading slowly.&quot; An artificially slow recitation that lacks presence of mind or correct pronunciation does not fulfill Tarteel. Rather, Tarteel is a balanced, deliberate pace that allows the tongue to pronounce clearly while the mind contemplates the divine message.
         </p>
       </section>
 
-      {/* Tajweed vs. Tarteel: At a Glance */}
-      <section className="space-y-4">
+      {/* Featured Article Image 2 */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+          <Image
+            src="/tajweed-vs-tarteel-2.jpg"
+            alt="Peaceful mosque minarets at sunset representing contemplation during Quran recitation"
+            fill
+            className="object-cover"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          Tarteel encourages unhurried recitation that allows contemplation (Tadabbur) to take root in the heart.
+        </p>
+      </div>
+
+      {/* Section 3: Tajweed vs Tarteel: Key Differences (Comparison Table) */}
+      <section className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Tajweed vs. Tarteel: At a Glance
+          Tajweed vs Tarteel: Key Differences
         </h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-card-border text-sm sm:text-base">
+        <p className="text-base text-muted-text">
+          The table below highlights how Tajweed and Tarteel complement each other while addressing different facets of recitation:
+        </p>
+
+        {/* Comparison Table */}
+        <div className="overflow-x-auto rounded-2xl border border-card-border shadow-sm not-prose">
+          <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="bg-foreground/[0.02]">
-                <th className="px-4 py-3 text-left font-bold text-foreground">Feature</th>
-                <th className="px-4 py-3 text-left font-bold text-foreground">Tajweed</th>
-                <th className="px-4 py-3 text-left font-bold text-foreground">Tarteel</th>
+              <tr className="bg-primary/10 border-b border-card-border text-foreground">
+                <th className="py-3.5 px-4 sm:px-6 font-bold text-xs sm:text-sm uppercase tracking-wider w-1/4">
+                  Feature
+                </th>
+                <th className="py-3.5 px-4 sm:px-6 font-bold text-xs sm:text-sm uppercase tracking-wider w-3/8">
+                  Tajweed
+                </th>
+                <th className="py-3.5 px-4 sm:px-6 font-bold text-xs sm:text-sm uppercase tracking-wider w-3/8">
+                  Tarteel
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-card-border">
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">What it is</td>
-                <td className="px-4 py-3 text-muted-text">A body of technical pronunciation rules</td>
-                <td className="px-4 py-3 text-muted-text">A commanded manner of reciting</td>
+            <tbody className="divide-y divide-card-border/60 text-muted-text">
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Main focus</td>
+                <td className="py-3 px-4 sm:px-6">Correct pronunciation, articulation points, and phonetic rules.</td>
+                <td className="py-3 px-4 sm:px-6">Measured, clear, and deliberate manner of recitation.</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Root meaning</td>
-                <td className="px-4 py-3 text-muted-text"><em>j-w-d</em> — to perfect, to excel</td>
-                <td className="px-4 py-3 text-muted-text"><em>r-t-l</em> — to be well-ordered, evenly spaced</td>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Main question</td>
+                <td className="py-3 px-4 sm:px-6">&quot;Are the letters and recitation rules articulated correctly?&quot;</td>
+                <td className="py-3 px-4 sm:px-6">&quot;Am I reciting clearly, without haste, and with understanding?&quot;</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Question it answers</td>
-                <td className="px-4 py-3 text-muted-text">&quot;Am I pronouncing this correctly?&quot;</td>
-                <td className="px-4 py-3 text-muted-text">&quot;Is the meaning actually reaching me?&quot;</td>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Includes</td>
+                <td className="py-3 px-4 sm:px-6">Makharij, Sifat, Madd, Ghunnah, Noon/Meem rules, and Qalqalah.</td>
+                <td className="py-3 px-4 sm:px-6">Appropriate pacing, distinct words, pause observance, and reflection.</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Scope</td>
-                <td className="px-4 py-3 text-muted-text">Articulation points, madd, ghunnah, noon/meem rules</td>
-                <td className="px-4 py-3 text-muted-text">Pace, clarity, reflection, presence of heart</td>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Quranic connection</td>
+                <td className="py-3 px-4 sm:px-6">Applied in proper recitation as practiced by the Prophet ﷺ.</td>
+                <td className="py-3 px-4 sm:px-6">Explicitly commanded in Surah Al-Muzzammil (Quran 73:4).</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Quranic basis</td>
-                <td className="px-4 py-3 text-muted-text">Reflected in how the Prophet ﷺ recited</td>
-                <td className="px-4 py-3 text-muted-text">Stated directly in Quran 73:4</td>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">How to improve</td>
+                <td className="py-3 px-4 sm:px-6">Systematic rule study, phonetic drills, and qualified teacher feedback.</td>
+                <td className="py-3 px-4 sm:px-6">Deliberate pacing, avoiding rush, and studying basic verse meanings.</td>
               </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Can one exist without the other?</td>
-                <td className="px-4 py-3 text-muted-text">Yes — and it's a real problem. Perfect rules, zero reflection.</td>
-                <td className="px-4 py-3 text-muted-text">No — mispronounced letters break Tarteel by definition.</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">How it's developed</td>
-                <td className="px-4 py-3 text-muted-text">Study plus correction from a qualified teacher</td>
-                <td className="px-4 py-3 text-muted-text">Deliberate pacing and the habit of reflection</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 font-bold text-foreground">Measured by</td>
-                <td className="px-4 py-3 text-muted-text">Accuracy</td>
-                <td className="px-4 py-3 text-muted-text">Whether the meaning arrives</td>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Relationship</td>
+                <td className="py-3 px-4 sm:px-6">Supports technical and phonetic accuracy.</td>
+                <td className="py-3 px-4 sm:px-6">Describes the overall manner, pace, and spirit of recitation.</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      {/* Why "Tarteel Just Means Slow" Falls Short */}
+      {/* Section 4: Tajweed vs Tarteel vs Tilawah */}
       <section className="space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Why &quot;Tarteel Just Means Slow&quot; Falls Short
+          Tajweed vs Tarteel vs Tilawah
         </h2>
         <p className="text-base text-muted-text">
-          Slowness is a <em>result</em> of reciting with Tarteel, not the definition of it. You can recite very slowly with your mind elsewhere and still miss the point of Tarteel entirely. The real emphasis in the classical commentary is on the tongue not outrunning the mind — pacing yourself so the words have time to be understood, not just pronounced.
+          Many students also wonder how <em>Tilawah</em> fits into this picture. These three terms often overlap in everyday conversation, but they serve distinct functions:
         </p>
-      </section>
 
-      {/* Tarteel Contains Tajweed — Not the Other Way Around */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Tarteel Contains Tajweed — Not the Other Way Around
-        </h2>
-        <p className="text-base text-muted-text">
-          This is the piece most beginner-level explanations get backwards. Tajweed isn't a separate, parallel discipline that you finish and then move on from to &quot;real&quot; recitation. It's the technical layer that operates <em>inside</em> every act of Tarteel — including the recitation you do in your daily prayers, long after you've &quot;finished&quot; a <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed course</Link>.
-        </p>
-        <p className="text-base text-muted-text">
-          Put another way: you can't truly fulfill the command of Tarteel while ignoring Tajweed, because distorted letters break the clarity Tarteel requires. But you can absolutely apply flawless Tajweed while failing at Tarteel, by reciting quickly and without reflection. That asymmetry is the whole relationship in one sentence.
-        </p>
-      </section>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose pt-1">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-primary uppercase tracking-wider px-2 py-0.5 bg-primary/10 rounded-full inline-block">
+              The Action
+            </span>
+            <h3 className="text-lg font-bold text-foreground">Tilawah (تلاوة)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The general act of reciting or reading the Quran aloud. It describes the practice of recitation itself.
+            </p>
+          </div>
 
-      {/* Related Terms Worth Knowing */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Related Terms Worth Knowing
-        </h2>
-        <p className="text-base text-muted-text">
-          Two adjectives come up often once you start exploring Tajweed and Tarteel further:
-        </p>
-        <ul className="space-y-4 list-none pl-0 text-base text-muted-text">
-          <li className="p-5 rounded-2xl bg-foreground/[0.01] border border-card-border/60">
-            <strong className="text-foreground block mb-1">Murattal</strong>
-            the adjective form of Tarteel. Refers to a slower, plainer, syllabic recitation style used for study, memorization, and devotional listening. Reciters like Al-Husary's Murattal recordings are widely used by students for exactly this reason.
-          </li>
-          <li className="p-5 rounded-2xl bg-foreground/[0.01] border border-card-border/60">
-            <strong className="text-foreground block mb-1">Mujawwad</strong>
-            the adjective form of Tajweed. Refers to a more melodic, ornamented recitation style — with pitch modulation and vocal expression — typically used in public performance, Quran competitions, and formal gatherings. Reciters like Abdul Basit and Al-Minshawi are considered masters of this style.
-          </li>
-        </ul>
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-secondary uppercase tracking-wider px-2 py-0.5 bg-secondary/10 rounded-full inline-block">
+              The Precision
+            </span>
+            <h3 className="text-lg font-bold text-foreground">Tajweed (تجويد)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The technical rules and phonetic discipline ensuring every Arabic letter is articulated accurately.
+            </p>
+          </div>
 
-        <div className="my-8 rounded-3xl overflow-hidden shadow-lg border border-card-border bg-white p-2">
-          <Image
-            src="/tajweed-vs-tarteel-3.png"
-            alt="Inside the dome of a beautiful white and emerald mosque"
-            width={800}
-            height={450}
-            className="w-full rounded-2xl object-cover aspect-[16/9]"
-          />
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider px-2 py-0.5 bg-emerald-500/10 rounded-full inline-block">
+              The Manner
+            </span>
+            <h3 className="text-lg font-bold text-foreground">Tarteel (ترتيل)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The commanded manner of reciting clearly, at a measured pace, with contemplation and reverence.
+            </p>
+          </div>
         </div>
 
         <p className="text-base text-muted-text">
-          Both styles are still required to follow Tajweed rules correctly. The difference between them is one of performance and pace, not correctness.
+          <strong>Summary:</strong> Tilawah is the act of reciting, Tajweed ensures the recitation is phonetically correct, and Tarteel describes reciting in a clear, measured, and contemplative manner.
         </p>
       </section>
 
-      {/* What This Means for How You Practice */}
+      {/* Section 5: Does Tarteel Mean Reading the Quran Slowly? */}
       <section className="space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          What This Means for How You Practice
+          Does Tarteel Mean Reading the Quran Slowly?
         </h2>
-        <ul className="space-y-3 list-disc pl-5 text-base text-muted-text">
-          <li><strong>Stop treating Tajweed as a phase you complete.</strong> It's not a course you finish before moving on — it's the technical foundation of every recitation you'll ever do.</li>
-          <li><strong>Slow down more than feels natural.</strong> Most students who think they're reciting slowly are actually reciting at a moderate pace with a few pauses thrown in. True Tarteel is slower than that.</li>
-          <li><strong>Know the meaning of what you're reciting.</strong> Tarteel requires the meaning to be within reach. If you have no idea what a passage says, the reflective half of Tarteel has nothing to work with. Try combining Tajweed practice with a basic <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Tafseer</Link> study.</li>
-          <li><strong>Get your pronunciation checked by a teacher.</strong> This is the part self-study and apps can't fully replace. You can't objectively hear your own articulation mistakes — a trained ear needs to catch them for you.</li>
-          <li><strong>Fix your letters before you worry about your voice.</strong> The melodic beauty admired in skilled reciters is built on top of accurate Tajweed, not a substitute for it.</li>
+        <p className="text-base text-muted-text">
+          <strong>No.</strong> Tarteel does not simply mean reciting the Quran at a slow speed. While a measured pace naturally accompanies Tarteel, speed alone is not the defining criterion.
+        </p>
+        <p className="text-base text-muted-text">
+          If a person recites very slowly while mispronouncing letters, elongating vowels excessively, or letting their mind wander, that recitation does not embody Tarteel. Conversely, an experienced reciter reading at a moderate pace with clear diction, proper Tajweed, and deep mental focus is actively fulfilling Tarteel.
+        </p>
+        <p className="text-base text-muted-text">
+          Classical scholars emphasize that Tarteel means reciting <em>deliberately</em> rather than dragging out words. The goal is to prevent the tongue from outracing the mind so the heart has time to reflect upon the verses.
+        </p>
+      </section>
+
+      {/* Section 6: What Does the Quran Say About Tarteel? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Does the Quran Say About Tarteel?
+        </h2>
+        <p className="text-base text-muted-text">
+          The primary Quranic reference for Tarteel is in Surah Al-Muzzammil (73:4). In classical commentaries, scholars have explained this verse with great care:
+        </p>
+        <ul className="space-y-3 text-sm text-muted-text">
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
+            <span><strong>Imam Ibn Kathir</strong> explained that the command to recite with Tarteel means to recite slowly and distinctly, which aids in understanding and contemplating the Quran.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
+            <span><strong>Early Companions</strong>, such as Abdullah ibn Mas&apos;ud (may Allah be pleased with him), advised learners not to scatter the Quran like dry sand or rush through it like reciting poetry, but rather to pause at its wonders and move hearts with its recitation.</span>
+          </li>
         </ul>
+        <p className="text-base text-muted-text">
+          These classical explanations demonstrate that Tarteel is directly tied to reverence, clarity, and reflection rather than mere mechanical speed.
+        </p>
+      </section>
+
+      {/* Section 7: How Tajweed and Tarteel Work Together */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Tajweed and Tarteel Work Together
+        </h2>
+        <p className="text-base text-muted-text">
+          Tajweed and Tarteel are best understood as complementary partners in Quranic recitation:
+        </p>
+        <ul className="space-y-2 text-sm text-muted-text">
+          <li><strong>Tajweed provides the rules:</strong> It prevents the reciter from altering meanings through faulty pronunciation or misapplied vowel extensions.</li>
+          <li><strong>Tarteel provides the atmosphere:</strong> It prevents the reciter from treating recitation as a rushed mechanical exercise without presence of heart.</li>
+        </ul>
+        <p className="text-base text-muted-text">
+          Students do not need to finish Tajweed before beginning Tarteel. From the first day a beginner starts reading short Surahs, they can apply the Tajweed rules they know while maintaining a calm, unhurried pace. Tajweed is a lifelong standard of precision, not a temporary beginner phase.
+        </p>
+      </section>
+
+      {/* Section 8: Simple Example of Tajweed vs Tarteel */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Simple Example of Tajweed vs Tarteel
+        </h2>
+        <p className="text-base text-muted-text">
+          Consider a student reciting Surah Al-Fatihah:
+        </p>
+        <div className="space-y-3 not-prose">
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-sm font-bold text-foreground">The Tajweed Dimension:</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The student ensures the letter <em>‘Ayn</em> (ع) in <em>‘Alameen</em> comes from the middle of the throat, distinguishes the <em>Haa</em> (ح) in <em>Ar-Rahman</em> from a breathy <em>Haa</em> (هـ), and extends the Madd in <em>Ad-Daalleen</em> for exactly six counts with appropriate heaviness (Tasqeel).
+            </p>
+          </div>
+          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
+            <h3 className="text-sm font-bold text-foreground">The Tarteel Dimension:</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              The student recites verse by verse with natural breath pauses at each Waqf, avoids rushing to the next ayah, and internalizes the praise, mercy, and guidance expressed in each sentence.
+            </p>
+          </div>
+        </div>
+        <p className="text-base text-muted-text">
+          Here, Tajweed delivers technical precision, while Tarteel delivers measured pacing and spiritual attentiveness.
+        </p>
+      </section>
+
+      {/* Featured Article Image 3 */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+          <Image
+            src="/tajweed-vs-tarteel-3.png"
+            alt="Architectural dome of a mosque reflecting serenity and precision in Quran recitation"
+            fill
+            className="object-cover"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          Combining precise Tajweed rules with deliberate Tarteel creates a beautiful, reverent recitation.
+        </p>
+      </div>
+
+      {/* Section 9: How to Practice Tajweed and Tarteel Together */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How to Practice Tajweed and Tarteel Together
+        </h2>
+        <p className="text-base text-muted-text">
+          To cultivate both technical accuracy and deliberate pacing, follow these five practical steps:
+        </p>
+        <div className="space-y-3 not-prose">
+          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+            <span className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              1
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Learn foundational Tajweed rules</h3>
+              <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">
+                Build confidence in letter articulation points and basic rules. For a beginner roadmap, see our guide on <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">mastering Tajweed rules at home</Link>.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+            <span className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              2
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Practice difficult letters individually</h3>
+              <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">
+                Focus on tricky throat and emphatic letters (like <em>Qaf</em>, <em>Khaf</em>, <em>Daad</em>, and <em>Dhaa</em>) before joining them into longer Quranic passages.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+            <span className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              3
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Recite at a deliberate, unhurried pace</h3>
+              <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">
+                Resist the temptation to speed through familiar Surahs. Give every letter its full timing, vowel count, and nasalization (Ghunnah).
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+            <span className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              4
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Pause appropriately at Waqf marks and verse ends</h3>
+              <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">
+                Use natural stopping points to breathe calmly and reflect on the message of the verse before continuing.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+            <span className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+              5
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-foreground">Have a qualified Quran teacher correct your recitation</h3>
+              <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">
+                Regular feedback from an <Link href="/tutors" className="text-primary font-semibold hover:underline">experienced Quran tutor</Link> ensures pronunciation mistakes are caught early before they become ingrained habits.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 10: What Are the Three Common Speeds of Quran Recitation? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Are the Three Common Speeds of Quran Recitation?
+        </h2>
+        <p className="text-base text-muted-text">
+          In classical Tajweed texts, scholars discuss three recognized speeds or paces of recitation. It is important to note that these are not three different Tajweed systems—rather, proper Tajweed rules apply equally to all three:
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose pt-1">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">1. Tahqiq (التحقيق)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              A slow, meticulous, and deliberate pace where every letter, vowel elongation, and characteristic is given its fullest measure. Commonly used in instructional settings and beginner practice.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">2. Tadwir (التدوير)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              A balanced, medium pace situated between Tahqiq and Hadr. This is the most common pace used during daily congregational and individual prayers (Salah).
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">3. Hadr (الحدر)</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              A swift, fluent pace often used by Hafiz students for extensive daily revision (Muraja&apos;ah). Even at this faster speed, letters must never be merged improperly or truncated.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 11: What Is the Difference Between Murattal and Mujawwad? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Is the Difference Between Murattal and Mujawwad?
+        </h2>
+        <p className="text-base text-muted-text">
+          In recorded recitations and Quran broadcasts, you will frequently see recordings labeled as either <em>Murattal</em> or <em>Mujawwad</em>. These describe distinct recitation styles rather than separate rulebooks:
+        </p>
+        <ul className="space-y-3 text-sm text-muted-text">
+          <li className="p-4 rounded-2xl glass border border-card-border">
+            <strong className="text-foreground block mb-1">Murattal (مُرَتَّل):</strong>
+            A straightforward, steady, and measured recitation style focused on clarity, rhythm, and instructional precision. It is widely used for individual prayer, memorization, and daily study (e.g., recordings of Shaykh Mahmoud Khalil Al-Husary).
+          </li>
+          <li className="p-4 rounded-2xl glass border border-card-border">
+            <strong className="text-foreground block mb-1">Mujawwad (مُجَوَّد):</strong>
+            An elaborate, melodic recitation style characterized by dynamic vocal modulation, extended breath control, and expressive maqamat intervals, commonly heard in formal gatherings and recitation assemblies (e.g., recordings of Shaykh Abdul Basit Abdul Samad).
+          </li>
+        </ul>
+        <p className="text-base text-muted-text">
+          Both styles strictly adhere to the same underlying Tajweed rules; the primary difference lies in musicality, pacing, and vocal delivery.
+        </p>
       </section>
 
       {/* Frequently Asked Questions */}
@@ -4672,70 +4979,84 @@ function ArticleContentTarteelVsTajweed() {
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-4">
-          <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
-            <h3 className="text-lg font-bold text-foreground">Is Tarteel the same as Tajweed?</h3>
-            <p className="text-sm text-muted-text leading-relaxed">
-              No. Tajweed is the set of rules for pronouncing letters correctly. Tarteel is the broader Quranic command to recite unhurriedly, clearly, and with reflection. Tajweed is one component within Tarteel — not a synonym for it.
+        <div className="space-y-4 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Is Tarteel the same as Tajweed?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              No. Tajweed refers to the technical rules of correct pronunciation, articulation points, and vowel characteristics. Tarteel describes the commanded manner of reciting the Quran in a measured, distinct, and reflective state as outlined in Quran 73:4.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
-            <h3 className="text-lg font-bold text-foreground">Does the Tarteel app detect Tajweed mistakes?</h3>
-            <p className="text-sm text-muted-text leading-relaxed">
-              Not currently. The popular Tarteel AI app is very effective at catching word-level errors — skipped words, incorrect words, missing diacritics — but its own support team confirms that Tajweed mistake detection isn't built into the AI yet. For actual Tajweed correction, a <Link href="/tutors" className="text-primary font-semibold hover:underline">live teacher</Link> is still necessary.
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Does Tarteel mean reading slowly?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              No. Tarteel does not simply mean reciting slowly. While measured pacing naturally results from Tarteel, true Tarteel emphasizes reciting without rushing, articulating each letter distinctly, pausing appropriately, and contemplating the meaning of the verses.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
-            <h3 className="text-lg font-bold text-foreground">What are the three types (speeds) of Tajweed recitation?</h3>
-            <p className="text-sm text-muted-text leading-relaxed">
-              Scholars generally describe three paces of recitation, all governed by the same Tajweed rules: <strong>Tahqiq</strong> (slow and deliberate, used for teaching and learning), <strong>Tadwir</strong> (a moderate, balanced pace common in daily prayer), and <strong>Hadr</strong> (fast, but with the rules still fully observed).
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Is Tajweed important for Quran recitation?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Yes. Tajweed preserves the authentic pronunciation of the Quranic text as revealed. Correct application of Tajweed rules prevents mispronunciations that could alter word meanings, ensuring the Quran is recited accurately and respectfully.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
-            <h3 className="text-lg font-bold text-foreground">What is Tarteel and Mujawwad?</h3>
-            <p className="text-sm text-muted-text leading-relaxed">
-              They represent two different recitation styles. Murattal (from Tarteel) is slower and plainer, suited to study and memorization. Mujawwad (from Tajweed) is more melodic and ornamented, suited to public performance and competitions. Both still require correct Tajweed.
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Can I learn Tajweed and Tarteel together?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Yes. Students learn Tajweed rules for phonetic accuracy while practicing Tarteel by reciting at a measured pace, avoiding haste, and reflecting on the meaning. A qualified teacher helps align correct pronunciation with deliberate recitation.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl glass border border-card-border/60 space-y-2">
-            <h3 className="text-lg font-bold text-foreground">Are Tajweed and Tafseer the same?</h3>
-            <p className="text-sm text-muted-text leading-relaxed">
-              No. Tajweed governs <em>how</em> you pronounce the words — the sound. <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Tafseer</Link> explains <em>what</em> the words mean — the interpretation, context, and lessons behind each verse. One guides the tongue; the other guides the mind and heart. A recitation can be technically flawless in Tajweed while the reciter understands none of the meaning, which is exactly the gap Tarteel is meant to close.
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What are the three common speeds of Quran recitation?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Classical scholars identify three recognized recitation speeds: Tahqiq (a slow, meticulous pace used primarily for teaching and practice), Tadwir (a moderate, medium pace common in daily prayers), and Hadr (a swift pace used for revision), all of which must strictly maintain proper Tajweed rules.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What is the difference between Murattal and Mujawwad?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Murattal is a straightforward, measured recitation style focused on clear, consistent reading for study and devotion. Mujawwad is an elaborate, melodic style featuring dynamic vocal modulations used in formal gatherings and recitation assemblies. Both styles require strict adherence to Tajweed.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What is the difference between Tajweed, Tarteel and Tilawah?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Tilawah is the general act of reciting the Quran. Tajweed provides the foundational rules for accurate letter pronunciation and phonetic characteristics. Tarteel describes the commanded manner of reciting in a clear, measured, and reflective state.
             </p>
           </div>
         </div>
       </section>
 
-      {/* The Bottom Line */}
-      <section className="space-y-4 pt-4 border-t border-card-border">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-          The Bottom Line
-        </h2>
-        <p className="text-base text-muted-text">
-          Tajweed and Tarteel aren't two competing skills you balance against each other — they're layered. Tajweed is the technical discipline that makes correct pronunciation possible. Tarteel is the larger, commanded manner of recitation that Tajweed serves. Master the letters, then slow down enough to let the meaning catch up with your tongue. That's the whole relationship.
-        </p>
-        
-        <div className="pt-6">
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
-              Ready to Begin Your Quran Learning Journey?
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-              Looking for a qualified tutor to help you build both — a teacher who can correct your Tajweed live and guide you toward genuine Tarteel?
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/book-free-trial"
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
-              >
-                <span>Book 1-on-1 Free Trial Lesson</span>
-                <ArrowRight className="h-4.5 w-4.5" />
-              </Link>
-            </div>
+      {/* Conclusion & Subtle CTA */}
+      <section className="space-y-4 pt-6 border-t border-card-border not-prose">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block">
+            Personalized Guidance
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+            Improve Your Tajweed with a Qualified Teacher
+          </h2>
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
+            If you want help improving your Quran pronunciation, a qualified Quran teacher can listen to your recitation live, identify Tajweed mistakes, and guide you through consistent, personalized practice.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/book-free-trial"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+            >
+              <span>Book a Free Trial Lesson</span>
+              <ArrowRight className="h-4.5 w-4.5" />
+            </Link>
+            <Link
+              href="/courses/tajweed"
+              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full glass hover:bg-primary/10 text-foreground text-sm font-semibold border border-card-border transition-all"
+            >
+              <span>Explore Tajweed Course</span>
+            </Link>
           </div>
         </div>
       </section>
