@@ -172,16 +172,17 @@ export default async function CoursesPage() {
 
   const courses = dbData.courses || [];
 
-  // Helper to retrieve course by slug
-  const getCourse = (slug: string) => courses.find((c) => c.slug === slug);
+  // Helper to retrieve courses by slugs with strict typing
+  const getCoursesBySlugs = (...slugs: string[]) => 
+    slugs.map((slug) => courses.find((c) => c.slug === slug)).filter((c): c is NonNullable<typeof c> => c !== undefined);
 
   // Grouped courses
-  const beginnerCourses = [getCourse('noorani-qaida'), getCourse('quran-reading')].filter(Boolean);
-  const tajweedCourses = [getCourse('tajweed')].filter(Boolean);
-  const memorizationCourses = [getCourse('hifz'), getCourse('tafseer')].filter(Boolean);
-  const islamicLearningCourses = [getCourse('islamic-studies'), getCourse('daily-duas'), getCourse('salah-course')].filter(Boolean);
-  const arabicCourses = [getCourse('arabic-language')].filter(Boolean);
-  const specializedPrograms = [getCourse('quran-for-kids'), getCourse('quran-for-adults'), getCourse('female-quran-teacher')].filter(Boolean);
+  const beginnerCourses = getCoursesBySlugs('noorani-qaida', 'quran-reading');
+  const tajweedCourses = getCoursesBySlugs('tajweed');
+  const memorizationCourses = getCoursesBySlugs('hifz', 'tafseer');
+  const islamicLearningCourses = getCoursesBySlugs('islamic-studies', 'daily-duas', 'salah-course');
+  const arabicCourses = getCoursesBySlugs('arabic-language');
+  const specializedPrograms = getCoursesBySlugs('quran-for-kids', 'quran-for-adults', 'female-quran-teacher');
 
   // Breadcrumb Schema
   const breadcrumbSchema = {
