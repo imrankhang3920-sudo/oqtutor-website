@@ -4545,8 +4545,8 @@ function ArticleContentTarteelVsTajweed() {
       <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
         <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
           <Image
-            src="/tajweed-vs-tarteel-1.jpg"
-            alt="Student reflecting on Quran verses during a measured recitation session"
+            src="/tajweed-vs-tarteel-cover.jpg"
+            alt="Two young students practicing Quran recitation with an online teacher on a laptop"
             fill
             className="object-cover"
             priority

@@ -96,6 +96,11 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\04d3508f-da38-4880-98ea-2c6611ee59c3\\.user_uploaded\\media_1787795401502.jpg',
     fallbackSrc: path.join(__dirname, '../public/adult-quran-memorization.jpg'),
     dest: path.join(__dirname, '../public/online-quran-classes-usa-for-adults.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\49e19951-fb8d-40f6-a3cd-e518ed53bdd0\\.user_uploaded\\media_1788315701650.jpg',
+    fallbackSrc: path.join(__dirname, '../public/tajweed-vs-tarteel-1.jpg'),
+    dest: path.join(__dirname, '../public/tajweed-vs-tarteel-cover.jpg')
   }
 ];
 
