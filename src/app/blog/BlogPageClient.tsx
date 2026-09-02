@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BlogData, ContactData } from '@/data/db';
-import { BookOpen, Clock, Calendar, Search } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { BookOpen, Clock, Calendar, Search, RotateCcw } from 'lucide-react';
+import { useSearchParams, useRouter } from 'next/navigation';
+import BlogPagination, { getBlogPaginationUrl } from '@/components/BlogPagination';
+
+const POSTS_PER_PAGE = 9;
 
 const getBlogImage = (blogItem: BlogData | string): string => {
   if (typeof blogItem === 'object' && blogItem !== null) {
@@ -98,15 +101,45 @@ const getBlogImageAlt = (slug: string, title: string): string => {
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
 
-export default function BlogPageClient({
-  initialBlogs,
-  contactData
-}: {
+interface BlogPageClientProps {
   initialBlogs: BlogData[];
   contactData: ContactData;
-}) {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  initialPage?: number;
+  initialCategory?: string;
+  initialSearch?: string;
+}
+
+function BlogContent({
+  initialBlogs,
+  contactData,
+  initialPage = 1,
+  initialCategory = 'All',
+  initialSearch = '',
+}: BlogPageClientProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // Read URL params or fallback to props
+  const paramPage = searchParams.get('page');
+  const paramCategory = searchParams.get('category');
+  const paramSearch = searchParams.get('search');
+
+  const [activeCategory, setActiveCategory] = useState<string>(paramCategory || initialCategory);
+  const [searchQuery, setSearchQuery] = useState<string>(paramSearch || initialSearch);
+  const [currentPage, setCurrentPage] = useState<number>(
+    paramPage ? parseInt(paramPage, 10) || 1 : initialPage
+  );
+
+  // Sync state with URL searchParams (e.g. Browser Back / Forward buttons)
+  useEffect(() => {
+    const pageFromUrl = searchParams.get('page');
+    const categoryFromUrl = searchParams.get('category') || 'All';
+    const searchFromUrl = searchParams.get('search') || '';
+
+    setCurrentPage(pageFromUrl ? parseInt(pageFromUrl, 10) || 1 : 1);
+    setActiveCategory(categoryFromUrl);
+    setSearchQuery(searchFromUrl);
+  }, [searchParams]);
 
   const categories = [
     'All',
@@ -115,40 +148,84 @@ export default function BlogPageClient({
     'Parenting',
     'Islamic Education',
     'Hifz Tips',
-    'Children\'s Learning',
-    'Beginner Quran Guides'
+    "Children's Learning",
+    'Beginner Quran Guides',
   ];
 
   // Filter logic: category filter + search query match
-  const filteredBlogs = (initialBlogs || []).filter(blog => {
+  const filteredBlogs = (initialBlogs || []).filter((blog) => {
     if (!blog) return false;
     const cat = (blog.category || '').toLowerCase();
     const title = (blog.title || '').toLowerCase();
     const desc = (blog.description || '').toLowerCase();
     const query = (searchQuery || '').toLowerCase();
 
-    const matchesCategory = activeCategory === 'All' || cat === activeCategory.toLowerCase();
+    const matchesCategory =
+      activeCategory === 'All' || cat === activeCategory.toLowerCase();
     const matchesSearch = title.includes(query) || desc.includes(query);
     return matchesCategory && matchesSearch;
   });
 
+  const totalPages = Math.max(1, Math.ceil(filteredBlogs.length / POSTS_PER_PAGE));
+  const validCurrentPage = Math.min(Math.max(1, currentPage), totalPages);
+
+  const startIndex = (validCurrentPage - 1) * POSTS_PER_PAGE;
+  const paginatedBlogs = filteredBlogs.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  const updateUrl = (page: number, category: string, search: string) => {
+    const newUrl = getBlogPaginationUrl(page, category, search);
+    router.push(newUrl, { scroll: false });
+  };
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+    updateUrl(1, cat, searchQuery);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = e.target.value;
+    setSearchQuery(newQuery);
+    setCurrentPage(1);
+    updateUrl(1, activeCategory, newQuery);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    updateUrl(newPage, activeCategory, searchQuery);
+    // Smoothly scroll to the top of the blog grid
+    if (typeof window !== 'undefined') {
+      const gridElem = document.getElementById('blog-grid');
+      if (gridElem) {
+        gridElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
+  const handleResetFilters = () => {
+    setActiveCategory('All');
+    setSearchQuery('');
+    setCurrentPage(1);
+    updateUrl(1, 'All', '');
+  };
+
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.oqtutor.com"
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.oqtutor.com',
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://www.oqtutor.com/blog"
-      }
-    ]
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://www.oqtutor.com/blog',
+      },
+    ],
   };
 
   return (
@@ -161,7 +238,6 @@ export default function BlogPageClient({
       <Navbar />
 
       <main className="flex-grow bg-background">
-        
         {/* Header Hero */}
         <section className="relative py-20 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
           <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -180,9 +256,8 @@ export default function BlogPageClient({
         </section>
 
         {/* Filters & Grid */}
-        <section className="py-20">
+        <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            
             {/* Search and Category block */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
               {/* Categories */}
@@ -190,8 +265,8 @@ export default function BlogPageClient({
                 {categories.map((cat, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-4.5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
+                    onClick={() => handleCategoryChange(cat)}
+                    className={`px-4.5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                       activeCategory === cat
                         ? 'bg-primary text-white shadow-md shadow-primary/20'
                         : 'bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border'
@@ -209,86 +284,135 @@ export default function BlogPageClient({
                   type="text"
                   placeholder="Search articles..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleSearchChange}
                   className="w-full pl-11 pr-4 py-3 rounded-full border border-card-border bg-background/50 text-foreground text-xs focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 />
               </div>
             </div>
 
-            {/* Grid List */}
-            {filteredBlogs.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredBlogs.map((blog) => (
-                  <Link
-                    key={blog.id}
-                    href={`/blog/${blog.slug}`}
-                    className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-1 relative cursor-pointer"
-                  >
-                    <div>
-                      {/* Image Header */}
-                      <div className="relative h-48 w-full bg-foreground/5 overflow-hidden">
-                        <img
-                          src={getBlogImage(blog)}
-                          alt={getBlogImageAlt(blog.slug, blog.title)}
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/arabic-reading.jpg';
-                          }}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
+            {/* Results count & current page indicator */}
+            <div id="blog-grid" className="scroll-mt-24 mb-8 flex items-center justify-between text-xs text-muted-text">
+              <div>
+                Showing <span className="font-semibold text-foreground">{filteredBlogs.length > 0 ? startIndex + 1 : 0}</span> to{' '}
+                <span className="font-semibold text-foreground">
+                  {Math.min(startIndex + POSTS_PER_PAGE, filteredBlogs.length)}
+                </span>{' '}
+                of <span className="font-semibold text-foreground">{filteredBlogs.length}</span> articles
+                {activeCategory !== 'All' && (
+                  <span> in <span className="text-primary font-medium">{activeCategory}</span></span>
+                )}
+                {searchQuery && (
+                  <span> matching &ldquo;<span className="text-primary font-medium">{searchQuery}</span>&rdquo;</span>
+                )}
+              </div>
+              {totalPages > 1 && (
+                <div className="text-right font-medium">
+                  Page <span className="font-bold text-foreground">{validCurrentPage}</span> of {totalPages}
+                </div>
+              )}
+            </div>
 
-                      {/* Content Container */}
-                      <div className="p-6">
-                        {/* Category Tag */}
-                        <div className="mb-4">
-                          <span className="text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">
-                            {blog.category}
-                          </span>
+            {/* Grid List */}
+            {paginatedBlogs.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {paginatedBlogs.map((blog) => (
+                    <Link
+                      key={blog.id}
+                      href={`/blog/${blog.slug}`}
+                      className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col justify-between hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 transition-all duration-300 group hover:-translate-y-1 relative cursor-pointer"
+                    >
+                      <div>
+                        {/* Image Header */}
+                        <div className="relative h-48 w-full bg-foreground/5 overflow-hidden">
+                          <img
+                            src={getBlogImage(blog)}
+                            alt={getBlogImageAlt(blog.slug, blog.title)}
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = '/arabic-reading.jpg';
+                            }}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
                         </div>
 
-                        {/* Title */}
-                        <h3 className="text-base font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2 min-h-[2.75rem]">
-                          {blog.title}
-                        </h3>
-                        
-                        {/* Excerpt */}
-                        <p className="text-xs text-muted-text leading-relaxed font-normal mb-6 line-clamp-3">
-                          {blog.description}
-                        </p>
-                      </div>
-                    </div>
+                        {/* Content Container */}
+                        <div className="p-6">
+                          {/* Category Tag */}
+                          <div className="mb-4">
+                            <span className="text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">
+                              {blog.category}
+                            </span>
+                          </div>
 
-                    {/* Bottom Meta & Read More */}
-                    <div className="px-6 pb-6 pt-4 border-t border-card-border/60 flex items-center justify-between text-xs">
-                      <div className="flex items-center space-x-3 text-[10px] text-muted-text font-medium">
-                        <span className="flex items-center space-x-1.5">
-                          <Calendar className="h-3.5 w-3.5" />
-                          <span>{blog.publishedAt || 'August 17, 2026'}</span>
-                        </span>
-                        <span className="flex items-center space-x-1.5">
-                          <Clock className="h-3.5 w-3.5 shrink-0" />
-                          <span>{blog.readTime}</span>
+                          {/* Title */}
+                          <h3 className="text-base font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2 min-h-[2.75rem]">
+                            {blog.title}
+                          </h3>
+
+                          {/* Excerpt */}
+                          <p className="text-xs text-muted-text leading-relaxed font-normal mb-6 line-clamp-3">
+                            {blog.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bottom Meta & Read More */}
+                      <div className="px-6 pb-6 pt-4 border-t border-card-border/60 flex items-center justify-between text-xs">
+                        <div className="flex items-center space-x-3 text-[10px] text-muted-text font-medium">
+                          <span className="flex items-center space-x-1.5">
+                            <Calendar className="h-3.5 w-3.5" />
+                            <span>{blog.publishedAt || 'August 17, 2026'}</span>
+                          </span>
+                          <span className="flex items-center space-x-1.5">
+                            <Clock className="h-3.5 w-3.5 shrink-0" />
+                            <span>{blog.readTime}</span>
+                          </span>
+                        </div>
+                        <span className="font-semibold text-primary group-hover:text-primary-hover flex items-center space-x-1">
+                          <span>Read More</span>
+                          <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </span>
                       </div>
-                      <span className="font-semibold text-primary group-hover:text-primary-hover flex items-center space-x-1">
-                        <span>Read More</span>
-                        <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Pagination Controls */}
+                <BlogPagination
+                  currentPage={validCurrentPage}
+                  totalPages={totalPages}
+                  category={activeCategory}
+                  search={searchQuery}
+                  onPageChange={handlePageChange}
+                />
+              </>
             ) : (
-              <div className="text-center py-20 glass rounded-3xl border-card-border max-w-xl mx-auto">
-                <p className="text-sm text-muted-text">No articles found matching your criteria. Try adjusting your search query.</p>
+              <div className="text-center py-20 glass rounded-3xl border border-card-border max-w-xl mx-auto space-y-4">
+                <p className="text-sm text-muted-text">
+                  No articles found matching your criteria. Try adjusting your search query or category filter.
+                </p>
+                <button
+                  onClick={handleResetFilters}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-md shadow-primary/20 transition-all cursor-pointer"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  <span>Reset Filters</span>
+                </button>
               </div>
             )}
-
           </div>
         </section>
       </main>
 
       <Footer data={contactData} />
     </>
+  );
+}
+
+export default function BlogPageClient(props: BlogPageClientProps) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <BlogContent {...props} />
+    </Suspense>
   );
 }
