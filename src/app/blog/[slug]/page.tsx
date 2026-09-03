@@ -46,9 +46,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
+  const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog;
 
-  const metaTitle = isMistakesBlog
+  const metaTitle = isBalanceBlog
+    ? 'How to Help Children Balance Quran Learning With School and Extracurricular Activities | OQTutor'
+    : isMistakesBlog
     ? 'Common Quran Reading Mistakes Children Make & How to Correct Them'
     : isChildReadinessBlog
     ? 'How Do You Know Your Child Is Ready to Start Learning the Quran? | OQTutor'
@@ -77,7 +80,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: blog.description,
-    keywords: isMistakesBlog
+    keywords: isBalanceBlog
+      ? [
+          'how to help children balance Quran learning with school and extracurricular activities',
+          'balance Quran learning with school',
+          'Quran and school balance',
+          'children Quran learning routine',
+          'online Quran classes for kids',
+          'Quran study schedule for kids',
+          'how to balance Quran and homework',
+          'Islamic education routine for school kids',
+          'Quran classes for busy children',
+          'manage Quran and sports activities',
+          'Quran teacher communication parents',
+          'kids Quran practice consistency',
+          'online Quran tutor USA'
+        ]
+      : isMistakesBlog
       ? [
           'common Quran reading mistakes in children',
           'Quran reading mistakes children make',
@@ -219,6 +238,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isChildTimelineBlog = resolvedParams.slug === 'how-long-does-it-take-for-a-child-to-complete-the-quran-online';
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
+  const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -237,6 +257,68 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isBalanceBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How can children balance Quran classes with school?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Create a weekly schedule that considers school hours, homework, extracurricular activities, Quran lessons, family time, and rest. Choose consistent Quran learning periods and adjust them during particularly demanding school weeks."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much time should a child spend learning Quran each day?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no single amount that suits every child. Age, Quran level, attention span, school workload, and family routine all matter. Focus on consistent learning that your child can maintain without creating unnecessary stress."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should Quran classes come before or after homework?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Either can work. Some children concentrate better before homework while others prefer completing school responsibilities first. Test both options and observe when your child learns most effectively."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can parents motivate children to learn Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use encouragement, realistic goals, positive feedback, and age appropriate choices. Connect Quran learning with understanding and everyday life rather than focusing only on memorization or correction."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should parents do when a child becomes overwhelmed?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Look at the entire schedule. Consider reducing unnecessary commitments, changing the timing of Quran lessons, creating more rest, and communicating with the Quran teacher. A temporary adjustment can help the child return to learning with greater focus."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can online Quran classes help busy families?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Online Quran classes can provide scheduling flexibility because children can learn from home without travelling to another location. However, the class still needs a suitable time, quiet environment, and focused learning routine."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isMistakesBlog && (
         <script
@@ -1279,7 +1361,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isMistakesBlog ? (
+            {isBalanceBlog ? (
+              <ArticleContentBalanceQuranSchool />
+            ) : isMistakesBlog ? (
               <ArticleContentMistakesChildrenMake />
             ) : isChildReadinessBlog ? (
               <ArticleContentChildReadiness />
@@ -10515,6 +10599,808 @@ function ArticleContentMistakesChildrenMake() {
             </h3>
             <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
               Experience gentle, live 1-on-1 recitation correction with verified male and female scholars. Free trial, no obligation.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/courses/quran-for-kids"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore Kids Quran Classes</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  );
+}
+
+function ArticleContentBalanceQuranSchool() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 not-prose shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Summary: Balancing Quran Learning, School &amp; Activities</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          Balancing Quran study with school and extracurriculars is not about cramming an impossible schedule. It is built on <strong>realistic expectations, consistent short sessions, proactive communication with tutors, and protecting essential rest</strong>. By integrating flexible <Link href="/courses/quran-for-kids" className="text-primary font-bold hover:underline">online Quran classes for kids</Link> into your weekly rhythm, children cultivate a joyful, lasting bond with the Holy Quran without burnout.
+        </p>
+      </div>
+
+      {/* Quick Navigation Box */}
+      <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-foreground font-bold text-sm">
+          <ListChecks className="h-4 w-4 text-primary" />
+          <span>Table of Contents: In This Guide</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-muted-text">
+          <a href="#why-balance-matters" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Why Balance Matters for Children</span>
+          </a>
+          <a href="#start-with-real-schedule" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Start With Your Child&apos;s Real Schedule</span>
+          </a>
+          <a href="#consistency-over-long-sessions" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Choose Consistency Over Long Sessions</span>
+          </a>
+          <a href="#weekly-family-schedule" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Build a Weekly Family Schedule</span>
+          </a>
+          <a href="#coordinate-school-demands" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Coordinate Quran Learning With School Demands</span>
+          </a>
+          <a href="#short-practice-sessions" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Use Short Quran Practice Sessions</span>
+          </a>
+          <a href="#protect-sleep-rest" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Protect Sleep and Rest</span>
+          </a>
+          <a href="#reduce-digital-distractions" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Reduce Digital Distractions</span>
+          </a>
+          <a href="#children-voice-routine" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Let Children Have a Voice in Their Routine</span>
+          </a>
+          <a href="#avoid-competition" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Avoid Turning Quran Learning Into a Competition</span>
+          </a>
+          <a href="#make-learning-meaningful" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Make Quran Learning Meaningful</span>
+          </a>
+          <a href="#adjust-busy-seasons" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Adjust the Routine During Busy Seasons</span>
+          </a>
+          <a href="#signs-of-overload" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Watch for Signs of Overload</span>
+          </a>
+          <a href="#work-with-quran-teacher" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Work With the Quran Teacher</span>
+          </a>
+          <a href="#balance-formula" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>A Simple Balance Formula for Parents</span>
+          </a>
+          <a href="#faq-section" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Frequently Asked Questions</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Children today have a lot on their plates. School brings homework and projects. Sports bring practices and games. Music lessons, hobbies, friends, family time, and screen time all compete for attention.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          For Muslim parents, there is another important priority: helping children learn and connect with the Quran.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          The challenge is not choosing between Quran learning, school, and extracurricular activities. The real goal is creating a routine where each part of a child&apos;s life has an appropriate place.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          A successful Quran learning routine should support a child&apos;s education, wellbeing, family life, and Islamic development rather than making the child feel constantly busy.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          The good news is that balance does not require a perfect schedule. It requires realistic expectations, consistent routines, and enough flexibility to adapt when life gets busy.
+        </p>
+      </section>
+
+      {/* Section: Why Balance Matters for Children */}
+      <section id="why-balance-matters" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Award className="h-7 w-7 text-primary" />
+          <span>Why Balance Matters for Children</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Children learn best when they have time for different types of experiences.
+        </p>
+        <p className="text-base text-muted-text">
+          School develops academic knowledge. Sports and physical activities support fitness and teamwork. Hobbies allow children to explore their interests. <Link href="/courses/quran-for-kids" className="text-primary font-bold hover:underline">Quran learning</Link> develops their relationship with the Quran and Islamic values.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          These activities do not have to compete with each other.
+        </p>
+
+        {/* CDC External Citation Box */}
+        <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2 not-prose">
+          <div className="flex items-center space-x-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+            <CheckCircle className="h-5 w-5" />
+            <span>Health &amp; Cognitive Research on Daily Movement</span>
+          </div>
+          <p className="text-sm text-foreground/90 leading-relaxed">
+            The <a href="https://www.cdc.gov/physicalactivity/basics/children/index.htm" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Centers for Disease Control and Prevention (CDC)</a> recommends that children and teenagers between 6 and 17 years old get at least 60 minutes of physical activity each day. The CDC also notes that regular physical activity can support cognition, memory, and academic performance.
+          </p>
+        </div>
+
+        <p className="text-base text-muted-text">
+          That means parents should not treat every minute outside school as study time. Children need opportunities to move, play, relax, socialize, and enjoy childhood.
+        </p>
+        <p className="text-base text-muted-text">
+          The same principle applies to Quran learning.
+        </p>
+        <p className="text-base text-muted-text">
+          A child who associates the Quran with constant pressure may struggle to develop a positive long term relationship with learning. A child who experiences Quran learning as a meaningful and manageable part of daily life can gradually build consistency.
+        </p>
+      </section>
+
+      {/* Section: Start With Your Child's Real Schedule */}
+      <section id="start-with-real-schedule" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>Start With Your Child&apos;s Real Schedule</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          One of the biggest mistakes parents make is creating a schedule based on an ideal day rather than the child&apos;s actual day.
+        </p>
+        <p className="text-base text-muted-text">
+          Before adding Quran classes, look at everything your child already does. Write down:
+        </p>
+
+        {/* 4 Schedule Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose pt-2">
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-base">
+              <BookOpen className="h-5 w-5" />
+              <h3>School Commitments</h3>
+            </div>
+            <p className="text-sm text-muted-text">
+              Include school hours, homework, projects, tests, and travel time.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-secondary font-bold text-base">
+              <Sparkles className="h-5 w-5" />
+              <h3>Extracurricular Activities</h3>
+            </div>
+            <p className="text-sm text-muted-text">
+              Include football, basketball, swimming, martial arts, music, art, tutoring, clubs, and other regular commitments.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-emerald-500 font-bold text-base">
+              <Users className="h-5 w-5" />
+              <h3>Family Responsibilities</h3>
+            </div>
+            <p className="text-sm text-muted-text">
+              Consider meals, family time, household responsibilities, mosque activities, and religious events.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-purple-500 font-bold text-base">
+              <Heart className="h-5 w-5" />
+              <h3>Rest and Personal Time</h3>
+            </div>
+            <p className="text-sm text-muted-text">
+              Children also need unstructured time. They should not feel that every hour of their day has an assignment attached to it.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          Once you see the complete picture, you can identify realistic spaces for Quran learning.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          This simple exercise often reveals that the problem is not a lack of time. The problem is that the available time has never been organized properly.
+        </p>
+      </section>
+
+      {/* Section: Choose Consistency Over Long Sessions */}
+      <section id="consistency-over-long-sessions" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <CheckCircle2 className="h-7 w-7 text-primary" />
+          <span>Choose Consistency Over Long Sessions</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          For many children, a short and consistent Quran lesson can be easier to maintain than occasional long sessions.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents should consider their child&apos;s age, attention span, current Quran level, school workload, and overall routine when deciding how frequently lessons should occur.
+        </p>
+        <p className="text-base text-muted-text">
+          The objective should not be to fill the calendar with Quran classes. The objective should be to create regular contact with the Quran.
+        </p>
+        <p className="text-base text-muted-text">
+          For example, a family may find that <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading lessons</Link> work well after homework on certain weekdays. Another family may prefer lessons earlier in the afternoon or during quieter weekend periods with <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed practice</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          There is no universal schedule that works for every child.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          The best schedule is one that the child can follow consistently without sacrificing sleep, school responsibilities, physical activity, or healthy family time.
+        </p>
+      </section>
+
+      {/* Section: Build a Weekly Family Schedule */}
+      <section id="weekly-family-schedule" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Calendar className="h-7 w-7 text-primary" />
+          <span>Build a Weekly Family Schedule</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          A weekly schedule can make balancing Quran learning much easier.
+        </p>
+        <p className="text-base text-muted-text">
+          Instead of deciding every day when the child will study, choose regular Quran learning periods in advance. For example:
+        </p>
+
+        {/* 7-Day Weekly Rhythm Grid */}
+        <div className="space-y-3 not-prose pt-2">
+          {[
+            { day: 'Monday', routine: 'School, homework, Quran lesson, dinner, family time, bedtime routine.', badge: 'Live Lesson Day', color: 'bg-primary/10 text-primary' },
+            { day: 'Tuesday', routine: 'School, sports practice, homework, family time, Quran review.', badge: 'Light Home Review', color: 'bg-secondary/10 text-secondary' },
+            { day: 'Wednesday', routine: 'School, Quran lesson, homework, free time, family activity.', badge: 'Live Lesson Day', color: 'bg-primary/10 text-primary' },
+            { day: 'Thursday', routine: 'School, extracurricular activity, homework, Quran review.', badge: 'Light Home Review', color: 'bg-secondary/10 text-secondary' },
+            { day: 'Friday', routine: 'School or weekend schedule, family activities, Jumuah, lighter Quran practice.', badge: 'Spiritual & Family Focus', color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' },
+            { day: 'Saturday', routine: 'Extracurricular activities, family time, Quran lesson or revision.', badge: 'Flexible Weekend Session', color: 'bg-purple-500/10 text-purple-600 dark:text-purple-400' },
+            { day: 'Sunday', routine: 'Homework preparation, Quran review, planning for the school week.', badge: 'Weekly Prep & Reset', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' }
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center space-x-3">
+                <span className="font-extrabold text-foreground text-sm sm:text-base w-24 shrink-0">{item.day}</span>
+                <span className="text-xs sm:text-sm text-muted-text">{item.routine}</span>
+              </div>
+              <span className={`text-xs font-bold px-3 py-1 rounded-full shrink-0 self-start sm:self-center ${item.color}`}>
+                {item.badge}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          The exact arrangement will depend on your family.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          The important idea is to avoid treating Quran learning as something that must somehow fit into the remaining minutes of the day. Give it a predictable place in the family routine.
+        </p>
+      </section>
+
+      {/* Section: Coordinate Quran Learning With School Demands */}
+      <section id="coordinate-school-demands" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <BookOpen className="h-7 w-7 text-primary" />
+          <span>Coordinate Quran Learning With School Demands</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          School workload changes throughout the year. A normal school week may feel manageable, while exam periods can suddenly become much more demanding.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents should recognize these changes rather than expecting identical Quran performance every week.
+        </p>
+        <p className="text-base text-muted-text">
+          During a lighter academic period, a child may have more energy for Quran reading, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">memorization (Hifz)</Link>, or <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed practice</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          During exams, parents might temporarily reduce additional Quran practice while maintaining the core routine.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          This does not mean abandoning Quran learning. It means adjusting the workload intelligently.
+        </p>
+        <p className="text-base text-muted-text">
+          The same approach can apply when children have major projects, competitions, sports tournaments, or important performances. Balance sometimes means changing the routine instead of forcing the routine to remain unchanged. For more guidance on pacing, see our detailed guide on <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">how long it takes for a child to complete the Quran online</Link>.
+        </p>
+
+        {/* FIRST IMAGE: Coordinate Quran Learning With School Demands */}
+        <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl space-y-2 not-prose bg-foreground/[0.02] p-2">
+          <div className="relative w-full h-[300px] sm:h-[460px] rounded-2xl overflow-hidden">
+            <Image
+              src="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities/coordinate-quran-learning-with-school-demands.jpg"
+              alt="Coordinate Quran Learning With School Demands - Two Important Goals, One Smart Plan with Daily Balanced Plan schedule"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs sm:text-sm text-center text-muted-text font-medium py-2 px-4">
+            Smart scheduling aligns academic school demands with Quran learning without compromising child wellbeing.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: Use Short Quran Practice Sessions */}
+      <section id="short-practice-sessions" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>Use Short Quran Practice Sessions</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Quran learning does not always need to happen during a formal lesson. Parents can create small opportunities throughout the week.
+        </p>
+        <p className="text-base text-muted-text">
+          A child might review previously learned verses for a few minutes after school. Another child may practice reading before bedtime. A parent might listen while the child reads during a quiet family moment.
+        </p>
+        <p className="text-base text-muted-text">
+          Small review sessions can help reinforce what the child learned during a formal Quran class.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          The key is to keep the practice focused. Instead of saying, &ldquo;Go practice Quran,&rdquo; give the child a specific task:
+        </p>
+
+        {/* Micro-tasks checklist */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose pt-2">
+          {[
+            'Read today\'s assigned verses once.',
+            'Review the verses learned yesterday.',
+            'Practice two specific Tajweed rules.',
+            'Read one page carefully and smoothly.',
+            'Recite a previously memorized passage to a parent.'
+          ].map((task, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center space-x-2.5">
+              <Check className="h-4 w-4 text-primary shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-foreground">{task}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          Clear instructions make practice feel more manageable and prevent frustration. If your child is beginning from scratch, starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida phonics</Link> ensures short, confident practice sessions every day. You can also explore our guide on <Link href="/blog/common-quran-reading-mistakes-children-make" className="text-primary font-semibold hover:underline">common Quran reading mistakes children make and how to fix them</Link>.
+        </p>
+      </section>
+
+      {/* Section: Protect Sleep and Rest */}
+      <section id="protect-sleep-rest" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Heart className="h-7 w-7 text-primary" />
+          <span>Protect Sleep and Rest</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          A balanced schedule must include adequate rest.
+        </p>
+        <p className="text-base text-muted-text">
+          If a child regularly finishes homework late, attends activities in the evening, completes a Quran lesson, and then stays up even later to finish schoolwork, the schedule needs adjustment.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents should not measure success by the number of activities they can fit into one day. A healthy routine should allow children to learn without constantly feeling exhausted.
+        </p>
+
+        {/* AAP Media Plan Callout */}
+        <div className="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 space-y-2 not-prose">
+          <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-bold text-sm">
+            <CheckCircle className="h-5 w-5" />
+            <span>American Academy of Pediatrics (AAP) Guidance</span>
+          </div>
+          <p className="text-sm text-foreground/90 leading-relaxed">
+            The <a href="https://www.healthychildren.org/English/media/Pages/default.aspx" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">American Academy of Pediatrics (AAP)</a> recommends creating family routines that protect time for healthy activities and reduce unnecessary digital distractions. Its <a href="https://www.aap.org/en/patient-care/media-and-children/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Family Media Plan</a> encourages families to establish screen-free periods and make room for activities such as reading, outdoor play, hobbies, and family interaction.
+          </p>
+        </div>
+
+        <p className="text-base text-muted-text">
+          This is particularly useful when online Quran classes take place on a tablet or computer. The device should serve the lesson rather than become an invitation to open five other apps.
+        </p>
+      </section>
+
+      {/* Section: Reduce Digital Distractions */}
+      <section id="reduce-digital-distractions" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Laptop className="h-7 w-7 text-primary" />
+          <span>Reduce Digital Distractions</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran classes can offer flexibility, but the learning environment matters.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          Before class begins, encourage your child to:
+        </p>
+
+        {/* Pre-class Checklist */}
+        <div className="space-y-2.5 not-prose pt-1">
+          {[
+            'Close unnecessary applications and browser tabs.',
+            'Turn off distracting social and game notifications.',
+            'Put the smartphone away in another room if not needed for class.',
+            'Choose a quiet, dedicated learning desk free from background noise.',
+            'Keep the physical Mushaf (Quran) and learning materials open and ready.'
+          ].map((item, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center space-x-2.5">
+              <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-foreground">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          The American Academy of Pediatrics recommends screen-free times and places and suggests reducing distractions such as unnecessary notifications.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          A focused twenty-minute learning session can be far more productive than a longer lesson filled with interruptions.
+        </p>
+      </section>
+
+      {/* Section: Let Children Have a Voice in Their Routine */}
+      <section id="children-voice-routine" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Users className="h-7 w-7 text-primary" />
+          <span>Let Children Have a Voice in Their Routine</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Children are more likely to cooperate with a routine when they understand it and have some input.
+        </p>
+        <p className="text-base text-muted-text">
+          Ask questions such as:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose pt-2">
+          {[
+            '“When do you feel most focused during the day?”',
+            '“Which days feel the busiest with school and sports?”',
+            '“Would you rather have your Quran lesson before or after your activity?”',
+            '“Which Quran skill or Surah do you enjoy practicing most?”'
+          ].map((q, idx) => (
+            <div key={idx} className="p-4 rounded-2xl bg-primary/5 border border-primary/20 text-xs sm:text-sm font-medium text-foreground italic">
+              {q}
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          This does not mean children should control every part of the schedule. Parents still provide structure and guidance. However, giving children appropriate choices can make the routine feel collaborative instead of imposed.
+        </p>
+
+        {/* Harvard Center on the Developing Child Reference */}
+        <div className="p-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 space-y-2 not-prose">
+          <div className="flex items-center space-x-2 text-purple-600 dark:text-purple-400 font-bold text-sm">
+            <Sparkles className="h-5 w-5" />
+            <span>Harvard University Research on Responsive Interactions</span>
+          </div>
+          <p className="text-sm text-foreground/90 leading-relaxed">
+            <a href="https://developingchild.harvard.edu/science/key-concepts/serve-and-return/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Harvard University&apos;s Center on the Developing Child</a> emphasizes the importance of responsive interactions (&ldquo;serve and return&rdquo;) between children and caring adults. Such interactions help support children&apos;s cognitive development and provide a vital foundation for lifelong learning and emotional wellbeing.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: Avoid Turning Quran Learning Into a Competition */}
+      <section id="avoid-competition" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Heart className="h-7 w-7 text-primary" />
+          <span>Avoid Turning Quran Learning Into a Competition</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Every child learns at a different pace.
+        </p>
+        <p className="text-base text-muted-text">
+          One child may memorize quickly. Another may need more repetition. One child may enjoy Tajweed while another enjoys Quran stories or understanding meanings.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          Comparing siblings or classmates can create unnecessary pressure.
+        </p>
+
+        {/* Encouragement Comparison Box */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose pt-2">
+          <div className="p-5 rounded-2xl bg-rose-500/10 border border-rose-500/20 space-y-2">
+            <div className="text-xs font-bold text-rose-600 uppercase tracking-wider">Instead of Saying:</div>
+            <p className="text-sm font-semibold text-foreground italic">
+              &ldquo;Your brother memorized this Surah much faster.&rdquo;
+            </p>
+          </div>
+          <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-2">
+            <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Try Saying:</div>
+            <p className="text-sm font-semibold text-foreground italic">
+              &ldquo;You have improved so much in your pronunciation compared with last week!&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          Specific encouragement helps children recognize progress. Praise effort, consistency, careful reading, and improvement rather than only praising the amount memorized.
+        </p>
+        <p className="text-base text-muted-text">
+          This approach helps children understand that Quran learning is a rewarding lifelong journey. Check our guide on <Link href="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran" className="text-primary font-semibold hover:underline">how do you know your child is ready to start learning Quran</Link> for additional milestones.
+        </p>
+      </section>
+
+      {/* Section: Make Quran Learning Meaningful */}
+      <section id="make-learning-meaningful" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>Make Quran Learning Meaningful</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Children are naturally curious. They may want to know what a verse means, why a particular word appears repeatedly, or how a Quranic teaching applies to everyday life.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          Do not make every Quran interaction about correcting mistakes.
+        </p>
+        <p className="text-base text-muted-text">
+          Sometimes ask your child what they understood. You could discuss a simple lesson from a Surah during dinner or connect an Islamic value with something happening at school through an <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies course</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          Harvard&apos;s research on responsive interactions highlights the value of following a child&apos;s interests and engaging in meaningful back-and-forth communication. The Quran should never feel like another dry worksheet that disappears into the school backpack.
+        </p>
+      </section>
+
+      {/* Section: Adjust the Routine During Busy Seasons */}
+      <section id="adjust-busy-seasons" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Calendar className="h-7 w-7 text-primary" />
+          <span>Adjust the Routine During Busy Seasons</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Some weeks will simply be busy.
+        </p>
+        <p className="text-base text-muted-text">
+          During Ramadan, school examinations, sports competitions, family travel, or major school projects, your child&apos;s routine may need temporary changes.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          Instead of asking, &ldquo;How can we maintain the exact same schedule?&rdquo; ask: &ldquo;What is realistic for our family this week?&rdquo;
+        </p>
+        <p className="text-base text-muted-text">
+          You might reduce the amount of independent review, move a lesson to another day, or focus on maintaining basic Quran reading until the busy period ends.
+        </p>
+        <p className="text-base text-muted-text">
+          Once the demanding period passes, gradually return to the normal routine. Flexibility prevents temporary challenges from becoming long term frustration.
+        </p>
+      </section>
+
+      {/* Section: Watch for Signs of Overload */}
+      <section id="signs-of-overload" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <AlertTriangle className="h-7 w-7 text-amber-500" />
+          <span>Watch for Signs of Overload</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents should pay attention to changes in their child&apos;s behavior. Possible signs that the schedule needs adjustment include:
+        </p>
+
+        {/* 8 Warning Signs */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose pt-2">
+          {[
+            'Frequent complaints about feeling exhausted or overwhelmed.',
+            'Avoiding activities the child previously enjoyed.',
+            'Difficulty concentrating during lessons or homework.',
+            'Increasing frustration, tears, or resistance during Quran class.',
+            'Regular arguments with parents about the daily schedule.',
+            'School homework regularly running late into the night.',
+            'Sudden loss of interest or joy in Quran learning.',
+            'Poor sleep routines, trouble waking up, or restless nights.'
+          ].map((sign, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center space-x-2.5">
+              <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-foreground">{sign}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          One sign alone does not automatically mean that the schedule is too demanding. However, repeated patterns deserve attention.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          The solution may simply involve reducing commitments, changing lesson timing, creating more rest, or speaking with the child&apos;s teacher.
+        </p>
+      </section>
+
+      {/* Section: Work With the Quran Teacher */}
+      <section id="work-with-quran-teacher" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <UserCheck className="h-7 w-7 text-primary" />
+          <span>Work With the Quran Teacher</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not have to manage everything alone.
+        </p>
+        <p className="text-base text-muted-text">
+          A good Quran teacher can help parents understand what the child needs to practice between lessons and how much work is realistic.
+        </p>
+        <p className="text-base text-muted-text">
+          Communication becomes especially important when school becomes demanding. Parents can tell the teacher:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose pt-2">
+          {[
+            '“My child has exams this week.”',
+            '“We have a sports tournament this weekend.”',
+            '“My child is struggling with concentration after school.”',
+            '“We need a lighter practice routine temporarily.”'
+          ].map((msg, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-300">
+              {msg}
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          This information helps the teacher adjust expectations appropriately.
+        </p>
+        <p className="text-base text-muted-text">
+          For families using <Link href="/courses/quran-for-kids" className="text-primary font-bold hover:underline">online Quran classes</Link>, one major advantage is that lessons can often fit more easily around school and extracurricular commitments because children can learn from home without commuting. Discover our tips on <Link href="/blog/select-right-online-quran-tutor" className="text-primary font-semibold hover:underline">how to select the right online Quran tutor</Link> and <Link href="/blog/tips-keep-kids-motivated-online-quran" className="text-primary font-semibold hover:underline">how to keep kids motivated in online Quran classes</Link>.
+        </p>
+
+        {/* SECOND IMAGE: Work With the Quran Teacher */}
+        <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl space-y-2 not-prose bg-foreground/[0.02] p-2">
+          <div className="relative w-full h-[300px] sm:h-[460px] rounded-2xl overflow-hidden">
+            <Image
+              src="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities/work-with-the-quran-teacher.jpg"
+              alt="Work With the Quran Teacher - A Strong Partnership for Your Child's Quran Learning Success in online Quran classes"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs sm:text-sm text-center text-muted-text font-medium py-2 px-4">
+            A strong partnership between parents and certified Quran tutors fosters steady progress and joyful Islamic learning.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: A Simple Balance Formula for Parents */}
+      <section id="balance-formula" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>A Simple Balance Formula for Parents</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          When planning your child&apos;s week, think about five core areas:
+        </p>
+
+        {/* 5 Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 not-prose pt-2">
+          {[
+            { title: 'School', desc: 'Academic responsibilities come first during school hours and major exam periods.', color: 'border-blue-500/30 bg-blue-500/5' },
+            { title: 'Quran', desc: 'Maintain regular and realistic Quran learning at a steady, manageable pace.', color: 'border-emerald-500/30 bg-emerald-500/5' },
+            { title: 'Activity', desc: 'Give children opportunities for physical activity, sports, and healthy hobbies.', color: 'border-amber-500/30 bg-amber-500/5' },
+            { title: 'Family', desc: 'Protect meaningful family meals, discussions, and spiritual bonding.', color: 'border-purple-500/30 bg-purple-500/5' },
+            { title: 'Rest', desc: 'Leave enough space for quality sleep, relaxation, and mental recovery.', color: 'border-rose-500/30 bg-rose-500/5' }
+          ].map((item, idx) => (
+            <div key={idx} className={`p-4 rounded-2xl border ${item.color} space-y-2`}>
+              <h3 className="font-bold text-foreground text-base">{item.title}</h3>
+              <p className="text-xs text-muted-text leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          If one area starts consuming almost all of the child&apos;s time, the schedule probably needs adjustment.
+        </p>
+        <p className="text-base text-muted-text font-medium">
+          Balance does not mean giving every activity exactly the same amount of time. It means giving each important area enough space to support the child&apos;s overall development.
+        </p>
+      </section>
+
+      {/* Section: Frequently Asked Questions */}
+      <section id="faq-section" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How can children balance Quran classes with school?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Create a weekly schedule that considers school hours, homework, extracurricular activities, Quran lessons, family time, and rest. Choose consistent Quran learning periods and adjust them during particularly demanding school weeks.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How much time should a child spend learning Quran each day?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              There is no single amount that suits every child. Age, Quran level, attention span, school workload, and family routine all matter. Focus on consistent learning (such as 15 to 30 minutes) that your child can maintain without creating unnecessary stress.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Should Quran classes come before or after homework?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Either can work. Some children concentrate better before homework when their energy is high, while others prefer completing school responsibilities first to enjoy a relaxed Quran class. Test both options and observe when your child learns most effectively.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How can parents motivate children to learn Quran?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Use encouragement, realistic goals, positive feedback, and age-appropriate choices. Connect Quran learning with understanding and everyday life rather than focusing only on memorization or correction.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What should parents do when a child becomes overwhelmed?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Look at the entire schedule. Consider reducing unnecessary commitments, changing the timing of Quran lessons, creating more rest, and communicating with the Quran teacher. A temporary adjustment can help the child return to learning with greater focus.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Can online Quran classes help busy families?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Online Quran classes provide great scheduling flexibility because children can learn from home without travelling to another location. However, the class still needs a suitable time, quiet environment, and focused learning routine.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Thoughts & CTA */}
+      <section className="space-y-4 pt-4 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Final Thoughts
+        </h2>
+        <p className="text-base text-muted-text font-medium">
+          Helping children balance Quran learning with school and extracurricular activities is not about creating the perfect timetable. It is about understanding the child behind the timetable.
+        </p>
+        <p className="text-base text-muted-text">
+          A successful routine gives children structure without removing flexibility. It encourages Quran learning without making the Quran feel like another source of academic pressure. It protects school responsibilities while leaving room for sports, hobbies, family, rest, and play.
+        </p>
+        <p className="text-base text-muted-text">
+          Start small. Choose realistic Quran learning times. Reduce unnecessary distractions. Talk with your child. Communicate with the Quran teacher. Review the schedule when school demands change.
+        </p>
+        <p className="text-base text-muted-text">
+          Most importantly, remember that the goal is not simply to make a child complete more lessons. The goal is to help the child build a lasting and positive relationship with the Quran while growing academically, physically, socially, and emotionally.
+        </p>
+        <p className="text-base text-muted-text">
+          A balanced routine may require a little planning from parents, but it can make Quran learning much more sustainable for the entire family.
+        </p>
+        <p className="text-base text-muted-text">
+          Explore our tailored programs for children and families across the US and worldwide, including <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-bold hover:underline">Online Quran Classes for Kids in USA</Link>, <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz Quran memorization</Link>, and <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida foundation</Link> at <Link href="/locations/usa" className="text-primary font-semibold hover:underline">OQTutor USA</Link>.
+        </p>
+
+        {/* Call to Action Card */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Book a Free Assessment &amp; Trial Quran Class for Your Child
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Experience personalized 1-on-1 Quran lessons designed around your child&apos;s school schedule. Free trial, flexible times, no obligation.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

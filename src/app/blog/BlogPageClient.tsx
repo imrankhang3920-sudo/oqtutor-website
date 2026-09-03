@@ -57,6 +57,7 @@ const mapping: Record<string, string> = {
   'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
   'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': '/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg',
   'common-quran-reading-mistakes-children-make': '/blog/common-quran-reading-mistakes-children-make/common-quran-reading-mistakes-cover.jpg',
+  'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities': '/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities/how-to-help-children-balance-quran-learning-with-school-cover.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -97,6 +98,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'how-long-does-it-take-for-a-child-to-complete-the-quran-online': 'Young Muslim girl reciting Quran on wooden rehal during online Quran lesson with female tutor on laptop screen',
     'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': 'Muslim child reading Quran with parents and practicing prayer at home',
     'common-quran-reading-mistakes-children-make': 'Young Muslim boy reciting Holy Quran on wooden stand and avoiding reading from memory mistakes',
+    'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities': 'Muslim child studying Quran and school subjects at a desk with daily balanced plan schedule',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
