@@ -282,7 +282,7 @@ export default async function HomePage() {
                     Our specialized <Link href="/locations/usa" className="text-primary hover:underline font-semibold">Quran Classes for Kids USA</Link> solve these challenges. We provide a focused, distraction-free digital classroom where young learners interact one-on-one with certified, patient Quran teachers. Lessons are adjusted to the child's age, emotional maturity, and initial learning level.
                   </p>
                   <p>
-                    Through visual resources, gamified learning elements, and positive reinforcement, we construct a healthy, encouraging environment that inspires a long-term connection with the Quran. Our tutors maintain regular, detailed communication with parents, providing monthly progress reports to track recitation speed and Tajweed rules.
+                    Through visual resources, gamified learning elements, and positive reinforcement, we construct a healthy, encouraging environment that inspires a long-term connection with the Quran. Our tutors maintain regular, detailed communication with parents, providing monthly progress reports to track recitation speed and Tajweed rules. Explore our dedicated <Link href="/locations/usa/california" className="text-primary hover:underline font-semibold">California Quran Classes</Link> to learn how California families overcome commute challenges.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

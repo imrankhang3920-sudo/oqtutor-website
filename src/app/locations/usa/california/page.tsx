@@ -242,7 +242,13 @@ export default async function CaliforniaQuranClassesPage() {
     }
   ];
 
-  const uniqueFaqs = [
+  interface FAQItem {
+    question: string;
+    answer: string;
+    jsxAnswer?: React.ReactNode;
+  }
+
+  const uniqueFaqs: FAQItem[] = [
     {
       question: "Does Daylight Saving Time Affect Class Scheduling?",
       answer: "Yes, minimally. When California springs forward in March (2:00 AM → 3:00 AM) or falls back in November, all Pacific Time slots automatically adjust without requiring manual recalculation, keeping your lesson aligned with your household clock."
@@ -257,7 +263,16 @@ export default async function CaliforniaQuranClassesPage() {
     },
     {
       question: "Do You Accommodate UCLA/Stanford Semester Schedules?",
-      answer: "Yes. Private and public university schedules vary across quarter and semester systems. We accommodate students at UCLA, Stanford, USC, and other California campuses with flexible week-to-week slot adjustments."
+      answer: "Yes. Private and public university schedules vary across quarter and semester systems. We accommodate students at UCLA, Stanford, USC, and other California campuses with flexible week-to-week slot adjustments.",
+      jsxAnswer: (
+        <>
+          Yes. Private and public university schedules vary across quarter and semester systems. We accommodate students at{' '}
+          <Link href="/how-it-works" className="text-primary font-semibold hover:underline">
+            UCLA and Stanford
+          </Link>
+          , USC, and other California campuses with flexible week-to-week slot adjustments.
+        </>
+      )
     },
     {
       question: "How Do You Handle Summer Vacation Flexibility?",
@@ -575,7 +590,7 @@ export default async function CaliforniaQuranClassesPage() {
                 <li className="flex items-start space-x-3">
                   <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
                   <div>
-                    <strong className="text-foreground font-semibold">Escalating Facility &amp; Tuition Costs:</strong> High commercial real estate costs across California mean brick-and-mortar Islamic centers charge substantial registration, security, and facility fees on top of standard tuition, placing an excessive burden on families with multiple children.
+                    <strong className="text-foreground font-semibold">Escalating Facility &amp; Tuition Costs:</strong> High commercial real estate costs across California mean brick-and-mortar <Link href="/locations/usa" className="text-primary font-semibold hover:underline">Islamic centers</Link> charge substantial registration, security, and facility fees on top of standard tuition, placing an excessive burden on families with multiple children.
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -710,7 +725,7 @@ export default async function CaliforniaQuranClassesPage() {
                       <strong>California Pain Point:</strong> In a crowded 60-minute weekend school class with 18 children, each student reads aloud to the teacher for barely 3 to 4 minutes.
                     </p>
                     <p className="text-muted-text">
-                      <strong className="text-foreground font-semibold">OQTutor Solution:</strong> Every session is private and one-on-one. For 30 continuous minutes, the certified Qari listens exclusively to your child, catching subtle tongue-placement errors on letters like <em>Dhad (ض)</em>, <em>Qaf (ق)</em>, and <em>Ayn (ع)</em> in real time.
+                      <strong className="text-foreground font-semibold">OQTutor Solution:</strong> Every session is private and one-on-one. For 30 continuous minutes, the certified Qari listens exclusively to your child, catching subtle tongue-placement errors on letters like <em>Dhad (ض)</em>, <em>Qaf (ق)</em>, and <em>Ayn (ع)</em> in real time with authentic <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>.
                     </p>
                   </div>
                 </div>
@@ -726,7 +741,7 @@ export default async function CaliforniaQuranClassesPage() {
                       <strong>California Pain Point:</strong> Over 65% of Silicon Valley and Irvine Muslim families prefer female teachers for their daughters, yet local centers rarely have qualified female staff available on weekdays.
                     </p>
                     <p className="text-muted-text">
-                      <strong className="text-foreground font-semibold">OQTutor Solution:</strong> We maintain a dedicated roster of over 20+ verified, Alimah-certified female instructors with Ijazah credentials, ready to teach California sisters and young children during peak Pacific hours.
+                      <strong className="text-foreground font-semibold">OQTutor Solution:</strong> We maintain a dedicated roster of over 20+ verified, Alimah-certified female instructors with Ijazah credentials, ready to teach California sisters and young children learning <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> and Quran recitation during peak Pacific hours.
                     </p>
                   </div>
                 </div>
@@ -1322,7 +1337,7 @@ export default async function CaliforniaQuranClassesPage() {
                     <span>Southern California</span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">
-                    Greater Los Angeles, Orange County &amp; San Diego
+                    Greater Los Angeles, Orange County &amp; <Link href="/locations/usa/california" className="text-primary hover:underline">San Diego</Link>
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed mb-4">
                     <strong className="text-foreground">Counties:</strong> Los Angeles, Orange, San Diego, Riverside, San Bernardino.
@@ -1344,7 +1359,7 @@ export default async function CaliforniaQuranClassesPage() {
                     <span>San Francisco Bay Area</span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">
-                    Silicon Valley, East Bay &amp; Peninsula
+                    <Link href="/locations/usa/california" className="text-primary hover:underline">Bay Area</Link> (Silicon Valley, East Bay &amp; Peninsula)
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed mb-4">
                     <strong className="text-foreground">Counties:</strong> Santa Clara, Alameda, San Mateo, Contra Costa, San Francisco.
@@ -1524,7 +1539,7 @@ export default async function CaliforniaQuranClassesPage() {
                     <span>{faq.question}</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed italic font-normal pl-6">
-                    {faq.answer}
+                    {faq.jsxAnswer || faq.answer}
                   </p>
                 </div>
               ))}
