@@ -1,11 +1,9 @@
 import { cookies } from 'next/headers';
-import { getDBAsync } from '@/data/db';
-import fallbackDbData from '@/data/db.json';
+import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import UKFaqAccordion, { ukFaqData } from '@/components/UKFaqAccordion';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,6 +19,7 @@ import {
   Users,
   Compass,
   Check,
+  HelpCircle,
   MapPin,
   HeartHandshake,
   Award,
@@ -29,6 +28,7 @@ import {
   Target,
   UserCheck,
   ChevronRight,
+  ChevronDown,
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -70,28 +70,85 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function UKQuranClassesPage() {
-  let dbData;
-  try {
-    dbData = (await getDBAsync()) || fallbackDbData;
-  } catch {
-    dbData = fallbackDbData;
-  }
+  const dbData = readDB();
 
   // Check if admin is logged in
-  let adminLoggedIn = false;
-  try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get('admin_token')?.value;
-    adminLoggedIn = token ? verifyAdminToken(token) : false;
-  } catch {
-    adminLoggedIn = false;
-  }
+  const cookieStore = await cookies();
+  const token = cookieStore.get('admin_token')?.value;
+  const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
-  // UK-specific contact data for Contact & Footer
-  const ukContactData = {
-    ...(dbData.contact || fallbackDbData.contact),
-    location: "Online Quran classes serving families across the United Kingdom",
+  // Safe UK contact data
+  const contactData = {
+    email: dbData?.contact?.email || 'hello@oqtutor.com',
+    phone: dbData?.contact?.phone || 'USA: +1 (248) 782-6565 | UK: +44 7490 329339',
+    whatsapp: dbData?.contact?.whatsapp || 'https://wa.me/923478704442',
+    location: 'Online Quran classes serving families across the United Kingdom',
+    aboutText: dbData?.contact?.aboutText || 'Online Quran Tutor (OQTutor) is a leading global online platform providing dedicated 1-on-1 Quran, Tajweed, and Islamic Studies education for students of all ages.',
   };
+
+  // 10 UK FAQs for visible render and schema
+  const ukFaqs = [
+    {
+      id: "uk-faq-1",
+      question: "How do online Quran classes work for students in the UK?",
+      directAnswer: "Online Quran classes are live, one-to-one video lessons conducted through an interactive digital classroom on your computer, laptop, or tablet.",
+      explanation: "After booking a free trial, you are matched with a qualified tutor who shares the digital Quran or Noorani Qaida on screen. The tutor listens to the student recite in real time, corrects pronunciation and Tajweed immediately, and provides regular progress updates to parents."
+    },
+    {
+      id: "uk-faq-2",
+      question: "Can children in the UK learn Quran online effectively?",
+      directAnswer: "Yes, children learn very effectively online through 30-minute private lessons designed specifically for young attention spans.",
+      explanation: "Tutors use child-friendly visual materials, positive encouragement, and structured lesson plans. One-to-one attention ensures children remain engaged and supported throughout each lesson without the distractions or peer pressure of large physical classes."
+    },
+    {
+      id: "uk-faq-3",
+      question: "Are online Quran classes available for adults in the UK?",
+      directAnswer: "Yes, OQTutor offers private, one-to-one Quran classes tailored specifically for UK adult learners.",
+      explanation: "Lessons fit around full-time work, university timetables, and family commitments with early morning, evening, and weekend slots in GMT/BST. Adults can start from the Arabic alphabet, refine Tajweed rules, or study Quran translation and Tafseer at their own pace in a respectful, judgment-free environment."
+    },
+    {
+      id: "uk-faq-4",
+      question: "Can I choose a female Quran teacher for sisters or daughters?",
+      directAnswer: "Yes, qualified female Quran teachers (Alimas and Qariahs) are available for sisters and young children.",
+      explanation: "Our female tutors provide a comfortable, private, and supportive learning environment for Noorani Qaida, Tajweed, Quran reading, and Hifz. You can select your tutor gender preference during registration."
+    },
+    {
+      id: "uk-faq-5",
+      question: "Can absolute beginners join without prior Arabic knowledge?",
+      directAnswer: "Yes, beginners of all ages can start with zero prior knowledge of the Arabic language.",
+      explanation: "Beginners start with the Noorani Qaida course, which systematically teaches Arabic letter recognition, letter joining, short vowels (Harakat), and correct articulation points (Makharij) before transitioning to reading full Quranic verses."
+    },
+    {
+      id: "uk-faq-6",
+      question: "Do you teach Quran with Tajweed rules?",
+      directAnswer: "Yes, Tajweed rules are integrated into recitation lessons and also available as a dedicated structured course.",
+      explanation: "Tutors teach essential rules including Makharij (letter articulation points), Ghunnah (nasalisation), Ikhfa, Idghaam, Qalqalah, Madd elongation, and Waqf stopping signs, ensuring accurate and melodious recitation."
+    },
+    {
+      id: "uk-faq-7",
+      question: "Are classes available across all UK cities and regions?",
+      directAnswer: "Yes, OQTutor provides online Quran classes to students across England, Scotland, Wales, and Northern Ireland.",
+      explanation: "Because all classes are 100% online, students from London, Birmingham, Manchester, Leicester, Bradford, Luton, Glasgow, Edinburgh, Cardiff, Belfast, and any other UK town can connect with qualified tutors without commuting in traffic."
+    },
+    {
+      id: "uk-faq-8",
+      question: "How flexible is scheduling around UK school and work timetables?",
+      directAnswer: "Class schedules are completely flexible and operate directly in UK local time (GMT and BST).",
+      explanation: "You can schedule classes after school (4:00 PM to 8:00 PM), on weekends, or during evenings. If family plans change or during UK school half-terms and holidays, you can easily reschedule or pause sessions without penalty."
+    },
+    {
+      id: "uk-faq-9",
+      question: "How often are classes held and how long is each lesson?",
+      directAnswer: "Each lesson is 30 minutes long, with plans available for 3, 5, or 7 sessions per week.",
+      explanation: "The 30-minute duration optimizes focus and retention for both children and adult learners. You can select the weekly frequency that best matches your learning goals, budget, and family routine."
+    },
+    {
+      id: "uk-faq-10",
+      question: "Is there a free trial class before enrolling in a paid plan?",
+      directAnswer: "Yes, OQTutor offers a free trial class with no upfront payment or long-term commitment required.",
+      explanation: "The trial lesson allows you to experience our one-to-one teaching style, assess the student's current level, meet your assigned tutor, and see how our online classroom works before selecting a monthly plan."
+    }
+  ];
 
   // Structured Data: WebPage
   const webPageSchema = {
@@ -218,7 +275,7 @@ export default async function UKQuranClassesPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": ukFaqData.map((faq) => ({
+    "mainEntity": ukFaqs.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -1433,8 +1490,33 @@ export default async function UKQuranClassesPage() {
               </p>
             </div>
 
-            {/* Interactive Accessible Accordion */}
-            <UKFaqAccordion />
+            {/* Native semantic, crawlable, 100% stable details/summary accordion */}
+            <div className="space-y-4 mb-12">
+              {ukFaqs.map((faq) => (
+                <details
+                  key={faq.id}
+                  className="group border border-card-border/70 rounded-2xl glass p-5 sm:p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-md [&_summary::-webkit-details-marker]:hidden bg-white/70 dark:bg-slate-900/50"
+                >
+                  <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none">
+                    <div className="flex items-center space-x-3.5 pr-4">
+                      <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
+                      <span className="leading-snug">{faq.question}</span>
+                    </div>
+                    <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
+                      <ChevronDown className="h-5 w-5" />
+                    </span>
+                  </summary>
+                  <div className="mt-4 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-4 space-y-2">
+                    <p className="font-semibold text-foreground/90">
+                      {faq.directAnswer}
+                    </p>
+                    <p>
+                      {faq.explanation}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
 
             {/* Quick Help Callout */}
             <div className="glass p-6 sm:p-8 rounded-2xl border border-card-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
@@ -1495,11 +1577,11 @@ export default async function UKQuranClassesPage() {
         </section>
 
         {/* Contact Form with UK Context */}
-        <Contact data={ukContactData} />
+        <Contact data={contactData} />
       </main>
 
       {/* Footer with UK Context */}
-      <Footer data={ukContactData} />
+      <Footer data={contactData} />
     </>
   );
 }
