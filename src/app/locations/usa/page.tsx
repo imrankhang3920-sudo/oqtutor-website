@@ -103,6 +103,12 @@ export default async function USALocationsHubPage() {
 
   const activeStates = [
     {
+      name: "California",
+      path: "/locations/usa/california",
+      cities: "Los Angeles, San Francisco, San Jose, San Diego, Irvine, Fremont, Sacramento",
+      desc: "Live 1-on-1 Quran classes in Pacific Time for kids and adults across California from home."
+    },
+    {
       name: "Texas",
       path: "/locations/usa/texas",
       cities: "Houston, Dallas-Fort Worth, Austin, San Antonio, Plano",
@@ -1046,7 +1052,7 @@ export default async function USALocationsHubPage() {
 
             <div className="max-w-4xl mx-auto glass p-6 rounded-2xl border border-card-border/60 text-center">
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                Living in California, Florida, New Jersey, Ohio, Virginia, Washington, or another state? You can still register. Our nationwide program serves students in all 50 states across Eastern, Central, Mountain, and Pacific time zones.
+                Living in Florida, New Jersey, Ohio, Virginia, Washington, Georgia, or another state? You can still register. Our nationwide program serves students in all 50 states across Eastern, Central, Mountain, and Pacific time zones.
               </p>
             </div>
           </div>
