@@ -33,12 +33,26 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor";
-  const metaDescription = "Learn Quran online in California with certified male and female tutors. Enjoy live 1-on-1 Quran classes for kids and adults, Tajweed, Hifz, Noorani Qaida and flexible Pacific Time scheduling.";
+  const metaDescription = "Online Quran classes in California: 1-on-1 personalized learning for Bay Area, LA, San Diego. Avoid I-405 commute. Flexible Pacific Time scheduling. Free trial, no credit card. Female tutors available.";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/california";
 
   return {
     title: metaTitle,
     description: metaDescription,
+    keywords: [
+      "California Quran classes",
+      "Bay Area Quran tutor",
+      "Silicon Valley Islamic education",
+      "San Diego online Quran",
+      "LA Tajweed classes",
+      "Central Valley Hifz program",
+      "Pacific Time Quran learning",
+      "online Quran teacher California",
+      "online Quran classes in California",
+      "Noorani Qaida California",
+      "Quran with Tajweed California",
+      "Hifz Quran classes California",
+    ],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -288,7 +302,7 @@ export default async function CaliforniaQuranClassesPage() {
     "@id": "https://www.oqtutor.com/locations/usa/california#webpage",
     "url": "https://www.oqtutor.com/locations/usa/california",
     "name": "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor",
-    "description": "Learn Quran online in California with certified male and female tutors. Enjoy live 1-on-1 Quran classes for kids and adults, Tajweed, Hifz, Noorani Qaida and flexible Pacific Time scheduling.",
+    "description": "Online Quran classes in California: 1-on-1 personalized learning for Bay Area, LA, San Diego. Avoid I-405 commute. Flexible Pacific Time scheduling. Free trial, no credit card. Female tutors available.",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",
