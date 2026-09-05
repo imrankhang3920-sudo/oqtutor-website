@@ -244,24 +244,28 @@ export default async function CaliforniaQuranClassesPage() {
 
   const uniqueFaqs = [
     {
-      question: "Does Daylight Saving Time (DST) disrupt our class schedule in California?",
-      answer: "No. Our scheduling system automatically synchronizes with California's Pacific Time zone adjustments twice a year (spring forward and fall back). Your assigned lesson slot remains consistent with your local household clock without any manual recalculation."
+      question: "Does Daylight Saving Time Affect Class Scheduling?",
+      answer: "Yes, minimally. When California springs forward in March (2:00 AM → 3:00 AM) or falls back in November, all Pacific Time slots automatically adjust without requiring manual recalculation, keeping your lesson aligned with your household clock."
     },
     {
-      question: "How do classes sync with the California school calendar and testing periods?",
-      answer: "We recognize that California unified school districts schedule intensive state testing (CAASPP) and AP exams throughout April and May. You can pause, reschedule, or adjust lesson frequency during exam weeks with simple advance notice."
+      question: "How Does the California School Calendar Sync with Ramadan & Eid?",
+      answer: "California public schools follow a standard September–June calendar. During Ramadan and Eid, OQTutor provides flexible rescheduling, allowing students to shift class times around Iftar, Taraweeh, and family celebrations with simple advance notice."
     },
     {
-      question: "Can high school and UC/CSU college students take late-night classes?",
-      answer: "Yes. We offer late-evening Pacific Time slots (from 8:00 PM to 10:30 PM PT) tailored specifically for high schoolers with heavy homework loads and university students attending UC Berkeley, UCLA, UC Irvine, UC Davis, Stanford, or CSU campuses."
+      question: "Can My Child Take Classes During College Semester?",
+      answer: "Absolutely. UC system students (Berkeley, LA, San Diego, Irvine, Davis, etc.) maintain predictable semester or quarter schedules, and OQTutor offers dedicated morning and late-evening Pacific Time slots to fit around classes and study blocks."
     },
     {
-      question: "How do you handle summer travel and vacation flexibility in California?",
-      answer: "Whether your family is taking a weekend trip to Yosemite or traveling abroad for summer vacation, your classes can travel with you. You can connect from any location with Wi-Fi or temporarily freeze your subscription until you return."
+      question: "Do You Accommodate UCLA/Stanford Semester Schedules?",
+      answer: "Yes. Private and public university schedules vary across quarter and semester systems. We accommodate students at UCLA, Stanford, USC, and other California campuses with flexible week-to-week slot adjustments."
     },
     {
-      question: "What happens if our neighborhood experiences wildfire smoke or power emergencies?",
-      answer: "California families occasionally face Public Safety Power Shutoffs (PSPS) or wildfire disruptions. If an emergency or power interruption affects your home, you can easily make up missed lessons at a later date without penalty."
+      question: "How Do You Handle Summer Vacation Flexibility?",
+      answer: "Most California families vacation during summer break (mid-June to late August). OQTutor offers flexible options: take your 1-on-1 classes with you anywhere in the world with Wi-Fi, adjust your weekly class volume, or temporarily pause your subscription until you return."
+    },
+    {
+      question: "What If Fire Season/Natural Disasters Disrupt Schedules?",
+      answer: "California faces wildfire season (Sept–Dec), power outages (PSPS), and natural emergencies. If disruptions or evacuations affect your area, OQTutor allows you to pause and reschedule all missed lessons at a later date without any penalty."
     }
   ];
 
@@ -318,6 +322,47 @@ export default async function CaliforniaQuranClassesPage() {
     }
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OQTutor - Online Quran Classes California",
+    "areaServed": {
+      "@type": "State",
+      "name": "California",
+      "geo": [
+        {
+          "@type": "City",
+          "name": "Los Angeles"
+        },
+        {
+          "@type": "City",
+          "name": "San Francisco"
+        },
+        {
+          "@type": "City",
+          "name": "San Diego"
+        },
+        {
+          "@type": "City",
+          "name": "Fresno"
+        },
+        {
+          "@type": "City",
+          "name": "Sacramento"
+        }
+      ]
+    },
+    "serviceType": "Online Quran Classes",
+    "availableLanguage": ["en", "ur", "ar"],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "40",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -341,6 +386,10 @@ export default async function CaliforniaQuranClassesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
