@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
-import { readDB } from '@/data/db';
+import { getDBAsync } from '@/data/db';
+import fallbackDbData from '@/data/db.json';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
@@ -14,14 +15,12 @@ import {
   Clock,
   Calendar,
   ShieldCheck,
-  Star,
   BookOpen,
   GraduationCap,
   Sparkles,
   Users,
   Compass,
   Check,
-  HelpCircle,
   MapPin,
   HeartHandshake,
   Award,
@@ -71,16 +70,26 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function UKQuranClassesPage() {
-  const dbData = readDB();
+  let dbData;
+  try {
+    dbData = (await getDBAsync()) || fallbackDbData;
+  } catch {
+    dbData = fallbackDbData;
+  }
 
   // Check if admin is logged in
-  const cookieStore = await cookies();
-  const token = cookieStore.get('admin_token')?.value;
-  const adminLoggedIn = token ? verifyAdminToken(token) : false;
+  let adminLoggedIn = false;
+  try {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('admin_token')?.value;
+    adminLoggedIn = token ? verifyAdminToken(token) : false;
+  } catch {
+    adminLoggedIn = false;
+  }
 
   // UK-specific contact data for Contact & Footer
   const ukContactData = {
-    ...dbData.contact,
+    ...(dbData.contact || fallbackDbData.contact),
     location: "Online Quran classes serving families across the United Kingdom",
   };
 
