@@ -32,7 +32,7 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in California for Kids & Adults | OQTutor";
+  const metaTitle = "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor";
   const metaDescription = "Learn Quran online in California with certified male and female tutors. Enjoy live 1-on-1 Quran classes for kids and adults, Tajweed, Hifz, Noorani Qaida and flexible Pacific Time scheduling.";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/california";
 
@@ -287,7 +287,7 @@ export default async function CaliforniaQuranClassesPage() {
     "@type": "WebPage",
     "@id": "https://www.oqtutor.com/locations/usa/california#webpage",
     "url": "https://www.oqtutor.com/locations/usa/california",
-    "name": "Online Quran Classes in California for Kids & Adults | OQTutor",
+    "name": "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor",
     "description": "Learn Quran online in California with certified male and female tutors. Enjoy live 1-on-1 Quran classes for kids and adults, Tajweed, Hifz, Noorani Qaida and flexible Pacific Time scheduling.",
     "isPartOf": {
       "@type": "WebSite",
@@ -377,7 +377,7 @@ export default async function CaliforniaQuranClassesPage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-foreground">
-                Online Quran Classes in <span className="text-primary">California</span> for Kids &amp; Adults
+                Online Quran Classes in <span className="text-primary">California</span> - Live 1-on-1 (SF Bay Area, LA, San Diego)
               </h1>
 
               <div className="h-1 w-20 bg-secondary mt-3 mb-5 rounded-full" />
@@ -457,7 +457,7 @@ export default async function CaliforniaQuranClassesPage() {
         <TrustStatsBar />
 
         {/* ========================================================================= */}
-        {/* BLOCK 1: CALIFORNIA'S UNIQUE CHALLENGES FOR MUSLIM FAMILIES */}
+        {/* SECTION 1: CHALLENGES */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -539,7 +539,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 2: THE CALIFORNIA MUSLIM STUDENT PROFILE */}
+        {/* SECTION 2: STUDENT PROFILE */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -603,7 +603,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 3: HOW OQTUTOR SOLVES CALIFORNIA'S SPECIFIC PAIN POINTS */}
+        {/* SECTION 3: PAIN POINT SOLUTIONS */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -689,7 +689,26 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 4: CALIFORNIA TIME ZONE ADVANTAGE */}
+        {/* VISUAL BREAK IMAGE 1: AFTER SECTION 3 */}
+        {/* ========================================================================= */}
+        <div className="my-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass p-3 rounded-3xl border border-card-border overflow-hidden shadow-xl relative">
+            <Image
+              src="/online-quran-classes-usa-kids-adults-1.jpg"
+              alt="California Muslim family attending online Quran class from home"
+              width={900}
+              height={450}
+              loading="lazy"
+              className="w-full rounded-2xl object-cover h-[260px] sm:h-[380px]"
+            />
+            <div className="absolute bottom-6 left-6 right-6 bg-background/85 backdrop-blur-md p-3.5 rounded-xl border border-card-border text-center text-xs text-muted-text">
+              <span className="font-semibold text-foreground">Zero commute stress:</span> California students learn comfortably and safely in private home classrooms.
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* SECTION 4: TIME ZONE ADVANTAGE */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -763,7 +782,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 5: WHY LOCAL ISLAMIC CENTERS CAN'T COMPETE */}
+        {/* SECTION 5: WHY CENTERS FAIL */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -853,7 +872,26 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 6: CALIFORNIA SUCCESS STORIES - REAL RESULTS FROM REAL FAMILIES */}
+        {/* VISUAL BREAK IMAGE 2: AFTER SECTION 5 */}
+        {/* ========================================================================= */}
+        <div className="my-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass p-3 rounded-3xl border border-card-border overflow-hidden shadow-xl relative">
+            <Image
+              src="/adult-quran-memorization.jpg"
+              alt="Silicon Valley tech professional balancing work and family Quran time"
+              width={900}
+              height={450}
+              loading="lazy"
+              className="w-full rounded-2xl object-cover h-[260px] sm:h-[380px]"
+            />
+            <div className="absolute bottom-6 left-6 right-6 bg-background/85 backdrop-blur-md p-3.5 rounded-xl border border-card-border text-center text-xs text-muted-text">
+              <span className="font-semibold text-foreground">Flexible professional balance:</span> Late-evening and early-morning Pacific Time slots fit around California tech and healthcare careers.
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* SECTION 6: SUCCESS STORIES */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -938,7 +976,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 7: CALIFORNIA'S EVOLVING ISLAMIC EDUCATION LANDSCAPE */}
+        {/* SECTION 7: EDUCATION LANDSCAPE */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1008,79 +1046,28 @@ export default async function CaliforniaQuranClassesPage() {
           </div>
         </section>
 
-        {/* SECTION: MEET OUR QUALIFIED QURAN TUTORS */}
-        <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Certified Faculty
-              </span>
-              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Meet Our Qualified Quran Tutors
-              </h2>
-              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-              <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                All OQTutor instructors are certified Quran scholars, hold formal Islamic degrees, possess verified Ijazah certifications, and have passed thorough background and teaching screenings.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {verifiedTutors.map((tutor, idx) => (
-                <div key={idx} className="glass p-6 rounded-3xl border border-card-border flex flex-col justify-between hover:shadow-lg transition-all bg-background">
-                  <div>
-                    <div className="relative w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-md">
-                      <Image
-                        src={tutor.photo}
-                        alt={`${tutor.name} - Certified Quran Tutor at OQTutor`}
-                        fill
-                        className="object-cover object-center"
-                      />
-                    </div>
-                    <div className="text-center">
-                      <h3 className="text-base font-bold text-foreground leading-snug">{tutor.name}</h3>
-                      <p className="text-xs text-primary font-semibold mt-0.5">{tutor.role}</p>
-                      <div className="flex items-center justify-center space-x-1 my-2">
-                        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                        <span className="text-xs font-bold text-foreground">{tutor.rating}</span>
-                        <span className="text-[11px] text-muted-text">({tutor.reviewsCount} reviews)</span>
-                      </div>
-                    </div>
-                    <div className="mt-4 space-y-1.5 text-xs text-muted-text">
-                      <p className="flex items-center justify-between border-b border-card-border/40 pb-1">
-                        <span className="text-foreground/70">Experience:</span>
-                        <span className="font-medium text-foreground">{tutor.experience}</span>
-                      </p>
-                      <p className="flex items-center justify-between border-b border-card-border/40 pb-1">
-                        <span className="text-foreground/70">Languages:</span>
-                        <span className="font-medium text-foreground">{tutor.languages}</span>
-                      </p>
-                      <p className="pt-1 text-[11px] text-muted-text leading-relaxed">
-                        <strong className="text-foreground font-semibold">Specialization:</strong> {tutor.specialization}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-5 pt-3 border-t border-card-border/60 text-center">
-                    <span className="text-[11px] font-semibold text-secondary inline-block">
-                      {tutor.certifications[0]}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Link
-                href="/tutors"
-                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full glass border border-card-border hover:bg-foreground/5 text-foreground text-xs font-bold uppercase tracking-wider transition-all"
-              >
-                <span>View All Certified Tutors</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+        {/* ========================================================================= */}
+        {/* VISUAL BREAK IMAGE 3: AFTER SECTION 7 */}
+        {/* ========================================================================= */}
+        <div className="my-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass p-3 rounded-3xl border border-card-border overflow-hidden shadow-xl relative">
+            <Image
+              src="/online-quran-classes-usa-kids-adults-3.png"
+              alt="Diverse Muslim communities in California"
+              width={900}
+              height={450}
+              loading="lazy"
+              className="w-full rounded-2xl object-cover h-[260px] sm:h-[380px]"
+            />
+            <div className="absolute bottom-6 left-6 right-6 bg-background/85 backdrop-blur-md p-3.5 rounded-xl border border-card-border text-center text-xs text-muted-text">
+              <span className="font-semibold text-foreground">Culturally rich &amp; inclusive:</span> Supporting California's multicultural Muslim community across all age groups and backgrounds.
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* SECTION: PRICING - HOW MUCH DO CLASSES COST IN CALIFORNIA? */}
+        {/* ========================================================================= */}
+        {/* PRICING TABLES */}
+        {/* ========================================================================= */}
         <section id="pricing" className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -1156,7 +1143,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 8: CALIFORNIA-SPECIFIC PRICING & ROI CALCULATION */}
+        {/* SECTION 8: PRICING & ROI CALCULATION */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1246,7 +1233,7 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 9: REGIONAL CALIFORNIA COVERAGE DEEP-DIVE */}
+        {/* SECTION 9: REGIONAL COVERAGE */}
         {/* ========================================================================= */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1356,9 +1343,102 @@ export default async function CaliforniaQuranClassesPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BLOCK 10: CALIFORNIA PARENT FAQ - UNIQUE QUESTIONS */}
+        {/* VISUAL BREAK IMAGE 4: AFTER SECTION 9 */}
         {/* ========================================================================= */}
-        <section id="faq" className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-card-border/40">
+        <div className="my-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass p-3 rounded-3xl border border-card-border overflow-hidden shadow-xl relative">
+            <Image
+              src="/online-quran-classes-usa-kids-adults-2.jpg"
+              alt="Map of California regions served by OQTutor"
+              width={900}
+              height={450}
+              loading="lazy"
+              className="w-full rounded-2xl object-cover h-[260px] sm:h-[380px]"
+            />
+            <div className="absolute bottom-6 left-6 right-6 bg-background/85 backdrop-blur-md p-3.5 rounded-xl border border-card-border text-center text-xs text-muted-text">
+              <span className="font-semibold text-foreground">Statewide reach:</span> Serving Northern, Central, and Southern California students from the comfort of home.
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* TUTOR PROFILE CARDS */}
+        {/* ========================================================================= */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Certified Faculty
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Meet Our Qualified Quran Tutors
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
+                All OQTutor instructors are certified Quran scholars, hold formal Islamic degrees, possess verified Ijazah certifications, and have passed thorough background and teaching screenings.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {verifiedTutors.map((tutor, idx) => (
+                <div key={idx} className="glass p-6 rounded-3xl border border-card-border flex flex-col justify-between hover:shadow-lg transition-all bg-background">
+                  <div>
+                    <div className="relative w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-md">
+                      <Image
+                        src={tutor.photo}
+                        alt={`${tutor.name} - Certified Quran Tutor at OQTutor`}
+                        fill
+                        className="object-cover object-center"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-base font-bold text-foreground leading-snug">{tutor.name}</h3>
+                      <p className="text-xs text-primary font-semibold mt-0.5">{tutor.role}</p>
+                      <div className="flex items-center justify-center space-x-1 my-2">
+                        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                        <span className="text-xs font-bold text-foreground">{tutor.rating}</span>
+                        <span className="text-[11px] text-muted-text">({tutor.reviewsCount} reviews)</span>
+                      </div>
+                    </div>
+                    <div className="mt-4 space-y-1.5 text-xs text-muted-text">
+                      <p className="flex items-center justify-between border-b border-card-border/40 pb-1">
+                        <span className="text-foreground/70">Experience:</span>
+                        <span className="font-medium text-foreground">{tutor.experience}</span>
+                      </p>
+                      <p className="flex items-center justify-between border-b border-card-border/40 pb-1">
+                        <span className="text-foreground/70">Languages:</span>
+                        <span className="font-medium text-foreground">{tutor.languages}</span>
+                      </p>
+                      <p className="pt-1 text-[11px] text-muted-text leading-relaxed">
+                        <strong className="text-foreground font-semibold">Specialization:</strong> {tutor.specialization}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-5 pt-3 border-t border-card-border/60 text-center">
+                    <span className="text-[11px] font-semibold text-secondary inline-block">
+                      {tutor.certifications[0]}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/tutors"
+                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full glass border border-card-border hover:bg-foreground/5 text-foreground text-xs font-bold uppercase tracking-wider transition-all"
+              >
+                <span>View All Certified Tutors</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 10: CALIFORNIA PARENT FAQ */}
+        {/* ========================================================================= */}
+        <section id="faq" className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
@@ -1389,7 +1469,9 @@ export default async function CaliforniaQuranClassesPage() {
           </div>
         </section>
 
-        {/* FINAL CTA SECTION: START LEARNING THE QURAN FROM HOME IN CALIFORNIA */}
+        {/* ========================================================================= */}
+        {/* CTA / BOOKING SECTION */}
+        {/* ========================================================================= */}
         <section className="py-20 border-t border-card-border mb-16">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="glass p-8 sm:p-12 rounded-3xl border border-card-border shadow-2xl text-center relative overflow-hidden bg-background/80">
