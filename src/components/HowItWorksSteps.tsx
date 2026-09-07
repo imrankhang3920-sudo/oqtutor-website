@@ -34,22 +34,23 @@ export default function HowItWorksSteps() {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950 text-white">
-      {/* Decorative gradient orbs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/25 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
+    <section id="how-it-works" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-emerald-950 via-slate-950 to-teal-950 text-white">
+      {/* Decorative gradient glow orbs */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-secondary text-xs font-bold uppercase tracking-wider mb-3 backdrop-blur-md">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3 backdrop-blur-md">
             Simple 4-Step Process
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
             How It Works
           </h2>
-          <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
+          <div className="h-1 w-24 bg-gradient-to-r from-amber-400 via-emerald-400 to-amber-400 mx-auto mt-4 rounded-full shadow-sm shadow-amber-400/50" />
+          <p className="mt-4 text-base sm:text-lg text-emerald-100/80 max-w-2xl mx-auto">
             Starting your Quran journey with OQTutor is seamless, fast, and completely risk-free.
           </p>
         </div>
@@ -67,23 +68,23 @@ export default function HowItWorksSteps() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5, delay: idx * 0.12 }}
-                  className="relative flex flex-col items-center text-center p-7 sm:p-8 rounded-3xl bg-white/[0.06] border border-white/10 backdrop-blur-md hover:bg-white/[0.1] hover:border-white/20 transition-all duration-300 group"
+                  className="relative flex flex-col items-center text-center p-7 sm:p-8 rounded-3xl bg-emerald-950/40 border border-emerald-500/20 backdrop-blur-md hover:bg-emerald-900/30 hover:border-amber-400/40 hover:shadow-2xl hover:shadow-emerald-950/60 transition-all duration-300 group"
                 >
                   {/* Step Number Badge */}
-                  <span className="text-xs font-mono font-bold tracking-widest text-secondary bg-secondary/20 px-3 py-1 rounded-full mb-4">
+                  <span className="text-xs font-mono font-bold tracking-widest text-amber-400 bg-amber-400/15 border border-amber-400/30 px-3.5 py-1 rounded-full mb-4 shadow-sm">
                     STEP {step.number}
                   </span>
 
-                  {/* Icon */}
-                  <div className="h-16 w-16 rounded-2xl bg-white/10 text-secondary flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-secondary group-hover:text-slate-900 transition-all duration-300 shadow-inner">
+                  {/* Icon Container */}
+                  <div className="h-16 w-16 rounded-2xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-amber-400 group-hover:to-amber-500 group-hover:text-slate-950 group-hover:border-amber-400 transition-all duration-300 shadow-md">
                     <IconComponent className="h-8 w-8 stroke-[2]" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                  <h3 className="text-xl font-bold text-white group-hover:text-amber-300 mb-2 tracking-tight transition-colors">
                     {step.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-emerald-100/75 leading-relaxed font-normal">
                     {step.description}
                   </p>
                 </motion.div>
@@ -91,7 +92,7 @@ export default function HowItWorksSteps() {
                 {/* Arrow connector between steps */}
                 {!isLast && (
                   <div className="hidden lg:flex items-center justify-center absolute -right-3 top-1/2 -translate-y-1/2 z-20 pointer-events-none" style={{ left: `calc(${idx * 25}% + 22.5%)` }}>
-                    <ArrowRight className="h-6 w-6 text-secondary/60 animate-pulse" />
+                    <ArrowRight className="h-6 w-6 text-amber-400/70 animate-pulse" />
                   </div>
                 )}
               </React.Fragment>
@@ -103,7 +104,7 @@ export default function HowItWorksSteps() {
         <div className="mt-14 text-center">
           <Link
             href="/book-free-trial"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-secondary hover:bg-secondary-hover text-slate-950 font-extrabold text-sm sm:text-base shadow-xl shadow-secondary/20 hover:shadow-2xl hover:shadow-secondary/30 transition-all duration-300 transform hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold text-sm sm:text-base shadow-xl shadow-amber-500/25 hover:shadow-2xl hover:shadow-amber-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
           >
             <span>Book Your Free Trial in 60 Seconds</span>
             <ArrowRight className="h-5 w-5" />
