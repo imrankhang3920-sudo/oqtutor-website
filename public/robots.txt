@@ -1,0 +1,12 @@
+# User-Agent rules for OQTutor
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cgi-bin/
+
+# Location pages explicitly allowed for search engine indexing
+Allow: /locations/
+Allow: /locations/*
+
+Sitemap: https://www.oqtutor.com/sitemap.xml

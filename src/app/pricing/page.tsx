@@ -4,6 +4,8 @@ import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ServingLocationsSection from '@/components/ServingLocationsSection';
+import StickyFormButton from '@/components/StickyFormButton';
 import Link from 'next/link';
 import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 
@@ -221,9 +223,16 @@ export default async function PricingPage() {
 
           </div>
         </section>
+
+        {/* Global Locations & Currencies */}
+        <ServingLocationsSection
+          title="Affordable Localized Quran Tuition Worldwide"
+          subtitle="Classes scheduled in your local time zone across USA, UK, Canada, Australia, and more."
+        />
       </main>
 
-      <Footer data={dbData.contact} />
+      <Footer data={dbData.contact} footerConfig={dbData.footerNav} />
+      <StickyFormButton />
     </>
   );
 }
