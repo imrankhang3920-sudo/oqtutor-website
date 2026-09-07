@@ -14,8 +14,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes Canada | Private Certified Tutors – OQTutor",
-    description: "Enroll in private online Quran classes Canada with certified male & female tutors. Flexible schedules across all Canadian time zones, free trial, CAD pricing.",
+    title: "Quran Lessons for Kids in Canada | OQTutor",
+    description: "Online Quran classes in Canada. Affordable rates, certified teachers. Perfect for busy Canadian families. Book free trial.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/canada",
       languages: {
@@ -42,7 +42,7 @@ export default async function CanadaQuranClassesPage() {
 
   // Custom Hero Data matching Canada requirements (intro: ~105 words)
   const customHeroData = {
-    title: "Online Quran Classes Canada",
+    title: "Quran Lessons for Kids in Canada — Certified Teachers, Affordable Rates",
     subtitle: "Are you searching for authentic, structured Online Quran Classes Canada? At OQTutor, we understand the logistical challenge of managing Quranic studies across Canada's vast geography. Spanning six time zones from Pacific to Newfoundland Standard Time, coordinating schedules with state school terms and winter breaks can feel overwhelming. Our virtual one-to-one platform provides the perfect solution, offering flexible class times tailored entirely to your local zone. With native Arabic scholars and certified teachers, we guide kids and adults through custom Noorani Qaida, Tajweed, and Hifz courses. Learn comfortably from the safety of home with our dedicated online Quran tutors.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",

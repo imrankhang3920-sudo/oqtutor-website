@@ -35,8 +35,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes UK | 1-to-1 Quran Teachers | OQTutor",
-    description: "Learn Quran online in the UK with personalized one-to-one classes for kids and adults. Choose male or female tutors, flexible UK timings, Tajweed, Hifz, Quran Reading and Islamic Studies.",
+    title: "Online Quran Classes for Kids in UK | OQTutor",
+    description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/uk",
       languages: {
@@ -49,8 +49,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/uk",
-      title: "Online Quran Classes UK | 1-to-1 Quran Teachers | OQTutor",
-      description: "Learn Quran online in the UK with personalized one-to-one classes for kids and adults. Choose male or female tutors, flexible UK timings, Tajweed, Hifz, Quran Reading and Islamic Studies.",
+      title: "Online Quran Classes for Kids in UK | OQTutor",
+      description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -62,8 +62,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes UK | 1-to-1 Quran Teachers | OQTutor",
-      description: "Learn Quran online in the UK with personalized one-to-one classes for kids and adults. Choose male or female tutors, flexible UK timings, Tajweed, Hifz, Quran Reading and Islamic Studies.",
+      title: "Online Quran Classes for Kids in UK | OQTutor",
+      description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -572,7 +572,7 @@ export default async function UKQuranClassesPage() {
 
                 {/* H1 Heading */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes UK for Kids &amp; Adults
+                  Online Quran Classes for Kids in UK — Learn from Home with Expert Teachers
                 </h1>
 
                 {/* Supporting Paragraph */}
