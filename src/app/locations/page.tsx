@@ -13,14 +13,14 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Online Quran Classes Worldwide | Locations & Time Zones – OQTutor',
-    description: 'Explore live 1-on-1 online Quran classes available across USA, UK, Canada, Australia, and 20+ countries. Certified teachers, local schedules, free trial.',
+    title: 'Online Quran Classes Worldwide | OQTutor',
+    description: 'Find certified online Quran teachers in USA, UK, Canada, Australia and more. Personalized lessons for kids and adults. Book free trial.',
     alternates: {
       canonical: 'https://www.oqtutor.com/locations',
     },
     openGraph: {
-      title: 'Online Quran Classes Worldwide | Locations & Time Zones – OQTutor',
-      description: 'Explore live 1-on-1 online Quran classes available across USA, UK, Canada, Australia, and 20+ countries.',
+      title: 'Online Quran Classes Worldwide | OQTutor',
+      description: 'Find certified online Quran teachers in USA, UK, Canada, Australia and more. Personalized lessons for kids and adults. Book free trial.',
       url: 'https://www.oqtutor.com/locations',
     },
   };
@@ -98,7 +98,7 @@ export default async function LocationsHubPage() {
               <span>Worldwide Coverage</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-foreground tracking-tight">
-              Online Quran Classes by Location
+              Learn Quran Online — Available Worldwide with Certified Teachers
             </h1>
             <p className="mt-4 text-base sm:text-lg text-muted-text">
               We connect Muslim families across the globe with certified male and female scholars aligned with your exact local time zone.
