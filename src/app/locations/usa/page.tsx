@@ -28,8 +28,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes for Kids in USA | OQTutor";
-  const metaDescription = "Online Quran classes for kids in USA. Certified female & male teachers. Flexible scheduling, 30-min lessons. Book free trial.";
+  const metaTitle = "Quran Tutoring for US Families | EST to PST | OQTutor";
+  const metaDescription = "Fit 1-on-1 Quran recitation around homework and work hours. Flexible morning and evening slots across all 4 US time zones. Book a free trial.";
   
   return {
     title: metaTitle,
@@ -82,7 +82,7 @@ export default async function USALocationsHubPage() {
 
   // Exact single unique H1 and supporting intro
   const heroFallback = dbData?.hero || {
-    title: "Online Quran Classes for Kids in USA — Certified Teachers, 30-Min Lessons",
+    title: "Quran Lessons Built Around Your US Time Zone — From EST to PST",
     subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
@@ -92,7 +92,7 @@ export default async function USALocationsHubPage() {
   };
 
   const customHeroData = {
-    title: "Online Quran Classes for Kids in USA — Certified Teachers, 30-Min Lessons",
+    title: "Quran Lessons Built Around Your US Time Zone — From EST to PST",
     subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",

@@ -14,8 +14,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes in New York | Free Trial, 1-on-1",
-    description: "Structured 1-on-1 online Quran classes for New York families. Certified male & female tutors, real progress reports, and a free trial — no long contracts.",
+    title: "Online Quran Classes New York | NYC & Long Island",
+    description: "Fit private Quran lessons between subway rides and after-school clubs. Live 1-on-1 tutoring with written progress notes for NYC families.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/new-york",
     },
@@ -149,8 +149,8 @@ export default async function NewYorkQuranClassesPage() {
   };
 
   const customHeroData = {
-    title: "Online Quran Classes in New York",
-    subtitle: "Most online Quran academies serving New York promise the same three things: flexible timing, male or female tutors, and a free trial. OQTutor starts one step earlier — a short placement check before your first paid class, so your child or you begin at the right level instead of restarting a generic Noorani Qaida track from page one. Every student gets a personal learning plan and a weekly progress note sent to the parent or student directly, not just a 'your child is doing great' message.",
+    title: "Quiet, Focused Quran Recitation from Your New York Apartment",
+    subtitle: "Between rush-hour subway rides, dense school schedules, and tight extracurricular routines, finding peaceful Quran time in New York can be difficult. OQTutor brings quiet, focused 1-on-1 recitation into your living room. We start with a 15-minute placement check so your child or you begin at the exact right level, followed by weekly written progress notes sent straight to you.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,

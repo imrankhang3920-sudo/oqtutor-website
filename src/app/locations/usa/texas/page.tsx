@@ -14,15 +14,15 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes for Kids in Texas | Free Trial | OQTutor",
-    description: "Learn Quran online in Texas with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids. Try it free!",
+    title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
+    description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/texas",
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa/texas",
-      title: "Online Quran Classes for Kids in Texas | Free Trial | OQTutor",
-      description: "Learn Quran online in Texas with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids. Try it free!",
+      title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
+      description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -34,8 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes for Kids in Texas | Free Trial | OQTutor",
-      description: "Learn Quran online in Texas with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids. Try it free!",
+      title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
+      description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -83,8 +83,8 @@ export default async function TexasQuranClassesPage() {
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
   const customHeroData = {
-    title: "Online Quran Classes for Muslim Children in Texas",
-    subtitle: "Help your child build a lifelong, authentic bond with the Holy Quran. OQTutor connects Muslim families across Texas with certified, patient Quran teachers for private 1-on-1 online classes. Whether starting with the basics of Noorani Qaida, perfecting recitation with Tajweed rules, or memorizing selected Surahs, our flexible digital classrooms fit easily around school commitments, homework routines, and busy family timetables. Start learning today with our 3-day free trial classes.",
+    title: "Save the Highway Drive: Private Quran Study for Texas Families",
+    subtitle: "Help your child build a lifelong, authentic bond with the Holy Quran without driving across Houston, Dallas-Fort Worth, Austin, or San Antonio traffic. OQTutor connects Muslim families across Texas with certified, patient Quran teachers for private 1-on-1 online classes. Whether starting with the basics of Noorani Qaida, perfecting recitation with Tajweed rules, or memorizing selected Surahs, our flexible digital classrooms fit easily around Central Time school commitments and homework routines.",
     ctaText: "Book 3 Free Trial Classes",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,

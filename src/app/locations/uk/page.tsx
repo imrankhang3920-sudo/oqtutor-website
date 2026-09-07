@@ -35,8 +35,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes for Kids in UK | OQTutor",
-    description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
+    title: "UK Online Quran Tuition | GMT Madrasah Alternative",
+    description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/uk",
       languages: {
@@ -49,8 +49,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/uk",
-      title: "Online Quran Classes for Kids in UK | OQTutor",
-      description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
+      title: "UK Online Quran Tuition | GMT Madrasah Alternative",
+      description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -62,8 +62,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes for Kids in UK | OQTutor",
-      description: "Learn Quran online in UK from home. Certified teachers for kids & adults. Flexible UK hours. Start your free trial.",
+      title: "UK Online Quran Tuition | GMT Madrasah Alternative",
+      description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -572,7 +572,7 @@ export default async function UKQuranClassesPage() {
 
                 {/* H1 Heading */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes for Kids in UK — Learn from Home with Expert Teachers
+                  Skip the Madrasah Commute: 1-on-1 Quran Lessons on UK Time
                 </h1>
 
                 {/* Supporting Paragraph */}

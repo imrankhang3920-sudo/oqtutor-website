@@ -14,8 +14,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Classes in Australia | OQTutor",
-    description: "Quran classes in Australia with flexible scheduling. Certified teachers for kids & adults. Perfect for different Australian timezones. Free trial.",
+    title: "Online Quran Tutors Australia | AEST & AWST Schedules",
+    description: "Living far from a local Islamic centre? Access live 1-on-1 Quran lessons aligned with Australian school hours in Sydney, Perth, and regional towns.",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/australia",
       languages: {
@@ -42,8 +42,8 @@ export default async function AustraliaQuranClassesPage() {
 
   // Custom Hero Data focused on Cultural/Community-fit (intro: ~125 words)
   const customHeroData = {
-    title: "Online Quran Classes in Australia — Flexible Scheduling for Busy Families",
-    subtitle: "At OQTutor, we recognize that the Australian Muslim community is a beautifully diverse tapestry, representing dozens of cultural and linguistic backgrounds from Sydney's west to Melbourne's northern suburbs. Finding an online Quran teacher who respects your family's language heritage, teaching style preferences, and madhab-sensitivity can be a difficult task. We bridge this gap by prioritizing the perfect tutor-student match. Rather than offering a one-size-fits-all lesson, our platform pairs you with certified, bilingual scholars who understand your cultural context and adapt to your child's pace, helping families across Australia connect deeply with the Holy Quran.",
+    title: "Connect Your Family to Dedicated Quran Tutors Across Australia",
+    subtitle: "At OQTutor, we recognize that the Australian Muslim community is a beautifully diverse tapestry, representing dozens of cultural and linguistic backgrounds from Sydney's west to Melbourne's northern suburbs and regional towns. Finding a dedicated Quran teacher who aligns with Australian school schedules across AEST and AWST time zones can be difficult. We bridge this distance by prioritizing the perfect tutor-student match. Rather than offering a one-size-fits-all lesson, our platform pairs you with certified, bilingual scholars who understand your cultural context and adapt to your child's pace.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
