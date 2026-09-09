@@ -44,6 +44,16 @@ export default function Footer({
     { name: 'Quran Classes Australia', href: '/locations/australia' },
   ];
 
+  const guidesLinks = [
+    { name: 'Quran Classes Texas', href: '/blog/online-quran-classes-texas' },
+    { name: 'Beginner Quran Guide', href: '/blog/best-online-quran-classes-for-beginners' },
+    { name: 'Kids Quran Classes USA', href: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa' },
+    { name: 'Choosing an Online Tutor', href: '/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor' },
+    { name: 'Quran Completion Timeline', href: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online' },
+    { name: '1-on-1 Quran Classes USA', href: '/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors' },
+    { name: 'Kids & Adults Quran USA', href: '/blog/online-quran-classes-in-the-usa-for-kids-and-adults' },
+  ];
+
   const socialLinks = [
     { 
       href: siteConfig.social.facebook,
@@ -73,9 +83,9 @@ export default function Footer({
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-16">
           {/* Logo & About */}
-          <div className="lg:col-span-4 flex flex-col items-start">
+          <div className="lg:col-span-3 flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2.5">
               <Image
                 src="/logo.jpg"
@@ -132,7 +142,24 @@ export default function Footer({
           <div className="lg:col-span-2">
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Our Courses</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
-              {coursesLinks.map((link) => (
+              {coursesLinks.slice(0, 8).map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-text hover:text-primary transition-colors font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Learning Guides */}
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-bold text-primary uppercase tracking-widest mb-6">Learning Guides</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
+              {guidesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -146,7 +173,7 @@ export default function Footer({
           </div>
 
           {/* Contact Details */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm text-muted-text leading-relaxed">

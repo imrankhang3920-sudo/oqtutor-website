@@ -8,7 +8,8 @@ import { FAQData } from '@/data/db';
 
 export default function FAQ({ data }: { data: FAQData[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
-  const columnBreak = Math.ceil(data.length / 2);
+  const displayFaqs = (data || []).slice(0, 6);
+  const columnBreak = Math.ceil(displayFaqs.length / 2);
 
   const toggleFaq = (id: string) => {
     setOpenId(openId === id ? null : id);
@@ -37,7 +38,7 @@ export default function FAQ({ data }: { data: FAQData[] }) {
 
         {/* Accordions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
-          {[data.slice(0, columnBreak), data.slice(columnBreak)].map((column, columnIndex) => (
+          {[displayFaqs.slice(0, columnBreak), displayFaqs.slice(columnBreak)].map((column, columnIndex) => (
             <div key={columnIndex} className="space-y-4">
               {column.map((faq) => {
             const isOpen = openId === faq.id;
@@ -91,10 +92,10 @@ export default function FAQ({ data }: { data: FAQData[] }) {
         </div>
 
         {/* View All Button */}
-        <div className="text-center">
+        <div className="text-center pt-2">
           <Link
             href="/faq"
-            className="inline-flex items-center space-x-2 text-sm font-semibold text-primary hover:text-primary-hover group transition-colors"
+            className="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary hover:text-white text-sm font-bold text-primary transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.02] group"
           >
             <span>View All Frequently Asked Questions</span>
             <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />

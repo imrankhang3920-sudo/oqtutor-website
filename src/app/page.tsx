@@ -11,6 +11,7 @@ import FeaturedCourses from '@/components/FeaturedCourses';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
+import BlogPreview from '@/components/BlogPreview';
 import StickyFormButton from '@/components/StickyFormButton';
 import ScrollTriggerForm from '@/components/ScrollTriggerForm';
 import Footer from '@/components/Footer';
@@ -206,7 +207,10 @@ export default async function HomePage() {
         {/* Serving Areas & Internal Location Links */}
         <ServingLocationsSection />
 
-        {/* 6. FAQ Section */}
+        {/* 6. Featured Learning & Educational Guides */}
+        <BlogPreview />
+
+        {/* 7. FAQ Section */}
         <FAQ data={homepageFaqs} />
 
         {/* 7. Contact Form Section (Book Trial) */}

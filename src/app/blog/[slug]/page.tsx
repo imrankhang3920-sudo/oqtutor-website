@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const isBeginnersBlog = resolvedParams.slug === 'best-online-quran-classes-for-beginners';
   const isTutorBlog = resolvedParams.slug === 'select-right-online-quran-tutor';
   const isTajweedBlog = resolvedParams.slug === 'beginners-guide-mastering-tajweed-rules';
   const isHifzBlog = resolvedParams.slug === 'effective-hifz-memorization-techniques';
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isChildReadinessBlog = resolvedParams.slug === 'how-do-you-know-your-child-is-ready-to-start-learning-the-quran';
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog;
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog;
 
   const metaTitle = isBalanceBlog
     ? 'How to Help Children Balance Quran Learning With School and Extracurricular Activities | OQTutor'
@@ -73,14 +74,81 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'What US Parents Should Know Before Choosing an Online Quran Tutor | OQTutor'
     : isUsaKidsAdultsBlog
     ? 'Online Quran Classes in the USA for Kids and Adults | OQTutor'
+    : isBestUsaOneToOneBlog
+    ? 'Best Online Quran Classes in USA: 1-on-1 Qualified Tutors | OQTutor'
+    : isBeginnersBlog
+    ? 'Best Online Quran Classes for Beginners (Step-by-Step Guide) | OQTutor'
     : isTexasBlog
     ? 'Online Quran Classes in Texas | Live 1-to-1 Lessons'
     : `${blog.title} | OQTutor`;
 
+  const coverImgUrl = blog.coverImage
+    ? (blog.coverImage.startsWith('http') ? blog.coverImage : `https://www.oqtutor.com${blog.coverImage.startsWith('/') ? '' : '/'}${blog.coverImage}`)
+    : 'https://www.oqtutor.com/arabic-reading.jpg';
+
   return {
     title: metaTitle,
     description: blog.description,
-    keywords: isBalanceBlog
+    keywords: isBeginnersBlog
+      ? [
+          'best online quran classes for beginners',
+          'learn quran for beginners',
+          'online quran classes beginner',
+          'noorani qaida for beginners',
+          'learn arabic alphabet online',
+          'quran reading for beginners',
+          'online tajweed for beginners',
+          'quran classes for adult beginners',
+          'one on one quran tutor beginner',
+          'start learning quran online'
+        ]
+      : isBestUsaOneToOneBlog
+      ? [
+          'best online quran classes usa',
+          'one to one quran classes usa',
+          'online quran classes usa qualified tutors',
+          'private quran tutor usa',
+          'online quran academy usa',
+          'online quran lessons usa',
+          'live quran teacher usa',
+          '1 on 1 quran classes online',
+          'certified quran tutor usa'
+        ]
+      : isUSParentsTutorBlog
+      ? [
+          'what us parents should know before choosing online quran tutor',
+          'how to choose online quran tutor',
+          'online quran tutor for kids usa',
+          'quran teacher qualifications',
+          'online quran tutor vetting',
+          'best quran tutors for children',
+          'trial quran class usa',
+          'quran tutor reviews'
+        ]
+      : isUsaKidsAdultsBlog
+      ? [
+          'online quran classes in the usa for kids and adults',
+          'online quran classes usa',
+          'quran learning for kids usa',
+          'quran classes for adults usa',
+          'online quran academy america',
+          'learn quran online usa',
+          'quran recitation usa',
+          'tajweed classes usa'
+        ]
+      : isTexasBlog
+      ? [
+          'online quran classes texas',
+          'quran classes houston',
+          'quran classes dallas',
+          'quran classes austin',
+          'quran classes san antonio',
+          'online quran tutor texas',
+          'quran lessons for kids texas',
+          'learn quran online texas',
+          'tajweed classes texas'
+        ]
+      : isBalanceBlog
       ? [
           'how to help children balance Quran learning with school and extracurricular activities',
           'balance Quran learning with school',
@@ -195,7 +263,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.oqtutor.com/blog/${blog.slug}`,
       title: metaTitle,
       description: blog.description,
-      type: isKidsUsaBlog ? 'article' : 'website',
+      type: 'article',
+      siteName: 'OQTutor',
+      images: [
+        {
+          url: coverImgUrl,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metaTitle,
+      description: blog.description,
+      images: [coverImgUrl],
     },
   };
 }
@@ -216,6 +299,7 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const isBeginnersBlog = resolvedParams.slug === 'best-online-quran-classes-for-beginners';
   const isUSABlog = resolvedParams.slug === 'online-quran-classes-usa';
   const isIllinoisBlog = resolvedParams.slug === 'how-online-quran-classes-help-busy-muslim-families-in-illinois';
   const isMotivationBlog = resolvedParams.slug === 'tips-keep-kids-motivated-online-quran';
@@ -257,6 +341,254 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isBeginnersBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the best way for a beginner to start learning the Quran online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best approach for a beginner is starting with Noorani Qaida to learn the Arabic alphabet, correct pronunciation (Makharij), and short vowel marks before moving into word formation and full Quran reading with a live 1-on-1 tutor."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can adults start learning Quran as complete beginners?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, many adults begin with zero prior Arabic knowledge. Private one-on-one classes provide a patient, self-paced, and confidential environment where adult beginners learn comfortably without feeling rushed."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between Noorani Qaida and Quran Reading?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Noorani Qaida teaches the basic phonetics, individual letters, and sound connections. Once a student finishes Noorani Qaida, they smoothly transition to reciting verses from the Holy Quran in the Quran Reading course."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for a beginner to read Quran fluently?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With 3 to 4 classes per week and 15 minutes of daily practice, most beginners complete Noorani Qaida in 3 to 5 months and begin reading the Quran independently with basic Tajweed within 6 to 12 months."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to know the Arabic language to learn Quran recitation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, you do not need to understand conversational Arabic to learn how to read the Quran with correct Tajweed. Our beginner courses teach phonetics and recitation rules from scratch."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I choose a female Quran teacher for beginner classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, OQTutor has certified female Quran teachers (Alimas and Qariahs) available for sisters, young girls, and children."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isTexasBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Are online Quran classes effective for Texas Muslim families?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, online Quran classes provide flexible, live 1-on-1 instruction on Central Time (CST), allowing students in Houston, Dallas-Fort Worth, Austin, San Antonio, and smaller towns across Texas to learn with certified scholars from home without heavy traffic commutes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I schedule Quran classes according to Texas after-school hours?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, classes can be scheduled during Central Time afternoon, evening, and weekend hours to fit around Texas public school routines, homework, and sports activities."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer female Quran teachers in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide certified female Quran teachers for young girls, sisters, and children across Texas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What courses are offered for Texas students?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer Noorani Qaida for beginners, Quran Reading with Tajweed, Hifz Quran memorization, Islamic Studies, and Arabic language classes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do live online Quran lessons work?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lessons are conducted one-on-one via interactive video with screen sharing of color-coded digital Mushafs and real-time audio pronunciation correction."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a free trial class available for Texas families?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can book a free, no-obligation trial class to meet your tutor, assess your child's level, and discuss customized class timings."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isBestUsaOneToOneBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Why are 1-on-1 online Quran classes better than group madrasah classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "1-on-1 classes provide 100% focused attention from a certified tutor, immediate Tajweed corrections, customized learning pace, and no classroom distractions or commute stress."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What qualifications do your online Quran teachers hold in the USA?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our instructors are Al-Azhar and Islamic university graduates holding verified Ijazahs (certifications in Tajweed recitation) and extensive experience teaching Western-based students in fluent English."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How flexible is scheduling across US time zones?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We accommodate all US time zones (Eastern, Central, Mountain, and Pacific) with morning, afternoon, evening, and weekend class slots."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What age is suitable for 1-on-1 online Quran lessons?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Children as young as 4 to 6 can start with our gentle Noorani Qaida program, while youth, adults, and seniors learn at their own comfortable pace."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can parents track their child's progress?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Parents receive regular feedback after sessions, monthly progress evaluations, and can observe classes live at any time."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are there long-term contracts for online Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, OQTutor operates on month-to-month plans with no locked contracts or hidden cancellation fees."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isUsaKidsAdultsBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can adults and children in the same family learn Quran together?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we offer family packages with synchronized schedules and individual 1-on-1 tutors for each family member tailored to their respective reading level."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the best course for a child starting from scratch?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Noorani Qaida is the ideal starting point for children, teaching Arabic alphabet phonetics and letter connections through engaging visual methods."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer Quran classes for working adults in the USA?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, adult courses offer flexible early morning, evening, or weekend slots designed around demanding career and family schedules."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do teachers ensure accurate Tajweed online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Teachers use high-definition audio, visual articulation point diagrams (Makharij), and real-time repetition drills to ensure precise pronunciation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can sisters request female Quran teachers?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, qualified female scholars and Qariahs are available for all female students and young children."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I book a free assessment and trial class?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fill out the simple trial form on our website to schedule a free 30-minute placement and lesson session."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isBalanceBlog && (
         <script
@@ -1407,6 +1739,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentBestUsaOneToOne />
             ) : isTexasBlog ? (
               <ArticleContentTexas />
+            ) : isBeginnersBlog ? (
+              <ArticleContentBeginnersGuide />
             ) : blog.blocks && blog.blocks.length > 0 ? (
               <PageRenderer blocks={blog.blocks} />
             ) : (
@@ -11424,6 +11758,380 @@ function ArticleContentBalanceQuranSchool() {
     </article>
   );
 }
+
+function ArticleContentBeginnersGuide() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Quick Summary for Beginners</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          The best online Quran classes for beginners provide a step-by-step pathway starting from Arabic alphabet phonetics and <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, transitioning into word formation, fluent recitation, and basic <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules</Link>. Private 1-on-1 tutoring ensures real-time pronunciation corrections, personalized pacing, and zero pressure for both kids and adult learners.
+        </p>
+      </div>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        Starting your Quran learning journey can feel intimidating when you don&apos;t know where to begin. You might know a few Arabic letters, recognize some short Surahs, or be starting from absolute zero with no Arabic background. The good news is that with a structured roadmap and a patient teacher, anyone—regardless of age—can learn to recite the Holy Quran with clarity and confidence.
+      </p>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        At <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>, beginner education is designed around foundational mastery rather than rushing through chapters. Whether you are a parent seeking <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> or an adult starting later in life, this comprehensive guide outlines what makes a beginner course truly effective.
+      </p>
+
+      {/* Featured Visual Image */}
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+          <Image
+            src="/beginner-quran-classes-cover.jpg"
+            alt="Open Holy Quran on a wooden rehal stand with prayer beads on a prayer mat bathed in soft morning light"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+        <p className="text-xs text-center text-muted-text mt-3 font-medium">
+          A structured phonetic curriculum transforms beginner hesitation into fluent, beautiful Quran recitation.
+        </p>
+      </div>
+
+      {/* Section 1: What to Look For */}
+      <section className="space-y-4 pt-4 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          What Should Beginners Look for in an Online Quran Class?
+        </h2>
+        <p className="text-base text-muted-text">
+          Choosing an online Quran program should not depend solely on aggressive marketing or the cheapest price. Beginners require a nurturing, structured environment where bad pronunciation habits are corrected gently before they become permanent.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Certified &amp; Patient Teachers</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Look for teachers holding verified Ijazah credentials and dedicated experience teaching beginners with kindness and positive reinforcement.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Live 1-on-1 Individual Sessions</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Private lessons allow the tutor to hear every phonetic nuance and adjust the teaching pace strictly to your personal learning speed.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Structured Phonics Curriculum</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              A systematic progression from Arabic letter shapes to <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> and complete verses prevents cognitive overload.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border space-y-2">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-5 w-5" />
+              <span>Flexible Class Timings</span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Morning, afternoon, evening, and weekend slots across all US time zones (EST, CST, MST, PST) ensure seamless integration with work or school.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Step-by-Step Learning Path */}
+      <section className="space-y-6 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          The 5-Stage Learning Roadmap for Quran Beginners
+        </h2>
+        <p className="text-base text-muted-text">
+          A beginner should never be expected to read full pages of the Quran on day one. Learning works best when broken down into progressive milestones:
+        </p>
+
+        <div className="space-y-4">
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-3">
+              <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shrink-0">1</span>
+              <h3 className="text-lg font-bold text-foreground">Arabic Alphabet &amp; Articulation Points (Makharij)</h3>
+            </div>
+            <p className="text-sm text-muted-text pl-11 leading-relaxed">
+              Master the 28 Arabic letters, their distinct names, visual shapes (isolated, initial, medial, and final), and specific throat and tongue positions.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-3">
+              <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shrink-0">2</span>
+              <h3 className="text-lg font-bold text-foreground">Short &amp; Long Vowels (Harakat &amp; Madd)</h3>
+            </div>
+            <p className="text-sm text-muted-text pl-11 leading-relaxed">
+              Learn Fatha (Zabar), Kasra (Zer), and Damma (Pesh), along with Tanween (double vowels), Sukoon (stopping mark), and Shaddah (doubling mark) to understand vowel rhythm.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-3">
+              <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shrink-0">3</span>
+              <h3 className="text-lg font-bold text-foreground">Compound Letter Joining &amp; Word Formation</h3>
+            </div>
+            <p className="text-sm text-muted-text pl-11 leading-relaxed">
+              Practice reading 2, 3, and 4-letter joined Arabic words. This forms the transition bridge from isolated Qaida drills to actual Quranic text.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-3">
+              <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shrink-0">4</span>
+              <h3 className="text-lg font-bold text-foreground">Short Surah Recitation (Juz Amma)</h3>
+            </div>
+            <p className="text-sm text-muted-text pl-11 leading-relaxed">
+              Begin reciting the 30th chapter (Juz Amma), starting with Surah Al-Fatiha, An-Nas, Al-Falaq, and Al-Ikhlas with direct teacher guidance. See our timeline breakdown on <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">how long it takes to complete the Quran online</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <div className="flex items-center space-x-3">
+              <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm shrink-0">5</span>
+              <h3 className="text-lg font-bold text-foreground">Applied Tajweed Rules &amp; Full Fluency</h3>
+            </div>
+            <p className="text-sm text-muted-text pl-11 leading-relaxed">
+              Incorporate Noon Sakinah, Meem Sakinah, Ghunnah (nasalization), Qalqalah (echoing), and Waqf (stopping signs) for beautiful, authentic recitation. Explore our <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed rules course</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: 1-on-1 vs Group Classes */}
+      <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Why 1-on-1 Online Quran Classes Excel for Beginners
+        </h2>
+        <p className="text-base text-muted-text">
+          In a physical weekend madrasah or crowded online group webinar, a single teacher might supervise 15 to 25 children. A student only receives 2 to 3 minutes of individual recitation time, meaning mistakes often go uncorrected.
+        </p>
+
+        <div className="overflow-x-auto my-6">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr className="border-b border-card-border bg-foreground/[0.03]">
+                <th className="p-3.5 font-bold text-foreground">Feature</th>
+                <th className="p-3.5 font-bold text-primary">OQTutor 1-on-1 Online</th>
+                <th className="p-3.5 font-bold text-muted-text">Group Madrasah</th>
+                <th className="p-3.5 font-bold text-muted-text">Pre-Recorded Apps</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-card-border/60">
+              <tr>
+                <td className="p-3.5 font-semibold text-foreground">Active Recitation Time</td>
+                <td className="p-3.5 text-primary font-bold">100% of class (30 min)</td>
+                <td className="p-3.5 text-muted-text">2–5 minutes</td>
+                <td className="p-3.5 text-muted-text">0 min (passive listening)</td>
+              </tr>
+              <tr>
+                <td className="p-3.5 font-semibold text-foreground">Pronunciation Correction</td>
+                <td className="p-3.5 text-primary font-bold">Instant real-time correction</td>
+                <td className="p-3.5 text-muted-text">Delayed or missed</td>
+                <td className="p-3.5 text-muted-text">None (automated)</td>
+              </tr>
+              <tr>
+                <td className="p-3.5 font-semibold text-foreground">Learning Pace</td>
+                <td className="p-3.5 text-primary font-bold">100% customized to learner</td>
+                <td className="p-3.5 text-muted-text">Fixed group speed</td>
+                <td className="p-3.5 text-muted-text">Self-paced (low accountability)</td>
+              </tr>
+              <tr>
+                <td className="p-3.5 font-semibold text-foreground">Scheduling Flexibility</td>
+                <td className="p-3.5 text-primary font-bold">Choose your own days &amp; times</td>
+                <td className="p-3.5 text-muted-text">Rigid fixed weekend schedule</td>
+                <td className="p-3.5 text-muted-text">Anytime (no live mentor)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Section 4: Daily Practice Routine */}
+      <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          The 15-Minute Daily Practice Routine for Beginners
+        </h2>
+        <p className="text-base text-muted-text">
+          Consistency always beats marathon cramming. Spending just 15 minutes reviewing between live sessions accelerates progress dramatically:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border text-center space-y-2">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full inline-block">Minutes 1–5</span>
+            <h4 className="font-bold text-foreground text-sm sm:text-base">Alphabet &amp; Phonics Warmup</h4>
+            <p className="text-xs text-muted-text">Review tricky letters (like 'Ain, Ha, Saad, Dhaad) using audio guides or flashcards.</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border text-center space-y-2">
+            <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-full inline-block">Minutes 6–12</span>
+            <h4 className="font-bold text-foreground text-sm sm:text-base">Current Lesson Reading</h4>
+            <p className="text-xs text-muted-text">Read your assigned Qaida page or Surah lines aloud at a slow, deliberate pace.</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-card-bg border border-card-border text-center space-y-2">
+            <span className="text-xs font-bold text-emerald-500 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full inline-block">Minutes 13–15</span>
+            <h4 className="font-bold text-foreground text-sm sm:text-base">Listen &amp; Recite Duas</h4>
+            <p className="text-xs text-muted-text">Listen to a renowned Qari recite the passage and repeat with proper breath control.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: FAQ Section */}
+      <section className="space-y-6 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Frequently Asked Questions About Beginner Quran Classes
+        </h2>
+
+        <div className="space-y-4">
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What is the best way for a beginner to start learning the Quran online?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              The best approach is starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> to learn the Arabic alphabet, correct pronunciation (Makharij), and short vowel marks before moving into word formation and full Quran reading with a live 1-on-1 tutor.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Can adults start learning Quran as complete beginners?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes, many adults begin with zero prior Arabic knowledge. Private one-on-one classes provide a patient, self-paced, and confidential environment where adult beginners learn comfortably without feeling rushed.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              What is the difference between Noorani Qaida and Quran Reading?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Noorani Qaida teaches the basic phonetics, individual letters, and sound connections. Once a student finishes Noorani Qaida, they smoothly transition to reciting verses from the Holy Quran in the <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran Reading course</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              How long does it take for a beginner to read Quran fluently?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              With 3 to 4 classes per week and 15 minutes of daily practice, most beginners complete Noorani Qaida in 3 to 5 months and begin reading the Quran independently with basic Tajweed within 6 to 12 months.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Do I need to know the Arabic language to learn Quran recitation?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              No, you do not need to understand conversational Arabic to learn how to read the Quran with correct Tajweed. Our beginner courses teach phonetics and recitation rules from scratch.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-foreground text-base sm:text-lg">
+              Can I choose a female Quran teacher for beginner classes?
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              Yes, OQTutor has certified <Link href="/courses/female-quran-teacher" className="text-primary font-semibold hover:underline">female Quran teachers</Link> (Alimas and Qariahs) available for sisters, young girls, and children.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources & Educational Links */}
+      <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Helpful Beginner Guides &amp; Parent Resources
+        </h2>
+        <ul className="space-y-2.5 text-base text-muted-text list-disc pl-5">
+          <li>
+            <Link href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor" className="text-primary font-semibold hover:underline">
+              What US Parents Should Know Before Choosing an Online Quran Tutor
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">
+              How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timelines)
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors" className="text-primary font-semibold hover:underline">
+              Best Online Quran Classes in the USA: One-to-One Qualified Tutors
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/online-quran-classes-texas" className="text-primary font-semibold hover:underline">
+              Online Quran Classes in Texas: A Real Guide for Busy Families
+            </Link>
+          </li>
+          <li>
+            <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">
+              Noorani Qaida Course: Master Arabic Alphabet &amp; Phonetics
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      {/* Final Thoughts & CTA */}
+      <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          Start Your Quran Journey with a Free Trial
+        </h2>
+        <p className="text-base text-muted-text">
+          Every Hafiz and skilled Qari started with the single letter Alif. The key to mastering the Holy Quran is starting with clear direction, regular practice, and a compassionate teacher who believes in your potential.
+        </p>
+        <p className="text-base text-muted-text">
+          Take the first step today. Meet your dedicated teacher, evaluate your starting level, and experience personalized 1-on-1 Quran tutoring with a 100% free, zero-obligation trial session.
+        </p>
+
+        {/* Call to Action Card */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Book Your Free Beginner Trial Quran Class
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Join hundreds of beginners across the USA, UK, Canada, and Australia learning Quran online. Free 30-minute trial lesson, flexible schedule, no credit card required.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Trial Class</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/courses/noorani-qaida"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore Noorani Qaida Course</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+}
+
 
 
 

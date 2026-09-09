@@ -52,8 +52,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
+    const flagshipBlogSlugs = [
+      'online-quran-classes-texas',
+      'best-online-quran-classes-for-beginners',
+      'online-quran-classes-in-the-usa-for-kids-and-adults',
+      'how-to-choose-best-online-quran-classes-for-kids-usa',
+      'best-online-quran-classes-usa-one-to-one-qualified-tutors',
+      'how-long-does-it-take-for-a-child-to-complete-the-quran-online',
+      'what-us-parents-should-know-before-choosing-an-online-quran-tutor',
+      'best-online-quran-classes-for-kids-in-usa',
+      'select-right-online-quran-tutor',
+      'how-do-you-know-your-child-is-ready-to-start-learning-the-quran',
+      'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities',
+    ];
+
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {
-      let lastMod = currentDate;
+      let lastMod = new Date('2026-08-28T00:00:00.000Z');
       const rawDate = blog.updatedAt || blog.publishedAt;
       if (rawDate) {
         const parsed = new Date(rawDate);
@@ -61,11 +75,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           lastMod = parsed;
         }
       }
+      const isFlagship = flagshipBlogSlugs.includes(blog.slug);
       return {
         url: `${baseUrl}/blog/${blog.slug}`,
         lastModified: lastMod,
         changeFrequency: 'weekly',
-        priority: 0.7,
+        priority: isFlagship ? 0.85 : 0.75,
       };
     });
 

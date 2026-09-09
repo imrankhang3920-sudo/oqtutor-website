@@ -567,7 +567,7 @@ export default async function CoursesPage() {
                   <span>Which Online Quran Course Is Best for Beginners?</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  <span className="font-semibold text-foreground">Noorani Qaida</span> is generally the starting point for students who cannot yet read Arabic or Quranic script confidently. It establishes letter recognition, articulation points (Makharij), and short vowel markings. Students who already recognize Arabic letters fluently may begin directly with <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Quran Reading</Link>.
+                  <span className="font-semibold text-foreground">Noorani Qaida</span> is generally the starting point for students who cannot yet read Arabic or Quranic script confidently. It establishes letter recognition, articulation points (Makharij), and short vowel markings. Read our comprehensive <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary hover:underline font-semibold">beginner Quran classes guide</Link> or start directly with <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Quran Reading</Link>.
                 </p>
               </div>
 
@@ -578,7 +578,7 @@ export default async function CoursesPage() {
                   <span>Can I Choose a Quran Course Based on My Current Level?</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  Yes. You can select a program aligned with your existing skill level—whether starting from zero, practicing reading fluency, perfecting Tajweed rules, memorizing Surahs, or studying Tafseer. During your free trial lesson, our instructors evaluate your starting proficiency and recommend the most suitable course.
+                  Yes. You can select a program aligned with your existing skill level—whether starting from zero, practicing reading fluency, perfecting Tajweed rules, memorizing Surahs, or studying Tafseer. See our <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary hover:underline font-semibold">Quran learning timeline</Link> and evaluate your level during a free trial session.
                 </p>
               </div>
 
@@ -589,7 +589,7 @@ export default async function CoursesPage() {
                   <span>Which Quran Course Is Best for Children?</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  The appropriate program depends on your child&apos;s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Explore our dedicated <Link href="/courses/quran-for-kids" className="text-primary hover:underline font-semibold">Quran for Kids</Link> program.
+                  The appropriate program depends on your child&apos;s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Read our guide on <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary hover:underline font-semibold">how to choose online Quran classes for kids</Link> or explore <Link href="/courses/quran-for-kids" className="text-primary hover:underline font-semibold">Quran for Kids</Link>.
                 </p>
               </div>
 
@@ -600,7 +600,7 @@ export default async function CoursesPage() {
                   <span>Which Quran Course Is Best for Adults?</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  Adults can begin from complete beginner Noorani Qaida or choose reading correction, Tajweed, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1 with flexible schedules to accommodate work and family routines. View our <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">Quran for Adults</Link> page.
+                  Adults can begin from complete beginner Noorani Qaida or choose reading correction, Tajweed, Hifz, or Tafseer based on personal background. All adult lessons are 100% private with certified tutors. See our guide to <Link href="/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors" className="text-primary hover:underline font-semibold">1-on-1 Quran tutors in the USA</Link> or visit <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">Quran for Adults</Link>.
                 </p>
               </div>
             </div>

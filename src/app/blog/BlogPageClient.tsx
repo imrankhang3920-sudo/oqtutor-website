@@ -241,24 +241,78 @@ function BlogContent({
 
       <main className="flex-grow bg-background">
         {/* Header Hero */}
-        <section className="relative py-20 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <section className="relative py-16 sm:py-20 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
           <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
               Knowledge Hub
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-              Quran Learning & Tajweed Blog
+              Quran Learning &amp; Tajweed Blog
             </h1>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
             <p className="mt-6 text-base sm:text-lg text-muted-text max-w-3xl mx-auto leading-relaxed">
               Read educational guidelines, Tajweed tricks, Quran memorization methods, and advice from certified Islamic instructors and scholars.
             </p>
+
+            {/* Quick Access Flagship Guides */}
+            <div className="mt-10 max-w-5xl mx-auto">
+              <div className="p-4 sm:p-6 rounded-3xl glass border border-card-border shadow-sm text-left">
+                <div className="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-primary">
+                  <BookOpen className="h-4 w-4 text-primary" />
+                  <span>Featured Parent &amp; Beginner Guides</span>
+                </div>
+                <div className="flex flex-wrap gap-2 sm:gap-2.5">
+                  <Link
+                    href="/blog/online-quran-classes-texas"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Online Quran Classes Texas
+                  </Link>
+                  <Link
+                    href="/blog/best-online-quran-classes-for-beginners"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Beginner Quran Classes Guide
+                  </Link>
+                  <Link
+                    href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Choose Quran Classes for Kids USA
+                  </Link>
+                  <Link
+                    href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Choosing an Online Quran Tutor
+                  </Link>
+                  <Link
+                    href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Child Quran Timeline Guide
+                  </Link>
+                  <Link
+                    href="/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    1-on-1 Quran Classes USA
+                  </Link>
+                  <Link
+                    href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
+                  >
+                    Kids &amp; Adults Quran USA
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Filters & Grid */}
-        <section className="py-16 sm:py-20">
+        <section className="py-12 sm:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Search and Category block */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
