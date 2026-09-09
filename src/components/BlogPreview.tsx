@@ -30,24 +30,6 @@ const blogItems: BlogPreviewItem[] = [
     title: 'How to Choose the Best Online Quran Classes for Kids in the USA',
     link: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa',
   },
-  {
-    image: '/parents-role.jpg',
-    category: 'Tutor Selection',
-    title: 'What US Parents Should Know Before Choosing an Online Quran Tutor',
-    link: '/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor',
-  },
-  {
-    image: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
-    category: 'Parent Timeline',
-    title: 'How Long Does It Take for a Child to Complete the Quran Online?',
-    link: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online',
-  },
-  {
-    image: '/images/hero-quran-recitation.webp',
-    category: '1-on-1 Tutoring',
-    title: 'Best Online Quran Classes in the USA: One-to-One Qualified Tutors',
-    link: '/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors',
-  },
 ];
 
 export default function BlogPreview() {
