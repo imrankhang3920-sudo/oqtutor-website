@@ -343,6 +343,16 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\df6479f8-8329-4ae5-9267-97b080ee822c\\.user_uploaded\\media_1788282889606.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/parents-role.jpg'),
         dest: path.join(process.cwd(), 'public/blog/common-quran-reading-mistakes-children-make/how-parents-help-improve-quran-reading-at-home.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\087eb32b-7f4f-4944-9997-380779f7f401\\.user_uploaded\\media_1789040425193.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/why-memorizing-the-quran-rewires-your-brain/integration-spiritual-neurological.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\087eb32b-7f4f-4944-9997-380779f7f401\\.user_uploaded\\media_1789040425268.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/why-memorizing-the-quran-rewires-your-brain/emotional-processing-mental-health.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
