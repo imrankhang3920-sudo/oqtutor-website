@@ -353,6 +353,11 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\087eb32b-7f4f-4944-9997-380779f7f401\\.user_uploaded\\media_1789040425268.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
         dest: path.join(process.cwd(), 'public/blog/why-memorizing-the-quran-rewires-your-brain/emotional-processing-mental-health.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\087eb32b-7f4f-4944-9997-380779f7f401\\.user_uploaded\\media_1789043455685.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/why-memorizing-the-quran-rewires-your-brain/why-memorizing-the-quran-rewires-your-brain-cover.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
