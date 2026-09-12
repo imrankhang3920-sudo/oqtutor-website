@@ -28,8 +28,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Quran Tutoring for US Families | EST to PST | OQTutor";
-  const metaDescription = "Fit 1-on-1 Quran recitation around homework and work hours. Flexible morning and evening slots across all 4 US time zones. Book a free trial.";
+  const metaTitle = "Online Quran Classes USA for Kids & Adults | OQTutor";
+  const metaDescription = "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.";
   
   return {
     title: metaTitle,
@@ -82,8 +82,8 @@ export default async function USALocationsHubPage() {
 
   // Exact single unique H1 and supporting intro
   const heroFallback = dbData?.hero || {
-    title: "Quran Lessons Built Around Your US Time Zone — From EST to PST",
-    subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
+    title: "Online Quran Classes USA for Kids & Adults | OQTutor",
+    subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
     whatsappText: "+1234567890",
@@ -92,8 +92,8 @@ export default async function USALocationsHubPage() {
   };
 
   const customHeroData = {
-    title: "Quran Lessons Built Around Your US Time Zone — From EST to PST",
-    subtitle: "Personalized, live one-to-one Quran lessons for children and adults across all US time zones. Learn Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic Studies from home with certified male and female scholars.",
+    title: "Online Quran Classes USA for Kids & Adults | OQTutor",
+    subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
     whatsappText: heroFallback.whatsappText || "",

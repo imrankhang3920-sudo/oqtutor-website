@@ -63,10 +63,7 @@ export default function Hero({ data }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-foreground"
           >
-            Personalized 1-on-1 <span className="text-primary">Quran Classes</span> for Kids —{' '}
-            <span className="text-secondary underline decoration-secondary/30 decoration-wavy underline-offset-8">
-              100% Risk-Free
-            </span>
+            {titleText}
           </motion.h1>
 
           {/* Subheadline */}
