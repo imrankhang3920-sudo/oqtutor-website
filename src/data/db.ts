@@ -251,8 +251,11 @@ export interface DatabaseSchema {
 
 let inMemoryCache: DatabaseSchema | null = null;
 
-// Top-level self-executing sync copy for brain assets to public directory
+// Development-only safe sync copy for local brain assets to public directory
 (function copyBrainAssetsToPublic() {
+  if (process.env.NODE_ENV === 'production') {
+    return;
+  }
   try {
     const targetDir = path.join(process.cwd(), 'public/blog/weekend-quran');
     if (!fs.existsSync(targetDir)) {
@@ -376,19 +379,23 @@ let inMemoryCache: DatabaseSchema | null = null;
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
-      const needsCopy = !fs.existsSync(dest) || fs.statSync(dest).size === 0;
-      if (fs.existsSync(src) && needsCopy) {
-        try {
+      try {
+        const parentDir = path.dirname(dest);
+        if (!fs.existsSync(parentDir)) {
+          fs.mkdirSync(parentDir, { recursive: true });
+        }
+        const needsCopy = !fs.existsSync(dest) || (fs.existsSync(dest) && fs.statSync(dest).size === 0);
+        if (fs.existsSync(src) && needsCopy) {
           fs.copyFileSync(src, dest);
-        } catch (e) {}
-      } else if (fallbackSrc && fs.existsSync(fallbackSrc) && needsCopy) {
-        try {
+        } else if (fallbackSrc && fs.existsSync(fallbackSrc) && needsCopy) {
           fs.copyFileSync(fallbackSrc, dest);
-        } catch (e) {}
+        }
+      } catch (innerErr) {
+        // Safe skip per file
       }
     });
   } catch (e) {
-    // ignore
+    // safe ignore
   }
 })();
 
