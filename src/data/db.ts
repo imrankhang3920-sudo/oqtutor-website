@@ -58,6 +58,7 @@ export interface CourseData {
   faqs: { question: string; answer: string }[];
   updatedAt?: string;
   createdAt?: string;
+  authorName?: string;
 }
 
 export interface PricingData {
