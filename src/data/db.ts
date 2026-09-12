@@ -58,7 +58,6 @@ export interface CourseData {
   faqs: { question: string; answer: string }[];
   updatedAt?: string;
   createdAt?: string;
-  authorName?: string;
 }
 
 export interface PricingData {
@@ -205,6 +204,7 @@ export interface BlogData {
   isPublished?: boolean;
   publishedAt?: string;
   updatedAt?: string;
+  authorName?: string;
 }
 
 export interface SEOData {
