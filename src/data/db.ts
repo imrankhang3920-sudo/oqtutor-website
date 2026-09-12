@@ -374,7 +374,7 @@ let inMemoryCache: DatabaseSchema | null = null;
         dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/what-uk-parents-should-ask-before-enrolling.jpg')
       },
       {
-        src: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\5c0b0aec-95d5-46b8-bcb5-74ea59d710a2\\.user_uploaded\\media_1789236786292.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
         dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/online-quran-classes-uk-guide-cover.jpg')
       }
