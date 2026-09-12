@@ -358,6 +358,21 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\087eb32b-7f4f-4944-9997-380779f7f401\\.user_uploaded\\media_1789043455685.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/blog-kids-usa-1.jpg'),
         dest: path.join(process.cwd(), 'public/blog/why-memorizing-the-quran-rewires-your-brain/why-memorizing-the-quran-rewires-your-brain-cover.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\5c0b0aec-95d5-46b8-bcb5-74ea59d710a2\\.user_uploaded\\media_1789234592904.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/what-can-you-learn-in-online-quran-classes-uk.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\5c0b0aec-95d5-46b8-bcb5-74ea59d710a2\\.user_uploaded\\media_1789234592968.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-london.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/what-uk-parents-should-ask-before-enrolling.jpg')
+      },
+      {
+        src: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
+        fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/online-quran-classes-uk-guide-cover.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {

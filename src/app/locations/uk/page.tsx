@@ -1474,6 +1474,95 @@ export default async function UKQuranClassesPage() {
           </div>
         </section>
 
+        {/* UK Quran Learning Guides & Resources */}
+        <section className="py-16 bg-foreground/[0.01] border-t border-card-border relative">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+                UK Resources &amp; Guides
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
+                UK Quran Learning Guides &amp; Insights
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text">
+                Explore expert advice, curriculum breakdowns, and practical guidance for British Muslim families learning Quran online.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <Link
+                href="/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between hover:shadow-lg"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">
+                    UK Complete Guide
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    Online Quran Classes in the UK: A Complete Guide for Kids, Adults and Beginners
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed line-clamp-3">
+                    A comprehensive guide explaining course options, Tajweed, flexible UK schedules, finding qualified teachers, and parent FAQs across the UK.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 flex items-center justify-between text-xs text-muted-text">
+                  <span>12 min read • By Muhammad Imran</span>
+                  <span className="font-semibold text-primary group-hover:translate-x-1 transition-transform inline-flex items-center">
+                    Read Guide <ArrowRight className="h-3.5 w-3.5 ml-1" />
+                  </span>
+                </div>
+              </Link>
+
+              <Link
+                href="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between hover:shadow-lg"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full inline-block">
+                    Parenting
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    How to Help Children Balance Quran Learning With School &amp; Activities
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed line-clamp-3">
+                    Practical schedules and routines for British Muslim parents balancing school homework, extracurriculars, and daily Quran classes.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 flex items-center justify-between text-xs text-muted-text">
+                  <span>12 min read</span>
+                  <span className="font-semibold text-primary group-hover:translate-x-1 transition-transform inline-flex items-center">
+                    Read Guide <ArrowRight className="h-3.5 w-3.5 ml-1" />
+                  </span>
+                </div>
+              </Link>
+
+              <Link
+                href="/blog/best-online-quran-classes-for-beginners"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between hover:shadow-lg"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider px-2.5 py-1 bg-emerald-500/10 rounded-full inline-block">
+                    Beginners
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    What Are the Best Online Quran Classes for Beginners?
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed line-clamp-3">
+                    Step-by-step roadmap from Noorani Qaida to confident Quran recitation for kids and adult beginners.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 flex items-center justify-between text-xs text-muted-text">
+                  <span>10 min read</span>
+                  <span className="font-semibold text-primary group-hover:translate-x-1 transition-transform inline-flex items-center">
+                    Read Guide <ArrowRight className="h-3.5 w-3.5 ml-1" />
+                  </span>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Section 15: Frequently Asked Questions About Online Quran Classes in the UK */}
         <section id="faqs" className="py-16 md:py-24 bg-background border-t border-card-border relative">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

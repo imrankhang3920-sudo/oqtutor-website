@@ -64,6 +64,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'select-right-online-quran-tutor',
       'how-do-you-know-your-child-is-ready-to-start-learning-the-quran',
       'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities',
+      'why-memorizing-the-quran-rewires-your-brain',
+      'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners',
     ];
 
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {

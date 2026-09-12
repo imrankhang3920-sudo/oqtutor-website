@@ -49,9 +49,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog;
+  const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog;
 
-  const metaTitle = isBrainRewireBlog
+  const metaTitle = isUKCompleteGuideBlog
+    ? 'Online Quran Classes in the UK: A Complete Guide for Kids, Adults & Beginners | OQTutor'
+    : isBrainRewireBlog
     ? 'Why Memorizing the Quran Rewires Your Brain: Neuroscience of Hifz | OQTutor'
     : isBalanceBlog
     ? 'How to Help Children Balance Quran Learning With School and Extracurricular Activities | OQTutor'
@@ -343,6 +346,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
+  const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -361,6 +365,100 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isUKCompleteGuideBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are online Quran classes in the UK?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Online Quran classes in the UK are live Quran lessons delivered online by a Quran teacher. Students can learn Quran reading, Noorani Qaida, Tajweed, Hifz, and other Islamic subjects from home."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are online Quran classes suitable for children?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Children can learn Quran online through structured lessons designed around their age and current ability. Parents should choose a teacher who communicates well with children and provides appropriate guidance."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can adults learn Quran online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Adults can start from the basics or choose advanced courses such as Tajweed, Quran reading, memorisation, or translation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I choose a male or female Quran teacher?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many online Quran academies offer both male and female teachers. Availability depends on the academy and timetable."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long is an online Quran class?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lesson length varies by academy and student needs. Children often benefit from shorter focused sessions, while older students may prefer longer lessons."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I learn Tajweed online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Tajweed can be taught through live online lessons. The teacher listens to the student's recitation and provides corrections during the class."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can children learn Hifz online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Online Hifz programmes can provide structured memorisation and revision with regular teacher supervision."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need previous Quran knowledge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Beginners can start with Noorani Qaida or another foundational course."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are online Quran classes better than local classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Neither option is automatically better for everyone. Online classes offer flexibility and individual attention, while local classes may provide face to face community interaction. Families should choose the approach that best matches their needs."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I choose the right online Quran academy?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compare teacher qualifications, teaching methods, course options, class schedules, student support, progress tracking, trial options, and pricing before making a decision."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isBeginnersBlog && (
         <script
@@ -1755,7 +1853,7 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
               <span className="flex items-center space-x-1.5">
                 <BookOpen className="h-4 w-4 text-emerald-500" />
-                <span>By OQTutor Senior Scholars</span>
+                <span>By {blog.authorName || 'OQTutor Senior Scholars'}</span>
               </span>
             </div>
           </div>
@@ -1775,7 +1873,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isBrainRewireBlog ? (
+            {isUKCompleteGuideBlog ? (
+              <ArticleContentUKCompleteGuide />
+            ) : isBrainRewireBlog ? (
               <ArticleContentBrainRewiring />
             ) : isBalanceBlog ? (
               <ArticleContentBalanceQuranSchool />
@@ -12763,6 +12863,778 @@ function ArticleContentBrainRewiring() {
                 <span>Explore Quran Courses</span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+}
+
+function ArticleContentUKCompleteGuide() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 not-prose shadow-sm">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Summary: Online Quran Learning in the UK</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          For Muslim families across London, Birmingham, Manchester, Glasgow, and throughout the United Kingdom, <strong>online Quran classes</strong> offer a flexible, high-quality solution to fit Islamic education around busy British school, work, and family schedules. With live 1-on-1 sessions led by certified male and female scholars, students receive personalized guidance from <Link href="/courses/noorani-qaida" className="text-primary font-bold hover:underline">Noorani Qaida</Link> to <Link href="/courses/tajweed" className="text-primary font-bold hover:underline">Tajweed</Link> and <Link href="/courses/hifz" className="text-primary font-bold hover:underline">Hifz</Link> with zero commute.
+        </p>
+      </div>
+
+      {/* Quick Navigation Box */}
+      <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-foreground font-bold text-sm">
+          <ListChecks className="h-4 w-4 text-primary" />
+          <span>Table of Contents: In This Guide</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-muted-text">
+          <a href="#what-are-online-quran-classes-uk" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>What Are Online Quran Classes in the UK?</span>
+          </a>
+          <a href="#why-uk-families-choose-online-quran" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Why UK Families Choose Online Learning</span>
+          </a>
+          <a href="#what-you-can-learn" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>What Can You Learn in Online Quran Classes?</span>
+          </a>
+          <a href="#quran-classes-for-kids-uk" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Online Quran Classes for Kids in the UK</span>
+          </a>
+          <a href="#quran-classes-for-adults-uk" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Online Quran Classes for Adults in the UK</span>
+          </a>
+          <a href="#how-to-choose-quran-teacher-uk" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How to Choose the Best Quran Teacher</span>
+          </a>
+          <a href="#benefits-of-one-to-one-classes" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Benefits of One to One Quran Classes</span>
+          </a>
+          <a href="#how-online-quran-classes-work" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How Do Online Quran Classes Work? (5 Steps)</span>
+          </a>
+          <a href="#what-uk-parents-should-ask" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>What UK Parents Should Ask Before Enrolling</span>
+          </a>
+          <a href="#quran-classes-cost-uk" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How Much Do Quran Classes Cost in the UK?</span>
+          </a>
+          <a href="#how-children-stay-consistent" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How Children Can Stay Consistent</span>
+          </a>
+          <a href="#online-vs-local-quran-classes" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Online vs. Local Mosque Classes</span>
+          </a>
+          <a href="#uk-time-zone-friendly-classes" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Why UK Time Zone Friendly Classes Matter</span>
+          </a>
+          <a href="#is-online-learning-suitable-for-beginners" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Is It Suitable for Beginners?</span>
+          </a>
+          <a href="#how-oqtutor-supports-uk-learners" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>How OQTutor Supports UK Learners</span>
+          </a>
+          <a href="#uk-quran-faqs" className="hover:text-primary transition-colors flex items-center space-x-1.5">
+            <ChevronRight className="h-3.5 w-3.5 text-primary" />
+            <span>Frequently Asked Questions</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <section className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Finding the right way to learn the Quran can be challenging for busy families in the UK. School, work, family responsibilities, and daily commitments can make traditional Quran lessons difficult to fit into a regular schedule.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          <Link href="/locations/uk" className="text-primary font-semibold hover:underline">Online Quran classes in the UK</Link> provide a flexible alternative. Students can learn from home through live lessons with a <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified Quran teacher</Link> without travelling to a mosque or learning centre.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          With one to one classes, students can learn at their own pace and receive direct feedback on <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>, pronunciation, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>, and <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">memorisation</Link>.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          This guide explains how online Quran classes work, what students can learn, how to choose a suitable Quran teacher, and what parents should consider before enrolling their children.
+        </p>
+      </section>
+
+      {/* Section 1: What Are Online Quran Classes in the UK? */}
+      <section id="what-are-online-quran-classes-uk" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Globe className="h-7 w-7 text-primary" />
+          <span>What Are Online Quran Classes in the UK?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran classes are live lessons delivered through the internet between a student and a Quran teacher.
+        </p>
+        <p className="text-base text-muted-text">
+          Students can join lessons from home using a computer, tablet, or other suitable device. The teacher guides the student through the selected Quran course and corrects mistakes during the lesson.
+        </p>
+        <p className="text-base text-muted-text">
+          For UK families, online learning can be particularly convenient because class schedules can be arranged around school, work, family activities, and weekends.
+        </p>
+
+        <p className="text-base text-muted-text font-medium text-foreground">
+          Most reputable online Quran academies offer courses for:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 not-prose">
+          {[
+            { title: 'Children & Young Learners', link: '/courses/quran-for-kids' },
+            { title: 'Teenagers', link: '/courses/quran-reading' },
+            { title: 'Adult Learners', link: '/courses/quran-for-adults' },
+            { title: 'Complete Beginners', link: '/courses/noorani-qaida' },
+            { title: 'Sisters & Female Students', link: '/courses/female-quran-teacher' },
+            { title: 'Quran Memorisation (Hifz) Students', link: '/courses/hifz' },
+            { title: 'Students Improving Tajweed Rules', link: '/courses/tajweed' }
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center space-x-2.5 p-3 rounded-2xl bg-foreground/[0.02] border border-card-border">
+              <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+              <Link href={item.link} className="text-sm font-semibold text-foreground hover:text-primary transition-colors">
+                {item.title}
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          One to one teaching is also common among UK focused Quran academies because it allows the teacher to concentrate on one learner throughout the lesson.
+        </p>
+      </section>
+
+      {/* Section 2: Why Are More UK Families Choosing Online Quran Learning? */}
+      <section id="why-uk-families-choose-online-quran" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Heart className="h-7 w-7 text-secondary" />
+          <span>Why Are More UK Families Choosing Online Quran Learning?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Traditional mosque and madrasa classes remain important for many Muslim families. However, online Quran learning offers a different level of flexibility.
+        </p>
+
+        <div className="space-y-6">
+          <div className="p-6 rounded-3xl bg-background border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary" />
+              <span>Flexible Class Timings</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Families can choose lesson times that fit around their existing routine. Children may have school during the day, while adults may have work commitments. Online lessons can often be scheduled during evenings, mornings, or weekends. This flexibility can make it easier to maintain consistency.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-background border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <Laptop className="h-5 w-5 text-secondary" />
+              <span>Learn From Home</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Students do not need to travel to a Quran academy or wait for transport. They can join their lesson from a quiet place at home. This can save travel time and make Quran learning easier for families living far from suitable local teachers across London, Manchester, Birmingham, Leeds, and other UK regions.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-background border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <UserCheck className="h-5 w-5 text-emerald-500" />
+              <span>One to One Attention</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              In a private lesson, the teacher can focus entirely on the student. The teacher can identify pronunciation problems, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed mistakes</Link>, reading difficulties, or memorisation challenges and provide individual guidance.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-background border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground flex items-center space-x-2">
+              <BookOpen className="h-5 w-5 text-primary" />
+              <span>Suitable for Different Learning Levels</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              A complete beginner and an advanced Quran reader do not need the same lesson plan. A good online Quran programme should assess the student&apos;s current ability and provide an appropriate learning path. Beginners may start with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>, while experienced students may focus on Tajweed, Hifz, translation, or improving their recitation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: What Can You Learn in Online Quran Classes? */}
+      <section id="what-you-can-learn" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <BookOpen className="h-7 w-7 text-primary" />
+          <span>What Can You Learn in Online Quran Classes?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          The best course depends on the student&apos;s age, experience, and goals.
+        </p>
+
+        {/* IMAGE 1 */}
+        <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl not-prose bg-background">
+          <Image
+            src="/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/what-can-you-learn-in-online-quran-classes-uk.jpg"
+            alt="What Can You Learn in Online Quran Classes? A comprehensive curriculum for all ages and levels in the UK"
+            width={1000}
+            height={560}
+            className="w-full h-auto object-cover"
+          />
+          <div className="p-3.5 text-center text-xs text-muted-text font-medium border-t border-card-border bg-foreground/[0.02]">
+            Comprehensive online Quran curriculum covering Noorani Qaida, Tajweed, Quran reading, Hifz, and Islamic studies for UK learners.
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <div className="p-6 rounded-3xl bg-primary/[0.03] border border-primary/20 space-y-3">
+            <h3 className="text-xl font-bold text-foreground">1. Noorani Qaida</h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> is commonly used as a starting point for beginners. Students learn Arabic letters, their sounds, joining letters, basic reading rules, and pronunciation before progressing to Quran reading. It can be particularly helpful for children who are learning Arabic letters for the first time. For a full breakdown, explore our guide on <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary font-semibold hover:underline">best online Quran classes for beginners</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <h3 className="text-xl font-bold text-foreground">2. Quran Reading</h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Students who already understand the basics can begin learning to read the Quran with our <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Fluent Quran Reading course</Link>. The teacher helps them improve fluency, pronunciation, accuracy, and confidence. Regular practice is important because Quran reading improves through consistent repetition. You can also read our parent guide on <Link href="/blog/common-quran-reading-mistakes-children-make" className="text-primary font-semibold hover:underline">common Quran reading mistakes children make and how to fix them</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <h3 className="text-xl font-bold text-foreground">3. Quran With Tajweed</h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Tajweed teaches students how to recite the Quran correctly according to established pronunciation and recitation rules. A teacher can listen to the student&apos;s recitation and immediately identify mistakes that may be difficult to recognise when learning alone. For students who already read the Quran but want to improve their pronunciation and fluency, structured <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed lessons</Link> can be a useful next step. Read our comprehensive <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">Beginner&apos;s Guide to Mastering Tajweed Rules</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <h3 className="text-xl font-bold text-foreground">4. Quran Memorisation and Hifz</h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Students interested in memorising the Quran can follow a <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">structured Hifz programme</Link>. A good memorisation plan should consider the student&apos;s age, available study time, existing memorisation, and ability to revise previous portions. Revision is especially important because memorisation is not only about learning new verses. Students also need regular review to maintain what they have already memorised. Explore our guide on <Link href="/blog/effective-hifz-memorization-techniques" className="text-primary font-semibold hover:underline">effective Hifz memorisation techniques</Link>.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-3">
+            <h3 className="text-xl font-bold text-foreground">5. Quran Translation and Islamic Studies</h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Some students want to understand the meaning of the Quran alongside learning to read it. Depending on the academy and course structure, students may study <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Quran translation &amp; Tafseer</Link>, basic <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic studies</Link>, daily supplications (duas), Salah, or other foundational topics.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Online Quran Classes for Kids in the UK */}
+      <section id="quran-classes-for-kids-uk" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Users className="h-7 w-7 text-primary" />
+          <span>Online Quran Classes for Kids in the UK</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents often have different priorities when choosing <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">Quran classes for children</Link>. A child needs more than a teacher who simply knows the Quran. The teacher should also understand how to communicate with young learners.
+        </p>
+
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-foreground">What Makes a Good Quran Class for Children?</h3>
+          <p className="text-sm sm:text-base text-muted-text">
+            Look for a programme that provides:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 not-prose">
+            {[
+              'Age appropriate lessons and digital materials',
+              'Short and focused sessions (30 minutes)',
+              'Friendly, patient teacher communication',
+              'Regular real-time pronunciation correction',
+              'Gradual step-by-step learning progression',
+              'Consistent revision routines (Sabaq, Sabqi, Manzil)',
+              'Transparent parent progress communication',
+              'Flexible UK scheduling around school hours',
+              'A suitable male or female teacher when preferred'
+            ].map((pt, idx) => (
+              <div key={idx} className="flex items-start space-x-2.5 p-3 rounded-2xl bg-foreground/[0.02] border border-card-border">
+                <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-foreground/90">{pt}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm sm:text-base text-muted-text pt-2">
+            Children can lose interest when lessons feel repetitive or too difficult. An effective teacher should maintain a balance between discipline, encouragement, repetition, and progress. Learn how to <Link href="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities" className="text-primary font-semibold hover:underline">balance Quran lessons with UK school and activities</Link>.
+          </p>
+        </div>
+
+        <div className="p-6 rounded-3xl bg-secondary/5 border border-secondary/20 space-y-3">
+          <h3 className="text-lg font-bold text-foreground">What Age Should a Child Start Quran Classes?</h3>
+          <p className="text-sm sm:text-base text-muted-text">
+            There is no single perfect age for every child. Some children are ready to begin around four or five, while others may benefit from starting later. Parents should consider whether the child can sit comfortably for a short lesson, follow basic instructions, recognise letters, and participate without becoming overwhelmed.
+          </p>
+          <p className="text-sm sm:text-base text-muted-text">
+            The important point is not simply starting early. It is creating a positive learning routine that the child can maintain. Read our guide on <Link href="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran" className="text-primary font-semibold hover:underline">how to know your child is ready to start learning Quran</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 5: Online Quran Classes for Adults in the UK */}
+      <section id="quran-classes-for-adults-uk" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Award className="h-7 w-7 text-secondary" />
+          <span>Online Quran Classes for Adults in the UK</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran learning is not only for children.
+        </p>
+        <p className="text-base text-muted-text">
+          Many adults want to improve their Quran reading after years away from regular study. Others may want to learn Tajweed, correct pronunciation, or begin from the basics with <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">adult Quran classes</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          Online classes can make this easier because adults can select lesson times around work and family responsibilities.
+        </p>
+        <p className="text-base text-muted-text">
+          A beginner adult does not need to feel embarrassed about starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link>. Learning from the beginning can provide a stronger foundation and help correct pronunciation before moving to more advanced Quran reading.
+        </p>
+      </section>
+
+      {/* Section 6: How to Choose the Best Online Quran Teacher in the UK */}
+      <section id="how-to-choose-quran-teacher-uk" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <UserCheck className="h-7 w-7 text-primary" />
+          <span>How to Choose the Best Online Quran Teacher in the UK</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Choosing the right teacher can make a major difference to the learning experience.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">1. Check Quranic Knowledge</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Ask about the teacher&apos;s Quran education, Tajweed knowledge, memorisation background, and teaching experience. Qualifications should be presented honestly and clearly. Avoid choosing a teacher based only on impressive titles or marketing claims.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">2. Consider Communication Skills</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              For children and adults in the UK, communication is important. A teacher who can explain concepts clearly in English, Urdu, or Arabic can make lessons much easier and more engaging.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">3. Ask About Teaching Methods</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Before enrolling, ask how lessons are structured: what happens during a typical class, how mistakes are corrected in real time, how homework is assigned, and how parents receive regular progress updates.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="text-lg font-bold text-foreground">4. Consider Male or Female Teachers</h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Some families prefer a <Link href="/courses/female-quran-teacher" className="text-primary font-semibold hover:underline">female Quran teacher</Link> for their daughters or for women learning Quran. A reputable academy should make teacher preferences clear and help students find a suitable match.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text pt-1">
+          Explore our <Link href="/tutors" className="text-primary font-semibold hover:underline">certified Quran faculty</Link> and read our parent guide on <Link href="/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child" className="text-primary font-semibold hover:underline">how to choose the best female Quran teacher online</Link>.
+        </p>
+      </section>
+
+      {/* Section 7: What Are the Benefits of One to One Quran Classes? */}
+      <section id="benefits-of-one-to-one-classes" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>What Are the Benefits of One to One Quran Classes?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          One to one learning has several practical advantages:
+        </p>
+        <ul className="space-y-2.5 text-sm sm:text-base text-muted-text">
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>The teacher can spend the full lesson listening to one student rather than dividing attention between multiple learners.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>If a student struggles with a particular Arabic letter or Tajweed rule, the teacher can spend additional time practising it.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>The lesson can also move faster when the student understands a concept quickly.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span>This creates a more personalised learning experience compared with a fixed group lesson.</span>
+          </li>
+        </ul>
+      </section>
+
+      {/* Section 8: How Do Online Quran Classes Work? */}
+      <section id="how-online-quran-classes-work" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <ListChecks className="h-7 w-7 text-secondary" />
+          <span>How Do Online Quran Classes Work?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          The process is usually straightforward:
+        </p>
+
+        <div className="space-y-4 not-prose">
+          {[
+            {
+              step: 'Step 1',
+              title: 'Choose a Course',
+              desc: 'First, identify the student’s goal. For example, a beginner may need Noorani Qaida, while another student may want Tajweed or Hifz.'
+            },
+            {
+              step: 'Step 2',
+              title: 'Select a Suitable Teacher',
+              desc: 'Parents or adult students can discuss teacher preferences with the academy, including teaching experience, gender, language, age group, and availability.'
+            },
+            {
+              step: 'Step 3',
+              title: 'Choose a Convenient Schedule',
+              desc: 'The lesson timetable should fit around school, work, family activities, and other responsibilities. Consistency is more important than selecting an unrealistic schedule.'
+            },
+            {
+              step: 'Step 4',
+              title: 'Attend the Live Lesson',
+              desc: 'The student joins the class online and interacts directly with the teacher. The teacher explains the lesson, listens to recitation, corrects mistakes, and provides practice.'
+            },
+            {
+              step: 'Step 5',
+              title: 'Track Progress',
+              desc: 'Parents and students should have a clear understanding of what has been completed and what needs more practice. Regular progress reviews can help identify areas that need additional attention.'
+            }
+          ].map((s, idx) => (
+            <div key={idx} className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border flex flex-col sm:flex-row sm:items-start space-y-2 sm:space-y-0 sm:space-x-4">
+              <span className="text-xs font-extrabold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full w-fit shrink-0">
+                {s.step}
+              </span>
+              <div>
+                <h3 className="font-bold text-base text-foreground mb-1">{s.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 9: What Should UK Parents Ask Before Enrolling? */}
+      <section id="what-uk-parents-should-ask" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>What Should UK Parents Ask Before Enrolling?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Before choosing an online Quran academy, ask these questions:
+        </p>
+
+        {/* IMAGE 2 */}
+        <div className="my-8 rounded-3xl overflow-hidden border border-card-border shadow-xl not-prose bg-background">
+          <Image
+            src="/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/what-uk-parents-should-ask-before-enrolling.jpg"
+            alt="What Should UK Parents Ask Before Enrolling? A guide for families to choose the right online tutor and curriculum"
+            width={1000}
+            height={560}
+            className="w-full h-auto object-cover"
+          />
+          <div className="p-3.5 text-center text-xs text-muted-text font-medium border-t border-card-border bg-foreground/[0.02]">
+            Key questions and parent checklist for UK families before choosing an online Quran academy and teacher.
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
+          {[
+            '1. Are the classes one to one or group based?',
+            '2. Are male and female teachers available?',
+            '3. What Quran qualifications do the teachers have?',
+            '4. Are classes available during UK friendly times?',
+            '5. Is there a free trial lesson available?',
+            '6. How is student progress monitored and shared?',
+            '7. What happens if a child misses a lesson?',
+            '8. Which courses are available for beginners?',
+            '9. How are Tajweed mistakes corrected?',
+            '10. Can parents communicate directly with the teacher?',
+            '11. What technology and devices are required?',
+            '12. Are there clear monthly fees and class schedules?'
+          ].map((q, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-start space-x-2.5">
+              <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm font-medium text-foreground/90">{q}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text pt-2">
+          These questions can help families compare different academies based on teaching quality rather than price alone.
+        </p>
+      </section>
+
+      {/* Section 10: How Much Do Online Quran Classes Cost in the UK? */}
+      <section id="quran-classes-cost-uk" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Award className="h-7 w-7 text-secondary" />
+          <span>How Much Do Online Quran Classes Cost in the UK?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          The cost varies between academies. Pricing can depend on the number of weekly classes, lesson length, teacher experience, course type, and whether lessons are private or group based.
+        </p>
+        <p className="text-base text-muted-text">
+          Current UK Quran academy websites show a wide range of monthly pricing models, with some providers publishing packages based on two, three, or five lessons per week.
+        </p>
+        <p className="text-base text-muted-text">
+          Rather than choosing the cheapest option, parents should consider the overall value. A lower monthly price may not be useful if the teaching schedule is difficult to maintain or the student receives limited individual attention.
+        </p>
+        <p className="text-base text-muted-text">
+          A suitable programme should provide a reasonable balance between quality, consistency, teacher support, and affordability. You can <Link href="/pricing" className="text-primary font-semibold hover:underline">view transparent OQTutor pricing plans</Link> with no long-term contracts.
+        </p>
+      </section>
+
+      {/* Section 11: How Can Children Stay Consistent With Quran Classes? */}
+      <section id="how-children-stay-consistent" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>How Can Children Stay Consistent With Quran Classes?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Consistency is one of the biggest factors in Quran learning. Parents can help by creating a simple routine:
+        </p>
+        <ul className="space-y-2.5 text-sm sm:text-base text-muted-text">
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Choose a regular lesson time</strong> and avoid changing it unnecessarily.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Keep the learning environment quiet</strong> and free from distractions.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Encourage children after each lesson</strong> instead of focusing only on mistakes.</span>
+          </li>
+          <li className="flex items-start space-x-2.5">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Short daily revision (10–15 minutes)</strong> can reinforce what the child learned during the live lesson.</span>
+          </li>
+        </ul>
+        <p className="text-base text-muted-text">
+          Most importantly, Quran learning should become part of the child&apos;s routine rather than something that only happens when there is free time.
+        </p>
+      </section>
+
+      {/* Section 12: Online Quran Classes vs Local Quran Classes */}
+      <section id="online-vs-local-quran-classes" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Compass className="h-7 w-7 text-secondary" />
+          <span>Online Quran Classes vs Local Quran Classes</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Both approaches can work well:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 not-prose">
+          <div className="p-5 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+            <h3 className="font-bold text-base text-foreground">Local Mosque Classes</h3>
+            <p className="text-xs sm:text-sm text-muted-text">Provide face-to-face interaction and may offer a strong local community environment.</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-primary/[0.03] border border-primary/20 space-y-2">
+            <h3 className="font-bold text-base text-primary">Online 1-on-1 Classes</h3>
+            <p className="text-xs sm:text-sm text-muted-text">Provide greater scheduling flexibility, zero commute time, and private 100% focused individual attention from home.</p>
+          </div>
+        </div>
+        <p className="text-base text-muted-text pt-2">
+          The right choice depends on the student&apos;s needs, family schedule, available local options, and preferred learning environment. For families who struggle to find a suitable local teacher or timetable, online Quran learning can provide a practical alternative. Read our detailed <Link href="/blog/online-vs-in-person-quran-classes" className="text-primary font-semibold hover:underline">Online vs. In-Person Quran classes comparison guide</Link>.
+        </p>
+      </section>
+
+      {/* Section 13: Why UK Time Zone Friendly Classes Matter */}
+      <section id="uk-time-zone-friendly-classes" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>Why UK Time Zone Friendly Classes Matter</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          British families have different daily schedules throughout the year. Classes may need to work around school hours, work, family activities, and seasonal changes between Greenwich Mean Time (GMT) and British Summer Time (BST).
+        </p>
+        <p className="text-base text-muted-text">
+          When choosing an online Quran academy, parents should confirm the available timetable in UK local time. A convenient schedule can make regular attendance much easier. Learn more about our dedicated <Link href="/locations/uk" className="text-primary font-semibold hover:underline">UK Online Quran Tutoring Services</Link> and <Link href="/locations/uk/london" className="text-primary font-semibold hover:underline">London Quran Classes</Link>.
+        </p>
+      </section>
+
+      {/* Section 14: Is Online Quran Learning Suitable for Beginners? */}
+      <section id="is-online-learning-suitable-for-beginners" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <CheckCircle2 className="h-7 w-7 text-emerald-500" />
+          <span>Is Online Quran Learning Suitable for Beginners?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Yes. A complete beginner can start with the basics and progress gradually.
+        </p>
+        <div className="p-5 rounded-2xl bg-primary/5 border border-primary/20 text-center font-bold text-sm sm:text-base text-primary not-prose">
+          Noorani Qaida → Basic Quran Reading → Quran With Tajweed → Fluency and Advanced Recitation
+        </div>
+        <p className="text-base text-muted-text">
+          Students do not have to rush through these stages. The teacher should adjust the pace according to the learner&apos;s ability. This applies to both children and adults.
+        </p>
+      </section>
+
+      {/* Section 15: How OQTutor Supports Quran Learning in the UK */}
+      <section id="how-oqtutor-supports-uk-learners" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <ShieldCheck className="h-7 w-7 text-primary" />
+          <span>How OQTutor Supports Quran Learning in the UK</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          OQTutor provides online Quran learning for students who want structured lessons from home. Students can explore courses according to their learning goals, including <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>, <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link>, <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link>, and <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic studies</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          Families can also explore OQTutor&apos;s dedicated <Link href="/locations/uk" className="text-primary font-semibold hover:underline">UK Quran learning services</Link> to understand the available options for students across England, Scotland, Wales, and Northern Ireland.
+        </p>
+        <p className="text-base text-muted-text">
+          The goal is to make Quran learning accessible, structured, and easier to fit into modern family schedules.
+        </p>
+      </section>
+
+      {/* Section 16: Frequently Asked Questions */}
+      <section id="uk-quran-faqs" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions About Online Quran Classes in the UK</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          {[
+            {
+              q: 'What are online Quran classes in the UK?',
+              a: 'Online Quran classes in the UK are live Quran lessons delivered online by a Quran teacher. Students can learn Quran reading, Noorani Qaida, Tajweed, Hifz, and other Islamic subjects from home.'
+            },
+            {
+              q: 'Are online Quran classes suitable for children?',
+              a: 'Yes. Children can learn Quran online through structured lessons designed around their age and current ability. Parents should choose a teacher who communicates well with children and provides appropriate guidance.'
+            },
+            {
+              q: 'Can adults learn Quran online?',
+              a: 'Yes. Adults can start from the basics or choose advanced courses such as Tajweed, Quran reading, memorisation, or translation.'
+            },
+            {
+              q: 'Can I choose a male or female Quran teacher?',
+              a: 'Many online Quran academies offer both male and female teachers. Availability depends on the academy and timetable.'
+            },
+            {
+              q: 'How long is an online Quran class?',
+              a: 'Lesson length varies by academy and student needs. Children often benefit from shorter focused sessions, while older students may prefer longer lessons.'
+            },
+            {
+              q: 'Can I learn Tajweed online?',
+              a: 'Yes. Tajweed can be taught through live online lessons. The teacher listens to the student’s recitation and provides corrections during the class.'
+            },
+            {
+              q: 'Can children learn Hifz online?',
+              a: 'Yes. Online Hifz programmes can provide structured memorisation and revision with regular teacher supervision.'
+            },
+            {
+              q: 'Do I need previous Quran knowledge?',
+              a: 'No. Beginners can start with Noorani Qaida or another foundational course.'
+            },
+            {
+              q: 'Are online Quran classes better than local classes?',
+              a: 'Neither option is automatically better for everyone. Online classes offer flexibility and individual attention, while local classes may provide face to face community interaction. Families should choose the approach that best matches their needs.'
+            },
+            {
+              q: 'How do I choose the right online Quran academy?',
+              a: 'Compare teacher qualifications, teaching methods, course options, class schedules, student support, progress tracking, trial options, and pricing before making a decision.'
+            }
+          ].map((faq, idx) => (
+            <div key={idx} className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+              <h3 className="font-bold text-base sm:text-lg text-foreground flex items-start space-x-2.5">
+                <span className="text-primary font-bold">Q{idx + 1}:</span>
+                <span>{faq.q}</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed pl-7">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 17: Final Thoughts */}
+      <section id="final-thoughts" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>Final Thoughts</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Finding the right <Link href="/locations/uk" className="text-primary font-semibold hover:underline">online Quran classes in the UK</Link> is about more than choosing an affordable course.
+        </p>
+        <p className="text-base text-muted-text">
+          The quality of the teacher, consistency of lessons, learning method, class schedule, and student&apos;s individual needs all matter.
+        </p>
+        <p className="text-base text-muted-text">
+          For children, parents should look for patient teachers and age appropriate lessons. Adults should choose a programme that allows them to learn comfortably at their own pace.
+        </p>
+        <p className="text-base text-muted-text">
+          Whether the goal is to learn Noorani Qaida, improve Quran reading, master Tajweed, memorise the Quran, or understand Islamic studies, a structured online programme can make Quran learning easier to fit into everyday life.
+        </p>
+        <p className="text-base text-muted-text">
+          The best programme is one that encourages consistent learning and helps the student build a lasting relationship with the Quran.
+        </p>
+
+        {/* Free Trial CTA Banner */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Experience Online Quran Classes in the UK
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Book a free 30-minute placement trial with certified male or female Quran scholars. Flexible British time zone slots, zero credit card required.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Placement Trial</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/locations/uk"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore UK Quran Services</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Author Bio Box */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-5 not-prose mt-8">
+          <div className="relative h-20 w-20 rounded-2xl overflow-hidden border-2 border-primary/30 shrink-0">
+            <Image
+              src="/tutors/qari_muhammad_imran.jpg"
+              alt="Muhammad Imran - Senior Tajweed & Hifz Scholar at OQTutor"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-1.5 text-center sm:text-left">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <h3 className="font-bold text-lg text-foreground">Muhammad Imran</h3>
+              <span className="text-[11px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
+                Author &amp; Senior Scholar
+              </span>
+            </div>
+            <p className="text-xs text-secondary font-medium">Senior Tajweed &amp; Hifz Scholar • Jamia Ashrafia Graduate</p>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Muhammad Imran is a certified Tajweed and Quran memorisation scholar at OQTutor with over 5 years of international teaching experience guiding UK and international students through Noorani Qaida, accurate Makharij, and complete Quran recitation.
+            </p>
           </div>
         </div>
       </section>

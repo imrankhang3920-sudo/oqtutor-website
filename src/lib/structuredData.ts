@@ -110,9 +110,9 @@ export function createBlogPostSchema(blog: BlogData) {
     datePublished: publishedIso,
     dateModified: modifiedIso,
     author: {
-      '@type': 'Organization',
-      name: 'OQTutor Online Quran Academy',
-      url: siteConfig.url,
+      '@type': blog.authorName ? 'Person' : 'Organization',
+      name: blog.authorName || 'OQTutor Online Quran Academy',
+      url: blog.authorName ? `${siteConfig.url}/tutors` : siteConfig.url,
     },
     publisher: {
       '@type': 'Organization',
