@@ -131,6 +131,12 @@ export default async function USALocationsHubPage() {
       path: "/locations/usa/new-york",
       cities: "Brooklyn, Queens, Manhattan, Staten Island, Long Island",
       desc: "Flexible Eastern Time morning and evening slots tailored for busy students and professionals in NY."
+    },
+    {
+      name: "New Jersey",
+      path: "/locations/usa/new-jersey",
+      cities: "Jersey City, Edison, Paterson, Newark, Clifton, Princeton, Woodbridge, Cherry Hill",
+      desc: "Private 1-on-1 Quran classes in Eastern Time for kids and adults across New Jersey without the commute."
     }
   ];
 

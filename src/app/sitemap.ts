@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/locations/usa/california`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/usa/illinois`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/usa/michigan`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/locations/usa/new-jersey`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/usa/new-york`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/usa/texas`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/uk/london`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },

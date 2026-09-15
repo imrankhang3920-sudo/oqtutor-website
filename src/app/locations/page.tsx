@@ -42,6 +42,7 @@ export default async function LocationsHubPage() {
       subLocations: [
         { name: 'Illinois (Chicago)', slug: '/locations/usa/illinois' },
         { name: 'Michigan (Detroit)', slug: '/locations/usa/michigan' },
+        { name: 'New Jersey', slug: '/locations/usa/new-jersey' },
         { name: 'New York (NYC)', slug: '/locations/usa/new-york' },
         { name: 'Texas (Houston, Dallas)', slug: '/locations/usa/texas' },
         { name: 'California (LA, Bay Area)', slug: '/locations/usa/california' },
