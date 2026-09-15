@@ -56,8 +56,8 @@ function StatsBar() {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaDescription = "Personalized online Quran classes for kids & adults. Certified teachers, free trial, 30-min lessons. USA, Canada, UK, Australia. Book now.";
-  const metaTitle = "Personalized 1-on-1 Quran Classes for Kids — 100% Risk-Free | OQTutor";
+  const metaDescription = "Learn Quran Online | One to One Quran Classes for Kids and Adults. Certified male & female tutors for Tajweed, Hifz & Noorani Qaida. Book your free trial!";
+  const metaTitle = "Learn Quran Online | One to One Quran Classes for Kids and Adults | OQTutor";
 
   return {
     title: metaTitle,
@@ -104,7 +104,7 @@ export default async function HomePage() {
   // Personalized & High-Conversion Hero Data
   const homepageHeroData = {
     ...(dbData.hero || {}),
-    title: dbData.hero?.title || "Personalized 1-on-1 Quran Classes for Kids — 100% Risk-Free",
+    title: dbData.hero?.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults",
     subtitle: dbData.hero?.subtitle || "Expert female & male teachers from USA & Pakistan. 30-minute personalized lessons. Book your free trial in 60 seconds.",
     ctaText: dbData.hero?.ctaText || "Book Free Trial",
     ctaLink: dbData.hero?.ctaLink || "/book-free-trial",

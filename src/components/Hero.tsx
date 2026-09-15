@@ -18,7 +18,7 @@ export default function Hero({ data }: HeroProps) {
     'Expert match guaranteed',
   ];
 
-  const titleText = data.title || "Personalized 1-on-1 Quran Classes for Kids — 100% Risk-Free";
+  const titleText = data.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults";
   const subtitleText = data.subtitle || "Expert female & male teachers from USA & Pakistan. 30-minute personalized lessons. Book your free trial in 60 seconds.";
 
   return (
