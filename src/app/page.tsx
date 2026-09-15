@@ -105,7 +105,7 @@ export default async function HomePage() {
   const homepageHeroData = {
     ...(dbData.hero || {}),
     title: dbData.hero?.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults",
-    subtitle: dbData.hero?.subtitle || "Expert female & male teachers from USA & Pakistan. 30-minute personalized lessons. Book your free trial in 60 seconds.",
+    subtitle: dbData.hero?.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.",
     ctaText: dbData.hero?.ctaText || "Book Free Trial",
     ctaLink: dbData.hero?.ctaLink || "/book-free-trial",
     whatsappText: dbData.hero?.whatsappText || "Chat on WhatsApp",

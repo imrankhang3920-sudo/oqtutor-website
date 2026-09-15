@@ -19,7 +19,7 @@ export default function Hero({ data }: HeroProps) {
   ];
 
   const titleText = data.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults";
-  const subtitleText = data.subtitle || "Expert female & male teachers from USA & Pakistan. 30-minute personalized lessons. Book your free trial in 60 seconds.";
+  const subtitleText = data.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.";
 
   const renderFormattedTitle = (title: string) => {
     const parts = title.split(/(Quran\s+Online)/i);
