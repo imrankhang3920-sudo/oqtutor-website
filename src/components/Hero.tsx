@@ -21,6 +21,23 @@ export default function Hero({ data }: HeroProps) {
   const titleText = data.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults";
   const subtitleText = data.subtitle || "Expert female & male teachers from USA & Pakistan. 30-minute personalized lessons. Book your free trial in 60 seconds.";
 
+  const renderFormattedTitle = (title: string) => {
+    const parts = title.split(/(Quran\s+Online)/i);
+    return (
+      <>
+        {parts.map((part, index) =>
+          /Quran\s+Online/i.test(part) ? (
+            <span key={index} className="text-primary">
+              {part}
+            </span>
+          ) : (
+            part
+          )
+        )}
+      </>
+    );
+  };
+
   return (
     <section id="home" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-8 pb-12 md:py-20">
       {/* Background Image with Gradient Overlay (LCP Optimized) */}
@@ -63,7 +80,7 @@ export default function Hero({ data }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-foreground"
           >
-            {titleText}
+            {renderFormattedTitle(titleText)}
           </motion.h1>
 
           {/* Subheadline */}
