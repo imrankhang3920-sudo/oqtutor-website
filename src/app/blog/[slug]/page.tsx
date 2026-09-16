@@ -50,9 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
   const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog;
+  const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog;
 
-  const metaTitle = isUKCompleteGuideBlog
+  const metaTitle = isAfterNooraniQaidaBlog
+    ? 'What Should a Child Learn After Noorani Qaida? A Step-by-Step Guide | OQTutor'
+    : isUKCompleteGuideBlog
     ? 'Online Quran Classes in the UK: A Complete Guide for Kids, Adults & Beginners | OQTutor'
     : isBrainRewireBlog
     ? 'Why Memorizing the Quran Rewires Your Brain: Neuroscience of Hifz | OQTutor'
@@ -256,6 +259,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           'Quran memorization for kids',
           'learn Quran online for kids'
         ]
+      : isAfterNooraniQaidaBlog
+      ? [
+          'what should a child learn after noorani qaida',
+          'what to learn after noorani qaida',
+          'next step after noorani qaida',
+          'learn quran after noorani qaida',
+          'noorani qaida to quran reading',
+          'quran reading for kids',
+          'tajweed for children',
+          'quran memorization for kids',
+          'online quran classes for kids',
+          'child quran reading fluency',
+          'signs child is ready for quran'
+        ]
       : isGlobalBlog
       ? [
           'online vs in-person Quran classes',
@@ -347,6 +364,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
   const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
+  const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -365,6 +383,68 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isAfterNooraniQaidaBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What should a child learn after Noorani Qaida?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most children move toward direct Quran reading after building a solid foundation in Noorani Qaida. Pronunciation, Tajweed, fluency, and memorization can then be developed according to the child's ability."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should my child start Tajweed after Noorani Qaida?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, basic Tajweed can be introduced as the child begins Quran reading. The teacher can gradually apply appropriate rules rather than teaching everything at once."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to learn Quran after Noorani Qaida?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no universal timeline. Progress depends on age, ability, lesson frequency, home practice, and individual learning needs."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should children memorize Quran after learning to read?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Memorization can begin once a child has enough reading ability to recite the assigned passages accurately. The amount should match the child's age and learning capacity."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What if my child completed Noorani Qaida but still reads slowly?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Slow reading is common during the transition. Regular practice and targeted correction can gradually improve accuracy and confidence."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can my child learn Quran online after Noorani Qaida?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Live online lessons can provide individual reading practice, pronunciation correction, Tajweed instruction, and memorization support from home."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isUKCompleteGuideBlog && (
         <script
@@ -1873,7 +1953,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isUKCompleteGuideBlog ? (
+            {isAfterNooraniQaidaBlog ? (
+              <ArticleContentAfterNooraniQaida />
+            ) : isUKCompleteGuideBlog ? (
               <ArticleContentUKCompleteGuide />
             ) : isBrainRewireBlog ? (
               <ArticleContentBrainRewiring />
@@ -13641,6 +13723,835 @@ function ArticleContentUKCompleteGuide() {
     </article>
   );
 }
+
+function ArticleContentAfterNooraniQaida() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Insights for Parents</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          Completing Noorani Qaida is a celebrated milestone, but it marks the beginning of a child&apos;s true Quranic recitation journey. The transition moves progressively from foundational letter phonetics to direct Quran reading, correct pronunciation (Makharij), practical Tajweed application, reading fluency, and eventually memorization (Hifz) or deeper Quranic understanding.
+        </p>
+      </div>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        Finishing <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> is an important milestone in a child&apos;s Quran learning journey. But many parents wonder what comes next.
+      </p>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        Should the child start reading the Quran immediately? Is Tajweed necessary at this stage? Should memorization begin now, or should the child focus on fluent reading first?
+      </p>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        There is no single path that works for every child. The next step usually depends on the child&apos;s age, reading ability, pronunciation, confidence, and learning goals.
+      </p>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        For most beginners, however, the journey moves from <strong>basic Arabic letter recognition to Quran reading, correct pronunciation, Tajweed, and eventually memorization or deeper Quran study</strong>.
+      </p>
+
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        This guide explains what children can learn after Noorani Qaida and how parents can support each stage without making Quran learning feel overwhelming.
+      </p>
+
+      {/* Section 1: What Does Noorani Qaida Teach a Child? */}
+      <section id="what-noorani-qaida-teaches" className="space-y-4 scroll-mt-24">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <BookOpen className="h-7 w-7 text-primary" />
+          <span>What Does Noorani Qaida Teach a Child?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> gives children the foundation they need to recognize and pronounce Arabic letters and words.
+        </p>
+        <p className="text-base text-muted-text">
+          Depending on the method being used, children usually work through core areas such as:
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 not-prose">
+          {[
+            { label: 'Arabic Letters', desc: 'Single letter shapes & sounds' },
+            { label: 'Letter Combinations', desc: 'Murakkabat & compound letters' },
+            { label: 'Harakat', desc: 'Short vowels (Fatha, Kasra, Damma)' },
+            { label: 'Joining Letters', desc: 'Beginning, middle & end shapes' },
+            { label: 'Basic Word Formation', desc: 'Blending letters into words' },
+            { label: 'Sukoon (Jazm)', desc: 'Resting & consonant stop marks' },
+            { label: 'Shaddah (Tashdeed)', desc: 'Letter doubling & emphasis' },
+            { label: 'Tanween', desc: 'Double vowel nunation sounds' },
+            { label: 'Madd Rules', desc: 'Letter elongation & stretch' },
+            { label: 'Basic Pronunciation', desc: 'Articulation points (Makharij)' }
+          ].map((item, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl glass border border-card-border flex flex-col justify-between">
+              <span className="text-xs font-bold text-foreground flex items-center space-x-1.5">
+                <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                <span>{item.label}</span>
+              </span>
+              <span className="text-[11px] text-muted-text mt-1">{item.desc}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text">
+          The purpose is not simply to finish the pages. A child should understand the basic sounds and be able to apply what they have learned when they begin reading Quranic words.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Finishing the Qaida Does Not Mean Learning Is Finished</h3>
+          <p className="text-base text-muted-text">
+            Completing Noorani Qaida is a beginning, not the end of Quran reading education.
+          </p>
+          <p className="text-base text-muted-text">
+            Some children can move into Quran reading quickly. Others need additional practice with individual letters, joined words, or pronunciation. If your child still confuses similar letters, reviewing our guide on <Link href="/blog/common-quran-reading-mistakes-children-make" className="text-primary font-semibold hover:underline">common Quran reading mistakes children make</Link> can help target specific weak areas.
+          </p>
+          <p className="text-base text-muted-text">
+            Parents should focus on <strong>mastery rather than speed</strong>. A child who reads slowly but accurately has a stronger foundation than a child who rushes through lessons without understanding the sounds.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2: What Should a Child Learn After Noorani Qaida? */}
+      <section id="what-to-learn-after-qaida" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Should a Child Learn After Noorani Qaida?
+        </h2>
+        <p className="text-base text-muted-text">
+          For many children, the next major step is learning to read the Quran directly. The transition should be gradual.
+        </p>
+
+        {/* Visual Roadmap Card */}
+        <div className="p-6 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 space-y-4 my-6 not-prose">
+          <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+            <Compass className="h-5 w-5 text-primary" />
+            <span>Recommended Quran Learning Progression Path</span>
+          </h3>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold">
+            <span className="px-3 py-1.5 rounded-xl bg-primary text-white shadow-sm">Noorani Qaida</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-3 py-1.5 rounded-xl bg-primary/20 text-primary border border-primary/30">Quran Reading</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-3 py-1.5 rounded-xl bg-primary/20 text-primary border border-primary/30">Tajweed Rules</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-3 py-1.5 rounded-xl bg-primary/20 text-primary border border-primary/30">Recitation Fluency</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-3 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-600 border border-emerald-500/30">Memorization / Deeper Study</span>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          Not every child will follow these stages at exactly the same speed. Some students may need more time with reading before moving into advanced Tajweed. Others may already be ready to study pronunciation rules alongside their Quran reading.
+        </p>
+      </section>
+
+      {/* Step 1: Start Reading the Quran */}
+      <section id="step-1-quran-reading" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+          <span>Step 1: Start Reading the Quran</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Once a child has a reasonable understanding of the Qaida, they can begin reading directly from the Quran in a dedicated <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Nazra Quran reading course</Link>. At first, the goal should be accuracy rather than speed.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Begin With Short and Familiar Passages</h3>
+          <p className="text-base text-muted-text">
+            A teacher may start with shorter Surahs or easier passages from Juz Amma (Juz 30). This allows the child to become comfortable with the appearance of Quranic text.
+          </p>
+          <p className="text-base text-muted-text">
+            Children gradually learn how letters and words appear in real Quranic verses rather than isolated exercises in a Qaida.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Expect Some Mistakes</h3>
+          <p className="text-base text-muted-text">
+            It is normal for a child to make mistakes when making this transition:
+          </p>
+          <ul className="space-y-2 list-disc pl-5 text-base text-muted-text">
+            <li>They may pause frequently between words.</li>
+            <li>They may confuse similar-looking letters (such as Ba, Ta, Tha, or Jeem, Haa, Khaa).</li>
+            <li>They may forget a pronunciation or vowel rule they previously learned.</li>
+            <li>They may take longer to read a verse than expected.</li>
+          </ul>
+          <p className="text-base text-muted-text">
+            This does not necessarily mean they are struggling. Reading improves naturally through regular, patient practice.
+          </p>
+        </div>
+      </section>
+
+      {/* Step 2: Improve Pronunciation */}
+      <section id="step-2-pronunciation" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+          <span>Step 2: Improve Pronunciation</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          After beginning Quran reading, pronunciation becomes increasingly important. Arabic contains sounds that may be unfamiliar to children who do not speak Arabic at home. A child may recognize a letter correctly but still need help producing its sound accurately from its proper exit point (Makhraj).
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Focus on Difficult Arabic Letters</h3>
+          <p className="text-base text-muted-text">
+            A qualified teacher can identify sounds that require extra practice. For example, children may need additional guidance with letters that have similar sounds (like Seen vs. Saad, or Taa vs. Toa) or require specific positions of the tongue, mouth, or throat (like Ain, Haa, and Qaf).
+          </p>
+          <p className="text-base text-muted-text">
+            The goal is not to make children anxious about every mistake. Instead, pronunciation should improve through repetition and gentle correction from an experienced <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran tutor</Link>.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Listen Before Repeating</h3>
+          <p className="text-base text-muted-text">
+            Children often learn pronunciation more effectively when they hear an accurate example first. A teacher can recite a word or phrase and ask the child to repeat it.
+          </p>
+          <div className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border flex items-center justify-around text-center text-xs sm:text-sm font-bold text-foreground my-3 not-prose">
+            <span className="text-primary">Listen</span>
+            <ArrowRight className="h-4 w-4 text-muted-text" />
+            <span className="text-secondary">Repeat</span>
+            <ArrowRight className="h-4 w-4 text-muted-text" />
+            <span className="text-amber-500">Correct</span>
+            <ArrowRight className="h-4 w-4 text-muted-text" />
+            <span className="text-emerald-500">Practice</span>
+          </div>
+          <p className="text-base text-muted-text">
+            Over time, these corrections become part of the child&apos;s natural reading rhythm.
+          </p>
+        </div>
+      </section>
+
+      {/* Step 3: Begin Learning Tajweed */}
+      <section id="step-3-tajweed" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">3</span>
+          <span>Step 3: Begin Learning Tajweed</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> is the next important area for children who are developing their Quran recitation. Tajweed teaches students how to pronounce Quranic letters and apply recitation rules correctly. It is not something that children have to master overnight.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Tajweed Should Be Introduced Gradually</h3>
+          <p className="text-base text-muted-text">
+            Children can learn Tajweed rules according to their age and ability. A teacher may introduce one rule (such as Ghunnah, Qalqalah, or Madd), demonstrate it, and then allow the child to practice it in actual Quranic verses.
+          </p>
+          <p className="text-base text-muted-text">
+            This is usually easier than giving a young learner a long list of rules to memorize. If you want a structured overview of foundational recitation principles, explore our <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">beginner&apos;s guide to mastering Tajweed rules at home</Link>.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Connect Rules With Actual Reading</h3>
+          <p className="text-base text-muted-text">
+            Tajweed becomes more meaningful when children can see and hear it during Quran reading. Instead of learning rules only as theoretical definitions, students can practice them in the verses they are already reading. This helps turn knowledge into a practical skill.
+          </p>
+
+          {/* Picture 1: Connecting Tajweed with Actual Reading */}
+          <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-6 overflow-hidden shadow-lg not-prose">
+            <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+              <Image
+                src="/blog/what-should-a-child-learn-after-noorani-qaida/how-to-connect-tajweed-with-actual-reading.jpg"
+                alt="How to connect Tajweed rules with actual Quran reading - A step by step guide for recitation fluency by OQTutor"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
+            <p className="text-xs text-center text-muted-text mt-3 font-medium">
+              Connecting Tajweed rules directly to actual reading passages helps children turn theoretical phonetics into fluent, beautiful recitation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Step 4: Build Reading Fluency */}
+      <section id="step-4-fluency" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">4</span>
+          <span>Step 4: Build Reading Fluency</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Accuracy is important, but children also need to become comfortable reading continuously. Fluency does not mean reading as quickly as possible. It means being able to move through verses with fewer unnecessary pauses while maintaining correct pronunciation and breath control.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Read a Little Every Day</h3>
+          <p className="text-base text-muted-text">
+            Short daily practice can be more useful than occasional long sessions. A child might read a small portion regularly (15 to 20 minutes) and gradually increase the amount as confidence improves.
+          </p>
+          <p className="text-base text-muted-text">
+            Consistency matters far more than trying to complete a large amount in one sitting. For parents managing busy routines, check our advice on <Link href="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities" className="text-primary font-semibold hover:underline">how to help children balance Quran learning with school and extracurricular activities</Link>.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Don&apos;t Turn Reading Into a Race</h3>
+          <p className="text-base text-muted-text">
+            Children have different learning speeds. Comparing one child with another can make Quran learning stressful. A better approach is to compare the child&apos;s current ability with their own previous progress.
+          </p>
+          <p className="text-base text-muted-text">
+            If a child reads more confidently this month than last month, that is meaningful progress.
+          </p>
+        </div>
+      </section>
+
+      {/* Step 5: Strengthen Memorization Skills */}
+      <section id="step-5-memorization" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">5</span>
+          <span>Step 5: Strengthen Memorization Skills</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Once a child becomes comfortable with Quran reading, memorization can be introduced or developed further in our structured <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Quran memorization (Hifz) course</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          Some children may already have memorized short Surahs before completing Noorani Qaida. Others may begin memorization after developing stronger reading skills. Both situations can be appropriate.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Start With Manageable Portions</h3>
+          <p className="text-base text-muted-text">
+            Young learners generally benefit from manageable memorization targets. A teacher may assign a small number of verses or a short Surah rather than expecting the child to memorize large portions immediately. The objective is to build a sustainable, lifelong habit.
+          </p>
+          <p className="text-base text-muted-text">
+            To discover proven memorization strategies, read our guide on <Link href="/blog/effective-hifz-memorization-techniques" className="text-primary font-semibold hover:underline">effective Hifz memorization techniques for children</Link>.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Revision Is Just as Important</h3>
+          <p className="text-base text-muted-text">
+            Memorizing something once does not mean it has been permanently learned. Regular revision helps children retain what they have memorized. A simple routine can include:
+          </p>
+          <ol className="space-y-2 list-decimal pl-5 text-base text-muted-text">
+            <li>Review previously memorized Surahs first.</li>
+            <li>Practice the current lesson.</li>
+            <li>Recite the new portion to the teacher.</li>
+            <li>Correct mistakes immediately.</li>
+            <li>Review again later during the day.</li>
+          </ol>
+          <p className="text-base text-muted-text">
+            This balance between new memorization and revision is especially important as the memorized portion becomes larger. Learn more about maintaining revision habits in our article on <Link href="/blog/consistent-hifz-quran-revision" className="text-primary font-semibold hover:underline">how to build a consistent Hifz revision routine</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Step 6: Understand What the Child Is Reading */}
+      <section id="step-6-understanding" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <span className="h-8 w-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">6</span>
+          <span>Step 6: Understand What the Child Is Reading</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Reading the Arabic text is only one part of Quran learning. As children grow older and their language skills develop, parents may also introduce the meaning and basic explanation of what they read through <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Quran translation and Tafseer</Link>.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Start With Simple Meanings</h3>
+          <p className="text-base text-muted-text">
+            Children do not necessarily need complicated explanations. Simple age-appropriate discussions can help them understand the message of a Surah. For example, a teacher may explain the central theme of a short Surah from Juz Amma and discuss the lessons it contains. This makes Quran learning deeply personal and inspiring.
+          </p>
+        </div>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Connect Learning With Everyday Life</h3>
+          <p className="text-base text-muted-text">
+            Children often understand lessons better when they can connect them with familiar situations. A discussion about kindness, patience, honesty, gratitude, or responsibility can help them see that Quran learning is not limited to reading practice.
+          </p>
+          <p className="text-base text-muted-text">
+            This holistic moral growth can be further supported through an age-appropriate <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">Islamic Studies program for kids</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: How Long Does It Take to Move Beyond Noorani Qaida? */}
+      <section id="timeline-beyond-qaida" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Long Does It Take to Move Beyond Noorani Qaida?
+        </h2>
+        <p className="text-base text-muted-text">
+          There is no fixed timeline. One child may be ready to begin Quran reading after several months of structured learning. Another may need additional practice before making the transition.
+        </p>
+        <p className="text-base text-muted-text">
+          Factors that can affect progress include:
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 not-prose">
+          {[
+            'Child’s Age & Maturity',
+            'Previous Arabic Exposure',
+            'Lesson Frequency Per Week',
+            'Consistency of Home Practice',
+            'Reading Ability & Speed',
+            'Pronunciation & Makharij',
+            'Attention Span & Focus',
+            'Calm Learning Environment',
+            'Individual Confidence Level'
+          ].map((factor, idx) => (
+            <div key={idx} className="p-3 rounded-2xl glass border border-card-border flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-xs font-semibold text-foreground">{factor}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text">
+          The teacher should assess the child&apos;s ability instead of moving them forward simply because a certain number of lessons has been completed. For detailed developmental milestones, see our guide on <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary font-semibold hover:underline">how long it takes for a child to complete the Quran online</Link>.
+        </p>
+      </section>
+
+      {/* Section: Signs Your Child May Be Ready for Quran Reading */}
+      <section id="signs-child-ready" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <CheckCircle2 className="h-7 w-7 text-primary" />
+          <span>Signs Your Child May Be Ready for Quran Reading</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents can look for several practical readiness indicators before beginning full Quran recitation:
+        </p>
+
+        {/* Picture 2: Signs Child May Be Ready for Quran Reading */}
+        <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-6 overflow-hidden shadow-lg not-prose">
+          <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
+            <Image
+              src="/blog/what-should-a-child-learn-after-noorani-qaida/signs-child-ready-for-quran-reading.jpg"
+              alt="Signs your child may be ready for Quran reading - A developmental guide by OQTutor"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text mt-3 font-medium">
+            Developmental readiness signals help parents and teachers determine when a child can transition smoothly from Qaida into direct Quran recitation.
+          </p>
+        </div>
+
+        <div className="space-y-4 pt-2">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Check className="h-5 w-5 text-primary" />
+              <span>1. Your Child Recognizes Arabic Letters</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-7">
+              The child should be able to identify common Arabic letters in all their forms (isolated, initial, medial, and final) without constantly needing prompts.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Check className="h-5 w-5 text-primary" />
+              <span>2. Your Child Can Read Basic Joined Words</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-7">
+              The child should have some confidence reading multi-letter combinations and short words rather than only individual letters.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Check className="h-5 w-5 text-primary" />
+              <span>3. Your Child Understands Basic Reading Marks</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-7">
+              They should have a working understanding of the basic vowel signs (Harakat), Sukoon, Shaddah, and Tanween introduced during Qaida lessons.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Check className="h-5 w-5 text-primary" />
+              <span>4. Your Child Can Apply Corrections</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-7">
+              If the teacher corrects a pronunciation or reading mistake, the child should gradually be able to listen and repeat it correctly.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Check className="h-5 w-5 text-primary" />
+              <span>5. Your Child Is Becoming More Confident</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-7">
+              Confidence matters. A child does not need perfect reading before beginning Quran study, but they should have enough foundation to make the transition productive.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          If you are assessing readiness for a younger child, check our detailed article on <Link href="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran" className="text-primary font-semibold hover:underline">how do you know your child is ready to start learning the Quran</Link>.
+        </p>
+      </section>
+
+      {/* Section: What If My Child Still Struggles After Noorani Qaida? */}
+      <section id="struggles-after-qaida" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What If My Child Still Struggles After Noorani Qaida?
+        </h2>
+        <p className="text-base text-muted-text">
+          There is no reason to rush. Sometimes a child completes the Qaida but still has difficulty with particular letters, joining words, or reading marks. In that situation, targeted revision can help.
+        </p>
+
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xl font-bold text-foreground">Identify the Exact Problem</h3>
+          <p className="text-base text-muted-text">
+            Instead of repeating the entire Qaida from page one, the teacher can identify the specific areas causing difficulty. For example, the child may only need extra practice with:
+          </p>
+          <ul className="space-y-2 list-disc pl-5 text-base text-muted-text">
+            <li>Similar-sounding letters (Makharij precision)</li>
+            <li>Madd (stretching rules)</li>
+            <li>Shaddah (doubled consonant pauses)</li>
+            <li>Sukoon (consonant connections)</li>
+            <li>Tanween (double vowel sounds)</li>
+            <li>Joined word recognition</li>
+            <li>Pronunciation consistency</li>
+          </ul>
+          <p className="text-base text-muted-text">
+            Focused, targeted practice makes lessons far more efficient and prevents student frustration.
+          </p>
+        </div>
+      </section>
+
+      {/* Section: How Parents Can Support the Next Stage */}
+      <section id="how-parents-can-support" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Heart className="h-7 w-7 text-primary" />
+          <span>How Parents Can Support the Next Stage</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not need to become expert Quran teachers to support their child&apos;s progress. Their role can be simple, encouraging, and consistent.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <span>Create a Regular Practice Time</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Choose a fixed time that works with your family routine. A short period of 15 to 20 minutes of focused practice each day is enough for many children.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Volume2 className="h-5 w-5 text-primary shrink-0" />
+              <span>Listen to the Child Read</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Even 5 to 10 minutes of listening shows parents where the child feels confident and where additional help from the teacher may be needed.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Sparkles className="h-5 w-5 text-primary shrink-0" />
+              <span>Encourage Rather Than Pressure</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Children respond differently to correction. Positive encouragement and warm praise help them stay motivated while developing a new skill.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Users className="h-5 w-5 text-primary shrink-0" />
+              <span>Stay Connected With the Teacher</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Ask simple check-in questions: What is my child working on now? Which area needs practice? Is my child ready for the next stage?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Should Children Learn Tajweed Before or After Quran Reading? */}
+      <section id="tajweed-before-or-after" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Should Children Learn Tajweed Before or After Quran Reading?
+        </h2>
+        <p className="text-base text-muted-text">
+          <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> and Quran reading do not always have to be completely separate stages.
+        </p>
+        <p className="text-base text-muted-text">
+          A child can begin applying basic Tajweed principles while developing Quran reading skills. The exact sequence depends on the student&apos;s ability and the teacher&apos;s approach.
+        </p>
+        <p className="text-base text-muted-text">
+          The important point is that Tajweed should support correct recitation rather than make learning unnecessarily complicated.
+        </p>
+      </section>
+
+      {/* Section: What Comes After Basic Quran Reading? */}
+      <section id="what-comes-after-reading" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Comes After Basic Quran Reading?
+        </h2>
+        <p className="text-base text-muted-text">
+          Once a child can read more confidently, learning can become broader and more enriching. Depending on the child&apos;s goals, the next areas may include:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Award className="h-5 w-5 text-primary" />
+              <span>
+                <Link href="/courses/tajweed" className="text-foreground hover:text-primary transition-colors">Advanced Tajweed</Link>
+              </span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              The child can continue developing precise pronunciation, rules of stopping (Waqf), letter characteristics (Sifaat), and advanced elongation.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Brain className="h-5 w-5 text-primary" />
+              <span>
+                <Link href="/courses/hifz" className="text-foreground hover:text-primary transition-colors">Quran Memorization (Hifz)</Link>
+              </span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Students interested in Hifz can gradually increase memorization from Juz Amma while maintaining regular daily revision under teacher supervision.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <BookOpen className="h-5 w-5 text-primary" />
+              <span>
+                <Link href="/courses/tafseer" className="text-foreground hover:text-primary transition-colors">Translation &amp; Tafseer</Link>
+              </span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Older children can begin studying simple word-by-word translations and explanations of the Surahs they recite during daily prayers.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Heart className="h-5 w-5 text-primary" />
+              <span>
+                <Link href="/courses/islamic-studies" className="text-foreground hover:text-primary transition-colors">Islamic Studies</Link>
+              </span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Quran recitation is complemented with Islamic manners (Adab), daily Duas, Prophetic stories (Seerah), and the fundamentals of Salah.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          The right combination depends on the child&apos;s age, interests, and family goals.
+        </p>
+      </section>
+
+      {/* Section: Online Quran Classes After Noorani Qaida */}
+      <section id="online-classes-after-qaida" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Laptop className="h-7 w-7 text-primary" />
+          <span>Online Quran Classes After Noorani Qaida</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Online learning can make the transition easier for families who want regular one-to-one instruction. A live teacher can listen to the child&apos;s recitation, identify mistakes, and provide immediate correction. This is especially useful when pronunciation needs individual attention.
+        </p>
+
+        <div className="space-y-4 pt-2">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <UserCheck className="h-5 w-5 text-primary" />
+              <span>One-to-One Lessons</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Individual lessons allow the teacher to focus on one student&apos;s reading ability rather than following the pace of a group. This can be helpful when a child needs extra practice in a particular area. Explore our directory of certified <Link href="/tutors" className="text-primary font-semibold hover:underline">male and female Quran tutors</Link>.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Calendar className="h-5 w-5 text-primary" />
+              <span>Flexible Scheduling</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Families can choose lesson times that fit around school, homework, family activities, and other commitments. A consistent schedule can make it easier for children to maintain their Quran learning routine. Check our transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing and schedule packages</Link>.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-1.5 not-prose">
+            <h3 className="font-bold text-base text-foreground flex items-center space-x-2">
+              <Globe className="h-5 w-5 text-primary" />
+              <span>Learning From Home</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Children can attend lessons without traveling to a physical classroom. For busy Muslim families living across <Link href="/locations/usa" className="text-primary font-semibold hover:underline">the USA</Link> and <Link href="/locations/uk" className="text-primary font-semibold hover:underline">the UK</Link>, this makes regular Quran study comfortable and stress-free.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: A Simple Learning Path for Parents */}
+      <section id="simple-learning-path" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <ListChecks className="h-7 w-7 text-primary" />
+          <span>A Simple Learning Path for Parents</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          If you are unsure what your child should study next, this simple progression can help:
+        </p>
+
+        <div className="space-y-3 pt-2 not-prose">
+          {[
+            { stage: 'Stage 1', title: 'Complete the Noorani Qaida Foundation', desc: 'Master letter recognition, short vowels, Sukoon, Shaddah, and basic word joining.' },
+            { stage: 'Stage 2', title: 'Begin Reading Directly From the Quran', desc: 'Start with Juz Amma short Surahs focusing on steady accuracy over speed.' },
+            { stage: 'Stage 3', title: 'Correct Pronunciation & Reading Mistakes', desc: 'Refine letter exits (Makharij) through listen-and-repeat guided correction.' },
+            { stage: 'Stage 4', title: 'Introduce and Practice Tajweed', desc: 'Apply Ghunnah, Qalqalah, and elongation directly within recited verses.' },
+            { stage: 'Stage 5', title: 'Build Reading Fluency', desc: 'Establish a 15-20 minute daily reading habit without rushing or comparison.' },
+            { stage: 'Stage 6', title: 'Add Memorization (Hifz)', desc: 'Memorize short Surahs alongside a disciplined daily revision schedule.' },
+            { stage: 'Stage 7', title: 'Introduce Translation & Islamic Studies', desc: 'Explore Surah meanings, daily Duas, Islamic values, and character development.' }
+          ].map((step, idx) => (
+            <div key={idx} className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-4">
+              <span className="px-2.5 py-1 rounded-lg bg-primary text-white text-xs font-bold shrink-0 mt-0.5">
+                {step.stage}
+              </span>
+              <div>
+                <h3 className="font-bold text-sm sm:text-base text-foreground">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-text mt-0.5 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text pt-2">
+          The stages can overlap. A child may practice Tajweed while improving Quran reading or memorize short Surahs while continuing to work on fluency.
+        </p>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section id="faqs" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          {[
+            {
+              q: 'What should a child learn after Noorani Qaida?',
+              a: 'Most children can move toward direct Quran reading after building a solid foundation in Noorani Qaida. Pronunciation, Tajweed, fluency, and memorization can then be developed according to the child’s ability.'
+            },
+            {
+              q: 'Should my child start Tajweed after Noorani Qaida?',
+              a: 'Yes, basic Tajweed can be introduced as the child begins Quran reading. The teacher can gradually apply appropriate rules rather than teaching everything at once.'
+            },
+            {
+              q: 'How long does it take to learn Quran after Noorani Qaida?',
+              a: 'There is no universal timeline. Progress depends on age, ability, lesson frequency, home practice, and individual learning needs.'
+            },
+            {
+              q: 'Should children memorize Quran after learning to read?',
+              a: 'Memorization can begin once a child has enough reading ability to recite the assigned passages accurately. The amount should match the child’s age and learning capacity.'
+            },
+            {
+              q: 'What if my child completed Noorani Qaida but still reads slowly?',
+              a: 'Slow reading is common during the transition. Regular practice and targeted correction can gradually improve accuracy and confidence.'
+            },
+            {
+              q: 'Can my child learn Quran online after Noorani Qaida?',
+              a: 'Yes. Live online lessons can provide individual reading practice, pronunciation correction, Tajweed instruction, and memorization support from home.'
+            }
+          ].map((faq, idx) => (
+            <div key={idx} className="p-6 rounded-3xl bg-foreground/[0.02] border border-card-border space-y-2">
+              <h3 className="font-bold text-base sm:text-lg text-foreground flex items-start space-x-2.5">
+                <span className="text-primary font-bold">Q{idx + 1}:</span>
+                <span>{faq.q}</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed pl-7">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final Thoughts */}
+      <section id="final-thoughts" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>Final Thoughts</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Completing <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> is an important achievement, but it is only one step in a child&apos;s Quran learning journey.
+        </p>
+        <p className="text-base text-muted-text">
+          The next goal should not simply be to finish more pages. It should be to develop <strong>accurate reading, clear pronunciation, confidence, Tajweed awareness, and a consistent relationship with the Quran</strong>.
+        </p>
+        <p className="text-base text-muted-text">
+          For some children, the next step will be direct <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link>. For others, additional Qaida practice may be helpful. With the right guidance, both can lead to steady progress.
+        </p>
+        <p className="text-base text-muted-text">
+          Parents can support this journey by creating a regular routine, encouraging practice, and staying connected with the child&apos;s teacher.
+        </p>
+        <p className="text-base text-muted-text">
+          Most importantly, allow the child to progress at a pace that builds confidence rather than pressure. With patience and consistent practice, Noorani Qaida can become the foundation for a much deeper and more rewarding Quran learning journey.
+        </p>
+
+        {/* Free Trial CTA Banner */}
+        <div className="pt-6 not-prose">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+              Ready for Your Child&apos;s Next Quran Learning Step?
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+              Book a free placement trial class with certified male or female Quran teachers. Personalized 1-on-1 guidance from Noorani Qaida to fluent recitation.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              >
+                <span>Book Free Placement Trial</span>
+                <ArrowRight className="h-4.5 w-4.5" />
+              </Link>
+              <Link
+                href="/courses"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                <span>Explore All Quran Courses</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Author Bio Box */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-5 not-prose mt-8">
+          <div className="relative h-20 w-20 rounded-2xl overflow-hidden border-2 border-primary/30 shrink-0">
+            <Image
+              src="/tutors/qari_muhammad_imran.jpg"
+              alt="Muhammad Imran - Senior Tajweed & Hifz Scholar at OQTutor"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-1.5 text-center sm:text-left">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <h3 className="font-bold text-lg text-foreground">Muhammad Imran</h3>
+              <span className="text-[11px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
+                Author &amp; Senior Scholar
+              </span>
+            </div>
+            <p className="text-xs text-secondary font-medium">Senior Tajweed &amp; Hifz Scholar • Jamia Ashrafia Graduate</p>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Muhammad Imran is a certified Tajweed and Quran memorisation scholar at OQTutor with over 5 years of international teaching experience guiding young children and adult beginners through Noorani Qaida, accurate Makharij, and complete Quran recitation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+}
+
 
 
 
