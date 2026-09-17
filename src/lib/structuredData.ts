@@ -69,10 +69,9 @@ export function createCourseSchema(course: CourseData) {
     },
     offers: {
       '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      name: '3-Day Free Trial',
-      url: `${siteConfig.url}/book-free-trial`,
+      category: 'Paid Course with Free Assessment Trial',
+      name: 'One-on-One Quran Lessons',
+      url: `${siteConfig.url}/pricing`,
       availability: 'https://schema.org/InStock',
     },
     hasCourseInstance: {

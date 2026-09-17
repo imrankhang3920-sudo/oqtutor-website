@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BookOpen, Award, Clock, Calendar, Users, 
-  CheckCircle, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
-  UserCheck, ExternalLink, Sparkles, Globe, Heart, MessageSquare, Check, Compass, Laptop, Video, BookMarked, Lightbulb
+  CheckCircle, CheckCircle2, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
+  UserCheck, ExternalLink, Sparkles, Globe, Heart, MessageSquare, Check, Compass, Laptop, Video, BookMarked, Lightbulb,
+  Volume2, Layers, Headphones, Mic, Target, GraduationCap, ArrowUpRight
 } from 'lucide-react';
 import Link from 'next/link';
 import { CourseData, ContactData, TestimonialData } from '@/data/db';
@@ -23,6 +24,10 @@ export default function CoursePageClient({
 }) {
   const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  if (course.slug === 'tajweed') {
+    return <TajweedCourseContent course={course} contactData={contactData} testimonials={testimonials} />;
+  }
 
   if (course.slug === 'noorani-qaida') {
     return <NooraniQaidaContent course={course} contactData={contactData} />;
@@ -4456,4 +4461,1101 @@ function TafseerCourseContent({
     </main>
   );
 }
+
+function TajweedCourseContent({
+  course,
+  contactData,
+  testimonials = []
+}: {
+  course: CourseData;
+  contactData: ContactData;
+  testimonials?: TestimonialData[];
+}) {
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
+  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIdx(openFaqIdx === idx ? null : idx);
+  };
+
+  const toggleCurriculum = (idx: number) => {
+    setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
+  };
+
+  const curriculumTopics = [
+    {
+      title: "Makharij and Correct Letter Pronunciation",
+      tag: "Module 1",
+      description: "Master the 17 physical articulation points (Makharij) in the throat, tongue, lips, and nasal cavity to articulate every Arabic letter distinctly and accurately."
+    },
+    {
+      title: "Sifaat of Arabic Letters",
+      tag: "Module 2",
+      description: "Understand permanent and non-permanent letter characteristics, including breath release (Hams), vocal strength (Jahr), and heaviness versus lightness (Tafkheem and Tarqeeq)."
+    },
+    {
+      title: "Noon Sakinah and Tanween",
+      tag: "Module 3",
+      description: "Study the four foundational rules governing silent Noon and Tanween: Izhar (clear pronunciation), Idgham (merging), Iqlab (conversion), and Ikhfa (concealment)."
+    },
+    {
+      title: "Meem Sakinah",
+      tag: "Module 4",
+      description: "Master the three rules of silent Meem: Ikhfa Shafawi (lip concealment), Idgham Shafawi (merging), and Izhar Shafawi (clear pronunciation)."
+    },
+    {
+      title: "Izhar, Idgham, Iqlab and Ikhfa",
+      tag: "Module 5",
+      description: "Practice hands-on application of clear reading, merging with or without Ghunnah, converting Noon to Meem, and concealing sound in the nasal cavity across diverse Surahs."
+    },
+    {
+      title: "Ghunnah",
+      tag: "Module 6",
+      description: "Perfect the two-count nasalization originating from the nasal passage, specifically when pronouncing Noon and Meem carrying a Shaddah (doubling sign)."
+    },
+    {
+      title: "Qalqalah",
+      tag: "Module 7",
+      description: "Apply the crisp bouncing sound to the five Qalqalah letters (Qaf, Taa, Baa, Jeem, Dal) when they carry a Sukoon or when pausing at verse ends."
+    },
+    {
+      title: "Madd and Elongation Rules",
+      tag: "Module 8",
+      description: "Distinguish natural elongation (Madd Asli, 2 counts) from secondary elongations (Madd Muttasil, Munfasil, and Lazim, stretching 4 to 6 counts) caused by Hamzah or Sukoon."
+    },
+    {
+      title: "Waqf and Ibtida",
+      tag: "Module 9",
+      description: "Learn the stopping symbols and rules for pausing (Waqf) and resuming (Ibtida) recitation appropriately without altering the divine meaning of verses."
+    },
+    {
+      title: "Practical Quran Recitation",
+      tag: "Module 10",
+      description: "Recite selected passages and complete Surahs under the live supervision of your teacher, applying all theoretical rules in continuous real-time practice."
+    }
+  ];
+
+  const whoCanJoinList = [
+    {
+      title: "Children",
+      icon: Smile,
+      description: "Children who can already read basic Arabic script can be introduced to Tajweed rules progressively. Lessons use child-friendly visual phonetics, gentle repetition, and interactive drilling to build proper pronunciation habits early without overwhelming young learners."
+    },
+    {
+      title: "Teenagers",
+      icon: GraduationCap,
+      description: "Teenage students benefit from structured one-on-one guidance to strengthen pronunciation, eliminate common reading mistakes, and develop natural recitation cadence that prepares them for independent daily reading and prayer."
+    },
+    {
+      title: "Adults",
+      icon: Users,
+      description: "Adult learners of all ages can begin according to their current Quran reading ability. Our patient instructors provide a respectful, private setting where adults can learn at their own pace without hesitation or embarrassment."
+    },
+    {
+      title: "Beginners in Tajweed",
+      icon: BookOpen,
+      description: "Students who know how to read Arabic script but have never formally studied Tajweed rules start with foundational concepts. Lessons systematically cover articulation points, short vowel precision, and core rules like Ghunnah and Qalqalah."
+    },
+    {
+      title: "Advanced Students",
+      icon: Award,
+      description: "Experienced readers and memorizers work on advanced recitation refinement, intricate elongation rules (Madd Far'i and Madd Lazim), stopping and resuming rules (Waqf and Ibtida), and fluent classical recitation."
+    }
+  ];
+
+  const whyOneOnOneList = [
+    {
+      title: "Personalized Attention",
+      icon: Target,
+      description: "In a dedicated one-on-one setting, 100% of the class time is devoted to your recitation. Unlike crowded group classrooms where students only read for a few minutes, private lessons maximize active recitation practice and allow your instructor to address your specific pronunciation weaknesses directly."
+    },
+    {
+      title: "Immediate Recitation Correction",
+      icon: Mic,
+      description: "Tajweed relies heavily on subtle auditory precision that self-study apps cannot evaluate. A live one-on-one teacher hears every letter you pronounce and provides immediate corrections, ensuring mistakes are identified and resolved before they turn into ingrained reading habits."
+    },
+    {
+      title: "Flexible Learning Pace",
+      icon: Clock,
+      description: "Every student learns at a different rhythm. Private classes give you the freedom to spend extra time mastering challenging articulation points like 'Ayn, Haa, or heavy letters without pressure, while progressing swiftly through rules you grasp easily."
+    },
+    {
+      title: "Lessons Based on Your Level",
+      icon: Layers,
+      description: "Your lessons begin exactly where your current skills are. Whether you are an adult refreshing childhood reading habits or a student who just finished Qaida, your teacher calibrates the lesson depth to your exact level of comfort and literacy."
+    },
+    {
+      title: "Convenient Online Learning",
+      icon: Laptop,
+      description: "Study from the comfort and privacy of your home without the hassle of commuting to an Islamic center. With classes available 24 hours a day, 7 days a week, scheduling lessons around school, work, or family routines is effortless."
+    }
+  ];
+
+  const tajweedFaqs = course.faqs && course.faqs.length === 10 ? course.faqs : [
+    {
+      question: "Is Tajweed suitable for beginners?",
+      answer: "Yes. Students who can already recognize and read basic Arabic words can begin with foundational Tajweed rules. Lessons introduce Makharij (points of articulation) and essential pronunciation rules progressively, allowing beginners to build confidence and accuracy step by step without feeling overwhelmed."
+    },
+    {
+      question: "Do I need to speak Arabic to learn Tajweed?",
+      answer: "No, you do not need to speak or understand conversational Arabic to learn Tajweed. Tajweed focuses specifically on the accurate phonetic pronunciation of Arabic letters, vowel lengths, and Quranic recitation rules. Teachers provide all instructions, explanations, and feedback in English or your preferred language."
+    },
+    {
+      question: "Do I need to know how to read Quran before learning Tajweed?",
+      answer: "Yes, students generally benefit from knowing the Arabic alphabet and being able to read basic Quranic words before starting formal Tajweed. If you are starting from zero or need to learn Arabic letters, we recommend starting with our Noorani Qaida or Quran Reading course first."
+    },
+    {
+      question: "Can children learn Quran with Tajweed online?",
+      answer: "Yes, children can learn Quran with Tajweed online once they have completed basic Arabic reading. Lessons for kids use interactive methods, gentle repetition, and visual aids to keep young learners engaged while instilling correct pronunciation habits from an early age."
+    },
+    {
+      question: "Can adults learn Quran with Tajweed online?",
+      answer: "Yes, adults of all ages can learn Tajweed online. Whether you are studying Tajweed rules for the first time or wish to correct long-standing pronunciation mistakes, lessons are customized to your pace with private, supportive one-on-one instruction."
+    },
+    {
+      question: "Do you offer female Tajweed teachers?",
+      answer: "Yes, OQTutor provides qualified female Quran teachers for sisters and young children. You can specify your teacher gender preference when booking your classes, ensuring a comfortable, supportive, and dedicated learning environment."
+    },
+    {
+      question: "Are Tajweed classes one on one?",
+      answer: "Yes, all our online Tajweed classes are conducted live one on one. This private structure ensures your teacher hears every word you recite, corrects mistakes immediately in real time, and customizes each lesson to your individual learning pace."
+    },
+    {
+      question: "How are online Tajweed lessons conducted?",
+      answer: "Classes take place via live interactive video sessions using screen-shared digital Mushafs and audio tools. The teacher recites verses with correct Tajweed, listens to your recitation, demonstrates mouth and tongue articulation, and provides real-time guidance and feedback."
+    },
+    {
+      question: "How long does it take to learn Tajweed?",
+      answer: "The time needed to master Tajweed depends on your starting reading ability, class frequency, and consistent practice. Most students grasp foundational Tajweed rules within several months of regular one-on-one lessons, progressing toward fluent, beautiful recitation over time."
+    },
+    {
+      question: "Can I start with a trial lesson?",
+      answer: "Yes, OQTutor offers a free trial class for new students. During the trial session, a qualified teacher evaluates your current Quran reading level, discusses your goals, and demonstrates our live one-on-one teaching format with no commitment required."
+    }
+  ];
+
+  return (
+    <main className="flex-grow bg-background text-foreground">
+
+      {/* BREADCRUMB NAVIGATION */}
+      <nav aria-label="Breadcrumb" className="bg-foreground/[0.02] border-b border-card-border py-3">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-xs text-muted-text">
+            <li>
+              <Link href="/" className="hover:text-primary transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <span className="text-muted-text/50">/</span>
+            </li>
+            <li>
+              <Link href="/courses" className="hover:text-primary transition-colors">
+                Courses
+              </Link>
+            </li>
+            <li>
+              <span className="text-muted-text/50">/</span>
+            </li>
+            <li className="font-semibold text-foreground" aria-current="page">
+              Tajweed
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* 1. HERO SECTION */}
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <div className="absolute inset-0 top-1/3 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+                <Volume2 className="h-3.5 w-3.5" />
+                <span>Live 1-on-1 Online Course</span>
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-tight">
+                Online Quran with Tajweed Classes
+              </h1>
+              <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
+              
+              <p className="mt-5 text-base sm:text-lg text-muted-text leading-relaxed max-w-2xl">
+                Learn Quran with Tajweed through live one on one classes with qualified teachers. Improve your pronunciation, Makharij, recitation accuracy, and understanding of essential Tajweed rules through a structured learning plan.
+              </p>
+
+              {/* CTAs */}
+              <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/book-free-trial"
+                  className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+                >
+                  <span>Start Your Free Trial</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all"
+                >
+                  View Pricing Plans
+                </Link>
+              </div>
+
+              {/* Trust badges */}
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-card-border/60 pt-6 text-xs text-muted-text">
+                <div className="flex items-center justify-center lg:justify-start space-x-2">
+                  <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
+                  <span>3-Day Free Assessment Trial</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start space-x-2">
+                  <Users className="h-4 w-4 text-primary shrink-0" />
+                  <span>Male & Female Teachers</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start space-x-2">
+                  <Clock className="h-4 w-4 text-primary shrink-0" />
+                  <span>24/7 Flexible Timings</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card / Visual */}
+            <div className="lg:col-span-5">
+              <div className="glass rounded-3xl border border-card-border p-6 sm:p-8 shadow-2xl relative overflow-hidden bg-card/60 backdrop-blur-md">
+                <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden mb-6 border border-card-border/60">
+                  <Image
+                    src="/quran-tajweed.jpg"
+                    alt="Teacher conducting an online Quran Tajweed lesson"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 450px"
+                    priority
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-left">
+                  <div className="p-3.5 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                    <span className="text-[11px] text-muted-text block">Class Format</span>
+                    <strong className="text-xs sm:text-sm font-bold text-foreground">Live 1-on-1 Sessions</strong>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                    <span className="text-[11px] text-muted-text block">Target Learners</span>
+                    <strong className="text-xs sm:text-sm font-bold text-foreground">Kids, Teens & Adults</strong>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                    <span className="text-[11px] text-muted-text block">Lesson Length</span>
+                    <strong className="text-xs sm:text-sm font-bold text-foreground">30 Mins / Session</strong>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                    <span className="text-[11px] text-muted-text block">Starting Level</span>
+                    <strong className="text-xs sm:text-sm font-bold text-foreground">Customized Pace</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. INTRODUCTION SECTION */}
+      <section className="py-16 sm:py-20 bg-foreground/[0.005]">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+            Core Foundation
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-4">
+            Learn Quran Online with Tajweed
+          </h2>
+          <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+          <p className="text-sm sm:text-base text-muted-text leading-relaxed text-left sm:text-center">
+            Learning the Quran with proper Tajweed is essential for every Muslim seeking to recite the Holy Quran as it was revealed. Tajweed provides the precise phonetic rules and vocal characteristics required to articulate each Arabic letter accurately from its origin (Makhraj) without distorting vowel sounds or word meanings. At OQTutor, our online Quran with Tajweed classes connect students with experienced male and female teachers through live, private one on one sessions. Whether you are learning foundational rules for the first time or seeking to eliminate long-standing recitation mistakes, our structured lessons adapt smoothly to your current reading level and schedule. With personalized teacher feedback, practical drilling from the Mushaf, and supportive pacing, students gain enduring recitation fluency, spiritual connection, and confidence from the comfort of home.
+          </p>
+        </div>
+      </section>
+
+      {/* 3. WHO CAN JOIN SECTION */}
+      <section className="py-16 sm:py-20 border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Suitable For All Levels
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Who Can Learn Quran with Tajweed Online?
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Our one on one Tajweed curriculum is tailored to meet the individual learning requirements of every age group and experience level.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whoCanJoinList.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="glass rounded-2xl border border-card-border p-6 sm:p-7 hover:border-primary/30 hover:shadow-lg transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 font-bold">
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-2.5">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. IMPORTANT PREREQUISITE SECTION */}
+      <section className="py-16 bg-foreground/[0.015] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="glass rounded-3xl border border-card-border p-8 sm:p-10 shadow-lg relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="h-14 w-14 rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center shrink-0">
+                <BookMarked className="h-7 w-7" />
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-foreground mb-3">
+                  Do I Need to Know How to Read Quran Before Learning Tajweed?
+                </h2>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
+                  Students generally benefit from knowing the Arabic alphabet and being able to read basic Quranic text before starting formal Tajweed lessons. Tajweed focuses on applying phonetics, vowel lengths, and recitation rules to words you can already decipher.
+                </p>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  If you are starting from the very beginning or still learning to recognize and connect Arabic letters, we recommend starting with our{" "}
+                  <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">
+                    Noorani Qaida course
+                  </Link>{" "}
+                  or our foundational{" "}
+                  <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">
+                    Quran Reading course
+                  </Link>{" "}
+                  first. Once you can read basic sentences from the Mushaf, you can smoothly transition into our dedicated Tajweed classes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. TAJWEED CURRICULUM SECTION */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Comprehensive Syllabus
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              What You Will Learn in Our Online Tajweed Classes
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Our structured curriculum organizes the classical rules of Tajweed into practical, easy-to-follow learning modules.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {curriculumTopics.map((topic, idx) => (
+              <div
+                key={idx}
+                className="glass rounded-2xl border border-card-border p-6 hover:border-primary/30 transition-all"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                    {topic.tag}
+                  </span>
+                  <CheckCircle2 className="h-4 w-4 text-secondary shrink-0" />
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">
+                  {topic.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  {topic.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. COURSE LEVELS SECTION */}
+      <section className="py-16 sm:py-20 bg-foreground/[0.01] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Progressive Stages
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Tajweed Course Levels
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Students progress through clear, structured levels based on their current recitation abilities and pace.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 flex flex-col justify-between hover:border-primary/30 transition-all">
+              <div>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">Level 1</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-3">Beginner Tajweed</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
+                  Focuses on foundational letter articulation (Makharij), short vowel control (Harakaat), simple elongation (Madd Asli), and basic rules like Ghunnah and Qalqalah through guided recitation.
+                </p>
+              </div>
+              <ul className="space-y-2.5 text-xs text-muted-text border-t border-card-border/60 pt-4">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Correct letter articulation</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Vowel length accuracy</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Foundational guided practice</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass rounded-3xl border-2 border-primary/40 p-7 sm:p-8 flex flex-col justify-between relative shadow-xl bg-card/40">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow">
+                Core Proficiency
+              </div>
+              <div>
+                <span className="text-xs font-bold text-secondary uppercase tracking-wider block mb-2">Level 2</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-3">Intermediate Tajweed</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
+                  Deepens understanding of Noon Sakinah and Meem Sakinah rules, rules of Raa (Tafkheem/Tarqeeq), Lam of Allah, and secondary elongation rules with chapter-by-chapter recitation practice.
+                </p>
+              </div>
+              <ul className="space-y-2.5 text-xs text-muted-text border-t border-card-border/60 pt-4">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-secondary shrink-0" />
+                  <span>Noon & Meem Sakinah rules</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-secondary shrink-0" />
+                  <span>Heavy and light letters</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-secondary shrink-0" />
+                  <span>Secondary Madd rules</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 flex flex-col justify-between hover:border-primary/30 transition-all">
+              <div>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">Level 3</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-3">Advanced Tajweed</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6">
+                  Refines intricate letter characteristics (Sifaat), complex Madd Lazim types, stopping and starting rules (Waqf and Ibtida), and fluent classical recitation with consistent rhythm.
+                </p>
+              </div>
+              <ul className="space-y-2.5 text-xs text-muted-text border-t border-card-border/60 pt-4">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Letter characteristics (Sifaat)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Waqf & Ibtida (Stopping/Starting)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>Mastery in recitation flow</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. HOW THE ONLINE CLASSES WORK */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Simple Step-by-Step
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              How Our Online Quran with Tajweed Classes Work
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Getting started is straightforward. Our live one-on-one process guides you from your first assessment to confident recitation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="glass rounded-2xl border border-card-border p-6 hover:border-primary/30 transition-all text-center sm:text-left">
+              <span className="h-9 w-9 rounded-full bg-primary/10 text-primary font-extrabold text-sm flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                1
+              </span>
+              <h3 className="text-base font-bold text-foreground mb-2">
+                Assess Your Current Level
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                Your teacher conducts an initial evaluation to assess your Arabic reading, letter pronunciation, and existing knowledge of Tajweed rules.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl border border-card-border p-6 hover:border-primary/30 transition-all text-center sm:text-left">
+              <span className="h-9 w-9 rounded-full bg-primary/10 text-primary font-extrabold text-sm flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                2
+              </span>
+              <h3 className="text-base font-bold text-foreground mb-2">
+                Match the Learning Plan
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                A customized study plan is created around your specific goals, available schedule, and learning speed.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl border border-card-border p-6 hover:border-primary/30 transition-all text-center sm:text-left">
+              <span className="h-9 w-9 rounded-full bg-primary/10 text-primary font-extrabold text-sm flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                3
+              </span>
+              <h3 className="text-base font-bold text-foreground mb-2">
+                Attend Live One on One Lessons
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                Join private 30-minute interactive video lessons with your dedicated instructor, utilizing digital Mushaf screen sharing and phonetics demonstrations.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl border border-card-border p-6 hover:border-primary/30 transition-all text-center sm:text-left">
+              <span className="h-9 w-9 rounded-full bg-primary/10 text-primary font-extrabold text-sm flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                4
+              </span>
+              <h3 className="text-base font-bold text-foreground mb-2">
+                Practice and Receive Corrections
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                Recite verses aloud while your teacher provides instant audio corrections, demonstrates mouth positioning, and assigns targeted practice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. WHY ONE ON ONE TAJWEED CLASSES */}
+      <section className="py-16 sm:py-20 bg-foreground/[0.015] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              The 1-on-1 Advantage
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Why Choose One on One Quran Tajweed Classes?
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Tajweed requires active listening and precise vocal feedback that can only be effectively delivered through dedicated private lessons.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {whyOneOnOneList.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="glass rounded-2xl border border-card-border p-6 sm:p-7 hover:border-primary/30 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 font-bold">
+                      <IconComponent className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-foreground mb-2.5">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. MALE AND FEMALE TEACHERS */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Instructor Preferences
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Learn with a Quran Teacher Who Fits Your Learning Needs
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              We provide qualified male and female Quran instructors so every student can learn in a comfortable, supportive environment.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 hover:border-primary/30 transition-all flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center mb-4">
+                  <Heart className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Female Quran Teachers
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
+                  We provide qualified{" "}
+                  <Link href="/courses/female-quran-teacher" className="text-primary font-semibold hover:underline">
+                    female Quran teachers
+                  </Link>{" "}
+                  for sisters, young girls, and mothers who prefer learning with a female instructor. Female tutors provide a patient, encouraging, and supportive atmosphere tailored to female students and young children.
+                </p>
+              </div>
+              <Link
+                href="/courses/female-quran-teacher"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary hover:underline mt-4"
+              >
+                <span>Learn about female teachers</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 hover:border-primary/30 transition-all flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Male Quran Teachers
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-4">
+                  Experienced male Quran teachers are available for brothers, boys, and adult students who prefer male instruction. Browse our instructor profiles on the{" "}
+                  <Link href="/tutors" className="text-primary font-semibold hover:underline">
+                    OQTutor teachers page
+                  </Link>{" "}
+                  to learn more about our faculty qualifications and specialties.
+                </p>
+              </div>
+              <Link
+                href="/tutors"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary hover:underline mt-4"
+              >
+                <span>View all tutor profiles</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. TAJWEED FOR DIFFERENT LEARNERS */}
+      <section className="py-16 sm:py-20 bg-foreground/[0.01] border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Targeted Programs
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Tajweed Classes for Kids and Adults
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Teaching techniques adapt to the developmental stage and lifestyle demands of each student.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full inline-block mb-3">
+                  Young Learners
+                </span>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Tajweed Classes for Kids
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5">
+                  Our{" "}
+                  <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">
+                    online Quran classes for kids
+                  </Link>{" "}
+                  prioritize age-appropriate instruction, visual engagement, and gentle encouragement. Tutors break down complex rules into simple, memorable steps, using interactive screen sharing and repetition to maintain focus and nurture a genuine love for Quran recitation.
+                </p>
+                <ul className="space-y-2 text-xs text-muted-text mb-6">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span>Engaging visual phonetics boards</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span>Gentle repetition and positive reinforcement</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    <span>Attention-friendly 30-minute lessons</span>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="/courses/quran-for-kids"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary hover:underline"
+              >
+                <span>Explore classes for kids</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="glass rounded-3xl border border-card-border p-7 sm:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-3 py-1 rounded-full inline-block mb-3">
+                  Mature Learners
+                </span>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Tajweed Classes for Adults
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-5">
+                  Our{" "}
+                  <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">
+                    Quran classes for adults
+                  </Link>{" "}
+                  cater to busy professionals, university students, and parents. Instructors provide mature, structured guidance, helping adult learners correct long-standing pronunciation habits, understand rule applications, and achieve confident recitation at a comfortable pace.
+                </p>
+                <ul className="space-y-2 text-xs text-muted-text mb-6">
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-secondary shrink-0" />
+                    <span>24/7 flexible scheduling for busy schedules</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-secondary shrink-0" />
+                    <span>Private, judgment-free learning space</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-secondary shrink-0" />
+                    <span>Practical application to daily Salah recitation</span>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="/courses/quran-for-adults"
+                className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary hover:underline"
+              >
+                <span>Explore classes for adults</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. COURSE PROGRESSION SECTION */}
+      <section className="py-16 sm:py-24 border-t border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Structured Roadmap
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Your Quran Learning Path
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Students can begin at any stage appropriate to their existing Quranic skills and advance step by step.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <Link
+              href="/courses/noorani-qaida"
+              className="glass rounded-2xl border border-card-border p-6 hover:border-primary/40 hover:shadow-lg transition-all group"
+            >
+              <div className="h-8 w-8 rounded-full bg-foreground/5 text-foreground font-bold text-xs flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                1
+              </div>
+              <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Noorani Qaida
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed mb-4">
+                Learn Arabic alphabet, letter joining rules, and foundational vowel sounds.
+              </p>
+              <span className="text-[11px] font-bold text-primary inline-flex items-center space-x-1">
+                <span>View Course</span>
+                <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
+
+            <Link
+              href="/courses/quran-reading"
+              className="glass rounded-2xl border border-card-border p-6 hover:border-primary/40 hover:shadow-lg transition-all group"
+            >
+              <div className="h-8 w-8 rounded-full bg-foreground/5 text-foreground font-bold text-xs flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                2
+              </div>
+              <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Quran Reading
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed mb-4">
+                Build word recognition, verse reading fluency, and reading stamina across full Surahs.
+              </p>
+              <span className="text-[11px] font-bold text-primary inline-flex items-center space-x-1">
+                <span>View Course</span>
+                <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
+
+            <div className="glass rounded-2xl border-2 border-primary/50 p-6 shadow-md bg-card/40 relative">
+              <div className="h-8 w-8 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center mb-4">
+                3
+              </div>
+              <h3 className="text-base font-bold text-primary mb-2">
+                Quran with Tajweed
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed mb-4">
+                Master Makharij, Sifaat, and classical recitation rules for accurate and beautiful recitation.
+              </p>
+              <span className="text-[11px] font-bold text-primary inline-block">
+                Current Course
+              </span>
+            </div>
+
+            <Link
+              href="/courses/hifz"
+              className="glass rounded-2xl border border-card-border p-6 hover:border-primary/40 hover:shadow-lg transition-all group"
+            >
+              <div className="h-8 w-8 rounded-full bg-foreground/5 text-foreground font-bold text-xs flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                4
+              </div>
+              <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Hifz or Advanced Study
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed mb-4">
+                Memorize selected Surahs or the entire Holy Quran under certified instructor supervision.
+              </p>
+              <span className="text-[11px] font-bold text-primary inline-flex items-center space-x-1">
+                <span>View Course</span>
+                <ArrowRight className="h-3 w-3" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. TAJWEED VS GENERAL QURAN READING */}
+      <section className="py-16 bg-foreground/[0.015] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="glass rounded-3xl border border-card-border p-8 sm:p-10 shadow-lg">
+            <h2 className="text-2xl font-extrabold text-foreground mb-4 text-center">
+              What Is the Difference Between Quran Reading and Tajweed?
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+            <p className="text-sm sm:text-base text-muted-text leading-relaxed mb-6">
+              While{" "}
+              <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">
+                Quran Reading
+              </Link>{" "}
+              focuses on learning how to recognize Arabic letters, combine words, and read the Quranic text correctly from the page, <strong>Tajweed</strong> focuses on the science of phonetics, articulation points (Makharij), and specific recitation rules that ensure every letter is pronounced with its correct sound and duration. In essence, basic reading teaches you <em>what</em> the words are, while Tajweed teaches you <em>how</em> to recite them with the exact pronunciation and beauty with which the Quran was revealed.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                <strong className="text-foreground block font-bold mb-1">Quran Reading Focus:</strong>
+                <span className="text-muted-text">Letter connection, short/long vowels, word recognition, reading continuous text.</span>
+              </div>
+              <div className="p-4 rounded-xl bg-foreground/[0.02] border border-card-border/60">
+                <strong className="text-foreground block font-bold mb-1">Tajweed Focus:</strong>
+                <span className="text-muted-text">Makharij, Sifaat, Ghunnah, Qalqalah, Madd elongation, and Waqf stopping precision.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. TRUST AND E-E-A-T SECTION */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Certified Faculty
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Learn with Qualified Quran Teachers
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Our instructors are dedicated educators committed to providing personalized, student-centered Quranic education.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+            <div className="glass rounded-2xl border border-card-border p-6 text-center">
+              <UserCheck className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="text-base font-bold text-foreground mb-2">Live Teacher-Led Learning</h3>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Direct one-on-one live video interaction ensuring active engagement and attention throughout each lesson.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl border border-card-border p-6 text-center">
+              <Award className="h-8 w-8 text-secondary mx-auto mb-3" />
+              <h3 className="text-base font-bold text-foreground mb-2">Structured Curriculum</h3>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Step-by-step modular progression from basic articulation to advanced elongation and stopping rules.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl border border-card-border p-6 text-center">
+              <Mic className="h-8 w-8 text-primary mx-auto mb-3" />
+              <h3 className="text-base font-bold text-foreground mb-2">Instant Auditory Feedback</h3>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Teachers listen carefully to every verse recited and provide real-time corrections to refine your phonetics.
+              </p>
+            </div>
+          </div>
+
+          {/* Educational Blog Context Links */}
+          <div className="max-w-3xl mx-auto p-6 rounded-2xl bg-foreground/[0.02] border border-card-border text-center">
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Want to understand Tajweed rules in more detail? Read our{" "}
+              <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">
+                beginner&apos;s guide to mastering Tajweed rules
+              </Link>{" "}
+              or learn about the{" "}
+              <Link href="/blog/tajweed-vs-tarteel-difference" className="text-primary font-semibold hover:underline">
+                difference between Tajweed and Tarteel
+              </Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 14. TESTIMONIALS */}
+      {testimonials.length > 0 && (
+        <Testimonials
+          data={testimonials.filter((t) =>
+            t.id.includes('tajweed') ||
+            t.relation?.toLowerCase().includes('tajweed') ||
+            t.text?.toLowerCase().includes('tajweed') ||
+            t.text?.toLowerCase().includes('pronunciation') ||
+            t.relation?.toLowerCase().includes('makharij')
+          )}
+        />
+      )}
+
+      {/* 15. FAQ SECTION */}
+      <section className="py-16 sm:py-24 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block mb-3">
+              Helpful Answers
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              Frequently Asked Questions About Online Tajweed Classes
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text">
+              Find answers to common questions about our online Tajweed curriculum, teaching methods, and lesson scheduling.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {tajweedFaqs.map((faq, idx) => {
+              const isOpen = openFaqIdx === idx;
+              return (
+                <div
+                  key={idx}
+                  className="glass rounded-2xl border border-card-border overflow-hidden transition-all duration-300"
+                >
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-center space-x-3.5 pr-4">
+                      <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
+                      <h3 className="text-xs sm:text-sm font-bold m-0 p-0 text-foreground">
+                        {faq.question}
+                      </h3>
+                    </div>
+                    <ChevronDown
+                      className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 shrink-0 ${
+                        isOpen ? 'rotate-180 text-primary' : ''
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 16. FINAL CTA SECTION */}
+      <section className="py-20 bg-gradient-to-b from-background to-foreground/[0.03] border-t border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="glass rounded-3xl border border-card-border p-8 sm:p-14 shadow-2xl relative overflow-hidden bg-card/60 backdrop-blur-md">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl pointer-events-none" />
+            
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-foreground mb-4">
+              Start Learning Quran with Tajweed
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+            
+            <p className="text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed mb-8">
+              Join students worldwide learning Quran with accurate pronunciation, Makharij, and recitation rules. Book your free 3-day trial class today with our qualified male or female Quran tutors.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/book-free-trial"
+                className="px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/25 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+              >
+                <span>Start Your Free Trial</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="px-8 py-4 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all"
+              >
+                View Pricing Plans
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
 

@@ -237,150 +237,133 @@
     },
     {
       "id": "course-3",
-      "title": "Quran with Tajweed",
+      "title": "Online Quran with Tajweed Classes",
       "slug": "tajweed",
-      "description": "Learn Quran online with Tajweed from certified teachers. Private, one-on-one Quran classes for beginners focused on correct pronunciation, recitation, and Tajweed rules. Book a free trial class today.",
+      "description": "Learn Quran online with Tajweed through one on one classes with qualified male and female teachers. Improve pronunciation, Makharij, recitation and Tajweed rules.",
       "icon": "Volume2",
       "image": "/quran-tajweed.jpg",
-      "duration": "6-8 Months",
-      "suitableFor": "Intermediate",
-      "overview": "Learn Quran online with Tajweed from certified teachers. Private, one-on-one Quran classes for beginners focused on correct pronunciation, recitation, and Tajweed rules. Book a free trial class today.",
+      "duration": "Customized Pace (30 min sessions)",
+      "suitableFor": "Kids, Teenagers & Adults",
+      "overview": "Learn Quran with Tajweed through live one on one classes with qualified teachers. Improve your pronunciation, Makharij, recitation accuracy, and understanding of essential Tajweed rules through a structured learning plan.",
       "learningOutcomes": [
-        "Understand all primary Tajweed rules (Ghunnah, Ikhfa, Idghaam, Qalqalah)",
-        "Identify and apply stopping (Waqf) and elongation (Madd) rules",
-        "Eliminate mistakes in vowel sounds and letter characteristics",
-        "Recite with authentic classical Arabic articulation"
+        "Master articulation points (Makharij) and characteristics (Sifaat) of Arabic letters",
+        "Apply essential rules including Noon Sakinah, Meem Sakinah, Qalqalah, and Ghunnah",
+        "Understand elongation rules (Madd) and stopping rules (Waqf and Ibtida)",
+        "Recite the Holy Quran with fluency, accuracy, and confidence"
       ],
-      "classStructure": "One-on-One, 30 min classes, 3 to 5 times per week.",
-      "recommendedAge": "Ages 8 and above",
-      "seoTitle": "Learn Quran Online with Tajweed \u2013 One-on-One Live Classes",
-      "metaDescription": "Learn Quran online with Tajweed from certified teachers. Private, one-on-one Quran classes for beginners focused on correct pronunciation, recitation, and Tajweed rules. Book a free trial class today.",
-      "focusKeyword": "Quran with Tajweed",
+      "classStructure": "Live One-on-One, 30 min classes, flexible 24/7 scheduling.",
+      "recommendedAge": "All Ages (Kids, Teens & Adults)",
+      "seoTitle": "Online Quran with Tajweed Classes | OQTutor",
+      "metaDescription": "Learn Quran online with Tajweed through one on one classes with qualified male and female teachers. Improve pronunciation, Makharij, recitation and Tajweed rules.",
+      "focusKeyword": "online Quran with Tajweed classes",
       "secondaryKeywords": [
-        "online Tajweed classes",
-        "learn Tajweed rules",
-        "Tajweed teacher online",
-        "Tajweed for sisters"
+        "learn Quran online with Tajweed",
+        "Quran Tajweed classes online",
+        "online Tajweed Quran classes",
+        "learn Tajweed online",
+        "Quran classes with Tajweed",
+        "Tajweed classes for kids",
+        "Tajweed classes for adults",
+        "one on one Quran Tajweed classes",
+        "online Quran Tajweed teacher",
+        "female Quran teacher",
+        "male Quran teacher"
       ],
-      "whoShouldJoin": "Designed for intermediate readers who can already read the Quran but want to correct recitation errors, learn phonetics rules, and match beautiful, classical recitations.",
+      "whoShouldJoin": "Suitable for children, teenagers, and adults who can read basic Arabic script and want to correct recitation errors, master Tajweed rules, and recite Quran accurately.",
       "benefits": [
-        "Direct guidance from scholars holding authentic academic Ijazah",
-        "Deep understanding of classical Arabic vowel rules",
-        "Confidence to lead prayers and recite beautifully in public",
-        "Flexible, customized syllabus tailored to your current level"
+        "Live 1-on-1 instruction with qualified male and female Quran teachers",
+        "Immediate recitation correction and personalized feedback every class",
+        "Customized lesson plans adapted to your current reading level",
+        "Flexible 24/7 class timings to fit busy school or work schedules"
       ],
       "curriculumSteps": [
         {
-          "title": "Arabic letters & articulation points (Makharij al-Huroof)",
-          "description": "Mastering the physical articulation points (Makharij) of all 28 Arabic letters in the throat and mouth to ensure perfect sound production."
+          "title": "Makharij and Correct Letter Pronunciation",
+          "description": "Mastering the 17 physical articulation points (Makharij) across the throat, tongue, lips, and nasal cavity for clear Arabic phonetics."
         },
         {
-          "title": "Characteristics of letters (Sifaat)",
-          "description": "Understanding the intrinsic qualities of letters, such as breath flow (Hams), vocal strength (Jahr), and soft/hard characteristics."
+          "title": "Sifaat of Arabic Letters",
+          "description": "Understanding intrinsic letter characteristics, including breath flow (Hams vs. Jahr), strength (Shiddah), and heaviness (Tafkheem vs. Tarqeeq)."
         },
         {
-          "title": "Harakaat — Fat-hah, Kasrah, Dhammah",
-          "description": "Correctly pronouncing short vowel sounds without dragging them, preventing common mistakes in vowel lengths."
+          "title": "Noon Sakinah and Tanween",
+          "description": "Applying the four essential rules governing silent Noon and Tanween: Izhar, Idgham, Iqlab, and Ikhfa."
         },
         {
-          "title": "Sukoon and Shaddah, Tanween",
-          "description": "Reading silent letters (Sukoon) and doubled letters (Shaddah) accurately, alongside double vowels (Tanween)."
+          "title": "Meem Sakinah Rules",
+          "description": "Mastering the three rules of silent Meem: Ikhfa Shafawi, Idgham Shafawi, and Izhar Shafawi."
         },
         {
-          "title": "Izhar (clear pronunciation)",
-          "description": "Pronouncing Noon Sakinah clearly when followed by throat letters."
+          "title": "Izhar, Idgham, Iqlab and Ikhfa",
+          "description": "Detailed practical application of clarity, merging with or without nasalization, conversion to Meem, and sound concealment."
         },
         {
-          "title": "Idghaam (merging) — with and without Ghunnah",
-          "description": "Merging the silent Noon into the next letter, with or without nasal sound (Ghunnah)."
+          "title": "Ghunnah",
+          "description": "Perfecting the two-count nasal resonance produced on Noon and Meem Mushaddadah."
         },
         {
-          "title": "Iqlab (conversion)",
-          "description": "Converting the sound of Noon Sakinah into a silent Meem when followed by the letter Baa."
+          "title": "Qalqalah",
+          "description": "Applying the echoing bounce on the five Qalqalah letters (Qaf, Taa, Baa, Jeem, Dal) when in a state of Sukoon."
         },
         {
-          "title": "Ikhfa (concealment)",
-          "description": "Concealing the sound of Noon Sakinah in the nasal cavity before fifteen specific letters."
+          "title": "Madd and Elongation Rules",
+          "description": "Understanding natural elongation (Madd Asli) and secondary elongations (Madd Far'i, Muttasil, Munfasil, and Lazim)."
         },
         {
-          "title": "Ghunnah (nasalization)",
-          "description": "Perfecting the nasal sound originating from the nasal passage, specifically on doubled Noon and Meem."
+          "title": "Waqf and Ibtida",
+          "description": "Learning rules and symbols for stopping (Waqf) and resuming (Ibtida) recitation correctly without altering verse meanings."
         },
         {
-          "title": "Qalqalah (echoing sound)",
-          "description": "Applying the echoing or bouncing sound on five specific letters when they carry a stillness sign (Sukoon)."
-        },
-        {
-          "title": "Rules of the letter Raa (thick/thin pronunciation)",
-          "description": "Understanding when to make the letter Raa thick (Tafkheem) or thin (Tarqeeq) based on surrounding vowels."
-        },
-        {
-          "title": "Lam of Allah — thick and thin",
-          "description": "Pronouncing the word 'Allah' with a heavy or light sound depending on the preceding vowel."
-        },
-        {
-          "title": "Madd Asli (natural elongation)",
-          "description": "Applying the basic two-count stretch on natural vowels (Alif, Waw, Ya)."
-        },
-        {
-          "title": "Madd Far'i and its types",
-          "description": "Mastering the secondary elongations caused by Hamzah or Sukoon, stretching sounds for 4 to 6 counts."
-        },
-        {
-          "title": "The very long Madd (Madd Laazim)",
-          "description": "Understanding the mandatory six-count elongation when a vowel letter is followed by a doubled or silent letter."
-        },
-        {
-          "title": "Waqf (rules of stopping)",
-          "description": "Learning how to stop at the end of verses or in the middle, and how to correctly silence final vowels."
-        },
-        {
-          "title": "Waqf signs in the Mushaf",
-          "description": "Recognizing stopping symbols (such as Meem, Jeem, Laa) printed in the Quran to prevent incorrect stops."
-        },
-        {
-          "title": "Ibtida' (rules of starting/resuming)",
-          "description": "Understanding how to resume reading after a stop without altering the context or meaning."
-        },
-        {
-          "title": "Reading full passages with applied rules",
-          "description": "Practicing recitation of comprehensive Quranic chapters with all Tajweed rules applied simultaneously."
-        },
-        {
-          "title": "Recorded practice and correction",
-          "description": "Recording and analyzing your own recitation with 1-on-1 teacher corrections to build muscle memory."
-        },
-        {
-          "title": "Matching a classical, scholarly recitation style",
-          "description": "Refining your tone and speed to resemble traditional reciters (Qurra) under strict scholar feedback."
+          "title": "Practical Quran Recitation",
+          "description": "Continuous teacher-guided recitation practice of Quranic Surahs applying all learned Tajweed rules simultaneously."
         }
       ],
-      "teachingMethod": "We combine theoretical explanation slides with heavy practical drilling during live class recitation, showing mouth positions via high-definition video call.",
+      "teachingMethod": "Live one-on-one sessions utilizing digital Mushafs, real-time audio/video corrections, and progressive recitation drilling.",
       "faqs": [
         {
-          "question": "Why is Tajweed important?",
-          "answer": "Tajweed ensures the Quran is recited exactly as it was revealed. Mispronouncing letters can change a word's meaning entirely, so correct Tajweed protects both the accuracy and the reward of your recitation."
+          "question": "Is Tajweed suitable for beginners?",
+          "answer": "Yes. Students who can already recognize and read basic Arabic words can begin with foundational Tajweed rules. Lessons introduce Makharij (points of articulation) and essential pronunciation rules progressively, allowing beginners to build confidence and accuracy step by step without feeling overwhelmed."
         },
         {
-          "question": "Do female teachers teach sisters?",
-          "answer": "Yes. Sisters and young children can be matched with one of our certified female scholars; boys and men can request a male teacher. You choose your preference during registration."
+          "question": "Do I need to speak Arabic to learn Tajweed?",
+          "answer": "No, you do not need to speak or understand conversational Arabic to learn Tajweed. Tajweed focuses specifically on the accurate phonetic pronunciation of Arabic letters, vowel lengths, and Quranic recitation rules. Teachers provide all instructions, explanations, and feedback in English or your preferred language."
         },
         {
-          "question": "Do I need to know Arabic before starting this course?",
-          "answer": "No — you need to already be able to read Quranic Arabic script at a basic level (completed through Noorani Qaida or our Quran Reading course). If you're starting from zero, we'll place you in that course first, then move you here."
+          "question": "Do I need to know how to read Quran before learning Tajweed?",
+          "answer": "Yes, students generally benefit from knowing the Arabic alphabet and being able to read basic Quranic words before starting formal Tajweed. If you are starting from zero or need to learn Arabic letters, we recommend starting with our Noorani Qaida or Quran Reading course first."
         },
         {
-          "question": "How is this different from a free Tajweed app?",
-          "answer": "An app can show you the rule; only a live teacher can hear your voice and correct the exact spot where your pronunciation is off. Most Tajweed mistakes are inaudible to the reader themselves — that's the entire reason a 1-on-1 teacher exists."
+          "question": "Can children learn Quran with Tajweed online?",
+          "answer": "Yes, children can learn Quran with Tajweed online once they have completed basic Arabic reading. Lessons for kids use interactive methods, gentle repetition, and visual aids to keep young learners engaged while instilling correct pronunciation habits from an early age."
         },
         {
-          "question": "Can adults join this course, or is it only for children?",
-          "answer": "Both. We regularly teach adults who learned to read Quran as children but never formally studied Tajweed, alongside children as young as 8."
+          "question": "Can adults learn Quran with Tajweed online?",
+          "answer": "Yes, adults of all ages can learn Tajweed online. Whether you are studying Tajweed rules for the first time or wish to correct long-standing pronunciation mistakes, lessons are customized to your pace with private, supportive one-on-one instruction."
+        },
+        {
+          "question": "Do you offer female Tajweed teachers?",
+          "answer": "Yes, OQTutor provides qualified female Quran teachers for sisters and young children. You can specify your teacher gender preference when booking your classes, ensuring a comfortable, supportive, and dedicated learning environment."
+        },
+        {
+          "question": "Are Tajweed classes one on one?",
+          "answer": "Yes, all our online Tajweed classes are conducted live one on one. This private structure ensures your teacher hears every word you recite, corrects mistakes immediately in real time, and customizes each lesson to your individual learning pace."
+        },
+        {
+          "question": "How are online Tajweed lessons conducted?",
+          "answer": "Classes take place via live interactive video sessions using screen-shared digital Mushafs and audio tools. The teacher recites verses with correct Tajweed, listens to your recitation, demonstrates mouth and tongue articulation, and provides real-time guidance and feedback."
+        },
+        {
+          "question": "How long does it take to learn Tajweed?",
+          "answer": "The time needed to master Tajweed depends on your starting reading ability, class frequency, and consistent practice. Most students grasp foundational Tajweed rules within several months of regular one-on-one lessons, progressing toward fluent, beautiful recitation over time."
+        },
+        {
+          "question": "Can I start with a trial lesson?",
+          "answer": "Yes, OQTutor offers a free trial class for new students. During the trial session, a qualified teacher evaluates your current Quran reading level, discusses your goals, and demonstrates our live one-on-one teaching format with no commitment required."
         }
       ],
-      "updatedAt": "2026-08-11T00:00:00.000Z",
+      "updatedAt": "2026-08-28T00:00:00.000Z",
       "createdAt": "2025-01-15T00:00:00.000Z",
-      "authorName": "Qari Imran Hussain (Ijazah Certified Senior Instructor)"
+      "authorName": "OQTutor Quran Faculty"
     },
     {
       "id": "course-4",
