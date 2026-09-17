@@ -6,7 +6,7 @@ import {
   BookOpen, Award, Clock, Calendar, Users, 
   CheckCircle, CheckCircle2, HelpCircle, ChevronDown, ArrowRight, ShieldCheck, Star,
   UserCheck, ExternalLink, Sparkles, Globe, Heart, MessageSquare, Check, Compass, Laptop, Video, BookMarked, Lightbulb,
-  Volume2, Layers, Headphones, Mic, Target, GraduationCap, ArrowUpRight
+  Volume2, Layers, Headphones, Mic, Target, GraduationCap, ArrowUpRight, Smile
 } from 'lucide-react';
 import Link from 'next/link';
 import { CourseData, ContactData, TestimonialData } from '@/data/db';
