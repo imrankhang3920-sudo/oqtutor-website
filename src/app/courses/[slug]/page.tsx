@@ -18,6 +18,13 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+  const dbData = readDB();
+  return (dbData.courses || []).map((course) => ({
+    slug: course.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const dbData = readDB();
@@ -31,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = `${siteUrl}/courses/${course.slug}`;
   const publishedTime = course.createdAt || '2025-01-15T00:00:00.000Z';
   const modifiedTime = course.updatedAt || new Date().toISOString();
-  const authorName = course.authorName || 'Qari Imran Hussain (Ijazah Certified Senior Instructor)';
+  const authorName = course.authorName || 'OQTutor Quran Faculty';
 
   return {
     title: course.seoTitle,
@@ -39,6 +46,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: authorName }],
     alternates: {
       canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
     openGraph: {
       title: course.seoTitle,
