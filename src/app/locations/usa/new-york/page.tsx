@@ -149,7 +149,7 @@ export default async function NewYorkQuranClassesPage() {
   };
 
   const customHeroData = {
-    title: "Quiet, Focused Quran Recitation from Your New York Apartment",
+    title: "Online Quran Classes in New York for Focused Quran Learning",
     subtitle: "Between rush-hour subway rides, dense school schedules, and tight extracurricular routines, finding peaceful Quran time in New York can be difficult. OQTutor brings quiet, focused 1-on-1 recitation into your living room. We start with a 15-minute placement check so your child or you begin at the exact right level, followed by weekly written progress notes sent straight to you.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
