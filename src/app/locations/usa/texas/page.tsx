@@ -83,7 +83,7 @@ export default async function TexasQuranClassesPage() {
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
   const customHeroData = {
-    title: "Save the Highway Drive: Private Quran Study for Texas Families",
+    title: "Best Online Quran Classes in Texas: Expert Qualified Tutors",
     subtitle: "Help your child build a lifelong, authentic bond with the Holy Quran without driving across Houston, Dallas-Fort Worth, Austin, or San Antonio traffic. OQTutor connects Muslim families across Texas with certified, patient Quran teachers for private 1-on-1 online classes. Whether starting with the basics of Noorani Qaida, perfecting recitation with Tajweed rules, or memorizing selected Surahs, our flexible digital classrooms fit easily around Central Time school commitments and homework routines.",
     ctaText: "Book 3 Free Trial Classes",
     ctaLink: "/book-free-trial",

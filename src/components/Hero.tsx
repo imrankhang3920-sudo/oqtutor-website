@@ -22,11 +22,11 @@ export default function Hero({ data }: HeroProps) {
   const subtitleText = data.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.";
 
   const renderFormattedTitle = (title: string) => {
-    const parts = title.split(/(Quran\s+Online|Quran\s+Learning)/i);
+    const parts = title.split(/(Online\s+Quran\s+Classes|Quran\s+Online|Quran\s+Learning|Online\s+Quran)/i);
     return (
       <>
         {parts.map((part, index) =>
-          /^(Quran\s+Online|Quran\s+Learning)$/i.test(part) ? (
+          /^(Online\s+Quran\s+Classes|Quran\s+Online|Quran\s+Learning|Online\s+Quran)$/i.test(part) ? (
             <span key={index} className="text-primary">
               {part}
             </span>
