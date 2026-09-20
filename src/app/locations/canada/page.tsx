@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, ChevronDown, Star, Shield, HelpCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, Star, Shield, HelpCircle, Calendar, Users, Clock, DollarSign, MessageCircle } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -425,46 +425,96 @@ export default async function CanadaQuranClassesPage() {
           </div>
         </section>
 
-        {/* Section 6: Why Choose OQTutor */}
+        {/* Section 6: Why OQTutor is Best for Canadian Muslim Families */}
         <section className="py-16 md:py-24 bg-foreground/[0.01] border-t border-card-border relative">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">Our Benefits</span>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground">
-                Why Families Across Canada Choose OQTutor
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Tailored for Canada
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
+                Why OQTutor is Best for Canadian Muslim Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed font-normal">
+                Designed specifically for the academic schedule, lifestyle, and time zones of Muslim households across Canada.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="glass p-8 rounded-3xl border-card-border">
-                <div className="p-3 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
-                  <Shield className="h-6 w-6" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Point 1: Schedule alignment with Canadian school terms */}
+              <div className="glass p-8 rounded-3xl border-card-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <Calendar className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Canadian School Term Alignment
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                    Schedule alignment with Canadian school terms (winter break, March break, summer) so your family can pause, reschedule, or adjust classes without stress.
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">Vetted Scholars</h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  Every Quran tutor goes through verification, security screening, and academic verification before teaching.
-                </p>
               </div>
 
-              <div className="glass p-8 rounded-3xl border-card-border">
-                <div className="p-3 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
-                  <Star className="h-6 w-6" />
+              {/* Point 2: Teachers understand multicultural Canadian households */}
+              <div className="glass p-8 rounded-3xl border-card-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Multicultural Household Experience
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                    Teachers understand multicultural Canadian households, bringing patient, child-friendly, English-fluent instruction that engages Canadian-raised youth.
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">One-on-One Attention</h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  No distractions of a group classroom. Direct engagement ensures pronunciation is corrected instantly in real-time.
-                </p>
               </div>
 
-              <div className="glass p-8 rounded-3xl border-card-border">
-                <div className="p-3 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
-                  <ArrowRight className="h-6 w-6" />
+              {/* Point 3: Support available in 6 time zones without extra fees */}
+              <div className="glass p-8 rounded-3xl border-card-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    6 Time Zones Covered
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                    Support available in 6 time zones without extra fees — from Pacific (PST) and Mountain (MST) to Eastern (EST) and Newfoundland (NST) time.
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">6 Time Zones Covered</h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  From Vancouver (PST) to St. John's (NST), our scheduling system adjusts to your local time automatically.
-                </p>
+              </div>
+
+              {/* Point 4: CAD pricing = no surprise currency conversions */}
+              <div className="glass p-8 rounded-3xl border-card-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <DollarSign className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Transparent CAD Pricing
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                    CAD pricing = no surprise currency conversions or international transaction markups. Transparent, fixed monthly pricing billed directly in Canadian dollars.
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 5: WhatsApp support in Canada's preferred channel */}
+              <div className="glass p-8 rounded-3xl border-card-border hover:shadow-lg transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <MessageCircle className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Instant WhatsApp Support
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                    WhatsApp support in Canada&apos;s preferred channel for quick schedule adjustments, teacher matching feedback, and regular parent progress reports.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
