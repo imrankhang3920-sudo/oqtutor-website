@@ -572,7 +572,7 @@ export default async function UKQuranClassesPage() {
 
                 {/* H1 Heading */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Skip the Madrasah Commute: 1-on-1 Quran Lessons on UK Time
+                  Online Quran Classes UK for Children &amp; Adults | One-to-One Quran Tutors
                 </h1>
 
                 {/* Supporting Paragraph */}
