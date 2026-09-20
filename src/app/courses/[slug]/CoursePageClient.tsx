@@ -784,7 +784,7 @@ function NooraniQaidaContent({
                 Course 1 — Foundation
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Noorani Qaida Online Course
+                Online Noorani Qaida Classes for Kids &amp; Adults | Learn Quran Basics
               </h1>
               <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
               <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
