@@ -14,8 +14,8 @@ interface BlogPreviewItem {
 const blogItems: BlogPreviewItem[] = [
   {
     image: '/online-quran-classes-texas-girl.jpg',
-    category: 'Texas Guide',
-    title: 'Online Quran Classes in Texas: A Real Guide for Busy Families',
+    category: 'Texas Parent Guide',
+    title: 'How to Choose Online Quran Classes in Texas for Your Family',
     link: '/blog/online-quran-classes-texas',
   },
   {

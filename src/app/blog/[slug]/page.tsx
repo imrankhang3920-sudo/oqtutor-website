@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isBeginnersBlog
     ? 'Best Online Quran Classes for Beginners (Step-by-Step Guide) | OQTutor'
     : isTexasBlog
-    ? 'Online Quran Classes in Texas | Live 1-to-1 Lessons'
+    ? 'How to Choose Online Quran Classes in Texas for Your Family | OQTutor'
     : `${blog.title} | OQTutor`;
 
   const coverImgUrl = blog.coverImage
@@ -150,14 +150,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ]
       : isTexasBlog
       ? [
+          'how to choose online quran classes texas',
           'online quran classes texas',
+          'online quran classes in texas for family',
           'quran classes houston',
           'quran classes dallas',
           'quran classes austin',
           'quran classes san antonio',
           'online quran tutor texas',
           'quran lessons for kids texas',
-          'learn quran online texas',
+          'female quran teacher texas',
+          'noorani qaida texas',
           'tajweed classes texas'
         ]
       : isBrainRewireBlog
@@ -862,6 +865,76 @@ export default async function BlogPostPage({ params }: Props) {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Fill out the simple trial form on our website to schedule a free 30-minute placement and lesson session."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isTexasBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are the best online Quran classes in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The right program depends on the student's age, learning level, preferred teacher, schedule, course goals, and budget. Parents should compare these factors rather than choosing an academy based only on advertising."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are online Quran classes good for children?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "They can be suitable for children when lessons are age appropriate, interactive, structured, and taught by a teacher who knows how to work with young learners."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can beginners learn Quran online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Beginners can start with foundational Arabic reading skills and Noorani Qaida before progressing to Quran reading and Tajweed."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I find a female Quran teacher in Texas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many online academies offer female teachers. Availability should be confirmed before booking because teacher schedules can vary."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do adults need previous Quran knowledge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Adults can begin at their current level, including from the Arabic alphabet and basic reading."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What equipment is needed for online Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Students generally need a suitable device, reliable internet, audio, and a quiet place to attend the lesson. The academy can confirm its specific technical requirements."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How often should a student take Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The appropriate frequency depends on the student's age, goals, and schedule. A consistent timetable that the student can maintain is usually more practical than an unrealistic schedule."
                   }
                 }
               ]
@@ -2406,32 +2479,40 @@ function ArticleContentAdultUsa() {
 
 function ArticleContentTexas() {
   return (
-    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+    <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
       {/* Key Takeaways Box */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm">
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm not-prose">
         <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
           <Sparkles className="h-5 w-5 text-primary" />
-          <span>Key Insights for Texas Families</span>
+          <span>Quick Summary for Texas Families</span>
         </div>
         <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
-          With over 500,000 Muslims across Texas, online Quran classes bridge the gap between busy suburban schedules and authentic Quran education. Live 1-on-1 sessions on Central Time offer individualized Noorani Qaida, Tajweed, and Hifz for children and adults in Houston, Dallas-Fort Worth, Austin, San Antonio, and beyond — with zero commute stress.
+          Finding the right Quran education in Texas means balancing school, work, sports, and family schedules. Live one-to-one online Quran classes bring certified instruction directly into your home across Houston, Dallas-Fort Worth, Austin, San Antonio, and beyond — with flexible Central Time scheduling, male and female tutors, and structured learning from Noorani Qaida to Tajweed and Hifz.
         </p>
       </div>
 
-      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        Texas is home to one of the largest, most vibrant Muslim communities in North America — an estimated 500,000 residents statewide, with major hubs around Greater Houston, the Dallas-Fort Worth metroplex, Austin, and San Antonio. With families spread across massive suburban corridors like Plano, Frisco, Katy, Sugar Land, Irving, and Round Rock, the core question isn&apos;t whether Quran education matters — it&apos;s how to maintain consistency amidst long commutes, heavy school workloads, sports routines, and working parent schedules.
-      </p>
-
-      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        That is precisely where home-based Quran tutoring steps in. Through <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">OQTutor Texas online Quran classes</Link>, students across the Lone Star State connect live one-on-one with certified male and <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> for customized recitation, Tajweed, and memorization without ever leaving home.
-      </p>
+      {/* Introduction */}
+      <div className="space-y-4">
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Finding the right Quran education for your family can be challenging when school, work, sports, homework, and family responsibilities already fill the week. For Muslim families in Texas, online Quran classes can make regular learning easier by bringing live instruction directly into the home.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          But choosing an online Quran program should involve more than looking at a website or choosing the first academy that appears in search results.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          Parents should consider the teacher&apos;s qualifications, teaching approach, class format, curriculum, schedule, communication, and the student&apos;s individual learning needs.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+          This guide explains what to look for when choosing online Quran classes in Texas for children, adults, beginners, and students who want to improve their Tajweed or memorization.
+        </p>
+      </div>
 
       {/* Featured Image Card */}
-      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg">
+      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border my-8 overflow-hidden shadow-lg not-prose">
         <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
           <Image
             src="/online-quran-classes-texas-girl.jpg"
-            alt="Young Muslim student in Texas learning Quran online with certified teacher via live one-on-one portal"
+            alt="Muslim student in Texas learning Quran online with certified teacher via live one-on-one class"
             fill
             className="object-cover"
             priority
@@ -2439,166 +2520,617 @@ function ArticleContentTexas() {
           />
         </div>
         <p className="text-xs text-center text-muted-text mt-3 font-medium">
-          Live one-on-one Quran instruction tailored specifically for Texas Muslim students in Central Time.
+          Live one-on-one Quran classes in Texas tailored to your family&apos;s routine and local Central Time zone.
         </p>
       </div>
 
-      <section className="space-y-4">
+      {/* What Are Online Quran Classes in Texas? */}
+      <section className="space-y-5">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Why Texas Families Are Moving Quran Lessons Online
+          What Are Online Quran Classes in Texas?
         </h2>
         <p className="text-base text-muted-text">
-          Driving to a physical Islamic center or local weekend school twice a week sounds manageable until you are doing it for multiple children on contrasting schedules across busy Texas highways like I-10, I-35, or US-75. Home-based virtual classes eliminate drive-time stress completely: your child logs into a private, secure virtual classroom from a quiet desk, and lessons take place on your family&apos;s preferred timetable.
+          Online Quran classes are live lessons delivered through the internet between a student and a Quran teacher. Students can learn from home using a computer, tablet, or another suitable device with a stable internet connection.
         </p>
         <p className="text-base text-muted-text">
-          Geography also plays a massive role in Texas. While metropolitan areas boast numerous Islamic societies, families in smaller cities such as Bryan-College Station, Corpus Christi, Lubbock, Amarillo, Tyler, or Midland-Odessa often lack local madrasahs with certified Tajweed scholars. Online Quran education dismantles geographical boundaries — granting every child access to top-tier Al-Azhar-certified instructors regardless of zip code. For a broader perspective on national learning standards, explore our guide on <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for kids and adults</Link>.
+          Depending on the student&apos;s level, lessons may include:
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 not-prose pt-1">
+          {[
+            { name: 'Noorani Qaida', href: '/courses/noorani-qaida' },
+            { name: 'Quran Reading', href: '/courses/quran-reading' },
+            { name: 'Tajweed Rules', href: '/courses/tajweed' },
+            { name: 'Quran Memorization (Hifz)', href: '/courses/hifz' },
+            { name: 'Islamic Studies', href: '/courses/islamic-studies' },
+            { name: 'Arabic Reading Fundamentals', href: '/courses/noorani-qaida' },
+          ].map((course, idx) => (
+            <Link
+              key={idx}
+              href={course.href}
+              className="p-3.5 rounded-2xl glass border border-card-border hover:border-primary/50 transition-all text-center flex items-center justify-center space-x-2 group"
+            >
+              <CheckCircle2 className="h-4 w-4 text-primary shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                {course.name}
+              </span>
+            </Link>
+          ))}
+        </div>
+        <p className="text-base text-muted-text">
+          One important advantage of online learning is that the lesson can be organized around the student&apos;s existing routine rather than requiring the family to travel to a physical classroom.
+        </p>
+        <p className="text-base text-muted-text font-medium text-foreground">
+          For parents with more than one child, this can make scheduling considerably easier.
         </p>
       </section>
 
-      <section className="space-y-4">
+      {/* Why Do Texas Families Choose Online Quran Learning? */}
+      <section className="space-y-5">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          How to Evaluate an Online Quran Academy in Texas
+          Why Do Texas Families Choose Online Quran Learning?
         </h2>
         <p className="text-base text-muted-text">
-          Not all virtual learning programs offer the same standard of pedagogy. Before committing to a monthly plan, parents should evaluate four non-negotiable criteria:
+          Texas is a large state, and families may live far from an Islamic center, mosque, or Quran teacher. Even when local classes are available, their schedules may not fit every family&apos;s routine.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <p className="text-base text-muted-text">
+          Online learning removes much of that geographic limitation. A child can attend a lesson from a quiet place at home while parents manage school, work, sports, and other responsibilities.
+        </p>
+        <p className="text-base text-muted-text font-medium text-foreground">
+          The main benefits can include:
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 not-prose">
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-              <span>100% Live 1-on-1 Instruction</span>
+              <Laptop className="h-5 w-5 text-primary shrink-0" />
+              <span>Learning From Home</span>
             </h3>
             <p className="text-xs sm:text-sm text-muted-text">
-              Avoid pre-recorded videos or crowded group calls where children wait 20 minutes for their 2-minute turn to recite. Direct teacher interaction ensures immediate pronunciation feedback.
+              Students do not need to travel to every lesson. They can prepare their Quran, sit in a quiet study area, and join the class from home without drive-time fatigue.
             </p>
           </div>
+
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-              <span>Specialized Teacher Matching</span>
+              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <span>Flexible Scheduling</span>
             </h3>
             <p className="text-xs sm:text-sm text-muted-text">
-              Beginner children learning Arabic phonetics require gentle patience and playful engagement, while Hifz students need rigorous memorization tracking and Sanad-certified mentorship.
+              Online programs may offer different lesson times, which can be useful for families managing school and work schedules. Texas families should still confirm the academy&apos;s actual available times before enrolling rather than assuming every time slot is offered.
             </p>
           </div>
+
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-              <span>Risk-Free Placement Trial</span>
+              <UserCheck className="h-5 w-5 text-primary shrink-0" />
+              <span>Individual Attention</span>
             </h3>
             <p className="text-xs sm:text-sm text-muted-text">
-              Parents should be able to sit in and observe the tutor&apos;s teaching demeanor, English fluency, and rapport before paying any fees. Review our guide on <Link href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor" className="text-primary font-semibold hover:underline">what US parents should know before choosing a tutor</Link>.
+              In a one to one class, the teacher can focus on one student&apos;s reading, pronunciation, Tajweed rules, and questions. This can be particularly useful for beginners who need frequent correction.
             </p>
           </div>
+
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-              <span>Measurable Progress Tracking</span>
+              <Users className="h-5 w-5 text-primary shrink-0" />
+              <span>Access to Different Teachers</span>
             </h3>
             <p className="text-xs sm:text-sm text-muted-text">
-              Transparent monthly reports detailing mastered Surahs, Tajweed rules applied, and upcoming milestones keep parents fully informed and children motivated.
+              Online learning can give families access to male and <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> without limiting their choice to tutors who live nearby. For children and sisters who prefer a female teacher, parents can ask the academy about available female tutors before booking.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="space-y-4">
+      {/* What Should You Look for in an Online Quran Class? */}
+      <section className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Step-by-Step Quran Learning Progression
+          What Should You Look for in an Online Quran Class?
         </h2>
         <p className="text-base text-muted-text">
-          Whether starting at age 5 or 55, a structured learning progression produces long-lasting recitation fluency:
+          Choosing an academy requires more than checking whether it offers Quran lessons. Here are the most important areas to examine.
         </p>
-        <ol className="space-y-3 pt-2">
-          <li className="flex items-start space-x-3 text-sm text-muted-text">
-            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
-            <div>
-              <strong className="text-foreground"><Link href="/courses/noorani-qaida" className="text-primary hover:underline">Noorani Qaida &amp; Arabic Phonics:</Link></strong> Mastering letter shapes, articulation points (Makharij), short vowels (Fathah, Kasrah, Dammah), and joining letters into compound words.
-            </div>
-          </li>
-          <li className="flex items-start space-x-3 text-sm text-muted-text">
-            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
-            <div>
-              <strong className="text-foreground"><Link href="/courses/tajweed" className="text-primary hover:underline">Tajweed Rules Application:</Link></strong> Learning Noon Sakinah, Meem Sakinah, Ghunnah, Qalqalah, Madd elongation, and stopping rules (Waqf) through hands-on recitation.
-            </div>
-          </li>
-          <li className="flex items-start space-x-3 text-sm text-muted-text">
-            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
-            <div>
-              <strong className="text-foreground"><Link href="/courses/quran-for-kids" className="text-primary hover:underline">Fluent Mushaf Recitation:</Link></strong> Reading complete Juz from the standard Uthmani script with melodic cadence (Tarteel) and confidence.
-            </div>
-          </li>
-          <li className="flex items-start space-x-3 text-sm text-muted-text">
-            <span className="h-6 w-6 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
-            <div>
-              <strong className="text-foreground"><Link href="/courses/hifz" className="text-primary hover:underline">Structured Hifz Memorization:</Link></strong> Daily Sabaq (new lesson), Sabqi (recent revision), and Manzil (overall revision) for steady retention.
-            </div>
-          </li>
-        </ol>
-      </section>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Central Time Scheduling: Built for Texas Routines
-        </h2>
-        <p className="text-base text-muted-text">
-          Because OQTutor instructors teach across 24/7 round-the-clock schedules, Texas families in Central Time (CST/CDT) enjoy complete scheduling freedom:
-        </p>
-        <ul className="space-y-2 text-sm sm:text-base text-muted-text list-disc pl-5">
-          <li><strong>After-School Slots (4:00 PM – 7:30 PM CST):</strong> Ideal for elementary and middle school students right before dinner and homework.</li>
-          <li><strong>Early Morning Classes (6:00 AM – 7:30 AM CST):</strong> Perfect for fresh Quran recitation before the school bus or workday starts.</li>
-          <li><strong>Weekend Sessions (Saturday &amp; Sunday):</strong> Dedicated 30-to-45 minute morning or afternoon slots for relaxed weekend progress.</li>
-        </ul>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Frequently Asked Questions for Texas Families
-        </h2>
-        <div className="space-y-4">
-          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
-            <h3 className="text-base font-bold text-foreground">What should I look for in an online Quran class in Texas?</h3>
-            <p className="text-xs sm:text-sm text-muted-text">
-              Prioritize live 1-on-1 instruction, certified scholars holding Ijazah credentials, Central Time scheduling, female tutor options, and a free trial class with no credit card required.
+        <div className="space-y-6">
+          <div className="p-6 rounded-3xl glass border border-card-border space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center space-x-2">
+              <Award className="h-5 w-5 text-primary shrink-0" />
+              <span>1. Teacher Qualifications</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Ask about the teacher&apos;s Quran education, Tajweed training, teaching experience, and relevant certifications. If an academy mentions Ijazah or another qualification, parents can ask what the qualification covers and how it relates to the course being taught.
+            </p>
+            <p className="text-sm sm:text-base text-muted-text">
+              A good teacher should also know how to communicate with the student&apos;s age group. Teaching a five year old beginner is different from teaching an adult who already reads the Quran.
             </p>
           </div>
-          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
-            <h3 className="text-base font-bold text-foreground">Can kids in Houston and Dallas learn Quran effectively online?</h3>
-            <p className="text-xs sm:text-sm text-muted-text">
-              Yes. One-on-one virtual lessons provide high engagement through interactive digital Qaida charts, clear audio, and real-time pronunciation correction without classroom distractions.
+
+          <div className="p-6 rounded-3xl glass border border-card-border space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center space-x-2">
+              <Users className="h-5 w-5 text-primary shrink-0" />
+              <span>2. One to One or Group Classes</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              Consider how much individual attention the student needs. One to one lessons allow the teacher to hear the student&apos;s recitation throughout the lesson and address specific pronunciation mistakes.
+            </p>
+            <p className="text-sm sm:text-base text-muted-text">
+              Group classes can provide interaction with other learners, but students may receive less individual reading time. There is no single format that suits every learner. The important question is whether the format matches the student&apos;s goals.
             </p>
           </div>
-          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
-            <h3 className="text-base font-bold text-foreground">Are female Quran teachers available for girls in Texas?</h3>
-            <p className="text-xs sm:text-sm text-muted-text">
-              Yes. OQTutor provides certified female Quran teachers (Alimahs and Qariahs) fluent in English for sisters, young girls, and toddlers.
+
+          <div className="p-6 rounded-3xl glass border border-card-border space-y-4">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground flex items-center space-x-2">
+              <ListChecks className="h-5 w-5 text-primary shrink-0" />
+              <span>3. A Structured Curriculum</span>
+            </h3>
+            <p className="text-sm sm:text-base text-muted-text">
+              A good Quran learning program should have a clear progression. For a beginner, this may start with Arabic letters and <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> before moving toward Quran reading. A more experienced student may need focused Tajweed practice or a memorization plan.
+            </p>
+            <div className="p-4 rounded-2xl bg-foreground/[0.02] border border-card-border space-y-2">
+              <h4 className="text-sm font-bold text-foreground">Ask the academy:</h4>
+              <ul className="space-y-1.5 text-xs sm:text-sm text-muted-text list-disc pl-5">
+                <li>What will my child learn first?</li>
+                <li>How is progress measured?</li>
+                <li>When does the student move to the next level?</li>
+                <li>How are reading mistakes corrected?</li>
+                <li>How is memorization reviewed?</li>
+              </ul>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text italic">
+              These questions can help parents understand what the lessons will actually involve.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Box */}
-      <section className="pt-6">
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-lg">
+      {/* Which Quran Courses Can Students Take Online? */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Which Quran Courses Can Students Take Online?
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran education can support different learning goals across different stages of life:
+        </p>
+
+        <div className="space-y-4 not-prose">
+          {/* Noorani Qaida */}
+          <div className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="h-7 w-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">1</span>
+              <Link href="/courses/noorani-qaida" className="text-foreground hover:text-primary transition-colors">
+                Noorani Qaida
+              </Link>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-9">
+              Noorani Qaida is commonly used as a foundation for learning Arabic letters, vowel signs, pronunciation, and basic reading patterns. It can be suitable for children and adults who are beginning their Quran reading journey.
+            </p>
+          </div>
+
+          {/* Quran Reading */}
+          <div className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="h-7 w-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">2</span>
+              <Link href="/courses/quran-reading" className="text-foreground hover:text-primary transition-colors">
+                Quran Reading (Nazra)
+              </Link>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-9">
+              After developing the basic reading skills, students can work toward reading Quranic verses more fluently and accurately. The teacher can listen to the student&apos;s recitation and correct mistakes during the lesson.
+            </p>
+          </div>
+
+          {/* Quran With Tajweed */}
+          <div className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-3">
+            <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="h-7 w-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">3</span>
+              <Link href="/courses/tajweed" className="text-foreground hover:text-primary transition-colors">
+                Quran With Tajweed
+              </Link>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-9">
+              Tajweed focuses on the rules and pronunciation principles used during Quran recitation. Students may study areas such as:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pl-9 pt-1">
+              {[
+                'Makharij (Articulation Points)',
+                'Ghunnah (Nasalization)',
+                'Qalqalah (Echoing Sound)',
+                'Madd (Elongation Rules)',
+                'Noon Sakinah & Tanween',
+                'Meem Sakinah Rules',
+                'Waqf & Stopping Signs',
+                'Heavy & Light Letters',
+              ].map((rule, idx) => (
+                <div key={idx} className="p-2.5 rounded-xl bg-foreground/[0.02] border border-card-border text-xs text-foreground font-medium flex items-center space-x-1.5">
+                  <Check className="h-3.5 w-3.5 text-primary shrink-0" />
+                  <span>{rule}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-muted-text pl-9 italic">
+              The exact curriculum depends on the student&apos;s level and the teacher&apos;s approach.
+            </p>
+          </div>
+
+          {/* Quran Memorization */}
+          <div className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="h-7 w-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">4</span>
+              <Link href="/courses/hifz" className="text-foreground hover:text-primary transition-colors">
+                Quran Memorization (Hifz)
+              </Link>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-9">
+              Students interested in Hifz need more than simply memorizing new verses. A sustainable memorization routine also requires regular revision. A teacher may organize the student&apos;s work around new memorization and revision of previously memorized portions.
+            </p>
+          </div>
+
+          {/* Islamic Studies */}
+          <div className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+              <span className="h-7 w-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0">5</span>
+              <Link href="/courses/islamic-studies" className="text-foreground hover:text-primary transition-colors">
+                Islamic Studies
+              </Link>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text pl-9">
+              Some families also want their children to learn basic Islamic knowledge alongside Quran reading. Depending on the program, this may include Islamic manners, basic beliefs, Seerah, Salah, duas, and other age appropriate subjects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How Do Online Quran Classes Work? */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Do Online Quran Classes Work?
+        </h2>
+        <p className="text-base text-muted-text">
+          Before enrolling, parents should understand the practical side of online learning. A typical lesson may involve:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 not-prose my-4">
+          {[
+            { step: '1', title: 'Joining Class', desc: 'The student joins the scheduled online class from their computer or tablet.' },
+            { step: '2', title: 'Reviewing Past Work', desc: 'The teacher reviews the previous lesson to ensure retention before progressing.' },
+            { step: '3', title: 'Live Recitation', desc: 'The student reads or recites the assigned material live with the tutor.' },
+            { step: '4', title: 'Real-Time Correction', desc: 'The teacher corrects pronunciation and Tajweed mistakes on the spot.' },
+            { step: '5', title: 'New Lesson Intake', desc: 'New material is introduced clearly when the student is ready.' },
+            { step: '6', title: 'Practice Guidelines', desc: 'The student receives short practice or revision instructions for home study.' },
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
+              <div className="flex items-center space-x-2">
+                <span className="h-6 w-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
+                  {item.step}
+                </span>
+                <h4 className="text-sm font-bold text-foreground">{item.title}</h4>
+              </div>
+              <p className="text-xs text-muted-text pl-8">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text">
+          The exact lesson structure varies between academies. Parents should ask whether the academy provides its own learning platform or uses a common video meeting service such as Zoom.
+        </p>
+      </section>
+
+      {/* How Long Should a Quran Lesson Be? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Long Should a Quran Lesson Be?
+        </h2>
+        <p className="text-base text-muted-text">
+          Lesson length depends on the student&apos;s age, level, goals, and attention span. Younger children may benefit from shorter, focused sessions, while older students may be comfortable with longer lessons.
+        </p>
+        <p className="text-base text-muted-text">
+          Instead of choosing a class simply because it is longer, consider whether the student can remain focused and actively participate throughout the lesson.
+        </p>
+        <div className="p-4 rounded-2xl bg-secondary/10 border border-secondary/20 text-foreground font-medium text-sm sm:text-base">
+          A consistent routine is often more practical than occasionally attending very long sessions.
+        </div>
+      </section>
+
+      {/* What Time Should Texas Students Take Quran Classes? */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Time Should Texas Students Take Quran Classes?
+        </h2>
+        <p className="text-base text-muted-text">
+          Texas families should choose a schedule that the student can maintain consistently. Possible options include:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose my-4">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <span>Before School</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Some families prefer early morning lessons when children are fresh and the house is quiet before the school run.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <span>After School</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              An afternoon or early evening lesson can work well before homework, dinner, or extracurricular activities.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Clock className="h-5 w-5 text-primary shrink-0" />
+              <span>Evening</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Older children and adults may prefer evening classes after school or work when daily obligations are completed.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground flex items-center space-x-2">
+              <Calendar className="h-5 w-5 text-primary shrink-0" />
+              <span>Weekend</span>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-text">
+              Weekend lessons can be useful for families whose weekday schedules are particularly busy with athletics or tutorials.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text">
+          When choosing a program, confirm the actual available schedule with the academy. Texas also observes daylight saving time, so families should make sure the displayed class time matches their local Central, Mountain, or other applicable time zone.
+        </p>
+      </section>
+
+      {/* Can Children in Houston, Dallas, Austin, and Other Texas Cities Learn Online? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Can Children in Houston, Dallas, Austin, and Other Texas Cities Learn Online?
+        </h2>
+        <p className="text-base text-muted-text">
+          Yes. Online Quran classes do not depend on the student living close to a particular teacher or Islamic center.
+        </p>
+        <p className="text-base text-muted-text">
+          Families in Houston, Dallas Fort Worth, Austin, San Antonio, Plano, Frisco, Katy, Sugar Land, and other Texas communities can use online learning if they have a suitable internet connection and a quiet place for lessons.
+        </p>
+        <p className="text-base text-muted-text">
+          The important factor is not the city itself. It is whether the selected program can provide an appropriate teacher, schedule, curriculum, and learning environment.
+        </p>
+        <p className="text-base text-muted-text">
+          For families specifically looking for a Texas based service option, see OQTutor&apos;s <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Texas online Quran classes</Link>.
+        </p>
+      </section>
+
+      {/* How Can Parents Help Children Learn Quran Online? */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Can Parents Help Children Learn Quran Online?
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not need to teach every lesson themselves. However, they can make online learning more successful by creating a consistent routine.
+        </p>
+
+        <div className="space-y-3 not-prose my-4">
+          {[
+            {
+              title: 'Create a Quiet Learning Space',
+              desc: 'Choose a place away from television, gaming, and unnecessary distractions so the child can hear the teacher clearly.',
+            },
+            {
+              title: 'Keep the Quran and Learning Materials Ready',
+              desc: 'Having everything prepared before class saves time and helps the child start the lesson calmly.',
+            },
+            {
+              title: 'Encourage Short Daily Practice',
+              desc: 'A few minutes of regular practice can help children remember what they learned during their lesson.',
+            },
+            {
+              title: 'Communicate With the Teacher',
+              desc: 'Parents should ask about areas where the child needs additional practice and track progress over time.',
+            },
+            {
+              title: 'Avoid Turning Every Lesson Into a Test',
+              desc: 'Children can become discouraged if every session feels like an examination. Encouragement matters. Quran learning is a long term journey, not a race.',
+            },
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
+              <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-sm font-bold text-foreground">{item.title}</h4>
+                <p className="text-xs sm:text-sm text-muted-text mt-1">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* What Questions Should You Ask Before Choosing an Academy? */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What Questions Should You Ask Before Choosing an Academy?
+        </h2>
+        <p className="text-base text-muted-text">
+          Before booking a class, parents can ask these 12 essential evaluation questions:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose my-4">
+          {[
+            'Who will teach my child?',
+            'What qualifications does the teacher have?',
+            'Are male and female teachers available?',
+            'Are classes one to one or group based?',
+            'How long is each lesson?',
+            'What curriculum is used?',
+            'How is student progress monitored?',
+            'How are missed classes handled?',
+            'Which platform is used for lessons?',
+            'Is there a trial class?',
+            'What happens if the student does not connect well with the assigned teacher?',
+            'What are the total fees and payment terms?',
+          ].map((question, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl glass border border-card-border flex items-center space-x-3">
+              <HelpCircle className="h-4 w-4 text-primary shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-foreground">{question}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text font-medium text-foreground">
+          Clear answers to these questions can prevent misunderstandings later.
+        </p>
+      </section>
+
+      {/* Are Online Quran Classes Suitable for Adults? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Are Online Quran Classes Suitable for Adults?
+        </h2>
+        <p className="text-base text-muted-text">
+          Online Quran learning is not limited to children. Adults can also study Quran reading, Noorani Qaida, Tajweed, memorization, or other Islamic subjects through dedicated <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">online Quran classes for adults</Link>.
+        </p>
+        <p className="text-base text-muted-text">
+          One advantage for adult learners is privacy. Someone who feels uncomfortable beginning from the alphabet or correcting long standing pronunciation mistakes in front of others can learn privately with a teacher.
+        </p>
+        <p className="text-base text-muted-text">
+          Adults can also choose goals that fit their own schedules rather than following a children&apos;s curriculum.
+        </p>
+      </section>
+
+      {/* Are Female Quran Teachers Available? */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Are Female Quran Teachers Available?
+        </h2>
+        <p className="text-base text-muted-text">
+          Many online Quran academies provide female teachers for girls, sisters, and younger learners.
+        </p>
+        <p className="text-base text-muted-text">
+          If having a female teacher is important for your family, confirm availability before enrollment. You can also ask whether the teacher has experience working with the student&apos;s age group and whether lessons are available in a language the student understands comfortably. Explore our dedicated <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> for details.
+        </p>
+      </section>
+
+      {/* How Can You Tell if an Online Quran Class Is Working? */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Can You Tell if an Online Quran Class Is Working?
+        </h2>
+        <p className="text-base text-muted-text">
+          Progress does not always mean completing more pages. A student&apos;s progress can also appear in:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose my-4">
+          {[
+            'More accurate pronunciation',
+            'Better recognition of Arabic letters',
+            'Improved Tajweed application',
+            'Greater reading confidence',
+            'More consistent memorization',
+            'Better revision habits',
+            'Increased independence during recitation',
+          ].map((indicator, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl glass border border-card-border flex items-center space-x-3">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
+              <span className="text-xs sm:text-sm font-semibold text-foreground">{indicator}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text">
+          Parents should look for steady improvement rather than expecting identical progress from every child. Some students move quickly through beginner material, while others need more repetition.
+        </p>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="space-y-5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4 not-prose">
+          {[
+            {
+              q: 'What are the best online Quran classes in Texas?',
+              a: 'The right program depends on the student\'s age, learning level, preferred teacher, schedule, course goals, and budget. Parents should compare these factors rather than choosing an academy based only on advertising.',
+            },
+            {
+              q: 'Are online Quran classes good for children?',
+              a: 'They can be suitable for children when lessons are age appropriate, interactive, structured, and taught by a teacher who knows how to work with young learners.',
+            },
+            {
+              q: 'Can beginners learn Quran online?',
+              a: 'Yes. Beginners can start with foundational Arabic reading skills and Noorani Qaida before progressing to Quran reading and Tajweed.',
+            },
+            {
+              q: 'Can I find a female Quran teacher in Texas?',
+              a: 'Many online academies offer female teachers. Availability should be confirmed before booking because teacher schedules can vary.',
+            },
+            {
+              q: 'Do adults need previous Quran knowledge?',
+              a: 'No. Adults can begin at their current level, including from the Arabic alphabet and basic reading.',
+            },
+            {
+              q: 'What equipment is needed for online Quran classes?',
+              a: 'Students generally need a suitable device, reliable internet, audio, and a quiet place to attend the lesson. The academy can confirm its specific technical requirements.',
+            },
+            {
+              q: 'How often should a student take Quran classes?',
+              a: 'The appropriate frequency depends on the student\'s age, goals, and schedule. A consistent timetable that the student can maintain is usually more practical than an unrealistic schedule.',
+            },
+          ].map((faq, idx) => (
+            <div key={idx} className="p-5 sm:p-6 rounded-2xl glass border border-card-border space-y-2">
+              <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center space-x-2">
+                <HelpCircle className="h-5 w-5 text-primary shrink-0" />
+                <span>{faq.q}</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text pl-7">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final Thoughts & CTA */}
+      <section className="space-y-5 pt-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Final Thoughts
+        </h2>
+        <p className="text-base text-muted-text">
+          Choosing online Quran classes in Texas does not have to be complicated.
+        </p>
+        <p className="text-base text-muted-text">
+          Start by identifying the student&apos;s current level and learning goals. Then compare teacher qualifications, class format, curriculum, scheduling, progress tracking, communication, and cost.
+        </p>
+        <p className="text-base text-muted-text">
+          For beginners, a structured foundation can make future Quran reading easier. For students who already read the Quran, focused Tajweed or memorization lessons may be more appropriate.
+        </p>
+        <p className="text-base sm:text-lg font-semibold text-foreground">
+          Most importantly, choose a learning routine your family can maintain consistently.
+        </p>
+
+        {/* CTA Banner */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-xl not-prose my-8">
           <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
-            Start Your Free Trial Quran Class in Texas
+            Explore Online Quran Classes for Texas Families
           </h3>
-          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-            Join hundreds of Muslim families across Houston, Dallas, Austin, and San Antonio. Experience personalized one-to-one tutoring today.
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
+            For families interested in private online Quran learning, explore <Link href="/locations/usa/texas" className="text-primary font-bold hover:underline">OQTutor&apos;s online Quran classes in Texas</Link> or review our available <Link href="/courses" className="text-primary font-bold hover:underline">Quran courses</Link> before booking a trial class.
           </p>
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book-free-trial"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
             >
-              <span>Book 3-Day Free Trial</span>
+              <span>Book a Free Trial Class</span>
               <ArrowRight className="h-4.5 w-4.5" />
             </Link>
             <Link
               href="/locations/usa/texas"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
             >
-              <span>Explore Texas Classes</span>
+              <span>View Texas Classes</span>
             </Link>
           </div>
         </div>
