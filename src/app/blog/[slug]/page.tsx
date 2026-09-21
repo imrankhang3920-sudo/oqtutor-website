@@ -49,11 +49,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isMistakesBlog = resolvedParams.slug === 'common-quran-reading-mistakes-children-make';
   const isBalanceBlog = resolvedParams.slug === 'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities';
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
-  const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
   const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog;
+  const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
+  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isAfterNooraniQaidaBlog
+  const metaTitle = isImprovePronunciationBlog
+    ? 'How to Improve Your Quran Pronunciation: A Practical Guide for Beginners | OQTutor'
+    : isAfterNooraniQaidaBlog
     ? 'What Should a Child Learn After Noorani Qaida? A Step-by-Step Guide | OQTutor'
     : isUKCompleteGuideBlog
     ? 'Online Quran Classes in the UK: A Complete Guide for Kids, Adults & Beginners | OQTutor'
@@ -259,6 +261,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           'Quran memorization for kids',
           'learn Quran online for kids'
         ]
+      : isImprovePronunciationBlog
+      ? [
+          'how to improve quran pronunciation',
+          'quran pronunciation for beginners',
+          'makharij of arabic letters',
+          'learn quran pronunciation',
+          'tajweed pronunciation rules',
+          'how to pronounce arabic letters correctly',
+          'correct quran recitation',
+          'online tajweed classes',
+          'arabic articulation points',
+          'quran recitation practice routine',
+          'throat letters in arabic',
+          'online quran tutor for beginners',
+          'one to one quran classes'
+        ]
       : isAfterNooraniQaidaBlog
       ? [
           'what should a child learn after noorani qaida',
@@ -365,6 +383,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isBrainRewireBlog = resolvedParams.slug === 'why-memorizing-the-quran-rewires-your-brain';
   const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
   const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
+  const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -383,6 +402,68 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isImprovePronunciationBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How can I improve my Quran pronunciation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start by identifying the Arabic sounds that you find difficult. Learn their correct articulation, listen to reliable recitation, practice slowly, and ask a qualified Quran teacher for feedback when needed."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What should I learn first to improve Quran pronunciation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Learning the correct articulation of Arabic letters is a useful foundation. Makharij helps learners understand where different Arabic letters are produced."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why are some Arabic letters difficult for beginners?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Some Arabic sounds may not exist in a learner's first language. As a result, beginners may naturally replace an unfamiliar sound with one that feels more familiar."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Tajweed help with Quran pronunciation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Tajweed includes principles and rules that guide Quranic recitation, while correct articulation of Arabic letters forms an important part of accurate recitation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should I practice Quran pronunciation slowly?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Slow practice can help you concentrate on individual sounds and notice pronunciation problems. Once you become more comfortable, you can gradually work toward a natural reading pace."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can a Quran teacher correct my pronunciation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. A qualified Quran teacher can listen to your recitation and give specific feedback about articulation and pronunciation."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isAfterNooraniQaidaBlog && (
         <script
@@ -1953,7 +2034,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isAfterNooraniQaidaBlog ? (
+            {isImprovePronunciationBlog ? (
+              <ArticleContentImprovePronunciation />
+            ) : isAfterNooraniQaidaBlog ? (
               <ArticleContentAfterNooraniQaida />
             ) : isUKCompleteGuideBlog ? (
               <ArticleContentUKCompleteGuide />
@@ -14552,9 +14635,770 @@ function ArticleContentAfterNooraniQaida() {
   );
 }
 
+function ArticleContentImprovePronunciation() {
+  return (
+    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
+      {/* Key Takeaways Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span>Key Insights for Beginners</span>
+        </div>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
+          Improving your Quran pronunciation is a gradual, rewarding journey centered on measured practice rather than speed. By understanding the articulation points (Makharij) of Arabic letters, isolating difficult sounds, practicing slowly, recording your recitation, and getting qualified feedback, you can build clear, accurate, and confident recitation.
+        </p>
+      </div>
 
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        Learning to read the Quran is a meaningful journey. For beginners, however, pronunciation can sometimes feel difficult. You may recognize an Arabic letter on the page but still struggle to produce its sound correctly.
+      </p>
 
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        This is completely understandable. Arabic has sounds that may be unfamiliar to people who grew up speaking English, Urdu, or another language.
+      </p>
 
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        The good news is that Quran pronunciation can improve with the right kind of practice. You do not need to learn everything at once. A better approach is to identify the sounds that give you trouble, understand how they are produced, and practice them carefully.
+      </p>
 
+      {/* Quranic Verse Callout */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 space-y-3 my-6 not-prose text-center sm:text-left">
+        <div className="flex items-center justify-center sm:justify-start space-x-2 text-primary font-bold text-xs uppercase tracking-wider">
+          <BookOpen className="h-4 w-4" />
+          <span>Divine Guidance on Recitation</span>
+        </div>
+        <p className="text-lg sm:text-xl font-bold text-foreground italic">
+          “...and recite the Quran with measured recitation.”
+        </p>
+        <p className="text-xs text-muted-text font-semibold">
+          — Surah Al Muzzammil (73:4)
+        </p>
+      </div>
 
+      <p className="text-base sm:text-lg leading-relaxed text-muted-text">
+        For a beginner, that idea is useful. Good recitation is not a race. Sometimes slowing down is exactly what helps you move forward.
+      </p>
+
+      {/* Section 1: What Does Correct Quran Pronunciation Mean? */}
+      <section id="what-correct-pronunciation-means" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Award className="h-7 w-7 text-primary" />
+          <span>What Does Correct Quran Pronunciation Mean?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Correct Quran pronunciation means producing Arabic letters and words accurately while following the principles of Quranic recitation.
+        </p>
+        <p className="text-base text-muted-text">
+          One important part of this is <strong>Makharij</strong> (مَخَارِج), the articulation points of Arabic letters. In simple terms, Makharij helps you understand where a particular letter comes from when you pronounce it.
+        </p>
+        <p className="text-base text-muted-text">
+          The sound may involve the throat, tongue, lips, or the open space inside the mouth.
+        </p>
+        <p className="text-base text-muted-text">
+          This matters because some Arabic letters can sound very similar to a beginner. If you rely only on the closest sound from your native language, you may develop an incorrect pronunciation without realizing it.
+        </p>
+
+        {/* Phonetic Distinction Card */}
+        <div className="p-5 rounded-2xl glass border border-card-border space-y-3 not-prose my-4">
+          <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+            <Volume2 className="h-4 w-4 text-primary" />
+            <span>Phonetic Distinctions in Quranic Arabic</span>
+          </h3>
+          <p className="text-xs text-muted-text">
+            The Quranic Arabic Corpus provides a phonetic transcription system for Quranic Arabic and distinguishes sounds such as:
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {[
+              { letter: 'ح', phoneme: 'ḥ', name: 'Haa (Throat)' },
+              { letter: 'ص', phoneme: 'ṣ', name: 'Saad (Heavy S)' },
+              { letter: 'ض', phoneme: 'ḍ', name: 'Daad (Side Tongue)' },
+              { letter: 'ط', phoneme: 'ṭ', name: 'Taa (Heavy T)' },
+              { letter: 'ظ', phoneme: 'ẓ', name: 'Zhaa (Heavy Z)' },
+              { letter: 'ع', phoneme: 'ʿ', name: 'Ayn (Deep Throat)' },
+              { letter: 'غ', phoneme: 'gh', name: 'Ghayn (Upper Throat)' },
+            ].map((item, idx) => (
+              <span key={idx} className="px-3 py-1.5 rounded-xl bg-primary/10 border border-primary/20 text-xs font-semibold text-foreground flex items-center space-x-1.5">
+                <span className="font-bold text-primary">{item.letter}</span>
+                <span className="text-muted-text font-mono">({item.phoneme})</span>
+                <span className="text-[10px] text-muted-text">{item.name}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          That shows an important point: Arabic pronunciation contains distinctions that are worth learning carefully.
+        </p>
+      </section>
+
+      {/* Section 2: Why Is Quran Pronunciation Difficult for Beginners? */}
+      <section id="why-pronunciation-is-difficult" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <AlertTriangle className="h-7 w-7 text-primary" />
+          <span>Why Is Quran Pronunciation Difficult for Beginners?</span>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="h-8 w-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+              1
+            </div>
+            <h3 className="text-sm font-bold text-foreground">Unfamiliar Sounds</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              When learning a new language, people naturally connect unfamiliar sounds with sounds they already know. This makes letters easier to remember, but the closest familiar sound is not always the correct one.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="h-8 w-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+              2
+            </div>
+            <h3 className="text-sm font-bold text-foreground">Reading Too Quickly</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              When you rush through a passage, you have less time to think about the pronunciation of individual letters. A sound that needs extra attention can easily get lost in the flow of recitation.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="h-8 w-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+              3
+            </div>
+            <h3 className="text-sm font-bold text-foreground">Unnoticed Mistakes</h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              You may not notice every mistake you make yourself. Another person or teacher can hear subtle differences that you have become accustomed to hearing incorrectly.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          That is why listening and feedback are so useful. An experienced teacher or audio comparison helps calibrate your ear and mouth mechanics.
+        </p>
+      </section>
+
+      {/* Section 3: Start With the Articulation of Arabic Letters */}
+      <section id="articulation-of-arabic-letters" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Compass className="h-7 w-7 text-primary" />
+          <span>Start With the Articulation of Arabic Letters</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          If you want to improve your Quran pronunciation, learning the articulation of Arabic letters is a strong starting point.
+        </p>
+        <p className="text-base text-muted-text">
+          You do not need to memorize every technical detail in one sitting. In fact, trying to do that can make Quran learning feel unnecessarily complicated. Start with a small group of letters and pay attention to how the sound is produced.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 not-prose">
+          {/* Throat Sounds */}
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-4.5 w-4.5" />
+              <span>Throat Sounds (الحَلْق)</span>
+            </div>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Some Arabic letters are produced in different areas of the throat (bottom, middle, and top). These sounds may require extra practice if your first language does not contain similar sounds. The important thing is not simply to memorize the letter—try to understand how it is physically produced.
+            </p>
+          </div>
+
+          {/* Tongue Sounds */}
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-4.5 w-4.5" />
+              <span>Tongue Sounds (اللِّسَان)</span>
+            </div>
+            <p className="text-xs text-muted-text leading-relaxed">
+              The tongue is involved in the pronunciation of the largest group of Arabic letters. A small change in tongue position against the palate, gums, or teeth can change the resulting sound. This is why similar-looking or sounding letters require focused practice.
+            </p>
+          </div>
+
+          {/* Lip Sounds */}
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-4.5 w-4.5" />
+              <span>Lip Sounds (الشَّفَتَان)</span>
+            </div>
+            <p className="text-xs text-muted-text leading-relaxed">
+              The lips play an important role in producing certain Arabic letters (such as Baa, Meem, and Waw). Watching yourself in a mirror can sometimes help you become more aware of your mouth position instead of relying only on what you hear.
+            </p>
+          </div>
+
+          {/* The Open Space */}
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2.5">
+            <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+              <CheckCircle2 className="h-4.5 w-4.5" />
+              <span>The Open Space of the Mouth (الجَوْف)</span>
+            </div>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Some sounds depend on the open acoustic space of the mouth and throat rather than a single point of physical contact, particularly the elongated vowel sounds (Madd letters). Learning these differences gradually makes Quran pronunciation much easier to understand.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Practice Difficult Letters on Their Own */}
+      <section id="practice-difficult-letters" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Zap className="h-7 w-7 text-primary" />
+          <span>Practice Difficult Letters on Their Own</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          If one Arabic letter is giving you trouble, do not keep reading entire pages and hope the problem disappears.
+        </p>
+        <p className="text-base text-muted-text">
+          Take the letter out of the larger passage. Listen to its correct pronunciation. Say it slowly. Then practice it with different vowel sounds (Fatha, Kasra, Damma). Once the sound becomes more familiar, practice it inside a single word. Finally, return to the Quranic passage where you originally struggled.
+        </p>
+
+        {/* Practice Sequence Box */}
+        <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-4 my-6 not-prose">
+          <h3 className="text-sm font-bold text-foreground text-center sm:text-left">
+            Clear Progressive Learning Path:
+          </h3>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-xs sm:text-sm font-bold">
+            <span className="px-4 py-2 rounded-2xl bg-primary text-white shadow-sm">1. Sound First</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-4 py-2 rounded-2xl bg-primary/15 text-primary border border-primary/30">2. Word Next</span>
+            <ChevronRight className="h-4 w-4 text-muted-text shrink-0" />
+            <span className="px-4 py-2 rounded-2xl bg-emerald-500/15 text-emerald-600 border border-emerald-500/30">3. Recitation After That</span>
+          </div>
+        </div>
+
+        <p className="text-base text-muted-text">
+          The goal is not to read as quickly as possible. The goal is to produce the sound correctly and then gradually make it more natural.
+        </p>
+      </section>
+
+      {/* Section 5: Slow Down When You Practice */}
+      <section id="slow-down-practice" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>Slow Down When You Practice</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Many beginners think faster reading means better reading. It does not.
+        </p>
+        <p className="text-base text-muted-text">
+          When you practice slowly, you have more time to notice what your tongue, lips, and throat are doing. You can also pay closer attention to vowels and the qualities of individual letters.
+        </p>
+        <p className="text-base text-muted-text">
+          The Quran instructs believers to recite with measured recitation in Surah Al Muzzammil 73:4. So when you slow down during practice, you are not doing something strange. You are giving yourself room to concentrate.
+        </p>
+        <p className="text-base text-muted-text">
+          Think about learning to write: You would not expect a beginner to write the alphabet at full speed on the first attempt. Pronunciation works in much the same way. <strong>Accuracy comes first; speed can develop later.</strong>
+        </p>
+
+        {/* Embedded Image 1: Focused Quran recitation */}
+        <div className="my-8 space-y-2 not-prose">
+          <div className="relative h-[280px] sm:h-[400px] w-full rounded-3xl overflow-hidden border border-card-border shadow-md">
+            <Image
+              src="/blog/how-to-improve-your-quran-pronunciation/focused-quran-recitation-practice.jpg"
+              alt="Student holding an open Mushaf practicing Quran recitation with measured pacing inside a mosque"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text italic">
+            Practicing Quran recitation slowly and attentively with an open Mushaf enables beginners to isolate difficult sounds and master articulation without rushing.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 6: Listen Before You Repeat */}
+      <section id="listen-before-repeat" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Volume2 className="h-7 w-7 text-primary" />
+          <span>Listen Before You Repeat</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Good pronunciation practice starts with careful listening.
+        </p>
+        <p className="text-base text-muted-text">
+          Choose a reliable Quran recitation and listen to a short passage. Do not worry about completing a whole page. Instead, focus strictly on the sounds.
+        </p>
+
+        {/* 5 Reflection Questions */}
+        <div className="p-6 rounded-3xl glass border border-card-border space-y-3 not-prose my-4">
+          <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+            <ListChecks className="h-4.5 w-4.5 text-primary" />
+            <span>Ask Yourself While Listening:</span>
+          </h3>
+          <ul className="space-y-2 text-xs sm:text-sm text-muted-text">
+            <li className="flex items-start space-x-2">
+              <span className="h-5 w-5 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <span>Which letter sounds difficult?</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="h-5 w-5 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <span>Where does the sound seem to come from?</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="h-5 w-5 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <span>Is the sound clear?</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="h-5 w-5 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+              <span>Am I adding or losing a sound?</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="h-5 w-5 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</span>
+              <span>Does my pronunciation change when I read faster?</span>
+            </li>
+          </ul>
+        </div>
+
+        <p className="text-base text-muted-text">
+          Then repeat the short passage. Listen again. Repeat it again. It may sound simple, but focused repetition is much more useful than repeating something without knowing what you are trying to improve.
+        </p>
+        <p className="text-base text-muted-text">
+          The Quranic Arabic Corpus also provides detailed linguistic and phonetic resources for Quranic Arabic to support this step.
+        </p>
+      </section>
+
+      {/* Section 7: Record Your Own Recitation */}
+      <section id="record-recitation" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Activity className="h-7 w-7 text-primary" />
+          <span>Record Your Own Recitation</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Your phone can become a surprisingly useful practice tool.
+        </p>
+        <p className="text-base text-muted-text">
+          Choose a short passage and record yourself reading it. Then listen to the recording carefully.
+        </p>
+        <p className="text-base text-muted-text">
+          Do not try to find every possible mistake. Choose one. Perhaps one letter does not sound clear. Maybe you rush through a word. Or perhaps your pronunciation changes when you become more comfortable with the passage. Focus on that one issue, practice it, and then record yourself again.
+        </p>
+
+        <div className="p-4 sm:p-5 rounded-2xl bg-primary/5 border border-primary/20 text-center not-prose my-4">
+          <span className="text-xs sm:text-sm font-bold text-primary tracking-wider uppercase">
+            The Iterative Self-Correction Cycle:
+          </span>
+          <p className="text-sm sm:text-base font-extrabold text-foreground mt-1">
+            Read → Record → Listen → Identify → Practice → Repeat
+          </p>
+        </div>
+
+        <p className="text-base text-muted-text">
+          You do not need expensive equipment. For basic self-review, a simple phone voice memo is more than enough.
+        </p>
+      </section>
+
+      {/* Section 8: Learn Pronunciation Alongside Tajweed */}
+      <section id="pronunciation-alongside-tajweed" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <BookOpen className="h-7 w-7 text-primary" />
+          <span>Learn Pronunciation Alongside Tajweed</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Pronunciation and <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> are closely related, but they are not exactly the same thing.
+        </p>
+        <p className="text-base text-muted-text">
+          Pronunciation concerns how you physically produce individual letters and words. Tajweed provides principles and rules that guide Quranic recitation as a whole.
+        </p>
+
+        {/* Tajweed Components */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 not-prose">
+          {[
+            { label: 'Makharij', desc: 'Articulation points of letters' },
+            { label: 'Madd Rules', desc: 'Elongation & stretch timing' },
+            { label: 'Qalqalah', desc: 'Echoing bouncing sounds' },
+            { label: 'Ghunnah', desc: 'Nasalization resonance' },
+            { label: 'Noon Sakinah', desc: 'Rules for stationary Noon' },
+            { label: 'Tanween', desc: 'Double vowel pronunciation' }
+          ].map((item, idx) => (
+            <div key={idx} className="p-3.5 rounded-2xl glass border border-card-border flex flex-col justify-between">
+              <span className="text-xs font-bold text-foreground flex items-center space-x-1.5">
+                <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                <span>{item.label}</span>
+              </span>
+              <span className="text-[11px] text-muted-text mt-1">{item.desc}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text">
+          However, you do not need to learn every rule immediately. Start with the sounds you are struggling with. Understand the articulation, practice the sound, and then gradually learn the relevant Tajweed rules.
+        </p>
+        <p className="text-base text-muted-text">
+          That approach is much easier than trying to memorize a long list of terminology before you have developed a feel for the sounds. You can explore our foundational <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">Beginner&apos;s Guide to Mastering Tajweed Rules</Link> for additional structured guidance.
+        </p>
+      </section>
+
+      {/* Section 9: Get Your Pronunciation Checked */}
+      <section id="get-pronunciation-checked" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <UserCheck className="h-7 w-7 text-primary" />
+          <span>Get Your Pronunciation Checked</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Self-practice is useful, but it has an obvious limitation: you may not know that you are making a mistake.
+        </p>
+        <p className="text-base text-muted-text">
+          A qualified <Link href="/tutors" className="text-primary font-semibold hover:underline">Quran teacher</Link> can listen to your recitation and point out pronunciation problems that you may not notice yourself.
+        </p>
+        <p className="text-base text-muted-text">
+          Good correction should also be specific. Instead of simply hearing, <em>“That letter is wrong,”</em> you should understand what needs to change. A teacher can explain the position of your tongue, lips, or throat and then give you an opportunity to try again.
+        </p>
+        <p className="text-base text-muted-text">
+          This kind of immediate feedback makes practice much more productive and prevents you from repeatedly practicing the same mistake until it becomes deeply ingrained.
+        </p>
+
+        {/* Embedded Image 2: Quran Teacher Checking Pronunciation */}
+        <div className="my-8 space-y-2 not-prose">
+          <div className="relative h-[280px] sm:h-[400px] w-full rounded-3xl overflow-hidden border border-card-border shadow-md">
+            <Image
+              src="/blog/how-to-improve-your-quran-pronunciation/get-pronunciation-checked-by-teacher.jpg"
+              alt="Online and in-person Quran learning comparison with teacher giving feedback on Arabic pronunciation"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </div>
+          <p className="text-xs text-center text-muted-text italic">
+            Receiving real-time correction from a qualified Quran tutor—whether in live 1-on-1 online classes or in person—ensures subtle pronunciation mistakes are caught and corrected immediately.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 10: Do Not Focus on Having a Beautiful Voice First */}
+      <section id="do-not-focus-beautiful-voice" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Star className="h-7 w-7 text-primary" />
+          <span>Do Not Focus on Having a Beautiful Voice First</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          It is natural to admire skilled Quran reciters. Their voices, rhythm, and recitation can be inspiring. But beginners should not feel pressured to imitate the entire style of an experienced reciter.
+        </p>
+        <p className="text-base text-muted-text">
+          <strong>Pronunciation comes first.</strong> A beautiful voice does not replace correct articulation.
+        </p>
+        <p className="text-base text-muted-text">
+          Focus on producing the letters clearly. Once your pronunciation becomes more reliable, you can gradually work on fluency and the natural beauty of your recitation.
+        </p>
+        <p className="text-base text-muted-text">
+          The Quranic instruction to recite in a measured manner gives beginners a useful reminder to value careful recitation rather than simply rushing through the words.
+        </p>
+      </section>
+
+      {/* Section 11: A Simple Quran Pronunciation Practice Routine */}
+      <section id="practice-routine" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <ListChecks className="h-7 w-7 text-primary" />
+          <span>A Simple Quran Pronunciation Practice Routine</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          You can keep your practice simple. You do not need a complicated timetable.
+        </p>
+
+        {/* Step-by-Step Routine */}
+        <div className="space-y-3 my-6 not-prose">
+          {[
+            {
+              step: 'Step 1',
+              title: 'Choose One Difficult Sound',
+              desc: 'Pick one letter or sound that you regularly struggle with during recitation.'
+            },
+            {
+              step: 'Step 2',
+              title: 'Listen Carefully',
+              desc: 'Listen to a reliable recitation and pay attention specifically to that particular sound.'
+            },
+            {
+              step: 'Step 3',
+              title: 'Practice Slowly',
+              desc: 'Repeat the isolated sound several times without rushing or forcing tension.'
+            },
+            {
+              step: 'Step 4',
+              title: 'Practice It in a Word',
+              desc: 'Once the sound feels more familiar, pronounce it inside a single Quranic word.'
+            },
+            {
+              step: 'Step 5',
+              title: 'Read a Short Passage',
+              desc: 'Return to a short section of the Quran (1-2 verses) and apply what you have practiced.'
+            },
+            {
+              step: 'Step 6',
+              title: 'Record Yourself',
+              desc: 'Make a short voice recording on your phone and listen to evaluate your clarity.'
+            },
+            {
+              step: 'Step 7',
+              title: 'Ask for Feedback',
+              desc: 'If you still cannot tell whether the pronunciation is correct, ask a qualified Quran teacher to check it.'
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 sm:p-5 rounded-2xl glass border border-card-border flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+              <span className="px-3 py-1 rounded-xl bg-primary text-white font-bold text-xs uppercase tracking-wider shrink-0 self-start sm:self-center">
+                {item.step}
+              </span>
+              <div className="space-y-0.5">
+                <h3 className="text-sm font-bold text-foreground">{item.title}</h3>
+                <p className="text-xs text-muted-text leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text">
+          This method keeps your practice focused. Instead of trying to fix everything at once, you work on one problem at a time.
+        </p>
+      </section>
+
+      {/* Section 12: Common Pronunciation Mistakes Beginners Should Avoid */}
+      <section id="common-mistakes-to-avoid" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <AlertTriangle className="h-7 w-7 text-primary" />
+          <span>Common Pronunciation Mistakes Beginners Should Avoid</span>
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 not-prose">
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Trying to Fix Everything at Once</span>
+            </h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Arabic pronunciation has many details. Trying to correct every sound during one session can become overwhelming. Work on one or two clear issues first.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Reading Too Quickly</span>
+            </h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Speed makes it harder to notice pronunciation problems. Slow down during practice and give yourself enough time to produce each sound carefully.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Copying Without Understanding</span>
+            </h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Listening and repeating are valuable, but you should also understand what you are trying to change. Knowing the articulation point gives your practice clear direction.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Ignoring Repeated Mistakes</span>
+            </h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              If you keep making the same pronunciation mistake, do not simply read past it. Stop, practice the difficult sound separately, and then try the word again.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2 sm:col-span-2">
+            <h3 className="text-sm font-bold text-foreground flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500"></span>
+              <span>Avoiding Correction</span>
+            </h3>
+            <p className="text-xs text-muted-text leading-relaxed">
+              If you are unsure about a letter, ask someone qualified to listen. A small correction today prevents an incorrect pronunciation from becoming a long-term habit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 13: How Long Does It Take to Improve Quran Pronunciation? */}
+      <section id="timeline-to-improve" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Clock className="h-7 w-7 text-primary" />
+          <span>How Long Does It Take to Improve Quran Pronunciation?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          There is no single number of days that works for every learner.
+        </p>
+        <p className="text-base text-muted-text">
+          People begin at different levels. Their Arabic background, pronunciation difficulties, practice habits, and access to feedback can all differ.
+        </p>
+        <p className="text-base text-muted-text">
+          Instead of setting an artificial deadline, look for practical signs of improvement:
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4 not-prose">
+          {[
+            'Can you pronounce a difficult letter more clearly?',
+            'Can you recognize your own mistakes when listening?',
+            'Can you read a familiar passage with fewer corrections?',
+            'Can you maintain proper pronunciation when gradually increasing speed?'
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 rounded-2xl glass border border-card-border flex items-center space-x-3">
+              <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+              <span className="text-xs sm:text-sm text-foreground font-medium">{item}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-base text-muted-text">
+          These milestones tell you more about your genuine progress than any arbitrary promise that pronunciation will improve in a fixed number of days.
+        </p>
+      </section>
+
+      {/* Section 14: Can You Improve Quran Pronunciation Without a Teacher? */}
+      <section id="improve-without-a-teacher" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Can You Improve Quran Pronunciation Without a Teacher?</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Yes, you can practice many aspects of pronunciation on your own. Listening, repeating, recording yourself, and practicing slowly can all help.
+        </p>
+        <p className="text-base text-muted-text">
+          But independent practice has a limitation: if you do not know that a particular sound is incorrect, you may keep repeating it in the same way.
+        </p>
+        <p className="text-base text-muted-text">
+          This is where teacher feedback becomes valuable. A teacher can identify the problem, explain what needs to change, and listen again as you practice.
+        </p>
+        <p className="text-base text-muted-text">
+          The two approaches work best together. Guided learning gives you direction, while personal practice gives you opportunities to apply what you have learned.
+        </p>
+      </section>
+
+      {/* Section 15: Final Thoughts */}
+      <section id="final-thoughts" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span>Final Thoughts</span>
+        </h2>
+        <p className="text-base text-muted-text">
+          Improving your Quran pronunciation does not require you to become an expert overnight.
+        </p>
+        <p className="text-base text-muted-text">
+          Start small. Learn how difficult letters are articulated. Practice one sound at a time. Listen carefully. Slow down when necessary. Record yourself and ask for feedback when you are unsure.
+        </p>
+        <p className="text-base text-muted-text">
+          Most importantly, do not become frustrated when a particular Arabic sound takes time to learn. Some sounds may feel strange at first because your mouth is simply not used to producing them. That is part of learning.
+        </p>
+        <p className="text-base sm:text-lg font-semibold text-foreground">
+          Your first attempt does not have to sound like your hundredth attempt.
+        </p>
+        <p className="text-base text-muted-text">
+          With patient practice and proper guidance, you can continue developing clearer and more accurate Quran recitation.
+        </p>
+
+        {/* CTA Banner Box */}
+        <div className="p-8 rounded-3xl bg-gradient-to-br from-primary/15 via-primary/5 to-secondary/15 border border-primary/30 text-center space-y-4 not-prose my-8">
+          <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-1">
+            <Sparkles className="h-6 w-6" />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+            Get Your Quran Pronunciation Checked for Free
+          </h3>
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
+            Book a free 1-on-1 trial class with certified male or female Quran teachers at OQTutor. Receive personalized feedback on your Makharij and start reciting with accuracy.
+          </p>
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/book-free-trial"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+            >
+              <span>Book Free Trial Class</span>
+              <ArrowRight className="h-4.5 w-4.5" />
+            </Link>
+            <Link
+              href="/courses/tajweed"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
+            >
+              <span>Explore Tajweed Course</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 16: Frequently Asked Questions */}
+      <section id="faqs" className="space-y-6 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <span>Frequently Asked Questions</span>
+        </h2>
+
+        <div className="space-y-4 not-prose">
+          {[
+            {
+              q: 'How can I improve my Quran pronunciation?',
+              a: 'Start by identifying the Arabic sounds that you find difficult. Learn their correct articulation, listen to reliable recitation, practice slowly, and ask a qualified Quran teacher for feedback when needed.'
+            },
+            {
+              q: 'What should I learn first to improve Quran pronunciation?',
+              a: 'Learning the correct articulation of Arabic letters is a useful foundation. Makharij helps learners understand where different Arabic letters are produced.'
+            },
+            {
+              q: 'Why are some Arabic letters difficult for beginners?',
+              a: 'Some Arabic sounds may not exist in a learner’s first language. As a result, beginners may naturally replace an unfamiliar sound with one that feels more familiar.'
+            },
+            {
+              q: 'Does Tajweed help with Quran pronunciation?',
+              a: 'Yes. Tajweed includes principles and rules that guide Quranic recitation, while correct articulation of Arabic letters forms an important part of accurate recitation.'
+            },
+            {
+              q: 'Should I practice Quran pronunciation slowly?',
+              a: 'Slow practice can help you concentrate on individual sounds and notice pronunciation problems. Once you become more comfortable, you can gradually work toward a natural reading pace.'
+            },
+            {
+              q: 'Can a Quran teacher correct my pronunciation?',
+              a: 'Yes. A qualified Quran teacher can listen to your recitation and give specific feedback about articulation and pronunciation.'
+            }
+          ].map((faq, idx) => (
+            <div key={idx} className="p-5 rounded-2xl glass border border-card-border space-y-2">
+              <h3 className="text-sm sm:text-base font-bold text-foreground flex items-start space-x-2">
+                <span className="text-primary font-black">Q:</span>
+                <span>{faq.q}</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed pl-5">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 17: Sources */}
+      <section id="sources" className="space-y-3 scroll-mt-24 pt-4 border-t border-card-border">
+        <h2 className="text-lg font-bold text-foreground tracking-tight">
+          Sources &amp; References
+        </h2>
+        <ul className="space-y-2 text-xs text-muted-text list-disc list-inside">
+          <li>
+            <strong>Quran.com</strong>, Surah Al Muzzammil 73:4, which presents the Quranic instruction to recite with measured recitation.
+          </li>
+          <li>
+            <strong>Quranic Arabic Corpus</strong>, a linguistic resource providing phonetic transcription and grammatical information for Quranic Arabic.
+          </li>
+        </ul>
+
+        {/* Author Bio Box */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-5 not-prose mt-8">
+          <div className="relative h-20 w-20 rounded-2xl overflow-hidden border-2 border-primary/30 shrink-0">
+            <Image
+              src="/tutors/qari_muhammad_imran.jpg"
+              alt="Muhammad Imran - Senior Tajweed & Hifz Scholar at OQTutor"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-1.5 text-center sm:text-left">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              <h3 className="font-bold text-lg text-foreground">Muhammad Imran</h3>
+              <span className="text-[11px] font-semibold text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full">
+                Author &amp; Senior Scholar
+              </span>
+            </div>
+            <p className="text-xs text-secondary font-medium">Senior Tajweed &amp; Hifz Scholar • Jamia Ashrafia Graduate</p>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Muhammad Imran is a certified Tajweed and Quran memorisation scholar at OQTutor with over 5 years of international teaching experience guiding young children and adult beginners through Noorani Qaida, accurate Makharij, and complete Quran recitation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+}
 
