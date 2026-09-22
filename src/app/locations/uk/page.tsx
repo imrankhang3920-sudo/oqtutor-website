@@ -688,7 +688,7 @@ export default async function UKQuranClassesPage() {
                   UK family life is fast-paced. Juggling school runs, after-school sports, unpredictable weather, and evening traffic makes travelling to a physical madrasa stressful for parents and exhausting for children. Online learning eliminates the commute entirely, allowing your family to study in a safe, peaceful home environment.
                 </p>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                  Our virtual classroom provides high-definition audio, interactive digital Quran and Qaida whiteboards, and two-way screen sharing. Students receive the same rigorous Quranic instruction and personal encouragement as a traditional setting — with the added convenience of flexible timetabling that respects your family routine.
+                  Our virtual classroom provides high-definition audio, interactive digital Quran and Qaida whiteboards, and two-way screen sharing. Students receive the same rigorous Quranic instruction and personal encouragement as a traditional setting — with the added convenience of flexible timetabling that respects your family routine. If you are exploring how online study compares to local madrasas, read our <Link href="/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners" className="text-primary font-semibold hover:underline">practical guide to online Quran classes in the UK</Link>.
                 </p>
                 <div className="pt-2">
                   <Link
@@ -1500,7 +1500,7 @@ export default async function UKQuranClassesPage() {
                     UK Complete Guide
                   </span>
                   <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in the UK: A Complete Guide for Kids, Adults and Beginners
+                    Online Quran Classes in the UK: A Practical Guide for Families and Beginners
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed line-clamp-3">
                     A comprehensive guide explaining course options, Tajweed, flexible UK schedules, finding qualified teachers, and parent FAQs across the UK.
