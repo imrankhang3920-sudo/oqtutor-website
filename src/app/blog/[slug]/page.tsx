@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isOnlineVsInPersonBlog
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
     : isKidsUsaBlog
-    ? 'Online Quran Classes for Kids in USA | Parent Guide | OQTutor'
+    ? 'Best Online Quran Classes for Kids in USA | Expert Teachers'
     : isTarteelVsTajweedBlog
     ? "Tajweed vs Tarteel: What's the Difference? | OQTutor"
     : isWeekendQuranBlog
@@ -13675,7 +13675,7 @@ function ArticleContentBrainRewiring() {
         <ul className="space-y-2.5 text-base text-muted-text list-disc pl-5">
           <li>
             <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">
-              Online Quran Classes for Kids in the USA: How to Choose the Best Program
+              Best Online Quran Classes for Kids in USA
             </Link>
           </li>
           <li>
