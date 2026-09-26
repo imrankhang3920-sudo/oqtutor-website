@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { Clock, Calendar, BookOpen, CheckCircle, ArrowRight, Heart, AlertTriangle, Check, Sparkles, ShieldCheck, Award, Users, Star, UserCheck, CheckCircle2, ChevronRight, Video, Globe, Laptop, HelpCircle, ListChecks, MapPin, Compass, Eye, Volume2, Brain, Zap, Activity } from 'lucide-react';
 import PageRenderer from '@/components/PageRenderer';
 import { createBlogPostSchema, createBreadcrumbSchema } from '@/lib/structuredData';
+import ArticleContentNeverReadQuranSister from './ArticleContentNeverReadQuranSister';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const isNeverReadQuranSisterBlog = resolvedParams.slug === 'sister-never-read-quran-before-can-i-start-now';
   const isBeginnersBlog = resolvedParams.slug === 'best-online-quran-classes-for-beginners';
   const isTutorBlog = resolvedParams.slug === 'select-right-online-quran-tutor';
   const isTajweedBlog = resolvedParams.slug === 'beginners-guide-mastering-tajweed-rules';
@@ -52,9 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
   const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
   const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
-  const isGlobalBlog = isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isGlobalBlog = isNeverReadQuranSisterBlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isFemaleTeacherBlog || isWeekendQuranBlog || isUSParentsTutorBlog || isUsaKidsAdultsBlog || isBestUsaOneToOneBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isImprovePronunciationBlog
+  const metaTitle = isNeverReadQuranSisterBlog
+    ? 'Sister, I’ve Never Read Quran Before. Can I Start Now? | OQTutor'
+    : isImprovePronunciationBlog
     ? 'How to Improve Your Quran Pronunciation: A Practical Guide for Beginners | OQTutor'
     : isAfterNooraniQaidaBlog
     ? 'What Should a Child Learn After Noorani Qaida? A Step-by-Step Guide | OQTutor'
@@ -101,7 +105,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metaTitle,
     description: blog.description,
-    keywords: isUKCompleteGuideBlog
+    keywords: isNeverReadQuranSisterBlog
+      ? [
+          'sister never read quran before can i start now',
+          'learn quran for adult sisters',
+          'female quran teacher online',
+          'noorani qaida for sisters',
+          'start learning quran as adult woman',
+          'can i learn quran from zero',
+          'online quran classes for sisters',
+          'learn arabic letters beginner sister',
+          'quran reading for adult beginners',
+          'private female quran tutor'
+        ]
+      : isUKCompleteGuideBlog
       ? [
           'online Quran classes in the UK',
           'online Quran classes UK',
@@ -409,6 +426,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isUKCompleteGuideBlog = resolvedParams.slug === 'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners';
   const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
   const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
+  const isNeverReadQuranSisterBlog = resolvedParams.slug === 'sister-never-read-quran-before-can-i-start-now';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -427,6 +445,68 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isNeverReadQuranSisterBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can I start learning Quran as an adult woman?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. There is no age limit to learning the Quran. Many adult sisters begin with zero Arabic knowledge and learn step by step with patient instruction."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to speak or understand Arabic before reading Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Quran reading is a phonetic skill. You start with Arabic letter recognition and sounds through Noorani Qaida without needing to speak conversational Arabic."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I request a female Quran teacher for my lessons?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. OQTutor provides certified female Quran teachers (Alimas and Qariahs) for sisters and children, offering a comfortable, private 1-on-1 learning environment."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for a beginner sister to learn to read Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With consistent 1-on-1 lessons and short daily practice, most beginners complete the foundational Qaida within 3 to 5 months and start reading Quranic passages independently."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What if I feel nervous or embarrassed about making mistakes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Mistakes are a completely normal and necessary part of the learning journey. A dedicated teacher provides gentle correction and helps you build confidence one step at a time."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should I use English transliteration to read Quran?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Transliteration can be used briefly as an introductory aid, but it cannot represent unique Arabic phonetics accurately. The recommended approach is learning Arabic letters directly."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isUKCompleteGuideBlog && (
         <script
@@ -2207,7 +2287,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isImprovePronunciationBlog ? (
+            {isNeverReadQuranSisterBlog ? (
+              <ArticleContentNeverReadQuranSister />
+            ) : isImprovePronunciationBlog ? (
               <ArticleContentImprovePronunciation />
             ) : isAfterNooraniQaidaBlog ? (
               <ArticleContentAfterNooraniQaida />
