@@ -48,7 +48,13 @@ export default function Navbar({
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2.5">
-            <img src={logoSrc} alt="OQTutor Logo" className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0" />
+            <img
+              src={logoSrc}
+              alt="OQTutor Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full object-contain bg-white border border-card-border shrink-0"
+            />
             <span className="text-xl font-bold tracking-tight text-primary">
               OQ<span className="text-secondary">Tutor</span>
             </span>

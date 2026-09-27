@@ -14,14 +14,13 @@ export default function CookieConsent() {
   });
 
   useEffect(() => {
-    // Read cookie consent status on mount to prevent SSR mismatch
+    // Read cookie consent status on mount
     const consentCookie = document.cookie
       .split('; ')
       .find((row) => row.startsWith('cookie-consent='));
 
     if (!consentCookie) {
       setShowBanner(true);
-      document.body.classList.add('cookie-banner-active');
     } else {
       try {
         const val = decodeURIComponent(consentCookie.split('=')[1]);
@@ -32,11 +31,6 @@ export default function CookieConsent() {
         console.error('Error parsing cookie consent:', e);
       }
     }
-
-    // Cleanup class on unmount
-    return () => {
-      document.body.classList.remove('cookie-banner-active');
-    };
   }, []);
 
   const setConsentCookie = (consentVal: typeof preferences) => {
@@ -49,7 +43,6 @@ export default function CookieConsent() {
 
   const dismissBanner = () => {
     setShowBanner(false);
-    document.body.classList.remove('cookie-banner-active');
   };
 
   const handleAcceptAll = () => {
@@ -76,49 +69,48 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Cookie Banner Bar */}
+      {/* Cookie Banner Bar - Fixed at bottom without altering document layout or shifting content */}
       {showBanner && (
         <div
           role="dialog"
           aria-label="Cookie Consent Banner"
-          className="fixed top-0 left-0 w-full bg-[#111111] text-white px-4 sm:px-6 lg:px-8 z-50 shadow-md border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:h-[40px] py-2 md:py-0 select-none"
+          className="fixed bottom-0 left-0 right-0 z-50 bg-[#111111]/95 backdrop-blur-md text-white px-4 sm:px-6 lg:px-8 py-3 shadow-2xl border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs select-none"
         >
           {/* Left Text */}
-          <div className="flex items-center gap-1.5 shrink-0 text-left">
-            <Cookie className="h-3.5 w-3.5 text-[#10B981] shrink-0" />
+          <div className="flex items-center gap-2 shrink-0 text-left">
+            <Cookie className="h-4 w-4 text-[#10B981] shrink-0" />
             <span className="text-white/90 font-medium">
-              We use cookies to improve your experience.
+              We use cookies to improve your experience. Read our{' '}
+              <Link
+                href="/cookie-policy"
+                className="text-[#10B981] hover:text-[#0D9488] font-bold underline transition-colors"
+              >
+                Cookie Policy
+              </Link>.
             </span>
           </div>
 
           {/* Right Controls */}
-          <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
-            <Link
-              href="/cookie-policy"
-              className="text-[#10B981] hover:text-[#0D9488] font-bold hover:underline transition-colors"
-            >
-              Learn More
-            </Link>
-
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 shrink-0">
             <button
               onClick={() => setShowSettingsModal(true)}
-              className="text-white/70 hover:text-white font-semibold transition-colors bg-transparent border-0 cursor-pointer text-[11px]"
+              className="text-white/70 hover:text-white font-semibold transition-colors bg-transparent border-0 cursor-pointer text-xs px-2 py-1"
             >
-              Cookie Settings
+              Preferences
             </button>
 
             <button
               onClick={handleRejectNonEssential}
-              className="px-3 py-1 rounded-full bg-transparent border border-white/30 hover:border-white/50 text-white text-[11px] font-bold transition-all cursor-pointer"
+              className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 text-white text-xs font-semibold transition-all cursor-pointer"
             >
-              Reject
+              Reject Non-Essential
             </button>
 
             <button
               onClick={handleAcceptAll}
-              className="px-3.5 py-1 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-[11px] font-bold transition-all cursor-pointer border border-transparent"
+              className="px-4 py-1.5 rounded-full bg-[#10B981] hover:bg-[#0D9488] text-white text-xs font-bold transition-all cursor-pointer border border-transparent shadow-sm"
             >
-              Accept
+              Accept All
             </button>
           </div>
         </div>

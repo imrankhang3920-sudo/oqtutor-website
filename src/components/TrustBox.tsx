@@ -70,6 +70,7 @@ export default function TrustBox({
     <div
       ref={ref}
       className={`trustpilot-widget ${className}`.trim()}
+      style={{ minHeight: styleHeight, width: styleWidth }}
       data-locale={locale}
       data-template-id={templateId}
       data-businessunit-id={businessUnitId}
