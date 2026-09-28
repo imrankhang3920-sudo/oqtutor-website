@@ -377,6 +377,11 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\5c0b0aec-95d5-46b8-bcb5-74ea59d710a2\\.user_uploaded\\media_1789236786292.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/online-quran-classes-uk.jpg'),
         dest: path.join(process.cwd(), 'public/blog/online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners/online-quran-classes-uk-guide-cover.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e048b092-3bc5-4825-b5c6-1ad16bc4d9af\\.user_uploaded\\media_1790563402202.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/noorani-qaida.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/why-noorani-qaida-essential/noorani-qaida-essential-guide.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
