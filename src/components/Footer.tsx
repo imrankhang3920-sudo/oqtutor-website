@@ -33,16 +33,14 @@ export default function Footer({
     { name: 'Quran Reading', href: '/courses/quran-reading' },
     { name: 'Quran with Tajweed', href: '/courses/tajweed' },
     { name: 'Hifz-ul-Quran', href: '/courses/hifz' },
+    { name: 'Quran Tafseer', href: '/courses/tafseer' },
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
-    { name: 'Quran Classes USA', href: '/locations/usa' },
-    { name: 'Quran Classes Illinois', href: '/locations/usa/illinois' },
-    { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
-    { name: 'Quran Classes New Jersey', href: '/locations/usa/new-jersey' },
-    { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
-    { name: 'Quran Classes Texas', href: '/locations/usa/texas' },
-    { name: 'Quran Classes UK', href: '/locations/uk' },
-    { name: 'Quran Classes Canada', href: '/locations/canada' },
-    { name: 'Quran Classes Australia', href: '/locations/australia' },
+    { name: 'Daily Duas', href: '/courses/daily-duas' },
+    { name: 'Salah & Prayer', href: '/courses/salah-course' },
+    { name: 'Arabic Language', href: '/courses/arabic-language' },
+    { name: 'Quran for Kids', href: '/courses/quran-for-kids' },
+    { name: 'Quran for Adults', href: '/courses/quran-for-adults' },
+    { name: 'Female Quran Teacher', href: '/courses/female-quran-teacher' },
   ];
 
   const guidesLinks = [
@@ -142,12 +140,12 @@ export default function Footer({
           {/* Courses Links */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Our Courses</h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
-              {coursesLinks.slice(0, 8).map((link) => (
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:block sm:space-y-2.5">
+              {coursesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-text hover:text-primary transition-colors font-medium"
+                    className="text-xs sm:text-sm text-muted-text hover:text-primary transition-colors font-medium"
                   >
                     {link.name}
                   </Link>

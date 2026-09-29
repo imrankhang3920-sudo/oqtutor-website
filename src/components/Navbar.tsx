@@ -81,43 +81,90 @@ export default function Navbar({
                 <ChevronDown className="h-3.5 w-3.5" />
               </button>
               
-              <div className="absolute left-0 top-full mt-0 w-48 rounded-xl border border-card-border bg-background p-1.5 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <Link
-                  href="/courses/noorani-qaida"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Noorani Qaida
-                </Link>
-                <Link
-                  href="/courses/quran-reading"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Quran Reading
-                </Link>
-                <Link
-                  href="/courses/tajweed"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Quran with Tajweed
-                </Link>
-                <Link
-                  href="/courses/hifz"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Hifz-ul-Quran
-                </Link>
-                <Link
-                  href="/courses/islamic-studies"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Islamic Studies
-                </Link>
-                <Link
-                  href="/courses/arabic-language"
-                  className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
-                >
-                  Arabic Language Course
-                </Link>
+              <div className="absolute left-0 top-full mt-0 w-[420px] rounded-2xl border border-card-border bg-background p-2.5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="grid grid-cols-2 gap-1">
+                  <Link
+                    href="/courses/noorani-qaida"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Noorani Qaida
+                  </Link>
+                  <Link
+                    href="/courses/quran-reading"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Quran Reading
+                  </Link>
+                  <Link
+                    href="/courses/tajweed"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Quran with Tajweed
+                  </Link>
+                  <Link
+                    href="/courses/hifz"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Hifz-ul-Quran
+                  </Link>
+                  <Link
+                    href="/courses/tafseer"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Quran Tafseer
+                  </Link>
+                  <Link
+                    href="/courses/islamic-studies"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Islamic Studies
+                  </Link>
+                  <Link
+                    href="/courses/daily-duas"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Daily Duas
+                  </Link>
+                  <Link
+                    href="/courses/salah-course"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Salah & Prayer
+                  </Link>
+                  <Link
+                    href="/courses/arabic-language"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Arabic Language
+                  </Link>
+                  <Link
+                    href="/courses/quran-for-kids"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Quran for Kids
+                  </Link>
+                  <Link
+                    href="/courses/quran-for-adults"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Quran for Adults
+                  </Link>
+                  <Link
+                    href="/courses/female-quran-teacher"
+                    className="block px-3 py-2 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
+                  >
+                    Female Quran Teacher
+                  </Link>
+                </div>
+                <div className="mt-2 pt-2 border-t border-card-border/60 text-center">
+                  <Link
+                    href="/courses"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary-hover transition-colors"
+                  >
+                    <span>View All Courses</span>
+                    <span>&rarr;</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -298,44 +345,86 @@ export default function Navbar({
                       <Link
                         href="/courses/noorani-qaida"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
                         Noorani Qaida
                       </Link>
                       <Link
                         href="/courses/quran-reading"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
                         Quran Reading
                       </Link>
                       <Link
                         href="/courses/tajweed"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
                         Quran with Tajweed
                       </Link>
                       <Link
                         href="/courses/hifz"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
                         Hifz-ul-Quran
                       </Link>
                       <Link
+                        href="/courses/tafseer"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Quran Tafseer
+                      </Link>
+                      <Link
                         href="/courses/islamic-studies"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
                         Islamic Studies
                       </Link>
                       <Link
+                        href="/courses/daily-duas"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Daily Duas
+                      </Link>
+                      <Link
+                        href="/courses/salah-course"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Salah & Prayer
+                      </Link>
+                      <Link
                         href="/courses/arabic-language"
                         onClick={() => setIsOpen(false)}
-                        className="block rounded-lg py-2.5 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
                       >
-                        Arabic Language Course
+                        Arabic Language
+                      </Link>
+                      <Link
+                        href="/courses/quran-for-kids"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Quran for Kids
+                      </Link>
+                      <Link
+                        href="/courses/quran-for-adults"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Quran for Adults
+                      </Link>
+                      <Link
+                        href="/courses/female-quran-teacher"
+                        onClick={() => setIsOpen(false)}
+                        className="block rounded-lg py-2 px-3 text-sm font-medium text-muted-text hover:bg-foreground/5 hover:text-primary transition-all"
+                      >
+                        Female Quran Teacher
                       </Link>
                       <Link
                         href="/courses"
