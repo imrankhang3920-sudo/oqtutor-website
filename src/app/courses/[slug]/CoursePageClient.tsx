@@ -2500,9 +2500,40 @@ function QuranForAdultsContent({
             <div className="glass p-8 rounded-3xl border border-card-border hover:shadow-lg transition-all flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold text-foreground mb-3">Quran Memorization</h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal font-sans">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal font-sans mb-4">
                   A customized program designed for adults who want to commit specific Surahs or the entire Quran to memory. Tutors establish daily targets and a structured revision system that ensures your new memorization matches your pace while retaining previously memorized verses.
                 </p>
+                <div className="pt-3 border-t border-card-border/40 space-y-2">
+                  <div className="text-[11px] font-bold text-foreground uppercase tracking-wider">
+                    Recommended Reading:
+                  </div>
+                  <div className="space-y-1 text-xs">
+                    <div>
+                      <Link
+                        href="/blog/effective-hifz-memorization-techniques"
+                        className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+                      >
+                        <span>• Effective Hifz Techniques Guide</span>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        href="/blog/consistent-hifz-quran-revision"
+                        className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+                      >
+                        <span>• Consistent Hifz Revision Routine</span>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        href="/blog/quran-memorization-adults-never-late"
+                        className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+                      >
+                        <span>• Adult Memorization: It Is Never Too Late</span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="mt-6 pt-4 border-t border-card-border/40">
                 <Link href="/courses/hifz" className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group">
