@@ -162,6 +162,82 @@ const decisionGuideItems = [
   },
 ];
 
+// Course Comparison Overview Table Data
+const courseComparisonData = [
+  {
+    name: 'Noorani Qaida',
+    href: '/courses/noorani-qaida',
+    bestFor: 'Kids & adults',
+    startingLevel: 'Complete beginner',
+    duration: '2-3 months',
+    mainGoal: 'Read Arabic letters and connect them into words',
+  },
+  {
+    name: 'Quran Reading',
+    href: '/courses/quran-reading',
+    bestFor: 'All ages',
+    startingLevel: 'Knows Arabic letters (or finished Qaida)',
+    duration: '6-12 months',
+    mainGoal: 'Read the Quran fluently and confidently',
+  },
+  {
+    name: 'Quran with Tajweed',
+    href: '/courses/tajweed',
+    bestFor: 'Kids, teens & adults',
+    startingLevel: 'Can read the Quran',
+    duration: '6-8 months',
+    mainGoal: 'Correct pronunciation and Tajweed rules',
+  },
+  {
+    name: 'Hifz-ul-Quran',
+    href: '/courses/hifz',
+    bestFor: 'Kids & adults',
+    startingLevel: 'Can read the Quran',
+    duration: '2-4 years (custom pace)',
+    mainGoal: 'Memorize selected Surahs or the whole Quran',
+  },
+  {
+    name: 'Quran Tafseer',
+    href: '/courses/tafseer',
+    bestFor: 'Beginners to advanced, including reverts',
+    startingLevel: 'Any level',
+    duration: 'Ongoing (30-45 min sessions)',
+    mainGoal: 'Understand meaning and context',
+  },
+  {
+    name: 'Islamic Studies',
+    href: '/courses/islamic-studies',
+    bestFor: 'Kids & adults',
+    startingLevel: 'Any level',
+    duration: 'Ongoing',
+    mainGoal: 'Aqeedah, Seerah, Fiqh and manners',
+  },
+  {
+    name: 'Daily Duas',
+    href: '/courses/daily-duas',
+    bestFor: 'All ages',
+    startingLevel: 'Any level',
+    duration: '2 months',
+    mainGoal: 'Memorize everyday supplications',
+  },
+  {
+    name: 'Salah & Prayer',
+    href: '/courses/salah-course',
+    bestFor: 'Beginners',
+    startingLevel: 'Any level',
+    duration: '1 month',
+    mainGoal: 'Wudu and Salah with correct postures and recitation',
+  },
+  {
+    name: 'Arabic Language',
+    href: '/courses/arabic-language',
+    bestFor: 'Kids & adults',
+    startingLevel: 'Can read Arabic script',
+    duration: '4-6 months',
+    mainGoal: 'Quranic vocabulary and basic grammar',
+  },
+];
+
 export default async function CoursesPage() {
   const dbData = readDB();
   
@@ -373,6 +449,75 @@ export default async function CoursesPage() {
                 <Link href="/tutors" className="text-muted-text hover:text-foreground transition-colors">
                   Meet Our Tutors
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Course Comparison Overview Table */}
+        <section className="py-16 sm:py-20 bg-foreground/[0.01] border-b border-card-border">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Course Comparison
+              </span>
+              <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+                Compare All Online Quran Courses
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed">
+                Review target audiences, starting prerequisites, estimated durations, and key learning goals across our full curriculum to find the right fit for you or your children.
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-card-border glass shadow-xl">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse min-w-[720px] text-xs sm:text-sm">
+                  <thead>
+                    <tr className="bg-foreground/[0.04] border-b border-card-border text-foreground font-bold">
+                      <th scope="col" className="py-4 px-5 sm:px-6">Course</th>
+                      <th scope="col" className="py-4 px-5 sm:px-6">Best for</th>
+                      <th scope="col" className="py-4 px-5 sm:px-6">Starting level</th>
+                      <th scope="col" className="py-4 px-5 sm:px-6">Typical duration</th>
+                      <th scope="col" className="py-4 px-5 sm:px-6">Main goal</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-card-border/60">
+                    {courseComparisonData.map((row, idx) => (
+                      <tr
+                        key={idx}
+                        className="hover:bg-primary/[0.03] transition-colors group"
+                      >
+                        <td className="py-4 px-5 sm:px-6 font-semibold whitespace-nowrap">
+                          <Link
+                            href={row.href}
+                            className="text-primary hover:text-primary-hover font-bold inline-flex items-center gap-1.5 group-hover:translate-x-0.5 transition-all"
+                          >
+                            <span>{row.name}</span>
+                            <ArrowRight className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                          </Link>
+                        </td>
+                        <td className="py-4 px-5 sm:px-6 text-foreground/90 whitespace-nowrap">
+                          <span className="inline-block px-2.5 py-1 rounded-full text-xs bg-foreground/[0.04] border border-card-border font-medium text-foreground/80">
+                            {row.bestFor}
+                          </span>
+                        </td>
+                        <td className="py-4 px-5 sm:px-6 text-muted-text leading-relaxed">
+                          {row.startingLevel}
+                        </td>
+                        <td className="py-4 px-5 sm:px-6 whitespace-nowrap">
+                          <span className="font-semibold text-secondary flex items-center gap-1.5">
+                            <Clock className="h-3.5 w-3.5 text-primary shrink-0" />
+                            {row.duration}
+                          </span>
+                        </td>
+                        <td className="py-4 px-5 sm:px-6 text-muted-text leading-relaxed">
+                          {row.mainGoal}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
