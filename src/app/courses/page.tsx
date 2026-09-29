@@ -1019,6 +1019,7 @@ function CourseCard({ course }: { course: any }) {
   };
 
   const resources = courseResourceLinks[course.slug];
+  const altText = altTextMap[course.slug] || `${course.title} - OQTutor Online Quran Course`;
 
   return (
     <div className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col h-full hover:translate-y-[-4px] hover:shadow-xl hover:border-primary/30 transition-all duration-300 relative group">
