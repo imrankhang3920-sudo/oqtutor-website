@@ -58,55 +58,189 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   Award,
 };
 
-// Curated 12 High-Value Course FAQs
-const courseFaqs = [
+// Unified High-Value Course FAQs with Rich Internal Links
+const courseFaqs: Array<{
+  question: string;
+  schemaAnswer: string;
+  answer: React.ReactNode;
+}> = [
   {
     question: 'Which online Quran course should a beginner start with?',
-    answer: 'Noorani Qaida is the standard starting course for beginners of any age who cannot yet read Arabic script. It teaches the Arabic alphabet, correct pronunciation (Makharij), short vowels (Harakat), and letter connections. Once completed, students transition smoothly to Quran Reading.',
+    schemaAnswer:
+      'Noorani Qaida is the standard starting course for beginners of any age who cannot yet read Arabic script. It teaches the Arabic alphabet, correct pronunciation (Makharij), short vowels (Harakat), and letter connections. Once completed, students transition smoothly to Quran Reading.',
+    answer: (
+      <>
+        <strong className="text-foreground">Noorani Qaida</strong> is generally the starting point for students of any age who cannot yet read Arabic or Quranic script confidently. It establishes letter recognition, articulation points (Makharij), short vowel markings (Harakat), and compound letter connections. Read our comprehensive{' '}
+        <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary hover:underline font-semibold">
+          beginner Quran classes guide
+        </Link>{' '}
+        or start directly with{' '}
+        <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+          Noorani Qaida
+        </Link>{' '}
+        and{' '}
+        <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">
+          Quran Reading
+        </Link>.
+      </>
+    ),
   },
   {
     question: 'What is the difference between Noorani Qaida and Quran Reading?',
-    answer: 'Noorani Qaida focuses on the phonetic foundation—learning individual Arabic letters, vowel markers, and joint letter shapes through short exercises. The Quran Reading course applies those rules directly to reciting complete verses and chapters of the Holy Quran with proper flow and Waqf (stopping) rules.',
+    schemaAnswer:
+      'Noorani Qaida focuses on the phonetic foundation—learning individual Arabic letters, vowel markers, and joint letter shapes through short exercises. The Quran Reading course applies those rules directly to reciting complete verses and chapters of the Holy Quran with proper flow and Waqf (stopping) rules.',
+    answer: (
+      <>
+        <strong className="text-foreground">Noorani Qaida</strong> focuses on phonetic fundamentals—learning individual Arabic letters, vowel markers, and joint letter shapes through progressive exercises. The{' '}
+        <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">
+          Quran Reading
+        </Link>{' '}
+        course applies those rules directly to reciting complete verses and Surahs of the Holy Quran with proper flow, breath control, and Waqf (stopping) rules.
+      </>
+    ),
   },
   {
-    question: 'Can children learn Quran online effectively?',
-    answer: 'Yes. Online Quran learning is highly effective for children when taught through structured one-on-one sessions. Our certified teachers use engaging digital Mushafs, interactive visual boards, and gentle encouragement during standard 30-minute lessons designed to maintain a child\'s attention span.',
+    question: 'Which online Quran course is best for children?',
+    schemaAnswer:
+      'The appropriate program depends on your child\'s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Certified teachers use engaging digital Mushafs and interactive visual boards during 30-minute lessons.',
+    answer: (
+      <>
+        The appropriate program depends on your child&apos;s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Online Quran learning is highly effective for children when taught through private 1-on-1 sessions with certified teachers using engaging digital Mushafs, interactive visual boards, and gentle encouragement during standard 30-minute lessons. Read our guide on{' '}
+        <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary hover:underline font-semibold">
+          how to choose online Quran classes for kids
+        </Link>{' '}
+        or explore our dedicated{' '}
+        <Link href="/courses/quran-for-kids" className="text-primary hover:underline font-semibold">
+          Quran for Kids
+        </Link>{' '}
+        program.
+      </>
+    ),
+  },
+  {
+    question: 'Which Quran course is best for adults and reverts?',
+    schemaAnswer:
+      'Adults can begin from complete beginner Noorani Qaida or choose reading correction, Tajweed, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to adult schedules.',
+    answer: (
+      <>
+        Adults and reverts can begin from complete beginner Noorani Qaida or choose reading fluency, Tajweed correction, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to busy work and family schedules. See our guide to{' '}
+        <Link href="/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors" className="text-primary hover:underline font-semibold">
+          1-on-1 Quran tutors in the USA
+        </Link>{' '}
+        or visit{' '}
+        <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">
+          Quran for Adults
+        </Link>.
+      </>
+    ),
+  },
+  {
+    question: 'Can I choose a Quran course based on my current level?',
+    schemaAnswer:
+      'Yes. You can select a program aligned with your existing skill level—whether starting from zero, practicing reading fluency, perfecting Tajweed rules, memorizing Surahs, or studying Tafseer. See our Quran learning timeline and evaluate your level during a free trial session.',
+    answer: (
+      <>
+        Yes. You can select a program aligned with your exact skill level—whether starting from zero, practicing reading fluency, perfecting Tajweed rules, memorizing Surahs, or studying Tafseer. Check our{' '}
+        <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary hover:underline font-semibold">
+          Quran learning timeline
+        </Link>{' '}
+        and evaluate your proficiency during a 3-day free trial where our teacher will assess your reading and recommend the ideal course.
+      </>
+    ),
   },
   {
     question: 'Do you offer Quran with Tajweed classes?',
-    answer: 'Yes. Our dedicated Quran with Tajweed course covers essential rules including Makharij al-Huroof (articulation points), Sifaat (letter characteristics), Noon & Meem Sakinah rules, Ghunnah, Qalqalah, and Madd (elongation) under the direct supervision of qualified instructors.',
+    schemaAnswer:
+      'Yes. Our dedicated Quran with Tajweed course covers essential rules including Makharij al-Huroof (articulation points), Sifaat (letter characteristics), Noon & Meem Sakinah rules, Ghunnah, Qalqalah, and Madd (elongation) under the direct supervision of qualified instructors.',
+    answer: (
+      <>
+        Yes. Our dedicated{' '}
+        <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+          Quran with Tajweed
+        </Link>{' '}
+        course covers essential rules including Makharij al-Huroof (articulation points), Sifaat (letter characteristics), Noon &amp; Meem Sakinah rules, Ghunnah, Qalqalah, and Madd (elongation) under the direct supervision of qualified instructors.
+      </>
+    ),
   },
   {
     question: 'Do you offer an online Hifz (memorization) program?',
-    answer: 'Yes. We offer structured one-on-one Hifz classes for students wishing to memorize Juz Amma, selected Surahs (such as Surah Yaseen, Al-Mulk, Al-Kahf), or the entire Quran. The curriculum uses the traditional Sabaq (new lesson), Sabqi (recent revision), and Manzil (cumulative revision) method.',
+    schemaAnswer:
+      'Yes. We offer structured one-on-one Hifz classes for students wishing to memorize Juz Amma, selected Surahs (such as Surah Yaseen, Al-Mulk, Al-Kahf), or the entire Quran. The curriculum uses the traditional Sabaq (new lesson), Sabqi (recent revision), and Manzil (cumulative revision) method.',
+    answer: (
+      <>
+        Yes. We offer structured one-on-one{' '}
+        <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">
+          Hifz-ul-Quran
+        </Link>{' '}
+        classes for students wishing to memorize Juz Amma, selected Surahs (such as Surah Yaseen, Al-Mulk, Al-Kahf), or the entire Quran. The curriculum uses the traditional Sabaq (new lesson), Sabqi (recent revision), and Manzil (cumulative revision) method.
+      </>
+    ),
   },
   {
     question: 'Do you offer Quran Tafseer and translation classes?',
-    answer: 'Yes. Our online Quran Tafseer course provides word-by-word translation, contextual explanation (Asbab al-Nuzul), thematic reflections, and practical life lessons taught in accessible English or Urdu by certified Islamic scholars.',
+    schemaAnswer:
+      'Yes. Our online Quran Tafseer course provides word-by-word translation, contextual explanation (Asbab al-Nuzul), thematic reflections, and practical life lessons taught in accessible English or Urdu by certified Islamic scholars.',
+    answer: (
+      <>
+        Yes. Our online{' '}
+        <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">
+          Quran Tafseer
+        </Link>{' '}
+        course provides word-by-word translation, contextual explanation (Asbab al-Nuzul), thematic reflections, and practical life lessons taught in accessible English or Urdu by certified Islamic scholars.
+      </>
+    ),
   },
   {
     question: 'What is included in the Islamic Studies course?',
-    answer: 'Our Islamic Studies program covers core Aqeedah (Islamic beliefs), Seerah of Prophet Muhammad ﷺ, Hadith, basic Fiqh (cleanliness, Wudu, and Salah), daily Duas, and Islamic manners (Akhlaq) tailored for young children, teenagers, and adult beginners.',
-  },
-  {
-    question: 'Can adults start Quran classes from beginner level?',
-    answer: 'Yes. Many adult students and reverts begin with Noorani Qaida or elementary Quran reading. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to adult schedules.',
+    schemaAnswer:
+      'Our Islamic Studies program covers core Aqeedah (Islamic beliefs), Seerah of Prophet Muhammad ﷺ, Hadith, basic Fiqh (cleanliness, Wudu, and Salah), daily Duas, and Islamic manners (Akhlaq) tailored for young children, teenagers, and adult beginners.',
+    answer: (
+      <>
+        Our{' '}
+        <Link href="/courses/islamic-studies" className="text-primary hover:underline font-semibold">
+          Islamic Studies
+        </Link>{' '}
+        program covers core Aqeedah (Islamic beliefs), Seerah of Prophet Muhammad ﷺ, Hadith, basic Fiqh (cleanliness, Wudu, and Salah),{' '}
+        <Link href="/courses/daily-duas" className="text-primary hover:underline font-semibold">
+          daily Duas
+        </Link>
+        , and Islamic manners (Akhlaq) tailored for young children, teenagers, and adult beginners.
+      </>
+    ),
   },
   {
     question: 'Can I choose a female Quran teacher?',
-    answer: 'Yes. We have qualified female Quran teachers (Alimas and Qariahs) available for sisters, young girls, and young children who prefer learning with a female instructor.',
+    schemaAnswer:
+      'Yes. We have qualified female Quran teachers (Alimas and Qariahs) available for sisters, young girls, and young children who prefer learning with a female instructor.',
+    answer: (
+      <>
+        Yes. We have qualified female Quran teachers (Alimas and Qariahs) available for sisters, young girls, and young children who prefer learning with a certified{' '}
+        <Link href="/courses/female-quran-teacher" className="text-primary hover:underline font-semibold">
+          female Quran teacher
+        </Link>{' '}
+        in private 1-on-1 lessons.
+      </>
+    ),
   },
   {
     question: 'How long does an online Quran course typically take?',
-    answer: 'Typical duration varies by course and student commitment. Noorani Qaida usually takes 2 to 3 months, Quran Reading takes 6 to 12 months, and Tajweed takes 6 to 8 months. Actual progress depends on the student\'s starting level, class frequency (e.g. 3 to 5 days weekly), and consistent home practice.',
+    schemaAnswer:
+      'Typical duration varies by course and student commitment. Noorani Qaida usually takes 2 to 3 months, Quran Reading takes 6 to 12 months, and Tajweed takes 6 to 8 months. Actual progress depends on the student\'s starting level, class frequency, and consistent home practice.',
+    answer: (
+      <>
+        Typical duration varies by course and student commitment. Noorani Qaida usually takes 2 to 3 months, Quran Reading takes 6 to 12 months, and Tajweed takes 6 to 8 months. Actual progress depends on the student&apos;s starting level, class frequency (e.g. 3 to 5 days weekly), and consistent home practice. You can review our course comparison table above for complete details.
+      </>
+    ),
   },
   {
     question: 'Can I change courses later?',
-    answer: 'Yes. Students can easily transition to higher-level courses (such as moving from Qaida to Quran Reading, or Reading to Tajweed and Hifz) or add supplementary subjects like Islamic Studies and Duas as their skills develop.',
-  },
-  {
-    question: 'How do I choose the right Quran course for my family?',
-    answer: 'You can refer to our online Course Decision Guide above. If you are unsure of your or your child\'s exact level, we invite you to book a 3-day free trial where our instructor evaluates reading ability and recommends the appropriate course.',
+    schemaAnswer:
+      'Yes. Students can easily transition to higher-level courses (such as moving from Qaida to Quran Reading, or Reading to Tajweed and Hifz) or add supplementary subjects like Islamic Studies and Duas as their skills develop.',
+    answer: (
+      <>
+        Yes. Students can easily transition to higher-level courses (such as moving from Qaida to Quran Reading, or Reading to Tajweed and Hifz) or add supplementary subjects like Islamic Studies, Salah, and Duas as their skills develop.
+      </>
+    ),
   },
 ];
 
@@ -308,7 +442,7 @@ export default async function CoursesPage() {
       name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: faq.schemaAnswer,
       },
     })),
   };
@@ -689,68 +823,7 @@ export default async function CoursesPage() {
           </div>
         </section>
 
-        {/* AEO Direct-Answer Knowledge Section */}
-        <section className="py-16 sm:py-20 bg-background">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1 inline-block">
-                Course Guidance & FAQs
-              </span>
-              <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-                Choosing the Right Online Quran Program
-              </h2>
-              <p className="mt-3 text-sm text-muted-text max-w-2xl mx-auto">
-                Direct, factual answers to help you understand course placement, age suitability, and study progression.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* AEO Card 1 */}
-              <div className="glass rounded-2xl border border-card-border p-6 space-y-3">
-                <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-primary shrink-0" />
-                  <span>Which Online Quran Course Is Best for Beginners?</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  <span className="font-semibold text-foreground">Noorani Qaida</span> is generally the starting point for students who cannot yet read Arabic or Quranic script confidently. It establishes letter recognition, articulation points (Makharij), and short vowel markings. Read our comprehensive <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary hover:underline font-semibold">beginner Quran classes guide</Link> or start directly with <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">Quran Reading</Link>.
-                </p>
-              </div>
-
-              {/* AEO Card 2 */}
-              <div className="glass rounded-2xl border border-card-border p-6 space-y-3">
-                <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
-                  <span>Can I Choose a Quran Course Based on My Current Level?</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  Yes. You can select a program aligned with your existing skill level—whether starting from zero, practicing reading fluency, perfecting Tajweed rules, memorizing Surahs, or studying Tafseer. See our <Link href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online" className="text-primary hover:underline font-semibold">Quran learning timeline</Link> and evaluate your level during a free trial session.
-                </p>
-              </div>
-
-              {/* AEO Card 3 */}
-              <div className="glass rounded-2xl border border-card-border p-6 space-y-3">
-                <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center gap-2">
-                  <Smile className="h-5 w-5 text-primary shrink-0" />
-                  <span>Which Quran Course Is Best for Children?</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  The appropriate program depends on your child&apos;s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Read our guide on <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary hover:underline font-semibold">how to choose online Quran classes for kids</Link> or explore <Link href="/courses/quran-for-kids" className="text-primary hover:underline font-semibold">Quran for Kids</Link>.
-                </p>
-              </div>
-
-              {/* AEO Card 4 */}
-              <div className="glass rounded-2xl border border-card-border p-6 space-y-3">
-                <h3 className="text-base sm:text-lg font-bold text-foreground flex items-center gap-2">
-                  <UserCheck className="h-5 w-5 text-primary shrink-0" />
-                  <span>Which Quran Course Is Best for Adults?</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                  Adults can begin from complete beginner Noorani Qaida or choose reading correction, Tajweed, Hifz, or Tafseer based on personal background. All adult lessons are 100% private with certified tutors. See our guide to <Link href="/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors" className="text-primary hover:underline font-semibold">1-on-1 Quran tutors in the USA</Link> or visit <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">Quran for Adults</Link>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* How OQTutor Online Courses Work */}
         <section className="py-16 sm:py-20 bg-foreground/[0.01] border-y border-card-border">
@@ -804,19 +877,19 @@ export default async function CoursesPage() {
           </div>
         </section>
 
-        {/* Curated FAQs Section */}
+        {/* Merged Course Guidance & FAQs Section */}
         <section className="py-16 sm:py-20 bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Course Questions
+                Course Guidance & FAQs
               </span>
               <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-                Frequently Asked Questions
+                Choosing the Right Course & Frequently Asked Questions
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm text-muted-text max-w-2xl mx-auto font-normal">
-                Direct answers regarding our online Quran courses, syllabus structure, tutors, and learning paths.
+                Direct answers regarding course placement, beginner recommendations, child vs. adult learning paths, syllabus details, and tutors.
               </p>
             </div>
 
