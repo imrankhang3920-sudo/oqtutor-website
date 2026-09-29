@@ -988,7 +988,37 @@ function CourseCard({ course }: { course: any }) {
     'female-quran-teacher': 'Sister learning Quran online with certified female Quran scholar',
   };
 
-  const altText = altTextMap[course.slug] || `${course.title} at OQTutor`;
+  // Course-specific featured resource / guide links
+  const courseResourceLinks: Record<string, Array<{ label: string; href: string }>> = {
+    'hifz': [
+      { label: 'Hifz Memorization Techniques Guide', href: '/blog/effective-hifz-memorization-techniques' },
+      { label: 'Quran for Adults Program', href: '/courses/quran-for-adults' },
+    ],
+    'quran-for-adults': [
+      { label: 'Explore Quran for Adults', href: '/courses/quran-for-adults' },
+      { label: '1-on-1 Adult Tutors in USA', href: '/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors' },
+    ],
+    'noorani-qaida': [
+      { label: 'Beginner Classes Guide', href: '/blog/best-online-quran-classes-for-beginners' },
+      { label: 'Quran for Adults', href: '/courses/quran-for-adults' },
+    ],
+    'quran-reading': [
+      { label: 'Quran Completion Timeline', href: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online' },
+      { label: 'Quran for Adults', href: '/courses/quran-for-adults' },
+    ],
+    'tajweed': [
+      { label: 'Tajweed Rules Guide', href: '/blog/beginners-guide-mastering-tajweed-rules' },
+      { label: 'Quran for Adults', href: '/courses/quran-for-adults' },
+    ],
+    'quran-for-kids': [
+      { label: 'Kids Quran Classes Guide', href: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa' },
+    ],
+    'female-quran-teacher': [
+      { label: 'Female Quran Teachers Guide', href: '/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child' },
+    ],
+  };
+
+  const resources = courseResourceLinks[course.slug];
 
   return (
     <div className="glass rounded-3xl border border-card-border overflow-hidden flex flex-col h-full hover:translate-y-[-4px] hover:shadow-xl hover:border-primary/30 transition-all duration-300 relative group">
@@ -1023,9 +1053,25 @@ function CourseCard({ course }: { course: any }) {
           </Link>
         </h3>
         
-        <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-6 flex-grow">
+        <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal mb-4 flex-grow">
           {course.overview ? course.overview.slice(0, 160) + '...' : course.description}
         </p>
+
+        {/* Helpful Matching Guide Links */}
+        {resources && resources.length > 0 && (
+          <div className="mb-5 pt-1 flex flex-wrap gap-1.5">
+            {resources.map((res, idx) => (
+              <Link
+                key={idx}
+                href={res.href}
+                className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:text-primary-hover bg-primary/[0.05] hover:bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full transition-colors"
+              >
+                <span>{res.label}</span>
+                <ChevronRight className="h-3 w-3 opacity-70" />
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Card Bottom CTA Link */}
         <div className="pt-4 border-t border-card-border/60 flex items-center justify-between">

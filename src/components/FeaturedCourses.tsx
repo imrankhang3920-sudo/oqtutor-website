@@ -51,6 +51,10 @@ export default function FeaturedCourses() {
         'Short Surah or full 30 Juz Hifz track',
         'Ijazah-certified Quran Huffaz'
       ],
+      guideLink: {
+        label: 'Effective Hifz Techniques Guide',
+        href: '/blog/effective-hifz-memorization-techniques',
+      },
       isPopular: false,
     },
   ];
@@ -126,8 +130,21 @@ export default function FeaturedCourses() {
                     ))}
                   </div>
 
+                  {/* Guide link if present */}
+                  {course.guideLink && (
+                    <div className="mb-4">
+                      <Link
+                        href={course.guideLink.href}
+                        className="text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1"
+                      >
+                        <span>{course.guideLink.label}</span>
+                        <span>&rarr;</span>
+                      </Link>
+                    </div>
+                  )}
+
                   {/* Action Buttons */}
-                  <div className="mt-auto pt-4 space-y-3">
+                  <div className="mt-auto pt-2 space-y-3">
                     <Link
                       href={`/courses/${course.slug}`}
                       className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-sm transition-all duration-300 ${
