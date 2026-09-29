@@ -16,13 +16,13 @@ import {
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Online Quran Courses for Kids & Adults | OQTutor',
+  title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
   description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
   alternates: {
     canonical: 'https://www.oqtutor.com/courses',
   },
   openGraph: {
-    title: 'Online Quran Courses for Kids & Adults | OQTutor',
+    title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
     description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
     url: 'https://www.oqtutor.com/courses',
     siteName: 'OQTutor',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Online Quran Courses for Kids & Adults | OQTutor',
+    title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
     description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
     images: ['https://www.oqtutor.com/online-quran-classes-usa.jpg'],
   },
