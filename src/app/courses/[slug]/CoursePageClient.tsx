@@ -2380,10 +2380,13 @@ function QuranForAdultsContent({
               Stepping into a local Islamic school or community center as an adult beginner can sometimes feel intimidating. Traditional settings usually cater to young children, leaving adult learners with few choices that respect their maturity level and unique learning speeds.
             </p>
             <p>
-              <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Online platforms</Link>{" "}
-              remove the geographic and logistical barriers of commuting in traffic or rushing after work. Instead of trying to keep pace with a group class, you work directly with your{" "}
-              <Link href="/tutors" className="text-primary hover:underline font-semibold">own tutor</Link>.{" "}
+              <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Online Quran classes</Link>{" "}
+              remove the geographic and logistical barriers of commuting in traffic or rushing after work, saving hours of travel time every week. Instead of trying to keep pace with a group class, you work directly 1-on-1 with your{" "}
+              <Link href="/tutors" className="text-primary hover:underline font-semibold">own dedicated tutor</Link>.{" "}
               You can ask questions without hesitation, repeat challenging sounds as many times as necessary, and schedule your lessons early in the morning before work or late at night.
+            </p>
+            <p>
+              Additionally, the digital classroom uses interactive screen-sharing, high-quality audio, and digital whiteboards. This setup connects you with a global network of certified scholars, makes it easy to follow the text with live visual corrections, and allows you to learn from the privacy and comfort of your home.
             </p>
           </div>
         </div>
@@ -2799,31 +2802,6 @@ function QuranForAdultsContent({
         </div>
       </section>
 
-      {/* Benefits of Online Quran learning */}
-      <section className="py-16 md:py-24 bg-background border-t border-card-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-              Technology
-            </span>
-            <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-              Benefits of Learning Quran Online
-            </h2>
-            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6 text-base text-muted-text leading-relaxed font-normal">
-            <p>
-              Choosing online instruction provides practical advantages that physical schools cannot replicate. You save hours of travel time every week, allowing you to prioritize study rather than commuting. You also gain access to a global network of{" "}
-              <Link href="/tutors" className="text-primary hover:underline font-semibold">qualified scholars</Link>,{" "}
-              bypassing the local limitations of your city or suburb.
-            </p>
-            <p>
-              Additionally, the digital classroom uses interactive screen-sharing, high-quality audio, and digital whiteboards. This setup makes it easy to follow the text, see visual corrections, and record your sessions for private review between classes.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Why Tajweed Matters */}
       <section className="py-16 md:py-24 bg-foreground/[0.005] border-t border-card-border">
