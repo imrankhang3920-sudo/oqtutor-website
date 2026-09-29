@@ -2254,15 +2254,13 @@ function QuranForAdultsContent({
       question: "Where can I learn Quran online in the USA?",
       answer: (
         <span>
-          You can learn the Quran online from any city in the USA by enrolling in{" "}
-          <Link href="/how-it-works" className="text-primary hover:underline font-semibold">OQTutor</Link>. 
-          Our virtual learning academy serves adult students across all fifty states, supporting learners in Eastern, Central, Mountain, and Pacific time zones. Because our platform operates entirely online, your geographic location never limits your access to certified scholars. We match you with dedicated instructors who teach{" "}
+          <strong>You can learn the Quran online from anywhere in the USA by enrolling with OQTutor.</strong> We provide private, 1-on-1 virtual Quran classes for adults across all US time zones (Eastern, Central, Mountain, and Pacific). Our live lessons are taught by certified male and female scholars through an interactive digital portal, allowing you to master{" "}
           <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, 
           advanced{" "}
           <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed rules</Link>, 
           Quran{" "}
           <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">memorization (Hifz)</Link>, 
-          and translation through a secure digital portal. You only need a stable internet connection, a computer or tablet, and a quiet space in your home to begin. By removing the need to commute to a physical Islamic center, OQTutor makes it simple to integrate regular Quranic study into your busy American lifestyle.
+          and Tafseer from home on your own schedule without commuting.
         </span>
       )
     },
@@ -2270,44 +2268,35 @@ function QuranForAdultsContent({
       question: "How much do online Quran classes cost?",
       answer: (
         <span>
-          At OQTutor, we believe that high-quality Quranic education should remain affordable and transparent. Our flexible{" "}
+          <strong>Online Quran classes for adults at OQTutor start at $30 per month for three 30-minute private lessons per week.</strong> We offer transparent, affordable{" "}
           <Link href="/pricing" className="text-primary hover:underline font-semibold">monthly plans</Link>{" "}
-          start at $30 per month for three classes per week, which is ideal for students who want to maintain steady, gradual progress. For more frequent study, our Standard Plan offers five classes per week for $40 per month, while our Daily Plan provides seven sessions per week for $50 per month. All packages feature private, one-on-one sessions lasting thirty minutes each with a certified male or{" "}
-          <Link href="/tutors" className="text-primary hover:underline font-semibold">female tutor</Link>. 
-          We do not charge registration fees, and you are never locked into long-term contracts. You can pause, adjust, or cancel your subscription at any time directly through your student dashboard, ensuring your studies fit both your monthly budget and your lifestyle demands.
+          with no registration fees and zero long-term contracts. Packages include the Starter Plan ($30/mo for 3 classes/week), Standard Plan ($40/mo for 5 classes/week), and Daily Plan ($50/mo for 7 classes/week), with complete freedom to pause or reschedule lessons anytime.
         </span>
       )
     },
     {
-      question: "Which online Quran course is the best?",
+      question: "Which online Quran course is best for adults?",
       answer: (
         <span>
-          The best online Quran course is one that matches your current reading ability and aligns with your personal learning goals. If you cannot read the Arabic script yet, you should start with our{" "}
-          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida course</Link>{" "}
-          to learn correct letter recognition and pronunciation. For students who can read Arabic but make pronunciation mistakes, our{" "}
-          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed course</Link>{" "}
-          is the ideal choice to master articulation points. If you want to commit specific Surahs to memory, you should select our{" "}
-          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Quran Memorization program</Link>. 
-          Adults who want to connect deeply with the meaning of the verses will benefit most from our{" "}
-          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Translation and Tafseer course</Link>. 
-          OQTutor helps you determine the perfect path by conducting a comprehensive reading assessment during your{" "}
-          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial session</Link>.
+          <strong>The best course depends on your current reading ability and spiritual goals.</strong> Absolute beginners should start with{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>{" "}
+          to master letter pronunciation, while adults who can already read Arabic benefit most from{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>{" "}
+          or our{" "}
+          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Translation and Tafseer</Link>{" "}
+          program. We evaluate your recitation during your{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial session</Link>{" "}
+          to recommend the ideal customized roadmap.
         </span>
       )
     },
     {
-      question: "Where can I find online Quran courses?",
+      question: "Can I learn Quran as an adult beginner with zero Arabic background?",
       answer: (
         <span>
-          You can find premium online Quran courses directly through the{" "}
-          <Link href="/" className="text-primary hover:underline font-semibold">OQTutor website</Link>. 
-          We offer a structured selection of courses designed specifically for adults, reverts, and busy professionals living in the USA. Our courses cover everything from the basic Arabic alphabet to advanced Tajweed rules, intensive Hifz memorization, and word-by-word translation classes. By visiting our{" "}
-          <Link href="/courses" className="text-primary hover:underline font-semibold">courses directory page</Link>, 
-          you can read the details of each syllabus and select the track that best fits your spiritual goals. When you are ready to begin, simply fill out our short registration form to schedule your live{" "}
-          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">trial class</Link>. 
-          We will pair you with a{" "}
-          <Link href="/tutors" className="text-primary hover:underline font-semibold">certified tutor</Link>{" "}
-          who will help customize the lessons to your unique learning speed and schedule.
+          <strong>Yes, it is never too late to learn Quran, and many adult students start with zero prior Arabic knowledge.</strong> You will begin with basic alphabet recognition and phonetics before gradually progressing to fluent reading and Tajweed recitation. All sessions are 100% private and 1-on-1 with certified{" "}
+          <Link href="/tutors" className="text-primary hover:underline font-semibold">male or female tutors</Link>, 
+          ensuring a patient, supportive, and non-judgmental atmosphere tailored to your personal pace.
         </span>
       )
     }
