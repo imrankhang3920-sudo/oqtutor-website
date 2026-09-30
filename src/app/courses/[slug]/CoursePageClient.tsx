@@ -2251,52 +2251,162 @@ function QuranForAdultsContent({
 
   const faqSchemaList = [
     {
-      question: "Where can I learn Quran online in the USA?",
+      question: "Am I too old to learn Quran from scratch?",
       answer: (
         <span>
-          <strong>You can learn the Quran online from anywhere in the USA by enrolling with OQTutor.</strong> We provide private, 1-on-1 virtual Quran classes for adults across all US time zones (Eastern, Central, Mountain, and Pacific). Our live lessons are taught by certified male and female scholars through an interactive digital portal, allowing you to master{" "}
-          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>, 
-          advanced{" "}
-          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Tajweed rules</Link>, 
-          Quran{" "}
-          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">memorization (Hifz)</Link>, 
-          and Tafseer from home on your own schedule without commuting.
+          No. Adults of all ages start learning the Quran with us, from students in their 20s to seniors in their 60s and beyond. Adults often progress steadily because they understand the lessons and practice with purpose, and your tutor sets a pace that suits you.
         </span>
       )
     },
     {
-      question: "How much do online Quran classes cost?",
+      question: "I don't know any Arabic. Can I still begin?",
       answer: (
         <span>
-          <strong>Online Quran classes for adults at OQTutor start at $30 per month for three 30-minute private lessons per week.</strong> We offer transparent, affordable{" "}
-          <Link href="/pricing" className="text-primary hover:underline font-semibold">monthly plans</Link>{" "}
-          with no registration fees and zero long-term contracts. Packages include the Starter Plan ($30/mo for 3 classes/week), Standard Plan ($40/mo for 5 classes/week), and Daily Plan ($50/mo for 7 classes/week), with complete freedom to pause or reschedule lessons anytime.
+          Yes. You start with{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>
+          , where you learn the Arabic letters, vowel signs and joining rules from zero. No prior Arabic knowledge is needed.
         </span>
       )
     },
     {
-      question: "Which online Quran course is best for adults?",
+      question: "I'm a new Muslim (revert). Where should I start?",
       answer: (
         <span>
-          <strong>The best course depends on your current reading ability and spiritual goals.</strong> Absolute beginners should start with{" "}
-          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">Noorani Qaida</Link>{" "}
-          to master letter pronunciation, while adults who can already read Arabic benefit most from{" "}
-          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">Quran with Tajweed</Link>{" "}
-          or our{" "}
-          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Translation and Tafseer</Link>{" "}
-          program. We evaluate your recitation during your{" "}
-          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial session</Link>{" "}
-          to recommend the ideal customized roadmap.
+          Most reverts begin with{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>{" "}
+          to learn reading, alongside our{" "}
+          <Link href="/courses/islamic-studies" className="text-primary hover:underline font-semibold">
+            Salah &amp; Prayer and Daily Duas
+          </Link>{" "}
+          courses so they can pray with confidence. Your tutor will assess your level in the{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+            free trial
+          </Link>{" "}
+          and suggest the best order for you.
         </span>
       )
     },
     {
-      question: "Can I learn Quran as an adult beginner with zero Arabic background?",
+      question: "How do I know which course is right for me?",
       answer: (
         <span>
-          <strong>Yes, it is never too late to learn Quran, and many adult students start with zero prior Arabic knowledge.</strong> You will begin with basic alphabet recognition and phonetics before gradually progressing to fluent reading and Tajweed recitation. All sessions are 100% private and 1-on-1 with certified{" "}
-          <Link href="/tutors" className="text-primary hover:underline font-semibold">male or female tutors</Link>, 
-          ensuring a patient, supportive, and non-judgmental atmosphere tailored to your personal pace.
+          Your tutor checks your reading level during the{" "}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+            free trial
+          </Link>
+          . If you cannot read Arabic yet, you will start with{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>
+          . If you read but make pronunciation mistakes,{" "}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+            Quran with Tajweed
+          </Link>{" "}
+          is the right fit. If you read confidently, you can move on to{" "}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">
+            Hifz
+          </Link>{" "}
+          or{" "}
+          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">
+            Tafseer
+          </Link>
+          .
+        </span>
+      )
+    },
+    {
+      question: "How long does it take an adult to learn to read the Quran?",
+      answer: (
+        <span>
+          It depends on your starting level and how often you practice.{" "}
+          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+            Noorani Qaida
+          </Link>{" "}
+          typically takes 2-3 months, and fluent{" "}
+          <Link href="/courses/quran-reading" className="text-primary hover:underline font-semibold">
+            Quran reading
+          </Link>{" "}
+          usually takes a further 6-12 months with regular lessons and daily practice. Timelines are estimates and vary from student to student.
+        </span>
+      )
+    },
+    {
+      question: "How much should I practice between classes?",
+      answer: (
+        <span>
+          About 10-15 minutes a day is enough for most adults. Short, regular practice works better than one long session each week.
+        </span>
+      )
+    },
+    {
+      question: "I have a busy job. What class times are available?",
+      answer: (
+        <span>
+          Our classes run 24 hours a day, 7 days a week, so you can study early in the morning, in the evening or on weekends. You can adjust your schedule whenever your work or family commitments change.
+        </span>
+      )
+    },
+    {
+      question: "What happens if I miss a class?",
+      answer: (
+        <span>
+          Please let your tutor know in advance and we will help you reschedule.
+        </span>
+      )
+    },
+    {
+      question: "Are the classes private?",
+      answer: (
+        <span>
+          Yes. Every class is one-on-one with your own tutor. There are no group classes, so you can ask questions and repeat difficult sounds as many times as you need without feeling self-conscious.
+        </span>
+      )
+    },
+    {
+      question: "Can I choose a female tutor?",
+      answer: (
+        <span>
+          Yes. We have both male and{" "}
+          <Link href="/courses/female-quran-teacher" className="text-primary hover:underline font-semibold">
+            female tutors
+          </Link>
+          , and you can choose the gender that matches your comfort and household preferences.
+        </span>
+      )
+    },
+    {
+      question: "Can I record my lessons?",
+      answer: (
+        <span>
+          Yes. Our digital classroom lets you record sessions so you can review them privately between classes.
+        </span>
+      )
+    },
+    {
+      question: "How much do online Quran classes for adults cost?",
+      answer: (
+        <span>
+          Plans start at $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily classes. All lessons are 30 minutes and one-on-one. There are no registration fees or long-term contracts, and you can pause or cancel at any time.
+        </span>
+      )
+    },
+    {
+      question: "Is the free trial really free? Do I need a credit card?",
+      answer: (
+        <span>
+          Yes, the trial is free and no credit card is required. You meet your tutor, get your reading level assessed, and decide whether to continue.
+        </span>
+      )
+    },
+    {
+      question: "What do I need to join an online class?",
+      answer: (
+        <span>
+          A computer or tablet, a stable internet connection, headphones and a quiet space. You join your class through our secure virtual classroom using your personal dashboard.
         </span>
       )
     }
