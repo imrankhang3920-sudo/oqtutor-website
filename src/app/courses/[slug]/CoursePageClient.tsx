@@ -3091,7 +3091,7 @@ function QuranForAdultsContent({
 
       {/* FAQ Accordion Section */}
       <section className="py-20 border-t border-card-border bg-foreground/[0.005]">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
               FAQ
@@ -3102,27 +3102,37 @@ function QuranForAdultsContent({
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           </div>
 
-          <div className="space-y-4">
-            {faqSchemaList.map((faq, idx) => (
-              <details
-                key={idx}
-                className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
-                open={openFaqIdx === idx}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleFaq(idx);
-                }}
-              >
-                <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none font-sans">
-                  <span>{faq.question}</span>
-                  <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary font-sans">
-                    <ChevronDown className="h-5 w-5" />
-                  </span>
-                </summary>
-                <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3 font-sans">
-                  <div>{faq.answer}</div>
-                </div>
-              </details>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
+            {[
+              faqSchemaList.slice(0, Math.ceil(faqSchemaList.length / 2)),
+              faqSchemaList.slice(Math.ceil(faqSchemaList.length / 2))
+            ].map((column, colIdx) => (
+              <div key={colIdx} className="space-y-4">
+                {column.map((faq, itemIdx) => {
+                  const actualIdx = colIdx === 0 ? itemIdx : itemIdx + Math.ceil(faqSchemaList.length / 2);
+                  return (
+                    <details
+                      key={actualIdx}
+                      className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+                      open={openFaqIdx === actualIdx}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleFaq(actualIdx);
+                      }}
+                    >
+                      <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none font-sans">
+                        <span>{faq.question}</span>
+                        <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary font-sans">
+                          <ChevronDown className="h-5 w-5" />
+                        </span>
+                      </summary>
+                      <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3 font-sans">
+                        <div>{faq.answer}</div>
+                      </div>
+                    </details>
+                  );
+                })}
+              </div>
             ))}
           </div>
         </div>
