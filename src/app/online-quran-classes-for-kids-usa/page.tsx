@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { 
   CheckCircle, Shield, Award, BookOpen, Clock, Users, ArrowRight, Sparkles, 
   HeartHandshake, CheckCheck, HelpCircle, Star, Video, CreditCard, Check, Gift,
-  Eye, Lock, ShieldCheck, Trophy, RotateCcw, Mic, Smile, UserCheck, Zap
+  Eye, Lock, ShieldCheck, Trophy, RotateCcw, Mic, Smile, UserCheck, Zap, Compass, ChevronRight
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -119,34 +119,81 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
     ]
   };
 
+  const coursePath = [
+    {
+      step: "01",
+      title: "Noorani Qaida",
+      subtitle: "Alphabet & Phonics",
+      age: "Ages 4-7",
+      icon: BookOpen,
+      desc: "Arabic letters, Makharij & basic connecting rules"
+    },
+    {
+      step: "02",
+      title: "Quran Reading",
+      subtitle: "Nazra & Word Flow",
+      age: "Ages 6+",
+      icon: Compass,
+      desc: "Smooth reading from Qaida transition to full Surahs"
+    },
+    {
+      step: "03",
+      title: "Tajweed Mastery",
+      subtitle: "Rules & Melody",
+      age: "Ages 7+",
+      icon: Sparkles,
+      desc: "Ghunnah, Ikhfa, Qalqalah & melodious recitation"
+    },
+    {
+      step: "04",
+      title: "Quran Memorization",
+      subtitle: "Hifz Track",
+      age: "Ages 8+",
+      icon: Award,
+      desc: "Surah memorization with daily systematic revision"
+    }
+  ];
+
   const courseList = [
     {
       id: "1",
-      title: "Noorani Qaida for Beginners (4-7 Years)",
-      description: "Arabic alphabet recognition, correct pronunciation, and basic joining rules.",
+      title: "Noorani Qaida for Beginners",
+      description: "Arabic alphabet recognition, accurate articulation points (Makharij), and foundational letter-joining rules.",
       tag: "Ages 4-7",
+      stage: "Stage 1: Foundation",
       icon: BookOpen
     },
     {
       id: "2",
-      title: "Quran Recitation with Tajweed (7+ Years)",
-      description: "Fluent reading following proper Tajweed rules and voice tone.",
-      tag: "Ages 7+",
-      icon: Sparkles
+      title: "Quran Reading (Nazra)",
+      description: "Smooth word-by-word Quran reading, bridging the gap between Qaida exercises and reciting complete Quranic chapters with confidence.",
+      tag: "Ages 6+",
+      stage: "Stage 2: Fluency",
+      icon: Compass
     },
     {
       id: "3",
-      title: "Islamic Studies & Daily Duas (All Ages)",
-      description: "Fundamental Islamic knowledge, daily Duas, Kalimas, Salah step-by-step.",
-      tag: "All Ages",
-      icon: HeartHandshake
+      title: "Quran Recitation with Tajweed",
+      description: "Mastering exact Tajweed rules (Madd, Ghunnah, Ikhfa, Qalqalah), breath control, and melodious recitation tone.",
+      tag: "Ages 7+",
+      stage: "Stage 3: Mastery",
+      icon: Sparkles
     },
     {
       id: "4",
-      title: "Quran Memorization (Hifz) (8+ Years)",
-      description: "Customized Hifz program with systematic daily revision.",
+      title: "Quran Memorization (Hifz Program)",
+      description: "Structured Hifz track from short Juz Amma Surahs to full Quran memorization with daily Sabaq & Manzil revision.",
       tag: "Ages 8+",
+      stage: "Stage 4: Memorization",
       icon: Award
+    },
+    {
+      id: "5",
+      title: "Islamic Studies & Daily Duas",
+      description: "Essential Islamic etiquette, daily Sunnah Duas, 6 Kalimas, practical Salah (prayer), and Wudu step-by-step.",
+      tag: "All Ages",
+      stage: "Integrated Track",
+      icon: HeartHandshake
     }
   ];
 
@@ -350,37 +397,80 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
         {/* H2: TAILORED QURAN COURSES FOR CHILDREN */}
         <section id="courses" className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Structured Learning
+                Structured Learning Path
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Tailored Quran Courses for Children
+                Step-by-Step Quran Learning Path for Kids
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-              <p className="mt-4 text-base text-muted-text">
-                Explore our age-appropriate online Quran modules built for steady development and engaging learning.
+              <p className="mt-4 text-base sm:text-lg text-muted-text font-normal leading-relaxed">
+                We guide your child through a proven step-by-step curriculum — from foundational Arabic letters to fluent Quran reading and complete Tajweed mastery.
               </p>
             </div>
 
-            {/* GRID CARDS RENDER */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* VISUAL COURSE PROGRESSION ROADMAP */}
+            <div className="mb-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative max-w-6xl mx-auto">
+                {coursePath.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between relative group bg-background/60 hover:shadow-xl"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-xs font-extrabold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                            Step {item.step}
+                          </span>
+                          <span className="text-[11px] font-semibold text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full">
+                            {item.age}
+                          </span>
+                        </div>
+                        <div className="p-3 bg-primary/10 text-primary w-fit rounded-2xl mb-4 group-hover:scale-110 transition-transform">
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <h3 className="text-base font-bold text-foreground mb-1">{item.title}</h3>
+                        <p className="text-xs font-semibold text-primary mb-2">{item.subtitle}</p>
+                        <p className="text-xs text-muted-text leading-relaxed font-normal">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      {idx < coursePath.length - 1 && (
+                        <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 p-1 rounded-full bg-background border border-card-border text-primary shadow-sm">
+                          <ChevronRight className="h-4 w-4" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* DETAILED COURSE CARDS GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {courseList.map((course) => {
                 const Icon = course.icon;
                 return (
                   <div 
                     key={course.id} 
-                    className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all duration-300 flex flex-col justify-between hover:shadow-xl bg-background/50"
+                    className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all duration-300 flex flex-col justify-between hover:shadow-xl bg-background/50 group"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 bg-secondary/15 text-secondary rounded-2xl">
+                        <div className="p-3 bg-secondary/15 text-secondary rounded-2xl group-hover:scale-110 transition-transform">
                           <Icon className="h-6 w-6" />
                         </div>
                         <span className="text-xs font-bold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
                           {course.tag}
                         </span>
                       </div>
+                      <span className="text-[11px] font-semibold text-secondary uppercase tracking-wider block mb-1">
+                        {course.stage}
+                      </span>
                       <h3 className="text-xl font-bold text-foreground mb-3">{course.title}</h3>
                       <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
                         {course.description}
@@ -388,11 +478,11 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
                     </div>
                     <div className="mt-6 pt-4 border-t border-card-border/40">
                       <Link 
-                        href="/book-free-trial" 
-                        className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group"
+                        href={`/book-free-trial?course=${encodeURIComponent(course.title)}`}
+                        className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group/link"
                       >
-                        <span>Enroll Child in Trial</span>
-                        <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                        <span>Enroll Child in Free Trial</span>
+                        <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
