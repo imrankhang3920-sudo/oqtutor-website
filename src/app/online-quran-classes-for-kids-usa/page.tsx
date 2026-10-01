@@ -52,32 +52,52 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
 
   const faqs = [
     {
-      question: "How do online Quran classes work for kids?",
-      answer: "Classes are conducted live via 1-on-1 video calls on Zoom or Skype with screen sharing of digital materials."
+      question: "What age can my child start online Quran classes?",
+      answer: "Children as young as 4 to 5 years old can start with our specialized Noorani Qaida for Beginners program. At this early age, lessons are kept short, interactive, and playful, focusing on Arabic letter recognition, phonics, and basic vocal repetition. For children aged 6 and above, we transition steadily into word connections and full Quran reading (Nazra). We evaluate every child during the free 3-day trial to ensure they are placed at the right pace."
     },
     {
-      question: "What if we need to reschedule a class?",
-      answer: "We offer complete schedule flexibility. Just notify us in advance for a makeup lesson."
+      question: "My child gets easily distracted. Will they stay focused during an online class?",
+      answer: "Yes! Online distraction is the most common concern for parents, and our entire curriculum is designed specifically to solve it. Unlike crowded group classes where quiet children get overlooked, our 1-on-1 classes are 30 minutes long and structured into fast-paced 5-to-15 minute blocks. Tutors use interactive digital whiteboards, color-coded Tajweed pointers, animated rewards, and engaging vocal drills. Because the teacher's attention is 100% focused on your child, they remain actively engaged from the first minute to the last."
     },
     {
-      question: "Do you offer female Quran teachers for young girls?",
-      answer: "Yes, we have highly qualified, English-speaking female Quran tutors available."
+      question: "Do kids need to know Arabic or have prior Islamic education before starting?",
+      answer: "No prior knowledge of the Arabic language or Arabic script is required. Over 80% of our American-Muslim students start as absolute beginners who do not speak or read any Arabic. Our certified tutors speak fluent English and begin with the very basics: letter shapes, English-equivalent sounds, and step-by-step pronunciation (Makharij). We guide your child gently from zero to fluent Quran recitation."
     },
     {
-      question: "What equipment or software do we need?",
-      answer: "A stable internet connection, a laptop/tablet/smartphone, and a headset. We use Zoom or Skype."
+      question: "Can siblings take classes together or do they have separate sessions?",
+      answer: "We strongly recommend separate 1-on-1 sessions for each sibling so every child learns at their own natural speed without feeling self-conscious or overshadowed. However, we can schedule back-to-back lesson slots with the same teacher (or separate teachers) for your family's convenience. Families enrolling two or more children also receive a 10% to 15% sibling discount on all monthly plans."
     },
     {
-      question: "How long is each Quran lesson?",
-      answer: "Standard lessons are 30 to 45 minutes long. We offer plans ranging from 2 to 5 days a week."
+      question: "Is it safe for my child to learn Quran online with OQTutor?",
+      answer: "Safety and security are our highest priorities. All our tutors undergo comprehensive identity verification, academic credential checks, and background vetting. We maintain an open-door policy: parents are always welcome to sit in on live lessons. Furthermore, tutors are strictly prohibited from contacting children privately via phone, social media, or personal messaging. All feedback, class recordings, and progress updates flow transparently through the parent."
+    },
+    {
+      question: "How much should I help my child with their Quran practice at home?",
+      answer: "You don't need to be an Arabic or Tajweed expert to support your child! Just 10 to 15 minutes of daily encouragement—such as listening to them read their assigned page or reviewing short Duas together—makes a massive difference. Our tutors assign light, bite-sized practice tasks after each lesson and provide monthly progress reports so you always know exactly what your child is working on."
+    },
+    {
+      question: "How do online Quran classes work on a day-to-day basis?",
+      answer: "Classes are conducted live 1-on-1 over Zoom or Skype at your chosen time slot. Your child connects with their dedicated teacher using a computer, tablet, or smartphone with a headset. The tutor shares an interactive digital screen showing the Qaida or Quran text with live highlighting. Lessons are conversational, encouraging, and tailored to your child's learning style."
+    },
+    {
+      question: "Do you offer female Quran teachers for young girls and sisters?",
+      answer: "Yes, absolutely. We have a dedicated team of certified, English-speaking female Quran scholars and Hafizas available across all US time zones (EST, CST, MST, PST). You can specify your preference for a female instructor during registration or trial booking at no extra fee."
+    },
+    {
+      question: "What happens if we need to reschedule or miss a class?",
+      answer: "We understand that American family schedules can be busy with school, sports, and family events. If you notify us at least 4 to 6 hours before the scheduled lesson, your tutor will gladly arrange a makeup class at a mutually convenient time so your child never misses out on learning hours."
     },
     {
       question: "What is the monthly fee for online Quran classes in the USA?",
-      answer: "Our plans are highly affordable, starting from $30 to $50 per month depending on class frequency."
+      answer: "Our fee plans are transparent and budget-friendly for American-Muslim families, starting from $30/month for 2-3 classes per week, $40/month for our popular 4-5 classes per week plan, up to $50/month for intensive memorization. All plans include 1-on-1 personalized tutoring, free study materials, and no registration or hidden fees."
     },
     {
-      question: "How do you track my child’s learning progress?",
-      answer: "We provide regular monthly progress reports and conduct periodic oral evaluations."
+      question: "How do you track and report my child's progress to parents?",
+      answer: "We provide structured monthly written progress reports covering letter recognition, fluency, Tajweed application, Dua memorization, and attendance. Parents can also request brief 5-minute feedback discussions with the tutor or academic supervisor at the end of any week."
+    },
+    {
+      question: "What equipment or software do we need at home?",
+      answer: "Getting started is simple. You only need: (1) a computer, laptop, iPad, or tablet with a webcam, (2) a stable internet connection, (3) a headset or earphones with a microphone for clear audio, and (4) Zoom or Skype installed. All digital Qaida books and Quran reading materials are provided by us completely free."
     }
   ];
 
