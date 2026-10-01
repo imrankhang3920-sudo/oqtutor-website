@@ -698,7 +698,7 @@ export default async function NewYorkQuranClassesPage() {
 
         {/* Section 8: FAQ Accordion */}
         <section className="py-20 border-t border-card-border bg-background">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
                 FAQs
@@ -709,23 +709,47 @@ export default async function NewYorkQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
             </div>
 
-            <div className="space-y-4">
-              {faqSchema.mainEntity.map((faq, idx) => (
-                <details
-                  key={idx}
-                  className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
-                >
-                  <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none">
-                    <span>{faq.name}</span>
-                    <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
-                      <ChevronDown className="h-5 w-5" />
-                    </span>
-                  </summary>
-                  <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3">
-                    {renderNewYorkFaqAnswer(idx, faq.acceptedAnswer.text)}
-                  </div>
-                </details>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
+              <div className="space-y-4">
+                {faqSchema.mainEntity.slice(0, Math.ceil(faqSchema.mainEntity.length / 2)).map((faq, idx) => (
+                  <details
+                    key={idx}
+                    className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+                  >
+                    <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none">
+                      <span>{faq.name}</span>
+                      <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
+                        <ChevronDown className="h-5 w-5" />
+                      </span>
+                    </summary>
+                    <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3">
+                      {renderNewYorkFaqAnswer(idx, faq.acceptedAnswer.text)}
+                    </div>
+                  </details>
+                ))}
+              </div>
+
+              <div className="space-y-4">
+                {faqSchema.mainEntity.slice(Math.ceil(faqSchema.mainEntity.length / 2)).map((faq, idx) => {
+                  const actualIdx = idx + Math.ceil(faqSchema.mainEntity.length / 2);
+                  return (
+                    <details
+                      key={actualIdx}
+                      className="group border border-card-border/60 rounded-2xl glass p-5 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+                    >
+                      <summary className="flex items-center justify-between font-bold text-sm sm:text-base text-foreground cursor-pointer select-none list-none">
+                        <span>{faq.name}</span>
+                        <span className="ml-4 shrink-0 transition-transform duration-300 group-open:rotate-180 text-primary">
+                          <ChevronDown className="h-5 w-5" />
+                        </span>
+                      </summary>
+                      <div className="mt-3 text-xs sm:text-sm text-muted-text leading-relaxed font-normal border-t border-card-border/40 pt-3">
+                        {renderNewYorkFaqAnswer(actualIdx, faq.acceptedAnswer.text)}
+                      </div>
+                    </details>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
