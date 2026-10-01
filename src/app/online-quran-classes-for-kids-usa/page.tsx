@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  CheckCircle, Shield, Award, BookOpen, Clock, Users, ArrowRight, Sparkles, HeartHandshake, CheckCheck, HelpCircle, Star, Video
+  CheckCircle, Shield, Award, BookOpen, Clock, Users, ArrowRight, Sparkles, HeartHandshake, CheckCheck, HelpCircle, Star, Video, CreditCard, Check, Gift
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -171,6 +171,65 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
     }
   ];
 
+  const pricingPlans = [
+    {
+      id: "kids-usa-starter",
+      title: "Starter Plan",
+      tier: "2 - 3 Days / Week",
+      price: "35",
+      period: "/ Month",
+      description: "Ideal for young beginners starting Arabic alphabet & Noorani Qaida.",
+      features: [
+        "2 to 3 Live Classes / Week (30 mins)",
+        "1-on-1 Dedicated Personalized Tutoring",
+        "Noorani Qaida & Basic Arabic Reading",
+        "Choice of Certified Male or Female Tutor",
+        "Flexible US Time Zones (EST, CST, MST, PST)",
+        "3-Day Free Trial (No Card Required)"
+      ],
+      isPopular: false,
+      ctaText: "Start 3-Day Free Trial"
+    },
+    {
+      id: "kids-usa-standard",
+      title: "Standard Plan",
+      tier: "4 - 5 Days / Week",
+      price: "55",
+      period: "/ Month",
+      description: "Our most popular track for steady recitation, Tajweed & daily Duas.",
+      features: [
+        "4 to 5 Live Classes / Week (30 mins)",
+        "1-on-1 Dedicated Personalized Tutoring",
+        "Quran Recitation with Tajweed Rules",
+        "Islamic Studies, Daily Duas & Kalimas",
+        "Monthly Written Progress Reports",
+        "Free Makeup / Rescheduled Sessions",
+        "3-Day Free Trial (No Card Required)"
+      ],
+      isPopular: true,
+      ctaText: "Start 3-Day Free Trial"
+    },
+    {
+      id: "kids-usa-intensive",
+      title: "Intensive / Hifz",
+      tier: "5 - 6 Days / Week",
+      price: "75",
+      period: "/ Month",
+      description: "Accelerated memorization track with systematic daily revision.",
+      features: [
+        "5 to 6 Live Classes / Week (30-45 mins)",
+        "1-on-1 Senior Quran Hafiz / Scholar",
+        "Structured Quran Memorization (Hifz)",
+        "Daily Revision (Sabaq & Manzil)",
+        "Direct Parent-Teacher Communication",
+        "15% Sibling Discount Available",
+        "3-Day Free Trial (No Card Required)"
+      ],
+      isPopular: false,
+      ctaText: "Start 3-Day Free Trial"
+    }
+  ];
+
   return (
     <>
       <script
@@ -220,10 +279,10 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#courses"
+                  href="#pricing"
                   className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-full glass border-card-border hover:bg-foreground/5 text-foreground text-base font-semibold transition-all duration-300"
                 >
-                  <span>View Courses</span>
+                  <span>View Fee Plans</span>
                 </Link>
               </div>
 
@@ -392,6 +451,142 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* H2: AFFORDABLE PRICING PLANS */}
+        <section id="pricing" className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Transparent Tuition
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Affordable Fee Plans for US Families
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-base sm:text-lg text-muted-text font-normal leading-relaxed">
+                Choose the schedule that best fits your child's routine. All plans include 1-on-1 live instruction, verified teachers, and a 100% free 3-day trial.
+              </p>
+            </div>
+
+            {/* PRICING CARDS */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto mb-16">
+              {pricingPlans.map((plan) => (
+                <div
+                  key={plan.id}
+                  className={`glass rounded-3xl border-card-border p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                    plan.isPopular 
+                      ? 'ring-2 ring-primary bg-primary/[0.03] md:scale-105 shadow-2xl shadow-primary/15 md:z-10' 
+                      : 'hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1'
+                  }`}
+                >
+                  {plan.isPopular && (
+                    <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-[11px] uppercase font-extrabold tracking-wider px-4 py-1.5 rounded-full shadow-md">
+                      Most Popular
+                    </div>
+                  )}
+
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold text-foreground">{plan.title}</h3>
+                      <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-2.5 py-0.5">
+                        {plan.tier}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-text mb-4 leading-relaxed">
+                      {plan.description}
+                    </p>
+                    
+                    <div className="flex items-baseline mb-6">
+                      <span className="text-4xl sm:text-5xl font-extrabold text-foreground">${plan.price}</span>
+                      <span className="text-sm font-semibold text-muted-text ml-1.5">{plan.period}</span>
+                    </div>
+
+                    <div className="h-px bg-card-border/70 w-full mb-6" />
+
+                    <ul className="space-y-3.5">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start space-x-3 text-xs sm:text-sm text-foreground/85">
+                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-card-border/40">
+                    <Link
+                      href={`/book-free-trial?plan=${encodeURIComponent(plan.title)}`}
+                      className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
+                        plan.isPopular
+                          ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35'
+                          : 'bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border'
+                      }`}
+                    >
+                      <span>{plan.ctaText}</span>
+                      <ArrowRight className="ml-1.5 h-4 w-4" />
+                    </Link>
+                    <p className="text-[11px] text-center text-muted-text mt-2.5">
+                      No credit card required • Cancel anytime
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* TRUST & BENEFIT BADGES */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-3.5">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-foreground mb-1">3-Day Free Trial</h4>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Test live lessons with no credit card or financial commitment required.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-3.5">
+                <div className="p-2.5 rounded-xl bg-secondary/15 text-secondary shrink-0">
+                  <Users className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-foreground mb-1">15% Sibling Discount</h4>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Special reduced fee packages available for multi-child households.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-3.5">
+                <div className="p-2.5 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <Clock className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-foreground mb-1">US Time Zones</h4>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Convenient after-school &amp; weekend timings for EST, CST, MST, and PST.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-3.5">
+                <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 shrink-0">
+                  <Shield className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-foreground mb-1">No Lock-in Contracts</h4>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Simple monthly fee structure. Reschedule, pause, or cancel at any time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
