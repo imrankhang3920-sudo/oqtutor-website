@@ -7,7 +7,9 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  CheckCircle, Shield, Award, BookOpen, Clock, Users, ArrowRight, Sparkles, HeartHandshake, CheckCheck, HelpCircle, Star, Video, CreditCard, Check, Gift
+  CheckCircle, Shield, Award, BookOpen, Clock, Users, ArrowRight, Sparkles, 
+  HeartHandshake, CheckCheck, HelpCircle, Star, Video, CreditCard, Check, Gift,
+  Eye, Lock, ShieldCheck, Trophy, RotateCcw, Mic, Smile, UserCheck, Zap
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -397,6 +399,214 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* H2: INSIDE A 30-MINUTE KIDS' CLASS */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-card-border/40">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Focus &amp; Engagement
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                What a 30-Minute Kids' Quran Class Looks Like
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-base sm:text-lg text-muted-text font-normal leading-relaxed">
+                Parents often worry that young children can't stay focused in online sessions. Our classes are divided into rapid, dynamic 5-to-15 minute interactive segments with zero dull moments, keeping young minds active, curious, and motivated.
+              </p>
+            </div>
+
+            {/* 4-PHASE TIMELINE CARDS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+              <div className="glass p-7 rounded-3xl border border-card-border flex flex-col justify-between hover:shadow-xl transition-all relative group bg-background/60">
+                <div className="absolute top-4 right-4 text-xs font-extrabold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                  0-5 Mins
+                </div>
+                <div>
+                  <div className="p-3 bg-primary/10 text-primary w-fit rounded-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <RotateCcw className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground mb-2">1. Warm-Up &amp; Lesson Recap</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    A warm Islamic greeting, checking on previous homework, and a quick recitation of prior verses to reinforce memory and confidence.
+                  </p>
+                </div>
+                <div className="mt-6 pt-3 border-t border-card-border/50 text-[11px] font-semibold text-secondary flex items-center">
+                  <CheckCircle className="h-3.5 w-3.5 mr-1.5" />
+                  <span>Builds Memory Retention</span>
+                </div>
+              </div>
+
+              <div className="glass p-7 rounded-3xl border border-primary/30 flex flex-col justify-between hover:shadow-xl transition-all relative group bg-primary/[0.02] shadow-lg shadow-primary/5">
+                <div className="absolute top-4 right-4 text-xs font-extrabold text-white bg-primary px-2.5 py-1 rounded-full shadow-sm">
+                  5-20 Mins
+                </div>
+                <div>
+                  <div className="p-3 bg-primary text-white w-fit rounded-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <BookOpen className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground mb-2">2. New Lesson &amp; Tajweed</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    The core learning window. Tutor shares digital Noorani Qaida or Quran screen with color-coded Tajweed pointers, teaching new rules step-by-step.
+                  </p>
+                </div>
+                <div className="mt-6 pt-3 border-t border-card-border/50 text-[11px] font-semibold text-primary flex items-center">
+                  <Sparkles className="h-3.5 w-3.5 mr-1.5" />
+                  <span>Interactive Visual Tools</span>
+                </div>
+              </div>
+
+              <div className="glass p-7 rounded-3xl border border-card-border flex flex-col justify-between hover:shadow-xl transition-all relative group bg-background/60">
+                <div className="absolute top-4 right-4 text-xs font-extrabold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                  20-25 Mins
+                </div>
+                <div>
+                  <div className="p-3 bg-secondary/15 text-secondary w-fit rounded-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <Mic className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground mb-2">3. Active Reading Practice</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    The child recites aloud independently. The tutor gently corrects throat/tongue Makharij (articulation points) and praises accurate pronunciation.
+                  </p>
+                </div>
+                <div className="mt-6 pt-3 border-t border-card-border/50 text-[11px] font-semibold text-secondary flex items-center">
+                  <CheckCircle className="h-3.5 w-3.5 mr-1.5" />
+                  <span>Gentle Verbal Correction</span>
+                </div>
+              </div>
+
+              <div className="glass p-7 rounded-3xl border border-card-border flex flex-col justify-between hover:shadow-xl transition-all relative group bg-background/60">
+                <div className="absolute top-4 right-4 text-xs font-extrabold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
+                  25-30 Mins
+                </div>
+                <div>
+                  <div className="p-3 bg-amber-500/15 text-amber-500 w-fit rounded-2xl mb-5 group-hover:scale-110 transition-transform">
+                    <Trophy className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground mb-2">4. Quiz, Duas &amp; Rewards</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    A quick 2-minute fun quiz, learning an everyday Sunnah Dua (before eating, sleeping, etc.), and awarding digital stars so kids leave with a big smile.
+                  </p>
+                </div>
+                <div className="mt-6 pt-3 border-t border-card-border/50 text-[11px] font-semibold text-amber-600 flex items-center">
+                  <Star className="h-3.5 w-3.5 mr-1.5 fill-amber-500 text-amber-500" />
+                  <span>Positive Reinforcement</span>
+                </div>
+              </div>
+            </div>
+
+            {/* CALLOUT BANNER: WHY 30 MINS WORKS BEST */}
+            <div className="max-w-4xl mx-auto glass p-6 sm:p-8 rounded-3xl border border-primary/20 bg-primary/5 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+              <div className="p-3.5 bg-primary text-white rounded-2xl shrink-0">
+                <Zap className="h-7 w-7" />
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-foreground mb-1.5">
+                  Why 30-Minute 1-on-1 Sessions are Proven to Work for Kids
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                  Young children naturally have a 20-30 minute peak attention span. Unlike crowded, exhausting 1-hour weekend school classrooms, our high-energy 1-on-1 lessons prevent screen fatigue and keep your child genuinely eager for their next class.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* H2: SAFETY & PARENTAL INVOLVEMENT */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">
+          <div className="absolute top-1/2 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 border border-secondary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Child Safety First
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Safety, Security &amp; Complete Parental Peace of Mind
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-base sm:text-lg text-muted-text font-normal leading-relaxed">
+                Inviting an online instructor to teach your child requires complete trust. Safety is the top priority for American-Muslim parents, and we maintain strict child-protection standards and total transparency at all times.
+              </p>
+            </div>
+
+            {/* 4 SAFETY PILLARS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+              <div className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all flex space-x-5">
+                <div className="p-3.5 bg-primary/10 text-primary rounded-2xl h-fit shrink-0">
+                  <Eye className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Open-Door Policy: Parents Can Sit In Anytime</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    You are always welcome to sit beside your child, observe classes on screen, or listen from the room with zero restrictions. We encourage parental presence, especially during the first few weeks.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all flex space-x-5">
+                <div className="p-3.5 bg-secondary/15 text-secondary rounded-2xl h-fit shrink-0">
+                  <Video className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Recorded Lessons &amp; Admin Quality Audits</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    All class sessions are conducted in a secure, monitored environment subject to administrative quality checks. Parents can also request lesson recordings for easy at-home review.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all flex space-x-5">
+                <div className="p-3.5 bg-emerald-500/10 text-emerald-500 rounded-2xl h-fit shrink-0">
+                  <Lock className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Zero Private Tutor-Child Communication</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    Our code of conduct strictly forbids tutors from contacting students privately on social media, WhatsApp, or email. All lesson feedback, schedules, and progress reports go directly to you, the parent.
+                  </p>
+                </div>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all flex space-x-5">
+                <div className="p-3.5 bg-primary/10 text-primary rounded-2xl h-fit shrink-0">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Vetted &amp; Background-Checked Scholars</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    Every tutor undergoes rigorous identity verification, criminal background checks, academic credential screening, and specialized training in patient, positive child teaching methods.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* FEMALE TUTORS BANNER */}
+            <div className="max-w-5xl mx-auto glass p-6 sm:p-8 rounded-3xl border border-secondary/20 bg-secondary/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center space-x-4 text-left">
+                <div className="p-3.5 bg-secondary text-white rounded-2xl shrink-0">
+                  <HeartHandshake className="h-7 w-7" />
+                </div>
+                <div>
+                  <h4 className="text-base sm:text-lg font-bold text-foreground">
+                    Dedicated Female Quran Teachers for Young Girls &amp; Sisters
+                  </h4>
+                  <p className="text-xs sm:text-sm text-muted-text mt-1 leading-relaxed">
+                    We offer highly qualified, English-speaking female scholars upon request for complete family comfort and modesty.
+                  </p>
+                </div>
+              </div>
+              <Link
+                href="/book-free-trial?gender=female"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/90 text-white text-xs sm:text-sm font-bold tracking-wide shadow-md shrink-0 transition-all"
+              >
+                <span>Request Female Tutor</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
           </div>
         </section>
 
