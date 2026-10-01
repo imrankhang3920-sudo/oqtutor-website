@@ -181,6 +181,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       description: "Arabic alphabet recognition, accurate articulation points (Makharij), and foundational letter-joining rules.",
       tag: "Ages 4-7",
       stage: "Stage 1: Foundation",
+      syllabusUrl: "/courses/noorani-qaida",
       icon: BookOpen
     },
     {
@@ -189,6 +190,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       description: "Smooth word-by-word Quran reading, bridging the gap between Qaida exercises and reciting complete Quranic chapters with confidence.",
       tag: "Ages 6+",
       stage: "Stage 2: Fluency",
+      syllabusUrl: "/courses/quran-reading",
       icon: Compass
     },
     {
@@ -197,6 +199,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       description: "Mastering exact Tajweed rules (Madd, Ghunnah, Ikhfa, Qalqalah), breath control, and melodious recitation tone.",
       tag: "Ages 7+",
       stage: "Stage 3: Mastery",
+      syllabusUrl: "/courses/tajweed",
       icon: Sparkles
     },
     {
@@ -205,6 +208,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       description: "Structured Hifz track from short Juz Amma Surahs to full Quran memorization with daily Sabaq & Manzil revision.",
       tag: "Ages 8+",
       stage: "Stage 4: Memorization",
+      syllabusUrl: "/courses/hifz",
       icon: Award
     },
     {
@@ -213,6 +217,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       description: "Essential Islamic etiquette, daily Sunnah Duas, 6 Kalimas, practical Salah (prayer), and Wudu step-by-step.",
       tag: "All Ages",
       stage: "Integrated Track",
+      syllabusUrl: "/courses",
       icon: HeartHandshake
     }
   ];
@@ -496,7 +501,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
                         {course.description}
                       </p>
                     </div>
-                    <div className="mt-6 pt-4 border-t border-card-border/40">
+                    <div className="mt-6 pt-4 border-t border-card-border/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <Link 
                         href={`/book-free-trial?course=${encodeURIComponent(course.title)}`}
                         className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group/link"
@@ -504,10 +509,38 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
                         <span>Enroll Child in Free Trial</span>
                         <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
+                      <Link
+                        href={course.syllabusUrl}
+                        className="text-[11px] font-medium text-muted-text hover:text-primary transition-colors underline underline-offset-2"
+                      >
+                        View Syllabus
+                      </Link>
                     </div>
                   </div>
                 );
               })}
+            </div>
+
+            {/* CURRICULUM SYLLABUS CROSS-LINK BANNER */}
+            <div className="mt-14 max-w-5xl mx-auto glass p-6 sm:p-8 rounded-3xl border border-primary/20 bg-primary/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="text-left">
+                <span className="text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-2">
+                  Academic Syllabus &amp; Prerequisites
+                </span>
+                <h4 className="text-base sm:text-lg font-bold text-foreground">
+                  Looking for our Full Global Quran Curriculum?
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-text mt-1 max-w-2xl leading-relaxed">
+                  Explore complete lesson breakdowns, age milestones, Tajweed rule checklists, and academic learning outcomes in our centralized <Link href="/courses" className="text-primary font-semibold hover:underline">Online Quran Courses Directory</Link>.
+                </p>
+              </div>
+              <Link
+                href="/courses"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold tracking-wide shadow-md shrink-0 transition-all"
+              >
+                <span>View All Syllabi</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -915,74 +948,77 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Parent Resources
+                Parent Resources &amp; Guides
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Helpful Guides for US Muslim Families
+                Educational Guides for US Muslim Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-base text-muted-text max-w-2xl mx-auto">
+                Practical advice, tutor evaluation checklists, and child development timelines curated by our academic scholars.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <Link
+                href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa"
+                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">
+                    Selection Guide
+                  </span>
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    How to Choose the Best Online Quran Classes for Kids in the USA
+                  </h3>
+                  <p className="text-xs text-muted-text leading-relaxed">
+                    Key criteria American-Muslim parents should evaluate: tutor accreditation, US time zone schedules, safety policies, and trial evaluation tips.
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
+                  <span>Read Selection Guide</span>
+                  <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+
               <Link
                 href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full inline-block">
-                    Parenting Guide
+                    Tutor Hiring Checklist
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                     What US Parents Should Know Before Choosing an Online Quran Tutor
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
-                    Credentials, trial class evaluation checklists, and key questions to ask before hiring an online Quran tutor.
+                    Essential interview questions to ask, background vetting standards, and how to assess tutor patience with younger children.
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
-                  <span>Read Guide</span>
+                  <span>Read Hiring Guide</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
 
               <Link
-                href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+                href="/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider px-2.5 py-1 bg-emerald-500/10 rounded-full inline-block">
-                    Curriculum Overview
+                    Timeline &amp; Milestones
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in the USA for Kids and Adults
+                    How Long Does It Take for a Child to Complete the Quran Online?
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
-                    Comprehensive overview of Noorani Qaida, Tajweed, and Hifz tracks for students of all ages across the United States.
+                    Realistic timelines for Noorani Qaida, Nazra, Tajweed, and Hifz completion based on weekly class frequency and student age.
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
-                  <span>Read Guide</span>
-                  <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-
-              <Link
-                href="/blog/online-quran-classes-texas"
-                className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">
-                    State Guide
-                  </span>
-                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in Texas: A Real Guide for Busy Families
-                  </h3>
-                  <p className="text-xs text-muted-text leading-relaxed">
-                    How families in Houston, Dallas, Austin, and across Texas fit high-quality Quran lessons into busy routines.
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
-                  <span>Read Guide</span>
+                  <span>Read Timeline Guide</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
