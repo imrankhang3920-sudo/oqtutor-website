@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, Clock, Users, ArrowRight, ChevronDown, Award, Shield, Star, MessageCircle } from 'lucide-react';
+import { CheckCircle, Clock, Users, ArrowRight, ChevronDown, Award, Shield, Star, MessageCircle, CalendarCheck, FileCheck, BookOpen, BarChart3 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -493,40 +493,122 @@ export default async function NewYorkQuranClassesPage() {
         </section>
 
         {/* Section 3: How Enrollment Works */}
-        <section className="py-16 md:py-24 border-t border-card-border bg-background">
+        <section className="py-16 md:py-24 border-t border-card-border bg-background relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Process
+                Simple 5-Step Process
               </span>
-              <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
                 How Enrollment Works
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text max-w-2xl mx-auto">
+                Transparent and stress-free enrollment designed for New York families. No upfront payments or long-term contracts.
+              </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-6">
-                {[
-                  "Book a free placement trial — a real class, not a sales call.",
-                  "Get a level recommendation — in writing, before you pay for anything.",
-                  "Pick a tutor and a time slot — matched to New York (EST/EDT) hours, including evenings and weekends.",
-                  "Start structured classes — with a written plan for the first month.",
-                  "Receive weekly progress notes — sent directly, no need to ask."
-                ].map((step, idx) => (
-                  <div key={idx} className="glass p-6 rounded-2xl border-card-border flex items-start space-x-4 shadow-sm hover:shadow-md transition-shadow">
-                    <span className="h-10 w-10 bg-primary/15 text-primary rounded-full flex items-center justify-center font-bold shrink-0 text-sm">
-                      {idx + 1}
-                    </span>
-                    <p className="text-sm sm:text-base text-muted-text font-normal pt-1.5 leading-relaxed">
-                      {step}
-                    </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {[
+                {
+                  step: "01",
+                  title: "Book Free Trial",
+                  highlight: "Real Class, No Sales Call",
+                  desc: "Schedule a 15-minute 1-on-1 placement check with an expert Quran tutor. Experience our live interactive classroom risk-free.",
+                  footer: "No credit card needed",
+                  icon: CalendarCheck,
+                },
+                {
+                  step: "02",
+                  title: "Level Evaluation",
+                  highlight: "Written Assessment",
+                  desc: "Receive an accurate, transparent diagnostic of Tajweed and Makharij level in writing before committing to any tuition plan.",
+                  footer: "Zero financial obligation",
+                  icon: FileCheck,
+                },
+                {
+                  step: "03",
+                  title: "Pick Tutor & Schedule",
+                  highlight: "EST/EDT Timezone Matched",
+                  desc: "Select a male or female teacher suited for your child with morning, evening, or weekend slots designed for NYC schedules.",
+                  footer: "Flexible rescheduling",
+                  icon: Clock,
+                },
+                {
+                  step: "04",
+                  title: "Start Structured Classes",
+                  highlight: "Personalized Roadmap",
+                  desc: "Begin live 1-on-1 recitation classes with digital Mushaf screen-sharing and a tailored lesson plan for the very first month.",
+                  footer: "1-on-1 dedicated teacher",
+                  icon: BookOpen,
+                },
+                {
+                  step: "05",
+                  title: "Weekly Progress Notes",
+                  highlight: "Direct Parent Reports",
+                  desc: "Get weekly written milestones, revision reminders, and Tajweed mastery reports delivered straight to you without having to ask.",
+                  footer: "Ongoing progress tracking",
+                  icon: BarChart3,
+                },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="glass rounded-3xl p-6 sm:p-7 border border-card-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden bg-background/60 hover:-translate-y-1.5"
+                  >
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/15 transition-all pointer-events-none" />
+
+                    <div>
+                      {/* Top Step Header */}
+                      <div className="flex items-center justify-between mb-5">
+                        <span className="text-xs font-mono font-bold tracking-wider px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary">
+                          STEP {item.step}
+                        </span>
+                        <div className="h-11 w-11 rounded-2xl bg-foreground/[0.03] border border-card-border flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+                          <Icon className="h-5 w-5 stroke-[2.2]" />
+                        </div>
+                      </div>
+
+                      {/* Title & Highlight */}
+                      <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-1.5 tracking-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-[11px] font-semibold text-secondary uppercase tracking-wider mb-3.5">
+                        {item.highlight}
+                      </p>
+
+                      {/* Description */}
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    {/* Step indicator footer */}
+                    <div className="mt-6 pt-4 border-t border-card-border/50 flex items-center text-xs font-semibold text-muted-text/80 group-hover:text-primary transition-colors">
+                      <span className="w-2 h-2 rounded-full bg-secondary mr-2" />
+                      <span>{item.footer}</span>
+                    </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-12 text-center">
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm"
+              >
+                <span>Book Free Placement Trial Class</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </div>
           </div>
         </section>
+
 
         {/* Section 4 & 5: Tutors and Metro Coverage (Side-by-side Layout) */}
         <section className="py-16 md:py-24 border-t border-card-border bg-foreground/[0.005] relative">
