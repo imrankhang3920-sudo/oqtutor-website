@@ -71,7 +71,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
     },
     {
       question: "What is the monthly fee for online Quran classes in the USA?",
-      answer: "Our plans are highly affordable, starting from $35 to $70 per month depending on class frequency."
+      answer: "Our plans are highly affordable, starting from $30 to $50 per month depending on class frequency."
     },
     {
       question: "How do you track my child’s learning progress?",
@@ -176,7 +176,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       id: "kids-usa-starter",
       title: "Starter Plan",
       tier: "2 - 3 Days / Week",
-      price: "35",
+      price: "30",
       period: "/ Month",
       description: "Ideal for young beginners starting Arabic alphabet & Noorani Qaida.",
       features: [
@@ -194,7 +194,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       id: "kids-usa-standard",
       title: "Standard Plan",
       tier: "4 - 5 Days / Week",
-      price: "55",
+      price: "40",
       period: "/ Month",
       description: "Our most popular track for steady recitation, Tajweed & daily Duas.",
       features: [
@@ -213,7 +213,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
       id: "kids-usa-intensive",
       title: "Intensive / Hifz",
       tier: "5 - 6 Days / Week",
-      price: "75",
+      price: "50",
       period: "/ Month",
       description: "Accelerated memorization track with systematic daily revision.",
       features: [
