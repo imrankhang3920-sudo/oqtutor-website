@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import HelpSection from '@/components/HelpSection';
 import Link from 'next/link';
 import { 
   BookOpen, Volume2, Heart, Compass, Users, UserCheck, 
@@ -961,6 +962,8 @@ export default async function CoursesPage() {
             </div>
           </div>
         </section>
+
+        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
       </main>
 
       <Footer data={dbData.contact} />

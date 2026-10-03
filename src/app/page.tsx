@@ -3,7 +3,6 @@ import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Features from '@/components/Features';
 import MidPageFormSection from '@/components/MidPageFormSection';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import Testimonials from '@/components/Testimonials';
@@ -12,6 +11,7 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
 import BlogPreview from '@/components/BlogPreview';
+import HelpSection from '@/components/HelpSection';
 import StickyFormButton from '@/components/StickyFormButton';
 import ScrollTriggerForm from '@/components/ScrollTriggerForm';
 import Footer from '@/components/Footer';
@@ -189,32 +189,32 @@ export default async function HomePage() {
         
         <StatsBar />
         
-        {/* 1. Why Choose Us (6 Benefit Cards) */}
-        <Features />
-
-        {/* 2. Form Section (Mid-page fast booking) */}
+        {/* 1. Form Section (Mid-page fast booking) */}
         <MidPageFormSection />
         
-        {/* 3. How It Works (4-Step Visual with Arrows & Purple/Blue Gradient) */}
+        {/* 2. How It Works (4-Step Visual with Arrows & Purple/Blue Gradient) */}
         <HowItWorksSteps />
 
-        {/* 4. Testimonials (Top 3 Streamlined Reviews) */}
+        {/* 3. Testimonials (Top 3 Streamlined Reviews) */}
         <Testimonials data={dbData.testimonials || []} />
 
-        {/* 5. Featured Courses (3 Popular Courses with Most Popular Badge) */}
+        {/* 4. Featured Courses (3 Popular Courses with Most Popular Badge) */}
         <FeaturedCourses />
 
         {/* Serving Areas & Internal Location Links */}
         <ServingLocationsSection />
 
-        {/* 6. Featured Learning & Educational Guides */}
+        {/* 5. Featured Learning & Educational Guides */}
         <BlogPreview />
 
-        {/* 7. FAQ Section */}
+        {/* 6. FAQ Section */}
         <FAQ data={homepageFaqs} />
 
         {/* 7. Contact Form Section (Book Trial) */}
         <Contact data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} />
+
+        {/* 8. Help Section */}
+        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
       </main>
       
       <Footer data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} footerConfig={dbData.footerNav} />

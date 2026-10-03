@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import HelpSection from '@/components/HelpSection';
 import USAFaqAccordion from '@/components/USAFaqAccordion';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -1138,6 +1139,8 @@ export default async function USALocationsHubPage() {
             </div>
           </div>
         </section>
+
+        <HelpSection whatsappUrl={dbData?.contact?.whatsapp} />
       </main>
 
       <Footer data={dbData?.contact} footerConfig={dbData?.footerNav} />

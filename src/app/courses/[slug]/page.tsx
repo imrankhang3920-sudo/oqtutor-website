@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { readDB } from '@/data/db';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import HelpSection from '@/components/HelpSection';
 import Link from 'next/link';
 import { 
   BookOpen, CheckCircle, Clock, Calendar, Users, 
@@ -123,6 +124,7 @@ export default async function CoursePage({ params }: Props) {
 
       <Navbar />
       <CoursePageClient course={course} contactData={dbData.contact} testimonials={dbData.testimonials || []} />
+      <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
       <Footer data={dbData.contact} />
     </>
   );
