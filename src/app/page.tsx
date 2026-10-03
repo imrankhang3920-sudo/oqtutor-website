@@ -189,32 +189,32 @@ export default async function HomePage() {
         
         <StatsBar />
         
-        {/* 1. Form Section (Mid-page fast booking) */}
+        {/* 1. Help Section: Not Sure Where to Start? */}
+        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
+
+        {/* 2. Form Section (Mid-page fast booking: Ready to Start? Book Your Free Trial) */}
         <MidPageFormSection />
         
-        {/* 2. How It Works (4-Step Visual with Arrows & Purple/Blue Gradient) */}
+        {/* 3. How It Works (4-Step Visual with Arrows & Purple/Blue Gradient) */}
         <HowItWorksSteps />
 
-        {/* 3. Testimonials (Top 3 Streamlined Reviews) */}
+        {/* 4. Testimonials (Top 3 Streamlined Reviews) */}
         <Testimonials data={dbData.testimonials || []} />
 
-        {/* 4. Featured Courses (3 Popular Courses with Most Popular Badge) */}
+        {/* 5. Featured Courses (3 Popular Courses with Most Popular Badge) */}
         <FeaturedCourses />
 
         {/* Serving Areas & Internal Location Links */}
         <ServingLocationsSection />
 
-        {/* 5. Featured Learning & Educational Guides */}
+        {/* 6. Featured Learning & Educational Guides */}
         <BlogPreview />
 
-        {/* 6. FAQ Section */}
+        {/* 7. FAQ Section */}
         <FAQ data={homepageFaqs} />
 
-        {/* 7. Contact Form Section (Book Trial) */}
+        {/* 8. Contact Form Section (Book Trial) */}
         <Contact data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} />
-
-        {/* 8. Help Section */}
-        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
       </main>
       
       <Footer data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} footerConfig={dbData.footerNav} />
