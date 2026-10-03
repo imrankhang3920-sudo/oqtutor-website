@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Quote, CheckCircle2 } from 'lucide-react';
+import { Star, Quote, CheckCircle2, ExternalLink } from 'lucide-react';
 import { TestimonialData } from '@/data/db';
 
 interface TestimonialsProps {
@@ -113,6 +113,34 @@ export default function Testimonials({ data }: TestimonialsProps) {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Trustpilot Review CTA Button */}
+        <div className="mt-12 md:mt-14 text-center flex flex-col items-center justify-center">
+          <a
+            href="https://www.trustpilot.com/review/oqtutor.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white dark:bg-slate-900 border border-card-border hover:border-[#00b67a]/60 shadow-md hover:shadow-xl hover:shadow-[#00b67a]/10 transition-all duration-300 transform hover:-translate-y-0.5 group"
+          >
+            {/* 5 Green Trustpilot Stars */}
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-5 h-5 bg-[#00b67a] rounded-[3px] flex items-center justify-center shadow-xs"
+                >
+                  <Star className="w-3.5 h-3.5 fill-white text-white" />
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-foreground group-hover:text-[#00b67a] transition-colors">
+              <span className="text-muted-text font-normal">Rated 4.9/5 on</span>
+              <span className="font-extrabold text-foreground tracking-tight">Trustpilot</span>
+              <ExternalLink className="w-4 h-4 ml-0.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#00b67a]" />
+            </div>
+          </a>
         </div>
       </div>
     </section>
