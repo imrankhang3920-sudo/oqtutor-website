@@ -73,6 +73,16 @@ const nextConfig: NextConfig = {
         destination: '/blog/select-right-online-quran-tutor',
         permanent: true,
       },
+      {
+        source: '/blog/online-quran-classes-in-the-usa-for-kids-and-adults',
+        destination: '/blog/online-quran-classes-usa',
+        permanent: true,
+      },
+      {
+        source: '/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors',
+        destination: '/blog/online-quran-classes-usa',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',

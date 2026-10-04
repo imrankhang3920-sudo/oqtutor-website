@@ -56,8 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const flagshipBlogSlugs = [
       'online-quran-classes-texas',
       'best-online-quran-classes-for-beginners',
-      'online-quran-classes-in-the-usa-for-kids-and-adults',
-      'best-online-quran-classes-usa-one-to-one-qualified-tutors',
+      'online-quran-classes-usa',
       'how-long-does-it-take-for-a-child-to-complete-the-quran-online',
       'best-online-quran-classes-for-kids-in-usa',
       'select-right-online-quran-tutor',

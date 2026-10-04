@@ -497,8 +497,8 @@ export default async function IllinoisQuranClassesPage() {
                       how to choose the right online Quran tutor for your child
                     </Link>{" "}
                     and our complete guide to{" "}
-                    <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary hover:underline font-bold">
-                      online Quran classes in the USA for kids and adults
+                    <Link href="/blog/online-quran-classes-usa" className="text-primary hover:underline font-bold">
+                      online Quran classes in the USA
                     </Link>.
                   </p>
                 </div>

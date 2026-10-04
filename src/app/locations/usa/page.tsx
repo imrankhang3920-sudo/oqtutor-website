@@ -256,9 +256,9 @@ export default async function USALocationsHubPage() {
 
   const blogGuides = [
     {
-      title: "Online Quran Classes in the USA for Kids and Adults",
+      title: "Online Quran Classes in the USA: Complete Guide",
       desc: "A comprehensive guide on curriculum tracks, scheduling flexibility, and verified one-to-one tutoring across the US.",
-      link: "/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+      link: "/blog/online-quran-classes-usa"
     },
     {
       title: "Online Quran Classes in Texas: A Real Guide for Busy Families",
@@ -610,7 +610,7 @@ export default async function USALocationsHubPage() {
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>Read our guide on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link> and our complete overview of <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for kids and adults</Link></span>
+                    <span>Read our guide on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link> and our complete overview of <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link></span>
                   </li>
                 </ul>
               </div>

@@ -703,7 +703,7 @@ export default async function TexasQuranClassesPage() {
               </Link>
 
               <Link
-                href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults"
+                href="/blog/online-quran-classes-usa"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -711,7 +711,7 @@ export default async function TexasQuranClassesPage() {
                     Curriculum Overview
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in the USA for Kids and Adults
+                    Online Quran Classes in the USA: Complete Guide
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
                     Comprehensive overview of Noorani Qaida, Tajweed, and Hifz tracks for students of all ages across the United States.
