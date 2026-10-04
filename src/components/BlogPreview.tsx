@@ -13,10 +13,10 @@ interface BlogPreviewItem {
 
 const blogItems: BlogPreviewItem[] = [
   {
-    image: '/online-quran-classes-texas-girl.jpg',
-    category: 'Texas Parent Guide',
-    title: 'How to Choose Online Quran Classes in Texas for Your Family',
-    link: '/blog/online-quran-classes-texas',
+    image: '/online-quran-classes-usa-kids-adults-1.jpg',
+    category: 'USA Complete Guide',
+    title: 'Online Quran Classes USA: 1-on-1 Qualified Tutors',
+    link: '/blog/online-quran-classes-usa',
   },
   {
     image: '/beginner-quran-classes-cover.jpg',

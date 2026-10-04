@@ -220,7 +220,7 @@ export default async function TexasQuranClassesPage() {
                 <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
                 <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                   <p>
-                    Passionate Muslim parents in Texas understand how crucial <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">structured Islamic education</Link> is during a child's formative years. However, finding the right local options can be difficult. Driving to a physical Islamic center or a tutor's home after a long school day drains valuable time, causes transport stress, and creates scheduling conflicts with school projects, sports, or family commitments. Read our comprehensive guide on <Link href="/blog/online-quran-classes-texas" className="text-primary font-semibold hover:underline">online Quran classes in Texas for busy families</Link>.
+                    Passionate Muslim parents in Texas understand how crucial <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">structured Islamic education</Link> is during a child's formative years. However, finding the right local options can be difficult. Driving to a physical Islamic center or a tutor's home after a long school day drains valuable time, causes transport stress, and creates scheduling conflicts with school projects, sports, or family commitments across Houston, DFW, Austin, and San Antonio.
                   </p>
                   <p>
                     Choosing <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> removes these geographic and time limitations. Your children can learn the Holy Quran from home without needing a local center. By utilizing an interactive digital portal, students connect live with a <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified tutor</Link> who dedicates their full attention to <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">correct recitation</Link>.
@@ -529,10 +529,10 @@ export default async function TexasQuranClassesPage() {
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 <p>
-                  High-quality religious education should be accessible to every family. We provide competitive, transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">monthly tiers</Link> structured around the number of sessions and study duration you choose. With no long-term contracts and no hidden registration costs, parents can manage their subscriptions flexibly.
+                  High-quality religious education should be accessible to every family. We provide competitive, transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">monthly pricing plans</Link> starting at $30/month (2 days/week), $40/month (3 days/week), and $50/month (5 days/week). All sessions are private 1-on-1 lessons lasting 30 to 40 minutes, conducted via secure video on Zoom or Google Meet.
                 </p>
                 <p>
-                  Our classes provide outstanding value by eliminating travel expenses and providing private 1-on-1 instruction. We encourage parents to register for our <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link>, letting your family test our portal and check teacher match quality before subscribing.
+                  Our classes provide outstanding value by eliminating travel expenses and providing personalized instruction with certified male and female tutors. We encourage parents to register for our <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link> (no credit card required), letting your family test our portal and check teacher match quality before subscribing.
                 </p>
               </div>
             </div>
@@ -661,18 +661,18 @@ export default async function TexasQuranClassesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <Link
-                href="/blog/online-quran-classes-texas"
+                href="/blog/online-quran-classes-usa"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full inline-block">
-                    Texas Guide
+                    USA Guide
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in Texas: A Real Guide for Busy Families
+                    Online Quran Classes in the USA: Complete Practical Guide
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
-                    How families in Houston, Dallas, Austin, and San Antonio fit 1-on-1 Quran lessons into busy routines without long drives.
+                    Learn how 1-on-1 online Quran classes work across America, including vetting criteria, curriculum tracks, and scheduling.
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">

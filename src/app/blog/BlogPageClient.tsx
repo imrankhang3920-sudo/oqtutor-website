@@ -50,7 +50,6 @@ const mapping: Record<string, string> = {
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
   'select-right-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-usa-for-adults': '/online-quran-classes-usa-for-adults.jpg',
-  'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
   'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
   'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': '/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg',
   'how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities': '/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities/how-to-help-children-balance-quran-learning-with-school-cover.jpg',
@@ -92,7 +91,6 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
     'select-right-online-quran-tutor': 'Father and son sitting together at home using a laptop for online Quran tutor class',
     'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
-    'online-quran-classes-texas': 'Young Muslim girl student taking live online Quran lessons with certified tutor in Texas',
     'how-long-does-it-take-for-a-child-to-complete-the-quran-online': 'Young Muslim girl reciting Quran on wooden rehal during online Quran lesson with female tutor on laptop screen',
     'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': 'Muslim child reading Quran with parents and practicing prayer at home',
     'common-quran-reading-mistakes-children-make': 'Young Muslim boy reciting Holy Quran on wooden stand and avoiding reading from memory mistakes',
@@ -267,7 +265,7 @@ function BlogContent({
                 </div>
                 <div className="flex flex-wrap gap-2 sm:gap-2.5">
                   <Link
-                    href="/blog/online-quran-classes-texas"
+                    href="/locations/usa/texas"
                     className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
                   >
                     Online Quran Classes Texas

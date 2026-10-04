@@ -54,7 +54,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     const flagshipBlogSlugs = [
-      'online-quran-classes-texas',
       'best-online-quran-classes-for-beginners',
       'online-quran-classes-usa',
       'how-long-does-it-take-for-a-child-to-complete-the-quran-online',

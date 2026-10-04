@@ -44,7 +44,7 @@ export default function Footer({
   ];
 
   const guidesLinks = [
-    { name: 'Quran Classes Texas', href: '/blog/online-quran-classes-texas' },
+    { name: 'Quran Classes Texas', href: '/locations/usa/texas' },
     { name: 'Beginner Quran Guide', href: '/blog/best-online-quran-classes-for-beginners' },
     { name: 'Kids Quran Classes USA', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
     { name: 'Choosing an Online Tutor', href: '/blog/select-right-online-quran-tutor' },

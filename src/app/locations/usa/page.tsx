@@ -263,7 +263,7 @@ export default async function USALocationsHubPage() {
     {
       title: "Online Quran Classes in Texas: A Real Guide for Busy Families",
       desc: "How Muslim families in Houston, Dallas, Austin, and across Texas fit high-quality Quran lessons into busy routines.",
-      link: "/blog/online-quran-classes-texas"
+      link: "/locations/usa/texas"
     },
     {
       title: "How to Choose the Right Online Quran Tutor for Your Child",

@@ -93,6 +93,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/choosing-male-female-quran-teacher',
         permanent: true,
       },
+      {
+        source: '/blog/online-quran-classes-texas',
+        destination: '/locations/usa/texas',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',
