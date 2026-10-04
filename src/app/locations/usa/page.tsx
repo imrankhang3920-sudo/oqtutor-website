@@ -281,9 +281,9 @@ export default async function USALocationsHubPage() {
       link: "/blog/best-online-quran-classes-for-beginners"
     },
     {
-      title: "How to Choose the Best Female Quran Teacher Online",
-      desc: "Tips for mothers and sisters looking for certified, English-fluent female Quran instructors.",
-      link: "/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child"
+      title: "Choosing Between a Male or Female Quran Teacher",
+      desc: "Tips for parents and sisters looking for certified male and female Quran tutors.",
+      link: "/blog/choosing-male-female-quran-teacher"
     },
     {
       title: "Beginner's Guide to Mastering Tajweed Rules",

@@ -1017,7 +1017,7 @@ function CourseCard({ course }: { course: any }) {
       { label: 'Kids Quran Classes Guide', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
     ],
     'female-quran-teacher': [
-      { label: 'Female Quran Teachers Guide', href: '/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child' },
+      { label: 'Male vs Female Quran Teacher Guide', href: '/blog/choosing-male-female-quran-teacher' },
     ],
   };
 

@@ -66,6 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'online-quran-classes-in-the-uk-a-complete-guide-for-kids-adults-and-beginners',
       'what-should-a-child-learn-after-noorani-qaida',
       'how-to-improve-your-quran-pronunciation',
+      'choosing-male-female-quran-teacher',
     ];
 
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {

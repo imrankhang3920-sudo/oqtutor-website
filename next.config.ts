@@ -83,6 +83,16 @@ const nextConfig: NextConfig = {
         destination: '/blog/online-quran-classes-usa',
         permanent: true,
       },
+      {
+        source: '/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child',
+        destination: '/blog/choosing-male-female-quran-teacher',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-choose-best-female-quran-teacher-online',
+        destination: '/blog/choosing-male-female-quran-teacher',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',

@@ -871,7 +871,7 @@ export default async function NewJerseyQuranClassesPage() {
                       </p>
                     ) : idx === 3 ? (
                       <p>
-                        Yes. OQTutor has certified male and <Link href="/courses/female-quran-teacher" className="text-primary font-semibold hover:underline">female Quran teachers</Link> available. Parents can request a female teacher for their daughters and young children, and adult sisters can learn in a private, comfortable setting. Read our parent guide on <Link href="/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child" className="text-primary font-semibold hover:underline">choosing a female Quran teacher online</Link>.
+                        Yes. OQTutor has certified male and <Link href="/courses/female-quran-teacher" className="text-primary font-semibold hover:underline">female Quran teachers</Link> available. Parents can request a female teacher for their daughters and young children, and adult sisters can learn in a private, comfortable setting. Read our parent guide on <Link href="/blog/choosing-male-female-quran-teacher" className="text-primary font-semibold hover:underline">choosing a female Quran teacher online</Link>.
                       </p>
                     ) : idx === 5 ? (
                       <p>
