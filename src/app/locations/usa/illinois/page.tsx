@@ -493,8 +493,8 @@ export default async function IllinoisQuranClassesPage() {
                   </p>
                   <p className="pt-2 text-xs sm:text-sm font-semibold text-foreground">
                     If you're evaluating options, read our guide on {" "}
-                    <Link href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor" className="text-primary hover:underline font-bold">
-                      what US parents should know before choosing an online Quran tutor
+                    <Link href="/blog/select-right-online-quran-tutor" className="text-primary hover:underline font-bold">
+                      how to choose the right online Quran tutor for your child
                     </Link>{" "}
                     and our complete guide to{" "}
                     <Link href="/blog/online-quran-classes-in-the-usa-for-kids-and-adults" className="text-primary hover:underline font-bold">

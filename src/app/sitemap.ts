@@ -59,7 +59,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'online-quran-classes-in-the-usa-for-kids-and-adults',
       'best-online-quran-classes-usa-one-to-one-qualified-tutors',
       'how-long-does-it-take-for-a-child-to-complete-the-quran-online',
-      'what-us-parents-should-know-before-choosing-an-online-quran-tutor',
       'best-online-quran-classes-for-kids-in-usa',
       'select-right-online-quran-tutor',
       'how-do-you-know-your-child-is-ready-to-start-learning-the-quran',

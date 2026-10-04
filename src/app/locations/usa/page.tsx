@@ -266,9 +266,9 @@ export default async function USALocationsHubPage() {
       link: "/blog/online-quran-classes-texas"
     },
     {
-      title: "What US Parents Should Know Before Choosing an Online Quran Tutor",
+      title: "How to Choose the Right Online Quran Tutor for Your Child",
       desc: "Key questions to ask regarding credentials, scheduling flexibility, and one-on-one trial assessments.",
-      link: "/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+      link: "/blog/select-right-online-quran-tutor"
     },
     {
       title: "Best Online Quran Classes for Kids in USA",

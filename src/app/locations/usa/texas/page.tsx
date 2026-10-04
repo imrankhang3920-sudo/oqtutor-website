@@ -682,7 +682,7 @@ export default async function TexasQuranClassesPage() {
               </Link>
 
               <Link
-                href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+                href="/blog/select-right-online-quran-tutor"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -690,7 +690,7 @@ export default async function TexasQuranClassesPage() {
                     Parenting Guide
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    What US Parents Should Know Before Choosing an Online Quran Tutor
+                    How to Choose the Right Online Quran Tutor for Your Child
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
                     Credentials, trial class evaluation checklists, and key questions to ask before hiring an online Quran tutor.

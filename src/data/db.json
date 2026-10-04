@@ -4311,10 +4311,12 @@
       "id": "blog-3",
       "title": "How to Choose the Right Online Quran Tutor for Your Child",
       "category": "Beginner Quran Guides",
-      "description": "Learn how to choose the right online Quran tutor for your child. Discover core tutor credentials, red flags to avoid, and safe online academy features.",
+      "description": "Learn how to choose the right online Quran tutor for your child. Discover core tutor credentials, age-specific milestones, trial class evaluation tips, red flags to avoid, and safe online academy features.",
       "readTime": "10 min read",
       "slug": "select-right-online-quran-tutor",
-      "publishedAt": "August 15, 2026"
+      "coverImage": "/parents-role.jpg",
+      "publishedAt": "August 15, 2026",
+      "updatedAt": "October 4, 2026"
     },
     {
       "id": "blog-4",
@@ -4527,17 +4529,7 @@
       "slug": "weekend-quran-classes-tajweed-own-pace",
       "coverImage": "/blog/weekend-quran/weekend-quran-class-1.jpg",
       "publishedAt": "July 23, 2026"
-    },
-    {
-      "id": "blog-what-us-parents-should-know-before-choosing-online-quran-tutor",
-      "title": "What US Parents Should Know Before Choosing an Online Quran Tutor",
-      "category": "Parenting",
-      "description": "Quick answer & parent guide: what actually predicts a good fit when choosing an online Quran tutor for your child — qualifications, teaching approach, trial class evaluation, and pricing.",
-      "readTime": "10 min read",
-      "slug": "what-us-parents-should-know-before-choosing-an-online-quran-tutor",
-      "publishedAt": "July 22, 2026",
-      "updatedAt": "August 26, 2026",
-      "coverImage": "/parents-role.jpg"
+
     },
     {
       "id": "blog-online-quran-classes-in-the-usa-for-kids-and-adults",

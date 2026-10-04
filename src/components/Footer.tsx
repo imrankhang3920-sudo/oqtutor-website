@@ -47,7 +47,7 @@ export default function Footer({
     { name: 'Quran Classes Texas', href: '/blog/online-quran-classes-texas' },
     { name: 'Beginner Quran Guide', href: '/blog/best-online-quran-classes-for-beginners' },
     { name: 'Kids Quran Classes USA', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
-    { name: 'Choosing an Online Tutor', href: '/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor' },
+    { name: 'Choosing an Online Tutor', href: '/blog/select-right-online-quran-tutor' },
     { name: 'Quran Completion Timeline', href: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online' },
     { name: '1-on-1 Quran Classes USA', href: '/blog/best-online-quran-classes-usa-one-to-one-qualified-tutors' },
     { name: 'Kids & Adults Quran USA', href: '/blog/online-quran-classes-in-the-usa-for-kids-and-adults' },

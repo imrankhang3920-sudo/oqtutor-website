@@ -68,6 +68,11 @@ const nextConfig: NextConfig = {
         destination: '/blog/best-online-quran-classes-for-kids-in-usa',
         permanent: true,
       },
+      {
+        source: '/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor',
+        destination: '/blog/select-right-online-quran-tutor',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',

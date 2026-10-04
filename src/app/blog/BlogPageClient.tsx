@@ -49,7 +49,7 @@ const mapping: Record<string, string> = {
   'best-online-quran-classes-for-beginners': '/beginner-quran-classes-cover.jpg',
   'best-online-quran-classes-usa-one-to-one-qualified-tutors': '/images/hero-quran-recitation.webp',
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
-  'what-us-parents-should-know-before-choosing-an-online-quran-tutor': '/parents-role.jpg',
+  'select-right-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-in-the-usa-for-kids-and-adults': '/online-quran-classes-usa-kids-adults-1.jpg',
   'online-quran-classes-usa-for-adults': '/online-quran-classes-usa-for-adults.jpg',
   'online-quran-classes-texas': '/online-quran-classes-texas-girl.jpg',
@@ -93,7 +93,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'best-online-quran-classes-for-beginners': 'Open Holy Quran on a wooden rehal stand with prayer beads on a prayer mat bathed in soft morning light',
     'best-online-quran-classes-usa-one-to-one-qualified-tutors': 'Muslim man wearing glasses and embroidered prayer cap holding and reciting from the Holy Quran',
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
-    'what-us-parents-should-know-before-choosing-an-online-quran-tutor': 'Holy Quran resting open on a wooden rehal rest with prayer beads on a prayer mat',
+    'select-right-online-quran-tutor': 'Father and son sitting together at home using a laptop for online Quran tutor class',
     'online-quran-classes-in-the-usa-for-kids-and-adults': 'Muslim child taking live online Quran lesson at home with parents watching',
     'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
     'online-quran-classes-texas': 'Young Muslim girl student taking live online Quran lessons with certified tutor in Texas',
@@ -289,7 +289,7 @@ function BlogContent({
                     Kids Quran Classes USA Guide
                   </Link>
                   <Link
-                    href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor"
+                    href="/blog/select-right-online-quran-tutor"
                     className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
                   >
                     Choosing an Online Quran Tutor
