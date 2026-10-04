@@ -76,8 +76,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'How Do You Know Your Child Is Ready to Start Learning the Quran? | OQTutor'
     : isChildTimelineBlog
     ? 'How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timeline & Parent Guide)'
-    : isChooseBestKidsUsaBlog
-    ? 'How to Choose the Best Online Quran Classes for Kids in the USA'
     : isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
     : isOnlineVsInPersonBlog
@@ -88,12 +86,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? "Tajweed vs Tarteel: What's the Difference? | OQTutor"
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
-    : isUSParentsTutorBlog
-    ? 'What US Parents Should Know Before Choosing an Online Quran Tutor | OQTutor'
-    : isUsaKidsAdultsBlog
-    ? 'Online Quran Classes in the USA for Kids and Adults | OQTutor'
-    : isBestUsaOneToOneBlog
-    ? 'Best Online Quran Classes in USA: 1-on-1 Qualified Tutors | OQTutor'
     : isBeginnersBlog
     ? 'Best Online Quran Classes for Beginners (Step-by-Step Guide) | OQTutor'
     : isMaleFemaleTeacherBlog
@@ -185,55 +177,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           'one on one quran tutor beginner',
           'start learning quran online'
         ]
-      : isBestUsaOneToOneBlog
-      ? [
-          'best online quran classes usa',
-          'one to one quran classes usa',
-          'online quran classes usa qualified tutors',
-          'private quran tutor usa',
-          'online quran academy usa',
-          'online quran lessons usa',
-          'live quran teacher usa',
-          '1 on 1 quran classes online',
-          'certified quran tutor usa'
-        ]
-      : isUSParentsTutorBlog
-      ? [
-          'what us parents should know before choosing online quran tutor',
-          'how to choose online quran tutor',
-          'online quran tutor for kids usa',
-          'quran teacher qualifications',
-          'online quran tutor vetting',
-          'best quran tutors for children',
-          'trial quran class usa',
-          'quran tutor reviews'
-        ]
-      : isUsaKidsAdultsBlog
-      ? [
-          'online quran classes in the usa for kids and adults',
-          'online quran classes usa',
-          'quran learning for kids usa',
-          'quran classes for adults usa',
-          'online quran academy america',
-          'learn quran online usa',
-          'quran recitation usa',
-          'tajweed classes usa'
-        ]
-      : isTexasBlog
-      ? [
-          'how to choose online quran classes texas',
-          'online quran classes texas',
-          'online quran classes in texas for family',
-          'quran classes houston',
-          'quran classes dallas',
-          'quran classes austin',
-          'quran classes san antonio',
-          'online quran tutor texas',
-          'quran lessons for kids texas',
-          'female quran teacher texas',
-          'noorani qaida texas',
-          'tajweed classes texas'
-        ]
+
       : isBrainRewireBlog
       ? [
           'why memorizing the quran rewires your brain',
@@ -323,19 +267,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           'online Quran classes for kids USA',
           'one-to-one Quran classes USA'
         ]
-      : isChooseBestKidsUsaBlog
-      ? [
-          'best online Quran classes for kids in USA',
-          'online Quran classes for kids',
-          'online Quran tutor for kids',
-          'one to one Quran classes',
-          'Quran learning for children',
-          'Quran classes in the USA',
-          'Noorani Qaida for kids',
-          'online Tajweed classes for kids',
-          'Quran memorization for kids',
-          'learn Quran online for kids'
-        ]
+
       : isImprovePronunciationBlog
       ? [
           'how to improve quran pronunciation',
@@ -973,67 +905,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {isTexasBlog && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Are online Quran classes effective for Texas Muslim families?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, online Quran classes provide flexible, live 1-on-1 instruction on Central Time (CST), allowing students in Houston, Dallas-Fort Worth, Austin, San Antonio, and smaller towns across Texas to learn with certified scholars from home without heavy traffic commutes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can I schedule Quran classes according to Texas after-school hours?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, classes can be scheduled during Central Time afternoon, evening, and weekend hours to fit around Texas public school routines, homework, and sports activities."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you offer female Quran teachers in Texas?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we provide certified female Quran teachers for young girls, sisters, and children across Texas."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What courses are offered for Texas students?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer Noorani Qaida for beginners, Quran Reading with Tajweed, Hifz Quran memorization, Islamic Studies, and Arabic language classes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do live online Quran lessons work?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Lessons are conducted one-on-one via interactive video with screen sharing of color-coded digital Mushafs and real-time audio pronunciation correction."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is there a free trial class available for Texas families?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, you can book a free, no-obligation trial class to meet your tutor, assess your child's level, and discuss customized class timings."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-      )}
+
 
       {isUSABlog && (
         <script
@@ -1121,75 +993,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {isTexasBlog && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What are the best online Quran classes in Texas?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The right program depends on the student's age, learning level, preferred teacher, schedule, course goals, and budget. Parents should compare these factors rather than choosing an academy based only on advertising."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Are online Quran classes good for children?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "They can be suitable for children when lessons are age appropriate, interactive, structured, and taught by a teacher who knows how to work with young learners."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can beginners learn Quran online?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Beginners can start with foundational Arabic reading skills and Noorani Qaida before progressing to Quran reading and Tajweed."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can I find a female Quran teacher in Texas?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Many online academies offer female teachers. Availability should be confirmed before booking because teacher schedules can vary."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do adults need previous Quran knowledge?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Adults can begin at their current level, including from the Arabic alphabet and basic reading."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What equipment is needed for online Quran classes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Students generally need a suitable device, reliable internet, audio, and a quiet place to attend the lesson. The academy can confirm its specific technical requirements."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How often should a student take Quran classes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The appropriate frequency depends on the student's age, goals, and schedule. A consistent timetable that the student can maintain is usually more practical than an unrealistic schedule."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-      )}
+
 
       {isBrainRewireBlog && (
         <script
@@ -1635,75 +1439,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {isChooseBestKidsUsaBlog && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What is the best age for kids to start online Quran classes in the USA?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most children can comfortably start online Quran classes between ages 4 and 6, beginning with Noorani Qaida phonics, letter recognition, and short interactive 30-minute sessions that match their attention span."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How are online Quran teachers vetted for child safety?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Reputable online Quran academies conduct identity verification, background screening, tajweed evaluations, and safeguarding checks before assigning teachers to young children."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Should I choose one to one Quran classes or group classes for my child?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "One to one online Quran classes are significantly more effective because the teacher focuses 100% of the time on your child's pronunciation, attention span, and individual learning pace without distractions."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can American kids learn Quran with correct Tajweed online?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Experienced online tutors use visual whiteboards, color-coded Quran pages, and real-time audio corrections to help non-native Arabic speaking children master makharij and Tajweed rules easily."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much do online Quran classes for kids cost in the USA?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Online Quran tuition for US families typically ranges from $30 to $50 per month depending on weekly class frequency (such as 3, 5, or daily 30-minute sessions) with no long-term contracts."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take for a child to complete Noorani Qaida online?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "With 3 to 4 one-on-one classes per week and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before moving on to fluent Quran reading."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I know if my child is making genuine progress in Quran recitation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Look for regular teacher feedback, monthly progress reports, your child's increasing ability to recognize new Arabic words independently, and improved clarity in daily Salah recitation."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-      )}
+
 
       {isChildTimelineBlog && (
         <script
