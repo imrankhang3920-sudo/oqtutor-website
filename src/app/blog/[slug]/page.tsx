@@ -2049,68 +2049,6 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
-      {isUSParentsTutorBlog && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How much do online Quran classes cost?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It varies by academy, teacher experience, and whether classes are 1-on-1 or group. Ask what's included in the price rather than comparing numbers alone."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I find a qualified Quran tutor?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ask directly about Ijazah certification, formal Tajweed training, and specific experience teaching children — not just general teaching experience."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Are online Quran classes effective for children?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, when the tutor is qualified and the format matches the child's age and attention span. A trial class is the best way to judge fit before committing."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long should a Quran class be?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Around 30 minutes for younger children, and up to 45–60 minutes for older children and teens."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is a female Quran teacher available?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most established academies offer both male and female tutors, which is worth asking about directly if it matters for your family."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How can parents monitor progress?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Ask whether the academy provides regular progress reports, whether parents can observe classes, and how milestones are tracked over time."
-                  }
-                }
-              ]
-            })
-          }}
-        />
-      )}
-
       <Navbar />
 
       <main className="flex-grow bg-background py-16 sm:py-24">
@@ -2176,8 +2114,6 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentChildReadiness />
             ) : isChildTimelineBlog ? (
               <ArticleContentChildCompletionTimeline />
-            ) : isChooseBestKidsUsaBlog ? (
-              <ArticleContentChooseBestKidsUsa />
             ) : isAdultUsaBlog ? (
               <ArticleContentAdultUsa />
             ) : isConsistentHifzBlog ? (
@@ -2206,8 +2142,6 @@ export default async function BlogPostPage({ params }: Props) {
               <ArticleContentMaleFemaleTeacher />
             ) : isWeekendQuranBlog ? (
               <ArticleContentWeekendQuranComplete />
-            ) : isUSParentsTutorBlog ? (
-              <ArticleContentUSParentsTutor />
             ) : isBeginnersBlog ? (
               <ArticleContentBeginnersGuide />
             ) : blog.blocks && blog.blocks.length > 0 ? (
