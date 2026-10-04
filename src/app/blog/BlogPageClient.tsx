@@ -21,10 +21,10 @@ const getBlogImage = (blogItem: BlogData | string): string => {
 };
 
 const mapping: Record<string, string> = {
-  'online-quran-classes-usa': '/online-quran-classes-usa.jpg',
+  'online-quran-classes-usa': '/online-quran-classes-usa-kids-adults-1.jpg',
   'tips-keep-kids-motivated-online-quran': '/motivated-kids-watercolor.jpg',
   'beginners-guide-mastering-tajweed-rules': '/tajweed-teacher.jpg',
-  'select-right-online-quran-tutor': '/tutor-guide.jpg',
+  'select-right-online-quran-tutor': '/parents-role.jpg',
   'effective-hifz-memorization-techniques': '/hifz-quran-desk.png',
   'role-parents-islamic-education-west': '/parents-role.jpg',
   'why-noorani-qaida-essential': '/blog/why-noorani-qaida-essential/noorani-qaida-essential-guide.jpg',
@@ -46,9 +46,7 @@ const mapping: Record<string, string> = {
   'online-vs-in-person-quran-classes': '/online-vs-in-person-quran-classes.jpg',
   'best-online-quran-classes-for-kids-in-usa': '/blog-kids-usa-1.jpg',
   'best-online-quran-classes-for-beginners': '/beginner-quran-classes-cover.jpg',
-  'online-quran-classes-usa': '/online-quran-classes-usa-kids-adults-1.jpg',
   'weekend-quran-classes-tajweed-own-pace': '/blog/weekend-quran/weekend-quran-class-1.jpg',
-  'select-right-online-quran-tutor': '/parents-role.jpg',
   'online-quran-classes-usa-for-adults': '/online-quran-classes-usa-for-adults.jpg',
   'how-long-does-it-take-for-a-child-to-complete-the-quran-online': '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online/child-quran-completion-timeline-cover.jpg',
   'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': '/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran/how-do-you-know-your-child-is-ready-to-start-learning-the-quran-cover.jpg',
@@ -62,10 +60,10 @@ const mapping: Record<string, string> = {
 
 const getBlogImageAlt = (slug: string, title: string): string => {
   const mappingAlt: Record<string, string> = {
-    'online-quran-classes-usa': 'Online Quran tutor teaching kids online via video session in USA',
+    'online-quran-classes-usa': 'Muslim child taking live online Quran lesson at home with parents watching',
     'tips-keep-kids-motivated-online-quran': 'Interactive online Quran classroom with teacher and student',
     'beginners-guide-mastering-tajweed-rules': 'Certified teacher pointing at Tajweed rules chart on screen',
-    'select-right-online-quran-tutor': 'Father and son learning Quran online together using a laptop',
+    'select-right-online-quran-tutor': 'Father and son sitting together at home using a laptop for online Quran tutor class',
     'effective-hifz-memorization-techniques': 'Copy of Holy Quran on desk next to laptop showing mountain backdrop',
     'role-parents-islamic-education-west': 'Father sitting with son helping him with laptop online studies',
     'why-noorani-qaida-essential': 'Authentic Noorani Qaida book open showing lessons for learning to read the Quran',
@@ -87,9 +85,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'online-vs-in-person-quran-classes': 'Comparison layout showing an online Quran class session on a laptop vs an in-person group Quran recitation session in a mosque',
     'best-online-quran-classes-for-kids-in-usa': 'Smiling young Muslim boy wearing kufi sitting in front of a laptop with open Quran book on a desk',
     'best-online-quran-classes-for-beginners': 'Open Holy Quran on a wooden rehal stand with prayer beads on a prayer mat bathed in soft morning light',
-    'online-quran-classes-usa': 'Muslim child taking live online Quran lesson at home with parents watching',
     'weekend-quran-classes-tajweed-own-pace': 'Muslim student learning Tajweed at home in a weekend one-on-one online Quran class',
-    'select-right-online-quran-tutor': 'Father and son sitting together at home using a laptop for online Quran tutor class',
     'online-quran-classes-usa-for-adults': 'Adult Muslim learner studying the Quran online with a tutor at home',
     'how-long-does-it-take-for-a-child-to-complete-the-quran-online': 'Young Muslim girl reciting Quran on wooden rehal during online Quran lesson with female tutor on laptop screen',
     'how-do-you-know-your-child-is-ready-to-start-learning-the-quran': 'Muslim child reading Quran with parents and practicing prayer at home',
