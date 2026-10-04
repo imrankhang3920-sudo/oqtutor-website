@@ -62,6 +62,12 @@ const nextConfig: NextConfig = {
         destination: '/locations/canada',
         permanent: true,
       },
+      // SEO Consolidated Blog Redirects (301 Permanent)
+      {
+        source: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa',
+        destination: '/blog/best-online-quran-classes-for-kids-in-usa',
+        permanent: true,
+      },
       // Category redirects (WordPress legacy)
       {
         source: '/category/blog/:slug*',

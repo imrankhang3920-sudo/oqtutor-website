@@ -961,7 +961,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <Link
-                href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa"
+                href="/blog/best-online-quran-classes-for-kids-in-usa"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">

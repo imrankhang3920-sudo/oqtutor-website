@@ -107,7 +107,7 @@ const courseFaqs: Array<{
     answer: (
       <>
         The appropriate program depends on your child&apos;s age, reading foundation, attention span, and goals. Young beginners (ages 4–6) usually start with Noorani Qaida, while older children who can read transition to Tajweed or short Surah memorization. Online Quran learning is highly effective for children when taught through private 1-on-1 sessions with certified teachers using engaging digital Mushafs, interactive visual boards, and gentle encouragement during standard 30-minute lessons. Read our guide on{' '}
-        <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary hover:underline font-semibold">
+        <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary hover:underline font-semibold">
           how to choose online Quran classes for kids
         </Link>{' '}
         or explore our dedicated{' '}
@@ -1014,7 +1014,7 @@ function CourseCard({ course }: { course: any }) {
       { label: 'Quran for Adults', href: '/courses/quran-for-adults' },
     ],
     'quran-for-kids': [
-      { label: 'Kids Quran Classes Guide', href: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa' },
+      { label: 'Kids Quran Classes Guide', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
     ],
     'female-quran-teacher': [
       { label: 'Female Quran Teachers Guide', href: '/blog/how-to-choose-the-best-female-quran-teacher-online-for-your-child' },

@@ -57,7 +57,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'online-quran-classes-texas',
       'best-online-quran-classes-for-beginners',
       'online-quran-classes-in-the-usa-for-kids-and-adults',
-      'how-to-choose-best-online-quran-classes-for-kids-usa',
       'best-online-quran-classes-usa-one-to-one-qualified-tutors',
       'how-long-does-it-take-for-a-child-to-complete-the-quran-online',
       'what-us-parents-should-know-before-choosing-an-online-quran-tutor',

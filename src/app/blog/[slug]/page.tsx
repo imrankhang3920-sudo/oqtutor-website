@@ -2135,7 +2135,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "How do online Quran classes work for children?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study."
+                    "text": "Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons on Zoom or Google Meet, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study."
                   }
                 },
                 {
@@ -2151,7 +2151,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "Are online Quran classes effective for young children?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and 20 to 30-minute focused sessions keep young learners motivated and engaged from home."
+                    "text": "Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and focused 30-40 minute sessions keep young learners motivated and engaged from home."
                   }
                 },
                 {
@@ -2159,7 +2159,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "How much do online Quran classes for kids cost?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Online Quran class costs vary based on lesson frequency, duration (such as 30 or 45-minute sessions), and course level. Transparent academies offer clear monthly plans and free trial classes without locking parents into long-term contracts."
+                    "text": "At OQTutor, structured 1-on-1 online Quran classes are available in transparent plans of $30, $40, and $50 per month based on weekly class frequency. Every family can start with a 3-day free trial with no credit card required."
                   }
                 },
                 {
@@ -2191,7 +2191,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "How many Quran classes per week are ideal?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For most children, 3 to 4 sessions per week (25–30 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork."
+                    "text": "For most children, 3 to 4 sessions per week (30–40 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork."
                   }
                 },
                 {
@@ -2200,6 +2200,30 @@ export default async function BlogPostPage({ params }: Props) {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. Classes can be scheduled during after-school afternoon hours, early evenings, or weekend mornings across Eastern, Central, Mountain, and Pacific time zones to fit seamlessly around public school, homework, and sports."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What software or equipment is needed for online Quran classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All you need is a laptop, tablet, or desktop computer with a functional webcam, a reliable internet connection, a headset with a microphone, and Zoom or Google Meet. Digital Quran slides and Qaida materials are provided directly on screen by your tutor."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take for a child to complete Noorani Qaida online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With 3 to 4 one-on-one classes per week (30–40 minutes per class) and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before progressing to fluent Quran reading."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I know if my child is making genuine progress in Quran recitation?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child's increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah."
                   }
                 }
               ]
@@ -5356,7 +5380,7 @@ function ArticleContentKidsUsa() {
           What Are Online Quran Classes for Kids?
         </h2>
         <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
-          Online Quran classes for kids are live, interactive lessons that connect children with certified Quran tutors through private video sessions. Classes provide personalized one-on-one instruction covering Arabic alphabet basics (Noorani Qaida), fluent recitation, Tajweed pronunciation rules, Surah memorization (Hifz), and foundational Islamic studies—scheduled around US school calendars and family routines.
+          Online Quran classes for kids are live, interactive lessons that connect children with certified Quran tutors through private video sessions on Zoom or Google Meet. Classes provide personalized one-on-one instruction covering Arabic alphabet basics (Noorani Qaida), fluent recitation, Tajweed pronunciation rules, Surah memorization (Hifz), and foundational Islamic studies—scheduled around US school calendars and family routines.
         </p>
       </div>
 
@@ -5402,11 +5426,11 @@ function ArticleContentKidsUsa() {
             <tbody className="divide-y divide-card-border/60 text-muted-text">
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Teaching format</td>
-                <td className="py-3 px-4 sm:px-6">Live one-on-one private lessons or very small, appropriately paced groups.</td>
+                <td className="py-3 px-4 sm:px-6">Live one-on-one private lessons (30–40 minutes) for 100% focused attention.</td>
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Teacher</td>
-                <td className="py-3 px-4 sm:px-6">Qualified, fluent in English or bilingual, patient, and experienced in teaching children.</td>
+                <td className="py-3 px-4 sm:px-6">Qualified with verified Ijazah credentials, fluent in English, patient, and experienced with children.</td>
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Beginner support</td>
@@ -5442,16 +5466,30 @@ function ArticleContentKidsUsa() {
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Trial</td>
-                <td className="py-3 px-4 sm:px-6">A genuine free trial lesson to assess teacher compatibility before making a commitment.</td>
+                <td className="py-3 px-4 sm:px-6">A 3-day free trial (no credit card required) to assess teacher compatibility before making a commitment.</td>
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Pricing</td>
-                <td className="py-3 px-4 sm:px-6">Transparent monthly pricing with clear lesson lengths and no hidden lock-in fees.</td>
+                <td className="py-3 px-4 sm:px-6">Transparent monthly plans ($30, $40, $50/mo) with clear lesson lengths and no hidden fees.</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
+
+      {/* Ayah Callout */}
+      <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-sm">
+          <BookOpen className="h-5 w-5" />
+          <span>Divine Guidance on Reciting with Tajweed</span>
+        </div>
+        <p className="text-base text-foreground font-serif italic">
+          &ldquo;And recite the Quran with measured recitation.&rdquo;
+        </p>
+        <div className="text-xs text-muted-text font-medium pt-1">
+          — <a href="https://quran.com/73/4" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Surah Al-Muzzammil 73:4 (Quran.com)</a>
+        </div>
+      </div>
 
       {/* What Should Children Learn at Different Ages? */}
       <section className="space-y-6">
@@ -5470,7 +5508,7 @@ function ArticleContentKidsUsa() {
               <span>Ages 4–6: Build the Quran Foundation</span>
             </div>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              Young learners thrive on interactive visual aids, vocal imitation, and gentle positive reinforcement. Lessons focus on recognizing Arabic alphabet shapes, basic letter sounds, and introductory <Link href="/courses/noorani-qaida" className="text-primary font-medium hover:underline">Noorani Qaida</Link> exercises in short, engaging 20–25 minute sessions.
+              Young learners thrive on interactive visual aids, vocal imitation, and gentle positive reinforcement. Lessons focus on recognizing Arabic alphabet shapes, basic letter sounds, and introductory <Link href="/courses/noorani-qaida" className="text-primary font-medium hover:underline">Noorani Qaida</Link> exercises in short, engaging 20–30 minute sessions.
             </p>
           </div>
 
@@ -5629,8 +5667,8 @@ function ArticleContentKidsUsa() {
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 font-semibold text-foreground">Teacher Attention</td>
-                <td className="py-3 px-4">100% dedicated 1-on-1 focus throughout the lesson</td>
-                <td className="py-3 px-4">Teacher time divided among 10–20 students in a classroom</td>
+                <td className="py-3 px-4">100% dedicated 1-on-1 focus throughout the 30–40 minute lesson</td>
+                <td className="py-3 px-4">Teacher time divided among 10–20 students in a classroom (2–5 mins reading)</td>
               </tr>
               <tr className="hover:bg-primary/[0.02] transition-colors">
                 <td className="py-3 px-4 font-semibold text-foreground">Personalization</td>
@@ -5657,8 +5695,62 @@ function ArticleContentKidsUsa() {
         </div>
 
         <p className="text-base text-muted-text">
-          Many US families choose a hybrid model: enrolling their child in live 1-on-1 online classes for dedicated Tajweed and Quran memorization, while attending the local mosque for Friday prayers, community events, and youth youth gatherings.
+          Many US families choose a hybrid model: enrolling their child in live 1-on-1 online classes for dedicated Tajweed and Quran memorization, while attending the local mosque for Friday prayers, community events, and youth gatherings.
         </p>
+      </section>
+
+      {/* Step-by-Step Parent Selection Checklist */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Step-by-Step Parent Checklist Before Enrolling
+        </h2>
+        <p className="text-base text-muted-text">
+          Follow this practical 6-step checklist to select the ideal online Quran academy for your child:
+        </p>
+        <div className="space-y-3 not-prose">
+          {[
+            {
+              step: "1",
+              title: "Identify Your Child's Baseline Level",
+              desc: "Determine whether your child is an absolute beginner needing Noorani Qaida phonics, ready for Quran reading fluency, or looking for advanced Tajweed or Hifz."
+            },
+            {
+              step: "2",
+              title: "Specify Male or Female Tutor Preference",
+              desc: "Choose a tutor gender that matches your family preference. Many parents prefer female Quran teachers for young daughters and gentle beginners."
+            },
+            {
+              step: "3",
+              title: "Verify Certification & Communication Skills",
+              desc: "Ensure the academy employs Ijazah-certified scholars who speak fluent, articulate English and demonstrate gentle patience with young learners."
+            },
+            {
+              step: "4",
+              title: "Book a 3-Day Free Trial Assessment",
+              desc: "Never pay upfront before testing the platform. Use the trial lesson on Zoom or Google Meet to observe teacher-student chemistry, audio-video clarity, and teaching methods."
+            },
+            {
+              step: "5",
+              title: "Confirm Schedule Compatibility in Your Time Zone",
+              desc: "Ensure the class schedule accommodates school hours, extracurriculars, and daylight saving time shifts across EST, CST, MST, or PST."
+            },
+            {
+              step: "6",
+              title: "Review Transparent Monthly Tuition Plans",
+              desc: "Select a plan with clear monthly pricing ($30, $40, or $50/month), flexible class frequencies, and easy cancellation policies with no lock-in contracts."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="p-4 sm:p-5 rounded-2xl glass border border-card-border flex items-start space-x-4">
+              <span className="h-7 w-7 rounded-full bg-primary text-white font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 mt-0.5">
+                {item.step}
+              </span>
+              <div>
+                <strong className="text-foreground text-sm sm:text-base font-bold">{item.title}</strong>
+                <p className="text-xs sm:text-sm text-muted-text mt-1">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* How Long Should a Child's Quran Class Be? */}
@@ -5676,120 +5768,25 @@ function ArticleContentKidsUsa() {
           </li>
           <li className="flex items-start space-x-3 text-sm text-muted-text">
             <span className="h-2 w-2 rounded-full bg-primary shrink-0 mt-2" />
-            <span><strong>Older Children (Ages 8–12):</strong> 30–45 minute sessions, 3 to 5 times per week, allowing thorough Tajweed rule application and continuous recitation practice.</span>
+            <span><strong>Older Children (Ages 8–12):</strong> 30–40 minute sessions, 3 to 5 times per week, allowing thorough Tajweed rule application and continuous recitation practice.</span>
           </li>
           <li className="flex items-start space-x-3 text-sm text-muted-text">
             <span className="h-2 w-2 rounded-full bg-primary shrink-0 mt-2" />
-            <span><strong>Hifz Students:</strong> 45–60 minute sessions with daily attendance and dedicated home revision routines.</span>
+            <span><strong>Hifz Students:</strong> 40–60 minute sessions with daily attendance and dedicated home revision routines.</span>
           </li>
         </ul>
         <p className="text-sm text-muted-text">
-          Consistency is far more impactful than lengthy sessions. Three 30-minute classes per week will yield significantly better long-term retention than a single two-hour marathon class.
+          Consistency is far more impactful than lengthy sessions. Three 30-to-40-minute classes per week yield significantly better long-term retention than a single marathon class.
         </p>
       </section>
 
-      {/* Why Online Quran Classes Can Work Well for Muslim Families in the USA */}
+      {/* Child Online Safety & Learning Environment */}
       <section className="space-y-4">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Why Online Quran Classes Can Work Well for Muslim Families in the USA
+          Child Online Safety &amp; Recommended Home Study Setup
         </h2>
         <p className="text-base text-muted-text">
-          American Muslim households navigate demanding schedules that blend public school routines, advanced coursework, sports leagues, and extracurricular clubs. In many suburban or rural areas, the nearest Islamic center may be 30 to 45 minutes away in heavy traffic.
-        </p>
-        <p className="text-base text-muted-text">
-          Online learning eliminates travel fatigue entirely. A family in Texas can schedule classes during late afternoon Central Time slots right after soccer practice, while a family in California can book early evening Pacific Time lessons before dinner. Furthermore, when school schedules shift during daylight saving time, exam seasons, or Ramadan, online tutoring offers the flexibility to adjust lesson timings without disrupting your child&apos;s academic momentum.
-        </p>
-      </section>
-
-      {/* Can Kids Attend Quran Classes Around US School Schedules? */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Can Kids Attend Quran Classes Around US School Schedules?
-        </h2>
-        <p className="text-base text-muted-text">
-          Yes. Online Quran academies operate across all major North American time zones:
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center not-prose">
-          <div className="p-3.5 rounded-2xl glass border border-card-border">
-            <p className="text-xs font-bold text-primary">Eastern Time</p>
-            <p className="text-[11px] text-muted-text mt-0.5">EST (UTC-5)</p>
-          </div>
-          <div className="p-3.5 rounded-2xl glass border border-card-border">
-            <p className="text-xs font-bold text-primary">Central Time</p>
-            <p className="text-[11px] text-muted-text mt-0.5">CST (UTC-6)</p>
-          </div>
-          <div className="p-3.5 rounded-2xl glass border border-card-border">
-            <p className="text-xs font-bold text-primary">Mountain Time</p>
-            <p className="text-[11px] text-muted-text mt-0.5">MST (UTC-7)</p>
-          </div>
-          <div className="p-3.5 rounded-2xl glass border border-card-border">
-            <p className="text-xs font-bold text-primary">Pacific Time</p>
-            <p className="text-[11px] text-muted-text mt-0.5">PST (UTC-8)</p>
-          </div>
-        </div>
-        <p className="text-sm text-muted-text">
-          Lessons can be booked during after-school hours (3:30 PM – 8:30 PM) or on weekend mornings, making it easy to establish a consistent study routine that does not conflict with homework or dinner.
-        </p>
-      </section>
-
-      {/* How to Choose the Right Online Quran Teacher for Your Child */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          How to Choose the Right Online Quran Teacher for Your Child
-        </h2>
-        <p className="text-base text-muted-text">
-          The teacher is the single most important factor in your child&apos;s Quran journey. A knowledgeable tutor who lacks patience can discourage a young student, whereas an engaging, child-friendly instructor builds confidence and genuine love for the Quran.
-        </p>
-        <p className="text-base text-muted-text">
-          When evaluating tutors, look for:
-        </p>
-        <ul className="space-y-2.5 text-sm text-muted-text">
-          <li className="flex items-start space-x-2.5">
-            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Verified Quranic Mastery:</strong> Ijazah certification or formal degrees in Islamic Studies and Qira&apos;at.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Pedagogical Patience:</strong> Demonstrated ability to engage young learners without harsh reprimands or impatience.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Clear English Communication:</strong> Ability to clearly explain articulation points and Islamic concepts to English-speaking kids.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Teacher Preference:</strong> Availability of certified <Link href="/tutors" className="text-primary font-semibold hover:underline">male and female Quran tutors</Link> to suit your child&apos;s comfort.</span>
-          </li>
-        </ul>
-        <p className="text-sm text-muted-text mt-2">
-          For a comprehensive checklist on evaluating tutor qualifications and teaching styles, read our parent guide on <Link href="/blog/what-us-parents-should-know-before-choosing-an-online-quran-tutor" className="text-primary font-semibold hover:underline">what US parents should know before choosing an online Quran tutor</Link>.
-        </p>
-      </section>
-
-      {/* Image 3 */}
-      <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
-        <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
-          <Image
-            src="/blog-kids-usa-3.jpg"
-            alt="Smiling young student wearing headset reciting Quran in an online classroom"
-            fill
-            className="object-cover"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 800px"
-          />
-        </div>
-        <p className="text-xs text-center text-muted-text mt-3 font-medium">
-          Friendly, certified tutors keep children motivated with engaging praise and structured phonics progression.
-        </p>
-      </div>
-
-      {/* What Should Parents Know About Teacher Safety and Verification? */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          What Should Parents Know About Teacher Safety and Verification?
-        </h2>
-        <p className="text-base text-muted-text">
-          Child safeguarding in an online learning environment requires concrete operational procedures, not vague marketing promises. Responsible academies uphold clear safety protocols:
+          Reputable online Quran academies uphold strict child privacy standards aligned with COPPA guidelines and conduct lessons over secure virtual classrooms:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose pt-1">
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
@@ -5803,17 +5800,45 @@ function ArticleContentKidsUsa() {
             <Eye className="h-6 w-6 text-primary" />
             <h3 className="text-sm font-bold text-foreground">Open-Door Parent Access</h3>
             <p className="text-xs text-muted-text leading-relaxed">
-              Parents are always welcome to sit in on classes, view lesson recordings, and observe how the teacher interacts with their child.
+              Parents are always welcome to sit in on classes, observe live interactions, and speak with the teacher directly.
             </p>
           </div>
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
-            <UserCheck className="h-6 w-6 text-primary" />
-            <h3 className="text-sm font-bold text-foreground">Quality Supervision</h3>
+            <Laptop className="h-6 w-6 text-primary" />
+            <h3 className="text-sm font-bold text-foreground">Dedicated Study Space</h3>
             <p className="text-xs text-muted-text leading-relaxed">
-              Academic supervisors conduct periodic quality reviews to ensure professional conduct and adherence to child-friendly pedagogy.
+              Setting up a quiet desk with headphones, good lighting, and an upright chair builds daily discipline and focus.
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Tracking Progress & Parental Involvement */}
+      <section className="space-y-4">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          How Parents Can Track Progress &amp; Support Learning at Home
+        </h2>
+        <p className="text-base text-muted-text">
+          Parents do not need to be Arabic scholars to support their child&apos;s Quranic education. Simple, supportive home habits make an enormous difference:
+        </p>
+        <ul className="space-y-2.5 text-sm text-muted-text pt-1">
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>10-Minute Daily Revision Habit:</strong> Have your child read 1 page of Noorani Qaida or recite their assigned Surah to you for 10 minutes every evening.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Reciting in Daily Prayers:</strong> Encourage your child to lead or recite newly memorized Surahs during family Maghrib or Isha prayers.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Celebrating Milestones:</strong> Celebrate completing a chapter of Noorani Qaida or finishing a Juz with family recognition and positive rewards.</span>
+          </li>
+          <li className="flex items-start space-x-3">
+            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <span><strong>Regular Teacher Check-Ins:</strong> Check in with your child&apos;s tutor at the end of each month to discuss strengths and areas for continued review.</span>
+          </li>
+        </ul>
       </section>
 
       {/* How Much Do Online Quran Classes for Kids Cost? */}
@@ -5822,16 +5847,27 @@ function ArticleContentKidsUsa() {
           How Much Do Online Quran Classes for Kids Cost?
         </h2>
         <p className="text-base text-muted-text">
-          Online Quran tutoring pricing typically depends on four key factors:
+          At OQTutor, we believe high-quality Quranic education should remain accessible and transparent. Our monthly plans are structured simply with no hidden registration fees or long-term lock-in contracts:
         </p>
-        <ul className="space-y-2 text-sm text-muted-text">
-          <li><strong>Lesson frequency:</strong> 2, 3, 4, or 5 sessions per week.</li>
-          <li><strong>Session duration:</strong> 30-minute standard classes vs. 45 or 60-minute intensive sessions.</li>
-          <li><strong>Course tier:</strong> Foundational reading (Qaida) vs. intensive one-on-one Hifz memorization.</li>
-          <li><strong>Family discounts:</strong> Reduced per-student rates when enrolling multiple siblings.</li>
-        </ul>
-        <p className="text-base text-muted-text">
-          Most reputable academies charge flat monthly subscriptions rather than long-term lock-in contracts. You can review all current plan options and class packages on our official <Link href="/pricing" className="text-primary font-semibold hover:underline">OQTutor Pricing page</Link>.
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose pt-1">
+          <div className="p-5 rounded-2xl glass border border-card-border text-center space-y-2">
+            <h3 className="text-sm font-bold text-foreground">Basic Plan</h3>
+            <p className="text-2xl font-extrabold text-primary">$30<span className="text-xs font-normal text-muted-text"> / month</span></p>
+            <p className="text-xs text-muted-text">Ideal for steady weekly progression in Noorani Qaida or Quran reading.</p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-primary/30 text-center space-y-2 bg-primary/5">
+            <h3 className="text-sm font-bold text-foreground">Standard Plan</h3>
+            <p className="text-2xl font-extrabold text-primary">$40<span className="text-xs font-normal text-muted-text"> / month</span></p>
+            <p className="text-xs text-muted-text">Our most popular plan for balanced recitation and Tajweed mastery.</p>
+          </div>
+          <div className="p-5 rounded-2xl glass border border-card-border text-center space-y-2">
+            <h3 className="text-sm font-bold text-foreground">Intensive Plan</h3>
+            <p className="text-2xl font-extrabold text-primary">$50<span className="text-xs font-normal text-muted-text"> / month</span></p>
+            <p className="text-xs text-muted-text">Designed for rapid progress, intensive Tajweed, or Hifz memorization.</p>
+          </div>
+        </div>
+        <p className="text-sm text-muted-text pt-2">
+          Every family can begin with a <strong>3-day free trial</strong> (no credit card required) to meet their teacher and experience our classroom. Visit our <Link href="/pricing" className="text-primary font-semibold hover:underline">OQTutor Pricing page</Link> for complete details.
         </p>
       </section>
 
@@ -5884,53 +5920,7 @@ function ArticleContentKidsUsa() {
               </p>
             </div>
           </div>
-
-          <div className="p-4 rounded-2xl glass border border-card-border flex items-start space-x-3">
-            <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
-            <div>
-              <h3 className="text-sm font-bold text-foreground">No Meaningful Progress Tracking</h3>
-              <p className="text-xs text-muted-text mt-0.5">
-                Lack of written feedback, lesson logs, or regular progress check-ins with parents.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
-
-      {/* Who Are Online Quran Classes for Kids in the USA For? */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Who Are Online Quran Classes for Kids in the USA For?
-        </h2>
-        <p className="text-base text-muted-text">
-          Online Quran classes are especially well suited for:
-        </p>
-        <ul className="space-y-2 text-sm text-muted-text">
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Complete Beginners:</strong> Children aged 4–7 starting with Arabic alphabet phonics and Noorani Qaida.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Emerging Readers:</strong> Kids moving from Qaida to smooth Mushaf recitation who need patient guidance.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Tajweed Students:</strong> Children who read Arabic but struggle with makharij, elongation, and phonetic rules.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Hifz Aspirants:</strong> Dedicated students aiming to memorize Surahs or the complete Quran with structured revision.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Busy American Families:</strong> Households needing flexible after-school, evening, or weekend scheduling.</span>
-          </li>
-          <li className="flex items-start space-x-2.5">
-            <Check className="h-4 w-4 text-primary shrink-0 mt-1" />
-            <span><strong>Remote / Suburban Communities:</strong> Families residing far from local Islamic centers or qualified Quran teachers.</span>
-          </li>
-        </ul>
       </section>
 
       {/* Why Consider OQTutor for Your Child's Quran Journey? */}
@@ -5972,10 +5962,10 @@ function ArticleContentKidsUsa() {
           <div className="p-4 rounded-2xl glass border border-card-border space-y-1.5">
             <div className="flex items-center space-x-2 text-primary font-bold text-sm">
               <ShieldCheck className="h-4 w-4" />
-              <span>Risk-Free Trial Class</span>
+              <span>3-Day Free Trial</span>
             </div>
             <p className="text-xs text-muted-text leading-relaxed">
-              Experience our classroom and meet your teacher with a free trial lesson before enrolling in any paid plan.
+              Experience our classroom and meet your teacher with a 3-day free trial (no credit card required) before enrolling.
             </p>
           </div>
         </div>
@@ -5998,7 +5988,7 @@ function ArticleContentKidsUsa() {
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground">How do online Quran classes work for children?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study.
+              Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons on Zoom or Google Meet, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study.
             </p>
           </div>
 
@@ -6012,14 +6002,14 @@ function ArticleContentKidsUsa() {
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground">Are online Quran classes effective for young children?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and 20 to 30-minute focused sessions keep young learners motivated and engaged from home.
+              Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and focused 30-40 minute sessions keep young learners motivated and engaged from home.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground">How much do online Quran classes for kids cost?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              Online Quran class costs vary based on lesson frequency, duration (such as 30 or 45-minute sessions), and course level. Transparent academies offer clear monthly plans and free trial classes without locking parents into long-term contracts.
+              At OQTutor, structured 1-on-1 online Quran classes are available in transparent plans of $30, $40, and $50 per month based on weekly class frequency. Every family can start with a 3-day free trial with no credit card required.
             </p>
           </div>
 
@@ -6047,7 +6037,7 @@ function ArticleContentKidsUsa() {
           <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
             <h3 className="text-base font-bold text-foreground">How many Quran classes per week are ideal?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              For most children, 3 to 4 sessions per week (25–30 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork.
+              For most children, 3 to 4 sessions per week (30–40 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork.
             </p>
           </div>
 
@@ -6055,6 +6045,27 @@ function ArticleContentKidsUsa() {
             <h3 className="text-base font-bold text-foreground">Can online Quran classes fit around US school schedules?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
               Yes. Classes can be scheduled during after-school afternoon hours, early evenings, or weekend mornings across Eastern, Central, Mountain, and Pacific time zones to fit seamlessly around public school, homework, and sports.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">What software or equipment is needed for online Quran classes?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              All you need is a laptop, tablet, or desktop computer with a functional webcam, a reliable internet connection, a headset with a microphone, and Zoom or Google Meet. Digital Quran slides and Qaida materials are provided directly on screen by your tutor.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How long does it take for a child to complete Noorani Qaida online?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              With 3 to 4 one-on-one classes per week (30–40 minutes per class) and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before progressing to fluent Quran reading.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">How do I know if my child is making genuine progress in Quran recitation?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child&apos;s increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah.
             </p>
           </div>
         </div>
@@ -6070,14 +6081,14 @@ function ArticleContentKidsUsa() {
             Start Your Child&apos;s Quran Journey with OQTutor
           </h2>
           <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
-            Discover how personalized one-on-one Quran tutoring can help your child read, understand, and love the Holy Quran with confidence. Book a free evaluation lesson today.
+            Discover how personalized one-on-one Quran tutoring can help your child read, understand, and love the Holy Quran with confidence. Book 3 free trial classes today with no credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href="/book-free-trial"
               className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
             >
-              <span>Book Your Free Trial Class</span>
+              <span>Book 3 Free Trial Classes</span>
               <ArrowRight className="h-4.5 w-4.5" />
             </Link>
             <Link
@@ -10151,7 +10162,7 @@ function ArticleContentChildCompletionTimeline() {
           Parenting in modern times comes with busy school routines, soccer practices, homework packets, and short attention spans. It is completely natural to wonder if your child can finish Quran reading in a single year or if they need three years of consistent effort.
         </p>
         <p className="text-base text-muted-text">
-          The honest truth is that Quranic learning is a marathon of love, not a chaotic sprint. While some children grasp Arabic phonetics in a few months, others need patient repetition to master tongue positions and breath control. This comprehensive parent guide breaks down the realistic <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">Quran learning timeline for kids</Link>, stage by stage milestones, daily practice routines, and practical strategies to help your child succeed with joy.
+          The honest truth is that Quranic learning is a marathon of love, not a chaotic sprint. While some children grasp Arabic phonetics in a few months, others need patient repetition to master tongue positions and breath control. This comprehensive parent guide breaks down the realistic <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">Quran learning timeline for kids</Link>, stage by stage milestones, daily practice routines, and practical strategies to help your child succeed with joy.
         </p>
       </section>
 
@@ -11082,7 +11093,7 @@ function ArticleContentChildReadiness() {
           It can be, but suitability depends on the child and the teaching approach.
         </p>
         <p className="text-base text-muted-text">
-          Our dedicated <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> guide explains that children can begin with Noorani Qaida and progress according to their age and learning pace. (See also: <Link href="/blog/how-to-choose-best-online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">How to choose the best online Quran classes for kids in the USA</Link>).
+          Our dedicated <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> guide explains that children can begin with Noorani Qaida and progress according to their age and learning pace. (See also: <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">Best online Quran classes for kids in the USA</Link>).
         </p>
         <p className="text-base text-muted-text">
           For an online lesson, parents should pay particular attention to whether the child can engage with the teacher, follow instructions, and remain comfortable during the session.

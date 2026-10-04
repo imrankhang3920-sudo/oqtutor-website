@@ -25,10 +25,10 @@ const blogItems: BlogPreviewItem[] = [
     link: '/blog/best-online-quran-classes-for-beginners',
   },
   {
-    image: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa/how-to-choose-best-online-quran-classes-kids-usa-cover.jpg',
+    image: '/blog-kids-usa-1.jpg',
     category: 'Parenting Guide',
-    title: 'How to Choose the Best Online Quran Classes for Kids in the USA',
-    link: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa',
+    title: 'Best Online Quran Classes for Kids in USA',
+    link: '/blog/best-online-quran-classes-for-kids-in-usa',
   },
 ];
 
