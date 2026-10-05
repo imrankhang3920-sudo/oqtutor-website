@@ -809,19 +809,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
         </section>
 
         {/* HOW IT WORKS SECTION */}
-        <HowItWorksSection
-          id="kids-usa-how-it-works"
-          eyebrow="Simple 4-Step Process"
-          title="How Online Quran Classes Work for Kids"
-          subtitle="Getting your child started is effortless, structured, and completely risk-free for American-Muslim parents."
-          image={{
-            src: '/online-quran-classes-usa.jpg',
-            alt: 'Young student in USA learning Quran online in 1-on-1 class',
-          }}
-          pillText="3-Day Free Trial • No Card"
-          miniCardTitle="Kids Learning Tracks"
-          miniCardChips={['Noorani Qaida', 'Nazra Quran', 'Tajweed Rules', 'Hifz Program']}
-        />
+        <HowItWorksSection id="kids-usa-how-it-works" />
 
         {/* H2: AFFORDABLE PRICING PLANS */}
         <section id="pricing" className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">

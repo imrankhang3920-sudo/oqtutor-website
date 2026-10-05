@@ -855,19 +855,7 @@ export default async function USALocationsHubPage() {
         </section>
 
         {/* Section 9: How OQTutor Online Quran Classes Work */}
-        <HowItWorksSection
-          id="usa-how-it-works"
-          eyebrow="Simple 4-Step Process"
-          title="How OQTutor Online Quran Classes Work"
-          subtitle="Getting started is simple and straightforward for parents and adult learners across all US time zones."
-          image={{
-            src: '/online-quran-classes-usa.jpg',
-            alt: 'Student taking live 1-on-1 Quran classes in USA',
-          }}
-          pillText="Flexible US Time Zones (EST/PST)"
-          miniCardTitle="USA Curriculum Tracks"
-          miniCardChips={['Noorani Qaida', 'Nazra Quran', 'Tajweed Rules', 'Hifz Track']}
-        />
+        <HowItWorksSection id="usa-how-it-works" />
 
         {/* Section 10: Online Quran Classes Pricing */}
         <section className="py-16 md:py-24 border-t border-card-border/40 bg-foreground/[0.01]">

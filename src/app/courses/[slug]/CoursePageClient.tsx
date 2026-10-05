@@ -2872,18 +2872,7 @@ function QuranForAdultsContent({
       </section>
 
       {/* How Learning Works */}
-      <HowItWorksSection 
-        id="adults-how-it-works"
-        eyebrow="Step-by-Step Adult Roadmap"
-        title="How Learning Quran Online Works"
-        subtitle="Designed around your busy work schedule and family commitments with private 1-on-1 guidance."
-        image={{
-          src: '/adult-quran-memorization.jpg',
-          alt: 'Adult learner studying Quran online in 1-on-1 class',
-        }}
-        miniCardTitle="Adult Learning Tracks"
-        miniCardChips={['Noorani Qaida', 'Tajweed Refinement', 'Hifz Surahs', 'Tafseer & Meaning']}
-      />
+      <HowItWorksSection id="adults-how-it-works" />
 
 
       {/* Why Tajweed Matters */}

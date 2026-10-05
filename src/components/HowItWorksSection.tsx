@@ -4,13 +4,13 @@ import React, { useState, useEffect, useCallback, useSyncExternalStore } from 'r
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  CalendarCheck, 
-  UserCheck, 
+  Calendar, 
   Video, 
+  Layers, 
+  BookOpen, 
   Sparkles, 
   ArrowRight, 
-  ChevronRight,
-  BookOpen
+  ChevronRight 
 } from 'lucide-react';
 
 export interface StepItem {
@@ -45,33 +45,40 @@ export interface HowItWorksSectionProps {
 
 const DEFAULT_STEPS: StepItem[] = [
   {
-    icon: CalendarCheck,
-    title: 'Book a 3-Day Free Trial',
-    text: 'Pick your preferred course, days, and time slot in under 60 seconds. No credit card required.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Get Matched with Your Tutor',
-    text: 'We connect you with a certified male or female tutor tailored to your age, level, and learning goals.',
+    icon: Calendar,
+    title: 'Book Your Free Trial',
+    text: 'Choose a course and a time that suits you. Your 3-day free trial starts with no credit card required.',
   },
   {
     icon: Video,
-    title: 'Join Live 1-on-1 Lessons',
-    text: 'Attend interactive 30–40 minute sessions via Zoom or Google Meet with digital screen sharing and gentle guidance.',
+    title: 'Meet Your Tutor',
+    text: 'Join a live class on Zoom or Google Meet. Your tutor, male or female, checks your reading level and suggests the right starting course.',
   },
   {
-    icon: Sparkles,
-    title: 'Track Milestones & Continue',
-    text: 'Receive regular parent progress reports and continue with transparent plans starting from $30/month.',
+    icon: Layers,
+    title: 'Choose Your Plan',
+    text: 'Plans start at $30 per month with classes of 30-40 minutes. No registration fees, and you can pause or cancel anytime.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Learn With Live 1-on-1 Classes',
+    text: 'Your tutor listens to your recitation, corrects mistakes on the spot and guides your practice between classes.',
   },
 ];
 
 const DEFAULT_IMAGE = {
   src: '/online-quran-classes-usa.jpg',
-  alt: 'Student learning Quran online with dedicated 1-on-1 tutor',
+  alt: 'Student learning Quran online in a live 1-on-1 class with a tutor',
 };
 
-const DEFAULT_CHIPS = ['Noorani Qaida', 'Quran Reading', 'Tajweed Mastery', 'Hifz Program'];
+const DEFAULT_CHIPS = [
+  'Noorani Qaida',
+  'Quran Reading',
+  'Tajweed',
+  'Hifz',
+  'Tafseer',
+  'Islamic Studies',
+];
 
 const subscribeReducedMotion = (callback: () => void) => {
   if (typeof window === 'undefined') return () => {};
@@ -89,21 +96,21 @@ const getServerReducedMotionSnapshot = () => false;
 
 export default function HowItWorksSection({
   id = 'how-it-works-section',
-  eyebrow = 'Simple 4-Step Process',
-  title = 'How Learning Quran Online Works',
-  subtitle = 'Start your authentic Quranic journey in minutes with our personalized, risk-free onboarding.',
+  eyebrow = 'Simple Steps',
+  title = 'How it works',
+  subtitle = 'From free trial to confident recitation. No confusion and no long-term contracts.',
   steps = DEFAULT_STEPS,
   image = DEFAULT_IMAGE,
-  pillText = '3-Day Free Trial • No Card',
-  miniCardTitle = 'Popular Learning Tracks',
+  pillText = 'Book Free Trial',
+  miniCardTitle = 'Your Courses',
   miniCardChips = DEFAULT_CHIPS,
   primaryCta = {
-    text: 'Book Free Trial Class',
+    text: 'Start Your 3-Day Free Trial',
     href: '/book-free-trial',
   },
   secondaryLink = {
-    text: 'View Fee Packages ($30/mo)',
-    href: '/pricing',
+    text: 'See the full process',
+    href: '/how-it-works',
   },
   className = '',
 }: HowItWorksSectionProps) {
