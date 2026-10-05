@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Video, BookOpen, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
-import { trackEvent } from '@/components/AnalyticsTrackers';
+import { trackGAEvent } from '@/lib/analytics';
 
 interface TimelineStep {
   number: string;
@@ -41,7 +41,7 @@ const TIMELINE_STEPS: TimelineStep[] = [
 
 export default function LearningJourneySection() {
   const handleTrialClick = () => {
-    trackEvent('journey_trial_click', {
+    trackGAEvent('journey_trial_click', {
       section: 'learning_journey',
       cta: 'Book a Free Trial',
     });
