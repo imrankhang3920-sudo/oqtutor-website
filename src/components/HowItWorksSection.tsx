@@ -18,6 +18,10 @@ export interface StepItem {
   icon?: React.ComponentType<{ className?: string }>;
   title: string;
   text: string;
+  link?: {
+    text: string;
+    href: string;
+  };
 }
 
 export interface HowItWorksSectionProps {
@@ -49,21 +53,37 @@ const DEFAULT_STEPS: StepItem[] = [
     icon: Calendar,
     title: 'Book Your Free Trial',
     text: 'Choose a course and a time that suits you. Your 3-day free trial starts with no credit card required.',
+    link: {
+      text: 'Explore our Quran courses',
+      href: '/courses',
+    },
   },
   {
     icon: Video,
     title: 'Meet Your Tutor',
     text: 'Join a live class on Zoom or Google Meet. Your tutor, male or female, checks your reading level and suggests the right starting course.',
+    link: {
+      text: 'Meet our qualified tutors',
+      href: '/tutors',
+    },
   },
   {
     icon: Layers,
     title: 'Choose Your Plan',
     text: 'Plans start at $30 per month with classes of 30-40 minutes. No registration fees, and you can pause or cancel anytime.',
+    link: {
+      text: 'View flexible pricing plans',
+      href: '/pricing',
+    },
   },
   {
     icon: BookOpen,
     title: 'Learn With Live 1-on-1 Classes',
     text: 'Your tutor listens to your recitation, corrects mistakes on the spot and guides your practice between classes.',
+    link: {
+      text: 'Read our learning guides & tips',
+      href: '/blog',
+    },
   },
 ];
 
@@ -73,12 +93,12 @@ const DEFAULT_IMAGE = {
 };
 
 const DEFAULT_COURSES = [
-  { title: 'Noorani Qaida', icon: BookOpen },
-  { title: 'Quran Reading', icon: Sparkles },
-  { title: 'Tajweed', icon: GraduationCap },
-  { title: 'Hifz Program', icon: Layers },
-  { title: 'Tafseer', icon: BookOpen },
-  { title: 'Islamic Studies', icon: Sparkles },
+  { title: 'Noorani Qaida', href: '/courses/noorani-qaida', icon: BookOpen },
+  { title: 'Quran Reading', href: '/courses/quran-reading', icon: Sparkles },
+  { title: 'Tajweed', href: '/courses/tajweed', icon: GraduationCap },
+  { title: 'Hifz Program', href: '/courses/hifz', icon: Layers },
+  { title: 'Tafseer', href: '/courses/tafseer', icon: BookOpen },
+  { title: 'Islamic Studies', href: '/courses/islamic-studies', icon: Sparkles },
 ];
 
 const subscribeReducedMotion = (callback: () => void) => {
@@ -226,15 +246,18 @@ export default function HowItWorksSection({
                 />
               </div>
 
-              {/* Floating Pill Button at middle-right edge */}
+              {/* Floating Pill Button linking to trial booking */}
               {pillText && (
                 <div 
                   className="absolute top-[48%] -right-3 sm:-right-6 z-20"
-                  aria-hidden="true"
                 >
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#86efac] text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-emerald-950/15 border border-emerald-300 select-none">
+                  <Link
+                    href={primaryCta.href || '/book-free-trial'}
+                    onClick={handleCtaClick}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#86efac] text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-emerald-950/15 border border-emerald-300 hover:scale-105 transition-transform duration-200"
+                  >
                     <span>{pillText}</span>
-                  </div>
+                  </Link>
 
                   {/* Curved Arrow SVG pointing down to the mini card */}
                   <svg 
@@ -245,6 +268,7 @@ export default function HowItWorksSection({
                     strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
+                    aria-hidden="true"
                   >
                     <path d="M4 2C16 6 18 16 16 26" />
                     <path d="m11 22 5 5 5-5" />
@@ -252,32 +276,40 @@ export default function HowItWorksSection({
                 </div>
               )}
 
-              {/* Overlapping White Mini Card ("Your Courses") */}
+              {/* Overlapping White Mini Card ("Your Courses") with internal links */}
               <div 
-                className="absolute -bottom-6 -right-2 sm:-right-8 z-20 w-[270px] sm:w-[310px] bg-white dark:bg-slate-900 rounded-[24px] p-5 sm:p-6 shadow-2xl shadow-slate-900/20 border border-slate-100 dark:border-slate-800 pointer-events-none select-none"
-                aria-hidden="true"
+                className="absolute -bottom-6 -right-2 sm:-right-8 z-20 w-[270px] sm:w-[310px] bg-white dark:bg-slate-900 rounded-[24px] p-5 sm:p-6 shadow-2xl shadow-slate-900/20 border border-slate-100 dark:border-slate-800"
               >
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-3.5">
-                  {miniCardTitle}
-                </h3>
+                <div className="flex items-center justify-between mb-3.5">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                    {miniCardTitle}
+                  </h3>
+                  <Link
+                    href="/courses"
+                    className="text-[11px] font-semibold text-primary hover:text-primary-hover transition-colors"
+                  >
+                    View all &rarr;
+                  </Link>
+                </div>
 
-                {/* 2x3 Grid of Mini Course Cards mimicking the reference design */}
+                {/* 2x3 Grid of Mini Course Cards with clickable internal links */}
                 <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                   {DEFAULT_COURSES.map((course, idx) => {
                     const CourseIcon = course.icon;
                     return (
-                      <div 
+                      <Link
                         key={idx}
-                        className="bg-slate-50 dark:bg-slate-800/80 rounded-xl p-2 flex flex-col items-center text-center border border-slate-100 dark:border-slate-700/50"
+                        href={course.href}
+                        className="bg-slate-50 dark:bg-slate-800/80 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:border-emerald-300 dark:hover:border-emerald-700/60 rounded-xl p-2 flex flex-col items-center text-center border border-slate-100 dark:border-slate-700/50 transition-all duration-200 group/item"
                       >
-                        <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 flex items-center justify-center mb-1.5">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 group-hover/item:scale-110 flex items-center justify-center mb-1.5 transition-transform">
                           <CourseIcon className="w-3.5 h-3.5" />
                         </div>
-                        <span className="text-[10px] font-semibold text-slate-800 dark:text-slate-200 truncate w-full leading-tight">
+                        <span className="text-[10px] font-semibold text-slate-800 dark:text-slate-200 group-hover/item:text-primary truncate w-full leading-tight">
                           {course.title}
                         </span>
-                        <div className="w-7 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mt-1 opacity-70" />
-                      </div>
+                        <div className="w-7 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mt-1 opacity-70 group-hover/item:bg-primary transition-colors" />
+                      </Link>
                     );
                   })}
                 </div>
@@ -320,8 +352,7 @@ export default function HowItWorksSection({
 
                   return (
                     <li key={idx}>
-                      <button
-                        type="button"
+                      <div
                         onClick={() => handleStepSelect(idx, true)}
                         onMouseEnter={() => handleStepSelect(idx, false)}
                         onFocus={() => {
@@ -330,7 +361,7 @@ export default function HowItWorksSection({
                         }}
                         onBlur={() => setIsPaused(false)}
                         aria-current={isActive ? 'step' : undefined}
-                        className="w-full text-left flex items-start gap-4 sm:gap-6 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-2xl p-1"
+                        className="w-full text-left flex items-start gap-4 sm:gap-6 group cursor-pointer rounded-2xl p-1"
                       >
                         {/* Icon Square Container */}
                         <div 
@@ -358,8 +389,22 @@ export default function HowItWorksSection({
                           <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-normal max-w-lg">
                             {step.text}
                           </p>
+
+                          {/* Contextual Step Internal Link */}
+                          {step.link && (
+                            <div className="mt-2">
+                              <Link
+                                href={step.link.href}
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary hover:text-primary-hover underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all"
+                              >
+                                <span>{step.link.text}</span>
+                                <ArrowRight className="w-3.5 h-3.5" />
+                              </Link>
+                            </div>
+                          )}
                         </div>
-                      </button>
+                      </div>
                     </li>
                   );
                 })}
@@ -387,6 +432,29 @@ export default function HowItWorksSection({
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               )}
+            </div>
+
+            {/* Quick Explore Internal Link Bar for SEO & Navigation */}
+            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400 pl-6 sm:pl-8">
+              <span className="font-semibold text-slate-700 dark:text-slate-300">Quick explore:</span>
+              <Link href="/courses/noorani-qaida" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Noorani Qaida
+              </Link>
+              <Link href="/courses/tajweed" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Tajweed
+              </Link>
+              <Link href="/courses/hifz" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Hifz Program
+              </Link>
+              <Link href="/tutors" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Certified Tutors
+              </Link>
+              <Link href="/pricing" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Pricing & Plans
+              </Link>
+              <Link href="/blog" className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-primary transition-colors">
+                Learning Guides
+              </Link>
             </div>
 
           </div>
