@@ -12,7 +12,6 @@ import Contact from '@/components/Contact';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
 import BlogPreview from '@/components/BlogPreview';
 import HelpSection from '@/components/HelpSection';
-import LearningJourneySection from '@/components/LearningJourneySection';
 import StickyFormButton from '@/components/StickyFormButton';
 import ScrollTriggerForm from '@/components/ScrollTriggerForm';
 import Footer from '@/components/Footer';
@@ -192,9 +191,6 @@ export default async function HomePage() {
         
         {/* 1. Help Section: Not Sure Where to Start? */}
         <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
-
-        {/* Learning Journey: From First Lesson to Confident Recitation */}
-        <LearningJourneySection />
 
         {/* 2. Form Section (Mid-page fast booking: Ready to Start? Book Your Free Trial) */}
         <MidPageFormSection />
