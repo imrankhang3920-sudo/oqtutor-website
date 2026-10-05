@@ -101,6 +101,11 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\49e19951-fb8d-40f6-a3cd-e518ed53bdd0\\.user_uploaded\\media_1788315701650.jpg',
     fallbackSrc: path.join(__dirname, '../public/tajweed-vs-tarteel-1.jpg'),
     dest: path.join(__dirname, '../public/tajweed-vs-tarteel-cover.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\96ab1bab-e9eb-4927-9c35-c3d888703623\\.user_uploaded\\media_1791222292900.jpg',
+    fallbackSrc: path.join(__dirname, '../public/images/warm-quran-study.jpg'),
+    dest: path.join(__dirname, '../public/images/warm-quran-study.jpg')
   }
 ];
 
