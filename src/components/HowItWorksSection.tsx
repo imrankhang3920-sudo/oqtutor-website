@@ -8,9 +8,10 @@ import {
   Video, 
   Layers, 
   BookOpen, 
-  Sparkles, 
   ArrowRight, 
-  ChevronRight 
+  ChevronRight,
+  Sparkles,
+  GraduationCap
 } from 'lucide-react';
 
 export interface StepItem {
@@ -67,17 +68,17 @@ const DEFAULT_STEPS: StepItem[] = [
 ];
 
 const DEFAULT_IMAGE = {
-  src: '/online-quran-classes-usa.jpg',
+  src: '/online-quran-tutor-desk.jpg',
   alt: 'Student learning Quran online in a live 1-on-1 class with a tutor',
 };
 
-const DEFAULT_CHIPS = [
-  'Noorani Qaida',
-  'Quran Reading',
-  'Tajweed',
-  'Hifz',
-  'Tafseer',
-  'Islamic Studies',
+const DEFAULT_COURSES = [
+  { title: 'Noorani Qaida', icon: BookOpen },
+  { title: 'Quran Reading', icon: Sparkles },
+  { title: 'Tajweed', icon: GraduationCap },
+  { title: 'Hifz Program', icon: Layers },
+  { title: 'Tafseer', icon: BookOpen },
+  { title: 'Islamic Studies', icon: Sparkles },
 ];
 
 const subscribeReducedMotion = (callback: () => void) => {
@@ -103,7 +104,6 @@ export default function HowItWorksSection({
   image = DEFAULT_IMAGE,
   pillText = 'Book Free Trial',
   miniCardTitle = 'Your Courses',
-  miniCardChips = DEFAULT_CHIPS,
   primaryCta = {
     text: 'Start Your 3-Day Free Trial',
     href: '/book-free-trial',
@@ -177,114 +177,113 @@ export default function HowItWorksSection({
     <section 
       id={id} 
       aria-labelledby={`${id}-heading`}
-      className={`py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40 ${className}`}
+      className={`py-20 md:py-28 relative overflow-hidden bg-background ${className}`}
     >
-      {/* Subtle brand ambient glow backgrounds */}
-      <div className="absolute top-1/3 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Centered Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+        {/* Centered Header (Eyebrow + Large H2 + 1-Line Subtitle) */}
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
           {eyebrow && (
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-secondary" />
-              <span>{eyebrow}</span>
-            </span>
+            <p className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-400 mb-2 tracking-normal">
+              {eyebrow}
+            </p>
           )}
           <h2 
             id={`${id}-heading`}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-3.5"
           >
             {title}
           </h2>
-          <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           {subtitle && (
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-muted-text font-normal leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-500 dark:text-slate-400 font-normal leading-relaxed">
               {subtitle}
             </p>
           )}
         </div>
 
         {/* 2-Column Responsive Layout (45% Image Card / 55% Timeline) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* LEFT COLUMN: Rounded Image Card with Pill & Mini Card */}
+          {/* LEFT COLUMN: Rounded Image Card + Pill + Overlapping Mini Card */}
           <div className="lg:col-span-5 flex justify-center order-1">
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-[420px]">
               
-              {/* Brand-tinted glow backdrop */}
-              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-primary/20 via-secondary/15 to-primary/10 rounded-3xl blur-2xl -z-10 opacity-70 pointer-events-none" />
-              
+              {/* Subtle brand ambient glow backdrop behind upper-right corner */}
+              <div 
+                className="absolute -top-10 -right-10 w-72 h-72 bg-emerald-400/25 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none -z-10" 
+                aria-hidden="true"
+              />
+
               {/* Main Rounded Image Card */}
-              <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border/80 shadow-2xl bg-card-bg relative overflow-hidden">
-                <div className="relative w-full aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden bg-foreground/5">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={560}
-                    height={560}
-                    priority={false}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                  {/* Subtle dark gradient overlay on bottom of image for contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="relative rounded-[28px] overflow-hidden shadow-2xl shadow-slate-900/15 border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 aspect-[4/4.6]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={600}
+                  height={700}
+                  priority={false}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Floating Pill Button at middle-right edge */}
               {pillText && (
                 <div 
-                  className="absolute top-1/4 -right-2 sm:-right-4 z-20 flex items-center gap-2 px-3.5 py-2 rounded-full bg-background/95 dark:bg-slate-900/95 backdrop-blur-md border border-primary/30 shadow-lg shadow-primary/10"
+                  className="absolute top-[48%] -right-3 sm:-right-6 z-20"
                   aria-hidden="true"
                 >
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                  </span>
-                  <span className="text-[11px] sm:text-xs font-bold text-foreground">
-                    {pillText}
-                  </span>
-                  {/* Small Curved Arrow SVG pointing toward bottom-right mini card */}
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#86efac] text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-emerald-950/15 border border-emerald-300 select-none">
+                    <span>{pillText}</span>
+                  </div>
+
+                  {/* Curved Arrow SVG pointing down to the mini card */}
                   <svg 
-                    className="w-4 h-4 text-secondary shrink-0 transform translate-y-0.5" 
-                    viewBox="0 0 24 24" 
+                    className="w-5 h-7 text-slate-800 dark:text-slate-200 absolute -bottom-6 right-3 pointer-events-none" 
+                    viewBox="0 0 24 32" 
                     fill="none" 
                     stroke="currentColor" 
-                    strokeWidth="2.5" 
+                    strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
                   >
-                    <path d="M5 4c0 7 6 13 14 13" />
-                    <path d="m14 13 5 4-5 4" />
+                    <path d="M4 2C16 6 18 16 16 26" />
+                    <path d="m11 22 5 5 5-5" />
                   </svg>
                 </div>
               )}
 
-              {/* Overlapping White Mini Card on Bottom-Right */}
+              {/* Overlapping White Mini Card ("Your Courses") */}
               <div 
-                className="absolute -bottom-6 -right-2 sm:-right-6 z-20 max-w-[240px] sm:max-w-[270px] glass bg-background/95 dark:bg-slate-900/95 backdrop-blur-md p-4 sm:p-4.5 rounded-2xl border border-card-border shadow-xl pointer-events-none select-none"
+                className="absolute -bottom-6 -right-2 sm:-right-8 z-20 w-[270px] sm:w-[310px] bg-white dark:bg-slate-900 rounded-[24px] p-5 sm:p-6 shadow-2xl shadow-slate-900/20 border border-slate-100 dark:border-slate-800 pointer-events-none select-none"
                 aria-hidden="true"
               >
-                <div className="flex items-center gap-1.5 mb-2.5">
-                  <div className="p-1 rounded-md bg-primary/10 text-primary">
-                    <BookOpen className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-foreground tracking-tight">
-                    {miniCardTitle}
-                  </span>
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-3.5">
+                  {miniCardTitle}
+                </h3>
+
+                {/* 2x3 Grid of Mini Course Cards mimicking the reference design */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
+                  {DEFAULT_COURSES.map((course, idx) => {
+                    const CourseIcon = course.icon;
+                    return (
+                      <div 
+                        key={idx}
+                        className="bg-slate-50 dark:bg-slate-800/80 rounded-xl p-2 flex flex-col items-center text-center border border-slate-100 dark:border-slate-700/50"
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 flex items-center justify-center mb-1.5">
+                          <CourseIcon className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="text-[10px] font-semibold text-slate-800 dark:text-slate-200 truncate w-full leading-tight">
+                          {course.title}
+                        </span>
+                        <div className="w-7 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mt-1 opacity-70" />
+                      </div>
+                    );
+                  })}
                 </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {miniCardChips.map((chip, idx) => (
-                    <span 
-                      key={idx}
-                      className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
+
+                {/* Bottom handle/pill line */}
+                <div className="w-9 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mt-4" />
               </div>
 
             </div>
@@ -292,90 +291,88 @@ export default function HowItWorksSection({
 
           {/* RIGHT COLUMN: Vertical Timeline with Rail */}
           <div 
-            className="lg:col-span-7 order-2 pt-6 lg:pt-0"
+            className="lg:col-span-7 order-2 pt-8 lg:pt-0"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <ol className="relative space-y-4 sm:space-y-5" aria-label="How it works step sequence">
+            <div className="relative pl-6 sm:pl-8">
               
-              {/* Thin Vertical Rail running down the list */}
+              {/* Thin Continuous Rail */}
               <div 
-                className="absolute left-[23px] sm:left-[27px] top-6 bottom-6 w-[2px] bg-card-border/70 -z-0" 
+                className="absolute left-0 top-6 bottom-6 w-[2px] bg-slate-200 dark:bg-slate-800" 
                 aria-hidden="true"
               />
 
-              {steps.map((step, idx) => {
-                const isActive = activeStep === idx;
-                const IconComponent = step.icon || Sparkles;
-                const stepNum = `0${idx + 1}`.slice(-2);
+              {/* Active Rail Segment */}
+              <div 
+                className="absolute left-0 w-[3px] bg-slate-900 dark:bg-emerald-400 rounded-full transition-all duration-300 ease-out" 
+                style={{
+                  top: `calc(${activeStep * 25}% + 12px)`,
+                  height: '64px',
+                }}
+                aria-hidden="true"
+              />
 
-                return (
-                  <li key={idx} className="relative z-10">
-                    <button
-                      type="button"
-                      onClick={() => handleStepSelect(idx, true)}
-                      onMouseEnter={() => handleStepSelect(idx, false)}
-                      onFocus={() => {
-                        setIsPaused(true);
-                        handleStepSelect(idx, false);
-                      }}
-                      onBlur={() => setIsPaused(false)}
-                      aria-current={isActive ? 'step' : undefined}
-                      className={`w-full text-left p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-200 flex items-start gap-4 sm:gap-5 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                        isActive
-                          ? 'glass bg-primary/[0.04] dark:bg-primary/[0.08] border-primary/40 shadow-md shadow-primary/5'
-                          : 'glass bg-background/50 hover:bg-foreground/[0.02] border-card-border/60 hover:border-card-border'
-                      }`}
-                    >
-                      {/* Step Icon Container on Rail */}
-                      <div 
-                        className={`h-12 w-12 sm:h-14 sm:w-14 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-200 ${
-                          isActive
-                            ? 'bg-primary text-white border-2 border-primary shadow-lg shadow-primary/30 scale-105'
-                            : 'glass bg-background border border-card-border text-muted-text'
-                        }`}
+              <ol className="space-y-8 sm:space-y-10" aria-label="How it works step sequence">
+                {steps.map((step, idx) => {
+                  const isActive = activeStep === idx;
+                  const IconComponent = step.icon || Sparkles;
+
+                  return (
+                    <li key={idx}>
+                      <button
+                        type="button"
+                        onClick={() => handleStepSelect(idx, true)}
+                        onMouseEnter={() => handleStepSelect(idx, false)}
+                        onFocus={() => {
+                          setIsPaused(true);
+                          handleStepSelect(idx, false);
+                        }}
+                        onBlur={() => setIsPaused(false)}
+                        aria-current={isActive ? 'step' : undefined}
+                        className="w-full text-left flex items-start gap-4 sm:gap-6 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-2xl p-1"
                       >
-                        <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2]" />
-                      </div>
-
-                      {/* Step Content */}
-                      <div className="flex-grow pt-0.5">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span 
-                            className={`text-[10px] sm:text-xs font-mono font-bold tracking-wider uppercase px-2 py-0.5 rounded-full ${
-                              isActive 
-                                ? 'bg-secondary/15 text-secondary border border-secondary/20' 
-                                : 'bg-foreground/5 text-muted-text'
-                            }`}
-                          >
-                            STEP {stepNum}
-                          </span>
-                        </div>
-
-                        <h3 
-                          className={`text-base sm:text-lg font-bold tracking-tight transition-colors duration-200 ${
-                            isActive ? 'text-foreground' : 'text-foreground/90'
+                        {/* Icon Square Container */}
+                        <div 
+                          className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-200 ${
+                            isActive
+                              ? 'bg-[#86efac] text-slate-950 shadow-lg shadow-emerald-500/20 scale-105'
+                              : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 group-hover:border-slate-400'
                           }`}
                         >
-                          {step.title}
-                        </h3>
+                          <IconComponent className="h-6 w-6 sm:h-7 sm:w-7 stroke-[2]" />
+                        </div>
 
-                        <p className="mt-1 text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                          {step.text}
-                        </p>
-                      </div>
-                    </button>
-                  </li>
-                );
-              })}
-            </ol>
+                        {/* Step Details */}
+                        <div className="flex-grow pt-1">
+                          <h3 
+                            className={`text-lg sm:text-xl font-bold tracking-tight transition-colors duration-200 ${
+                              isActive 
+                                ? 'text-slate-900 dark:text-white' 
+                                : 'text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white'
+                            }`}
+                          >
+                            {step.title}
+                          </h3>
 
-            {/* CTAs Under the Timeline */}
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pl-1 sm:pl-2">
+                          <p className="mt-1.5 text-xs sm:text-sm md:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-normal max-w-lg">
+                            {step.text}
+                          </p>
+                        </div>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ol>
+
+            </div>
+
+            {/* CTAs Below Timeline */}
+            <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pl-6 sm:pl-8">
               <Link
                 href={primaryCta.href}
                 onClick={handleCtaClick}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm sm:text-base font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 text-center"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-sm sm:text-base font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 text-center"
               >
                 <span>{primaryCta.text}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -384,7 +381,7 @@ export default function HowItWorksSection({
               {secondaryLink && (
                 <Link
                   href={secondaryLink.href}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-muted-text hover:text-primary transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full text-center"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full text-center"
                 >
                   <span>{secondaryLink.text}</span>
                   <ChevronRight className="w-4 h-4" />
