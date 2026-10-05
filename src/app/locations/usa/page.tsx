@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import HelpSection from '@/components/HelpSection';
 import USAFaqAccordion from '@/components/USAFaqAccordion';
+import HowItWorksSection from '@/components/HowItWorksSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -854,41 +855,19 @@ export default async function USALocationsHubPage() {
         </section>
 
         {/* Section 9: How OQTutor Online Quran Classes Work */}
-        <section className="py-16 md:py-24 border-t border-card-border/40 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Simple Process
-              </span>
-              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                How OQTutor Online Quran Classes Work
-              </h2>
-              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-              <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Getting started is simple and straightforward for parents and adult learners.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[
-                { step: "1", title: "Choose a Course", desc: "Select from Noorani Qaida, Quran Reading, Tajweed, Hifz, or Islamic Studies." },
-                { step: "2", title: "Book a Trial Class", desc: "Register for a free placement evaluation with no credit card required." },
-                { step: "3", title: "Meet the Tutor", desc: "Attend a live session where the tutor assesses the student's entry level." },
-                { step: "4", title: "Select a Schedule", desc: "Pick class days and times that fit comfortably around your family's weekly routine." },
-                { step: "5", title: "Start 1-on-1 Lessons", desc: "Begin live interactive lessons with personalized attention and correction." },
-                { step: "6", title: "Monitor Progress", desc: "Receive regular feedback and progress reports to follow every milestone." }
-              ].map((item, idx) => (
-                <div key={idx} className="glass p-6 rounded-3xl border border-card-border space-y-3 relative">
-                  <span className="h-8 w-8 rounded-full bg-primary text-white font-bold text-xs flex items-center justify-center">
-                    {item.step}
-                  </span>
-                  <h3 className="text-base font-bold text-foreground">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <HowItWorksSection
+          id="usa-how-it-works"
+          eyebrow="Simple 4-Step Process"
+          title="How OQTutor Online Quran Classes Work"
+          subtitle="Getting started is simple and straightforward for parents and adult learners across all US time zones."
+          image={{
+            src: '/online-quran-classes-usa.jpg',
+            alt: 'Student taking live 1-on-1 Quran classes in USA',
+          }}
+          pillText="Flexible US Time Zones (EST/PST)"
+          miniCardTitle="USA Curriculum Tracks"
+          miniCardChips={['Noorani Qaida', 'Nazra Quran', 'Tajweed Rules', 'Hifz Track']}
+        />
 
         {/* Section 10: Online Quran Classes Pricing */}
         <section className="py-16 md:py-24 border-t border-card-border/40 bg-foreground/[0.01]">

@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { CourseData, ContactData, TestimonialData } from '@/data/db';
 import Image from 'next/image';
 import Testimonials from '@/components/Testimonials';
+import HowItWorksSection from '@/components/HowItWorksSection';
 
 export default function CoursePageClient({
   course,
@@ -2871,77 +2872,18 @@ function QuranForAdultsContent({
       </section>
 
       {/* How Learning Works */}
-      <section className="py-16 md:py-24 bg-foreground/[0.005] border-t border-card-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-              Roadmap
-            </span>
-            <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-              How Learning Works
-            </h2>
-            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[
-              {
-                title: "Schedule a Free Trial",
-                desc: (
-                  <span>
-                    Tell us your current level and availability to book a live,{" "}
-                    <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">one-on-one introduction session</Link>.
-                  </span>
-                )
-              },
-              {
-                title: "Meet Your Tutor",
-                desc: (
-                  <span>
-                    Meet your instructor in our secure virtual classroom, where they will evaluate your reading level and discuss your goals.
-                  </span>
-                )
-              },
-              {
-                title: "Select Your Schedule",
-                desc: (
-                  <span>
-                    Choose your weekly class frequency and pick the time slots that fit best with your calendar. Check our{" "}
-                    <Link href="/pricing" className="text-primary hover:underline font-semibold">pricing plans</Link>{" "}
-                    for details.
-                  </span>
-                )
-              },
-              {
-                title: "Begin Regular Lessons",
-                desc: (
-                  <span>
-                    Log in to your personal dashboard at your scheduled times to start interactive, real-time sessions.
-                  </span>
-                )
-              },
-              {
-                title: "Track Your Milestones",
-                desc: (
-                  <span>
-                    Review regular progress updates and adjust your learning speed whenever your schedule changes.
-                  </span>
-                )
-              }
-            ].map((step, idx) => (
-              <div key={idx} className="glass p-6 rounded-2xl border border-card-border flex items-start space-x-4">
-                <span className="h-10 w-10 bg-primary/15 text-primary rounded-full flex items-center justify-center font-bold shrink-0 text-sm">
-                  {idx + 1}
-                </span>
-                <div>
-                  <h4 className="font-bold text-sm sm:text-base text-foreground mb-1 font-sans">{step.title}</h4>
-                  <div className="text-xs sm:text-sm text-muted-text font-normal leading-relaxed font-sans">{step.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection 
+        id="adults-how-it-works"
+        eyebrow="Step-by-Step Adult Roadmap"
+        title="How Learning Quran Online Works"
+        subtitle="Designed around your busy work schedule and family commitments with private 1-on-1 guidance."
+        image={{
+          src: '/adult-quran-memorization.jpg',
+          alt: 'Adult learner studying Quran online in 1-on-1 class',
+        }}
+        miniCardTitle="Adult Learning Tracks"
+        miniCardChips={['Noorani Qaida', 'Tajweed Refinement', 'Hifz Surahs', 'Tafseer & Meaning']}
+      />
 
 
       {/* Why Tajweed Matters */}

@@ -4,7 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import MidPageFormSection from '@/components/MidPageFormSection';
-import HowItWorksSteps from '@/components/HowItWorksSteps';
+import HowItWorksSection from '@/components/HowItWorksSection';
 import Testimonials from '@/components/Testimonials';
 import FeaturedCourses from '@/components/FeaturedCourses';
 import FAQ from '@/components/FAQ';
@@ -195,8 +195,8 @@ export default async function HomePage() {
         {/* 2. Form Section (Mid-page fast booking: Ready to Start? Book Your Free Trial) */}
         <MidPageFormSection />
         
-        {/* 3. How It Works (4-Step Visual with Arrows & Purple/Blue Gradient) */}
-        <HowItWorksSteps />
+        {/* 3. How It Works Section */}
+        <HowItWorksSection />
 
         {/* 4. Testimonials (Top 3 Streamlined Reviews) */}
         <Testimonials data={dbData.testimonials || []} />
