@@ -5629,35 +5629,11 @@ function DailyDuasContent({
   contactData: ContactData;
   testimonials?: TestimonialData[];
 }) {
-  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
-
-  const toggleCurriculum = (idx: number) => {
-    setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
-  };
 
   const toggleFaq = (idx: number) => {
     setOpenFaqIdx(openFaqIdx === idx ? null : idx);
   };
-
-  const syllabusModules = [
-    {
-      title: "Routine Duas",
-      description: "Memorizing prayers for eating, entering/leaving home, sleeping, and waking up."
-    },
-    {
-      title: "Protection Prayers",
-      description: "Morning and evening Azkar and short protection supplications, including short Surahs and verses commonly recited for protection."
-    },
-    {
-      title: "Social Duas",
-      description: "Duas for greeting, sneezing, visiting the sick, thanking others and everyday manners."
-    },
-    {
-      title: "Duas from the Quran",
-      description: "Well-known supplications from the Quran, such as the Rabbana duas, learned with their meaning and context."
-    }
-  ];
 
   const duasList = [
     "Waking up",
@@ -5994,65 +5970,8 @@ function DailyDuasContent({
         </div>
       </section>
 
-      {/* 3. SYLLABUS SECTION */}
+      {/* 3. DUAS YOU WILL LEARN */}
       <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Course Syllabus</h2>
-            <p className="mt-3 text-3xl font-extrabold text-foreground">
-              Structured Learning Modules
-            </p>
-            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
-            <p className="mt-4 text-sm text-muted-text leading-relaxed">
-              Our 4-part syllabus covers routine life supplications, protection Azkar, social manners, and Quranic duas.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {syllabusModules.map((step, idx) => {
-              const isOpen = openCurriculumIdx === idx;
-              return (
-                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
-                  <button
-                    onClick={() => toggleCurriculum(idx)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
-                        {idx + 1}
-                      </span>
-                      <span className="text-sm sm:text-base font-bold">{step.title}</span>
-                    </div>
-                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
-                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
-                            {step.description}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* 4. NEW SECTION: DUAS YOU WILL LEARN */}
-      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block mb-3">
