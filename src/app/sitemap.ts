@@ -66,6 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'what-should-a-child-learn-after-noorani-qaida',
       'how-to-improve-your-quran-pronunciation',
       'choosing-male-female-quran-teacher',
+      'how-to-learn-quran-tafseer-online',
     ];
 
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {

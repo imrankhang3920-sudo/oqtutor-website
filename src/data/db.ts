@@ -382,6 +382,26 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\e048b092-3bc5-4825-b5c6-1ad16bc4d9af\\.user_uploaded\\media_1790563402202.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/noorani-qaida.jpg'),
         dest: path.join(process.cwd(), 'public/blog/why-noorani-qaida-essential/noorani-qaida-essential-guide.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\88a09c9f-4dcf-4fe5-8d46-1fad6f47e508\\.user_uploaded\\media_1791251777770.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/arabic-reading.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/how-to-learn-quran-tafseer-online/how-to-learn-quran-tafseer-online-cover.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\88a09c9f-4dcf-4fe5-8d46-1fad6f47e508\\.user_uploaded\\media_1791251777770.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/arabic-reading.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/how-to-learn-quran-tafseer-online/quran-tafseer-study-desk-lamp.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\88a09c9f-4dcf-4fe5-8d46-1fad6f47e508\\.user_uploaded\\media_1791251777604.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-reading.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/how-to-learn-quran-tafseer-online/dhikr-reflection-tasbih-quran.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\88a09c9f-4dcf-4fe5-8d46-1fad6f47e508\\.user_uploaded\\media_1791251777807.jpg',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-salah.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/how-to-learn-quran-tafseer-online/spiritual-reflection-sujood-mosque.jpg')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {

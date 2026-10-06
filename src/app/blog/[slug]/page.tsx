@@ -12,6 +12,7 @@ import PageRenderer from '@/components/PageRenderer';
 import { createBlogPostSchema, createBreadcrumbSchema } from '@/lib/structuredData';
 import ArticleContentNeverReadQuranSister from './ArticleContentNeverReadQuranSister';
 import ArticleContentWhyNooraniQaidaEssential from './ArticleContentWhyNooraniQaidaEssential';
+import ArticleContentHowToLearnQuranTafseerOnline from './ArticleContentHowToLearnQuranTafseerOnline';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -52,10 +53,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isAfterNooraniQaidaBlog = resolvedParams.slug === 'what-should-a-child-learn-after-noorani-qaida';
   const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
-  const isGlobalBlog = isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
+  const isGlobalBlog = isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
   const metaTitle = isUSABlog
     ? 'Online Quran Classes USA: 1-on-1 Qualified Tutors | OQTutor'
+    : isTafseerOnlineBlog
+    ? "How to Learn Quran Tafseer Online: A Beginner's Roadmap | OQTutor"
     : isWhyNooraniQaidaEssentialBlog
     ? 'Why Is Noorani Qaida Important for Learning to Read the Quran? | OQTutor'
     : isNeverReadQuranSisterBlog
@@ -114,6 +118,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           'Quran classes for adults USA',
           'Tajweed classes USA',
           'online Hifz classes USA'
+        ]
+      : isTafseerOnlineBlog
+      ? [
+          'how to learn quran tafseer online',
+          'quran tafseer online for beginners',
+          'learn quran tafseer online',
+          'online tafseer classes',
+          'quran tarjuma and tafseer online',
+          'learn tafseer without arabic',
+          'tafseer course for beginners',
+          'best online tafseer classes',
+          'learn tafsir online',
+          'beginner quran tafseer roadmap'
         ]
       : isWhyNooraniQaidaEssentialBlog
       ? [
@@ -388,6 +405,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
   const isNeverReadQuranSisterBlog = resolvedParams.slug === 'sister-never-read-quran-before-can-i-start-now';
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
+  const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -406,6 +424,68 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isTafseerOnlineBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Can I learn Quran Tafseer online if I don't know Arabic?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can study Tafseer through English or Urdu with a teacher and learn basic Quranic vocabulary gradually. Arabic helps over time, but you do not need it to begin."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is the difference between Tarjuma and Tafseer?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tarjuma is the translation of the Quran into another language. Tafseer explains the meaning, context and lessons of the verses using reliable sources."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How long does it take to learn Tafseer?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no fixed finish line. With regular lessons, beginners usually start with short Surahs and build up gradually, while deeper study continues for years."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which Tafseer is best for beginners?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your language and level. Ask your teacher to recommend one beginner-friendly Tafseer and follow it consistently instead of reading several at once."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can women and girls learn Tafseer with a female teacher?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Female tutors are available. Ask for a female teacher when you book your free trial."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a free trial for Tafseer classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You get a 3-day free trial and no credit card is required."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isWhyNooraniQaidaEssentialBlog && (
         <script
@@ -2094,7 +2174,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isWhyNooraniQaidaEssentialBlog ? (
+            {isTafseerOnlineBlog ? (
+              <ArticleContentHowToLearnQuranTafseerOnline />
+            ) : isWhyNooraniQaidaEssentialBlog ? (
               <ArticleContentWhyNooraniQaidaEssential />
             ) : isNeverReadQuranSisterBlog ? (
               <ArticleContentNeverReadQuranSister />
