@@ -739,31 +739,27 @@
     },
     {
       "id": "course-6",
-      "title": "Daily Duas Course",
+      "title": "Learn Daily Duas Online: Live 1-on-1 Classes for Kids & Adults",
       "slug": "daily-duas",
-      "description": "Learn essential daily Duas and prayers for protection, eating, sleeping, and regular life tasks.",
+      "description": "Our Daily Duas course helps children and adults learn the supplications of the Quran and Sunnah that accompany everyday life, from waking up and eating to travelling and sleeping. Your tutor teaches each dua by listening and repeating, corrects your pronunciation, explains the meaning in simple English and helps you use it in your daily routine.",
       "icon": "Sparkles",
       "image": "/daily-duas.jpg",
-      "duration": "2 Months",
+      "duration": "About 2 months (typical)",
       "suitableFor": "All Ages",
-      "overview": "Learn and memorize essential daily supplications (Duas) from the Quran and Sunnah to protect yourself and remember Allah throughout the day.",
+      "overview": "Memorize everyday duas and morning and evening Azkar with a certified tutor. Correct pronunciation, simple meanings and a routine you can keep, from waking up to going to sleep.",
       "learningOutcomes": [
         "Memorize supplications for waking up, sleeping, eating, and traveling",
         "Understand the translation and spiritual benefits of each Dua",
         "Apply prayers in daily routines to increase blessings",
         "Learn morning and evening protection prayers (Azkar)"
       ],
-      "classStructure": "One-on-One, 30 min classes, 2 to 3 times per week.",
+      "classStructure": "All classes are live, one-on-one and 30-40 minutes. Choose 3, 5 or 7 classes per week. We operate 24 hours a day, 7 days a week, so you can pick times that fit school, work or university.",
       "recommendedAge": "Ages 4 and above",
-      "seoTitle": "Learn Daily Duas & Azkar Online | Islamic Supplications",
-      "metaDescription": "Memorize daily Duas, morning & evening Azkar, and prayers for protection with certified scholars. Translation and pronunciation corrections. Start free trial.",
-      "focusKeyword": "Daily Duas",
-      "secondaryKeywords": [
-        "learn daily Duas online",
-        "Duas for protection",
-        "Islamic prayers for kids",
-        "masnoon Duas"
-      ],
+      "seoTitle": "Learn Daily Duas Online | Kids & Adults | 3-Day Free Trial",
+      "metaDescription": "Learn masnoon daily duas and morning & evening Azkar with certified tutors. Live 1-on-1 classes for kids and adults from $30/month. Try 3 days free.",
+      "focusKeyword": "",
+      "secondaryKeywords": [],
+      "updatedAt": "2026-10-06T00:00:00.000Z",
       "whoShouldJoin": "Perfect for children and adults who want to practice remembrance of Allah in their daily life, from waking up to sleeping, and learn daily protection supplications.",
       "benefits": [
         "Memorize correct Arabic pronunciation with authentic Tajweed",
@@ -778,26 +774,58 @@
         },
         {
           "title": "Protection Prayers",
-          "description": "Learning the morning and evening protection Azkar (Ayat al-Kursi, the 3 Quls)."
+          "description": "Morning and evening Azkar and short protection supplications, including short Surahs and verses commonly recited for protection."
         },
         {
           "title": "Social Duas",
-          "description": "Studying supplications for visiting the sick, traveling, and thanking others."
+          "description": "Duas for greeting, sneezing, visiting the sick, thanking others and everyday manners."
         },
         {
           "title": "Duas from the Quran",
-          "description": "Memorizing short, powerful prophetic prayers found directly in the Holy Quran."
+          "description": "Well-known supplications from the Quran, such as the Rabbana duas, learned with their meaning and context."
         }
       ],
       "teachingMethod": "We use audio repetition, colorful dua charts, and interactive flashcards with English translation to make memorization effortless.",
       "faqs": [
         {
           "question": "Are translations included in classes?",
-          "answer": "Yes. We focus heavily on ensuring the student understands the word-by-word translation of every Dua."
+          "answer": "Yes. Each dua is taught with its English translation and a simple explanation of its meaning."
         },
         {
           "question": "Can toddlers join this course?",
-          "answer": "Yes, we teach short and simple Duas to children as young as 4 years old using engaging audio rhymes."
+          "answer": "The course is recommended for ages 4 and above. Younger children can start with a few very short duas by listening and repeating if they can focus for a short lesson. Your tutor will advise during the free trial."
+        },
+        {
+          "question": "Do I need to read Arabic to learn daily duas?",
+          "answer": "No. Your tutor teaches by listening and repeating, and you can build your Arabic reading alongside with Noorani Qaida."
+        },
+        {
+          "question": "What is the difference between duas and Azkar?",
+          "answer": "Duas are supplications in which we ask Allah for something. Azkar (adhkar) are phrases of remembrance recited at set times, such as morning and evening. The course covers both."
+        },
+        {
+          "question": "How long does the course take?",
+          "answer": "About 2 months with regular classes, but the pace depends on the student's age, level and how often they practice."
+        },
+        {
+          "question": "How do you help children memorize?",
+          "answer": "With audio repetition, colorful dua charts, flashcards with English translation and reward charts, in a one-on-one class with no group distractions."
+        },
+        {
+          "question": "Can adults and new Muslims take this course?",
+          "answer": "Yes. Adults and new Muslims are welcome and can learn at their own pace in private lessons."
+        },
+        {
+          "question": "Can I choose a female tutor?",
+          "answer": "Yes. Male and female tutors are available. Ask for your preference when you book your free trial."
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "Plans start at $30 per month for 3 classes per week, $40 for 5 per week and $50 for daily classes. Each class is 30-40 minutes, with no registration fees or contracts."
+        },
+        {
+          "question": "Is there a free trial?",
+          "answer": "Yes. You get a 3-day free trial and no credit card is required. Classes run live on Zoom or Google Meet."
         }
       ]
     },
@@ -1112,7 +1140,7 @@
       "frequency": "Month",
       "features": [
         "3 Classes / Week",
-        "30 Minutes sessions",
+        "30-40 Minutes sessions",
         "One-on-One classes",
         "Male / Female Tutors",
         "Basic Tajweed & Qaida",
@@ -1128,7 +1156,7 @@
       "frequency": "Month",
       "features": [
         "5 Classes / Week",
-        "30 Minutes sessions",
+        "30-40 Minutes sessions",
         "One-on-One classes",
         "Male / Female Tutors",
         "Advanced Tajweed rules",
@@ -1145,7 +1173,7 @@
       "frequency": "Month",
       "features": [
         "Daily Classes (7/week)",
-        "30 Minutes sessions",
+        "30-40 Minutes sessions",
         "One-on-One classes",
         "Male / Female Tutors",
         "Customized Hifz program",

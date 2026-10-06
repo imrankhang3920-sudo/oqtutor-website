@@ -41,7 +41,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const modifiedTime = course.updatedAt || new Date().toISOString();
   const authorName = course.authorName || 'OQTutor Quran Faculty';
 
-  return {
+  const imageAlt = course.slug === 'daily-duas' 
+    ? 'Student learning daily duas online in a live 1-on-1 class with a tutor'
+    : course.title;
+
+  const metadata: Metadata = {
     title: course.seoTitle,
     description: course.metaDescription,
     authors: [{ name: authorName }],
@@ -74,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: course.image.startsWith('/') ? `${siteUrl}${course.image}` : course.image,
           width: 800,
           height: 600,
-          alt: course.title,
+          alt: imageAlt,
         },
       ],
     },
@@ -84,8 +88,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: course.metaDescription,
       images: [course.image.startsWith('/') ? `${siteUrl}${course.image}` : course.image],
     },
-    keywords: [course.focusKeyword, ...course.secondaryKeywords],
   };
+
+  // Remove keywords for daily-duas as requested, and only include for other courses if present
+  if (course.slug === 'daily-duas') {
+    metadata.keywords = null;
+  } else if (course.focusKeyword) {
+    metadata.keywords = [course.focusKeyword, ...(course.secondaryKeywords || [])];
+  }
+
+  return metadata;
 }
 
 export default async function CoursePage({ params }: Props) {
@@ -101,7 +113,7 @@ export default async function CoursePage({ params }: Props) {
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Courses', url: '/courses' },
-    { name: course.title, url: `/courses/${course.slug}` },
+    { name: course.slug === 'daily-duas' ? 'Daily Duas' : course.title, url: `/courses/${course.slug}` },
   ]);
 
   const courseSchema = createCourseSchema(course);

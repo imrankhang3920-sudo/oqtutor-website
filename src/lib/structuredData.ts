@@ -1,4 +1,4 @@
-import type { CourseData, FAQData, BlogData, ContactData } from '@/data/db';
+import type { CourseData, BlogData, ContactData } from '@/data/db';
 
 export const siteConfig = {
   name: 'OQTutor',
@@ -7,6 +7,8 @@ export const siteConfig = {
   logo: 'https://www.oqtutor.com/logo.jpg',
   contactEmail: 'hello@oqtutor.com',
   contactPhone: '+1 (248) 782-6565',
+  // TODO: [USER VERIFICATION REQUIRED] Verify or update the Trustpilot rating value below (currently 4.9/5)
+  trustpilotRating: '4.9/5',
   social: {
     facebook: 'https://www.facebook.com/oqtutor',
     instagram: 'https://www.instagram.com/oqtutor/',

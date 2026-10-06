@@ -26,6 +26,10 @@ export default function CoursePageClient({
   const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
 
+  if (course.slug === 'daily-duas') {
+    return <DailyDuasContent course={course} contactData={contactData} testimonials={testimonials} />;
+  }
+
   if (course.slug === 'tajweed') {
     return <TajweedCourseContent course={course} contactData={contactData} testimonials={testimonials} />;
   }
@@ -209,6 +213,15 @@ export default function CoursePageClient({
               <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
                 Whether you are establishing basic recognition or correcting hidden vocal flaws in advanced chapters, our tailored syllabus provides clean, measurable progress reporting week by week.
               </p>
+              {course.slug === 'salah-course' && (
+                <div className="mt-6 p-4.5 rounded-2xl bg-primary/5 border border-primary/20 text-xs sm:text-sm text-muted-text">
+                  Looking to learn everyday supplications alongside prayer recitations? Explore our{' '}
+                  <Link href="/courses/daily-duas" className="text-primary hover:underline font-semibold">
+                    daily duas course
+                  </Link>{' '}
+                  to memorize essential morning and evening Azkar and protection supplications.
+                </div>
+              )}
               {course.slug === 'tajweed' && (
                 <div className="mt-10 pt-10 border-t border-card-border/50 space-y-8">
                   <div className="space-y-4">
@@ -3232,7 +3245,7 @@ function IslamicStudiesContent({
               <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
               <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
                 <strong className="text-foreground">Learn Islam online with a structured Online Islamic Studies Course designed for kids, teenagers, and adults.</strong>{" "}
-                Study essential Islamic knowledge through live, one-to-one classes covering Quran, Hadith, Seerah, Fiqh, Islamic manners, Duas, and everyday Muslim life. Flexible online lessons make it easier for students and families to learn from home with a qualified teacher.
+                Study essential Islamic knowledge through live, one-to-one classes covering Quran, Hadith, Seerah, Fiqh, Islamic manners, <Link href="/courses/daily-duas" className="text-primary hover:underline font-semibold">daily duas course</Link> supplications, and everyday Muslim life. Flexible online lessons make it easier for students and families to learn from home with a qualified teacher.
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link
@@ -5606,5 +5619,869 @@ function TajweedCourseContent({
     </main>
   );
 }
+
+function DailyDuasContent({
+  course,
+  contactData,
+  testimonials = []
+}: {
+  course: CourseData;
+  contactData: ContactData;
+  testimonials?: TestimonialData[];
+}) {
+  const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
+  const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  const toggleCurriculum = (idx: number) => {
+    setOpenCurriculumIdx(openCurriculumIdx === idx ? null : idx);
+  };
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqIdx(openFaqIdx === idx ? null : idx);
+  };
+
+  const syllabusModules = [
+    {
+      title: "Routine Duas",
+      description: "Memorizing prayers for eating, entering/leaving home, sleeping, and waking up."
+    },
+    {
+      title: "Protection Prayers",
+      description: "Morning and evening Azkar and short protection supplications, including short Surahs and verses commonly recited for protection."
+    },
+    {
+      title: "Social Duas",
+      description: "Duas for greeting, sneezing, visiting the sick, thanking others and everyday manners."
+    },
+    {
+      title: "Duas from the Quran",
+      description: "Well-known supplications from the Quran, such as the Rabbana duas, learned with their meaning and context."
+    }
+  ];
+
+  const duasList = [
+    "Waking up",
+    "Going to sleep",
+    "Before and after eating",
+    "Entering and leaving home",
+    "Entering and leaving the bathroom",
+    "Entering and leaving the masjid",
+    "Travelling",
+    "Sneezing",
+    "Seeking forgiveness",
+    "Morning and evening Azkar",
+    "Ayat al-Kursi and the three Quls",
+    "Duas from the Quran"
+  ];
+
+  const lessonSteps = [
+    {
+      step: "1",
+      title: "Listen",
+      desc: "Your tutor recites the dua slowly with clear pronunciation."
+    },
+    {
+      step: "2",
+      title: "Repeat",
+      desc: "You repeat and the tutor corrects pronunciation and articulation."
+    },
+    {
+      step: "3",
+      title: "Understand",
+      desc: "Learn the meaning in simple English and its daily context."
+    },
+    {
+      step: "4",
+      title: "Review",
+      desc: "Revise the duas you already know to strengthen retention."
+    },
+    {
+      step: "5",
+      title: "Practice",
+      desc: "Get a short routine for home to practice throughout the day."
+    }
+  ];
+
+  const pricingPlans = [
+    {
+      id: "duas-plan-1",
+      title: "Starter",
+      price: "30",
+      classes: "3 Classes / Week",
+      popular: false,
+      features: [
+        "3 classes per week",
+        "30-40 minutes per class",
+        "Live 1-on-1 instruction",
+        "Live on Zoom or Google Meet",
+        "Male or female tutor",
+        "No registration fees or contracts"
+      ]
+    },
+    {
+      id: "duas-plan-2",
+      title: "Standard",
+      price: "40",
+      classes: "5 Classes / Week",
+      popular: true,
+      features: [
+        "5 classes per week",
+        "30-40 minutes per class",
+        "Live 1-on-1 instruction",
+        "Live on Zoom or Google Meet",
+        "Male or female tutor",
+        "Daily duas & Azkar routine",
+        "No registration fees or contracts"
+      ]
+    },
+    {
+      id: "duas-plan-3",
+      title: "Daily",
+      price: "50",
+      classes: "7 Classes / Week (Daily)",
+      popular: false,
+      features: [
+        "7 classes per week (Daily)",
+        "30-40 minutes per class",
+        "Live 1-on-1 instruction",
+        "Live on Zoom or Google Meet",
+        "Male or female tutor",
+        "Full syllabus & Quranic duas",
+        "No registration fees or contracts"
+      ]
+    }
+  ];
+
+  const faqsList = [
+    {
+      question: "Are translations included in classes?",
+      answer: "Yes. Each dua is taught with its English translation and a simple explanation of its meaning."
+    },
+    {
+      question: "Can toddlers join this course?",
+      answer: "The course is recommended for ages 4 and above. Younger children can start with a few very short duas by listening and repeating if they can focus for a short lesson. Your tutor will advise during the free trial."
+    },
+    {
+      question: "Do I need to read Arabic to learn daily duas?",
+      answer: "No. Your tutor teaches by listening and repeating, and you can build your Arabic reading alongside with Noorani Qaida."
+    },
+    {
+      question: "What is the difference between duas and Azkar?",
+      answer: "Duas are supplications in which we ask Allah for something. Azkar (adhkar) are phrases of remembrance recited at set times, such as morning and evening. The course covers both."
+    },
+    {
+      question: "How long does the course take?",
+      answer: "About 2 months with regular classes, but the pace depends on the student's age, level and how often they practice."
+    },
+    {
+      question: "How do you help children memorize?",
+      answer: "With audio repetition, colorful dua charts, flashcards with English translation and reward charts, in a one-on-one class with no group distractions."
+    },
+    {
+      question: "Can adults and new Muslims take this course?",
+      answer: "Yes. Adults and new Muslims are welcome and can learn at their own pace in private lessons."
+    },
+    {
+      question: "Can I choose a female tutor?",
+      answer: "Yes. Male and female tutors are available. Ask for your preference when you book your free trial."
+    },
+    {
+      question: "How much does it cost?",
+      answer: "Plans start at $30 per month for 3 classes per week, $40 for 5 per week and $50 for daily classes. Each class is 30-40 minutes, with no registration fees or contracts."
+    },
+    {
+      question: "Is there a free trial?",
+      answer: "Yes. You get a 3-day free trial and no credit card is required. Classes run live on Zoom or Google Meet."
+    }
+  ];
+
+  return (
+    <main className="flex-grow bg-background text-foreground">
+
+      {/* VISIBLE BREADCRUMBS */}
+      <nav aria-label="Breadcrumb" className="bg-foreground/[0.02] border-b border-card-border/60 py-3">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-xs text-muted-text">
+            <li>
+              <Link href="/" className="hover:text-primary transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <span className="text-muted-text/40">/</span>
+            </li>
+            <li>
+              <Link href="/courses" className="hover:text-primary transition-colors">
+                Courses
+              </Link>
+            </li>
+            <li>
+              <span className="text-muted-text/40">/</span>
+            </li>
+            <li className="font-semibold text-foreground" aria-current="page">
+              Daily Duas
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* 1. HERO SECTION */}
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-foreground/[0.01] border-b border-card-border">
+        <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Hero Content */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="flex flex-wrap items-center gap-3 mb-3 justify-center lg:justify-start">
+                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                  Daily Supplications &amp; Azkar
+                </span>
+                <span className="text-xs text-muted-text flex items-center space-x-1.5 bg-foreground/5 border border-card-border rounded-full px-3 py-1">
+                  <Calendar className="h-3.5 w-3.5 text-primary" />
+                  <span>Last updated: October 2026</span>
+                </span>
+              </div>
+              <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                Learn Daily Duas Online: Live 1-on-1 Classes for Kids &amp; Adults
+              </h1>
+              <div className="h-1 w-20 bg-secondary mx-auto lg:mx-0 mt-4 rounded-full" />
+              <p className="mt-6 text-sm sm:text-base text-muted-text leading-relaxed max-w-2xl font-normal">
+                Memorize everyday duas and morning and evening Azkar with a certified tutor. Correct pronunciation, simple meanings and a routine you can keep, from waking up to going to sleep.
+              </p>
+              
+              <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/book-free-trial"
+                  className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+                >
+                  <span>Book Free Trial Classes</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="px-8 py-3.5 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs font-bold uppercase tracking-wider transition-all"
+                >
+                  View Packages
+                </Link>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start text-xs text-muted-text border-t border-card-border/50 pt-8">
+                <div className="flex items-center space-x-2">
+                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  <span>3-Day Free Trial (No Credit Card)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Video className="h-4 w-4 text-primary" />
+                  <span>Live on Zoom or Google Meet</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Users className="h-4 w-4 text-primary" />
+                  <span>Male &amp; Female Tutors</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Clock className="h-4 w-4 text-primary" />
+                  <span>No Registration Fees or Contracts</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Hero Image Card */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative max-w-sm w-full">
+                <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-4 translate-y-4 -z-10" />
+                <div className="glass p-3.5 rounded-3xl border-card-border shadow-2xl relative overflow-hidden">
+                  <Image
+                    src={course.image || "/daily-duas.jpg"}
+                    alt="Student learning daily duas online in a live 1-on-1 class with a tutor"
+                    width={400}
+                    height={320}
+                    priority
+                    className="w-full rounded-2xl object-cover h-[320px] shadow-inner"
+                  />
+                  <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-md border border-card-border/60 text-center shadow-lg">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text block">Recommended Age</span>
+                    <span className="text-sm font-bold text-foreground mt-0.5 block">{course.recommendedAge || "Ages 4 and above"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2. COURSE DESCRIPTION & WHO SHOULD JOIN */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            {/* Description */}
+            <div className="lg:col-span-7">
+              <h2 className="text-3xl font-extrabold text-foreground mb-4">Course Description</h2>
+              <div className="h-1 w-16 bg-secondary mb-6 rounded-full" />
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal mb-6">
+                Our Daily Duas course helps children and adults learn the supplications of the Quran and Sunnah that accompany everyday life, from waking up and eating to travelling and sleeping. Your tutor teaches each dua by listening and repeating, corrects your pronunciation, explains the meaning in simple English and helps you use it in your daily routine.
+              </p>
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal mb-8">
+                Lessons are live and one-on-one, so the pace fits your child or your own level. Beginners can start by listening and repeating with their tutor while they build their Arabic reading with{" "}
+                <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+                  Noorani Qaida
+                </Link>.
+              </p>
+
+              {/* What makes it practical */}
+              <div className="space-y-4 border-t border-card-border/50 pt-8">
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span><strong>Step-by-Step Audio Repetition:</strong> Master correct Tajweed and articulation with patient guidance.</span>
+                </div>
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span><strong>English Meaning &amp; Context:</strong> Understand the purpose behind every prayer for meaningful remembrance.</span>
+                </div>
+                <div className="flex items-start space-x-3 text-xs sm:text-sm">
+                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span><strong>Habit-Building Routines:</strong> Practical daily charts that encourage remembering Allah naturally throughout the day.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Who Should Join & Key Details */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="glass p-8 rounded-3xl border-card-border shadow-xl">
+                <h3 className="text-xl font-bold text-foreground mb-3 flex items-center space-x-2">
+                  <Users className="h-5 w-5 text-secondary" />
+                  <span>Who Should Join?</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                  Perfect for children and adults who want to practice remembrance of Allah in their daily life, from waking up to sleeping, and learn daily protection supplications.
+                </p>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border-card-border shadow-xl space-y-4">
+                <h3 className="text-xl font-bold text-foreground mb-4 flex items-center space-x-2">
+                  <Award className="h-5 w-5 text-primary" />
+                  <span>Key Details</span>
+                </h3>
+                <div className="space-y-3 text-xs sm:text-sm">
+                  <div className="flex justify-between items-center py-2 border-b border-card-border/50">
+                    <span className="text-muted-text">Typical Duration:</span>
+                    <span className="font-bold text-foreground">About 2 months (typical)</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-card-border/50">
+                    <span className="text-muted-text">Target Audience:</span>
+                    <span className="font-bold text-foreground">All Ages (Kids &amp; Adults)</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-card-border/50">
+                    <span className="text-muted-text">Class Format:</span>
+                    <span className="font-bold text-foreground">Live 1-on-1 on Zoom / Meet</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-card-border/50">
+                    <span className="text-muted-text">Lesson Duration:</span>
+                    <span className="font-bold text-foreground">30-40 minutes per class</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2">
+                    <span className="text-muted-text">Monthly Plans:</span>
+                    <span className="font-bold text-primary">From $30 / month</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SYLLABUS SECTION */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Course Syllabus</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Structured Learning Modules
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm text-muted-text leading-relaxed">
+              Our 4-part syllabus covers routine life supplications, protection Azkar, social manners, and Quranic duas.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {syllabusModules.map((step, idx) => {
+              const isOpen = openCurriculumIdx === idx;
+              return (
+                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => toggleCurriculum(idx)}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                  >
+                    <div className="flex items-center space-x-4">
+                      <span className="h-8 w-8 rounded-full bg-primary/15 text-primary text-xs flex items-center justify-center font-bold shrink-0">
+                        {idx + 1}
+                      </span>
+                      <span className="text-sm sm:text-base font-bold">{step.title}</span>
+                    </div>
+                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <div className="px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50">
+                          <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4 pl-12">
+                            {step.description}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. NEW SECTION: DUAS YOU WILL LEARN */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block mb-3">
+              Comprehensive Occasions
+            </span>
+            <h2 className="text-3xl font-extrabold text-foreground">Duas You Will Learn</h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
+              The exact list depends on the student's age and level.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {duasList.map((item, idx) => (
+              <div
+                key={idx}
+                className="glass p-4 sm:p-5 rounded-2xl border-card-border flex items-center space-x-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <div className="h-8 w-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <Sparkles className="h-4 w-4" />
+                </div>
+                <span className="text-xs sm:text-sm font-semibold text-foreground leading-snug">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. NEW SECTION: WHAT A LESSON LOOKS LIKE */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Pedagogical Method</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">What a Lesson Looks Like</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
+              Each live one-on-one session is 30-40 minutes designed to keep students focused, motivated, and engaged.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {lessonSteps.map((step, idx) => (
+              <div
+                key={idx}
+                className="glass p-6 rounded-3xl border-card-border relative flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+              >
+                <div>
+                  <div className="h-12 w-12 rounded-2xl bg-primary/15 text-primary flex items-center justify-center font-extrabold text-lg mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
+                    {step.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. NEW SECTION: SUGGESTED STARTING POINTS BY AGE */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Tailored Pacing</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">Suggested Starting Points by Age</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
+              Every learner begins with an age-appropriate curriculum matched to their attention span and goals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Ages 4-6 */}
+            <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:border-primary/40 transition-all duration-300">
+              <div>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">Early Learners</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-4">Ages 4-6</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                  A few short duas through repetition, charts and flashcards. Perfect for young children learning to speak and establish foundational Islamic manners.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-card-border/50 text-[11px] text-muted-text space-y-2">
+                <p>
+                  Helpful guides: Read our guide on{" "}
+                  <Link href="/blog/teaching-salah-wudu-toddlers" className="text-primary hover:underline font-semibold">
+                    teaching Salah and Wudu to toddlers
+                  </Link>{" "}
+                  and learn{" "}
+                  <Link href="/blog/how-do-you-know-your-child-is-ready-to-start-learning-the-quran" className="text-primary hover:underline font-semibold">
+                    how do you know your child is ready to start learning the Quran
+                  </Link>.
+                </p>
+              </div>
+            </div>
+
+            {/* Ages 7-12 */}
+            <div className="glass p-8 rounded-3xl border-card-border ring-1 ring-primary/30 flex flex-col justify-between hover:border-primary/50 transition-all duration-300">
+              <div>
+                <span className="text-xs font-bold text-secondary uppercase tracking-wider block mb-2">School Age</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-4">Ages 7-12</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                  More duas with their meanings and a daily routine. Builds personal responsibility, confident recitation, and daily habits of morning and evening Azkar.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-card-border/50 text-[11px] text-muted-text space-y-2">
+                <p>
+                  Looking for full recitation lessons? Explore our{" "}
+                  <Link href="/courses/quran-for-kids" className="text-primary hover:underline font-semibold">
+                    Quran for Kids
+                  </Link>{" "}
+                  program.
+                </p>
+              </div>
+            </div>
+
+            {/* Teens & Adults */}
+            <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:border-primary/40 transition-all duration-300">
+              <div>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-2">Teens &amp; Adults</span>
+                <h3 className="text-xl font-extrabold text-foreground mb-4">Teens &amp; Adults</h3>
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed mb-6 font-normal">
+                  The full set, including morning and evening Azkar and Quranic duas. Tailored for older youth, reverts, and busy adults who want private, judgment-free classes.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-card-border/50 text-[11px] text-muted-text space-y-2">
+                <p>
+                  To study Hadith, Seerah, and Fiqh in depth, view our{" "}
+                  <Link href="/courses/islamic-studies" className="text-primary hover:underline font-semibold">
+                    Islamic Studies
+                  </Link>{" "}
+                  curriculum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SCHEDULE TEXT & TIMINGS */}
+      <section className="py-20 bg-foreground/[0.005] border-y border-card-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full -translate-x-8 -translate-y-8" />
+            <h2 className="text-3xl font-extrabold text-foreground mb-4">Flexible 24/7 Scheduling &amp; Structure</h2>
+            <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
+            <p className="text-sm sm:text-base text-muted-text max-w-3xl mx-auto leading-relaxed font-normal mb-8">
+              All classes are live, one-on-one and 30-40 minutes. Choose 3, 5 or 7 classes per week. We operate 24 hours a day, 7 days a week, so you can pick times that fit school, work or university.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto text-left sm:text-center mb-8">
+              <div className="glass p-4 rounded-xl border-card-border/50">
+                <span className="text-primary font-bold text-base sm:text-lg block">30-40 Mins</span>
+                <span className="text-[10px] text-muted-text block mt-1">Class Duration</span>
+              </div>
+              <div className="glass p-4 rounded-xl border-card-border/50">
+                <span className="text-primary font-bold text-base sm:text-lg block">1-on-1</span>
+                <span className="text-[10px] text-muted-text block mt-1">Class Mode</span>
+              </div>
+              <div className="glass p-4 rounded-xl border-card-border/50">
+                <span className="text-primary font-bold text-base sm:text-lg block">24 / 7</span>
+                <span className="text-[10px] text-muted-text block mt-1">Availability</span>
+              </div>
+              <div className="glass p-4 rounded-xl border-card-border/50">
+                <span className="text-primary font-bold text-base sm:text-lg block">3 Days</span>
+                <span className="text-[10px] text-muted-text block mt-1">Free Trial</span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-text max-w-2xl mx-auto leading-relaxed">
+              Classes are taught live on Zoom or Google Meet with certified male or female tutors. Starting soon? Learn how to{" "}
+              <Link href="/blog/prepare-child-first-online-class" className="text-primary hover:underline font-semibold">
+                prepare your child for their first online class
+              </Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED COURSES PATHWAYS */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Connected Pathways</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">Explore Related Courses</p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link
+              href="/courses/salah-course"
+              className="glass p-6 rounded-3xl border-card-border hover:border-primary/40 hover:-translate-y-1 transition-all group"
+            >
+              <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Salah &amp; Prayer Course
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed font-normal">
+                Master step-by-step Wudu, prayer postures (Ruku, Sujud), and obligatory recitations.
+              </p>
+            </Link>
+            <Link
+              href="/courses/noorani-qaida"
+              className="glass p-6 rounded-3xl border-card-border hover:border-primary/40 hover:-translate-y-1 transition-all group"
+            >
+              <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Noorani Qaida Course
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed font-normal">
+                Learn Arabic alphabet recognition, Makharij articulation, and foundational Tajweed rules.
+              </p>
+            </Link>
+            <Link
+              href="/courses/islamic-studies"
+              className="glass p-6 rounded-3xl border-card-border hover:border-primary/40 hover:-translate-y-1 transition-all group"
+            >
+              <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                Islamic Studies Course
+              </h3>
+              <p className="text-xs text-muted-text leading-relaxed font-normal">
+                Comprehensive study of Aqeedah, Hadith, Prophet stories, Fiqh, and Islamic character.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. PRICING SNAPSHOT (Placed before FAQ) */}
+      <section id="pricing" className="py-20 bg-foreground/[0.005] border-t border-card-border relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">Affordable Plans</h2>
+            <p className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
+              Simple, Transparent Pricing
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-base sm:text-lg text-muted-text">
+              Plans start at $30 per month. Each class is 30-40 minutes. No registration fees or long-term contracts.
+            </p>
+          </div>
+
+          {/* Pricing Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.id}
+                className={`glass rounded-3xl border-card-border p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                  plan.popular 
+                    ? 'ring-2 ring-primary bg-primary/[0.03] md:scale-105 shadow-xl shadow-primary/10 md:z-10' 
+                    : 'hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-md">
+                    Most Popular
+                  </div>
+                )}
+
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-1">{plan.title}</h3>
+                  <p className="text-xs font-semibold text-primary mb-3">{plan.classes}</p>
+                  <div className="flex items-baseline mt-2 mb-6">
+                    <span className="text-4xl sm:text-5xl font-extrabold text-foreground">${plan.price}</span>
+                    <span className="text-sm text-muted-text ml-2">/ Month</span>
+                  </div>
+                  <div className="h-px bg-card-border w-full mb-6" />
+
+                  <ul className="space-y-3.5">
+                    {plan.features.map((feature, fIdx) => (
+                      <li key={fIdx} className="flex items-start space-x-3 text-xs sm:text-sm text-foreground/80">
+                        <Check className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    href="/book-free-trial"
+                    className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl'
+                        : 'bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border'
+                    }`}
+                  >
+                    Book your 3-day free trial
+                  </Link>
+                  <p className="text-[10px] text-center text-muted-text mt-3">Cancel anytime. No registration fees.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/pricing"
+              className="text-xs sm:text-sm text-primary hover:underline font-semibold inline-flex items-center space-x-1"
+            >
+              <span>View full pricing packages &amp; family discount options</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. REVIEWS & TESTIMONIALS */}
+      {/* TODO: [USER INPUT REQUIRED] Please supply 1-2 real reviews that mention daily duas to display on this page. */}
+      {testimonials.length > 0 && (
+        <Testimonials data={testimonials} />
+      )}
+
+      {/* 9. FAQ SECTION (10 questions, all answers present in HTML) */}
+      <section className="py-20 bg-foreground/[0.005] border-t border-card-border">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-xs font-bold text-primary uppercase tracking-widest">FAQ</h2>
+            <p className="mt-3 text-3xl font-extrabold text-foreground">
+              Frequently Asked Questions
+            </p>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+            <p className="mt-4 text-sm text-muted-text leading-relaxed">
+              Find clear, factual answers to common questions regarding our Daily Duas curriculum, teachers, schedules, and free trial.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqsList.map((faq, idx) => {
+              const isOpen = openFaqIdx === idx;
+              return (
+                <div key={idx} className="glass rounded-2xl border-card-border overflow-hidden transition-all duration-300">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+                  >
+                    <div className="flex items-center space-x-3.5 pr-4">
+                      <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
+                      <span className="text-xs sm:text-sm font-bold">{faq.question}</span>
+                    </div>
+                    <ChevronDown className={`h-5 w-5 text-muted-text/60 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-primary' : ''}`} />
+                  </button>
+
+                  {/* Accessible content container ensuring answer is always in HTML DOM */}
+                  <div
+                    className={`px-5 pb-6 sm:px-6 sm:pb-8 pt-0 border-t border-card-border/50 ${
+                      isOpen ? 'block' : 'hidden'
+                    }`}
+                  >
+                    <div className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal pt-4">
+                      {idx === 2 ? (
+                        <>
+                          No. Your tutor teaches by listening and repeating, and you can build your Arabic reading alongside with{" "}
+                          <Link href="/courses/noorani-qaida" className="text-primary hover:underline font-semibold">
+                            Noorani Qaida
+                          </Link>.
+                        </>
+                      ) : idx === 7 ? (
+                        <>
+                          Yes. Male and female tutors are available. Ask for your preference when you{" "}
+                          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+                            book your free trial
+                          </Link>.
+                        </>
+                      ) : idx === 8 ? (
+                        <>
+                          Plans start at $30 per month for 3 classes per week, $40 for 5 per week and $50 for daily classes. Each class is 30-40 minutes, with no registration fees or contracts. See our full{" "}
+                          <Link href="/pricing" className="text-primary hover:underline font-semibold">
+                            pricing details
+                          </Link>.
+                        </>
+                      ) : idx === 9 ? (
+                        <>
+                          Yes. You get a{" "}
+                          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+                            3-day free trial
+                          </Link>{" "}
+                          and no credit card is required. Classes run live on Zoom or Google Meet.
+                        </>
+                      ) : (
+                        faq.answer
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* FINAL CTA SECTION */}
+      <section className="py-20 border-t border-card-border bg-foreground/[0.01]">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
+              Start Learning Daily Duas Today
+            </h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mb-6 rounded-full" />
+            <p className="text-sm sm:text-base text-muted-text max-w-2xl mx-auto leading-relaxed mb-8">
+              Join students worldwide learning essential daily supplications and protection Azkar with certified male and female tutors. Try 3 days free with no credit card required.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/book-free-trial"
+                className="px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/25 hover:shadow-xl transition-all inline-flex items-center space-x-2"
+              >
+                <span>Start Your Free Trial</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="px-8 py-4 rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all"
+              >
+                View Pricing Plans
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
+
 
 

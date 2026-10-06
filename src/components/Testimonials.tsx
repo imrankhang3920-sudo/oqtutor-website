@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, CheckCircle2, ExternalLink } from 'lucide-react';
 import { TestimonialData } from '@/data/db';
+import { siteConfig } from '@/lib/structuredData';
 
 interface TestimonialsProps {
   data?: TestimonialData[];
@@ -136,7 +137,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
             </div>
 
             <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-foreground group-hover:text-[#00b67a] transition-colors">
-              <span className="text-muted-text font-normal">Rated 4.9/5 on</span>
+              <span className="text-muted-text font-normal">Rated {siteConfig.trustpilotRating || '4.9/5'} on</span>
               <span className="font-extrabold text-foreground tracking-tight">Trustpilot</span>
               <ExternalLink className="w-4 h-4 ml-0.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#00b67a]" />
             </div>
