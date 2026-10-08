@@ -248,6 +248,101 @@ export default async function TexasQuranClassesPage() {
           </div>
         </section>
 
+        {/* Section: Online Quran Classes vs a Local Islamic Center */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-background">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-10">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Online Quran Classes vs a Local Islamic Center
+              </h2>
+              <div className="h-1 w-20 bg-secondary mt-4 rounded-full" />
+            </div>
+
+            <div
+              tabIndex={0}
+              role="region"
+              aria-label="Comparison of online Quran classes and a local Islamic center"
+              className="overflow-x-auto rounded-3xl border border-card-border glass shadow-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <table className="w-full text-left text-xs sm:text-sm border-collapse min-w-[540px]">
+                <caption className="sr-only">
+                  Comparison of online Quran classes and a local Islamic center
+                </caption>
+                <thead>
+                  <tr className="border-b border-card-border/60 bg-foreground/[0.02]">
+                    <th scope="col" className="p-4 sm:p-5 font-bold text-foreground">
+                      <span className="sr-only">Feature</span>
+                    </th>
+                    <th scope="col" className="p-4 sm:p-5 font-bold text-primary bg-primary/5">
+                      Online with OQTutor
+                    </th>
+                    <th scope="col" className="p-4 sm:p-5 font-semibold text-foreground/90">
+                      Local Islamic center or weekend school
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-card-border/40 text-muted-text">
+                  <tr>
+                    <th scope="row" className="p-4 sm:p-5 font-semibold text-foreground whitespace-nowrap">
+                      Travel
+                    </th>
+                    <td className="p-4 sm:p-5 bg-primary/5 text-foreground font-medium">
+                      None
+                    </td>
+                    <td className="p-4 sm:p-5">
+                      Drive across town
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4 sm:p-5 font-semibold text-foreground whitespace-nowrap">
+                      Schedule
+                    </th>
+                    <td className="p-4 sm:p-5 bg-primary/5 text-foreground font-medium">
+                      Flexible, reschedule with notice
+                    </td>
+                    <td className="p-4 sm:p-5">
+                      Fixed timetable
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4 sm:p-5 font-semibold text-foreground whitespace-nowrap">
+                      Attention
+                    </th>
+                    <td className="p-4 sm:p-5 bg-primary/5 text-foreground font-medium">
+                      Private 1-on-1
+                    </td>
+                    <td className="p-4 sm:p-5">
+                      Often a group
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4 sm:p-5 font-semibold text-foreground whitespace-nowrap">
+                      Teacher choice
+                    </th>
+                    <td className="p-4 sm:p-5 bg-primary/5 text-foreground font-medium">
+                      Male or female tutors
+                    </td>
+                    <td className="p-4 sm:p-5">
+                      Depends on the center
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="p-4 sm:p-5 font-semibold text-foreground whitespace-nowrap">
+                      Community
+                    </th>
+                    <td className="p-4 sm:p-5 bg-primary/5 text-foreground font-medium">
+                      Online only
+                    </td>
+                    <td className="p-4 sm:p-5">
+                      In-person community and friends
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Section 2: What to Look for in an Online Quran Class in Texas */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
