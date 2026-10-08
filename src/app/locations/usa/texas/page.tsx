@@ -455,6 +455,26 @@ export default async function TexasQuranClassesPage() {
           </div>
         </section>
 
+        {/* Section: Class Times for Texas Families */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-card-border/40">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Time Zones & Scheduling
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Class Times for Texas Families
+              </h2>
+              <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
+              <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+                <p>
+                  Most of Texas is on Central Time, so we schedule classes around your school day. El Paso and nearby areas are on Mountain Time, and your slot is matched to your local time. Many families choose early mornings before school, after-school slots in the late afternoon or evening, or weekends. Lessons can be rescheduled with advance notice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 6: How Do Online Quran Classes Work for Children in Texas? */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
