@@ -432,6 +432,35 @@ export default async function TexasQuranClassesPage() {
           </div>
         </section>
 
+        {/* Section: Online Quran Classes for Adults and New Muslims in Texas */}
+        <section className="py-16 md:py-24 relative overflow-hidden bg-background">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                Adults & New Muslims
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Online Quran Classes for Adults and New Muslims in Texas
+              </h2>
+              <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
+              <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
+                <p>
+                  Adults in Houston, Dallas-Fort Worth, Austin, San Antonio and across Texas can learn too. Lessons are private, with male or female tutors, from Noorani Qaida to Tajweed, Hifz or Tafseer, at your own pace. See our <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Quran lessons for adults</Link>.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Link
+                  href="/book-free-trial"
+                  className="inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:bg-foreground/5 text-foreground text-xs font-bold uppercase tracking-wider transition-all"
+                >
+                  <span>Book your 3-day free trial</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 5: Flexible Online Quran Classes for Busy Texas Families */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
