@@ -135,7 +135,12 @@ export default async function CoursePage({ params }: Props) {
       />
 
       <Navbar />
-      <CoursePageClient course={course} contactData={dbData.contact} testimonials={dbData.testimonials || []} />
+      <CoursePageClient 
+        course={course} 
+        contactData={dbData.contact} 
+        testimonials={dbData.testimonials || []} 
+        pricing={dbData.pricing || []} 
+      />
       <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
       <Footer data={dbData.contact} />
     </>

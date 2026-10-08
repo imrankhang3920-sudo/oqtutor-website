@@ -9,22 +9,36 @@ import {
   Volume2, Layers, Headphones, Mic, Target, GraduationCap, ArrowUpRight, Smile
 } from 'lucide-react';
 import Link from 'next/link';
-import { CourseData, ContactData, TestimonialData } from '@/data/db';
+import { CourseData, ContactData, TestimonialData, PricingData } from '@/data/db';
 import Image from 'next/image';
 import Testimonials from '@/components/Testimonials';
 import HowItWorksSection from '@/components/HowItWorksSection';
+import HifzCourseContent from '@/components/HifzCourseContent';
 
 export default function CoursePageClient({
   course,
   contactData,
-  testimonials = []
+  testimonials = [],
+  pricing = []
 }: {
   course: CourseData;
   contactData: ContactData;
   testimonials?: TestimonialData[];
+  pricing?: PricingData[];
 }) {
   const [openCurriculumIdx, setOpenCurriculumIdx] = useState<number | null>(0);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  if (course.slug === 'hifz') {
+    return (
+      <HifzCourseContent 
+        course={course} 
+        contactData={contactData} 
+        testimonials={testimonials} 
+        pricing={pricing} 
+      />
+    );
+  }
 
   if (course.slug === 'daily-duas') {
     return <DailyDuasContent course={course} contactData={contactData} testimonials={testimonials} />;

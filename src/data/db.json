@@ -381,7 +381,7 @@
         "Develop strong mental discipline, focus, and accurate recitation rhythm",
         "Receive standard completion evaluation and graduation certification"
       ],
-      "classStructure": "One-on-One customized sessions, 3 to 6 times per week (30 to 45 mins).",
+      "classStructure": "One-on-One customized sessions, 3 to 6 times per week (30–40 minutes).",
       "recommendedAge": "Ages 6 and above",
       "seoTitle": "Online Quran Memorization Classes (Hifz) | Memorize Quran Online",
       "metaDescription": "Memorize the Holy Quran online with certified Huffaz. Personalized 1-on-1 Hifz classes for kids and adults with daily Sabaq, Sabqi & Manzil revision. Book a free trial.",
@@ -408,18 +408,19 @@
         },
         {
           "title": "Recent Revision (Sabqi)",
-          "description": "Daily revision of the most recently memorized pages (last 5-10 pages) to cement new memory connections."
+          "description": "The student recites the recently memorized portion (the last several days) to the teacher every class, so new memorization is locked in before it fades."
         },
         {
           "title": "Older Revision (Manzil)",
-          "description": "Systematic revision of older memorized Juz and Surahs on a rotating cycle to ensure lifetime retention."
+          "description": "Previously memorized portions are revised on a rotating cycle, so nothing memorized earlier is forgotten as new lessons are added."
         },
         {
           "title": "Hifz Evaluation & Certification",
-          "description": "Regular oral assessments by senior scholars and issuance of completion certificates upon finishing target milestones or full Hifz."
+          "description": "Milestone oral tests with senior scholars at the end of each level and an official completion certificate upon finishing target milestones or full Hifz."
         }
       ],
       "teachingMethod": "We use structured one-on-one live video sessions with interactive memorization grids, audio recording reviews, and progressive daily checklists to maintain consistency and spiritual motivation.",
+      "updatedAt": "2026-10-01T00:00:00.000Z",
       "faqs": [
         {
           "question": "Can I memorize only selected Surahs or Juz Amma instead of full Hifz?",
