@@ -14,6 +14,7 @@ import Image from 'next/image';
 import Testimonials from '@/components/Testimonials';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import HifzCourseContent from '@/components/HifzCourseContent';
+import AvailableStatesBlock from '@/components/AvailableStatesBlock';
 
 export default function CoursePageClient({
   course,
@@ -701,6 +702,13 @@ export default function CoursePageClient({
         </div>
       </section>
 
+      {/* Available in Your State */}
+      <section className="py-6 bg-background">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <AvailableStatesBlock courseName={course.title} />
+        </div>
+      </section>
+
     </main>
   );
 }
@@ -1109,6 +1117,11 @@ function NooraniQaidaContent({
           </div>
         </div>
       </section>
+
+      {/* Available in Your State */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <AvailableStatesBlock courseName="Noorani Qaida" />
+      </div>
 
       {/* FINAL CTA */}
       <section className="py-20 border-t border-card-border mb-20">
@@ -1702,6 +1715,11 @@ function QuranReadingContent({
         </div>
       </section>
 
+      {/* Available in Your State */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <AvailableStatesBlock courseName="Quran Reading" />
+      </div>
+
       {/* 11. FINAL CTA */}
       <section className="py-20 border-t border-card-border mb-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -2236,6 +2254,9 @@ function FemaleQuranTeacherContent({
               - Sister Maryam (London, UK) — Placeholder Testimonial
             </div>
           </div>
+
+          {/* Available in Your State */}
+          <AvailableStatesBlock courseName="Female Quran Teacher" className="mb-12" />
 
           {/* CTA Box */}
           <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
@@ -3095,6 +3116,11 @@ function QuranForAdultsContent({
           </div>
         </div>
       </section>
+
+      {/* Available in Your State */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <AvailableStatesBlock courseName="Quran for Adults" />
+      </div>
 
       {/* Persuasive CTA Banner */}
       <section className="py-16 bg-background border-t border-card-border relative overflow-hidden">
@@ -5598,6 +5624,8 @@ function TajweedCourseContent({
       {/* 16. FINAL CTA SECTION */}
       <section className="py-20 bg-gradient-to-b from-background to-foreground/[0.03] border-t border-card-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <AvailableStatesBlock courseName="Tajweed" className="mb-12 text-left" />
+
           <div className="glass rounded-3xl border border-card-border p-8 sm:p-14 shadow-2xl relative overflow-hidden bg-card/60 backdrop-blur-md">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl pointer-events-none" />

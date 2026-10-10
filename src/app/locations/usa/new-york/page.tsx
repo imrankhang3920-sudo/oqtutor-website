@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
+import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -1344,6 +1345,13 @@ export default async function NewYorkQuranClassesPage() {
             </div>
           </div>
         </section>
+
+        {/* Nearby Sibling States */}
+        <NearbyStatesSection 
+          currentState="new-york"
+          title="Online Quran Classes in Nearby US States"
+          subtitle="Explore live online Quran classes across New Jersey, Illinois, Texas, and other US states."
+        />
 
         {/* Global / National Locations Section */}
         <ServingLocationsSection 

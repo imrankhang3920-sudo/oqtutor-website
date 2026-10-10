@@ -3,6 +3,7 @@ import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -1583,6 +1584,13 @@ export default async function CaliforniaQuranClassesPage() {
             </div>
           </div>
         </section>
+
+        {/* Nearby Sibling States */}
+        <NearbyStatesSection 
+          currentState="california"
+          title="Online Quran Classes in Nearby US States"
+          subtitle="Looking for classes in Illinois, Texas, or across the United States? Explore our regional Quran tutoring programs."
+        />
       </main>
 
       <Footer data={dbData.contact} />

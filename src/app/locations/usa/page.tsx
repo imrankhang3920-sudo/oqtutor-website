@@ -347,7 +347,17 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-10",
       question: "What time are Quran lessons available?",
-      answer: "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with the ability to adjust times as routines change."
+      answer: (
+        <>
+          Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with dedicated schedules for students in{' '}
+          <Link href="/locations/usa/illinois" className="text-primary hover:underline font-semibold">Illinois</Link>,{' '}
+          <Link href="/locations/usa/texas" className="text-primary hover:underline font-semibold">Texas</Link>,{' '}
+          <Link href="/locations/usa/michigan" className="text-primary hover:underline font-semibold">Michigan</Link>,{' '}
+          <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold">New York</Link>,{' '}
+          <Link href="/locations/usa/california" className="text-primary hover:underline font-semibold">California</Link>,{' '}
+          <Link href="/locations/usa/new-jersey" className="text-primary hover:underline font-semibold">New Jersey</Link>, and nationwide.
+        </>
+      )
     },
     {
       id: "usa-faq-11",
@@ -370,14 +380,24 @@ export default async function USALocationsHubPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": usaFaqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the best online Quran classes in the USA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Look for an academy that assesses the student's entry level and offers a trial class so you can evaluate the teacher's patience and communication before committing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What time are Quran lessons available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones across Illinois, Texas, Michigan, New York, California, New Jersey, and nationwide."
+        }
       }
-    }))
+    ]
   };
 
   const breadcrumbSchema = {
@@ -730,10 +750,34 @@ export default async function USALocationsHubPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
-                { name: "Eastern Time (EST/EDT)", states: "New York, Florida, Michigan, New Jersey, Virginia, Georgia" },
-                { name: "Central Time (CST/CDT)", states: "Texas, Illinois, Minnesota, Missouri, Wisconsin, Tennessee" },
-                { name: "Mountain Time (MST/MDT)", states: "Colorado, Arizona, Utah, New Mexico, Idaho, Montana" },
-                { name: "Pacific Time (PST/PDT)", states: "California, Washington, Oregon, Nevada, Alaska, Hawaii" }
+                { 
+                  name: "Eastern Time (EST/EDT)", 
+                  states: (
+                    <>
+                      <Link href="/locations/usa/new-york" className="text-foreground hover:text-primary font-medium hover:underline">New York</Link>, Florida, <Link href="/locations/usa/michigan" className="text-foreground hover:text-primary font-medium hover:underline">Michigan</Link>, <Link href="/locations/usa/new-jersey" className="text-foreground hover:text-primary font-medium hover:underline">New Jersey</Link>, Virginia, Georgia
+                    </>
+                  )
+                },
+                { 
+                  name: "Central Time (CST/CDT)", 
+                  states: (
+                    <>
+                      <Link href="/locations/usa/texas" className="text-foreground hover:text-primary font-medium hover:underline">Texas</Link>, <Link href="/locations/usa/illinois" className="text-foreground hover:text-primary font-medium hover:underline">Illinois</Link>, Minnesota, Missouri, Wisconsin, Tennessee
+                    </>
+                  )
+                },
+                { 
+                  name: "Mountain Time (MST/MDT)", 
+                  states: "Colorado, Arizona, Utah, New Mexico, Idaho, Montana" 
+                },
+                { 
+                  name: "Pacific Time (PST/PDT)", 
+                  states: (
+                    <>
+                      <Link href="/locations/usa/california" className="text-foreground hover:text-primary font-medium hover:underline">California</Link>, Washington, Oregon, Nevada, Alaska, Hawaii
+                    </>
+                  )
+                }
               ].map((tz, idx) => (
                 <div key={idx} className="glass p-6 rounded-2xl border border-card-border text-left space-y-2">
                   <div className="flex items-center space-x-2 text-primary font-bold text-sm">
@@ -1026,7 +1070,7 @@ export default async function USALocationsHubPage() {
 
             <div className="max-w-4xl mx-auto glass p-6 rounded-2xl border border-card-border/60 text-center">
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                Living in Florida, New Jersey, Ohio, Virginia, Washington, Georgia, or another state? You can still register. Our nationwide program serves students in all 50 states across Eastern, Central, Mountain, and Pacific time zones.
+                Living in Florida, <Link href="/locations/usa/new-jersey" className="text-primary font-semibold hover:underline">New Jersey</Link>, Ohio, Virginia, Washington, Georgia, or another state? You can still register. Our nationwide program serves students in all 50 states across Eastern, Central, Mountain, and Pacific time zones.
               </p>
             </div>
           </div>

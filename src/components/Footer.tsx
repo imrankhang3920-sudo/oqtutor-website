@@ -43,8 +43,17 @@ export default function Footer({
     { name: 'Female Quran Teacher', href: '/courses/female-quran-teacher' },
   ];
 
-  const guidesLinks = [
+  const stateLinks = [
+    { name: 'Quran Classes Illinois', href: '/locations/usa/illinois' },
+    { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
+    { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
     { name: 'Quran Classes Texas', href: '/locations/usa/texas' },
+    { name: 'Quran Classes California', href: '/locations/usa/california' },
+    { name: 'Quran Classes New Jersey', href: '/locations/usa/new-jersey' },
+  ];
+
+  const guidesLinks = [
+    { name: 'Quran Classes Texas', href: '/blog/online-quran-classes-texas' },
     { name: 'Beginner Quran Guide', href: '/blog/best-online-quran-classes-for-beginners' },
     { name: 'Kids Quran Classes USA', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
     { name: 'Choosing an Online Tutor', href: '/blog/select-right-online-quran-tutor' },
@@ -81,9 +90,9 @@ export default function Footer({
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-16">
           {/* Logo & About */}
-          <div className="lg:col-span-3 flex flex-col items-start">
+          <div className="sm:col-span-2 md:col-span-3 lg:col-span-2 flex flex-col items-start">
             <Link href="/" className="flex items-center space-x-2.5">
               <Image
                 src="/logo.jpg"
@@ -120,7 +129,7 @@ export default function Footer({
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Quick Links</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
               {quickLinks.map((link) => (
@@ -137,7 +146,7 @@ export default function Footer({
           </div>
 
           {/* Courses Links */}
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Our Courses</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:block sm:space-y-2.5">
               {coursesLinks.map((link) => (
@@ -153,8 +162,25 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Learning Guides */}
-          <div className="lg:col-span-2">
+          {/* Classes by State */}
+          <div>
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Quran by State</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:block sm:space-y-2.5">
+              {stateLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-xs sm:text-sm text-muted-text hover:text-primary transition-colors font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Learning Guides & Contact */}
+          <div>
             <h3 className="text-xs font-bold text-primary uppercase tracking-widest mb-6">Learning Guides</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:block sm:space-y-3.5">
               {guidesLinks.map((link) => (
@@ -168,18 +194,15 @@ export default function Footer({
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* Contact Details */}
-          <div className="lg:col-span-3">
-            <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-sm text-muted-text leading-relaxed">
-                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mt-8 mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start space-x-2 text-xs text-muted-text leading-relaxed">
+                <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                 <span>{data.location}</span>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-muted-text">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
+              <li className="flex items-center space-x-2 text-xs text-muted-text">
+                <Phone className="h-4 w-4 text-primary shrink-0" />
                 <a 
                   href={`tel:${data.phone.includes('|') ? data.phone.split('|')[0].replace(/[^0-9+]/g, '') : data.phone.replace(/[^0-9+]/g, '')}`} 
                   className="hover:text-primary transition-colors"
@@ -187,8 +210,8 @@ export default function Footer({
                   {data.phone}
                 </a>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-muted-text">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
+              <li className="flex items-center space-x-2 text-xs text-muted-text">
+                <Mail className="h-4 w-4 text-primary shrink-0" />
                 <a href={`mailto:${data.email}`} className="hover:text-primary transition-colors">
                   {data.email}
                 </a>

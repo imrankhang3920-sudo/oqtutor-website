@@ -8,7 +8,7 @@ import Link from 'next/link';
 export interface FAQItem {
   id: string;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const defaultFaqList: FAQItem[] = [
@@ -60,7 +60,17 @@ const defaultFaqList: FAQItem[] = [
   {
     id: "usa-faq-10",
     question: "What time are Quran lessons available?",
-    answer: "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with the ability to adjust times as routines change."
+    answer: (
+      <>
+        Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with localized scheduling for families across{' '}
+        <Link href="/locations/usa/illinois" className="text-primary hover:underline font-semibold">Illinois</Link>,{' '}
+        <Link href="/locations/usa/texas" className="text-primary hover:underline font-semibold">Texas</Link>,{' '}
+        <Link href="/locations/usa/michigan" className="text-primary hover:underline font-semibold">Michigan</Link>,{' '}
+        <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold">New York</Link>,{' '}
+        <Link href="/locations/usa/california" className="text-primary hover:underline font-semibold">California</Link>,{' '}
+        <Link href="/locations/usa/new-jersey" className="text-primary hover:underline font-semibold">New Jersey</Link>, and nationwide.
+      </>
+    )
   },
   {
     id: "usa-faq-11",

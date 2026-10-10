@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -756,6 +757,13 @@ export default async function IllinoisQuranClassesPage() {
             </div>
           </div>
         </section>
+
+        {/* Nearby Sibling States */}
+        <NearbyStatesSection 
+          currentState="illinois"
+          title="Online Quran Classes in Nearby US States"
+          subtitle="Looking for classes in Michigan, Texas, or across the United States? Connect with our dedicated Quran tutors in your time zone."
+        />
 
         {/* Final CTA */}
         <section className="py-20 border-t border-card-border mb-20 bg-background">

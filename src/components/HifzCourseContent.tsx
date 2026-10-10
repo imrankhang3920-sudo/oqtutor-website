@@ -12,6 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CourseData, ContactData, TestimonialData, PricingData } from '@/data/db';
 import Testimonials from '@/components/Testimonials';
+import AvailableStatesBlock from '@/components/AvailableStatesBlock';
 
 interface HifzCourseContentProps {
   course: CourseData;
@@ -996,6 +997,13 @@ export default function HifzCourseContent({
             })}
           </div>
 
+        </div>
+      </section>
+
+      {/* Available in Your State */}
+      <section className="py-6 bg-background">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <AvailableStatesBlock courseName="Hifz-ul-Quran" />
         </div>
       </section>
 

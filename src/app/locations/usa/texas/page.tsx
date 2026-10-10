@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -936,6 +937,13 @@ export default async function TexasQuranClassesPage() {
             </div>
           </div>
         </section>
+
+        {/* Nearby Sibling States */}
+        <NearbyStatesSection 
+          currentState="texas"
+          title="Online Quran Classes in Nearby US States"
+          subtitle="Looking for classes in Illinois, Michigan, or other US states? Our certified tutors are available across Central and all US time zones."
+        />
       </main>
 
       <Footer data={dbData.contact} />
