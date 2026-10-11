@@ -31,7 +31,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes USA for Kids & Adults | OQTutor";
-  const metaDescription = "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.";
+  const metaDescription = "Live 1-on-1 Quran classes in the USA for kids & adults. Male/female tutors, all US time zones, 3-day free trial, plans from $30/month.";
   
   return {
     title: metaTitle,
