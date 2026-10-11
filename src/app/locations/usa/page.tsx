@@ -459,7 +459,7 @@ export default async function USALocationsHubPage() {
             <div className="glass p-6 sm:p-8 rounded-3xl border border-primary/20 shadow-md">
               <div className="flex items-center space-x-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
                 <Sparkles className="h-4 w-4 shrink-0" />
-                <span>AEO Quick Answer</span>
+                <span>Quick Answer</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight mb-3">
                 Quick Answer: What Are the Best Online Quran Classes in the USA?

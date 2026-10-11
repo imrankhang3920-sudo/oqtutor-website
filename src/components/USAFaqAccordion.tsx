@@ -108,7 +108,7 @@ export default function USAFaqAccordion({ items }: { items?: FAQItem[] }) {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block mb-4">
-            AEO Questions &amp; Answers
+            Questions &amp; Answers
           </span>
           <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-foreground">
             Frequently Asked Questions About Online Quran Classes in the USA
