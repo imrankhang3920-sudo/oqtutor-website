@@ -1,7 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
 import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -90,12 +87,7 @@ const defaultFaqList: FAQItem[] = [
 ];
 
 export default function USAFaqAccordion({ items }: { items?: FAQItem[] }) {
-  const [openId, setOpenId] = useState<string | null>(null);
   const faqList = items && items.length > 0 ? items : defaultFaqList;
-
-  const toggleFaq = (id: string) => {
-    setOpenId(openId === id ? null : id);
-  };
 
   return (
     <section id="usa-faq" className="py-16 md:py-24 relative overflow-hidden bg-background border-t border-card-border/40">
@@ -119,48 +111,27 @@ export default function USAFaqAccordion({ items }: { items?: FAQItem[] }) {
           </p>
         </div>
 
-        {/* Accordions */}
+        {/* Accordions (Semantic details/summary for full SSR crawlability by search bots and AI crawlers) */}
         <div className="space-y-4 mb-12">
-          {faqList.map((faq) => {
-            const isOpen = openId === faq.id;
-            return (
-              <div
-                key={faq.id}
-                className="glass rounded-2xl border border-card-border overflow-hidden transition-all duration-300 hover:border-primary/20 hover:shadow-md"
-              >
-                <button
-                  onClick={() => toggleFaq(faq.id)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
-                  aria-expanded={isOpen}
-                >
-                  <div className="flex items-center space-x-3.5 pr-4">
-                    <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
-                    <span className="text-sm sm:text-base font-bold leading-snug">{faq.question}</span>
-                  </div>
-                  <ChevronDown
-                    className={`h-5 w-5 text-muted-text/60 shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 text-primary' : ''
-                    }`}
-                  />
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: 'easeInOut' }}
-                    >
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-muted-text leading-relaxed border-t border-card-border/40 font-normal">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+          {faqList.map((faq) => (
+            <details
+              key={faq.id}
+              className="group glass rounded-2xl border border-card-border overflow-hidden transition-all duration-300 hover:border-primary/20 hover:shadow-md [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-bold text-foreground hover:text-primary transition-colors cursor-pointer select-none list-none">
+                <div className="flex items-center space-x-3.5 pr-4">
+                  <HelpCircle className="h-5 w-5 text-secondary shrink-0" />
+                  <span className="text-sm sm:text-base font-bold leading-snug">{faq.question}</span>
+                </div>
+                <ChevronDown
+                  className="h-5 w-5 text-muted-text/60 shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:text-primary"
+                />
+              </summary>
+              <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-muted-text leading-relaxed border-t border-card-border/40 font-normal">
+                {faq.answer}
               </div>
-            );
-          })}
+            </details>
+          ))}
         </div>
 
         {/* Quick Help Callout */}

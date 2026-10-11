@@ -391,10 +391,98 @@ export default async function USALocationsHubPage() {
       },
       {
         "@type": "Question",
+        "name": "How do I choose an online Quran tutor for my child?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking a placement trial allows you to observe how your child interacts with the tutor in real time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are online Quran classes suitable for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Beginners of any age start with the Noorani Qaida curriculum, which introduces Arabic alphabet recognition, letter shapes, short vowels (Harakat), and articulation points (Makharij). With one-to-one instruction, tutors guide learners step by step from individual sounds to reading words and full verses without feeling rushed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can children learn Quran online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can adults learn Quran online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs, or studying Tafseer, lessons progress at your individual pace in complete privacy with male or female scholars."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer one-to-one Quran lessons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every standard class at OQTutor is conducted live one-to-one between a single student and teacher. This private format ensures 100% focused attention, immediate error correction, and a customized pace without the distractions or waiting times common in group environments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I choose a female Quran teacher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We have qualified female Quran teachers available for sisters and young children. Our female instructors hold verified Islamic credentials, are fluent in English, and provide a nurturing, private setting for learning Noorani Qaida, Tajweed, Quran reading, and Hifz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer Quran classes with Tajweed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our Tajweed course covers articulation points (Makharij), Ghunnah, Ikhfa, Qalqalah, Madd, and stopping signs (Waqf). Tutors explain the rules clearly and listen closely during live recitation to correct pronunciation mistakes immediately as you read from the Mushaf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer Hifz classes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our online Hifz program pairs students with certified Huffaz. Lessons follow a systematic daily cycle: memorizing new verses (Sabaq), revising recent pages (Sabqi), and reinforcing long-term retention (Manzil). Study plans are customized to match each student's capacity and schedule."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What time are Quran lessons available?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones across Illinois, Texas, Michigan, New York, California, New Jersey, and nationwide."
+          "text": "Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with dedicated schedules for students in Illinois, Texas, Michigan, New York, California, New Jersey, and nationwide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do online Quran classes cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 minutes of private one-to-one instruction with no hidden fees or contracts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a trial class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OQTutor provides a free trial class with no credit card or financial commitment required. During the session, the teacher assesses the student's current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do online Quran classes work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After booking a trial, you connect with your assigned tutor via video conference (such as Zoom) using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
         }
       }
     ]
