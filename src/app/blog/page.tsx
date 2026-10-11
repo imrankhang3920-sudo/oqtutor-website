@@ -16,7 +16,6 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   return {
     title: `Quran Learning Blog${pageSuffix} | Recitation Tips & Tajweed Guides`,
     description: `Explore parenting guides, Tajweed learning tips, Quran memorization techniques, and articles on Islamic education written by certified OQTutor scholars.${pageNum > 1 ? ` Browse page ${pageNum}.` : ''}`,
-    keywords: ['quran learning tips', 'tajweed guide online', 'islamic parenting', 'hifz techniques', 'learn noorani qaida'],
     alternates: {
       canonical: 'https://www.oqtutor.com/blog',
     },

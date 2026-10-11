@@ -24,15 +24,6 @@ export const viewport = {
 export const metadata: Metadata = {
   title: "OQTutor | Online Quran Classes with Certified Male & Female Tutors",
   description: "Learn Quran online with certified tutors. Serving families in USA, UK, Canada, Australia, & worldwide. Tajweed, Hifz, & Noorani Qaida. Book your free trial!",
-  keywords: [
-    "Online Quran Tutor",
-    "Quran Classes",
-    "Tajweed Classes",
-    "Hifz Course",
-    "Noorani Qaida",
-    "Islamic Studies",
-    "Online Quran Academy"
-  ],
   authors: [{ name: "OQTutor Team" }],
   metadataBase: new URL("https://www.oqtutor.com"),
   alternates: {

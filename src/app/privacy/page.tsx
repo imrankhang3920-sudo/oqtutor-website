@@ -11,7 +11,6 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Privacy Policy | OQTutor - Online Quran Academy',
   description: 'Read the official Privacy Policy for OQTutor. Learn how we collect, protect, and use personal information for students and parents worldwide.',
-  keywords: ['privacy policy oqtutor', 'quran academy privacy', 'online learning security', 'data protection quran class'],
   alternates: {
     canonical: 'https://www.oqtutor.com/privacy',
   },

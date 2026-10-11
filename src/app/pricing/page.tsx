@@ -14,7 +14,6 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Affordable Pricing Plans & Packages | Online Quran Academy',
   description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
-  keywords: ['online quran classes fees', 'affordable quran tutor', 'quran learning prices', 'private quran lesson cost'],
   alternates: {
     canonical: 'https://www.oqtutor.com/pricing',
   },

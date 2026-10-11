@@ -9,7 +9,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Contact Us | OQTutor - Online Quran Academy',
     description: 'Contact OQTutor for any questions regarding our online Quran classes, pricing, or schedules. Support is available 24/7 via phone, email, and WhatsApp.',
-    keywords: ['contact oqtutor', 'quran tutor phone number', 'support online quran', 'quran academy email'],
     alternates: {
       canonical: 'https://www.oqtutor.com/contact',
     },

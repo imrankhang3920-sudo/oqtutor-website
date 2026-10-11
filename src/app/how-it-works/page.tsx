@@ -12,7 +12,6 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'How Online Quran Classes Work | Easy 3-Step Process | OQTutor',
   description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
-  keywords: ['how online quran classes work', 'learn quran online process', 'quran tutors trial class', 'oqtutor study steps'],
   alternates: {
     canonical: 'https://www.oqtutor.com/how-it-works',
   },

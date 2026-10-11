@@ -13,7 +13,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Book 3-Day Free Trial Online Quran Classes | OQTutor',
     description: 'Book a 3-day free trial of our online Quran classes. Choose your course, timezone, and tutor preference with no card details or contracts required.',
-    keywords: ['book free trial quran', 'online quran classes trial', 'free quran trial', 'register online quran lessons'],
     alternates: {
       canonical: 'https://www.oqtutor.com/book-free-trial',
     },

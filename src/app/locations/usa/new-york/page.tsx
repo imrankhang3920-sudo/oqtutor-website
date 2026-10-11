@@ -45,20 +45,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: metaTitle,
     description: metaDescription,
-    keywords: [
-      "online quran classes in new york",
-      "online quran classes new york",
-      "online quran classes for kids in new york",
-      "quran teacher online in new york",
-      "online quran lessons for adults",
-      "quran classes with tajweed",
-      "female quran teacher online",
-      "noorani qaida classes online",
-      "one to one quran classes",
-      "flexible online quran lessons in new york",
-      "quran tutor nyc",
-      "quran lessons brooklyn queens long island"
-    ],
     alternates: {
       canonical: canonicalUrl,
     },

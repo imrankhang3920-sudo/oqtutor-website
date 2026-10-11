@@ -15,7 +15,6 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'About OQTutor | Our Mission & Online Quran Academy Values',
   description: 'Discover the mission and values behind OQTutor. We make structured online Quran learning accessible and engaging for Muslim families worldwide.',
-  keywords: ['online quran academy mission', 'about oqtutor', 'quran learning principles', 'islamic tutoring values'],
   alternates: {
     canonical: 'https://www.oqtutor.com/about',
   },

@@ -40,20 +40,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: metaTitle,
     description: metaDescription,
-    keywords: [
-      "California Quran classes",
-      "Bay Area Quran tutor",
-      "Silicon Valley Islamic education",
-      "San Diego online Quran",
-      "LA Tajweed classes",
-      "Central Valley Hifz program",
-      "Pacific Time Quran learning",
-      "online Quran teacher California",
-      "online Quran classes in California",
-      "Noorani Qaida California",
-      "Quran with Tajweed California",
-      "Hifz Quran classes California",
-    ],
     alternates: {
       canonical: canonicalUrl,
     },

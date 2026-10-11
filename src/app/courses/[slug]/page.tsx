@@ -90,13 +90,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 
-  // Remove keywords for daily-duas as requested, and only include for other courses if present
-  if (course.slug === 'daily-duas') {
-    metadata.keywords = null;
-  } else if (course.focusKeyword) {
-    metadata.keywords = [course.focusKeyword, ...(course.secondaryKeywords || [])];
-  }
-
   return metadata;
 }
 
