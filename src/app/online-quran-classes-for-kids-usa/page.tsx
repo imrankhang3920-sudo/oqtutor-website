@@ -336,7 +336,7 @@ export default async function OnlineQuranClassesForKidsUSAPage() {
 
               {/* H1 HEADER */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-foreground">
-                1-on-1 Online Quran Classes for <span className="text-primary">Kids</span> in the <span className="text-secondary">USA</span>
+                Best Online Quran classes in <span className="text-primary">USA</span> with Experienced online <span className="text-secondary">Tutors</span>
               </h1>
 
               {/* DESCRIPTION */}
