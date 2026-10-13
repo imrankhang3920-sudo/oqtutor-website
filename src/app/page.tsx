@@ -104,7 +104,7 @@ export default async function HomePage() {
   // Personalized & High-Conversion Hero Data
   const homepageHeroData = {
     ...(dbData.hero || {}),
-    title: dbData.hero?.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults",
+    title: dbData.hero?.title || "Learn Quran Online at Your Own Pace with Expert Teachers",
     subtitle: dbData.hero?.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.",
     ctaText: dbData.hero?.ctaText || "Book Free Trial",
     ctaLink: dbData.hero?.ctaLink || "/book-free-trial",

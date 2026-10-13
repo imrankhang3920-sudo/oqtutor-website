@@ -18,7 +18,7 @@ export default function Hero({ data }: HeroProps) {
     'Expert match guaranteed',
   ];
 
-  const titleText = data.title || "Learn Quran Online | One to One Quran Classes for Kids and Adults";
+  const titleText = data.title || "Learn Quran Online at Your Own Pace with Expert Teachers";
   const subtitleText = data.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.";
 
   const renderFormattedTitle = (title: string) => {
