@@ -559,66 +559,108 @@ export default async function USALocationsHubPage() {
           </div>
         </section>
 
-        {/* Section 1: Why Choose OQTutor for Quran Learning? */}
+        {/* Section 1: Why Choose OQTutor for Online Quran Classes in the USA? */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-14">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
                 Core Strengths
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Why Choose OQTutor for Quran Learning?
+                Why Choose OQTutor for Online Quran Classes in the USA?
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                We connect American Muslim families with experienced teachers for private, interactive lessons from home. Whether your child is beginning the Arabic alphabet or you are an adult seeking to perfect your recitation, our structured programs adapt to your goals.
+                OQTutor offers live, one-on-one online Quran classes for children and adults across the USA, helping learners develop their Quran reading, pronunciation, and recitation skills with personal guidance.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "1-on-1 Dedicated Attention",
-                  desc: "Every lesson is private between one student and one tutor, ensuring undivided attention and zero classroom distractions.",
-                  icon: UserCheck
-                },
-                {
-                  title: "Certified Male & Female Scholars",
-                  desc: "Learn from vetted Islamic scholars with formal degrees and Ijazah certifications in Tajweed and Quranic sciences.",
-                  icon: Award
-                },
-                {
-                  title: "Adaptive US Scheduling",
-                  desc: "Book lessons across Eastern, Central, Mountain, or Pacific time zones with morning, evening, and weekend availability.",
-                  icon: Clock
-                },
-                {
-                  title: "Structured Curriculum Tracks",
-                  desc: "Comprehensive courses covering Noorani Qaida, Quran Reading, Tajweed rules, Hifz memorization, and Islamic Studies.",
-                  icon: BookOpen
-                },
-                {
-                  title: "Tailored for Kids & Adults",
-                  desc: "Patient, encouraging methods for young learners and flexible, direct pacing for working professionals and university students.",
-                  icon: Users
-                },
-                {
-                  title: "Risk-Free Placement Trial",
-                  desc: "Experience our teaching style firsthand with a free trial session and level evaluation before subscribing.",
-                  icon: Sparkles
-                }
-              ].map((feat, idx) => {
-                const IconComp = feat.icon;
-                return (
-                  <div key={idx} className="glass p-8 rounded-3xl border border-card-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                    <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-5">
-                      <IconComp className="h-6 w-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Image Column */}
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="relative max-w-md w-full">
+                  <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl -translate-x-3 translate-y-3 -z-10" />
+                  <div className="glass p-3 rounded-3xl border-card-border overflow-hidden shadow-xl relative bg-card">
+                    <Image
+                      src="/images/why-choose-oqtutor-usa.png"
+                      alt="Young Muslim student in the USA attending a live 1-on-1 online Quran class with tutor on a laptop"
+                      width={500}
+                      height={400}
+                      className="w-full rounded-2xl object-cover h-[320px] sm:h-[400px]"
+                    />
+                    <div className="p-3 text-center text-xs text-muted-text font-medium">
+                      Live, interactive one-on-one Quran classes from home across the USA.
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{feat.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">{feat.desc}</p>
                   </div>
-                );
-              })}
+                </div>
+              </div>
+
+              {/* 6 Features Column */}
+              <div className="lg:col-span-7">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    {
+                      num: "1",
+                      title: "Learn From Anywhere",
+                      desc: "Attend interactive live Quran lessons comfortably from home anywhere in the US, eliminating travel time and local center commutes.",
+                      icon: MapPin
+                    },
+                    {
+                      num: "2",
+                      title: "Flexible Class Timings",
+                      desc: "24/7 availability across Eastern, Central, Mountain, and Pacific time zones to match your family's daily schedule seamlessly.",
+                      icon: Clock
+                    },
+                    {
+                      num: "3",
+                      title: "Personalized One-on-One Lessons",
+                      desc: "Every class is private with dedicated single-student attention, ensuring immediate error correction and focused guidance.",
+                      icon: UserCheck
+                    },
+                    {
+                      num: "4",
+                      title: "Male and Female Teachers",
+                      desc: "Select certified male scholars or experienced female Alimas and Qariahs according to your family's preference and comfort.",
+                      icon: Users
+                    },
+                    {
+                      num: "5",
+                      title: "Progress at Your Own Pace",
+                      desc: "Customized lesson progression designed around each learner's capacity, giving extra time on difficult rules without rush.",
+                      icon: Award
+                    },
+                    {
+                      num: "6",
+                      title: "Interactive & Engaging Tools",
+                      desc: "Digital screen-sharing, interactive Qaida & Mushaf, audio-visual feedback, and regular parent progress reports.",
+                      icon: Sparkles
+                    }
+                  ].map((feat, idx) => {
+                    const IconComp = feat.icon;
+                    return (
+                      <div
+                        key={idx}
+                        className="glass p-5 rounded-2xl border border-card-border hover:border-primary/30 transition-all duration-300 hover:shadow-md flex items-start gap-3.5 bg-card/60"
+                      >
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary font-bold text-sm">
+                          {feat.num}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <IconComp className="h-4 w-4 text-primary shrink-0" />
+                            <h3 className="text-sm sm:text-base font-bold text-foreground">
+                              {feat.title}
+                            </h3>
+                          </div>
+                          <p className="text-xs text-muted-text leading-relaxed font-normal">
+                            {feat.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </section>
