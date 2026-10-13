@@ -84,7 +84,7 @@ export default async function USALocationsHubPage() {
 
   // Exact single unique H1 and supporting intro
   const heroFallback = dbData?.hero || {
-    title: "Online Quran Classes USA for Kids & Adults | OQTutor",
+    title: "Online Quran Classes in the USA with Certified Male and Female Teachers",
     subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
@@ -94,7 +94,7 @@ export default async function USALocationsHubPage() {
   };
 
   const customHeroData = {
-    title: "Online Quran Classes USA for Kids & Adults | OQTutor",
+    title: "Online Quran Classes in the USA with Certified Male and Female Teachers",
     subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
