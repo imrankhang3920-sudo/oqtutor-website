@@ -9,7 +9,7 @@ import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Clock, Users, ArrowRight } from 'lucide-react';
+import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Clock, Users, ArrowRight, Sparkles } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -602,40 +602,131 @@ export default async function TexasQuranClassesPage() {
           </div>
         </section>
 
-        {/* Section 6: How Do Online Quran Classes Work for Children in Texas? */}
+        {/* Section 6: How Do Online Quran Classes Help Children Learn the Quran? */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-                Simple Setup
+                Effective Learning
               </span>
-              <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                How Do Online Quran Classes Work for Children in Texas?
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                How Do Online Quran Classes Help Children Learn the Quran?
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-6 text-base sm:text-lg text-muted-text leading-relaxed">
+                <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">Online Quran classes</Link> combine structured one-on-one teaching with interactive digital tools, all from the comfort of your home. Your child gets a <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified teacher’s</Link> full attention, lessons that fit your family’s schedule, and a learning experience designed to keep young minds engaged.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { step: "1", title: "Book a Free Trial", desc: "Register on our platform without credit card details. We will match you with a tutor based on your schedule." },
-                { step: "2", title: "Select a Teacher", desc: "Attend trial lessons and select a male or female teacher who best matches your child's learning speed." },
-                { step: "3", title: "Choose a Schedule", desc: "Determine your preferred weekly class frequency and pick timings that coordinate with school activities." },
-                { step: "4", title: "Attend Live Classes", desc: "Connect face-to-face via our secure digital classroom, utilizing interactive whiteboards and translation tools." },
-                { step: "5", title: "Practice & Homework", desc: "Practice assigned chapters between lessons to build fluency and reinforce correct articulation rules." },
-                { step: "6", title: "Track Real Progress", desc: "Receive detailed monthly progress reports detailing attendance, homework, and pronunciation milestones." }
-              ].map((item, idx) => (
-                <div key={idx} className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:shadow-md transition-all duration-300">
-                  <div>
-                    <span className="h-10 w-10 rounded-full bg-primary/15 text-primary flex items-center justify-center font-bold text-sm mb-6 font-sans">
-                      {item.step}
-                    </span>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                      {item.desc}
-                    </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Pillar 1: Personalized Instruction at Your Child’s Pace */}
+              <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <BookOpen className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-5">
+                    Personalized Instruction at Your Child’s Pace
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">One-on-one attention.</strong> In a private lesson, the teacher focuses entirely on your child. Lessons move at the speed your child needs, with extra time on difficult letters or verses and a faster pace where they are ready.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">Real-time pronunciation correction.</strong> Tutors listen closely and correct small mistakes in articulation and <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed</Link> right away, before they turn into lasting habits.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">A learning path built for your child.</strong> Programs adapt to each child’s level, from the <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> for complete beginners to <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading</Link> with Tajweed and <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">full Hifz (memorization)</Link>.
+                      </p>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Pillar 2: Engaging Lessons Children Look Forward To */}
+              <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-5">
+                    Engaging Lessons Children Look Forward To
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">Interactive and visual learning.</strong> Teachers use digital whiteboards, colorful slides, short video clips, and <Link href="/courses/islamic-studies" className="text-primary font-semibold hover:underline">stories of the Prophets</Link> to hold children’s attention and make each lesson memorable.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">A comfortable space for shy children.</strong> Some children hesitate to speak up in a group. In a private online lesson, they often feel more at ease asking questions and repeating difficult Arabic letters until they get them right.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pillar 3: Convenience and Peace of Mind for Parents */}
+              <div className="glass p-8 rounded-3xl border-card-border flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                <div>
+                  <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-5">
+                    Convenience and Peace of Mind for Parents
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">Flexible scheduling.</strong> Book classes around school hours, weekends, and your local time zone, wherever your family lives.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">Easy progress monitoring.</strong> You can sit nearby during lessons and follow your child’s development through regular progress updates.
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                        <strong className="font-semibold text-foreground">Learning from home.</strong> A familiar, relaxed setting can help children feel calm and focused, with no travel time to an outside center.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outro CTA Box */}
+            <div className="mt-12 glass p-8 md:p-10 rounded-3xl border-card-border bg-gradient-to-r from-primary/10 via-background to-secondary/10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+              <div>
+                <h3 className="text-xl md:text-2xl font-extrabold text-foreground">
+                  Ready to see <Link href="/how-it-works" className="text-primary hover:underline">how it works</Link>?
+                </h3>
+                <p className="mt-2 text-sm sm:text-base text-muted-text max-w-xl">
+                  Book a free trial class and let your child meet a <Link href="/tutors" className="text-primary font-semibold hover:underline">qualified Quran teacher</Link>.
+                </p>
+              </div>
+              <Link
+                href="/book-free-trial"
+                className="inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/25 hover:shadow-xl transition-all shrink-0 cursor-pointer"
+              >
+                <span>Book a Free Trial Class</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
