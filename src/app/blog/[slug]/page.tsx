@@ -13,6 +13,7 @@ import { createBlogPostSchema, createBreadcrumbSchema } from '@/lib/structuredDa
 import ArticleContentNeverReadQuranSister from './ArticleContentNeverReadQuranSister';
 import ArticleContentWhyNooraniQaidaEssential from './ArticleContentWhyNooraniQaidaEssential';
 import ArticleContentHowToLearnQuranTafseerOnline from './ArticleContentHowToLearnQuranTafseerOnline';
+import ArticleContentRoleParentsIslamicEducation from './ArticleContentRoleParentsIslamicEducation';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -54,10 +55,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isImprovePronunciationBlog = resolvedParams.slug === 'how-to-improve-your-quran-pronunciation';
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
   const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
-  const isGlobalBlog = isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
+  const isGlobalBlog = isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
   const metaTitle = isUSABlog
     ? 'Online Quran Classes USA: 1-on-1 Qualified Tutors | OQTutor'
+    : isRoleParentsBlog
+    ? 'The Role of Parents in Islamic Education in Non-Muslim Countries | OQTutor'
     : isTafseerOnlineBlog
     ? "How to Learn Quran Tafseer Online: A Beginner's Roadmap | OQTutor"
     : isWhyNooraniQaidaEssentialBlog
@@ -172,6 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isNeverReadQuranSisterBlog = resolvedParams.slug === 'sister-never-read-quran-before-can-i-start-now';
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
   const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
+  const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -190,6 +195,60 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isRoleParentsBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How can Muslim parents teach Islamic values to children in non-Muslim countries?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "By setting a living personal example (Qudwah), creating consistent family routines like praying together, talking openly about daily moral situations, and explaining the reasoning behind Islamic practices with love and clarity."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "At what age should children start learning the Quran in the West?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Children can start listening to Quran from infancy and begin basic Arabic letter recognition through Noorani Qaida around ages 4 to 6. The key is gentle consistency, playfulness, and avoiding undue pressure."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can parents balance secular school with Islamic education without overwhelming kids?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Schedule short, regular learning sessions (such as 30 minutes, 2-3 times a week) rather than marathon weekend lessons. Adjust homework and Quran time around school exam periods and celebrate effort rather than demanding perfection."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Should parents teach the Quran themselves or hire a qualified online tutor?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both can work together. Parents provide daily encouragement and values at home, while qualified online teachers provide structured pronunciation (Tajweed), accurate phonetics, and impartial accountability."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do parents handle children's questions about other religions and cultures?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Welcome these questions with confidence. Explain that respecting people of other backgrounds is an authentic Islamic teaching, and clarify how our Islamic beliefs guide our own choices without looking down on others."
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isTafseerOnlineBlog && (
         <script
@@ -1929,7 +1988,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="relative mb-10 h-64 sm:h-96 overflow-hidden rounded-3xl border border-card-border shadow-xl">
               <Image
                 src={blog.coverImage}
-                alt={isUKCompleteGuideBlog ? "Muslim family attending an online Quran class in the UK" : isWhyNooraniQaidaEssentialBlog ? "Noorani Qaida book showing lessons for learning to read the Quran" : blog.title}
+                alt={isRoleParentsBlog ? "Muslim father teaching his two sons Holy Quran at home on wooden rehal" : isUKCompleteGuideBlog ? "Muslim family attending an online Quran class in the UK" : isWhyNooraniQaidaEssentialBlog ? "Noorani Qaida book showing lessons for learning to read the Quran" : blog.title}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 896px"
@@ -1940,7 +1999,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isTafseerOnlineBlog ? (
+            {isRoleParentsBlog ? (
+              <ArticleContentRoleParentsIslamicEducation />
+            ) : isTafseerOnlineBlog ? (
               <ArticleContentHowToLearnQuranTafseerOnline />
             ) : isWhyNooraniQaidaEssentialBlog ? (
               <ArticleContentWhyNooraniQaidaEssential />

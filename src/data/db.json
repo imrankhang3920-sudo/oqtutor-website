@@ -4359,11 +4359,13 @@
     {
       "id": "blog-5",
       "title": "The Role of Parents in Islamic Education in Non-Muslim Countries",
-      "category": "Parenting",
-      "description": "How to create a rich Islamic environment and connect children with their faith while living in Europe.",
-      "readTime": "7 min read",
+      "category": "Islamic Parenting",
+      "description": "Practical guidance for Muslim families living in non-Muslim countries on nurturing faith, building daily Quran habits, cultivating Islamic identity, and balancing secular schooling.",
+      "readTime": "9 min read",
       "slug": "role-parents-islamic-education-west",
-      "publishedAt": "August 13, 2026"
+      "publishedAt": "October 14, 2026",
+      "coverImage": "/blog/role-parents-islamic-education-west/role-parents-islamic-education-cover.png",
+      "authorName": "Qari Muhammad Imran"
     },
     {
       "id": "blog-6",

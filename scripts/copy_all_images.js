@@ -16,6 +16,11 @@ if (!fs.existsSync(childTimelineDir)) {
   fs.mkdirSync(childTimelineDir, { recursive: true });
 }
 
+const roleParentsDir = path.join(__dirname, '../public/blog/role-parents-islamic-education-west');
+if (!fs.existsSync(roleParentsDir)) {
+  fs.mkdirSync(roleParentsDir, { recursive: true });
+}
+
 const sourceFiles = [
   {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787914968931.jpg',
@@ -106,6 +111,16 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\96ab1bab-e9eb-4927-9c35-c3d888703623\\.user_uploaded\\media_1791222292900.jpg',
     fallbackSrc: path.join(__dirname, '../public/images/warm-quran-study.jpg'),
     dest: path.join(__dirname, '../public/images/warm-quran-study.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a98a674f-9ee9-4633-8d18-09a02e5a1f68\\.user_uploaded\\media_1791974331745.png',
+    fallbackSrc: path.join(__dirname, '../public/blog/role-parents-islamic-education-west/role-parents-islamic-education-cover.png'),
+    dest: path.join(roleParentsDir, 'role-parents-islamic-education-cover.png')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a98a674f-9ee9-4633-8d18-09a02e5a1f68\\.user_uploaded\\media_1791974331654.png',
+    fallbackSrc: path.join(__dirname, '../public/blog/role-parents-islamic-education-west/islamic-education-family-learning-collage.png'),
+    dest: path.join(roleParentsDir, 'islamic-education-family-learning-collage.png')
   }
 ];
 
