@@ -14,16 +14,18 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const description = "At OQTutor, we make learning the Quran enjoyable and engaging for children. Our qualified male and female teachers provide personalized one on one lessons to help kids learn Noorani Qaida, improve Quran reading, and practice Tajweed in a friendly and supportive environment.";
+
   return {
     title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-    description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
+    description,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/texas",
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa/texas",
       title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-      description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
+      description,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -36,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-      description: "Skip the long commute across Houston and DFW sprawl. Live 1-on-1 Quran and Tajweed lessons adapted to Central Time school schedules.",
+      description,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -85,7 +87,7 @@ export default async function TexasQuranClassesPage() {
 
   const customHeroData = {
     title: "Fun and Interactive Online Quran Classes for Kids",
-    subtitle: "Help your child build a lifelong, authentic bond with the Holy Quran without driving across Houston, Dallas-Fort Worth, Austin, or San Antonio traffic. OQTutor connects Muslim families across Texas with certified, patient Quran teachers for private 1-on-1 online classes. Whether starting with the basics of Noorani Qaida, perfecting recitation with Tajweed rules, or memorizing selected Surahs, our flexible digital classrooms fit easily around Central Time school commitments and homework routines.",
+    subtitle: "At OQTutor, we make learning the Quran enjoyable and engaging for children. Our qualified male and female teachers provide personalized one on one lessons to help kids learn Noorani Qaida, improve Quran reading, and practice Tajweed in a friendly and supportive environment.",
     ctaText: "Book 3 Free Trial Classes",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
