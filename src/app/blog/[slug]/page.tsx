@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isKidsUsaBlog
     ? 'Best Online Quran Classes for Kids in USA | Expert Teachers'
     : isTarteelVsTajweedBlog
-    ? "Tajweed vs Tarteel: What's the Difference? | OQTutor"
+    ? 'Tajweed vs. Tarteel: Key Differences, Meaning & Audio Examples (2026)'
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : isBeginnersBlog
@@ -100,20 +100,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
 
+  const metaDescription = isTarteelVsTajweedBlog
+    ? 'What is the difference between Tajweed and Tarteel? See our side-by-side comparison table, Surah Al-Muzzammil verse 4 explanation, and pronunciation examples.'
+    : blog.description;
+
   const coverImgUrl = blog.coverImage
     ? (blog.coverImage.startsWith('http') ? blog.coverImage : `https://www.oqtutor.com${blog.coverImage.startsWith('/') ? '' : '/'}${blog.coverImage}`)
     : 'https://www.oqtutor.com/arabic-reading.jpg';
 
   return {
     title: metaTitle,
-    description: blog.description,
+    description: metaDescription,
     alternates: {
       canonical: `https://www.oqtutor.com/blog/${blog.slug}`,
     },
     openGraph: {
       url: `https://www.oqtutor.com/blog/${blog.slug}`,
       title: metaTitle,
-      description: blog.description,
+      description: metaDescription,
       type: 'article',
       siteName: 'OQTutor',
       images: [
@@ -128,7 +132,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: metaTitle,
-      description: blog.description,
+      description: metaDescription,
       images: [coverImgUrl],
     },
   };
@@ -1946,6 +1950,14 @@ export default async function BlogPostPage({ params }: Props) {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Tilawah is the general act of reciting the Quran. Tajweed provides the foundational rules for accurate letter pronunciation and phonetic characteristics. Tarteel describes the commanded manner of reciting in a clear, measured, and reflective state."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does the Tarteel app correct Tajweed mistakes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, the Tarteel AI app cannot reliably correct Tajweed mistakes. While Tarteel is an effective companion for Hifz memorization tracking and catching missed words, AI voice recognition cannot accurately evaluate nuanced throat articulation (Makharij), subtle letter characteristics (Sifat), exact vowel elongation counts (Madd), or Ghunnah nasalization. Accurate Tajweed correction requires live feedback from a qualified human Quran teacher."
                   }
                 }
               ]
@@ -5404,6 +5416,86 @@ function ArticleContentTarteelVsTajweed() {
         <p className="text-base sm:text-lg leading-relaxed text-foreground font-medium">
           When learning how to recite the Holy Quran, students often encounter the terms <strong>Tajweed</strong> and <strong>Tarteel</strong>. While both are essential to proper Quranic recitation, they are not synonyms. Tajweed refers to the rules and mechanics of correct Arabic pronunciation and articulation, ensuring every letter is pronounced from its authentic source. Tarteel, on the other hand, describes reciting the Quran in a measured, clear, and deliberate manner that encourages reflection and understanding.
         </p>
+
+        {/* 2-Column Comparison Table for Featured Snippet Capture */}
+        <div className="overflow-x-auto rounded-2xl border border-card-border shadow-sm my-6 not-prose">
+          <table className="w-full text-left border-collapse text-sm">
+            <caption className="sr-only">Tajweed vs Tarteel Side-by-Side Comparison Table</caption>
+            <thead>
+              <tr className="bg-primary/10 border-b border-card-border text-foreground">
+                <th scope="col" className="py-3.5 px-4 sm:px-6 font-bold text-sm sm:text-base text-primary w-1/2">
+                  Tajweed
+                </th>
+                <th scope="col" className="py-3.5 px-4 sm:px-6 font-bold text-sm sm:text-base text-secondary w-1/2">
+                  Tarteel
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-card-border/60 text-muted-text">
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Core Meaning:</strong>
+                  The applied science of precise Arabic pronunciation, articulation points (Makharij), and phonetic rules (Sifat).
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Core Meaning:</strong>
+                  The measured, unhurried, and deliberate manner of recitation accompanied by deep contemplation (Tadabbur).
+                </td>
+              </tr>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Primary Question Answered:</strong>
+                  <em>&ldquo;Are the Arabic letters, vowel lengths (Madd), and nasal sounds (Ghunnah) articulated accurately?&rdquo;</em>
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Primary Question Answered:</strong>
+                  <em>&ldquo;Am I reciting deliberately without haste, pausing at verse stops, and engaging my heart with the meaning?&rdquo;</em>
+                </td>
+              </tr>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Quranic &amp; Scholarly Source:</strong>
+                  Codified into formal phonetic rules by classical scholars based on the authentic oral recitation of Prophet Muhammad ﷺ.
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Quranic &amp; Scholarly Source:</strong>
+                  Direct divine command in the Quran: <em>&ldquo;And recite the Quran with measured recitation [Tarteel].&rdquo;</em> (Surah Al-Muzzammil 73:4).
+                </td>
+              </tr>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Key Technical Focus:</strong>
+                  Makharij (throat, tongue, lips), Sifat (heaviness/lightness), Madd elongation counts, Ghunnah, and Qalqalah.
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Key Technical Focus:</strong>
+                  Steady cadence, distinct word separation, observing stopping marks (Waqf &amp; Ibtida), and peaceful mental presence.
+                </td>
+              </tr>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Recitation Speeds:</strong>
+                  Mandatory across all three recognized speeds: slow (Tahqiq), medium (Tadwir), and swift (Hadr).
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">Recitation Speeds:</strong>
+                  A calm, measured tempo; discourages rushing verses or artificial, mindless speed-reading.
+                </td>
+              </tr>
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">How It Is Learned:</strong>
+                  Requires live auditory correction (*Talaqqi*) from a qualified human Quran tutor. Digital apps cannot accurately judge throat Makharij.
+                </td>
+                <td className="py-3.5 px-4 sm:px-6">
+                  <strong className="text-foreground block mb-0.5">How It Is Learned:</strong>
+                  Cultivated through deliberate mindfulness, breath pacing, studying verse meanings, and conscious reflection.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <p className="text-base text-muted-text leading-relaxed">
           Understanding the distinction between these two concepts helps students focus not only on technical phonetic accuracy, but also on the contemplative spirit with which the Quran was revealed to be recited.
         </p>
@@ -5684,31 +5776,105 @@ function ArticleContentTarteelVsTajweed() {
         </p>
       </section>
 
-      {/* Section 8: Simple Example of Tajweed vs Tarteel */}
-      <section className="space-y-4">
+      {/* Section 8: Pronunciation & Audio Examples: Tajweed vs Tarteel in Practice */}
+      <section className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Simple Example of Tajweed vs Tarteel
+          Pronunciation &amp; Audio Examples: Tajweed vs Tarteel in Practice
         </h2>
         <p className="text-base text-muted-text">
-          Consider a student reciting Surah Al-Fatihah:
+          To understand how Tajweed rules and Tarteel pacing interact in actual recitation, consider these two real-world Quranic pronunciation examples:
         </p>
-        <div className="space-y-3 not-prose">
-          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
-            <h3 className="text-sm font-bold text-foreground">The Tajweed Dimension:</h3>
-            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              The student ensures the letter <em>‘Ayn</em> (ع) in <em>‘Alameen</em> comes from the middle of the throat, distinguishes the <em>Haa</em> (ح) in <em>Ar-Rahman</em> from a breathy <em>Haa</em> (هـ), and extends the Madd in <em>Ad-Daalleen</em> for exactly six counts with appropriate heaviness (Tasqeel).
-            </p>
+
+        {/* Example 1: Surah Al-Muzzammil 73:4 */}
+        <div className="p-6 rounded-2xl glass border border-card-border space-y-4 not-prose">
+          <div className="flex items-center justify-between border-b border-card-border/60 pb-3">
+            <span className="text-xs font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full">
+              Example 1: Surah Al-Muzzammil (73:4)
+            </span>
+            <span className="text-xs text-muted-text font-medium">Divine Command of Tarteel</span>
           </div>
-          <div className="p-4 rounded-2xl glass border border-card-border space-y-1">
-            <h3 className="text-sm font-bold text-foreground">The Tarteel Dimension:</h3>
-            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              The student recites verse by verse with natural breath pauses at each Waqf, avoids rushing to the next ayah, and internalizes the praise, mercy, and guidance expressed in each sentence.
+          <blockquote className="border-l-4 border-primary pl-4 py-1 my-2 bg-foreground/[0.02] rounded-r-xl">
+            <p className="font-arabic text-xl sm:text-2xl text-foreground mb-1 text-right dir-rtl">
+              وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا
             </p>
+            <p className="text-xs sm:text-sm text-muted-text italic">
+              &quot;Wa Rattilil-Qur&apos;āna Tartīlā&quot; — &quot;And recite the Quran with measured recitation [Tarteel].&quot;
+            </p>
+          </blockquote>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+            <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 space-y-1.5">
+              <h4 className="text-sm font-bold text-foreground">The Tajweed Pronunciation Rules:</h4>
+              <ul className="text-xs sm:text-sm text-muted-text space-y-1 list-disc list-inside">
+                <li><strong className="text-foreground">Light Raa (Tarqeeq):</strong> In <em>Rattili</em> (رَتِّلِ), the Raa is pronounced lightly due to the Kasrah.</li>
+                <li><strong className="text-foreground">Heavy Raa (Tafkheem):</strong> In <em>Al-Qur&apos;an</em> (الْقُرْآنَ), the Raa Sakinah is heavy due to the preceding Dammah, followed by a 2-count Madd Badal.</li>
+                <li><strong className="text-foreground">Madd &apos;Iwad Stop:</strong> In <em>Tartīlā</em> (تَرْتِيلًا), the Tanween Fath upon pausing (Waqf) transforms into a 2-count vowel prolongation (<em>Tartīlaa</em>).</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-xl bg-secondary/5 border border-secondary/20 space-y-1.5">
+              <h4 className="text-sm font-bold text-foreground">The Tarteel Recitation Manner:</h4>
+              <ul className="text-xs sm:text-sm text-muted-text space-y-1 list-disc list-inside">
+                <li><strong className="text-foreground">Deliberate Cadence:</strong> Reciting each syllable with calm symmetry without dragging or rushing.</li>
+                <li><strong className="text-foreground">Controlled Breath:</strong> Expending breath steadily across the short ayah so the throat stays relaxed.</li>
+                <li><strong className="text-foreground">Reverent Pause:</strong> Observing silence at the ayah stop to let the divine command settle in the listener&apos;s heart.</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <p className="text-base text-muted-text">
-          Here, Tajweed delivers technical precision, while Tarteel delivers measured pacing and spiritual attentiveness.
-        </p>
+
+        {/* Example 2: Surah Al-Fatihah */}
+        <div className="p-6 rounded-2xl glass border border-card-border space-y-4 not-prose">
+          <div className="flex items-center justify-between border-b border-card-border/60 pb-3">
+            <span className="text-xs font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full">
+              Example 2: Surah Al-Fatihah (1:1-7)
+            </span>
+            <span className="text-xs text-muted-text font-medium">Daily Prayer Recitation</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl glass border border-card-border space-y-1.5">
+              <h4 className="text-sm font-bold text-foreground">The Tajweed Dimension:</h4>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                The student articulates the throat letter <em>&lsquo;Ayn</em> (ع) in <em>&lsquo;Alameen</em> from the middle of the throat (Wast al-Halq), cleanly distinguishes the chest letter <em>Haa</em> (ح) in <em>Ar-Rahman</em> from a breathy <em>Haa</em> (هـ), and extends the mandatory Madd Lazim in <em>Ad-Daalleen</em> for exactly six counts with appropriate heaviness (Tasqeel).
+              </p>
+            </div>
+            <div className="p-4 rounded-xl glass border border-card-border space-y-1.5">
+              <h4 className="text-sm font-bold text-foreground">The Tarteel Dimension:</h4>
+              <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                The student recites verse by verse, pausing at every single ayah end (*Sunnah of the Prophet ﷺ*), avoids blurring one sentence into the next, and meditates upon the majesty, mercy, and supplication expressed in each verse.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Audio Recitation Benchmarks */}
+        <div className="p-6 rounded-2xl glass border border-card-border space-y-4 not-prose">
+          <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <span>Recommended Audio Recitation Benchmarks for Learners</span>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+            Listening to master Qaris trains the ear to recognize both strict Tajweed rules and the serene pace of Tarteel:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="p-3.5 rounded-xl bg-card border border-card-border space-y-1">
+              <h5 className="text-xs font-bold text-foreground">Shaykh Al-Husary (Murattal)</h5>
+              <p className="text-[11px] text-muted-text leading-snug">
+                The global gold standard for instructional Tajweed accuracy and crystalline Tarteel pacing. Ideal for student imitation.
+              </p>
+            </div>
+            <div className="p-3.5 rounded-xl bg-card border border-card-border space-y-1">
+              <h5 className="text-xs font-bold text-foreground">Shaykh Al-Minshawi (Murattal)</h5>
+              <p className="text-[11px] text-muted-text leading-snug">
+                Revered for soulful, heartfelt Tarteel with deep Khushu&apos; (reverence) and immaculate letter articulation.
+              </p>
+            </div>
+            <div className="p-3.5 rounded-xl bg-card border border-card-border space-y-1">
+              <h5 className="text-xs font-bold text-foreground">Shaykh Abdul Basit (Mujawwad)</h5>
+              <p className="text-[11px] text-muted-text leading-snug">
+                Masterclass in vocal breath control, long Madd extensions, and melodic beauty while strictly obeying all Tajweed rules.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Featured Article Image 3 */}
@@ -5855,6 +6021,78 @@ function ArticleContentTarteelVsTajweed() {
         </p>
       </section>
 
+      {/* Section 12: Does the Tarteel App Correct Tajweed Mistakes? */}
+      <section className="space-y-6">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          Does the Tarteel App Correct Tajweed Mistakes?
+        </h2>
+        
+        <p className="text-base text-muted-text leading-relaxed">
+          With the rise of AI-driven Quran applications, many learners ask: <strong>Does the Tarteel app correct Tajweed mistakes?</strong> In short: <strong>No, the Tarteel AI app cannot reliably correct Tajweed mistakes.</strong> While the Tarteel app is an innovative and beneficial digital companion for <strong>voice search, verse tracking, and Hifz memorization testing</strong>, it is not engineered to replace a qualified human Quran teacher for authentic Tajweed correction.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
+          <div className="p-5 rounded-2xl glass border border-emerald-500/20 bg-emerald-500/5 space-y-3">
+            <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider px-2.5 py-0.5 bg-emerald-500/10 rounded-full inline-block">
+              What the Tarteel App Does Well
+            </span>
+            <ul className="space-y-2 text-xs sm:text-sm text-muted-text">
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Word-by-Word Voice Tracking:</strong> Automatically scrolls the Mushaf as you recite aloud.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Hifz Memorization Drills:</strong> Blurs upcoming words and flags skipped or misplaced ayahs.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Instant Ayah Search:</strong> Recite a snippet of any verse to identify its Surah and verse number.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-amber-500/20 bg-amber-500/5 space-y-3">
+            <span className="text-xs font-bold text-amber-600 uppercase tracking-wider px-2.5 py-0.5 bg-amber-500/10 rounded-full inline-block">
+              Where AI Fails for Tajweed Correction
+            </span>
+            <ul className="space-y-2 text-xs sm:text-sm text-muted-text">
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong className="text-foreground">Makharij (Letter Origins):</strong> Cannot detect whether deep throat letters like <em>&lsquo;Ayn</em> (ع) or <em>Haa</em> (ح) are articulated from the authentic point.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong className="text-foreground">Madd Prolongation Counts:</strong> Cannot accurately count precise Harakat (2, 4, 5, or 6 counts) across variable tempos.</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-amber-500 font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong className="text-foreground">Micro-Phonetics:</strong> Misses subtle Ghunnah nasalization, Qalqalah echoing, and Ikhfa hiding rules.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-lg sm:text-xl font-bold text-foreground">
+            Why AI Speech Recognition Cannot Replace a Human Quran Teacher
+          </h3>
+          <p className="text-base text-muted-text leading-relaxed">
+            Speech recognition models in mobile applications rely on acoustic probability. The software listens to the audio waveform and predicts which word you intended to recite. If you substitute a soft <em>Taa</em> (ت) for an emphatic <em>Taa</em> (ط), or mispronounce <em>Daad</em> (ض) as <em>Zaad</em> or <em>Dhaal</em> (ذ), the app frequently marks the word correct because the acoustic footprint is close enough to identify the word. In classical Tajweed, however, this constitutes a clear mistake (<em>Lahn Jali</em>) that can alter the Quranic meaning entirely.
+          </p>
+          <p className="text-base text-muted-text leading-relaxed">
+            Furthermore, Islamic scholarship has maintained for over 1,400 years that the Quran must be learned through <strong>Talaqqi</strong>—direct oral transmission. A qualified teacher not only listens to acoustic frequencies that smartphone microphones compress, but also observes physical mouth shape, jaw alignment, and tongue placement.
+          </p>
+        </div>
+
+        <div className="p-5 rounded-2xl glass border border-primary/20 bg-primary/5 space-y-2 not-prose">
+          <h3 className="text-sm font-bold text-foreground">Practical Recommendation:</h3>
+          <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+            Use the Tarteel app as a convenient digital drill partner for solo Hifz revision and tracking daily reading consistency. However, for learning and correcting Tajweed rules, study with an experienced tutor in <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">1-on-1 live online Tajweed classes</Link> who can provide immediate, real-time auditory correction.
+          </p>
+        </div>
+      </section>
+
       {/* Frequently Asked Questions */}
       <section className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
@@ -5873,6 +6111,13 @@ function ArticleContentTarteelVsTajweed() {
             <h3 className="text-base font-bold text-foreground">Does Tarteel mean reading slowly?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
               No. Tarteel does not simply mean reciting slowly. While measured pacing naturally results from Tarteel, true Tarteel emphasizes reciting without rushing, articulating each letter distinctly, pausing appropriately, and contemplating the meaning of the verses.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Does the Tarteel app correct Tajweed mistakes?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              No. While the Tarteel app is an excellent tool for memorization revision, verse tracking, and spotting missed words, it cannot reliably correct Tajweed mistakes. AI speech recognition lacks the nuance to detect subtle throat articulation (Makharij), letter characteristics (Sifat), exact Madd prolongations, or Ghunnah nasalization. Authentic Tajweed correction requires live feedback from a qualified human Quran teacher.
             </p>
           </div>
 
