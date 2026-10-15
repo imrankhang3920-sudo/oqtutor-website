@@ -136,6 +136,16 @@ export default function ServingLocationsSection({
                     </Link>
                   ))}
                 </div>
+                {group.country === 'United States' && (
+                  <div className="mb-3 pt-2.5 border-t border-card-border/60">
+                    <Link
+                      href="/blog/best-online-quran-classes-for-kids-in-usa"
+                      className="text-[11px] font-semibold text-primary hover:underline inline-flex items-center gap-1 leading-snug"
+                    >
+                      <span>Guide: Online Quran classes for kids in the USA &rarr;</span>
+                    </Link>
+                  </div>
+                )}
               </div>
               <Link
                 href={group.mainLink}

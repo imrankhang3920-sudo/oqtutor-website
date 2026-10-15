@@ -21,6 +21,10 @@ export default function FeaturedCourses() {
         'Child-friendly interactive digital flashcards',
         'Patient female & male tutors'
       ],
+      guideLink: {
+        label: 'Guide: Online Quran classes for kids in the USA',
+        href: '/blog/best-online-quran-classes-for-kids-in-usa',
+      },
       isPopular: false,
     },
     {

@@ -27,7 +27,7 @@ const blogItems: BlogPreviewItem[] = [
   {
     image: '/blog-kids-usa-1.jpg',
     category: 'Parenting Guide',
-    title: 'Best Online Quran Classes for Kids in USA',
+    title: 'Best Online Quran Classes for Kids in USA (2026 Comparison Guide)',
     link: '/blog/best-online-quran-classes-for-kids-in-usa',
   },
 ];
