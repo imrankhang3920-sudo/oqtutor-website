@@ -138,6 +138,11 @@ const nextConfig: NextConfig = {
       },
       // 1. Rename redirects for changed course slugs (singular /course/* to new plural /courses/* paths)
       {
+        source: '/course/quran-reading',
+        destination: '/courses/quran-reading',
+        permanent: true,
+      },
+      {
         source: '/course/quran-with-tajweed',
         destination: '/courses/tajweed',
         permanent: true,
@@ -160,6 +165,16 @@ const nextConfig: NextConfig = {
       {
         source: '/course/online-quran-classes-for-adults',
         destination: '/courses/quran-for-adults',
+        permanent: true,
+      },
+      {
+        source: '/course/arabic-language',
+        destination: '/courses/arabic',
+        permanent: true,
+      },
+      {
+        source: '/course/arabic',
+        destination: '/courses/arabic',
         permanent: true,
       },
       // 2. Specific legacy /courses/* to new /courses/* re-mappings
@@ -188,12 +203,12 @@ const nextConfig: NextConfig = {
         destination: '/courses/quran-for-adults',
         permanent: true,
       },
-      // 3. Old legacy WordPress mappings
       {
-        source: '/courses/arabic',
-        destination: '/courses/arabic-language',
+        source: '/courses/arabic-language',
+        destination: '/courses/arabic',
         permanent: true,
       },
+      // 3. Old legacy WordPress mappings
       {
         source: '/courses/kids-quran',
         destination: '/courses/quran-for-kids',

@@ -286,7 +286,7 @@ const decisionGuideItems = [
   {
     situation: 'Want to learn Quranic vocabulary & basic Arabic grammar',
     recommendation: 'Arabic Language Course',
-    slug: 'arabic-language',
+    slug: 'arabic',
     desc: 'Understand classical Arabic roots, grammar patterns, and verses.',
   },
   {
@@ -365,7 +365,7 @@ const courseComparisonData = [
   },
   {
     name: 'Arabic Language',
-    href: '/courses/arabic-language',
+    href: '/courses/arabic',
     bestFor: 'Kids & adults',
     startingLevel: 'Can read Arabic script',
     duration: '4-6 months',
@@ -392,7 +392,7 @@ export default async function CoursesPage() {
   const tajweedCourses = getCoursesBySlugs('tajweed');
   const memorizationCourses = getCoursesBySlugs('hifz', 'tafseer');
   const islamicLearningCourses = getCoursesBySlugs('islamic-studies', 'daily-duas', 'salah-course');
-  const arabicCourses = getCoursesBySlugs('arabic-language');
+  const arabicCourses = getCoursesBySlugs('arabic');
   const specializedPrograms = getCoursesBySlugs('quran-for-kids', 'quran-for-adults', 'female-quran-teacher');
 
   // Breadcrumb Schema
@@ -985,7 +985,7 @@ function CourseCard({ course }: { course: any }) {
     'islamic-studies': 'Islamic studies course covering Aqeedah, Seerah, and daily manners',
     'daily-duas': 'Child learning daily Islamic supplications and protection prayers',
     'salah-course': 'Student learning step-by-step Wudu and Salah prayer postures',
-    'arabic-language': 'Student studying classical Quranic Arabic vocabulary and grammar rules',
+    'arabic': 'Student studying classical Quranic Arabic vocabulary and grammar rules',
     'quran-for-kids': 'Child learning Quran online in an engaging one-on-one lesson',
     'quran-for-adults': 'Adult student practicing Quran recitation in private one-on-one class',
     'female-quran-teacher': 'Sister learning Quran online with certified female Quran scholar',

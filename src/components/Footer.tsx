@@ -37,7 +37,7 @@ export default function Footer({
     { name: 'Islamic Studies', href: '/courses/islamic-studies' },
     { name: 'Daily Duas', href: '/courses/daily-duas' },
     { name: 'Salah & Prayer', href: '/courses/salah-course' },
-    { name: 'Arabic Language', href: '/courses/arabic-language' },
+    { name: 'Arabic Language', href: '/courses/arabic' },
     { name: 'Quran for Kids', href: '/courses/quran-for-kids' },
     { name: 'Quran for Adults', href: '/courses/quran-for-adults' },
     { name: 'Female Quran Teacher', href: '/courses/female-quran-teacher' },

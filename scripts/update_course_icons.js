@@ -13,6 +13,7 @@ const iconMappings = {
   "online-quran-classes-for-adults": "UserCheck",
   "islamic-studies": "Compass",
   "arabic-language": "Languages",
+  "arabic": "Languages",
   "daily-duas": "Sparkles",
   "salah-course": "Users"
 };

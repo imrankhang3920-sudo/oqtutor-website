@@ -480,7 +480,7 @@ export default function ArticleContentHowToLearnQuranTafseerOnline() {
           </p>
 
           <p className="text-base text-muted-text">
-            Start small: learn high-frequency Quranic nouns and verbs, followed by basic root structures and pronouns. Our dedicated <Link href="/courses/arabic-language" className="text-primary font-semibold hover:underline">Arabic language course</Link> and our in-depth guide on <Link href="/blog/understanding-arabic-grammar-quran" className="text-primary font-semibold hover:underline">understanding Arabic grammar in the Quran</Link> are excellent places to start.
+            Start small: learn high-frequency Quranic nouns and verbs, followed by basic root structures and pronouns. Our dedicated <Link href="/courses/arabic" className="text-primary font-semibold hover:underline">Arabic language course</Link> and our in-depth guide on <Link href="/blog/understanding-arabic-grammar-quran" className="text-primary font-semibold hover:underline">understanding Arabic grammar in the Quran</Link> are excellent places to start.
           </p>
         </section>
 

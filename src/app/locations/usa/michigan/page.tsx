@@ -389,7 +389,7 @@ export default async function MichiganQuranClassesPage() {
                     Word-by-word and verse-by-verse translation classes for students who want to connect what they recite in Salah to its meaning in English.
                   </p>
                 </div>
-                <Link href="/courses/arabic-language" className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group">
+                <Link href="/courses/arabic" className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group">
                   <span>Explore Course</span>
                   <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>

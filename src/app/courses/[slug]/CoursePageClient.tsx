@@ -1479,7 +1479,7 @@ function QuranReadingContent({
                   </li>
                   <li className="flex items-start space-x-2.5">
                     <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                    <span>**Language Basics**: Build vocabulary to prepare for our <Link href="/courses/arabic-language" className="text-primary hover:underline font-semibold">Arabic Course</Link>.</span>
+                    <span>**Language Basics**: Build vocabulary to prepare for our <Link href="/courses/arabic" className="text-primary hover:underline font-semibold">Arabic Course</Link>.</span>
                   </li>
                 </ul>
               </div>
@@ -1805,7 +1805,7 @@ function FemaleQuranTeacherContent({
     { name: "Hifz-ul-Quran", slug: "hifz", level: "Dedicated", focus: "Step-by-step memorization of chapters with structured revision" },
     { name: "Islamic Studies", slug: "islamic-studies", level: "All Ages", focus: "Fiqh (prayer rules), Seerah, Hadith, and Islamic manners" },
     { name: "Daily Duas", slug: "daily-duas", level: "All Ages", focus: "Morning and evening Azkar, and prayers for daily protection" },
-    { name: "Arabic Basics", slug: "arabic-language", level: "Beginner", focus: "Building vocabulary, root words, and understanding Quranic text" }
+    { name: "Arabic Basics", slug: "arabic", level: "Beginner", focus: "Building vocabulary, root words, and understanding Quranic text" }
   ];
 
   const faqs = [
