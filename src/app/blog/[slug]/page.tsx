@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isOnlineVsInPersonBlog
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
     : isKidsUsaBlog
-    ? 'Best Online Quran Classes for Kids in USA | Expert Teachers'
+    ? 'Best Online Quran Classes for Kids in USA (2026 Comparison Guide) | OQTutor'
     : isTarteelVsTajweedBlog
     ? 'Tajweed vs. Tarteel: Key Differences, Meaning & Audio Examples (2026)'
     : isWeekendQuranBlog
@@ -102,6 +102,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const metaDescription = isTarteelVsTajweedBlog
     ? 'What is the difference between Tajweed and Tarteel? See our side-by-side comparison table, Surah Al-Muzzammil verse 4 explanation, and pronunciation examples.'
+    : isKidsUsaBlog
+    ? 'Compare the best online Quran classes for kids in the USA. See side-by-side academy comparisons, US pricing in USD ($30-$50/mo), background-checked tutors, and book a free trial.'
     : blog.description;
 
   const coverImgUrl = blog.coverImage
@@ -1880,6 +1882,22 @@ export default async function BlogPostPage({ params }: Props) {
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child's increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Why does OQTutor outperform standard online academies and weekend mosque classes?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OQTutor provides dedicated 1-on-1 private instruction (30-40 minutes of actual student reading time), 100% background-checked male and female teachers with authentic Ijazah certifications, 7-day schedule flexibility across all US time zones (EST, CST, MST, PST), open-door parent visibility, transparent monthly pricing in USD ($30-$50/mo with zero contracts), and a 3-day free trial with no credit card required."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are OQTutor tutors background-checked and safe for my child?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, 100%. Every tutor undergoes strict criminal background checks, government ID verification, and child protection protocol training before teaching. Parents enjoy complete open-door visibility to observe classes at any time from their home."
                   }
                 }
               ]
@@ -4686,6 +4704,171 @@ function ArticleContentKidsUsa() {
         </p>
       </div>
 
+      {/* Above-the-Fold: Book a Free Trial Class (US Time Zones: EST, CST, PST) Box */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-card to-secondary/10 border-2 border-primary/30 shadow-xl not-prose space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-card-border pb-4">
+          <div className="space-y-1">
+            <span className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              <span>US Parent Priority Enrollment</span>
+            </span>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground tracking-tight">
+              Book a Free Trial Class (US Time Zones: EST, CST, PST)
+            </h2>
+          </div>
+          <div className="flex items-center space-x-1.5 text-xs font-semibold text-emerald-600 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full shrink-0">
+            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+            <span>100% Free &bull; No Credit Card Required</span>
+          </div>
+        </div>
+
+        <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+          Give your child the gift of fluent Quran recitation with private, live 1-on-1 tutoring designed specifically for busy American schedules. Choose your preferred day, time slot, and teacher gender—no upfront payment or commitment needed.
+        </p>
+
+        {/* Time Zone Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="p-3.5 rounded-2xl glass border border-card-border text-center space-y-1">
+            <span className="text-[11px] font-bold text-primary uppercase tracking-wider block">Eastern Time</span>
+            <p className="text-xs font-semibold text-foreground">EST (NY / FL / GA / NC)</p>
+            <p className="text-[10px] text-muted-text">3:00 PM – 9:00 PM</p>
+          </div>
+          <div className="p-3.5 rounded-2xl glass border border-card-border text-center space-y-1">
+            <span className="text-[11px] font-bold text-primary uppercase tracking-wider block">Central Time</span>
+            <p className="text-xs font-semibold text-foreground">CST (TX / IL / MN / MO)</p>
+            <p className="text-[10px] text-muted-text">3:30 PM – 9:30 PM</p>
+          </div>
+          <div className="p-3.5 rounded-2xl glass border border-card-border text-center space-y-1">
+            <span className="text-[11px] font-bold text-primary uppercase tracking-wider block">Mountain Time</span>
+            <p className="text-xs font-semibold text-foreground">MST (CO / AZ / UT / NM)</p>
+            <p className="text-[10px] text-muted-text">3:00 PM – 8:30 PM</p>
+          </div>
+          <div className="p-3.5 rounded-2xl glass border border-card-border text-center space-y-1">
+            <span className="text-[11px] font-bold text-primary uppercase tracking-wider block">Pacific Time</span>
+            <p className="text-xs font-semibold text-foreground">PST (CA / WA / OR / NV)</p>
+            <p className="text-[10px] text-muted-text">3:00 PM – 8:00 PM</p>
+          </div>
+        </div>
+
+        {/* Feature Highlights */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div className="flex items-center space-x-2.5 text-xs text-foreground font-medium">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+            <span>30-min 1-on-1 private lesson</span>
+          </div>
+          <div className="flex items-center space-x-2.5 text-xs text-foreground font-medium">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+            <span>Choice of male or female tutor</span>
+          </div>
+          <div className="flex items-center space-x-2.5 text-xs text-foreground font-medium">
+            <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+            <span>Instant placement &amp; custom plan</span>
+          </div>
+        </div>
+
+        {/* Action Row */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+          <Link
+            href="/book-free-trial"
+            className="flex-1 inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/25 hover:shadow-xl hover:scale-[1.01] transition-all"
+          >
+            <span>Book 3 Free Trial Classes (Select Your Time)</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <a
+            href="#us-pricing-plans"
+            className="inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-full glass hover:bg-primary/10 text-foreground text-xs sm:text-sm font-semibold border border-card-border transition-all"
+          >
+            <span>See US Pricing ($30–$50/mo)</span>
+          </a>
+        </div>
+
+        <p className="text-[11px] text-center text-muted-text">
+          ⭐ Trusted by over 1,500+ Muslim American families across California, Texas, Illinois, New York, Florida, New Jersey, and nationwide.
+        </p>
+      </div>
+
+      {/* Background-Checked Male/Female Tutor Badges */}
+      <section className="space-y-4 not-prose">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1 inline-block">
+            Verified Tutor Safety &amp; Quality
+          </span>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
+            Background-Checked Male &amp; Female Quran Tutors
+          </h3>
+          <p className="text-xs sm:text-sm text-muted-text">
+            We hold our instructors to rigorous safety, academic, and child protection benchmarks before they teach a single lesson.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          {/* Badge 1: Criminal Background Checked */}
+          <div className="p-5 rounded-2xl glass border border-card-border hover:border-primary/40 transition-all space-y-3 flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                <ShieldCheck className="h-6 w-6 text-primary" />
+              </div>
+              <h4 className="text-sm font-bold text-foreground">100% Background-Checked</h4>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Comprehensive identity verification, address validation, and criminal background screening ensure a 100% secure learning environment for your child.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-primary uppercase tracking-wider px-2 py-0.5 bg-primary/10 rounded-full self-start">
+              Verified Security
+            </span>
+          </div>
+
+          {/* Badge 2: Certified Male & Female Scholars */}
+          <div className="p-5 rounded-2xl glass border border-card-border hover:border-primary/40 transition-all space-y-3 flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="h-10 w-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary">
+                <UserCheck className="h-6 w-6 text-secondary" />
+              </div>
+              <h4 className="text-sm font-bold text-foreground">Male &amp; Female Tutors</h4>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Choose between certified male or <Link href="/tutors" className="text-primary font-semibold hover:underline">female Quran teachers</Link> holding authentic Ijazah licenses to suit your daughter&apos;s or son&apos;s comfort.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-secondary uppercase tracking-wider px-2 py-0.5 bg-secondary/10 rounded-full self-start">
+              Gender Choice
+            </span>
+          </div>
+
+          {/* Badge 3: Fluent English & Child Pedagogy */}
+          <div className="p-5 rounded-2xl glass border border-card-border hover:border-primary/40 transition-all space-y-3 flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600">
+                <Award className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h4 className="text-sm font-bold text-foreground">Child-Centered Pedagogy</h4>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Native or fluent English communication paired with patient, child-friendly teaching methods, positive reinforcement, and engaging digital rewards.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider px-2 py-0.5 bg-emerald-500/10 rounded-full self-start">
+              Fluent English
+            </span>
+          </div>
+
+          {/* Badge 4: Open-Door Parental Visibility */}
+          <div className="p-5 rounded-2xl glass border border-card-border hover:border-primary/40 transition-all space-y-3 flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="h-10 w-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600">
+                <Eye className="h-6 w-6 text-indigo-600" />
+              </div>
+              <h4 className="text-sm font-bold text-foreground">Open-Door Parent Access</h4>
+              <p className="text-xs text-muted-text leading-relaxed">
+                Parents are always welcome to observe live classes, monitor screen time, review teacher notes, and receive monthly written milestone assessments.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider px-2 py-0.5 bg-indigo-500/10 rounded-full self-start">
+              Parent Visibility
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Article Image 1 */}
       <div className="glass p-3 sm:p-4 rounded-3xl border border-card-border overflow-hidden shadow-lg not-prose">
         <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden bg-foreground/5">
@@ -4703,76 +4886,150 @@ function ArticleContentKidsUsa() {
         </p>
       </div>
 
-      {/* What Should Parents Look for in Online Quran Classes? (Comparison Table) */}
+      {/* Comprehensive Comparison Guide: Why OQTutor Outperforms Standard Academies */}
       <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          What Should Parents Look for in Online Quran Classes?
-        </h2>
-        <p className="text-base text-muted-text">
-          Not all online programs provide the same quality of instruction. Evaluating key educational, technical, and safety standards before enrolling ensures your child receives structured learning tailored to their unique pace:
-        </p>
+        <div className="border-b border-card-border pb-3">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-2">
+            Side-by-Side Comparison Guide
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            Why OQTutor Outperforms Standard Academies &amp; Weekend Mosque Classes
+          </h2>
+          <p className="text-base text-muted-text mt-2">
+            Choosing the right Quran program is one of the most critical decisions you will make for your child&apos;s Islamic upbringing. Here is a clear, objective breakdown comparing OQTutor to generic online platforms and traditional weekend mosque schools:
+          </p>
+        </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto rounded-2xl border border-card-border shadow-sm not-prose">
-          <table className="w-full text-left border-collapse text-sm">
+        {/* Detailed 4-Column Comparison Table */}
+        <div className="overflow-x-auto rounded-3xl border border-card-border shadow-lg not-prose">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <caption className="sr-only">Comprehensive Comparison: OQTutor vs Standard Online Academies vs Weekend Mosque Classes</caption>
             <thead>
-              <tr className="bg-primary/10 border-b border-card-border text-foreground">
-                <th className="py-3.5 px-4 sm:px-6 font-bold text-xs sm:text-sm uppercase tracking-wider w-1/3">
-                  What to Compare
+              <tr className="border-b border-card-border bg-card">
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text w-1/4">
+                  Comparison Factor
                 </th>
-                <th className="py-3.5 px-4 sm:px-6 font-bold text-xs sm:text-sm uppercase tracking-wider w-2/3">
-                  What Parents Should Look For
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs sm:text-sm uppercase tracking-wider bg-primary/15 text-primary border-x border-primary/30 w-1/3">
+                  <div className="flex items-center space-x-1.5">
+                    <span>OQTutor Online Academy</span>
+                    <span className="hidden sm:inline-block text-[10px] bg-primary text-white font-bold px-2 py-0.5 rounded-full">Recommended</span>
+                  </div>
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text w-1/5">
+                  Standard Online Academies
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text w-1/5">
+                  Weekend Mosque Classes
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-card-border/60 text-muted-text">
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Teaching format</td>
-                <td className="py-3 px-4 sm:px-6">Live one-on-one private lessons (30–40 minutes) for 100% focused attention.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Class Format &amp; Attention</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>100% Private 1-on-1:</strong> Full 30–40 min recitation speaking time every lesson.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Often group calls (4–8 kids); each child recites for 3–5 minutes.</td>
+                <td className="py-3.5 px-3 sm:px-5">15–25 students per class; under 3 minutes of personal reading time.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Teacher</td>
-                <td className="py-3 px-4 sm:px-6">Qualified with verified Ijazah credentials, fluent in English, patient, and experienced with children.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Tutor Vetting &amp; Safety</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>100% Background-Checked:</strong> Criminal checks, ID vetting &amp; Ijazah verified.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Often unscreened third-party freelancers or college students.</td>
+                <td className="py-3.5 px-3 sm:px-5">Volunteer community teachers with varying instructional credentials.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Beginner support</td>
-                <td className="py-3 px-4 sm:px-6">Structured Noorani Qaida lessons covering Arabic alphabet recognition and letter joining.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Male &amp; Female Tutors</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Guaranteed Choice:</strong> Select male or female teacher based on comfort.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Randomly assigned; tutor switches often incur delays or fees.</td>
+                <td className="py-3.5 px-3 sm:px-5">Limited to whoever volunteers for that age group.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Quran reading</td>
-                <td className="py-3 px-4 sm:px-6">Step-by-step reading practice transitioning from short words to complete Mushaf verses.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">US Time Zone Availability</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>EST, CST, MST, PST:</strong> 7 days/week after school &amp; on weekends.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Fixed international hours; difficult evening US slots.</td>
+                <td className="py-3.5 px-3 sm:px-5">Weekend mornings only (often conflicts with sports &amp; activities).</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Tajweed</td>
-                <td className="py-3 px-4 sm:px-6">Real-time pronunciation correction, articulation points (Makharij), and melodic flow.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">English Fluency &amp; Pedagogy</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Child-Friendly &amp; Fluent:</strong> Positive reinforcement, badges, US awareness.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Heavy accents, dry slides, strict or impatient tone.</td>
+                <td className="py-3.5 px-3 sm:px-5">Mixed; can be noisy, chaotic, or intimidating for shy children.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Memorization</td>
-                <td className="py-3 px-4 sm:px-6">Structured Hifz milestones combined with rigorous daily revision (Muraja&apos;ah).</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Curriculum &amp; Pacing</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>100% Personalized:</strong> Tailored from Qaida to Tajweed &amp; Hifz at your pace.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Rigid pre-recorded curriculum with little individual modification.</td>
+                <td className="py-3.5 px-3 sm:px-5">One-pace-fits-all group speed; slower learners fall behind.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Scheduling</td>
-                <td className="py-3 px-4 sm:px-6">Flexible time slots suited for US time zones (EST, CST, MST, PST) after school and on weekends.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Parent Visibility</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Open-Door Access:</strong> Live observation + monthly written progress reports.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">Automated multiple-choice quizzes with minimal teacher feedback.</td>
+                <td className="py-3.5 px-3 sm:px-5">Drop-off model with report card once per semester.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Teacher choice</td>
-                <td className="py-3 px-4 sm:px-6">Availability of qualified male and female Quran teachers based on family preference.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">US Pricing (in USD)</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>$30 to $50 / Month:</strong> Zero registration fees, no annual contracts.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">$80 to $150 / month with non-refundable 6–12 month contracts.</td>
+                <td className="py-3.5 px-3 sm:px-5">$40 to $80 / month per child + weekly driving gas &amp; commute time.</td>
               </tr>
+
               <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Progress</td>
-                <td className="py-3 px-4 sm:px-6">Regular parent updates, lesson feedback, and measurable milestones.</td>
-              </tr>
-              <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Safety</td>
-                <td className="py-3 px-4 sm:px-6">Verified tutor identity, supervised sessions, and open-door parent monitoring.</td>
-              </tr>
-              <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Trial</td>
-                <td className="py-3 px-4 sm:px-6">A 3-day free trial (no credit card required) to assess teacher compatibility before making a commitment.</td>
-              </tr>
-              <tr className="hover:bg-primary/[0.02] transition-colors">
-                <td className="py-3 px-4 sm:px-6 font-semibold text-foreground">Pricing</td>
-                <td className="py-3 px-4 sm:px-6">Transparent monthly plans ($30, $40, $50/mo) with clear lesson lengths and no hidden fees.</td>
+                <td className="py-3.5 px-3 sm:px-5 font-bold text-foreground">Free Trial Offer</td>
+                <td className="py-3.5 px-3 sm:px-5 font-semibold text-foreground bg-primary/5 border-x border-primary/20">
+                  <span className="flex items-start space-x-1.5">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>3-Day Free Trial:</strong> Full 1-on-1 sessions; zero credit card needed.</span>
+                  </span>
+                </td>
+                <td className="py-3.5 px-3 sm:px-5">1 short 15-minute sales demo or paid trial lesson.</td>
+                <td className="py-3.5 px-3 sm:px-5">No free trial; full semester registration fee required upfront.</td>
               </tr>
             </tbody>
           </table>
@@ -5143,34 +5400,199 @@ function ArticleContentKidsUsa() {
         </ul>
       </section>
 
-      {/* How Much Do Online Quran Classes for Kids Cost? */}
-      <section className="space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          How Much Do Online Quran Classes for Kids Cost?
-        </h2>
-        <p className="text-base text-muted-text">
-          At OQTutor, we believe high-quality Quranic education should remain accessible and transparent. Our monthly plans are structured simply with no hidden registration fees or long-term lock-in contracts:
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose pt-1">
-          <div className="p-5 rounded-2xl glass border border-card-border text-center space-y-2">
-            <h3 className="text-sm font-bold text-foreground">Basic Plan</h3>
-            <p className="text-2xl font-extrabold text-primary">$30<span className="text-xs font-normal text-muted-text"> / month</span></p>
-            <p className="text-xs text-muted-text">Ideal for steady weekly progression in Noorani Qaida or Quran reading.</p>
+      {/* Comprehensive US Pricing in USD Section */}
+      <section id="us-pricing-plans" className="space-y-6 scroll-mt-20">
+        <div className="border-b border-card-border pb-3">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-2">
+            Affordable &amp; Transparent
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            How Much Do Online Quran Classes for Kids Cost in the USA? (US Pricing in USD)
+          </h2>
+          <p className="text-base text-muted-text mt-2">
+            At OQTutor, we believe quality Quran education should be accessible for every Muslim family in America. Our tuition plans are priced simply in US Dollars (USD) with no registration fees, no hidden platform charges, and no long-term contracts:
+          </p>
+        </div>
+
+        {/* 3 Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose">
+          {/* Starter Plan */}
+          <div className="p-6 rounded-3xl glass border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/10 rounded-full">
+                  Starter Plan
+                </span>
+                <span className="text-xs text-muted-text font-medium">2–3 Days / Week</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-4xl font-extrabold text-foreground">$30</span>
+                  <span className="text-xs font-semibold text-muted-text uppercase">USD / Month</span>
+                </div>
+                <p className="text-xs text-muted-text">Approx. $2.50 to $3.50 per live private class.</p>
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed border-t border-card-border pt-3">
+                Ideal for young beginners starting the Arabic alphabet, Noorani Qaida phonics, and basic Quran reading.
+              </p>
+              <ul className="space-y-2 text-xs text-muted-text pt-2">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>2 to 3 Live Classes / Week (30 min each)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>1-on-1 Private Teacher Attention</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Choice of Male or Female Teacher</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>US Time Zones (EST, CST, MST, PST)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>3-Day Free Trial (No Card Needed)</span>
+                </li>
+              </ul>
+            </div>
+            <Link
+              href="/book-free-trial"
+              className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-bold border border-primary/20 transition-all text-center"
+            >
+              <span>Start 3-Day Free Trial</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <div className="p-5 rounded-2xl glass border border-primary/30 text-center space-y-2 bg-primary/5">
-            <h3 className="text-sm font-bold text-foreground">Standard Plan</h3>
-            <p className="text-2xl font-extrabold text-primary">$40<span className="text-xs font-normal text-muted-text"> / month</span></p>
-            <p className="text-xs text-muted-text">Our most popular plan for balanced recitation and Tajweed mastery.</p>
+
+          {/* Standard Plan (Featured) */}
+          <div className="p-6 rounded-3xl glass border-2 border-primary shadow-xl bg-primary/[0.03] flex flex-col justify-between space-y-5 relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-white bg-primary uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+              Most Popular Among US Parents
+            </span>
+            <div className="space-y-3 pt-1">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-primary uppercase tracking-wider px-2.5 py-1 bg-primary/15 rounded-full">
+                  Standard Plan
+                </span>
+                <span className="text-xs text-muted-text font-medium">4–5 Days / Week</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-4xl font-extrabold text-foreground">$40</span>
+                  <span className="text-xs font-semibold text-muted-text uppercase">USD / Month</span>
+                </div>
+                <p className="text-xs text-muted-text">Approx. $2.00 to $2.50 per live private class.</p>
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed border-t border-card-border pt-3">
+                Our recommended plan for consistent recitation fluency, Tajweed rules, daily Duas, and memorization.
+              </p>
+              <ul className="space-y-2 text-xs text-muted-text pt-2">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span><strong>4 to 5 Live Classes / Week</strong> (30 min each)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>1-on-1 Dedicated Qualified Tutor</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Quran Recitation + Tajweed Rules</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Islamic Studies, Daily Duas &amp; Salah</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Monthly Written Progress Reports</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Free Makeup &amp; Rescheduled Lessons</span>
+                </li>
+              </ul>
+            </div>
+            <Link
+              href="/book-free-trial"
+              className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-bold shadow-md shadow-primary/20 transition-all text-center"
+            >
+              <span>Start 3-Day Free Trial</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
-          <div className="p-5 rounded-2xl glass border border-card-border text-center space-y-2">
-            <h3 className="text-sm font-bold text-foreground">Intensive Plan</h3>
-            <p className="text-2xl font-extrabold text-primary">$50<span className="text-xs font-normal text-muted-text"> / month</span></p>
-            <p className="text-xs text-muted-text">Designed for rapid progress, intensive Tajweed, or Hifz memorization.</p>
+
+          {/* Intensive / Hifz Plan */}
+          <div className="p-6 rounded-3xl glass border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between space-y-5">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-secondary uppercase tracking-wider px-2.5 py-1 bg-secondary/10 rounded-full">
+                  Intensive / Hifz
+                </span>
+                <span className="text-xs text-muted-text font-medium">5–6 Days / Week</span>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-4xl font-extrabold text-foreground">$50</span>
+                  <span className="text-xs font-semibold text-muted-text uppercase">USD / Month</span>
+                </div>
+                <p className="text-xs text-muted-text">Approx. $2.00 per live private session.</p>
+              </div>
+              <p className="text-xs text-muted-text leading-relaxed border-t border-card-border pt-3">
+                Accelerated Quran memorization (Hifz) with systematic daily Sabaq and long-term Manzil revision.
+              </p>
+              <ul className="space-y-2 text-xs text-muted-text pt-2">
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>5 to 6 Live Classes / Week (30–45 min)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Senior Certified Hafiz / Quran Scholar</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Daily Hifz Revision (Sabaq, Sabqi, Manzil)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Direct WhatsApp Teacher Support</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Check className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>15% Family &amp; Sibling Discount</span>
+                </li>
+              </ul>
+            </div>
+            <Link
+              href="/book-free-trial"
+              className="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-bold border border-primary/20 transition-all text-center"
+            >
+              <span>Start 3-Day Free Trial</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
-        <p className="text-sm text-muted-text pt-2">
-          Every family can begin with a <strong>3-day free trial</strong> (no credit card required) to meet their teacher and experience our classroom. Visit our <Link href="/pricing" className="text-primary font-semibold hover:underline">OQTutor Pricing page</Link> for complete details.
-        </p>
+
+        {/* Pricing Guarantee Banner */}
+        <div className="p-5 rounded-2xl glass border border-card-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 not-prose">
+          <div className="space-y-1">
+            <h4 className="text-sm font-bold text-foreground">US Family Savings &amp; Multi-Child Discounts</h4>
+            <p className="text-xs text-muted-text leading-relaxed">
+              Enrolling multiple siblings? Receive an automatic <strong>15% family discount</strong> on every additional child. Compared to private in-person tutors in the US who charge $30–$50 per hour, OQTutor provides superior 1-on-1 certified instruction for less than $40 a month.
+            </p>
+          </div>
+          <Link
+            href="/book-free-trial"
+            className="shrink-0 inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold shadow-sm transition-all"
+          >
+            <span>Claim Sibling Discount</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
       </section>
 
       {/* Red Flags When Choosing an Online Quran Program */}
@@ -5368,6 +5790,20 @@ function ArticleContentKidsUsa() {
             <h3 className="text-base font-bold text-foreground">How do I know if my child is making genuine progress in Quran recitation?</h3>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
               Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child&apos;s increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Why does OQTutor outperform standard online academies and weekend mosque classes?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              OQTutor provides dedicated 1-on-1 private instruction (30–40 minutes of actual student reading time), 100% background-checked male and female teachers with authentic Ijazah certifications, 7-day schedule flexibility across all US time zones (EST, CST, MST, PST), open-door parent visibility, transparent monthly pricing in USD ($30–$50/mo with zero contracts), and a 3-day free trial with no credit card required.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-2xl glass border border-card-border space-y-2">
+            <h3 className="text-base font-bold text-foreground">Are OQTutor tutors background-checked and safe for my child?</h3>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Yes, 100%. Every tutor undergoes strict criminal background checks, government ID verification, and child protection protocol training before teaching. Parents enjoy complete open-door visibility to observe classes at any time from their home.
             </p>
           </div>
         </div>
