@@ -1258,11 +1258,11 @@ export default function TafseerCourseContent({
 
       {/* 8. STUDENT TESTIMONIALS */}
       {testimonials && testimonials.length > 0 && (
-        <Testimonials testimonials={testimonials} />
+        <Testimonials data={testimonials} />
       )}
 
       {/* 9. AVAILABLE STATES BLOCK (FOR USA AUDIENCE SEO) */}
-      <AvailableStatesBlock />
+      <AvailableStatesBlock courseName="Online Quran Tafseer" />
 
       {/* 10. FREQUENTLY ASKED QUESTIONS */}
       <section className="py-20 bg-background border-b border-card-border">

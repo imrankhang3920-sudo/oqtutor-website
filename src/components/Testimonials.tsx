@@ -8,9 +8,10 @@ import { siteConfig } from '@/lib/structuredData';
 
 interface TestimonialsProps {
   data?: TestimonialData[];
+  testimonials?: TestimonialData[];
 }
 
-export default function Testimonials({ data }: TestimonialsProps) {
+export default function Testimonials({ data, testimonials }: TestimonialsProps) {
   // Curated high-converting testimonials representing Kids, Adults, and Tajweed outcomes
   const defaultReviews: TestimonialData[] = [
     {
@@ -39,7 +40,8 @@ export default function Testimonials({ data }: TestimonialsProps) {
     },
   ];
 
-  const reviewsToDisplay = (data && data.length >= 3) ? data.slice(0, 3) : defaultReviews;
+  const sourceData = data || testimonials;
+  const reviewsToDisplay = (sourceData && sourceData.length >= 3) ? sourceData.slice(0, 3) : defaultReviews;
 
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-foreground/[0.01] relative overflow-hidden">
