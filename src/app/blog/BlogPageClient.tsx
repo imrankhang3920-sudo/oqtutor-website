@@ -56,6 +56,8 @@ const mapping: Record<string, string> = {
   'what-should-a-child-learn-after-noorani-qaida': '/blog/what-should-a-child-learn-after-noorani-qaida/what-should-a-child-learn-after-noorani-qaida-cover.jpg',
   'how-to-improve-your-quran-pronunciation': '/blog/how-to-improve-your-quran-pronunciation/how-to-improve-your-quran-pronunciation-cover.jpg',
   'sister-never-read-quran-before-can-i-start-now': '/blog/sister-never-read-quran-before-can-i-start-now/online-quran-tablet-study.jpg',
+  'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide': '/blog/how-to-learn-quran-tafseer-online/quran-tafseer-study-desk-lamp.jpg',
+  'why-studying-juz-amma-tafseer-essential-guide': '/quran-salah.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -96,6 +98,8 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'what-should-a-child-learn-after-noorani-qaida': 'Young Muslim child reciting Quran with teacher guidance',
     'how-to-improve-your-quran-pronunciation': 'Student practicing Quran pronunciation and Tajweed rules',
     'sister-never-read-quran-before-can-i-start-now': 'Tablet displaying Surah Al-Kahf on a study stand next to a green plant for sisters Quran learning',
+    'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide': 'Study desk with Holy Quran and classical Tafseer Ibn Kathir and Al-Jalalayn books under warm lamp',
+    'why-studying-juz-amma-tafseer-essential-guide': 'Muslim worshiper performing Salah with open Quran on wooden rehal in peaceful light',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };

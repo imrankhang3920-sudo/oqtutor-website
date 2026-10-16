@@ -14,6 +14,8 @@ import ArticleContentNeverReadQuranSister from './ArticleContentNeverReadQuranSi
 import ArticleContentWhyNooraniQaidaEssential from './ArticleContentWhyNooraniQaidaEssential';
 import ArticleContentHowToLearnQuranTafseerOnline from './ArticleContentHowToLearnQuranTafseerOnline';
 import ArticleContentRoleParentsIslamicEducation from './ArticleContentRoleParentsIslamicEducation';
+import ArticleContentTafseerIbnKathirVsJalalayn from './ArticleContentTafseerIbnKathirVsJalalayn';
+import ArticleContentWhyJuzAmmaTafseerEssential from './ArticleContentWhyJuzAmmaTafseerEssential';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -56,9 +58,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
   const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
   const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
-  const isGlobalBlog = isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
+  const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
+  const isGlobalBlog = isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isUSABlog
+  const metaTitle = isTafseerIbnKathirVsJalalaynBlog
+    ? 'Tafseer Ibn Kathir vs. Al-Jalalayn: Which Classical Exegesis Is Best for Beginners? | OQTutor'
+    : isWhyJuzAmmaTafseerEssentialBlog
+    ? 'Why Studying Juz Amma Tafseer Is Essential for Every Muslim | OQTutor'
+    : isUSABlog
     ? 'Online Quran Classes USA: 1-on-1 Qualified Tutors | OQTutor'
     : isRoleParentsBlog
     ? 'The Role of Parents in Islamic Education in Non-Muslim Countries | OQTutor'
@@ -183,6 +191,8 @@ export default async function BlogPostPage({ params }: Props) {
   const isWhyNooraniQaidaEssentialBlog = resolvedParams.slug === 'why-noorani-qaida-essential';
   const isTafseerOnlineBlog = resolvedParams.slug === 'how-to-learn-quran-tafseer-online';
   const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
+  const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
+  const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -2029,7 +2039,11 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isRoleParentsBlog ? (
+            {isTafseerIbnKathirVsJalalaynBlog ? (
+              <ArticleContentTafseerIbnKathirVsJalalayn />
+            ) : isWhyJuzAmmaTafseerEssentialBlog ? (
+              <ArticleContentWhyJuzAmmaTafseerEssential />
+            ) : isRoleParentsBlog ? (
               <ArticleContentRoleParentsIslamicEducation />
             ) : isTafseerOnlineBlog ? (
               <ArticleContentHowToLearnQuranTafseerOnline />

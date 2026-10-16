@@ -67,6 +67,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'how-to-improve-your-quran-pronunciation',
       'choosing-male-female-quran-teacher',
       'how-to-learn-quran-tafseer-online',
+      'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide',
+      'why-studying-juz-amma-tafseer-essential-guide',
     ];
 
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {

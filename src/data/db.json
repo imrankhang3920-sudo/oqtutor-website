@@ -962,24 +962,29 @@
       "id": "course-11",
       "title": "Online Quran Tafseer Classes | Learn Quran with Meaning & Explanation",
       "slug": "tafseer",
-      "description": "Learn Quran Tafseer online with qualified male and female teachers. Study Quran translation, meanings, context, and practical lessons through personalized one-on-one classes.",
+      "description": "Learn Quran Tafseer online with certified Islamic scholars in 1-on-1 or group classes. Study Juz Amma, Classical Tafseer (Ibn Kathir & Al-Jalalayn), and word-for-word translation.",
       "icon": "BookOpen",
       "image": "/islamic-studies.jpg",
       "duration": "30-45 Mins Per Session",
       "suitableFor": "Beginners, Intermediate & Advanced Students (Kids, Adults & Reverts)",
-      "overview": "Our online Quran Tafseer classes help students understand the profound meanings, historical contexts (Asbab al-Nuzul), linguistic beauty, and practical life lessons of the Holy Quran through personalized one-on-one live instruction with certified Islamic scholars.",
+      "overview": "Our online Quran Tafseer classes help students understand the profound meanings, historical contexts (Asbab al-Nuzul), linguistic roots, and practical life lessons of the Holy Quran. Study Juz Amma Tafseer, classical commentaries (Ibn Kathir & Al-Jalalayn), and word-for-word translation with certified male and female scholars through live 1-on-1 or collaborative group classes.",
       "learningOutcomes": [
-        "Understand word-by-word Quran translation and contextual meanings.",
-        "Learn the historical background and reasons of revelation (Asbab al-Nuzul).",
-        "Explore Quranic themes, moral lessons, and stories of the Prophets.",
-        "Apply timeless Quranic guidance to modern daily life and personal character."
+        "Master word-for-word Quran translation and high-frequency Arabic root vocabulary (Mufradat).",
+        "Complete in-depth Tafseer of Juz Amma (Surahs 78–114) to transform Khushu' in daily Salah.",
+        "Study classical exegesis through Tafseer Ibn Kathir (Hadith traditions) and Tafseer Al-Jalalayn (linguistic parsing).",
+        "Understand authentic reasons of revelation (Asbab al-Nuzul) and apply timeless moral guidance to modern daily life."
       ],
-      "classStructure": "Personalized 1-on-1 live lessons with verified male and female scholars. Choose 2, 3, 4, or 5 days per week with flexible global timings.",
+      "classStructure": "Personalized 1-on-1 mentorship or interactive small group Halaqah (3-5 students) with verified male and female scholars. Flexible global timings 24/7.",
       "recommendedAge": "Children (10+), Teenagers, Adults & Reverts",
       "seoTitle": "Online Quran Tafseer Classes | Learn Quran with Meaning & Explanation",
-      "metaDescription": "Learn Quran Tafseer online with qualified male and female teachers. Study Quran translation, meanings, context, and practical lessons through personalized one-on-one classes.",
+      "metaDescription": "Learn Quran Tafseer online with qualified scholars in 1-on-1 or group classes. Study Juz Amma, Tafseer Ibn Kathir & Al-Jalalayn, and word-for-word translation.",
       "focusKeyword": "online Quran Tafseer classes",
       "secondaryKeywords": [
+        "Learn Quran Tafseer Online (1-on-1 & Group Classes)",
+        "Juz Amma Tafseer",
+        "Tafseer Ibn Kathir online",
+        "Tafseer Al-Jalalayn course",
+        "word for word Quran translation",
         "online Quran Tafseer course",
         "Quran Tafseer online",
         "learn Quran Tafseer online",
@@ -1000,31 +1005,32 @@
       ],
       "whoShouldJoin": "Muslims of all ages, including adults, teenagers, reverts, and parents, who wish to understand the meanings, context, and practical guidance of the Holy Quran.",
       "benefits": [
-        "Personalized one-to-one scholar mentorship",
-        "Flexible 24/7 global class schedules",
-        "Qualified male and female scholars available",
+        "Personalized 1-on-1 mentorship or small group Halaqah",
+        "Juz Amma, Ibn Kathir & Al-Jalalayn syllabus",
+        "Flexible 24/7 global class schedules across USA, UK & Canada",
+        "Qualified male scholars & female Alimahs available",
         "Interactive digital whiteboard and screen-shared notes",
         "Free trial class with no credit card required"
       ],
       "curriculumSteps": [
         {
-          "title": "Step 1: Quran Translation and Meaning",
-          "description": "Word-for-word translation and vocabulary building to comprehend classical Arabic root meanings."
+          "title": "Pillar 1: Juz Amma Tafseer (Surahs 78–114)",
+          "description": "Comprehensive study of the 30th Juz recited daily in Salah. Focus on foundational Aqeedah, resurrection, and transformative prayer focus (Khushu')."
         },
         {
-          "title": "Step 2: Context of Quranic Verses (Asbab al-Nuzul)",
-          "description": "Understanding the historical background, circumstances, and reasons behind each revelation."
+          "title": "Pillar 2: Classical Exegesis (Tafseer Ibn Kathir & Al-Jalalayn)",
+          "description": "Rigorous scholarly study combining Tafseer bi'l-Ma'thur (Quran explained by Quran & Hadith) with Al-Jalalayn's concise linguistic and grammatical clarity."
         },
         {
-          "title": "Step 3: Quranic Themes and Stories of the Prophets",
-          "description": "Exploring deep thematic lessons, moral reflections, and timeless Prophetic narratives."
+          "title": "Pillar 3: Word-for-Word Translation & Arabic Roots",
+          "description": "Deconstructing 3-letter roots (Ishtiqaaq), mastering the 80% most frequent Quranic vocabulary words, and syntactic grammar patterns."
         },
         {
-          "title": "Step 4: Practical Life Guidance & Modern Application",
-          "description": "Connecting divine commandments and Quranic wisdom to personal, family, and spiritual daily life."
+          "title": "Pillar 4: Practical Life Application (Tadabbur)",
+          "description": "Translating divine wisdom into modern ethics, family life, character building, emotional peace, and daily decision-making."
         }
       ],
-      "teachingMethod": "Interactive one-on-one live video classes with screen-shared Arabic texts, classical commentary notes, and open Q&A discussion.",
+      "teachingMethod": "Interactive one-on-one live video classes or small group cohorts with screen-shared Arabic texts, classical commentary notes, and open Q&A discussion.",
       "faqs": [
         {
           "question": "What is Quran Tafseer?",
@@ -4693,6 +4699,30 @@
       "coverImage": "/blog/how-to-learn-quran-tafseer-online/how-to-learn-quran-tafseer-online-cover.jpg",
       "publishedAt": "October 6, 2026",
       "updatedAt": "October 6, 2026",
+      "authorName": "Muhammad Imran"
+    },
+    {
+      "id": "blog-tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide",
+      "title": "Tafseer Ibn Kathir vs. Al-Jalalayn: Which Classical Exegesis Is Best for Beginners?",
+      "category": "Quran Tafseer & Understanding",
+      "description": "Compare Tafseer Ibn Kathir and Tafseer Al-Jalalayn. Discover their differences in methodology, depth, language, and which classical Quran commentary suits your learning stage.",
+      "readTime": "9 min read",
+      "slug": "tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide",
+      "coverImage": "/blog/how-to-learn-quran-tafseer-online/quran-tafseer-study-desk-lamp.jpg",
+      "publishedAt": "October 12, 2026",
+      "updatedAt": "October 12, 2026",
+      "authorName": "Muhammad Imran"
+    },
+    {
+      "id": "blog-why-studying-juz-amma-tafseer-essential-guide",
+      "title": "Why Studying Juz Amma Tafseer Is Essential for Every Muslim (Beginner's Guide)",
+      "category": "Quran Tafseer & Understanding",
+      "description": "Discover why studying Juz Amma Tafseer transforms your daily prayer, builds Khushu', clarifies core Aqeedah, and provides the easiest path to understanding the Quran.",
+      "readTime": "10 min read",
+      "slug": "why-studying-juz-amma-tafseer-essential-guide",
+      "coverImage": "/quran-salah.jpg",
+      "publishedAt": "October 15, 2026",
+      "updatedAt": "October 15, 2026",
       "authorName": "Muhammad Imran"
     }
   ],
