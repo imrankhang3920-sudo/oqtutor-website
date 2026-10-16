@@ -12,13 +12,22 @@ import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Affordable Pricing Plans & Packages | Online Quran Academy',
+  title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
   description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
   alternates: {
     canonical: 'https://www.oqtutor.com/pricing',
   },
   openGraph: {
+    title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
+    description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
     url: 'https://www.oqtutor.com/pricing',
+    siteName: 'OQTutor',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
+    description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
   },
 };
 
