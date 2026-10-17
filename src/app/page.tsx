@@ -19,38 +19,6 @@ import { Metadata } from 'next';
 import { createFaqPageSchema, siteConfig } from '@/lib/structuredData';
 import Script from 'next/script';
 
-function StatsBar() {
-  const stats = [
-    { value: "200+", label: "Students Enrolled" },
-    { value: "50+", label: "Certified Tutors" },
-    { value: "5+", label: "Years Operating" },
-    { value: "20+", label: "Countries Served" },
-  ];
-
-  return (
-    <div className="relative z-20 -mt-6 sm:-mt-10 mb-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="glass p-6 md:p-8 rounded-3xl border border-card-border shadow-xl bg-background/50 backdrop-blur-md">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-card-border/40">
-          {stats.map((stat, idx) => (
-            <div 
-              key={idx} 
-              className={`flex flex-col items-center justify-center text-center p-2 ${
-                idx > 1 ? 'pt-6 md:pt-2' : idx > 0 ? 'pt-6 sm:pt-2 md:pt-2' : ''
-              } md:first:pt-2 md:pl-6 md:first:pl-2`}
-            >
-              <span className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight font-sans">
-                {stat.value}
-              </span>
-              <span className="text-[10px] sm:text-xs font-semibold text-muted-text uppercase tracking-wider mt-1.5 font-sans">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // Force dynamic rendering to fetch fresh data on every page load
 export const dynamic = 'force-dynamic';
@@ -186,8 +154,7 @@ export default async function HomePage() {
       
       <main className="flex-grow">
         <Hero data={homepageHeroData} />
-        
-        <StatsBar />
+
         
         {/* 1. Help Section: Not Sure Where to Start? */}
         <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
