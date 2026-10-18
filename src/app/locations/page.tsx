@@ -84,6 +84,20 @@ export default async function LocationsHubPage() {
         { name: 'Brisbane & Perth', slug: '/locations/australia' },
       ],
     },
+    {
+      country: 'Singapore',
+      flag: '🇸🇬',
+      slug: '/online-quran-classes-singapore',
+      badge: 'SGT (GMT+8) Timing',
+      description: '1-on-1 Quran, Noorani Qaida, and Tajweed classes scheduled around MOE school hours, CCAs, and work.',
+      subLocations: [
+        { name: 'Tampines & Bedok', slug: '/online-quran-classes-singapore' },
+        { name: 'Woodlands & Yishun', slug: '/online-quran-classes-singapore' },
+        { name: 'Jurong West & CCK', slug: '/online-quran-classes-singapore' },
+        { name: 'Punggol & Sengkang', slug: '/online-quran-classes-singapore' },
+        { name: 'Bukit Batok & Central', slug: '/online-quran-classes-singapore' },
+      ],
+    },
   ];
 
   return (

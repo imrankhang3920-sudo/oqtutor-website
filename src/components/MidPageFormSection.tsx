@@ -23,6 +23,7 @@ const countriesData: CountryItem[] = [
   { code: 'DE', dialCode: '+49', name: 'Germany', flag: '🇩🇪', format: 'xxxx xxxxxxx' },
   { code: 'FR', dialCode: '+33', name: 'France', flag: '🇫🇷', format: 'x xx xx xx xx' },
   { code: 'IE', dialCode: '+353', name: 'Ireland', flag: '🇮🇪', format: 'xx xxx xxxx' },
+  { code: 'SG', dialCode: '+65', name: 'Singapore', flag: '🇸🇬', format: 'xxxx xxxx' },
 ];
 
 function formatPhoneNumber(value: string, format: string) {
