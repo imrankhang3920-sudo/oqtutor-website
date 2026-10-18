@@ -1279,7 +1279,7 @@ export default async function SingaporeQuranClassesPage() {
         </section>
       </main>
 
-      <Footer footerConfig={dbData.footer} contactConfig={dbData.contact} />
+      <Footer data={dbData.contact} footerConfig={dbData.footerNav} />
     </>
   );
 }
