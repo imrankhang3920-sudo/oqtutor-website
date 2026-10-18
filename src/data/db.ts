@@ -402,6 +402,21 @@ let inMemoryCache: DatabaseSchema | null = null;
         src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\88a09c9f-4dcf-4fe5-8d46-1fad6f47e508\\.user_uploaded\\media_1791251777807.jpg',
         fallbackSrc: path.join(process.cwd(), 'public/quran-salah.jpg'),
         dest: path.join(process.cwd(), 'public/blog/how-to-learn-quran-tafseer-online/spiritual-reflection-sujood-mosque.jpg')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789560.png',
+        fallbackSrc: path.join(process.cwd(), 'public/adult-quran-memorization.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/quranic-arabic-vs-modern-standard-arabic/quranic-arabic-vs-modern-standard-arabic-cover.png')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789529.png',
+        fallbackSrc: path.join(process.cwd(), 'public/quran-reading.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/quranic-arabic-vs-modern-standard-arabic/arabic-root-system-vocabulary-online-learning.png')
+      },
+      {
+        src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789545.png',
+        fallbackSrc: path.join(process.cwd(), 'public/parents-role.jpg'),
+        dest: path.join(process.cwd(), 'public/blog/quranic-arabic-vs-modern-standard-arabic/family-father-son-quranic-arabic-learning.png')
       }
     ];
     sourceFiles.forEach(({ src, fallbackSrc, dest }) => {

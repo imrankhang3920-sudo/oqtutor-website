@@ -16,6 +16,7 @@ import ArticleContentHowToLearnQuranTafseerOnline from './ArticleContentHowToLea
 import ArticleContentRoleParentsIslamicEducation from './ArticleContentRoleParentsIslamicEducation';
 import ArticleContentTafseerIbnKathirVsJalalayn from './ArticleContentTafseerIbnKathirVsJalalayn';
 import ArticleContentWhyJuzAmmaTafseerEssential from './ArticleContentWhyJuzAmmaTafseerEssential';
+import ArticleContentQuranicArabicVsModernStandardArabic from './ArticleContentQuranicArabicVsModernStandardArabic';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -60,9 +61,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
-  const isGlobalBlog = isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
+  const isGlobalBlog = isQuranicVsMsaBlog || isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isTafseerIbnKathirVsJalalaynBlog
+  const metaTitle = isQuranicVsMsaBlog
+    ? 'Quranic Arabic vs Modern Standard Arabic: Which to Learn First? | OQTutor'
+    : isTafseerIbnKathirVsJalalaynBlog
     ? 'Tafseer Ibn Kathir vs. Al-Jalalayn: Which Classical Exegesis Is Best for Beginners? | OQTutor'
     : isWhyJuzAmmaTafseerEssentialBlog
     ? 'Why Studying Juz Amma Tafseer Is Essential for Every Muslim | OQTutor'
@@ -108,7 +112,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
 
-  const metaDescription = isTarteelVsTajweedBlog
+  const metaDescription = isQuranicVsMsaBlog
+    ? 'Confused between Quranic and Modern Standard Arabic? Compare vocabulary, grammar, and timelines to choose the right starting point for you or your child.'
+    : isTarteelVsTajweedBlog
     ? 'What is the difference between Tajweed and Tarteel? See our side-by-side comparison table, Surah Al-Muzzammil verse 4 explanation, and pronunciation examples.'
     : isKidsUsaBlog
     ? 'Compare the best online Quran classes for kids in the USA. See side-by-side academy comparisons, US pricing in USD ($30-$50/mo), background-checked tutors, and book a free trial.'
@@ -193,6 +199,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isRoleParentsBlog = resolvedParams.slug === 'role-parents-islamic-education-west';
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
+  const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
 
   const articleSchema = createBlogPostSchema(blog);
   const breadcrumbSchema = createBreadcrumbSchema([
@@ -211,6 +218,67 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isQuranicVsMsaBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "BlogPosting",
+                  "headline": "Quranic Arabic vs. Modern Standard Arabic: Which Should You Learn First?",
+                  "description": "Compare Quranic Arabic and Modern Standard Arabic to choose the right starting point for you or your child.",
+                  "author": { "@type": "Organization", "name": "OQTutor" },
+                  "publisher": { "@type": "Organization", "name": "OQTutor", "url": "https://oqtutor.com" },
+                  "mainEntityOfPage": "https://oqtutor.com/blog/quranic-arabic-vs-modern-standard-arabic",
+                  "datePublished": "2026-10-18",
+                  "dateModified": "2026-10-18",
+                  "image": "https://www.oqtutor.com/blog/quranic-arabic-vs-modern-standard-arabic/quranic-arabic-vs-modern-standard-arabic-cover.png"
+                },
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "Can I understand the Quran if I learn Modern Standard Arabic on a language app?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Language apps mostly teach MSA mixed with travel vocabulary. You will learn the alphabet and basic pronouns, but you may spend months on phrases that never appear in the Quran. A structured 1-on-1 online Arabic course built around your goal is usually more effective."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Do Arabs automatically understand Quranic Arabic?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Educated native speakers understand the general flow because they learn Fusha in school. However, everyday dialects differ significantly from Classical Arabic, so even native speakers study Quranic vocabulary and Tafsir to grasp precise meanings."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Should my child learn Noorani Qaida or Arabic language first?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "For young beginners (ages 4-10), start with Noorani Qaida. It builds phonemic awareness and reading confidence. Once your child reads connected Arabic words smoothly, you can add Quranic vocabulary and foundational Islamic studies alongside it."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How long does it take to learn Quranic Arabic online?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "With two to three 1-on-1 sessions per week and about 15 minutes of daily review, most beginners can recognize a large share of recurring Quranic words and basic sentence structures within 4-6 months. Results vary by student."
+                      }
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isRoleParentsBlog && (
         <script
@@ -2039,7 +2107,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isTafseerIbnKathirVsJalalaynBlog ? (
+            {isQuranicVsMsaBlog ? (
+              <ArticleContentQuranicArabicVsModernStandardArabic />
+            ) : isTafseerIbnKathirVsJalalaynBlog ? (
               <ArticleContentTafseerIbnKathirVsJalalayn />
             ) : isWhyJuzAmmaTafseerEssentialBlog ? (
               <ArticleContentWhyJuzAmmaTafseerEssential />

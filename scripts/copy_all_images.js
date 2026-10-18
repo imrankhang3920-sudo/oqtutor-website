@@ -21,6 +21,11 @@ if (!fs.existsSync(roleParentsDir)) {
   fs.mkdirSync(roleParentsDir, { recursive: true });
 }
 
+const quranicArabicVsMsaDir = path.join(__dirname, '../public/blog/quranic-arabic-vs-modern-standard-arabic');
+if (!fs.existsSync(quranicArabicVsMsaDir)) {
+  fs.mkdirSync(quranicArabicVsMsaDir, { recursive: true });
+}
+
 const sourceFiles = [
   {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787914968931.jpg',
@@ -121,6 +126,21 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a98a674f-9ee9-4633-8d18-09a02e5a1f68\\.user_uploaded\\media_1791974331654.png',
     fallbackSrc: path.join(__dirname, '../public/blog/role-parents-islamic-education-west/islamic-education-family-learning-collage.png'),
     dest: path.join(roleParentsDir, 'islamic-education-family-learning-collage.png')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789560.png',
+    fallbackSrc: path.join(__dirname, '../public/adult-quran-memorization.jpg'),
+    dest: path.join(quranicArabicVsMsaDir, 'quranic-arabic-vs-modern-standard-arabic-cover.png')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789529.png',
+    fallbackSrc: path.join(__dirname, '../public/quran-reading.jpg'),
+    dest: path.join(quranicArabicVsMsaDir, 'arabic-root-system-vocabulary-online-learning.png')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789545.png',
+    fallbackSrc: path.join(__dirname, '../public/parents-role.jpg'),
+    dest: path.join(quranicArabicVsMsaDir, 'family-father-son-quranic-arabic-learning.png')
   }
 ];
 

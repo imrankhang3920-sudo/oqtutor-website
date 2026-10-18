@@ -69,6 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'how-to-learn-quran-tafseer-online',
       'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide',
       'why-studying-juz-amma-tafseer-essential-guide',
+      'quranic-arabic-vs-modern-standard-arabic',
     ];
 
     const blogRoutes: MetadataRoute.Sitemap = (dbData.blogs || []).map((blog) => {
