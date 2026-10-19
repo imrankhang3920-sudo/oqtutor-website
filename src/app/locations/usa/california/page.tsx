@@ -33,8 +33,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor";
-  const metaDescription = "Online Quran classes in California: 1-on-1 personalized learning for Bay Area, LA, San Diego. Avoid I-405 commute. Flexible Pacific Time scheduling. Free trial, no credit card. Female tutors available.";
+  const metaTitle = "Online Quran Classes in California | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in California for kids & adults. Certified tutors in LA, Bay Area, San Diego & statewide from $30/mo. 3-day free trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/california";
 
   return {
@@ -307,8 +307,8 @@ export default async function CaliforniaQuranClassesPage() {
     "@type": "WebPage",
     "@id": "https://www.oqtutor.com/locations/usa/california#webpage",
     "url": "https://www.oqtutor.com/locations/usa/california",
-    "name": "Online Quran Classes in California - Live 1-on-1 (SF Bay Area, LA, San Diego) | OQTutor",
-    "description": "Online Quran classes in California: 1-on-1 personalized learning for Bay Area, LA, San Diego. Avoid I-405 commute. Flexible Pacific Time scheduling. Free trial, no credit card. Female tutors available.",
+    "name": "Online Quran Classes in California | Live 1-on-1 ($30/Mo + Free Trial)",
+    "description": "Live 1-on-1 online Quran classes in California for kids & adults. Certified tutors in LA, Bay Area, San Diego & statewide from $30/mo. 3-day free trial!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",

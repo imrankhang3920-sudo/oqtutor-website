@@ -32,8 +32,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in New Jersey | OQTutor";
-  const metaDescription = "Learn Quran online in New Jersey with qualified male and female teachers. One to one classes for kids and adults with flexible scheduling.";
+  const metaTitle = "Online Quran Classes in New Jersey | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in New Jersey for kids & adults. Qualified male & female tutors from $30/mo. Flexible hours + risk-free 3-day free trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-jersey";
 
   return {
@@ -206,8 +206,8 @@ export default async function NewJerseyQuranClassesPage() {
     "@type": "WebPage",
     "@id": "https://www.oqtutor.com/locations/usa/new-jersey#webpage",
     "url": "https://www.oqtutor.com/locations/usa/new-jersey",
-    "name": "Online Quran Classes in New Jersey | OQTutor",
-    "description": "Learn Quran online in New Jersey with qualified male and female teachers. One to one classes for kids and adults with flexible scheduling.",
+    "name": "Online Quran Classes in New Jersey | Live 1-on-1 ($30/Mo + Free Trial)",
+    "description": "Live 1-on-1 online Quran classes in New Jersey for kids & adults. Qualified male & female tutors from $30/mo. Flexible hours + risk-free 3-day free trial!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",

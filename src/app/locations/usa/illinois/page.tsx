@@ -16,16 +16,19 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes in Illinois | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in Illinois for kids & adults. Certified male & female tutors in Chicago, Naperville & statewide from $30/mo. 3-day free trial!";
+
   return {
-    title: "Online Quran Classes in Illinois for Kids & Adults | Free Trial | OQTutor",
-    description: "Learn Quran online in Illinois with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids and adults in Chicago, Naperville & statewide. Free trial!",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/illinois",
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa/illinois",
-      title: "Online Quran Classes in Illinois for Kids & Adults | Free Trial | OQTutor",
-      description: "Learn Quran online in Illinois with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids and adults in Chicago, Naperville & statewide. Free trial!",
+      title: metaTitle,
+      description: metaDescription,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -37,8 +40,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes in Illinois for Kids & Adults | Free Trial | OQTutor",
-      description: "Learn Quran online in Illinois with OQTutor. Certified male & female tutors offering live 1-on-1 Noorani Qaida, Tajweed, and Hifz classes for kids and adults in Chicago, Naperville & statewide. Free trial!",
+      title: metaTitle,
+      description: metaDescription,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };

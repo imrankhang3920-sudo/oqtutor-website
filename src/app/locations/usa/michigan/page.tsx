@@ -14,14 +14,33 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes in Michigan | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in Michigan for kids & adults. Certified male & female tutors in Detroit, Dearborn & statewide from $30/mo. 3-day free trial!";
+
   return {
-    title: "Online Quran Classes in Michigan | Live 1-on-1 Tutors | OQTutor",
-    description: "Learn Quran online in Michigan with OQTutor. Live one-on-one classes in Tajweed, Hifz, Noorani Qaida & Tafseer for kids and adults. Flexible hours, free trial class.",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/michigan",
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa/michigan",
+      title: metaTitle,
+      description: metaDescription,
+      images: [
+        {
+          url: "https://www.oqtutor.com/logo.jpg",
+          width: 1200,
+          height: 630,
+          alt: "OQTutor Logo",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDescription,
+      images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
 }

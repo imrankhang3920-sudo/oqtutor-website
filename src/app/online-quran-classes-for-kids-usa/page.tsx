@@ -16,16 +16,19 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes for Kids in USA | From $30/Mo (3-Day Free Trial)";
+  const metaDescription = "Enroll your kids in interactive 1-on-1 online Quran classes in the USA from $30/mo. Certified English-speaking tutors, flexible US schedules & 3-day free trial.";
+
   return {
-    title: "Online Quran Classes for Kids in USA | Free 3-Day Trial",
-    description: "Enroll your kids in interactive 1-on-1 online Quran classes in the USA. Certified English-speaking tutors, flexible EST/PST schedules & 3-day free trial.",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/online-quran-classes-for-kids-usa",
     },
     openGraph: {
       url: "https://www.oqtutor.com/online-quran-classes-for-kids-usa",
-      title: "Online Quran Classes for Kids in USA | Free 3-Day Trial",
-      description: "Enroll your kids in interactive 1-on-1 online Quran classes in the USA. Certified English-speaking tutors, flexible EST/PST schedules & 3-day free trial.",
+      title: metaTitle,
+      description: metaDescription,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -37,8 +40,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes for Kids in USA | Free 3-Day Trial",
-      description: "Enroll your kids in interactive 1-on-1 online Quran classes in the USA. Certified English-speaking tutors, flexible EST/PST schedules & 3-day free trial.",
+      title: metaTitle,
+      description: metaDescription,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };

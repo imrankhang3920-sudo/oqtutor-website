@@ -14,18 +14,19 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const description = "At OQTutor, we make learning the Quran enjoyable and engaging for children. Our qualified male and female teachers provide personalized one on one lessons to help kids learn Noorani Qaida, improve Quran reading, and practice Tajweed in a friendly and supportive environment.";
+  const metaTitle = "Online Quran Classes in Texas | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in Texas for kids & adults. Certified male & female tutors in Houston, Dallas, Austin & statewide from $30/mo. 3-day free trial!";
 
   return {
-    title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-    description,
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/usa/texas",
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/usa/texas",
-      title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-      description,
+      title: metaTitle,
+      description: metaDescription,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -37,8 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Texas Online Quran Classes | Houston & Dallas | OQTutor",
-      description,
+      title: metaTitle,
+      description: metaDescription,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };

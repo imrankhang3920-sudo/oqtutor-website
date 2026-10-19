@@ -38,8 +38,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in New York for Kids & Adults | OQTutor";
-  const metaDescription = "Learn Quran online in New York with OQTutor. Explore one-to-one Quran lessons, Tajweed, Noorani Qaida, and flexible learning options for kids and adults.";
+  const metaTitle = "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes in New York for kids & adults. Certified tutors across NYC & NY state from $30/mo. Flexible hours + risk-free 3-day free trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-york";
 
   return {
@@ -197,8 +197,8 @@ export default async function NewYorkQuranClassesPage() {
     "@type": "WebPage",
     "@id": "https://www.oqtutor.com/locations/usa/new-york#webpage",
     "url": "https://www.oqtutor.com/locations/usa/new-york",
-    "name": "Online Quran Classes in New York for Kids & Adults | OQTutor",
-    "description": "Learn Quran online in New York with OQTutor. Explore one-to-one Quran lessons, Tajweed, Noorani Qaida, and flexible learning options for kids and adults.",
+    "name": "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)",
+    "description": "Live 1-on-1 online Quran classes in New York for kids & adults. Certified tutors across NYC & NY state from $30/mo. Flexible hours + risk-free 3-day free trial!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",
