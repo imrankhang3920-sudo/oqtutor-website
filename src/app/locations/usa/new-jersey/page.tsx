@@ -33,7 +33,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in New Jersey | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in New Jersey for kids & adults. Qualified male & female tutors from $30/mo. Flexible hours + risk-free 3-day free trial!";
+  const metaDescription = "Live 1-on-1 online Quran classes in New Jersey with EST scheduling. Certified tutors in Paterson, Jersey City & NYC metro from $30/mo. 3-day free trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-jersey";
 
   return {
@@ -207,7 +207,7 @@ export default async function NewJerseyQuranClassesPage() {
     "@id": "https://www.oqtutor.com/locations/usa/new-jersey#webpage",
     "url": "https://www.oqtutor.com/locations/usa/new-jersey",
     "name": "Online Quran Classes in New Jersey | Live 1-on-1 ($30/Mo + Free Trial)",
-    "description": "Live 1-on-1 online Quran classes in New Jersey for kids & adults. Qualified male & female tutors from $30/mo. Flexible hours + risk-free 3-day free trial!",
+    "description": "Live 1-on-1 online Quran classes in New Jersey with EST scheduling. Certified tutors in Paterson, Jersey City & NYC metro from $30/mo. 3-day free trial!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",
@@ -304,7 +304,7 @@ export default async function NewJerseyQuranClassesPage() {
                 Structured Online Education
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Quran Learning That Fits New Jersey Family Schedules
+                Quran Learning with EST Scheduling for Paterson, Jersey City &amp; New Jersey Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
@@ -374,7 +374,7 @@ export default async function NewJerseyQuranClassesPage() {
                 Individual Progression
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Personalized Learning for Different Quran Goals
+                Personalized Quran Learning for Paterson, Jersey City &amp; NJ Students
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
@@ -540,7 +540,7 @@ export default async function NewJerseyQuranClassesPage() {
                 Qualified Faculty
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Choosing a Quran Teacher for Your Family
+                Choosing a Quran Teacher in Paterson, Jersey City &amp; New Jersey
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
@@ -720,7 +720,7 @@ export default async function NewJerseyQuranClassesPage() {
                 Course Catalog
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Quran Courses Available Through OQTutor
+                Online Quran Courses with EST Scheduling for New Jersey &amp; NYC Metro Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
@@ -826,7 +826,7 @@ export default async function NewJerseyQuranClassesPage() {
                 Clear Answers
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Frequently Asked Questions About Quran Learning in New Jersey
+                Frequently Asked Questions About Quran Learning in New Jersey &amp; NYC Metro
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">

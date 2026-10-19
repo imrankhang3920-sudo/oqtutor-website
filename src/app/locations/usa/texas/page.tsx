@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in Texas | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Texas for kids & adults. Certified male & female tutors in Houston, Dallas, Austin & statewide from $30/mo. 3-day free trial!";
+  const metaDescription = "Live 1-on-1 online Quran classes in Texas with CST scheduling. Expert tutors in Houston, Dallas (DFW), Sugar Land & Irving from $30/mo. 3-day free trial!";
 
   return {
     title: metaTitle,
@@ -219,7 +219,7 @@ export default async function TexasQuranClassesPage() {
                   Modern Religious Education
                 </span>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Why Choose Online Quran Classes for Kids in Texas?
+                  Why Families in Houston, Dallas (DFW), Sugar Land &amp; Irving Choose Online Quran Classes
                 </h2>
                 <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
                 <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -568,7 +568,7 @@ export default async function TexasQuranClassesPage() {
                 Convenience & Scheduling
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Flexible Online Quran Classes for Busy Texas Families
+                Flexible CST Scheduling for Busy Families in Houston, Dallas (DFW), Sugar Land &amp; Irving
               </h2>
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -591,7 +591,7 @@ export default async function TexasQuranClassesPage() {
                 Time Zones & Scheduling
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Class Times for Texas Families
+                Flexible CST Scheduling &amp; Class Times for Texas Families
               </h2>
               <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
               <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -787,7 +787,7 @@ export default async function TexasQuranClassesPage() {
                   Texas-Wide Coverage
                 </span>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes Across Texas
+                  Online Quran Classes in Houston, Dallas (DFW), Sugar Land &amp; Irving
                 </h2>
                 <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -862,7 +862,7 @@ export default async function TexasQuranClassesPage() {
         <section className="py-20 border-t border-card-border mb-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
-              <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Online Quran Classes for Your Child in Texas</h2>
+              <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Online Quran Classes in Houston, Dallas (DFW), Sugar Land &amp; Irving Today</h2>
               <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
                 Give your family the gift of structured, 1-on-1 Quranic education. Join busy Texas families who trust OQTutor for personalized Noorani Qaida, Tajweed, Quran Reading, and Hifz classes. Book your 3-day free trial today.

@@ -39,7 +39,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in New York for kids & adults. Certified tutors across NYC & NY state from $30/mo. Flexible hours + risk-free 3-day free trial!";
+  const metaDescription = "Live 1-on-1 online Quran classes in NYC, Brooklyn, Queens & NY metro with EST scheduling. Expert tutors from $30/mo. Claim your 3-day free trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-york";
 
   return {
@@ -198,7 +198,7 @@ export default async function NewYorkQuranClassesPage() {
     "@id": "https://www.oqtutor.com/locations/usa/new-york#webpage",
     "url": "https://www.oqtutor.com/locations/usa/new-york",
     "name": "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)",
-    "description": "Live 1-on-1 online Quran classes in New York for kids & adults. Certified tutors across NYC & NY state from $30/mo. Flexible hours + risk-free 3-day free trial!",
+    "description": "Live 1-on-1 online Quran classes in NYC, Brooklyn, Queens & NY metro with EST scheduling. Expert tutors from $30/mo. Claim your 3-day free trial!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",
@@ -356,7 +356,7 @@ export default async function NewYorkQuranClassesPage() {
                   Tailored for Young Learners
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes for Kids in New York
+                  Online Quran Classes for Kids in NYC, Brooklyn &amp; Queens
                 </h2>
                 <div className="h-1 w-20 bg-secondary rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -616,7 +616,7 @@ export default async function NewYorkQuranClassesPage() {
                 Eastern Time Flexibility
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Flexible Quran Class Timings for New York Families
+                Flexible EST Scheduling &amp; Quran Class Timings for NYC &amp; New York Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">
@@ -693,7 +693,7 @@ export default async function NewYorkQuranClassesPage() {
                 Metro Service Area
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                Online Quran Classes Across New York City and Nearby Communities
+                Online Quran Classes Across NYC, Brooklyn, Queens &amp; Nearby Communities
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text leading-relaxed">

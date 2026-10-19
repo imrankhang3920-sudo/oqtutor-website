@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in Illinois | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Illinois for kids & adults. Certified male & female tutors in Chicago, Naperville & statewide from $30/mo. 3-day free trial!";
+  const metaDescription = "Live 1-on-1 online Quran classes in Illinois with CST scheduling. Expert tutors in Chicago, Naperville, Bridgeview & Schaumburg from $30/mo. Free trial!";
 
   return {
     title: metaTitle,
@@ -281,7 +281,7 @@ export default async function IllinoisQuranClassesPage() {
                 Core Advantages
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Why Choose Online Quran Classes in Illinois?
+                Why Families in Chicago, Naperville, Bridgeview &amp; Schaumburg Choose Online Quran Classes
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-base text-muted-text">
@@ -371,7 +371,7 @@ export default async function IllinoisQuranClassesPage() {
                 Curriculum Overview
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Online Quran Courses for Illinois Students
+                Online Quran Courses with CST Scheduling for Illinois Students
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-base text-muted-text">
@@ -482,7 +482,7 @@ export default async function IllinoisQuranClassesPage() {
                   Child-Centered Pedagogy
                 </span>
                 <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes for Kids in Illinois
+                  Online Quran Classes for Kids in Chicago, Naperville, Bridgeview &amp; Schaumburg
                 </h2>
                 <div className="h-1 w-20 bg-secondary mt-4 mb-6 rounded-full" />
                 <div className="space-y-4 text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -578,7 +578,7 @@ export default async function IllinoisQuranClassesPage() {
                 Statewide Reach
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Quran Classes Available Across Illinois
+                Quran Classes Across Illinois: Chicago, Naperville, Bridgeview &amp; Schaumburg
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-base text-muted-text">
@@ -772,7 +772,7 @@ export default async function IllinoisQuranClassesPage() {
         <section className="py-20 border-t border-card-border mb-20 bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="glass p-8 sm:p-12 rounded-3xl border-card-border shadow-xl text-center relative overflow-hidden">
-              <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Online Quran Classes in Illinois Today</h2>
+              <h2 className="text-3xl font-extrabold text-foreground mb-4">Start Online Quran Classes in Chicago, Naperville, Bridgeview &amp; Schaumburg Today</h2>
               <div className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
               <p className="text-xs sm:text-sm text-muted-text leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
                 Whether you're looking for online Quran classes for kids in Illinois, Quran lessons for adults, a female Quran teacher, Tajweed instruction, or a structured Hifz program, OQTutor can help you find a learning path that fits your needs.

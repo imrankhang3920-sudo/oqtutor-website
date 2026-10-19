@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in Michigan | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Michigan for kids & adults. Certified male & female tutors in Detroit, Dearborn & statewide from $30/mo. 3-day free trial!";
+  const metaDescription = "Live 1-on-1 online Quran classes in Michigan with EST scheduling. Expert tutors in Dearborn, Detroit, Troy & Canton from $30/mo. 3-day free trial!";
 
   return {
     title: metaTitle,
@@ -254,7 +254,7 @@ export default async function MichiganQuranClassesPage() {
                 Why Us
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Why Michigan Families Choose OQTutor
+                Why Families in Dearborn, Detroit, Troy &amp; Canton Choose OQTutor
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
             </div>
@@ -440,7 +440,7 @@ export default async function MichiganQuranClassesPage() {
                   Michigan Reach
                 </span>
                 <h2 className="text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Serving Muslim Families Across Michigan
+                  Serving Muslim Families in Dearborn, Detroit, Troy &amp; Canton with Flexible EST Scheduling
                 </h2>
                 <div className="h-1 w-16 bg-secondary rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
@@ -527,7 +527,7 @@ export default async function MichiganQuranClassesPage() {
                 Pricing Plans
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Affordable Rates for Michigan Families
+                Affordable Rates &amp; Flexible EST Scheduling for Michigan Families
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-xs sm:text-sm text-muted-text max-w-md mx-auto">
