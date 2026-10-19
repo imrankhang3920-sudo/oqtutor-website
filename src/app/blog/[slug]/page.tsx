@@ -101,7 +101,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isOnlineVsInPersonBlog
     ? 'Online vs. In-Person Quran Classes: Which Is Right for You? | OQTutor'
     : isKidsUsaBlog
-    ? 'Best Online Quran Classes for Kids in USA (2026 Comparison Guide) | OQTutor'
+    ? '7 Best Online Quran Classes for Kids in USA (2026 Comparison)'
     : isTarteelVsTajweedBlog
     ? 'Tajweed vs. Tarteel: Key Differences, Meaning & Audio Examples (2026)'
     : isWeekendQuranBlog
@@ -117,7 +117,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isTarteelVsTajweedBlog
     ? 'What is the difference between Tajweed and Tarteel? See our side-by-side comparison table, Surah Al-Muzzammil verse 4 explanation, and pronunciation examples.'
     : isKidsUsaBlog
-    ? 'Compare the best online Quran classes for kids in the USA. See side-by-side academy comparisons, US pricing in USD ($30-$50/mo), background-checked tutors, and book a free trial.'
+    ? 'Looking for 1-on-1 online Quran classes for kids in the USA? Compare top programs, curriculum, safety & pricing (from $30/mo). Male & female Ijazah tutors across EST–PST. Book a 3-day free trial!'
     : blog.description;
 
   const coverImgUrl = blog.coverImage
@@ -210,10 +210,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      {!isKidsUsaBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -1856,127 +1858,159 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
+              "@graph": [
                 {
-                  "@type": "Question",
-                  "name": "What are the best online Quran classes for kids in the USA?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The best online Quran classes for kids in the USA provide live one-on-one lessons with qualified, child-friendly teachers, structured curricula from Noorani Qaida to Tajweed and Hifz, flexible scheduling across US time zones (EST, CST, MST, PST), transparent safety and progress tracking, and a risk-free trial class."
+                  "@type": "Article",
+                  "headline": "7 Best Online Quran Classes for Kids in USA (2026 Comparison)",
+                  "description": "Looking for 1-on-1 online Quran classes for kids in the USA? Compare top programs, curriculum, safety & pricing (from $30/mo). Male & female Ijazah tutors across EST–PST. Book a 3-day free trial!",
+                  "image": [
+                    "https://www.oqtutor.com/blog-kids-usa-1.jpg"
+                  ],
+                  "datePublished": "2026-07-26T00:00:00+00:00",
+                  "dateModified": "2026-10-19T00:00:00+00:00",
+                  "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.oqtutor.com/blog/best-online-quran-classes-for-kids-in-usa"
+                  },
+                  "author": {
+                    "@type": "Organization",
+                    "name": "OQTutor",
+                    "url": "https://www.oqtutor.com"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "OQTutor",
+                    "url": "https://www.oqtutor.com",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://www.oqtutor.com/logo_transparent.png"
+                    }
                   }
                 },
                 {
-                  "@type": "Question",
-                  "name": "How do online Quran classes work for children?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons on Zoom or Google Meet, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What age should a child start Quran classes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most children can comfortably start learning Arabic letters and Noorani Qaida between ages 4 and 6. Older children (ages 7 and above) can progress more quickly into fluent Quran reading and formal Tajweed rules based on an initial placement assessment."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Are online Quran classes effective for young children?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and focused 30-40 minute sessions keep young learners motivated and engaged from home."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much do online Quran classes for kids cost?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "At OQTutor, structured 1-on-1 online Quran classes are available in transparent plans of $30, $40, and $50 per month based on weekly class frequency. Every family can start with a 3-day free trial with no credit card required."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can my child learn Tajweed online?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. In a live one-on-one video session, qualified teachers can clearly hear subtle pronunciation nuances, observe articulation points (Makharij), and provide immediate phonetic correction just as effectively as in-person instruction."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can I choose a male or female Quran teacher?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Established online academies allow parents to select qualified male or female Quran tutors according to family preferences, student comfort, and scheduling requirements."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What should a beginner learn first?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Beginners start with Noorani Qaida to master Arabic alphabet recognition, letter connections, vowel marks (Harakat), and foundational phonetic pronunciation before attempting to read complete Quranic verses."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How many Quran classes per week are ideal?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For most children, 3 to 4 sessions per week (30–40 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can online Quran classes fit around US school schedules?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Classes can be scheduled during after-school afternoon hours, early evenings, or weekend mornings across Eastern, Central, Mountain, and Pacific time zones to fit seamlessly around public school, homework, and sports."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What software or equipment is needed for online Quran classes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "All you need is a laptop, tablet, or desktop computer with a functional webcam, a reliable internet connection, a headset with a microphone, and Zoom or Google Meet. Digital Quran slides and Qaida materials are provided directly on screen by your tutor."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does it take for a child to complete Noorani Qaida online?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "With 3 to 4 one-on-one classes per week (30–40 minutes per class) and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before progressing to fluent Quran reading."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I know if my child is making genuine progress in Quran recitation?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child's increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why does OQTutor outperform standard online academies and weekend mosque classes?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "OQTutor provides dedicated 1-on-1 private instruction (30-40 minutes of actual student reading time), 100% background-checked male and female teachers with authentic Ijazah certifications, 7-day schedule flexibility across all US time zones (EST, CST, MST, PST), open-door parent visibility, transparent monthly pricing in USD ($30-$50/mo with zero contracts), and a 3-day free trial with no credit card required."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Are OQTutor tutors background-checked and safe for my child?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, 100%. Every tutor undergoes strict criminal background checks, government ID verification, and child protection protocol training before teaching. Parents enjoy complete open-door visibility to observe classes at any time from their home."
-                  }
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What are the best online Quran classes for kids in the USA?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The best online Quran classes for kids in the USA provide live one-on-one lessons with qualified, child-friendly teachers, structured curricula from Noorani Qaida to Tajweed and Hifz, flexible scheduling across US time zones (EST, CST, MST, PST), transparent safety and progress tracking, and a risk-free trial class."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How do online Quran classes work for children?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Online Quran classes take place live via video call using a computer or tablet. A certified tutor guides your child through interactive digital lessons on Zoom or Google Meet, listens to their recitation, corrects pronunciation in real time, and assigns short practice exercises for home study."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What age should a child start Quran classes?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most children can comfortably start learning Arabic letters and Noorani Qaida between ages 4 and 6. Older children (ages 7 and above) can progress more quickly into fluent Quran reading and formal Tajweed rules based on an initial placement assessment."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Are online Quran classes effective for young children?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, when classes are conducted live and one-on-one by teachers trained in early childhood engagement. Interactive tools, patient repetition, and focused 30-40 minute sessions keep young learners motivated and engaged from home."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How much do online Quran classes for kids cost?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "At OQTutor, structured 1-on-1 online Quran classes are available in transparent plans of $30, $40, and $50 per month based on weekly class frequency. Every family can start with a 3-day free trial with no credit card required."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can my child learn Tajweed online?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. In a live one-on-one video session, qualified teachers can clearly hear subtle pronunciation nuances, observe articulation points (Makharij), and provide immediate phonetic correction just as effectively as in-person instruction."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can I choose a male or female Quran teacher?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Established online academies allow parents to select qualified male or female Quran tutors according to family preferences, student comfort, and scheduling requirements."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What should a beginner learn first?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Beginners start with Noorani Qaida to master Arabic alphabet recognition, letter connections, vowel marks (Harakat), and foundational phonetic pronunciation before attempting to read complete Quranic verses."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How many Quran classes per week are ideal?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "For most children, 3 to 4 sessions per week (30–40 minutes each) provide the optimal balance of steady progress and retention without causing academic fatigue alongside regular schoolwork."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can online Quran classes fit around US school schedules?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Classes can be scheduled during after-school afternoon hours, early evenings, or weekend mornings across Eastern, Central, Mountain, and Pacific time zones to fit seamlessly around public school, homework, and sports."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What software or equipment is needed for online Quran classes?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "All you need is a laptop, tablet, or desktop computer with a functional webcam, a reliable internet connection, a headset with a microphone, and Zoom or Google Meet. Digital Quran slides and Qaida materials are provided directly on screen by your tutor."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How long does it take for a child to complete Noorani Qaida online?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "With 3 to 4 one-on-one classes per week (30–40 minutes per class) and brief daily practice, young children typically complete Noorani Qaida within 3 to 6 months before progressing to fluent Quran reading."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How do I know if my child is making genuine progress in Quran recitation?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Parents can track progress through regular tutor feedback after each class, monthly progress updates, your child's increasing ability to recognize new Arabic words independently, and improved recitation clarity in daily Salah."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Why does OQTutor outperform standard online academies and weekend mosque classes?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OQTutor provides dedicated 1-on-1 private instruction (30-40 minutes of actual student reading time), 100% background-checked male and female teachers with authentic Ijazah certifications, 7-day schedule flexibility across all US time zones (EST, CST, MST, PST), open-door parent visibility, transparent monthly pricing in USD ($30-$50/mo with zero contracts), and a 3-day free trial with no credit card required."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Are OQTutor tutors background-checked and safe for my child?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, 100%. Every tutor undergoes strict criminal background checks, government ID verification, and child protection protocol training before teaching. Parents enjoy complete open-door visibility to observe classes at any time from their home."
+                      }
+                    }
+                  ]
                 }
               ]
             })
@@ -4774,6 +4808,354 @@ function ArticleContentKidsUsa() {
         </p>
       </section>
 
+      {/* Jump-Link Table of Contents */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-foreground/[0.02] border border-card-border shadow-sm space-y-4 not-prose">
+        <div className="flex items-center space-x-3 text-foreground font-bold text-lg border-b border-card-border pb-3">
+          <ListChecks className="h-5 w-5 text-primary" />
+          <span>Table of Contents: In This Guide</span>
+        </div>
+        <nav className="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-sm">
+          <a
+            href="#top-programs-compared"
+            className="text-muted-text hover:text-primary transition-colors flex items-center space-x-2 py-1"
+          >
+            <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+            <span>Top Online Quran Programs for Kids in USA</span>
+          </a>
+          <a
+            href="#what-to-look-for"
+            className="text-muted-text hover:text-primary transition-colors flex items-center space-x-2 py-1"
+          >
+            <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+            <span>What to Look for Before Enrolling (Parent Checklist)</span>
+          </a>
+          <a
+            href="#age-groups"
+            className="text-muted-text hover:text-primary transition-colors flex items-center space-x-2 py-1"
+          >
+            <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+            <span>What Should Children Learn at Different Ages?</span>
+          </a>
+          <a
+            href="#pricing"
+            className="text-muted-text hover:text-primary transition-colors flex items-center space-x-2 py-1"
+          >
+            <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+            <span>US Tuition &amp; Monthly Pricing ($30–$50/mo)</span>
+          </a>
+          <a
+            href="#faq"
+            className="text-muted-text hover:text-primary transition-colors flex items-center space-x-2 py-1"
+          >
+            <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+            <span>Frequently Asked Questions</span>
+          </a>
+        </nav>
+      </div>
+
+      {/* Top Online Quran Programs for Kids in the USA (2026 Comparison) */}
+      <section id="top-programs-compared" className="space-y-8 scroll-mt-20">
+        <div className="border-b border-card-border pb-4">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-2">
+            2026 Comprehensive Evaluation
+          </span>
+          <h2 id="top-programs-compared" className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            Top Online Quran Programs for Kids in the USA (2026 Comparison)
+          </h2>
+          <p className="text-base text-muted-text mt-2 leading-relaxed">
+            To help American Muslim parents select the right educational path for their children, we conducted an objective, side-by-side comparison of the top Quran programs serving US families. We evaluated each provider on instructional format, tutor credentials, US time-zone flexibility, trial offerings, and transparent monthly pricing in US Dollars.
+          </p>
+        </div>
+
+        {/* Responsive Side-by-Side Comparison Table */}
+        <div className="overflow-x-auto rounded-3xl border border-card-border shadow-lg not-prose">
+          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <caption className="sr-only">Top Online Quran Classes for Kids in the USA Compared (2026)</caption>
+            <thead>
+              <tr className="border-b border-card-border bg-card">
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text w-1/4">
+                  Program / Academy
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text">
+                  Format
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text">
+                  Tutor Credentials
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text">
+                  Free Trial
+                </th>
+                <th scope="col" className="py-4 px-3 sm:px-5 font-bold text-xs uppercase tracking-wider text-muted-text">
+                  Monthly Cost (USD)
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-card-border/60 text-muted-text">
+              {/* OQTutor - Rank #1 */}
+              <tr className="bg-primary/5 hover:bg-primary/10 transition-colors">
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  <div className="space-y-1">
+                    <div className="flex items-center space-x-1.5">
+                      <span className="text-sm font-extrabold text-primary">#1 OQTutor</span>
+                      <span className="text-[10px] bg-primary text-white font-bold px-2 py-0.5 rounded-full">
+                        Best Overall
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-muted-text block">Dedicated 1-on-1 Kids Quran Academy</span>
+                  </div>
+                </td>
+                <td className="py-4 px-3 sm:px-5 font-semibold text-foreground">
+                  100% Private 1-on-1 (30–40 min live recitation)
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  100% Background-checked, Ijazah-certified male &amp; female scholars; fluent English
+                </td>
+                <td className="py-4 px-3 sm:px-5 text-emerald-600 font-semibold">
+                  3-Day Free Trial (No card needed)
+                </td>
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  $30 – $50 / mo (Zero contracts, no hidden fees)
+                </td>
+              </tr>
+
+              {/* Studio Arabiya */}
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  <div className="space-y-0.5">
+                    <span className="text-sm font-bold text-foreground">Studio Arabiya</span>
+                    <span className="text-[11px] text-muted-text block">Structured Academic Curriculum</span>
+                  </div>
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  Small groups or 1-on-1 (Scheduled semester sessions)
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  Al-Azhar trained Arabic &amp; Quran instructors
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  1 short evaluation demo
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  $85 – $160+ / mo (Fixed semester billing)
+                </td>
+              </tr>
+
+              {/* Qutor */}
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  <div className="space-y-0.5">
+                    <span className="text-sm font-bold text-foreground">Qutor</span>
+                    <span className="text-[11px] text-muted-text block">Open Freelancer Marketplace</span>
+                  </div>
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  1-on-1 self-booked via platform classroom
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  Independent freelance tutors (credentials vary widely; self-vetted)
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  30 free classroom minutes
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  $9–$15 platform fee + $8–$25/hr tutor rate
+                </td>
+              </tr>
+
+              {/* Quran Ayat */}
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  <div className="space-y-0.5">
+                    <span className="text-sm font-bold text-foreground">Quran Ayat</span>
+                    <span className="text-[11px] text-muted-text block">Egyptian Online Academy</span>
+                  </div>
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  1-on-1 live video lessons
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  Native Egyptian Quran tutors with Islamic Studies background
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  1 free trial lesson
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  ~$50 – $110 / mo (Packaged monthly plans)
+                </td>
+              </tr>
+
+              {/* Local Weekend Mosque Programs */}
+              <tr className="hover:bg-primary/[0.02] transition-colors">
+                <td className="py-4 px-3 sm:px-5 font-bold text-foreground">
+                  <div className="space-y-0.5">
+                    <span className="text-sm font-bold text-foreground">Local Weekend Mosque Schools</span>
+                    <span className="text-[11px] text-muted-text block">In-Person Masjid Sunday Classes</span>
+                  </div>
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  In-person group classrooms (15–25 students per teacher)
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  Local community volunteer teachers &amp; Imams
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  None (Full semester registration upfront)
+                </td>
+                <td className="py-4 px-3 sm:px-5">
+                  ~$40 – $80 / mo per child (+ driving commute)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Detailed Program Reviews */}
+        <div className="space-y-6 not-prose">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+            Detailed Reviews of the Top Quran Learning Options for US Families
+          </h3>
+
+          {/* 1. OQTutor */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-primary/10 via-card to-emerald-500/5 border-2 border-primary/30 shadow-md space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-card-border pb-3">
+              <div>
+                <span className="text-[11px] font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-1">
+                  Rank #1 &bull; Editor&apos;s Choice
+                </span>
+                <h4 className="text-lg sm:text-xl font-extrabold text-foreground">
+                  1. OQTutor — Best Overall for 1-on-1 Kids Learning &amp; Transparent $30–$50/mo Pricing
+                </h4>
+              </div>
+              <div className="flex items-center space-x-1 text-amber-500 text-sm font-bold shrink-0">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="ml-1 text-foreground">4.9/5</span>
+              </div>
+            </div>
+
+            <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed font-medium">
+              OQTutor is our #1 recommended online Quran academy for Muslim American families. Unlike platforms that crowd young students into multi-student video rooms or leave parents to vet freelance tutors alone, OQTutor guarantees personalized, private 1-on-1 instruction where every single minute is dedicated to your child&apos;s recitation, phonetics, and Tajweed development.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
+              <div className="p-3.5 rounded-2xl glass border border-card-border space-y-1.5">
+                <span className="font-bold text-primary flex items-center space-x-1.5">
+                  <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+                  <span>Key Advantages:</span>
+                </span>
+                <ul className="space-y-1 text-muted-text text-xs">
+                  <li>&bull; <strong>100% Focused Reading Time:</strong> 30–40 min of continuous student practice every session.</li>
+                  <li>&bull; <strong>Rigorous Tutor Vetting:</strong> Criminal background checks, verified Ijazah licenses, and gentle pedagogy.</li>
+                  <li>&bull; <strong>US Time-Zone Flexibility:</strong> Customized slots across EST, CST, MST, and PST (after school &amp; weekends).</li>
+                  <li>&bull; <strong>Male &amp; Female Instructors:</strong> Guaranteed choice for sisters and young children.</li>
+                  <li>&bull; <strong>Open-Door Parent Access:</strong> Drop in anytime to observe your child&apos;s live lesson.</li>
+                </ul>
+              </div>
+
+              <div className="p-3.5 rounded-2xl glass border border-card-border space-y-1.5">
+                <span className="font-bold text-foreground flex items-center space-x-1.5">
+                  <Sparkles className="h-4 w-4 text-primary shrink-0" />
+                  <span>Pricing &amp; Verdict:</span>
+                </span>
+                <p className="text-xs text-muted-text leading-relaxed">
+                  <strong>Pricing:</strong> $30 to $50/month in USD with zero registration fees and no annual contracts.<br />
+                  <strong>Free Trial:</strong> Generous 3-day full trial with no credit card required.<br />
+                  <strong>Verdict:</strong> Unbeatable value, safety, and instructional quality for US kids starting from Noorani Qaida up to advanced Tajweed and Hifz.
+                </p>
+                <div className="pt-2">
+                  <Link
+                    href="/book-free-trial"
+                    className="inline-flex items-center space-x-1.5 text-xs font-bold text-primary hover:text-primary-hover"
+                  >
+                    <span>Book Your Child&apos;s 3-Day Free Trial</span>
+                    <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Studio Arabiya */}
+          <div className="p-5 sm:p-6 rounded-3xl glass border border-card-border space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-card-border pb-3">
+              <h4 className="text-base sm:text-lg font-bold text-foreground">
+                2. Studio Arabiya — Best for Structured Classical Arabic &amp; Group Classroom Tracks
+              </h4>
+              <span className="text-[11px] font-semibold text-muted-text bg-foreground/5 px-2.5 py-1 rounded-full shrink-0">
+                Formal Academic Model
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Studio Arabiya is an established organization known for structured Classical Arabic language courses and Quran instruction taught primarily by Al-Azhar trained teachers in Egypt. Their portal is polished and follows a traditional academic calendar.
+            </p>
+            <div className="text-xs text-muted-text space-y-1">
+              <p><strong>Pros:</strong> Well-organized learning management system; strong Arabic grammar options.</p>
+              <p><strong>Drawbacks for Kids:</strong> Significantly higher pricing ($85 to $160+/mo), inflexible semester commitments, and group settings where individual reading correction is limited.</p>
+            </div>
+          </div>
+
+          {/* 3. Qutor */}
+          <div className="p-5 sm:p-6 rounded-3xl glass border border-card-border space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-card-border pb-3">
+              <h4 className="text-base sm:text-lg font-bold text-foreground">
+                3. Qutor — Best Open Marketplace for Choosing Independent Freelance Tutors
+              </h4>
+              <span className="text-[11px] font-semibold text-muted-text bg-foreground/5 px-2.5 py-1 rounded-full shrink-0">
+                Freelance Directory
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Qutor functions as a freelancer marketplace connecting parents directly with hundreds of independent Quran teachers globally. Parents interview tutors using built-in messaging and an interactive digital classroom.
+            </p>
+            <div className="text-xs text-muted-text space-y-1">
+              <p><strong>Pros:</strong> Wide directory of teachers; flexible hourly rate negotiations directly with tutors.</p>
+              <p><strong>Drawbacks for Kids:</strong> Background checks and identity vetting are left up to the parent. Inconsistent internet connections and dual billing (monthly platform subscription fee plus separate tutor hourly rates).</p>
+            </div>
+          </div>
+
+          {/* 4. Quran Ayat */}
+          <div className="p-5 sm:p-6 rounded-3xl glass border border-card-border space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-card-border pb-3">
+              <h4 className="text-base sm:text-lg font-bold text-foreground">
+                4. Quran Ayat — Best for Traditional Online Lessons with Egyptian Scholars
+              </h4>
+              <span className="text-[11px] font-semibold text-muted-text bg-foreground/5 px-2.5 py-1 rounded-full shrink-0">
+                Traditional Remote Tutoring
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Quran Ayat offers live online Quran, Arabic, and Islamic Studies classes with Egyptian male and female teachers. They provide structured paths for Noorani Qaida, recitation, and Surah memorization.
+            </p>
+            <div className="text-xs text-muted-text space-y-1">
+              <p><strong>Pros:</strong> Authentic Arabic phonetics; broad variety of Islamic Studies courses.</p>
+              <p><strong>Drawbacks for Kids:</strong> Teacher English accents and child-engagement methods can be variable; lower monthly pricing often requires advance multi-month commitments.</p>
+            </div>
+          </div>
+
+          {/* 5. Local Weekend Mosque Programs */}
+          <div className="p-5 sm:p-6 rounded-3xl glass border border-card-border space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-card-border pb-3">
+              <h4 className="text-base sm:text-lg font-bold text-foreground">
+                5. Local Weekend Mosque Programs — Best for In-Person Socialization &amp; Masjid Community
+              </h4>
+              <span className="text-[11px] font-semibold text-muted-text bg-foreground/5 px-2.5 py-1 rounded-full shrink-0">
+                In-Person Community
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+              Traditional Saturday and Sunday Islamic schools hosted at your local masjid provide invaluable physical exposure to the Islamic environment, peer friendships, and communal prayer.
+            </p>
+            <div className="text-xs text-muted-text space-y-1">
+              <p><strong>Pros:</strong> Muslim peer bonding, collective prayer, and emotional attachment to the mosque.</p>
+              <p><strong>Drawbacks for Quran Fluency:</strong> With 15 to 25 children in one room, each child receives only 2 to 3 minutes of actual reading time per week. Progression through Noorani Qaida often takes 2 to 3 years instead of 4 to 6 months.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AEO Direct-Answer Section */}
       <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 not-prose shadow-sm">
         <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
@@ -4860,7 +5242,7 @@ function ArticleContentKidsUsa() {
             <ArrowRight className="h-4 w-4" />
           </Link>
           <a
-            href="#us-pricing-plans"
+            href="#pricing"
             className="inline-flex items-center justify-center space-x-2 px-5 py-3.5 rounded-full glass hover:bg-primary/10 text-foreground text-xs sm:text-sm font-semibold border border-card-border transition-all"
           >
             <span>See US Pricing ($30–$50/mo)</span>
@@ -5135,8 +5517,8 @@ function ArticleContentKidsUsa() {
       </div>
 
       {/* What Should Children Learn at Different Ages? */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+      <section id="age-groups" className="space-y-6 scroll-mt-20">
+        <h2 id="age-groups" className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
           What Should Children Learn at Different Ages?
         </h2>
         <p className="text-base text-muted-text">
@@ -5343,9 +5725,9 @@ function ArticleContentKidsUsa() {
       </section>
 
       {/* Step-by-Step Parent Selection Checklist */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          Step-by-Step Parent Checklist Before Enrolling
+      <section id="what-to-look-for" className="space-y-6 scroll-mt-20">
+        <h2 id="what-to-look-for" className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+          What to Look for: Parent Checklist Before Enrolling
         </h2>
         <p className="text-base text-muted-text">
           Follow this practical 6-step checklist to select the ideal online Quran academy for your child:
@@ -5485,12 +5867,13 @@ function ArticleContentKidsUsa() {
       </section>
 
       {/* Comprehensive US Pricing in USD Section */}
-      <section id="us-pricing-plans" className="space-y-6 scroll-mt-20">
+      <section id="pricing" className="space-y-6 scroll-mt-20">
+        <span id="us-pricing-plans" className="block -mt-20 pt-20" aria-hidden="true" />
         <div className="border-b border-card-border pb-3">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-3 py-1 inline-block mb-2">
             Affordable &amp; Transparent
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+          <h2 id="pricing" className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
             How Much Do Online Quran Classes for Kids Cost in the USA? (US Pricing in USD)
           </h2>
           <p className="text-base text-muted-text mt-2">
@@ -5780,8 +6163,8 @@ function ArticleContentKidsUsa() {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
+      <section id="faq" className="space-y-6 scroll-mt-20">
+        <h2 id="faq" className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
           Frequently Asked Questions
         </h2>
         
