@@ -59,6 +59,7 @@ const mapping: Record<string, string> = {
   'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide': '/blog/how-to-learn-quran-tafseer-online/quran-tafseer-study-desk-lamp.jpg',
   'why-studying-juz-amma-tafseer-essential-guide': '/quran-salah.jpg',
   'quranic-arabic-vs-modern-standard-arabic': '/blog/quranic-arabic-vs-modern-standard-arabic/quranic-arabic-vs-modern-standard-arabic-cover.png',
+  'online-islamic-studies-for-kids': '/blog/online-islamic-studies-for-kids/online-islamic-studies-for-kids-cover.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
@@ -102,6 +103,7 @@ const getBlogImageAlt = (slug: string, title: string): string => {
     'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide': 'Study desk with Holy Quran and classical Tafseer Ibn Kathir and Al-Jalalayn books under warm lamp',
     'why-studying-juz-amma-tafseer-essential-guide': 'Muslim worshiper performing Salah with open Quran on wooden rehal in peaceful light',
     'quranic-arabic-vs-modern-standard-arabic': 'Adult Muslim learner studying Quranic Arabic online with an open Holy Quran on wooden rehal stand, notebook, and live tutor on laptop',
+    'online-islamic-studies-for-kids': 'Young Muslim boy wearing headphones learning online Islamic studies and steps of Wudu with live tutor on laptop',
   };
   return mappingAlt[slug || ''] || title || 'Quran Learning Blog';
 };
