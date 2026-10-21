@@ -34,9 +34,12 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes UK | 1-to-1 Male & Female Tutors (£24/mo) - OQTutor";
+  const metaDescription = "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.";
+
   return {
-    title: "UK Online Quran Tuition | GMT Madrasah Alternative",
-    description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/uk",
       languages: {
@@ -49,8 +52,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/uk",
-      title: "UK Online Quran Tuition | GMT Madrasah Alternative",
-      description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
+      title: metaTitle,
+      description: metaDescription,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -62,8 +65,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "UK Online Quran Tuition | GMT Madrasah Alternative",
-      description: "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.",
+      title: metaTitle,
+      description: metaDescription,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -154,7 +157,7 @@ export default async function UKQuranClassesPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Online Quran Classes UK | 1-to-1 Quran Teachers | OQTutor",
+    "name": "Online Quran Classes UK | 1-to-1 Male & Female Tutors (£24/mo) - OQTutor",
     "url": "https://www.oqtutor.com/locations/uk",
     "description": "Learn Quran online in the UK with personalized one-to-one classes for kids and adults. Choose male or female tutors, flexible UK timings, Tajweed, Hifz, Quran Reading and Islamic Studies.",
     "inLanguage": "en-GB",
