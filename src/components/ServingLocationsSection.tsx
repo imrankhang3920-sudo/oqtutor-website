@@ -34,7 +34,7 @@ export default function ServingLocationsSection({
       mainLink: '/locations/uk',
       cities: [
         { name: 'London', href: '/locations/uk/london' },
-        { name: 'Birmingham', href: '/locations/uk' },
+        { name: 'Birmingham', href: '/locations/uk/birmingham' },
         { name: 'Manchester', href: '/locations/uk' },
         { name: 'Glasgow', href: '/locations/uk' },
       ],

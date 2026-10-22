@@ -413,7 +413,7 @@ export default async function UKQuranClassesPage() {
   // UK Cities Data
   const ukCities = [
     { name: "London", pageHref: "/locations/uk/london", status: "Dedicated Page Available" },
-    { name: "Birmingham", pageHref: null, status: "Online Tuition Available" },
+    { name: "Birmingham", pageHref: "/locations/uk/birmingham", status: "Dedicated Page Available" },
     { name: "Manchester", pageHref: null, status: "Online Tuition Available" },
     { name: "Leicester", pageHref: null, status: "Online Tuition Available" },
     { name: "Bradford", pageHref: null, status: "Online Tuition Available" },

@@ -56,7 +56,7 @@ export default async function LocationsHubPage() {
       description: 'Tailored for British Muslim families with after-school and weekend time slots.',
       subLocations: [
         { name: 'London & Greater London', slug: '/locations/uk/london' },
-        { name: 'Birmingham & West Midlands', slug: '/locations/uk' },
+        { name: 'Birmingham & West Midlands', slug: '/locations/uk/birmingham' },
         { name: 'Manchester & North West', slug: '/locations/uk' },
       ],
     },

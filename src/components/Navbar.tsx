@@ -228,6 +228,12 @@ export default function Navbar({
                   └ London
                 </Link>
                 <Link
+                  href="/locations/uk/birmingham"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  └ Birmingham
+                </Link>
+                <Link
                   href="/locations/canada"
                   className="block px-4 py-2.5 text-xs font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground transition-all"
                 >
@@ -535,6 +541,13 @@ export default function Navbar({
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     London
+                  </Link>
+                  <Link
+                    href="/locations/uk/birmingham"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    Birmingham
                   </Link>
                 </div>
               </div>

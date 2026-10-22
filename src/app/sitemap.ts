@@ -42,6 +42,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/locations/usa/new-york`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/usa/texas`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/locations/uk/london`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/locations/uk/birmingham`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
   // Dynamic Course & Blog Pages
