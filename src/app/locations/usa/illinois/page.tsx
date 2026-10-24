@@ -453,7 +453,7 @@ export default async function IllinoisQuranClassesPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-base text-muted-text">
-                Whether you&apos;re navigating rush-hour traffic on I-90 in Chicago and Schaumburg, or balancing busy after-school schedules in Naperville, Bridgeview, or Orland Park, online classes let your family learn comfortably from home.
+                Whether you&apos;re navigating rush-hour traffic on I-90 in Chicago and Schaumburg, or balancing busy after-school schedules in Naperville, Bridgeview, or Orland Park, online classes let your child learn comfortably from home.
               </p>
             </div>
 
@@ -658,7 +658,10 @@ export default async function IllinoisQuranClassesPage() {
                     Parents naturally want their children to cultivate an authentic, lifelong relationship with the Quran. However, young children require teaching methodologies aligned with their attention spans and cognitive stages.
                   </p>
                   <p>
-                    OQTutor's one-on-one setup allows tutors to personalize every session: starting with basic Arabic alphabet keys and Noorani Qaida, then progressing to fluent Quran reading, Tajweed rules, memorizing short Surahs, and practical Islamic studies.
+                    Whether your family is navigating rush-hour traffic on I-90 in Chicago and Schaumburg, or balancing busy after-school schedules in Naperville, Bridgeview, or Orland Park, online classes let your child learn comfortably from home without the stress of an extra evening commute.
+                  </p>
+                  <p>
+                    OQTutor&apos;s one-on-one setup allows tutors to personalize every session: starting with basic Arabic alphabet keys and Noorani Qaida, then progressing to fluent Quran reading, Tajweed rules, memorizing short Surahs, and practical Islamic studies.
                   </p>
                   <p>
                     Private lessons give tutors the freedom to dedicate undivided attention to your child — repeating tricky sounds, correcting mistakes instantly, maintaining a patient lesson pace, encouraging shy learners, and delivering regular progress updates to parents.
