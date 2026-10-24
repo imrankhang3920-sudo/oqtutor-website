@@ -2,14 +2,13 @@ import { cookies } from 'next/headers';
 import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import NearbyStatesSection from '@/components/NearbyStatesSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, 
+  CheckCircle, ChevronDown, Star, Shield, ShieldCheck, HelpCircle, Award, 
   BookOpen, Clock, Users, ArrowRight, MapPin, CheckCheck, Sparkles, HeartHandshake
 } from 'lucide-react';
 
@@ -49,10 +48,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 function LocalStatsBar() {
   const stats = [
-    { value: "200+", label: "Students Enrolled" },
+    { value: "500+", label: "Families Served" },
     { value: "50+", label: "Certified Tutors" },
     { value: "5+", label: "Years Operating" },
-    { value: "20+", label: "Countries Served" },
+    { value: "100%", label: "Free 3-Class Trial" },
   ];
 
   return (
@@ -87,16 +86,6 @@ export default async function IllinoisQuranClassesPage() {
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
-
-  const customHeroData = {
-    title: "Online Quran Classes in Illinois for Kids & Adults",
-    subtitle: "Looking for reliable online Quran classes in Illinois for yourself or your child? OQTutor makes it simple to learn the Quran from home with qualified male and female Quran tutors, one-on-one lessons, flexible schedules, and a structured learning plan. Whether your child is starting with the Arabic alphabet, you want to improve your Quran recitation with Tajweed, or you are ready to begin Hifz, our online Quran courses are designed around your current level and learning goals. You do not need to drive to a mosque or Islamic center after a busy school or workday. Your Quran teacher can meet you online at a time that fits your Illinois schedule.",
-    ctaText: "Book Your Free Trial Class",
-    ctaLink: "/book-free-trial",
-    whatsappText: dbData.hero?.whatsappText || "Chat on WhatsApp",
-    whatsappNumber: dbData.hero?.whatsappNumber || "+923478704442",
-    backgroundImage: dbData.hero?.backgroundImage || "/logo.jpg",
-  };
 
   const faqList = [
     {
@@ -209,7 +198,186 @@ export default async function IllinoisQuranClassesPage() {
       <Navbar adminLoggedIn={adminLoggedIn} />
 
       <main className="flex-grow">
-        <Hero data={customHeroData} />
+        {/* Breadcrumb Navigation */}
+        <div className="border-b border-card-border/40 bg-foreground/[0.015]">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+            <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-muted-text">
+              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/locations/usa" className="hover:text-primary transition-colors">USA</Link>
+              <span>/</span>
+              <span className="text-foreground font-semibold">Illinois</span>
+            </nav>
+          </div>
+        </div>
+
+        {/* HERO SECTION */}
+        <section className="relative overflow-hidden pt-8 pb-12 md:pt-14 md:pb-20 bg-gradient-to-b from-primary/[0.04] via-background to-background">
+          {/* Ambient Glow */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-secondary/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+              
+              {/* Left Column: Hero Copy & CTA */}
+              <div className="lg:col-span-7 space-y-6">
+                
+                {/* Badges Container */}
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                  {/* Eyebrow Badge */}
+                  <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-3.5 py-1.5 text-xs font-bold text-primary tracking-wide shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                    <span>Serving Illinois Families (CST/CDT) • Plans from $30/Mo</span>
+                  </div>
+
+                  {/* Trust Badge */}
+                  <div className="inline-flex items-center space-x-1.5 bg-amber-500/10 border border-amber-500/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 shadow-sm">
+                    <div className="flex items-center text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-current text-amber-400" />
+                      ))}
+                    </div>
+                    <span>⭐ Rated 4.9/5 by 500+ Muslim Families</span>
+                  </div>
+                </div>
+
+                {/* H1 Title */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
+                  Online Quran Classes in <span className="text-primary">Illinois</span> for Kids &amp; Adults
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-base sm:text-lg text-muted-text font-normal leading-relaxed">
+                  Learn the Quran from home with certified male and female tutors on a flexible Central Time schedule. Skip the post-school commute to a local center—our live, 1-on-1 classes adapt to your family&apos;s pace and spiritual goals.
+                </p>
+
+                {/* 3 Value Proposition Bullets */}
+                <div className="space-y-3 pt-1">
+                  <div className="flex items-start space-x-3 p-3.5 rounded-2xl glass border border-card-border/80 hover:border-primary/30 transition-all bg-card/40">
+                    <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0 mt-0.5">
+                      <BookOpen className="h-4.5 w-4.5" />
+                    </div>
+                    <div className="text-xs sm:text-sm leading-relaxed">
+                      <strong className="font-bold text-foreground">Tailored for Every Level:</strong>{" "}
+                      <span className="text-muted-text font-normal">
+                        Noorani Qaida for beginners, fluent Quran Reading, Tajweed mastery, Hifz memorization, and Islamic Studies.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3 p-3.5 rounded-2xl glass border border-card-border/80 hover:border-primary/30 transition-all bg-card/40">
+                    <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0 mt-0.5">
+                      <Users className="h-4.5 w-4.5" />
+                    </div>
+                    <div className="text-xs sm:text-sm leading-relaxed">
+                      <strong className="font-bold text-foreground">Dedicated 1-on-1 Attention:</strong>{" "}
+                      <span className="text-muted-text font-normal">
+                        Patient, English-fluent male and female scholars focused 100% on you or your child.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3 p-3.5 rounded-2xl glass border border-card-border/80 hover:border-primary/30 transition-all bg-card/40">
+                    <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0 mt-0.5">
+                      <Clock className="h-4.5 w-4.5" />
+                    </div>
+                    <div className="text-xs sm:text-sm leading-relaxed">
+                      <strong className="font-bold text-foreground">Affordable &amp; Flexible:</strong>{" "}
+                      <span className="text-muted-text font-normal">
+                        Classes available 24/7 in CST/CDT starting at just $30/month.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="pt-2">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                    <Link
+                      href="/book-free-trial"
+                      className="group relative flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 transition-all duration-300 transform hover:-translate-y-0.5 text-center text-sm sm:text-base cursor-pointer"
+                    >
+                      <span>Book Your Free Trial Class</span>
+                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+
+                    <a
+                      href="#courses"
+                      className="flex items-center justify-center space-x-2 px-7 py-4 rounded-full glass border border-card-border hover:bg-foreground/5 text-foreground font-semibold transition-all duration-300 transform hover:-translate-y-0.5 text-center text-sm sm:text-base cursor-pointer"
+                    >
+                      <span>Explore Courses</span>
+                    </a>
+                  </div>
+
+                  {/* Micro-copy */}
+                  <p className="mt-3.5 text-xs text-muted-text font-medium flex items-center space-x-1.5">
+                    <Sparkles className="h-4 w-4 text-secondary shrink-0" />
+                    <span>3 Free Trial Classes • No Credit Card Required • Cancel Anytime</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Hero Visual & Interactive Features Card */}
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="relative max-w-md w-full">
+                  <div className="absolute inset-0 border-2 border-primary/20 rounded-3xl translate-x-3 translate-y-3 -z-10" />
+                  <div className="glass p-3.5 rounded-3xl border border-card-border shadow-2xl overflow-hidden bg-card/60 backdrop-blur-xl">
+                    <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                      <Image
+                        src="/illinois-1.jpg"
+                        alt="Online Quran Classes in Illinois for Kids & Adults"
+                        width={600}
+                        height={450}
+                        priority
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1.5 rounded-full border border-white/20 flex items-center space-x-1.5 shadow-md">
+                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span>Live 1-on-1 • CST/CDT Time Zone</span>
+                      </div>
+                      <div className="absolute bottom-3 right-3 bg-primary/95 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                        Plans from $30/Mo
+                      </div>
+                    </div>
+
+                    {/* Preview Feature List */}
+                    <div className="p-4 space-y-2.5 bg-foreground/[0.02] rounded-2xl mt-3 border border-card-border/50">
+                      <div className="flex items-center space-x-2 text-xs font-semibold text-foreground">
+                        <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                        <span>3 Free Trial Classes • 100% Risk Free</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-xs font-semibold text-foreground">
+                        <Users className="h-4 w-4 text-primary shrink-0" />
+                        <span>Certified Male &amp; Female Quran Scholars</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-xs font-semibold text-foreground">
+                        <Clock className="h-4 w-4 text-primary shrink-0" />
+                        <span>24/7 Scheduling Aligned with Illinois Routines</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-xs font-semibold text-foreground">
+                        <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
+                        <span>Guaranteed Tutor Match • Switch Anytime</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Status Indicator */}
+                    <div className="mt-3 pt-3 border-t border-card-border/60 flex items-center justify-between px-1">
+                      <div className="flex items-center space-x-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[11px] font-semibold text-foreground">Next Trial Available</span>
+                      </div>
+                      <span className="text-[11px] font-bold text-primary">Today / Tomorrow</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
         <LocalStatsBar />
 
         {/* Intro Section: Learn Quran Online in Illinois with OQTutor */}
@@ -260,8 +428,8 @@ export default async function IllinoisQuranClassesPage() {
                   <div className="absolute inset-0 border-2 border-secondary/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
                   <div className="glass p-3 rounded-3xl border-card-border overflow-hidden shadow-2xl relative bg-white">
                     <Image
-                      src="/illinois-1.jpg"
-                      alt="Muslim female student reading Holy Quran during online class in Illinois"
+                      src="/online-quran-classes-usa-kids-adults-1.jpg"
+                      alt="Muslim student reading Holy Quran during online class in Illinois"
                       width={480}
                       height={360}
                       className="w-full rounded-2xl object-cover h-[340px]"
@@ -364,7 +532,7 @@ export default async function IllinoisQuranClassesPage() {
         </section>
 
         {/* Online Quran Courses for Illinois Students */}
-        <section className="py-16 md:py-24 relative overflow-hidden bg-background">
+        <section id="courses" className="py-16 md:py-24 relative overflow-hidden bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
