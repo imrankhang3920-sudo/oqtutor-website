@@ -295,6 +295,21 @@ export default async function USALocationsHubPage() {
       title: "Effective Hifz Memorization Techniques",
       desc: "Proven daily revision cycles (Sabaq, Sabqi, Manzil) to retain memorized Surahs permanently.",
       link: "/blog/effective-hifz-memorization-techniques"
+    },
+    {
+      title: "Online Quran Classes in the USA for Adults",
+      desc: "A practical guide for Muslim adults in the US balancing work, family, and Quran recitation or Tajweed mastery.",
+      link: "/blog/online-quran-classes-usa-for-adults"
+    },
+    {
+      title: "Weekend Quran Classes with Tajweed: Learn at Your Own Pace",
+      desc: "Discover how weekend Quran lessons provide flexible Tajweed practice for busy students and professionals in the USA.",
+      link: "/blog/weekend-quran-classes-tajweed-own-pace"
+    },
+    {
+      title: "Why Quran Memorization for Adults Is Never Too Late",
+      desc: "Inspiring strategies and practical retention tips for adult Muslims embarking on their Quran memorization journey.",
+      link: "/blog/quran-memorization-adults-never-late"
     }
   ];
 
@@ -312,7 +327,14 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-3",
       question: "Are online Quran classes suitable for beginners?",
-      answer: "Yes. Beginners of any age start with the Noorani Qaida curriculum, which introduces Arabic alphabet recognition, letter shapes, short vowels (Harakat), and articulation points (Makharij). With one-to-one instruction, tutors guide learners step by step from individual sounds to reading words and full verses without feeling rushed."
+      answer: (
+        <>
+          Yes. Beginners of any age start with the Noorani Qaida curriculum, which introduces Arabic alphabet recognition, letter shapes, short vowels (Harakat), and articulation points (Makharij). With one-to-one instruction, tutors guide learners step by step from individual sounds to reading words and full verses without feeling rushed. Read our step-by-step guide to the{' '}
+          <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary hover:underline font-semibold">
+            best online Quran classes for beginners
+          </Link>.
+        </>
+      )
     },
     {
       id: "usa-faq-4",
@@ -322,7 +344,15 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-5",
       question: "Can adults learn Quran online?",
-      answer: "Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs, or studying Tafseer, lessons progress at your individual pace in complete privacy with male or female scholars."
+      answer: (
+        <>
+          Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs in our{' '}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz program</Link>, or studying{' '}
+          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Quran Tafseer</Link>, lessons progress at your individual pace in complete privacy with male or female scholars. Read our guide on{' '}
+          <Link href="/blog/online-quran-classes-usa-for-adults" className="text-primary hover:underline font-semibold">online Quran classes in the USA for adults</Link>, and discover why{' '}
+          <Link href="/blog/quran-memorization-adults-never-late" className="text-primary hover:underline font-semibold">Quran memorization for adults is never too late</Link>.
+        </>
+      )
     },
     {
       id: "usa-faq-6",
@@ -337,19 +367,38 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-8",
       question: "Do you offer Quran classes with Tajweed?",
-      answer: "Yes. Our Tajweed course covers articulation points (Makharij), Ghunnah, Ikhfa, Qalqalah, Madd, and stopping signs (Waqf). Tutors explain the rules clearly and listen closely during live recitation to correct pronunciation mistakes immediately as you read from the Mushaf."
+      answer: (
+        <>
+          Yes. Our{' '}
+          <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">
+            Quran with Tajweed course
+          </Link>{' '}
+          covers articulation points (Makharij), Ghunnah, Ikhfa, Qalqalah, Madd, and stopping signs (Waqf). Tutors explain the rules clearly and listen closely during live recitation to correct pronunciation mistakes immediately as you read from the Mushaf.
+        </>
+      )
     },
     {
       id: "usa-faq-9",
       question: "Do you offer Hifz classes?",
-      answer: "Yes. Our online Hifz program pairs students with certified Huffaz. Lessons follow a systematic daily cycle: memorizing new verses (Sabaq), revising recent pages (Sabqi), and reinforcing long-term retention (Manzil). Study plans are customized to match each student's capacity and schedule."
+      answer: (
+        <>
+          Yes. Our online{' '}
+          <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">
+            Hifz Quran program
+          </Link>{' '}
+          pairs students with certified Huffaz. Lessons follow a systematic daily cycle: memorizing new verses (Sabaq), revising recent pages (Sabqi), and reinforcing long-term retention (Manzil). Study plans are customized to match each student&apos;s capacity and schedule.
+        </>
+      )
     },
     {
       id: "usa-faq-10",
       question: "What time are Quran lessons available?",
       answer: (
         <>
-          Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends, with dedicated schedules for students in{' '}
+          Classes are available 24 hours a day, 7 days a week, accommodating Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones. Families can schedule lessons before school, in the afternoon, during late evenings, or across weekends with flexible{' '}
+          <Link href="/blog/weekend-quran-classes-tajweed-own-pace" className="text-primary hover:underline font-semibold">
+            weekend Quran classes
+          </Link>, and dedicated schedules for students in{' '}
           <Link href="/locations/usa/illinois" className="text-primary hover:underline font-semibold">Illinois</Link>,{' '}
           <Link href="/locations/usa/texas" className="text-primary hover:underline font-semibold">Texas</Link>,{' '}
           <Link href="/locations/usa/michigan" className="text-primary hover:underline font-semibold">Michigan</Link>,{' '}
@@ -367,7 +416,15 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-12",
       question: "Is there a trial class?",
-      answer: "Yes. OQTutor provides a free trial class with no credit card or financial commitment required. During the session, the teacher assesses the student's current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals."
+      answer: (
+        <>
+          Yes. OQTutor provides a{' '}
+          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
+            free trial class
+          </Link>{' '}
+          with no credit card or financial commitment required. During the session, the teacher assesses the student&apos;s current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals.
+        </>
+      )
     },
     {
       id: "usa-faq-13",
@@ -541,6 +598,19 @@ export default async function USALocationsHubPage() {
         {/* Single H1 Hero Component */}
         <Hero data={customHeroData} />
 
+        {/* Breadcrumb Navigation */}
+        <div className="bg-background border-b border-card-border/50 py-3">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-muted-text">
+              <Link href="/" className="hover:text-primary transition-colors font-medium">Home</Link>
+              <span>/</span>
+              <Link href="/locations" className="hover:text-primary transition-colors font-medium">Locations</Link>
+              <span>/</span>
+              <span className="text-foreground font-semibold">USA</span>
+            </nav>
+          </div>
+        </div>
+
         {/* AEO Quick Answer Section */}
         <section className="py-8 bg-primary/[0.03] border-y border-primary/15 relative">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -553,7 +623,7 @@ export default async function USALocationsHubPage() {
                 Quick Answer: What Are the Best Online Quran Classes in the USA?
               </h2>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. OQTutor meets these standards with certified male and female tutors, personalized study tracks from Noorani Qaida to Hifz, and a free placement trial before enrollment.
+                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. <Link href="/" className="text-primary font-semibold hover:underline">OQTutor</Link> meets these standards with certified male and female tutors, personalized study tracks across all our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> from Noorani Qaida to Hifz, and a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free placement trial</Link> before enrollment.
               </p>
             </div>
           </div>
@@ -761,7 +831,7 @@ export default async function USALocationsHubPage() {
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>Read our guide on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link> and our complete overview of <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link></span>
+                    <span>Read our guides on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link>, <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary font-semibold hover:underline">best online Quran classes for beginners</Link>, and our complete overview of <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link></span>
                   </li>
                 </ul>
               </div>
@@ -781,7 +851,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Many adults wish to learn Quran recitation or improve their Tajweed but struggle to fit traditional madrasah classes into busy work and family schedules. Our adult programs offer flexible, respectful, and private learning at your own pace.
+                Many adults wish to learn Quran recitation or improve their Tajweed but struggle to fit traditional madrasah classes into busy work and family schedules. Our adult programs offer flexible, respectful, and private learning at your own pace. Explore our complete guide to <Link href="/blog/online-quran-classes-usa-for-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for adults</Link> for practical insights on getting started.
               </p>
             </div>
 
@@ -789,19 +859,19 @@ export default async function USALocationsHubPage() {
               <div className="glass p-8 rounded-3xl border border-card-border space-y-3">
                 <h3 className="text-lg font-bold text-foreground">Beginner Arabic Reading</h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  Start from the Arabic alphabet and learn to connect letters into words. There is no embarrassment in starting from the basics — our tutors guide adult beginners with complete respect and patience.
+                  Start from the Arabic alphabet and learn to connect letters into words. There is no embarrassment in starting from the basics — our tutors guide adult beginners with complete respect and patience. Read our guide to <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary font-semibold hover:underline">online Quran classes for beginners</Link>.
                 </p>
               </div>
               <div className="glass p-8 rounded-3xl border border-card-border space-y-3">
                 <h3 className="text-lg font-bold text-foreground">Tajweed Refinement</h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  For adults who already read Arabic but want to perfect their pronunciation, articulation points (Makharij), and melodic flow according to authentic Tajweed rules.
+                  For adults who already read Arabic but want to perfect their pronunciation, articulation points (Makharij), and melodic flow through our structured <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed course</Link>.
                 </p>
               </div>
               <div className="glass p-8 rounded-3xl border border-card-border space-y-3">
                 <h3 className="text-lg font-bold text-foreground">Hifz &amp; Tafseer Tracks</h3>
                 <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-                  Memorize selected Surahs (such as Surah Al-Kahf, Yaseen, Al-Mulk) or study word-by-word Quran translation and classical Tafseer with qualified scholars.
+                  Memorize selected Surahs in our <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz Quran program</Link> or study word-by-word Quran translation and classical Tafseer in our <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Quran Tafseer course</Link>. Discover why <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">Quran memorization for adults is never too late</Link>.
                 </p>
               </div>
             </div>
@@ -820,7 +890,7 @@ export default async function USALocationsHubPage() {
                   Learn Quran with Tajweed from Qualified Tutors
                 </h2>
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed">
-                  Tajweed is the science of pronouncing every Arabic letter from its exact point of articulation (Makhraj) while observing all linguistic rules. Proper Tajweed preserves the authentic meaning and spiritual beauty of the Quranic text.
+                  Tajweed is the science of pronouncing every Arabic letter from its exact point of articulation (Makhraj) while observing all linguistic rules. Proper Tajweed preserves the authentic meaning and spiritual beauty of the Quranic text through our live <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Quran with Tajweed course</Link>.
                 </p>
                 <div className="space-y-3 pt-2">
                   <div className="flex items-start space-x-3">
@@ -919,7 +989,7 @@ export default async function USALocationsHubPage() {
               ))}
             </div>
             <p className="text-center text-xs sm:text-sm text-muted-text mt-8">
-              Lessons can be scheduled before school, in the late afternoon, during evenings, or on weekends.
+              Lessons can be scheduled before school, in the late afternoon, during evenings, or across weekends. Discover our flexible <Link href="/blog/weekend-quran-classes-tajweed-own-pace" className="text-primary font-semibold hover:underline">weekend Quran classes with Tajweed</Link> designed for busy learners.
             </p>
           </div>
         </section>
@@ -936,7 +1006,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Explore our structured learning tracks for children, teenagers, and adult students. Every course is adapted to the learner&apos;s current knowledge and pace.
+                Explore our full catalog of structured <Link href="/courses" className="text-primary font-semibold hover:underline">online Quran courses</Link> for children, teenagers, and adult students. Every course is adapted to the learner&apos;s current knowledge and pace.
               </p>
             </div>
 
@@ -969,6 +1039,16 @@ export default async function USALocationsHubPage() {
                   </div>
                 );
               })}
+            </div>
+
+            <div className="text-center mt-12">
+              <Link 
+                href="/courses" 
+                className="inline-flex items-center space-x-2 px-7 py-3.5 rounded-full bg-primary/10 border border-primary/20 hover:bg-primary hover:text-white text-primary text-xs sm:text-sm font-bold transition-all shadow-sm"
+              >
+                <span>Browse All Quran Courses &amp; Syllabi</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -1043,7 +1123,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Simple monthly plans based on weekly class frequency. Every plan includes private one-to-one lessons, certified tutors, and flexible scheduling with no long-term contracts.
+                Simple monthly plans based on weekly class frequency. Every plan includes private one-to-one lessons, certified tutors, and flexible scheduling with no long-term contracts. Get started today with a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial class</Link>.
               </p>
             </div>
 
@@ -1270,6 +1350,12 @@ export default async function USALocationsHubPage() {
               >
                 <span>Book Free Placement Trial</span>
                 <ArrowRight className="h-5 w-5" />
+              </Link>
+              <Link 
+                href="/courses" 
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm sm:text-base font-semibold transition-all"
+              >
+                <span>Browse All Courses</span>
               </Link>
               <Link 
                 href="/tutors" 
