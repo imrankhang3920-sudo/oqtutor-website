@@ -64,6 +64,11 @@ const nextConfig: NextConfig = {
       },
       // SEO Consolidated Blog Redirects (301 Permanent)
       {
+        source: '/blog/online-islamic-studies-for-kids',
+        destination: '/blog/online-islamic-studies-curriculum-for-kids',
+        permanent: true,
+      },
+      {
         source: '/blog/how-to-choose-best-online-quran-classes-for-kids-usa',
         destination: '/blog/best-online-quran-classes-for-kids-in-usa',
         permanent: true,
@@ -185,6 +190,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/courses/hifz-quran',
+        destination: '/courses/hifz',
+        permanent: true,
+      },
+      {
+        source: '/courses/hifz-ul-quran',
         destination: '/courses/hifz',
         permanent: true,
       },

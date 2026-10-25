@@ -18,6 +18,7 @@ import ArticleContentTafseerIbnKathirVsJalalayn from './ArticleContentTafseerIbn
 import ArticleContentWhyJuzAmmaTafseerEssential from './ArticleContentWhyJuzAmmaTafseerEssential';
 import ArticleContentQuranicArabicVsModernStandardArabic from './ArticleContentQuranicArabicVsModernStandardArabic';
 import ArticleContentOnlineIslamicStudiesKids from './ArticleContentOnlineIslamicStudiesKids';
+import ArticleContentOnlineIslamicStudiesCurriculumKids from './ArticleContentOnlineIslamicStudiesCurriculumKids';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -63,10 +64,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
   const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
+  const isOnlineIslamicStudiesCurriculumKidsBlog = resolvedParams.slug === 'online-islamic-studies-curriculum-for-kids';
   const isOnlineIslamicStudiesKidsBlog = resolvedParams.slug === 'online-islamic-studies-for-kids';
-  const isGlobalBlog = isOnlineIslamicStudiesKidsBlog || isQuranicVsMsaBlog || isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isGlobalBlog = isOnlineIslamicStudiesCurriculumKidsBlog || isOnlineIslamicStudiesKidsBlog || isQuranicVsMsaBlog || isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isOnlineIslamicStudiesKidsBlog
+  const metaTitle = isOnlineIslamicStudiesCurriculumKidsBlog
+    ? 'Online Islamic Studies Curriculum: What Kids Should Learn'
+    : isOnlineIslamicStudiesKidsBlog
     ? 'Online Islamic Studies for Kids: 6 Things Every Child Should Learn | OQTutor'
     : isQuranicVsMsaBlog
     ? 'Quranic Arabic vs Modern Standard Arabic: Which to Learn First? | OQTutor'
@@ -116,7 +120,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
 
-  const metaDescription = isOnlineIslamicStudiesKidsBlog
+  const metaDescription = isOnlineIslamicStudiesCurriculumKidsBlog
+    ? 'Discover what every child should learn in an online Islamic Studies curriculum. Explore age milestones, Salah, Aqeedah, Seerah, and verified research.'
+    : isOnlineIslamicStudiesKidsBlog
     ? 'What should kids learn beyond Quran reading? A 6-pillar Islamic Studies roadmap for ages 4-16, plus a 3-day free trial.'
     : isQuranicVsMsaBlog
     ? 'Confused between Quranic and Modern Standard Arabic? Compare vocabulary, grammar, and timelines to choose the right starting point for you or your child.'
@@ -206,6 +212,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
   const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
+  const isOnlineIslamicStudiesCurriculumKidsBlog = resolvedParams.slug === 'online-islamic-studies-curriculum-for-kids';
   const isOnlineIslamicStudiesKidsBlog = resolvedParams.slug === 'online-islamic-studies-for-kids';
 
   const articleSchema = createBlogPostSchema(blog);
@@ -227,6 +234,79 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {isOnlineIslamicStudiesCurriculumKidsBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Article",
+                  "headline": "What Every Child Should Learn in an Online Islamic Studies Curriculum",
+                  "description": "Discover what every child should learn in an online Islamic Studies curriculum. Explore age milestones, Salah, Aqeedah, Seerah, and verified research.",
+                  "author": {
+                    "@type": "Organization",
+                    "name": "OQTutor Editorial Team",
+                    "url": "https://www.oqtutor.com"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "OQTutor",
+                    "url": "https://www.oqtutor.com",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://www.oqtutor.com/logo_transparent.png"
+                    }
+                  },
+                  "mainEntityOfPage": "https://www.oqtutor.com/blog/online-islamic-studies-curriculum-for-kids",
+                  "datePublished": "2026-10-25T00:00:00+00:00",
+                  "dateModified": "2026-10-25T00:00:00+00:00",
+                  "image": "https://www.oqtutor.com/blog/online-islamic-studies-curriculum-for-kids/islamic-studies-pillars-tutor.jpg"
+                },
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What language are online Islamic Studies classes taught in?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "At OQTutor, all Online Islamic Studies lessons are taught in clear, fluent English by certified male and female tutors. Children memorize Quranic verses and Masnoon Duas in Arabic, while all explanations, stories, and discussions happen in English so kids living in the USA, UK, Canada, and Australia understand every word."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Should my child finish Noorani Qaida before starting Islamic Studies?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No, your child does not need to wait. In fact, teaching basic Islamic manners, short oral Duas, and stories of the Prophets alongside Noorani Qaida keeps young beginners excited about their classes and prevents screen fatigue."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "How many days a week should a child take Islamic Studies?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most families see excellent progress with two to three sessions per week. You can either book a dedicated Islamic Studies slot once or twice a week, or attach 10 to 15 minutes of Islamic Studies to the end of your child's regular Quran recitation classes."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can I choose a male tutor for my son or a female tutor for my daughter?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Having a relatable role model is vital as children grow into their pre teen and teenage years. You can select a qualified male instructor for your son or a certified female instructor for your daughter according to your family's preference."
+                      }
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      )}
 
       {isOnlineIslamicStudiesKidsBlog && (
         <script
@@ -2206,7 +2286,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="relative mb-10 h-64 sm:h-96 overflow-hidden rounded-3xl border border-card-border shadow-xl">
               <Image
                 src={blog.coverImage}
-                alt={isOnlineIslamicStudiesKidsBlog ? "Young Muslim boy wearing headphones learning online Islamic studies and steps of Wudu with live tutor" : isRoleParentsBlog ? "Muslim father teaching his two sons Holy Quran at home on wooden rehal" : isUKCompleteGuideBlog ? "Muslim family attending an online Quran class in the UK" : isWhyNooraniQaidaEssentialBlog ? "Noorani Qaida book showing lessons for learning to read the Quran" : blog.title}
+                alt={isOnlineIslamicStudiesCurriculumKidsBlog ? "Certified male tutor teaching a young Muslim boy the 5 Pillars of Islam in an online Islamic Studies class" : isOnlineIslamicStudiesKidsBlog ? "Young Muslim boy wearing headphones learning online Islamic studies and steps of Wudu with live tutor" : isRoleParentsBlog ? "Muslim father teaching his two sons Holy Quran at home on wooden rehal" : isUKCompleteGuideBlog ? "Muslim family attending an online Quran class in the UK" : isWhyNooraniQaidaEssentialBlog ? "Noorani Qaida book showing lessons for learning to read the Quran" : blog.title}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 896px"
@@ -2217,7 +2297,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isOnlineIslamicStudiesKidsBlog ? (
+            {isOnlineIslamicStudiesCurriculumKidsBlog ? (
+              <ArticleContentOnlineIslamicStudiesCurriculumKids />
+            ) : isOnlineIslamicStudiesKidsBlog ? (
               <ArticleContentOnlineIslamicStudiesKids />
             ) : isQuranicVsMsaBlog ? (
               <ArticleContentQuranicArabicVsModernStandardArabic />

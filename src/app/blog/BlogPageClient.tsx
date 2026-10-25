@@ -60,10 +60,12 @@ const mapping: Record<string, string> = {
   'why-studying-juz-amma-tafseer-essential-guide': '/quran-salah.jpg',
   'quranic-arabic-vs-modern-standard-arabic': '/blog/quranic-arabic-vs-modern-standard-arabic/quranic-arabic-vs-modern-standard-arabic-cover.png',
   'online-islamic-studies-for-kids': '/blog/online-islamic-studies-for-kids/online-islamic-studies-for-kids-cover.jpg',
+  'online-islamic-studies-curriculum-for-kids': '/blog/online-islamic-studies-curriculum-for-kids/islamic-studies-pillars-tutor.jpg',
 };
 
 const getBlogImageAlt = (slug: string, title: string): string => {
   const mappingAlt: Record<string, string> = {
+    'online-islamic-studies-curriculum-for-kids': 'Certified male tutor teaching a young Muslim boy the 5 Pillars of Islam in an online Islamic Studies class',
     'online-quran-classes-usa': 'Muslim child taking live online Quran lesson at home with parents watching',
     'tips-keep-kids-motivated-online-quran': 'Interactive online Quran classroom with teacher and student',
     'beginners-guide-mastering-tajweed-rules': 'Certified teacher pointing at Tajweed rules chart on screen',
