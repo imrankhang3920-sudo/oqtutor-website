@@ -64,7 +64,8 @@ export default function TrialModal({
     name: '',
     email: '',
     phone: '',
-    course: 'Noorani Qaida',
+    course: 'Noorani Qaida (Beginners & Kids)',
+    tutorGender: 'Female Quran Tutor',
     message: '',
     country: 'United States',
     countryCode: 'US',
@@ -75,13 +76,15 @@ export default function TrialModal({
   const [error, setError] = useState<string | null>(null);
 
   const coursesList = [
-    'Noorani Qaida',
-    'Quran Reading',
+    'Noorani Qaida (Beginners & Kids)',
+    'Quran Reading (Nazra)',
     'Quran with Tajweed',
-    'Hifz Program',
-    'Islamic Studies',
+    'Hifz-ul-Quran (Memorization)',
+    'Quran Tafseer',
+    'Islamic Studies & Daily Duas',
     'Arabic Language',
     'Quran for Kids',
+    'Quran for Adults',
   ];
 
   // Auto-detect country based on Timezone
@@ -287,6 +290,27 @@ export default function TrialModal({
                       ))}
                     </select>
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-foreground mb-1.5">
+                    Preferred Tutor *
+                  </label>
+                  <select
+                    value={formData.tutorGender}
+                    onChange={(e) => setFormData({ ...formData, tutorGender: e.target.value })}
+                    className="w-full h-11 px-3 text-sm rounded-xl border border-card-border bg-foreground/[0.02] text-foreground focus:outline-none focus:border-primary transition-all"
+                  >
+                    <option value="Female Quran Tutor" className="bg-background text-foreground">
+                      Female Quran Tutor
+                    </option>
+                    <option value="Male Quran Tutor" className="bg-background text-foreground">
+                      Male Quran Tutor
+                    </option>
+                    <option value="No Preference (Best Available Match)" className="bg-background text-foreground">
+                      No Preference (Best Available Match)
+                    </option>
+                  </select>
                 </div>
 
                 {/* Phone & Country Selector */}

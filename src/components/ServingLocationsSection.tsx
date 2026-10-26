@@ -20,6 +20,7 @@ export default function ServingLocationsSection({
       country: 'United States',
       flag: '🇺🇸',
       mainLink: '/locations/usa',
+      ctaText: 'Explore USA Classes',
       cities: [
         { name: 'California', href: '/locations/usa/california' },
         { name: 'Illinois', href: '/locations/usa/illinois' },
@@ -32,6 +33,7 @@ export default function ServingLocationsSection({
       country: 'United Kingdom',
       flag: '🇬🇧',
       mainLink: '/locations/uk',
+      ctaText: 'Explore UK Classes',
       cities: [
         { name: 'London', href: '/locations/uk/london' },
         { name: 'Birmingham', href: '/locations/uk/birmingham' },
@@ -43,6 +45,7 @@ export default function ServingLocationsSection({
       country: 'Canada',
       flag: '🇨🇦',
       mainLink: '/locations/canada',
+      ctaText: 'Explore Canada Classes',
       cities: [
         { name: 'Toronto & GTA', href: '/locations/canada' },
         { name: 'Calgary', href: '/locations/canada' },
@@ -54,6 +57,7 @@ export default function ServingLocationsSection({
       country: 'Australia',
       flag: '🇦🇺',
       mainLink: '/locations/australia',
+      ctaText: 'Explore Australia Classes',
       cities: [
         { name: 'Sydney (NSW)', href: '/locations/australia' },
         { name: 'Melbourne (VIC)', href: '/locations/australia' },
@@ -136,23 +140,13 @@ export default function ServingLocationsSection({
                     </Link>
                   ))}
                 </div>
-                {group.country === 'United States' && (
-                  <div className="mb-3 pt-2.5 border-t border-card-border/60">
-                    <Link
-                      href="/blog/best-online-quran-classes-for-kids-in-usa"
-                      className="text-[11px] font-semibold text-primary hover:underline inline-flex items-center gap-1 leading-snug"
-                    >
-                      <span>Guide: Online Quran classes for kids in the USA &rarr;</span>
-                    </Link>
-                  </div>
-                )}
               </div>
               <Link
                 href={group.mainLink}
-                className="text-xs font-bold text-primary hover:text-primary-hover inline-flex items-center gap-1 mt-2"
+                className="text-xs font-bold text-primary hover:text-primary-hover inline-flex items-center gap-1 mt-4 pt-3 border-t border-card-border/60 transition-colors"
               >
-                <span>View Timetables</span>
-                <ArrowRight className="h-3 w-3" />
+                <span>{group.ctaText}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           ))}

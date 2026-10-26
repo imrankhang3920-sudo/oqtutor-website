@@ -76,7 +76,8 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, phone, age, country, course, preferredTime, message } = body;
+    const { email, phone, age, country, course, preferredTime, message, tutorGender: rawTutorGender } = body;
+    const tutorGender = rawTutorGender || body.preferredTutor || 'No preference';
     const studentName = body.studentName || body.name;
 
     // 1. Validation
@@ -144,6 +145,7 @@ Phone/WhatsApp: ${phone}
 Student Age: ${age || 'Not specified'}
 Country: ${country || 'Not specified'} ${body.countryCode ? `(${body.countryCode})` : ''}
 Selected Course: ${course}
+Preferred Tutor: ${tutorGender}
 Preferred Time Slot: ${preferredTime || 'Not specified'}
 Message: ${message || 'No message provided'}
 
@@ -182,6 +184,10 @@ Sender IP Address: ${clientIp}
               <tr>
                 <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Selected Course:</td>
                 <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;"><span style="background-color: #D1FAE5; color: #065F46; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: bold;">${course}</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Preferred Tutor:</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f3f4f6;"><span style="background-color: #EFF6FF; color: #1E40AF; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: bold;">${tutorGender}</span></td>
               </tr>
               <tr>
                 <td style="padding: 10px 0; font-weight: bold; border-bottom: 1px solid #f3f4f6;">Preferred Time Slot:</td>

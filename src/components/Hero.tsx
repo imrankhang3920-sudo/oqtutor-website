@@ -116,10 +116,10 @@ export default function Hero({ data }: HeroProps) {
             className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto"
           >
             <a
-              href={data.ctaLink || "/book-free-trial"}
+              href={data.ctaLink || "#book-trial"}
               className="group relative flex items-center justify-center space-x-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 transition-all duration-300 transform hover:-translate-y-0.5 text-center cursor-pointer text-base"
             >
-              <span>{data.ctaText || "Book Your Free Trial"}</span>
+              <span>{data.ctaText || "Book Your 3-Day Free Trial"}</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
 
@@ -138,7 +138,7 @@ export default function Hero({ data }: HeroProps) {
             className="mt-3 text-xs text-muted-text flex items-center gap-1.5"
           >
             <Clock className="h-3.5 w-3.5 text-secondary" />
-            <span>Takes under 60 seconds • No commitment</span>
+            <span>Takes under 60 seconds • No credit card required</span>
           </motion.p>
         </div>
 
@@ -163,7 +163,7 @@ export default function Hero({ data }: HeroProps) {
                 </div>
               </div>
               <span className="text-[11px] font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/20">
-                100% Free Trial
+                3-Day Free Trial
               </span>
             </div>
 

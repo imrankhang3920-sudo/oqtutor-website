@@ -49,31 +49,31 @@ export interface HowItWorksSectionProps {
 const DEFAULT_STEPS: StepItem[] = [
   {
     icon: Calendar,
-    title: 'Book Your Free Trial',
-    text: 'Choose a course and a time that suits you. Your 3-day free trial starts with no credit card required.',
+    title: 'Book Your 3-Day Free Trial',
+    text: "Choose your preferred course and a class time that fits your family's schedule. Start your 3-day free trial with no credit card required.",
     linkText: 'Book 3-day free trial',
-    linkHref: '/book-free-trial',
+    linkHref: '#book-trial',
   },
   {
     icon: Video,
-    title: 'Meet Your Tutor',
-    text: 'Join a live class on Zoom or Google Meet. Your tutor, male or female, checks your reading level and suggests the right starting course.',
+    title: 'Meet Your Male or Female Tutor',
+    text: "Join a live 1-on-1 session on Zoom or Google Meet. Your certified male or female tutor assesses the student's reading level and recommends a tailored learning path.",
     linkText: 'Meet our male & female tutors',
     linkHref: '/tutors',
   },
   {
     icon: Layers,
-    title: 'Choose Your Plan',
-    text: 'Plans start at $30 per month with classes of 30-40 minutes. No registration fees, and you can pause or cancel anytime.',
+    title: 'Choose Your Flexible Plan',
+    text: 'Plans start at $30/month for 30-minute live classes. Zero registration fees, and you can reschedule, pause, or cancel anytime.',
     linkText: 'View pricing & monthly plans',
     linkHref: '/pricing',
   },
   {
     icon: BookOpen,
-    title: 'Learn With Live 1-on-1 Classes',
-    text: 'Your tutor listens to your recitation, corrects mistakes on the spot and guides your practice between classes.',
+    title: 'Learn with Live 1-on-1 Classes',
+    text: 'Your dedicated tutor listens to your recitation, corrects Tajweed mistakes on the spot, and provides structured weekly progress updates.',
     linkText: 'Explore Quran & Tajweed courses',
-    linkHref: '/courses/tajweed',
+    linkHref: '/courses',
   },
 ];
 
@@ -81,15 +81,6 @@ const DEFAULT_IMAGE = {
   src: '/online-quran-tutor-desk.jpg',
   alt: 'Student learning Quran online in a live 1-on-1 class with a tutor',
 };
-
-const DEFAULT_COURSES = [
-  { title: 'Noorani Qaida', icon: BookOpen, href: '/courses/noorani-qaida' },
-  { title: 'Quran Reading', icon: Sparkles, href: '/courses/quran-reading' },
-  { title: 'Tajweed', icon: GraduationCap, href: '/courses/tajweed' },
-  { title: 'Hifz Program', icon: Layers, href: '/courses/hifz' },
-  { title: 'Tafseer', icon: BookOpen, href: '/courses/tafseer' },
-  { title: 'Islamic Studies', icon: Sparkles, href: '/courses/islamic-studies' },
-];
 
 const subscribeReducedMotion = (callback: () => void) => {
   if (typeof window === 'undefined') return () => {};
@@ -112,11 +103,9 @@ export default function HowItWorksSection({
   subtitle = 'From free trial to confident recitation. No confusion and no long-term contracts.',
   steps = DEFAULT_STEPS,
   image = DEFAULT_IMAGE,
-  pillText = 'Book Free Trial',
-  miniCardTitle = 'Your Courses',
   primaryCta = {
     text: 'Start Your 3-Day Free Trial',
-    href: '/book-free-trial',
+    href: '#book-trial',
   },
   secondaryLink = {
     text: 'See the full process',
@@ -236,73 +225,20 @@ export default function HowItWorksSection({
                 />
               </div>
 
-              {/* Floating Pill Button at middle-right edge */}
-              {pillText && (
-                <div 
-                  className="absolute top-[48%] -right-3 sm:-right-6 z-20"
-                  aria-hidden="true"
-                >
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#86efac] text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-emerald-950/15 border border-emerald-300 select-none">
-                    <span>{pillText}</span>
+              {/* Clean trust badge at bottom of image card */}
+              <div className="absolute -bottom-5 left-4 right-4 sm:left-6 sm:right-6 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Sparkles className="w-5 h-5" />
                   </div>
-
-                  {/* Curved Arrow SVG pointing down to the mini card */}
-                  <svg 
-                    className="w-5 h-7 text-slate-800 dark:text-slate-200 absolute -bottom-6 right-3 pointer-events-none" 
-                    viewBox="0 0 24 32" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  >
-                    <path d="M4 2C16 6 18 16 16 26" />
-                    <path d="m11 22 5 5 5-5" />
-                  </svg>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">Live 1-on-1 Classes</h4>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">Zoom &amp; Google Meet</p>
+                  </div>
                 </div>
-              )}
-
-              {/* Overlapping White Mini Card ("Your Courses") with clickable internal links */}
-              <div 
-                className="absolute -bottom-6 -right-2 sm:-right-8 z-20 w-[270px] sm:w-[310px] bg-white dark:bg-slate-900 rounded-[24px] p-5 sm:p-6 shadow-2xl shadow-slate-900/20 border border-slate-100 dark:border-slate-800"
-              >
-                <div className="flex items-center justify-between mb-3.5">
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                    {miniCardTitle}
-                  </h3>
-                  <Link 
-                    href="/courses" 
-                    className="text-[11px] font-semibold text-primary hover:underline inline-flex items-center gap-0.5"
-                  >
-                    View all <ChevronRight className="w-3 h-3" />
-                  </Link>
-                </div>
-
-                {/* 2x3 Grid of Mini Course Cards linking to course pages */}
-                <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
-                  {DEFAULT_COURSES.map((course, idx) => {
-                    const CourseIcon = course.icon;
-                    return (
-                      <Link
-                        key={idx}
-                        href={course.href || '/courses'}
-                        className="bg-slate-50 hover:bg-emerald-50/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/90 rounded-xl p-2 flex flex-col items-center text-center border border-slate-100 dark:border-slate-700/50 hover:border-emerald-200 dark:hover:border-emerald-700/50 transition-all duration-150 group"
-                        title={`Learn more about ${course.title}`}
-                      >
-                        <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
-                          <CourseIcon className="w-3.5 h-3.5" />
-                        </div>
-                        <span className="text-[10px] font-semibold text-slate-800 dark:text-slate-200 group-hover:text-primary dark:group-hover:text-emerald-400 truncate w-full leading-tight">
-                          {course.title}
-                        </span>
-                        <div className="w-7 h-1 bg-slate-200 dark:bg-slate-700 group-hover:bg-primary rounded-full mt-1 opacity-70 transition-colors" />
-                      </Link>
-                    );
-                  })}
-                </div>
-
-                {/* Bottom handle/pill line */}
-                <div className="w-9 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mt-4" />
+                <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-300 dark:border-emerald-800">
+                  3-Day Free Trial
+                </span>
               </div>
 
             </div>

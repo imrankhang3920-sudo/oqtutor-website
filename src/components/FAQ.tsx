@@ -6,9 +6,48 @@ import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { FAQData } from '@/data/db';
 
-export default function FAQ({ data }: { data: FAQData[] }) {
+export const DEFAULT_HOMEPAGE_FAQS: FAQData[] = [
+  {
+    id: 'faq-trial',
+    question: 'How does the 3-day free trial work, and is a credit card required?',
+    answer: 'You receive three 30-minute live 1-on-1 classes completely free with no credit card required. During the trial, you meet your assigned male or female tutor on Zoom or Google Meet, get an accurate reading level assessment, and experience our interactive teaching method before choosing a monthly plan.',
+    category: 'classes',
+  },
+  {
+    id: 'faq-female-tutors',
+    question: 'Can I request a certified female Quran teacher for my daughter or myself?',
+    answer: 'Yes. We have a dedicated team of qualified, English-speaking female Quran scholars (Qarias and Hafizas) who specialize in teaching young children, girls, and adult sisters in a comfortable, private 1-on-1 environment. You can select a female tutor directly when booking your trial.',
+    category: 'tutors',
+  },
+  {
+    id: 'faq-age',
+    question: 'What age is best for kids to start online Quran classes?',
+    answer: 'Most children start comfortably at ages 4 to 5 with our Noorani Qaida for Kids course. Our tutors use digital flashcards, phonics breakdowns, and interactive screen sharing to keep 30-minute sessions engaging for young learners. We also offer structured tracks for older kids, teens, and adult beginners.',
+    category: 'classes',
+  },
+  {
+    id: 'faq-cost',
+    question: 'How much do 1-on-1 online Quran classes cost?',
+    answer: 'Monthly plans start at $30 per month depending on how many days per week you choose to study. There are no registration fees or long-term contracts—you can adjust your schedule, switch tutors, pause, or cancel anytime.',
+    category: 'pricing',
+  },
+  {
+    id: 'faq-app',
+    question: 'How are classes conducted, and do I need to install a special app?',
+    answer: 'No special app is required. All classes are taught live 1-on-1 via Zoom or Google Meet with screen sharing for interactive Noorani Qaida, Tajweed mushaf, and digital whiteboards. You can join from any laptop, tablet, or smartphone.',
+    category: 'classes',
+  },
+  {
+    id: 'faq-reschedule',
+    question: 'What happens if my child misses a class or we need to reschedule?',
+    answer: 'We offer flexible rescheduling around your local time zone across the USA, UK, Canada, and Australia. Simply notify your tutor or our 24/7 WhatsApp support team in advance, and we will arrange a makeup class during the week.',
+    category: 'classes',
+  },
+];
+
+export default function FAQ({ data }: { data?: FAQData[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
-  const displayFaqs = (data || []).slice(0, 6);
+  const displayFaqs = (data && data.length >= 6) ? data.slice(0, 6) : DEFAULT_HOMEPAGE_FAQS;
   const columnBreak = Math.ceil(displayFaqs.length / 2);
 
   const toggleFaq = (id: string) => {

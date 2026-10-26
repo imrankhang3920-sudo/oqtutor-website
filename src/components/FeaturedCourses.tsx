@@ -76,7 +76,7 @@ export default function FeaturedCourses() {
           </h2>
           <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-base sm:text-lg text-muted-text">
-            Choose from our top-rated 1-on-1 courses tailored to your child&apos;s current reading level.
+            Choose from our top-rated 1-on-1 courses tailored to your child&apos;s or your own current reading level.
           </p>
         </div>
 
@@ -162,10 +162,10 @@ export default function FeaturedCourses() {
                     </Link>
 
                     <Link
-                      href="/book-free-trial"
+                      href="#book-trial"
                       className="block text-center text-xs font-semibold text-muted-text hover:text-primary transition-colors"
                     >
-                      Or Book Free Trial &rarr;
+                      Or Book 3-Day Free Trial &rarr;
                     </Link>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function FeaturedCourses() {
             href="/courses"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-card-border glass hover:bg-foreground/5 text-foreground font-bold text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            <span>View All 6 Courses</span>
+            <span>Explore All Quran &amp; Islamic Courses</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

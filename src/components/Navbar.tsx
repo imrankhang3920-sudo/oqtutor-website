@@ -213,7 +213,13 @@ export default function Navbar({
                   href="/locations/usa/texas"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
-                  └ Texas
+                  ├ Texas
+                </Link>
+                <Link
+                  href="/locations/usa/california"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  └ California
                 </Link>
                 <Link
                   href="/locations/uk"
@@ -524,6 +530,13 @@ export default function Navbar({
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     Texas
+                  </Link>
+                  <Link
+                    href="/locations/usa/california"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    California
                   </Link>
                 </div>
                 <div className="pl-1 pt-1 flex flex-wrap gap-2">

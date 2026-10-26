@@ -14,8 +14,8 @@ interface CountryItem {
 }
 
 const countriesData: CountryItem[] = [
-  { code: 'GB', dialCode: '+44', name: 'United Kingdom', flag: '🇬🇧', format: 'xxxx xxxxxx' },
   { code: 'US', dialCode: '+1', name: 'United States', flag: '🇺🇸', format: 'xxx-xxx-xxxx' },
+  { code: 'GB', dialCode: '+44', name: 'United Kingdom', flag: '🇬🇧', format: 'xxxx xxxxxx' },
   { code: 'CA', dialCode: '+1', name: 'Canada', flag: '🇨🇦', format: 'xxx-xxx-xxxx' },
   { code: 'AU', dialCode: '+61', name: 'Australia', flag: '🇦🇺', format: 'xxx xxx xxx' },
   { code: 'PK', dialCode: '+92', name: 'Pakistan', flag: '🇵🇰', format: 'xxx xxxxxxx' },
@@ -65,7 +65,7 @@ function formatPhoneNumber(value: string, format: string) {
 }
 
 export default function Contact({ data }: { data: ContactData }) {
-  const [selectedCountry, setSelectedCountry] = useState(countriesData[0]); // Default to UK
+  const [selectedCountry, setSelectedCountry] = useState(countriesData[0]); // Default to US (+1)
   const [phoneVal, setPhoneVal] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -75,10 +75,11 @@ export default function Contact({ data }: { data: ContactData }) {
     name: '',
     email: '',
     phone: '',
-    course: 'Noorani Qaida',
+    course: 'Noorani Qaida (Beginners & Kids)',
+    tutorGender: 'Female Quran Tutor',
     message: '',
-    country: 'United Kingdom',
-    countryCode: 'GB',
+    country: 'United States',
+    countryCode: 'US',
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -86,13 +87,15 @@ export default function Contact({ data }: { data: ContactData }) {
   const [error, setError] = useState<string | null>(null);
 
   const coursesList = [
-    'Noorani Qaida',
-    'Quran Reading',
+    'Noorani Qaida (Beginners & Kids)',
+    'Quran Reading (Nazra)',
     'Quran with Tajweed',
-    'Hifz Program',
-    'Islamic Studies',
+    'Hifz-ul-Quran (Memorization)',
+    'Quran Tafseer',
+    'Islamic Studies & Daily Duas',
     'Arabic Language',
     'Quran for Kids',
+    'Quran for Adults',
   ];
 
   // Auto-detect course selection from URL campaign query parameters (e.g., ?source=ArabicLanguage&interest=Enrollment)
@@ -225,7 +228,8 @@ export default function Contact({ data }: { data: ContactData }) {
         name: '',
         email: '',
         phone: '',
-        course: 'Noorani Qaida',
+        course: 'Noorani Qaida (Beginners & Kids)',
+        tutorGender: 'Female Quran Tutor',
         message: '',
         country: selectedCountry.name,
         countryCode: selectedCountry.code,
@@ -248,21 +252,22 @@ export default function Contact({ data }: { data: ContactData }) {
   );
 
   return (
-    <section className="relative py-20 overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border" id="contact">
+    <section className="relative py-20 overflow-hidden bg-foreground/[0.01] border-t border-b border-card-border scroll-mt-10" id="book-trial">
+      <span id="contact" className="sr-only" aria-hidden="true" />
       <div className="absolute inset-0 top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bottom-1/2 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
-            Start Learning
+            3-Day Free Trial
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
-            Get in Touch with Us
+            Get in Touch with Us / Book Your 3-Day Free Trial
           </h2>
           <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-sm text-muted-text max-w-2xl mx-auto">
-            Book your 3 free trial classes now. Speak to our coordinator to design a class schedule.
+            Book your 3 free 1-on-1 trial classes now. No credit card required. Speak to our coordinator to design your schedule.
           </p>
         </div>
 
@@ -311,9 +316,9 @@ export default function Contact({ data }: { data: ContactData }) {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-muted-text uppercase tracking-wider">Our Location</p>
+                    <p className="text-xs font-bold text-muted-text uppercase tracking-wider">Global Coverage</p>
                     <p className="text-sm font-semibold text-foreground leading-relaxed">
-                      {data.location}
+                      Serving families across the USA, UK, Canada &amp; Australia
                     </p>
                   </div>
                 </div>
@@ -343,8 +348,8 @@ export default function Contact({ data }: { data: ContactData }) {
           {/* Form Side */}
           <div className="lg:col-span-7">
             <div className="glass rounded-3xl border-card-border p-8 sm:p-10 shadow-2xl relative">
-              <h3 className="text-2xl font-bold text-foreground mb-1">Book a Free Trial Class</h3>
-              <p className="text-xs text-muted-text mb-8">No commitment, 100% free introduction class.</p>
+              <h3 className="text-2xl font-bold text-foreground mb-1">Book Your 3-Day Free Trial</h3>
+              <p className="text-xs text-muted-text mb-8">No credit card required. 100% free 1-on-1 trial classes.</p>
 
               {error && (
                 <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-semibold leading-relaxed">
@@ -385,84 +390,85 @@ export default function Contact({ data }: { data: ContactData }) {
                   </div>
                 </div>
 
+                <div>
+                  <label htmlFor="phone" className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
+                    Phone / WhatsApp *
+                  </label>
+                  
+                  <div className="relative" ref={dropdownRef}>
+                    <div className="flex items-center w-full rounded-xl border border-card-border bg-background/50 text-foreground focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all">
+                      {/* Country dropdown trigger */}
+                      <button
+                        type="button"
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="flex items-center gap-1.5 px-3.5 py-3 hover:bg-foreground/[0.04] transition-colors rounded-l-xl border-r border-card-border text-sm font-semibold select-none cursor-pointer text-foreground bg-transparent"
+                      >
+                        <span className="text-base leading-none">{selectedCountry.flag}</span>
+                        <span className="text-xs text-foreground/80 font-bold">{selectedCountry.dialCode}</span>
+                        <ChevronDown className="h-3 w-3 text-muted-text" />
+                      </button>
+                      
+                      {/* Phone Input field */}
+                      <input
+                        type="tel"
+                        id="phone"
+                        required
+                        placeholder={selectedCountry.format.replace(/x/g, '9')}
+                        value={phoneVal}
+                        onChange={handlePhoneChange}
+                        className="w-full bg-transparent px-4 py-3 text-sm focus:outline-none placeholder-muted-text/50 font-mono"
+                      />
+                    </div>
+
+                    {/* Country selector dropdown menu */}
+                    {isOpen && (
+                      <div className="absolute left-0 mt-2 w-72 max-h-64 bg-background border border-card-border rounded-2xl shadow-2xl p-2.5 z-20 flex flex-col animate-slide-down">
+                        <div className="relative flex items-center mb-2 px-1">
+                          <Search className="absolute left-3 h-3.5 w-3.5 text-muted-text pointer-events-none" />
+                          <input
+                            type="text"
+                            placeholder="Search country name or code..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full pl-8 pr-3 py-2 bg-foreground/[0.03] border border-card-border rounded-xl text-xs focus:outline-none placeholder-muted-text/70"
+                          />
+                        </div>
+                        
+                        <div className="overflow-y-auto flex-grow space-y-0.5 custom-scrollbar max-h-48">
+                          {filteredCountries.length > 0 ? (
+                            filteredCountries.map((country, idx) => (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => handleSelectCountry(country)}
+                                className={`flex items-center gap-2 w-full px-3 py-1.5 rounded-xl text-xs hover:bg-foreground/[0.04] transition-colors cursor-pointer text-left ${
+                                  selectedCountry.code === country.code
+                                    ? 'bg-primary/10 text-primary font-bold'
+                                    : 'text-foreground'
+                                }`}
+                              >
+                                <span className="text-base leading-none">{country.flag}</span>
+                                <span className="font-semibold">{country.dialCode}</span>
+                                <span className="text-muted-text truncate ml-1">{country.name}</span>
+                              </button>
+                            ))
+                          ) : (
+                            <div className="text-[11px] text-muted-text text-center py-4">No countries found</div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      Phone / WhatsApp
-                    </label>
-                    
-                    <div className="relative" ref={dropdownRef}>
-                      <div className="flex items-center w-full rounded-xl border border-card-border bg-background/50 text-foreground focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all">
-                        {/* Country dropdown trigger */}
-                        <button
-                          type="button"
-                          onClick={() => setIsOpen(!isOpen)}
-                          className="flex items-center gap-1.5 px-3.5 py-3 hover:bg-foreground/[0.04] transition-colors rounded-l-xl border-r border-card-border text-sm font-semibold select-none cursor-pointer text-foreground bg-transparent"
-                        >
-                          <span className="text-base leading-none">{selectedCountry.flag}</span>
-                          <span className="text-xs text-foreground/80 font-bold">{selectedCountry.dialCode}</span>
-                          <ChevronDown className="h-3 w-3 text-muted-text" />
-                        </button>
-                        
-                        {/* Phone Input field */}
-                        <input
-                          type="tel"
-                          id="phone"
-                          required
-                          placeholder={selectedCountry.format.replace(/x/g, '9')}
-                          value={phoneVal}
-                          onChange={handlePhoneChange}
-                          className="w-full bg-transparent px-4 py-3 text-sm focus:outline-none placeholder-muted-text/50"
-                        />
-                      </div>
-
-                      {/* Country selector dropdown menu */}
-                      {isOpen && (
-                        <div className="absolute left-0 mt-2 w-72 max-h-64 bg-background border border-card-border rounded-2xl shadow-2xl p-2.5 z-20 flex flex-col animate-slide-down">
-                          <div className="relative flex items-center mb-2 px-1">
-                            <Search className="absolute left-3 h-3.5 w-3.5 text-muted-text pointer-events-none" />
-                            <input
-                              type="text"
-                              placeholder="Search country name or code..."
-                              value={searchQuery}
-                              onChange={(e) => setSearchQuery(e.target.value)}
-                              className="w-full pl-8 pr-3 py-2 bg-foreground/[0.03] border border-card-border rounded-xl text-xs focus:outline-none placeholder-muted-text/70"
-                            />
-                          </div>
-                          
-                          <div className="overflow-y-auto flex-grow space-y-0.5 custom-scrollbar max-h-48">
-                            {filteredCountries.length > 0 ? (
-                              filteredCountries.map((country, idx) => (
-                                <button
-                                  key={idx}
-                                  type="button"
-                                  onClick={() => handleSelectCountry(country)}
-                                  className={`flex items-center gap-2 w-full px-3 py-1.5 rounded-xl text-xs hover:bg-foreground/[0.04] transition-colors cursor-pointer text-left ${
-                                    selectedCountry.code === country.code
-                                      ? 'bg-primary/10 text-primary font-bold'
-                                      : 'text-foreground'
-                                  }`}
-                                >
-                                  <span className="text-base leading-none">{country.flag}</span>
-                                  <span className="font-semibold">{country.dialCode}</span>
-                                  <span className="text-muted-text truncate ml-1">{country.name}</span>
-                                </button>
-                              ))
-                            ) : (
-                              <div className="text-[11px] text-muted-text text-center py-4">No countries found</div>
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div>
                     <label htmlFor="course" className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
-                      Select Course
+                      Select Course *
                     </label>
                     <select
                       id="course"
+                      required
                       value={formData.course}
                       onChange={(e) => setFormData({ ...formData, course: e.target.value })}
                       className="w-full px-5 py-3 rounded-xl border border-card-border bg-background/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm transition-all"
@@ -472,6 +478,29 @@ export default function Contact({ data }: { data: ContactData }) {
                           {course}
                         </option>
                       ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="tutorGender" className="block text-xs font-bold text-foreground/80 uppercase tracking-wider mb-2">
+                      Preferred Tutor *
+                    </label>
+                    <select
+                      id="tutorGender"
+                      required
+                      value={formData.tutorGender}
+                      onChange={(e) => setFormData({ ...formData, tutorGender: e.target.value })}
+                      className="w-full px-5 py-3 rounded-xl border border-card-border bg-background/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm transition-all"
+                    >
+                      <option value="Female Quran Tutor" className="bg-background text-foreground">
+                        Female Quran Tutor
+                      </option>
+                      <option value="Male Quran Tutor" className="bg-background text-foreground">
+                        Male Quran Tutor
+                      </option>
+                      <option value="No Preference (Best Available Match)" className="bg-background text-foreground">
+                        No Preference (Best Available Match)
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -494,11 +523,19 @@ export default function Contact({ data }: { data: ContactData }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center space-x-2 py-4 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                    className="w-full flex items-center justify-center space-x-2 py-4 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-base shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/35 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                   >
-                    <span>{isSubmitting ? 'Sending Request...' : 'Submit Request'}</span>
+                    <span>{isSubmitting ? 'Submitting Free Trial Request...' : 'Book My 3-Day Free Trial'}</span>
                     {!isSubmitting && <Send className="h-4.5 w-4.5" />}
                   </button>
+
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-text font-medium">
+                    <span>✓ 3 Free 1-on-1 Classes</span>
+                    <span>•</span>
+                    <span>✓ No Credit Card Required</span>
+                    <span>•</span>
+                    <span>✓ Cancel Anytime</span>
+                  </div>
 
                   <AnimatePresence>
                     {isSuccess && (

@@ -5,9 +5,10 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import MidPageFormSection from '@/components/MidPageFormSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import Testimonials from '@/components/Testimonials';
 import FeaturedCourses from '@/components/FeaturedCourses';
-import FAQ from '@/components/FAQ';
+import TutorTrustBlock from '@/components/TutorTrustBlock';
+import Testimonials from '@/components/Testimonials';
+import FAQ, { DEFAULT_HOMEPAGE_FAQS } from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
 import BlogPreview from '@/components/BlogPreview';
@@ -74,8 +75,8 @@ export default async function HomePage() {
     ...(dbData.hero || {}),
     title: dbData.hero?.title || "Learn Quran Online at Your Own Pace with Expert Teachers",
     subtitle: dbData.hero?.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.",
-    ctaText: dbData.hero?.ctaText || "Book Free Trial",
-    ctaLink: dbData.hero?.ctaLink || "/book-free-trial",
+    ctaText: dbData.hero?.ctaText || "Book Your 3-Day Free Trial",
+    ctaLink: dbData.hero?.ctaLink || "#book-trial",
     whatsappText: dbData.hero?.whatsappText || "Chat on WhatsApp",
     whatsappNumber: dbData.hero?.whatsappNumber || "+923478704442",
     backgroundImage: dbData.hero?.backgroundImage || "https://images.unsplash.com/photo-1609599006353-e629f1d40968?q=80&w=1600&auto=format&fit=crop"
@@ -127,8 +128,16 @@ export default async function HomePage() {
     }))
   };
 
-  const homepageFaqs = dbData.faqs;
+  const homepageFaqs = (dbData.faqs && dbData.faqs.length >= 6) ? dbData.faqs.slice(0, 6) : DEFAULT_HOMEPAGE_FAQS;
   const faqSchema = createFaqPageSchema(homepageFaqs);
+
+  const contactData = dbData.contact || {
+    email: 'info@oqtutor.com',
+    phone: '+1 (248) 782-6565',
+    whatsapp: '+923478704442',
+    location: 'USA, UK, Canada & Australia',
+    aboutText: 'OQTutor provides personalized one-to-one online Quran classes with certified male and female tutors for kids and adults worldwide.'
+  };
 
   return (
     <>
@@ -153,38 +162,41 @@ export default async function HomePage() {
       <Navbar adminLoggedIn={adminLoggedIn} headerConfig={dbData.headerNav} />
       
       <main className="flex-grow">
+        {/* 1. Hero Section */}
         <Hero data={homepageHeroData} />
 
-        
-        {/* 1. Help Section: Not Sure Where to Start? */}
-        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
-
-        {/* 2. Form Section (Mid-page fast booking: Ready to Start? Book Your Free Trial) */}
-        <MidPageFormSection />
-        
-        {/* 3. How It Works Section */}
-        <HowItWorksSection />
-
-        {/* 4. Testimonials (Top 3 Streamlined Reviews) */}
-        <Testimonials data={dbData.testimonials || []} />
-
-        {/* 5. Featured Courses (3 Popular Courses with Most Popular Badge) */}
+        {/* 2. Core Curriculum: Featured Quran Courses (Moved up for immediate discovery) */}
         <FeaturedCourses />
 
-        {/* Serving Areas & Internal Location Links */}
+        {/* 3. NEW Trust Block: Meet Our Certified Male & Female Tutors */}
+        <TutorTrustBlock />
+
+        {/* 4. Real Stories, Real Results: What Parents & Students Say */}
+        <Testimonials data={dbData.testimonials || []} />
+
+        {/* 5. Simple Steps: How It Works */}
+        <HowItWorksSection />
+
+        {/* 6. Not Sure Where to Start? Let Us Help You! */}
+        <HelpSection whatsappUrl={dbData.contact?.whatsapp} />
+
+        {/* Compact Conversion CTA Banner */}
+        <MidPageFormSection whatsappNumber={dbData.contact?.whatsapp} />
+
+        {/* 7. Local Time Zones: Serving Muslim Families Worldwide */}
         <ServingLocationsSection />
 
-        {/* 6. Featured Learning & Educational Guides */}
+        {/* 8. Guides & Articles: Educational Guides for Your Family's Quran Journey */}
         <BlogPreview />
 
-        {/* 7. FAQ Section */}
+        {/* 9. Questions & Answers: Frequently Asked Questions (Upgraded AEO FAQs) */}
         <FAQ data={homepageFaqs} />
 
-        {/* 8. Contact Form Section (Book Trial) */}
-        <Contact data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} />
+        {/* 10. Primary Conversion Zone: Get in Touch / Book Your 3-Day Free Trial Form */}
+        <Contact data={contactData} />
       </main>
       
-      <Footer data={dbData.contact || { email: 'info@oqtutor.com', phone: '+447490329339', whatsapp: '+923478704442', location: 'USA / UK', aboutText: '' }} footerConfig={dbData.footerNav} />
+      <Footer data={contactData} footerConfig={dbData.footerNav} />
       
       {/* Sticky & Scroll Trigger Conversion Boosters */}
       <StickyFormButton />
