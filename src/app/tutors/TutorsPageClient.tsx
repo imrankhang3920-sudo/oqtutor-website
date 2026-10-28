@@ -189,7 +189,7 @@ export default function TutorsPageClient({
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Find the Best Online Quran Tutors
+                Meet Our Ijazah-Certified Male &amp; Female Online Quran Tutors
               </h1>
 
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-normal">

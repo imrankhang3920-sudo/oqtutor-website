@@ -14,8 +14,8 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in Texas | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Texas with CST scheduling. Expert tutors in Houston, Dallas (DFW), Sugar Land & Irving from $30/mo. 3-day free trial!";
+  const metaTitle = "Online Quran Classes in Texas (Houston, Dallas, Austin) | OQTutor";
+  const metaDescription = "Live 1-on-1 online Quran classes for Texas Muslim families (CST timezone). Male & female Ijazah-certified tutors for kids & adults. Book a Free Trial!";
 
   return {
     title: metaTitle,
@@ -87,8 +87,8 @@ export default async function TexasQuranClassesPage() {
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
   const customHeroData = {
-    title: "Fun and Interactive Online Quran Classes for Kids",
-    subtitle: "At OQTutor, we make learning the Quran enjoyable and engaging for children. Our qualified male and female teachers provide personalized one on one lessons to help kids learn Noorani Qaida, improve Quran reading, and practice Tajweed in a friendly and supportive environment.",
+    title: "1-on-1 Online Quran Classes in Texas for Kids & Adults",
+    subtitle: "At OQTutor, we make learning the Quran enjoyable and engaging for children and adults across Texas. Our qualified male and female teachers provide personalized one-on-one lessons in Central Standard Time (CST) to help students learn Noorani Qaida, improve Quran reading, and master Tajweed in a friendly and supportive environment.",
     ctaText: "Book 3 Free Trial Classes",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
@@ -150,18 +150,18 @@ export default async function TexasQuranClassesPage() {
       },
       {
         "@type": "Question",
-        "name": "Can my child attend Quran classes after school?",
+        "name": "Can my child attend Quran classes after school in Texas (CST timezone)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, school-going kids can attend Quran classes after school. OQTutor operates 24/7, allowing parents in Texas to select convenient time slots in the late afternoon, evening, or weekend that fit naturally around homework, school routines, and family activities."
+          "text": "Yes, school-going kids can attend Quran classes after school. OQTutor operates with dedicated Central Standard Time (CST) schedules, allowing parents in Texas (Houston, Dallas, Austin, San Antonio, Plano) to select convenient time slots in the late afternoon, evening, or weekend that fit naturally around homework and school routines."
         }
       },
       {
         "@type": "Question",
-        "name": "Does OQTutor offer a free trial?",
+        "name": "Does OQTutor offer a free trial for Texas families?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, OQTutor offers 3 trial classes completely free of charge. The trial requires no credit card details and carries no long-term commitment, letting your child experience our live 1-on-1 virtual portal and meet their matched Quran teacher risk-free."
+          "text": "Yes, OQTutor offers 3 trial classes completely free of charge for Texas families. The trial requires no credit card details and carries no long-term commitment, letting your child experience our live 1-on-1 virtual portal and meet their matched Quran teacher risk-free."
         }
       }
     ]
@@ -192,6 +192,33 @@ export default async function TexasQuranClassesPage() {
     ]
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor Online Quran Academy - Texas",
+    "url": "https://www.oqtutor.com/locations/usa/texas",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Live 1-on-1 online Quran classes for Texas Muslim families in Central Standard Time (CST). Certified male and female Quran tutors for Noorani Qaida, Tajweed, and Hifz.",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Texas"
+      },
+      {
+        "@type": "City",
+        "name": "Houston"
+      },
+      {
+        "@type": "City",
+        "name": "Dallas"
+      },
+      {
+        "@type": "City",
+        "name": "Austin"
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -201,6 +228,10 @@ export default async function TexasQuranClassesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />

@@ -313,7 +313,7 @@ export default function TafseerCourseContent({
 
               {/* Single H1 */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15]">
-                Online Quran Tafseer Classes | Learn Quran with Meaning &amp; Explanation
+                1-on-1 Online Quran Tafseer Classes for Adults &amp; Youth
               </h1>
 
               <p className="text-base sm:text-lg text-muted-text leading-relaxed font-normal">

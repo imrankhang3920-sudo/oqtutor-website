@@ -25,15 +25,15 @@ import {
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'How Online Quran Classes Work | Easy 3-Step Process | OQTutor',
-  description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
+  title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
+  description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
   alternates: {
     canonical: 'https://www.oqtutor.com/how-it-works',
   },
   openGraph: {
     url: 'https://www.oqtutor.com/how-it-works',
-    title: 'How Online Quran Classes Work | Easy 3-Step Process | OQTutor',
-    description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
+    title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
+    description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
     images: [
       {
         url: 'https://www.oqtutor.com/logo.jpg',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Online Quran Classes Work | Easy 3-Step Process | OQTutor',
-    description: 'Learn how online Quran classes work in 3 simple steps. Register for a free trial, attend the live evaluation session, and start your regular lessons.',
+    title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
+    description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
     images: ['https://www.oqtutor.com/logo.jpg'],
   },
 };
@@ -297,7 +297,7 @@ export default async function HowItWorksPage() {
             <span>Simplifying Online Learning</span>
           </p>
           <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground">
-            How Online Quran Classes Work
+            How OQTutor Works: Start Learning Quran Online in 3 Easy Steps
           </h1>
           <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           <p className="mt-6 text-base sm:text-lg text-muted-text max-w-3xl mx-auto leading-relaxed">

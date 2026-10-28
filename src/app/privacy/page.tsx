@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | OQTutor',
     description: 'Read the official Privacy Policy for OQTutor. Learn how we collect, protect, and use personal information for students and parents worldwide.',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function PrivacyPage() {

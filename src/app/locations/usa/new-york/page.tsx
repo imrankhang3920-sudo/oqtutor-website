@@ -407,7 +407,7 @@ export default async function NewYorkQuranClassesPage() {
 
                 <div className="pt-2 text-xs sm:text-sm text-muted-text">
                   <p className="italic">
-                    *Note: A child&apos;s progress naturally depends on their entry level, weekly lesson frequency, and home practice consistency. Read our practical parent guide on <Link href="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities" className="text-primary font-semibold hover:underline">balancing Quran learning with school routines</Link> or visit our dedicated <Link href="/online-quran-classes-for-kids-usa" className="text-primary font-semibold hover:underline">USA Kids Quran Classes</Link> page.
+                    *Note: A child&apos;s progress naturally depends on their entry level, weekly lesson frequency, and home practice consistency. Read our practical parent guide on <Link href="/blog/how-to-help-children-balance-quran-learning-with-school-and-extracurricular-activities" className="text-primary font-semibold hover:underline">balancing Quran learning with school routines</Link> or visit our dedicated <Link href="/locations/usa" className="text-primary font-semibold hover:underline">USA Kids Quran Classes</Link> page.
                   </p>
                 </div>
 

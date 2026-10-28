@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   openGraph: {
     url: 'https://www.oqtutor.com/terms-and-conditions',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function TermsAndConditionsPage() {

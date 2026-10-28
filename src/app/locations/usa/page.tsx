@@ -30,8 +30,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "1-on-1 Online Quran Classes USA | From $30/Mo (3-Day Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in the USA for kids & adults. Certified male & female tutors, all US time zones, from $30/mo. Start your 3-day free trial!";
+  const metaTitle = "Online Quran Classes in USA for Kids & Adults | Free Trial";
+  const metaDescription = "Top-rated 1-on-1 online Quran classes in the USA. Certified male & female Quran teachers across EST, CST, MST & PST timezones. Book your Free Trial Class!";
   
   return {
     title: metaTitle,
@@ -84,7 +84,7 @@ export default async function USALocationsHubPage() {
 
   // Exact single unique H1 and supporting intro
   const heroFallback = dbData?.hero || {
-    title: "Online Quran Classes in the USA with Certified Male and Female Teachers",
+    title: "1-on-1 Online Quran Classes in the USA for Kids & Adults",
     subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",
@@ -94,7 +94,7 @@ export default async function USALocationsHubPage() {
   };
 
   const customHeroData = {
-    title: "Online Quran Classes in the USA with Certified Male and Female Teachers",
+    title: "1-on-1 Online Quran Classes in the USA for Kids & Adults",
     subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
     ctaText: "Book Free Placement Trial",
     ctaLink: "/book-free-trial",

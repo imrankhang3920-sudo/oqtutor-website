@@ -12,22 +12,22 @@ import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
-  description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
+  title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
+  description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
   alternates: {
     canonical: 'https://www.oqtutor.com/pricing',
   },
   openGraph: {
-    title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
-    description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
+    title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
+    description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
     url: 'https://www.oqtutor.com/pricing',
     siteName: 'OQTutor',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Online Quran Classes Pricing | Plans From $30/Month (Free Trial)',
-    description: 'Explore affordable online Quran class fee packages starting at $30/month. View 1-on-1 course options, family discounts, and book a free trial class.',
+    title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
+    description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
   },
 };
 
@@ -92,7 +92,7 @@ export default async function PricingPage() {
               Affordable Education
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-              Simple, Affordable Fee Plans
+              Simple, Transparent Pricing for 1-on-1 Online Quran Classes
             </h1>
             <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
             <p className="mt-6 text-base sm:text-lg text-muted-text max-w-3xl mx-auto leading-relaxed">

@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/online-quran-classes-for-kids-usa',
+        destination: '/locations/usa',
+        permanent: true,
+      },
+      {
         source: '/online-quran-classes-usa/new-york',
         destination: '/locations/usa/new-york',
         permanent: true,

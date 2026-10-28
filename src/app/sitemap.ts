@@ -17,17 +17,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/blog`, lastModified: currentDate, changeFrequency: 'daily', priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/book-free-trial`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/privacy`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/cookie-policy`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/terms-and-conditions`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/refund-policy`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.5 },
-
     // Location Hub
     { url: `${baseUrl}/locations`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
 
     // Country Location Pages (Priority: 0.8)
     { url: `${baseUrl}/locations/usa`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/online-quran-classes-for-kids-usa`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/uk`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/canada`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/australia`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },

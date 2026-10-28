@@ -14,8 +14,8 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in Michigan | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Michigan with EST scheduling. Expert tutors in Dearborn, Detroit, Troy & Canton from $30/mo. 3-day free trial!";
+  const metaTitle = "Online Quran Classes in Michigan (Dearborn, Detroit) | Free Trial";
+  const metaDescription = "Trusted 1-on-1 online Quran classes in Michigan (EST schedule). Male & female certified tutors for Noorani Qaida, Tajweed & Hifz. Start your Free Trial!";
 
   return {
     title: metaTitle,
@@ -54,8 +54,8 @@ export default async function MichiganQuranClassesPage() {
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
   const customHeroData = {
-    title: "Online Quran Classes in Michigan",
-    subtitle: "Michigan is home to one of the largest and most established Muslim communities in the United States — from Dearborn and Detroit to Hamtramck, Ann Arbor, Lansing, and Grand Rapids. OQTutor brings certified, one-on-one online Quran education directly to Michigan families, no matter which city or suburb you call home. Whether you're a parent looking to give your child a solid foundation in Quran reading, an adult starting your recitation journey from scratch, or a Hafiz-in-training working toward completing memorization, our live online classes are built around your schedule, your pace, and your family's comfort.",
+    title: "1-on-1 Online Quran Classes in Michigan for Kids & Adults",
+    subtitle: "Michigan is home to one of the largest and most established Muslim communities in the United States — from Dearborn and Detroit to Hamtramck, Ann Arbor, Lansing, and Grand Rapids. OQTutor brings certified, one-on-one online Quran education directly to Michigan families, scheduled in Eastern Time (EST) around school and prayer hours. Whether you're a parent looking to give your child a solid foundation in Quran reading, an adult starting your recitation journey from scratch, or working toward Hifz, our live online classes are built around your schedule and pace.",
     ctaText: "Book Your Free Trial Class",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
@@ -233,11 +233,75 @@ export default async function MichiganQuranClassesPage() {
     return defaultText;
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oqtutor.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "USA",
+        "item": "https://www.oqtutor.com/locations/usa"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Michigan",
+        "item": "https://www.oqtutor.com/locations/usa/michigan"
+      }
+    ]
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor Online Quran Academy - Michigan",
+    "url": "https://www.oqtutor.com/locations/usa/michigan",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Live 1-on-1 online Quran classes for Michigan Muslim families in Eastern Standard Time (EST). Certified male and female Quran tutors for Noorani Qaida, Tajweed, and Hifz.",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Michigan"
+      },
+      {
+        "@type": "City",
+        "name": "Dearborn"
+      },
+      {
+        "@type": "City",
+        "name": "Detroit"
+      },
+      {
+        "@type": "City",
+        "name": "Hamtramck"
+      },
+      {
+        "@type": "City",
+        "name": "Ann Arbor"
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />
