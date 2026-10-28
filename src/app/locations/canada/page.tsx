@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,9 +14,12 @@ import { ArrowRight, CheckCircle, ChevronDown, Star, Shield, HelpCircle, Calenda
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes in Canada (Toronto, Mississauga, Calgary)";
+  const metaDescription = "Top-rated 1-on-1 online Quran classes in Canada (EST, CST, MST & PST). Certified male & female Quran teachers for kids & adults. Start your Free Trial today!";
+
   return {
-    title: "Online Quran Lessons Canada | CAD Pricing | OQTutor",
-    description: "Budget-friendly 1-on-1 Quran learning billed in CAD. Patient tutors who understand multicultural Canadian households from coast to coast.",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/canada",
       languages: {
@@ -23,11 +27,27 @@ export async function generateMetadata(): Promise<Metadata> {
         'en-GB': 'https://www.oqtutor.com/locations/uk',
         'en-US': 'https://www.oqtutor.com/locations/usa',
         'en-AU': 'https://www.oqtutor.com/locations/australia',
-        'x-default': 'https://www.oqtutor.com/locations/usa',
+        'x-default': 'https://www.oqtutor.com/locations/canada',
       },
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/canada",
+      title: metaTitle,
+      description: metaDescription,
+      images: [
+        {
+          url: "https://www.oqtutor.com/logo.jpg",
+          width: 1200,
+          height: 630,
+          alt: "OQTutor Canada Online Quran Classes",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDescription,
+      images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
 }
@@ -40,15 +60,32 @@ export default async function CanadaQuranClassesPage() {
   const token = cookieStore.get('admin_token')?.value;
   const adminLoggedIn = token ? verifyAdminToken(token) : false;
 
-  // Custom Hero Data matching Canada requirements (intro: ~105 words)
+  // Custom Hero Data matching Canada requirements
   const customHeroData = {
-    title: "1-on-1 Online Quran Classes for Canadian Families — Flexible Scheduling, Certified Teachers",
-    subtitle: "Are you searching for authentic, structured Quran lessons across Canada? At OQTutor, we understand the logistical challenge of managing Quranic studies across Canada's vast geography. Spanning six time zones from Pacific to Newfoundland Standard Time, coordinating schedules with state school terms and winter breaks can feel overwhelming. Our virtual one-to-one platform provides the perfect solution, offering flexible class times tailored entirely to your local zone. With native Arabic scholars and certified teachers, we guide kids and adults through custom Noorani Qaida, Tajweed, and Hifz courses. Learn comfortably from the safety of home with our dedicated online Quran tutors.",
+    title: "1-on-1 Online Quran Classes in Canada for Kids & Adults",
+    subtitle: "Are you searching for authentic, structured Quran lessons across Canada? At OQTutor, we understand the logistical challenge of managing Quranic studies across Canada's vast geography. Spanning time zones from Pacific (PST), Mountain (MST), Central (CST) to Eastern (EST), coordinating schedules with school terms and winter weather can feel overwhelming. Our virtual one-to-one platform provides the perfect solution, offering flexible class times tailored entirely to your local zone. With native Arabic scholars and certified male and female teachers, we guide kids and adults through custom Noorani Qaida, Tajweed, and Hifz courses from the safety and warmth of home.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
+  };
+
+  // Structured Schemas
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor - Online Quran Classes Canada",
+    "url": "https://www.oqtutor.com/locations/canada",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Top-rated 1-on-1 online Quran classes in Canada (EST, CST, MST & PST). Certified male & female Quran teachers for kids & adults.",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Canada",
+        "identifier": "CA"
+      }
+    ]
   };
 
   // FAQ Schema
@@ -58,10 +95,26 @@ export default async function CanadaQuranClassesPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can we book a free trial class?",
+        "name": "What time zones are covered for online Quran classes in Canada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! We offer a completely free trial lesson so you can experience our one-to-one teaching style, evaluate the virtual classroom, and get to know your tutor before starting a paid plan."
+          "text": "Our scheduling panel accommodates all Canadian time zones, including Pacific (PST), Mountain (MST), Central (CST), and Eastern (EST) Standard Times. Classes are available after school, during evenings, and across weekends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I request a certified female Quran teacher for my daughter or myself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. OQTutor provides certified female Quran tutors (Ustazahs and Alimahs) for young girls, teenage sisters, and adult women in a secure, supportive, and private virtual classroom."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a 1-on-1 free trial Quran class in Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Booking is simple and takes under 60 seconds with no credit card required. Choose your course track and local Canadian time zone to meet your matched tutor for a full live assessment lesson before enrolling."
         }
       },
       {
@@ -94,14 +147,6 @@ export default async function CanadaQuranClassesPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, we offer fully structured courses in Tajweed sciences, Quran memorization (Hifz), fluent recitation, and basic Islamic studies, customized to each student's pace."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does OQTutor cover all Canadian time zones?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Our scheduling panel accommodates all Canadian time zones, including Pacific (PST), Mountain (MST), Central (CST), Eastern (EST), Atlantic (AST), and Newfoundland (NST) Standard Times."
         }
       }
     ]
@@ -141,12 +186,23 @@ export default async function CanadaQuranClassesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
 
       <Navbar adminLoggedIn={adminLoggedIn} />
       
       <main className="flex-grow">
         {/* Hero Section */}
         <Hero data={customHeroData} />
+
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip
+          timezoneText="After-School & Weekend Slots (EST / CST / PST)"
+          tutorText="Choice of Ijazah-Certified Male or Female Quran Tutors"
+          trialText="100% Free 1-on-1 Assessment & Trial Class"
+        />
 
         {/* Section 1: How it Works (Vetted Tutors & Safeguarding) */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">

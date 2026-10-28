@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,8 +15,8 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Online Quran Tutors Australia | AEST & AWST Schedules",
-    description: "Living far from a local Islamic centre? Access live 1-on-1 Quran lessons aligned with Australian school hours in Sydney, Perth, and regional towns.",
+    title: "Online Quran Classes in Australia (Sydney, Melbourne) | OQTutor",
+    description: "Flexible 1-on-1 online Quran classes for Australian families (AEST/AEDT schedule). Certified male & female tutors for Qaida, Tajweed & Hifz. Free Trial!",
     alternates: {
       canonical: "https://www.oqtutor.com/locations/australia",
       languages: {
@@ -28,6 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/australia",
+      title: "Online Quran Classes in Australia (Sydney, Melbourne) | OQTutor",
+      description: "Flexible 1-on-1 online Quran classes for Australian families (AEST/AEDT schedule). Certified male & female tutors for Qaida, Tajweed & Hifz. Free Trial!",
     },
   };
 }
@@ -42,13 +45,50 @@ export default async function AustraliaQuranClassesPage() {
 
   // Custom Hero Data focused on Cultural/Community-fit (intro: ~125 words)
   const customHeroData = {
-    title: "Connect Your Family to Dedicated Quran Tutors Across Australia",
+    title: "1-on-1 Online Quran Classes in Australia for Kids & Adults",
     subtitle: "At OQTutor, we recognize that the Australian Muslim community is a beautifully diverse tapestry, representing dozens of cultural and linguistic backgrounds from Sydney's west to Melbourne's northern suburbs and regional towns. Finding a dedicated Quran teacher who aligns with Australian school schedules across AEST and AWST time zones can be difficult. We bridge this distance by prioritizing the perfect tutor-student match. Rather than offering a one-size-fits-all lesson, our platform pairs you with certified, bilingual scholars who understand your cultural context and adapt to your child's pace.",
     ctaText: "Book Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
+  };
+
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor Australia",
+    "url": "https://www.oqtutor.com/locations/australia",
+    "logo": "https://www.oqtutor.com/logo.png",
+    "description": "Flexible 1-on-1 online Quran classes for Australian families in Sydney, Melbourne, Brisbane, and Perth with certified male and female tutors.",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "City",
+        "name": "Sydney"
+      },
+      {
+        "@type": "City",
+        "name": "Melbourne"
+      },
+      {
+        "@type": "City",
+        "name": "Brisbane"
+      },
+      {
+        "@type": "City",
+        "name": "Perth"
+      }
+    ],
+    "serviceType": "Online Quran Classes",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "OQTutor",
+      "url": "https://www.oqtutor.com"
+    }
   };
 
   // FAQ Schema
@@ -58,26 +98,34 @@ export default async function AustraliaQuranClassesPage() {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "How do online Quran class timings fit Australian school hours (AEST/AEDT/AWST)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our learning portal supports scheduling across all Australian time zones, including Australian Eastern (AEST/AEDT), Central (ACST/ACDT), and Western (AWST) Standard Times. Classes are available after school, evenings, and all weekend."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we request a certified female Quran teacher (Ustazah) in Australia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. We have qualified, Ijazah-certified female Quran tutors available for young children, girls, and sisters wanting dedicated female-led instruction in a comfortable private online classroom."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we book our free 1-on-1 Quran assessment and trial class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply select your preferred Australian timezone and class time on our booking form. You will receive immediate WhatsApp and email confirmation with your interactive classroom link—100% free with no credit card required."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Can we request a tutor who matches our family's cultural or madhab background?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes! Our tutor matching system is highly customized. You can share your language preferences, specific dialect requirements, or madhab guidance requests during your trial, and we will pair you with a suitable scholar."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can we book a free trial class?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we offer a free one-to-one trial session to let your family meet the matched tutor, experience our interactive virtual environment, and evaluate the teaching style before registering."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does scheduling adjust to AEST/AWST time zones?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our learning portal supports scheduling across all Australian time zones, including Australian Eastern (AEST/AEDT), Central (ACST/ACDT), and Western (AWST) Standard Times, allowing lessons to fit your family's routine."
         }
       },
       {
@@ -94,14 +142,6 @@ export default async function AustraliaQuranClassesPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our flexible monthly plans start at $45 AUD/month for 3 weekly classes. Standard plans with 5 weekly classes are $60 AUD/month, and premium daily plans are $75 AUD/month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "At what age can kids start Quran classes online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We welcome kids starting from age 4 or 5. Tutors use interactive tools, visual aids, and a patient approach to make Noorani Qaida lessons engaging for young learners."
         }
       }
     ]
@@ -139,6 +179,10 @@ export default async function AustraliaQuranClassesPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
@@ -147,6 +191,9 @@ export default async function AustraliaQuranClassesPage() {
       <main className="flex-grow">
         {/* Hero Section */}
         <Hero data={customHeroData} />
+
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip timezoneText="AEST / AEDT Afternoon & Weekend Class Times" />
 
         {/* Section 1: The Challenge of Tutor Matching in Diverse Communities */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">

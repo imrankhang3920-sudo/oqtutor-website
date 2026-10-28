@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import NearbyStatesSection from '@/components/NearbyStatesSection';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -32,8 +33,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in New Jersey | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in New Jersey with EST scheduling. Certified tutors in Paterson, Jersey City & NYC metro from $30/mo. 3-day free trial!";
+  const metaTitle = "Online Quran Classes in New Jersey (Paterson, Jersey City, Edison)";
+  const metaDescription = "Trusted 1-on-1 online Quran classes in New Jersey (EST schedule). Male & female Ijazah-certified Quran teachers for kids & adults. Book your Free Trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-jersey";
 
   return {
@@ -115,7 +116,7 @@ export default async function NewJerseyQuranClassesPage() {
   }
 
   const customHeroData = {
-    title: "Online Quran Classes in New Jersey for Kids and Adults",
+    title: "1-on-1 Online Quran Classes in New Jersey for Kids & Adults",
     subtitle: "Help your family build a confident, lifelong connection with the Holy Quran without adding another commute to your day. OQTutor provides live, one-to-one online Quran lessons with certified male and female teachers, scheduled around your Eastern Time school, work, and household routine.",
     ctaText: "Book Your Free Trial Class",
     ctaLink: "/book-free-trial",
@@ -125,6 +126,18 @@ export default async function NewJerseyQuranClassesPage() {
   };
 
   const faqList = [
+    {
+      question: "How do online Quran class timings fit New Jersey school & family routines (EST)?",
+      answer: "Because our classes operate across flexible time slots in Eastern Time (EST), you can schedule 30-minute sessions in the early morning before school, late afternoon after school (3:30 PM - 7:30 PM), evening after homework, or on weekends across Paterson, Jersey City, Edison, and statewide."
+    },
+    {
+      question: "Can we request an Ijazah-certified female Quran teacher for our daughters or sisters in New Jersey?",
+      answer: "Yes, absolutely. OQTutor has verified, Ijazah-certified female Quran teachers (Alimahs and Qariahs) available. Parents can request a female teacher for their daughters and young kids, and adult sisters can learn in a private, supportive virtual classroom."
+    },
+    {
+      question: "How do we book a free 1-on-1 assessment and trial Quran class in New Jersey?",
+      answer: "The free trial is a complete, live 30-minute one-to-one lesson with an experienced Quran teacher. The tutor evaluates the student's level, demonstrates our interactive teaching method, and suggests an appropriate learning track. There is no credit card required and no obligation to enroll."
+    },
     {
       question: "How can I learn Quran online in New Jersey?",
       answer: "You can learn Quran online in New Jersey through OQTutor by booking a free introductory trial class. We evaluate your current reading ability, match you with a certified male or female Quran teacher who fits your learning style, and arrange live one-to-one video lessons at times that suit your Eastern Time daily schedule."
@@ -138,14 +151,6 @@ export default async function NewJerseyQuranClassesPage() {
       answer: "Absolutely. We provide private, judgment-free Quran classes for adult learners, university students, working professionals, and reverts across New Jersey. Whether starting from the basics of Arabic letters or refining advanced Tajweed rules, lessons are scheduled flexibly around your work hours."
     },
     {
-      question: "Can I choose a male or female Quran teacher?",
-      answer: "Yes. OQTutor has certified male and female Quran instructors available. Parents can request a female Quran teacher for their daughters and young children, and adult sisters can learn in a private, comfortable setting."
-    },
-    {
-      question: "Can Quran lessons fit around school schedules?",
-      answer: "Yes. Because our classes operate across flexible time slots in Eastern Time (EST), you can schedule sessions in the early morning before school, late afternoon, evening after homework, or on weekends."
-    },
-    {
       question: "What can beginners learn first?",
       answer: "Complete beginners typically start with Noorani Qaida. This foundational course covers Arabic alphabet recognition, correct letter articulation points (Makharij), short and long vowel marks, and letter connections before reading directly from the Holy Quran."
     },
@@ -156,12 +161,41 @@ export default async function NewJerseyQuranClassesPage() {
     {
       question: "Can students learn Quran memorization online?",
       answer: "Yes. Our Hifz program offers structured memorization plans for full Quran Hifz, Juz Amma, or selected Surahs. Teachers guide students through daily new memorization (Sabaq) and a rigorous revision cycle (Sabqi and Manzil) to ensure permanent retention."
-    },
-    {
-      question: "How does the free trial work?",
-      answer: "The free trial is a complete, live 30-minute one-to-one lesson with an experienced Quran teacher. The tutor evaluates the student's level, demonstrates our interactive teaching method, and suggests an appropriate learning track. There is no credit card required and no obligation to enroll."
     }
   ];
+
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor New Jersey",
+    "url": "https://www.oqtutor.com/locations/usa/new-jersey",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Trusted 1-on-1 online Quran classes in New Jersey across Paterson, Jersey City, Edison, and statewide with certified male and female teachers.",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "New Jersey"
+      },
+      {
+        "@type": "City",
+        "name": "Paterson"
+      },
+      {
+        "@type": "City",
+        "name": "Jersey City"
+      },
+      {
+        "@type": "City",
+        "name": "Edison"
+      }
+    ],
+    "serviceType": "Online Quran Classes",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "OQTutor",
+      "url": "https://www.oqtutor.com"
+    }
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -278,6 +312,10 @@ export default async function NewJerseyQuranClassesPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
@@ -293,7 +331,7 @@ export default async function NewJerseyQuranClassesPage() {
 
       <main className="flex-grow">
         <Hero data={customHeroData} />
-        <TrustStatsBar />
+        <LocalSchedulingTrustStrip timezoneText="After-School & Weekend Slots (EST / CST / PST)" />
 
         {/* Section 1: Quran Learning That Fits New Jersey Family Schedules */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">

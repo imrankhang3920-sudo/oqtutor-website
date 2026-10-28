@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NearbyStatesSection from '@/components/NearbyStatesSection';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,8 +16,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in Illinois | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in Illinois with CST scheduling. Expert tutors in Chicago, Naperville, Bridgeview & Schaumburg from $30/mo. Free trial!";
+  const metaTitle = "Online Quran Classes in Illinois (Chicago, Naperville, Bridgeview)";
+  const metaDescription = "Live 1-on-1 online Quran classes in Illinois (CST after-school & weekend schedule). Male & female certified tutors for kids & adults. Start a Free Trial!";
 
   return {
     title: metaTitle,
@@ -89,6 +90,18 @@ export default async function IllinoisQuranClassesPage() {
 
   const faqList = [
     {
+      question: "How do online Quran class schedules fit Illinois family routines (CST/CDT)?",
+      answer: "Our classes are fully aligned with Central Time (CST/CDT). We offer flexible 1-on-1 slots in the early morning before school, after-school afternoon slots (3:30 PM - 7:30 PM CST), evening sessions after dinner, and open weekend timings across Chicago, Naperville, Bridgeview, and throughout Illinois."
+    },
+    {
+      question: "Can we request a certified female Quran tutor (Ustazah) in Illinois?",
+      answer: "Yes, absolutely. OQTutor provides verified, Ijazah-certified female Quran teachers for young girls, children, and adult sisters seeking dedicated 1-on-1 instruction in a comfortable private online classroom."
+    },
+    {
+      question: "How do we book a free 1-on-1 trial Quran class in Illinois?",
+      answer: "Booking your free trial takes just 60 seconds on our website. Choose your preferred Central Time slot, tell us the student's level, and connect directly with your assigned scholar. 100% free with no credit card required."
+    },
+    {
       question: "Where can I learn Quran online in Illinois?",
       answer: "You can learn Quran online from home through live one-on-one classes with a qualified Quran teacher. OQTutor offers programs for beginners, children, adults, Tajweed students, and Hifz learners across Chicago, Naperville, Aurora, and all of Illinois."
     },
@@ -109,26 +122,51 @@ export default async function IllinoisQuranClassesPage() {
       answer: "Yes. Adults can start from the basics or focus on Quran reading, Tajweed, memorization, or Islamic studies in a respectful, private environment."
     },
     {
-      question: "Can I request a female Quran teacher?",
-      answer: "Yes. OQTutor provides certified male and female Quran tutors, so students and parents can request a teacher by preference for daughters, sisters, and young children."
-    },
-    {
       question: "Are online Quran classes one-on-one?",
       answer: "Yes — OQTutor focuses on personalized one-on-one lessons so the teacher can focus entirely on one student's pronunciation, reading, questions, and progress."
     },
     {
       question: "What Quran courses are available?",
       answer: "Noorani Qaida, Quran Reading, Quran with Tajweed, Hifz/Quran Memorization, and Islamic Studies for Kids."
-    },
-    {
-      question: "Can I choose a flexible class time?",
-      answer: "Yes. OQTutor offers flexible 24/7 scheduling around school, work, and family commitments in Central Time (CST)."
-    },
-    {
-      question: "How can I start online Quran classes in Illinois?",
-      answer: "Book a free trial — share the student's age, current Quran level, preferred course, and suitable time, then attend the trial lesson before deciding whether to continue."
     }
   ];
+
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor Illinois",
+    "url": "https://www.oqtutor.com/locations/usa/illinois",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Live 1-on-1 online Quran classes in Illinois with CST scheduling across Chicago, Naperville, Bridgeview, and Schaumburg with certified male and female tutors.",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Illinois"
+      },
+      {
+        "@type": "City",
+        "name": "Chicago"
+      },
+      {
+        "@type": "City",
+        "name": "Naperville"
+      },
+      {
+        "@type": "City",
+        "name": "Bridgeview"
+      },
+      {
+        "@type": "City",
+        "name": "Schaumburg"
+      }
+    ],
+    "serviceType": "Online Quran Classes",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "OQTutor",
+      "url": "https://www.oqtutor.com"
+    }
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -186,6 +224,10 @@ export default async function IllinoisQuranClassesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -246,7 +288,7 @@ export default async function IllinoisQuranClassesPage() {
 
                 {/* H1 Title */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.18]">
-                  Online Quran Classes in <span className="text-primary">Illinois</span> for Kids &amp; Adults
+                  1-on-1 Online Quran Classes in Illinois for Kids &amp; Adults
                 </h1>
 
                 {/* Subtitle */}
@@ -378,7 +420,9 @@ export default async function IllinoisQuranClassesPage() {
             </div>
           </div>
         </section>
-        <LocalStatsBar />
+        
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip timezoneText="Central Time (CST / CDT) After-School & Weekend Slots" />
 
         {/* Intro Section: Learn Quran Online in Illinois with OQTutor */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">

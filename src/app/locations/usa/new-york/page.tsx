@@ -7,6 +7,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
 import NearbyStatesSection from '@/components/NearbyStatesSection';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,8 +39,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in NYC, Brooklyn, Queens & NY metro with EST scheduling. Expert tutors from $30/mo. Claim your 3-day free trial!";
+  const metaTitle = "Online Quran Classes in New York (NYC, Brooklyn, Queens)";
+  const metaDescription = "Live 1-on-1 online Quran classes in New York (EST after-school & weekend times). Certified male & female tutors for kids & adults. Book a Free Trial Class!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/new-york";
 
   return {
@@ -121,7 +122,7 @@ export default async function NewYorkQuranClassesPage() {
   }
 
   const customHeroData = {
-    title: "Online Quran Classes in New York for Kids and Adults",
+    title: "1-on-1 Online Quran Classes in New York for Kids & Adults",
     subtitle: "Learn Quran online with OQTutor through live one-to-one lessons tailored to your reading level and learning goals. Explore Quran reading, Tajweed, Noorani Qaida, memorization, and Islamic Studies with flexible scheduling for New York families.",
     ctaText: "Book a Free Trial",
     ctaLink: "/book-free-trial",
@@ -133,16 +134,20 @@ export default async function NewYorkQuranClassesPage() {
   // Structured FAQ Data for AEO
   const faqList = [
     {
-      question: "Are online Quran classes available after school in New York?",
-      answer: "Yes. Classes are scheduled across Eastern Time (ET) to accommodate New York school routines. Families can book 30-minute one-to-one sessions in the late afternoon (3:30 PM – 6:30 PM), during evenings after homework, or across flexible weekend slots with easy rescheduling."
+      question: "Are online Quran classes available after school and on weekends in New York (EST)?",
+      answer: "Yes. Classes are scheduled across Eastern Time (EST) to accommodate New York school routines. Families can book 30-minute one-to-one sessions in the late afternoon (3:30 PM – 7:30 PM), during evenings after homework, or across flexible weekend slots with easy rescheduling."
+    },
+    {
+      question: "Can I request a certified female Quran teacher for my daughter or sisters in New York?",
+      answer: "Yes. OQTutor provides qualified female Quran teachers (Alimahs and Qariahs) for young girls, children, and adult sisters who prefer female instruction in a private, supportive one-on-one virtual classroom."
+    },
+    {
+      question: "How do we book a free 1-on-1 trial Quran class in New York?",
+      answer: "You can book a free introductory trial class directly through our website without entering credit card details. The session includes a friendly reading assessment, an interactive lesson demonstration, and a personalized curriculum recommendation from a certified instructor."
     },
     {
       question: "Can my child learn Quran online as a complete beginner?",
       answer: "Absolutely. Children starting with no prior Arabic knowledge begin with the Noorani Qaida course. Certified tutors guide young students step-by-step through alphabet recognition, letter articulation points (Makharij), and vowel movements using interactive digital materials at a patient pace."
-    },
-    {
-      question: "Can I request a female Quran teacher for my daughter?",
-      answer: "Yes. OQTutor provides qualified female Quran teachers for young girls, children, and adult sisters who prefer female instruction. Our female faculty hold verified Islamic degrees and Ijazahs, providing supportive one-to-one guidance in Noorani Qaida, Tajweed, and Hifz."
     },
     {
       question: "How do online Quran classes work for New York families?",
@@ -159,14 +164,43 @@ export default async function NewYorkQuranClassesPage() {
     {
       question: "Can adults start learning Quran online without previous experience?",
       answer: "Yes. We offer private, judgment-free Quran classes for adult beginners, working professionals, and reverts. Whether learning Arabic letters from scratch, refining Tajweed rules, or memorizing Surahs, adult lessons are scheduled flexibly around busy work commitments."
-    },
-    {
-      question: "How can I arrange a trial Quran lesson with OQTutor?",
-      answer: "You can book a free introductory trial class directly through our website without entering credit card details. The session includes a friendly reading assessment, an interactive lesson demonstration, and a personalized curriculum recommendation from a certified instructor."
     }
   ];
 
   // Schema Definitions
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor New York",
+    "url": "https://www.oqtutor.com/locations/usa/new-york",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Live 1-on-1 online Quran classes in New York across NYC, Brooklyn, Queens, and Long Island with certified male and female tutors.",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "New York"
+      },
+      {
+        "@type": "City",
+        "name": "New York City"
+      },
+      {
+        "@type": "City",
+        "name": "Brooklyn"
+      },
+      {
+        "@type": "City",
+        "name": "Queens"
+      }
+    ],
+    "serviceType": "Online Quran Classes",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "OQTutor",
+      "url": "https://www.oqtutor.com"
+    }
+  };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -197,8 +231,8 @@ export default async function NewYorkQuranClassesPage() {
     "@type": "WebPage",
     "@id": "https://www.oqtutor.com/locations/usa/new-york#webpage",
     "url": "https://www.oqtutor.com/locations/usa/new-york",
-    "name": "Online Quran Classes in New York | Live 1-on-1 ($30/Mo + Free Trial)",
-    "description": "Live 1-on-1 online Quran classes in NYC, Brooklyn, Queens & NY metro with EST scheduling. Expert tutors from $30/mo. Claim your 3-day free trial!",
+    "name": "Online Quran Classes in New York (NYC, Brooklyn, Queens)",
+    "description": "Live 1-on-1 online Quran classes in New York (EST after-school & weekend times). Certified male & female tutors for kids & adults. Book a Free Trial Class!",
     "isPartOf": {
       "@type": "WebSite",
       "@id": "https://www.oqtutor.com/#website",
@@ -327,6 +361,10 @@ export default async function NewYorkQuranClassesPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
@@ -342,7 +380,7 @@ export default async function NewYorkQuranClassesPage() {
 
       <main className="flex-grow">
         <Hero data={customHeroData} />
-        <TrustStatsBar />
+        <LocalSchedulingTrustStrip timezoneText="After-School & Weekend Slots (EST / CST / PST)" />
 
         {/* Section: Kids Section */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">

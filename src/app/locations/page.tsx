@@ -87,15 +87,15 @@ export default async function LocationsHubPage() {
     {
       country: 'Singapore',
       flag: '🇸🇬',
-      slug: '/online-quran-classes-singapore',
+      slug: '/locations/singapore',
       badge: 'SGT (GMT+8) Timing',
       description: '1-on-1 Quran, Noorani Qaida, and Tajweed classes scheduled around MOE school hours, CCAs, and work.',
       subLocations: [
-        { name: 'Tampines & Bedok', slug: '/online-quran-classes-singapore' },
-        { name: 'Woodlands & Yishun', slug: '/online-quran-classes-singapore' },
-        { name: 'Jurong West & CCK', slug: '/online-quran-classes-singapore' },
-        { name: 'Punggol & Sengkang', slug: '/online-quran-classes-singapore' },
-        { name: 'Bukit Batok & Central', slug: '/online-quran-classes-singapore' },
+        { name: 'Tampines & Bedok', slug: '/locations/singapore' },
+        { name: 'Woodlands & Yishun', slug: '/locations/singapore' },
+        { name: 'Jurong West & CCK', slug: '/locations/singapore' },
+        { name: 'Punggol & Sengkang', slug: '/locations/singapore' },
+        { name: 'Bukit Batok & Central', slug: '/locations/singapore' },
       ],
     },
   ];

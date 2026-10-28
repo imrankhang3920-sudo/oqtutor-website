@@ -2734,6 +2734,55 @@ function ArticleContentUSA() {
   return (
     <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
       
+      {/* State Location Hub Callout Card */}
+      <div className="p-6 sm:p-7 rounded-3xl border border-primary/25 bg-primary/[0.04] backdrop-blur-sm shadow-md mb-8 not-prose">
+        <div className="flex items-center space-x-2 text-primary font-bold text-xs uppercase tracking-wider mb-2.5">
+          <MapPin className="h-4 w-4 text-primary" />
+          <span>Explore Local Online Quran Classes by State</span>
+        </div>
+        <p className="text-sm text-foreground/90 font-medium mb-4 leading-relaxed">
+          Looking for state-specific scheduling, local school holiday alignment, and timezone-tailored male &amp; female Quran tutors? Explore our regional landing pages:
+        </p>
+        <div className="flex flex-wrap gap-2 sm:gap-2.5">
+          <Link
+            href="/locations/usa"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 hover:bg-primary hover:text-white text-primary text-xs font-bold border border-primary/20 transition-all"
+          >
+            <span>🇺🇸 All USA Locations</span>
+          </Link>
+          <Link
+            href="/locations/usa/texas"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-background hover:bg-primary hover:text-white text-foreground text-xs font-semibold border border-card-border hover:border-primary transition-all shadow-sm"
+          >
+            <span>Texas (CST)</span>
+          </Link>
+          <Link
+            href="/locations/usa/michigan"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-background hover:bg-primary hover:text-white text-foreground text-xs font-semibold border border-card-border hover:border-primary transition-all shadow-sm"
+          >
+            <span>Michigan (EST)</span>
+          </Link>
+          <Link
+            href="/locations/usa/illinois"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-background hover:bg-primary hover:text-white text-foreground text-xs font-semibold border border-card-border hover:border-primary transition-all shadow-sm"
+          >
+            <span>Illinois (CST)</span>
+          </Link>
+          <Link
+            href="/locations/usa/new-york"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-background hover:bg-primary hover:text-white text-foreground text-xs font-semibold border border-card-border hover:border-primary transition-all shadow-sm"
+          >
+            <span>New York (EST)</span>
+          </Link>
+          <Link
+            href="/locations/usa/california"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-background hover:bg-primary hover:text-white text-foreground text-xs font-semibold border border-card-border hover:border-primary transition-all shadow-sm"
+          >
+            <span>California (PST)</span>
+          </Link>
+        </div>
+      </div>
+
       {/* Key Takeaways Box */}
       <div className="p-6 sm:p-8 rounded-3xl bg-primary/5 border border-primary/20 space-y-3 mb-8 shadow-sm not-prose">
         <div className="flex items-center space-x-2 text-primary font-bold text-sm uppercase tracking-wider">
@@ -3294,7 +3343,7 @@ function ArticleContentIllinois() {
           Life in Illinois moves fast. Between school, work, extracurricular activities, and family responsibilities, many Muslim parents struggle to find enough time for their children&#39;s Islamic education. While every parent wants their child to build a strong relationship with the Quran, attending in-person classes isn&#39;t always practical.
         </p>
         <p className="text-base text-muted-text">
-          Fortunately, <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes</Link> have made Islamic education more accessible than ever. Whether you live in Chicago, Naperville, Aurora, Schaumburg, Bridgeview, or anywhere else in Illinois, your child can learn the Quran from qualified teachers without leaving home.
+          Fortunately, <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">1-on-1 online Quran classes in Illinois</Link> have made Islamic education more accessible than ever. Whether you live in Chicago, Naperville, Aurora, Schaumburg, Bridgeview, or anywhere else in Illinois, your child can learn the Quran from qualified teachers without leaving home.
         </p>
         <p className="text-base text-muted-text">
           In this guide, we&#39;ll explore why online Quran classes are becoming the preferred choice for busy Muslim families in Illinois and how they help children develop a lifelong connection with the Quran.

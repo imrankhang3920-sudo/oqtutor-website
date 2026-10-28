@@ -67,6 +67,11 @@ const nextConfig: NextConfig = {
         destination: '/locations/canada',
         permanent: true,
       },
+      {
+        source: '/online-quran-classes-singapore',
+        destination: '/locations/singapore',
+        permanent: true,
+      },
       // SEO Consolidated Blog Redirects (301 Permanent)
       {
         source: '/blog/online-islamic-studies-for-kids',

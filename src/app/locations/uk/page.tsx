@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,8 +35,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes UK | 1-to-1 Male & Female Tutors (£24/mo) - OQTutor";
-  const metaDescription = "No weekend traffic or madrasah rush. Private 30-minute Quran and Tajweed sessions scheduled around British school terms in GMT. Free trial class.";
+  const metaTitle = "Online Quran Classes in UK for Kids & Adults | Free Trial";
+  const metaDescription = "Live 1-on-1 online Quran classes in the UK (GMT/BST schedule). DBS-vetted, Ijazah-certified male & female Quran tutors for kids & adults. Book a Free Trial!";
 
   return {
     title: metaTitle,
@@ -93,63 +94,63 @@ export default async function UKQuranClassesPage() {
   const ukFaqs = [
     {
       id: "uk-faq-1",
+      question: "How flexible is scheduling around UK school and work timetables (GMT/BST)?",
+      directAnswer: "Class schedules are completely flexible and operate directly in UK local time (GMT and BST).",
+      explanation: "You can schedule classes after school (4:00 PM to 8:00 PM), on weekends, or during evenings. If family plans change or during UK school half-terms and holidays, you can easily reschedule or pause sessions without penalty."
+    },
+    {
+      id: "uk-faq-2",
+      question: "Can I choose a certified female Quran teacher for sisters or daughters?",
+      directAnswer: "Yes, qualified female Quran teachers (Alimas and Qariahs) are available for sisters and young children.",
+      explanation: "Our female tutors provide a comfortable, private, and supportive learning environment for Noorani Qaida, Tajweed, Quran reading, and Hifz. You can select your tutor gender preference during registration."
+    },
+    {
+      id: "uk-faq-3",
+      question: "How do I book a 1-on-1 free trial Quran class in the UK?",
+      directAnswer: "Yes, OQTutor offers a free trial class with no upfront payment or long-term commitment required.",
+      explanation: "The trial lesson allows you to experience our one-to-one teaching style, assess the student's current level, meet your assigned tutor, and see how our online classroom works before selecting a monthly plan."
+    },
+    {
+      id: "uk-faq-4",
       question: "How do online Quran classes work for students in the UK?",
       directAnswer: "Online Quran classes are live, one-to-one video lessons conducted through an interactive digital classroom on your computer, laptop, or tablet.",
       explanation: "After booking a free trial, you are matched with a qualified tutor who shares the digital Quran or Noorani Qaida on screen. The tutor listens to the student recite in real time, corrects pronunciation and Tajweed immediately, and provides regular progress updates to parents."
     },
     {
-      id: "uk-faq-2",
+      id: "uk-faq-5",
       question: "Can children in the UK learn Quran online effectively?",
       directAnswer: "Yes, children learn very effectively online through 30-minute private lessons designed specifically for young attention spans.",
       explanation: "Tutors use child-friendly visual materials, positive encouragement, and structured lesson plans. One-to-one attention ensures children remain engaged and supported throughout each lesson without the distractions or peer pressure of large physical classes."
     },
     {
-      id: "uk-faq-3",
+      id: "uk-faq-6",
       question: "Are online Quran classes available for adults in the UK?",
       directAnswer: "Yes, OQTutor offers private, one-to-one Quran classes tailored specifically for UK adult learners.",
       explanation: "Lessons fit around full-time work, university timetables, and family commitments with early morning, evening, and weekend slots in GMT/BST. Adults can start from the Arabic alphabet, refine Tajweed rules, or study Quran translation and Tafseer at their own pace in a respectful, judgment-free environment."
     },
     {
-      id: "uk-faq-4",
-      question: "Can I choose a female Quran teacher for sisters or daughters?",
-      directAnswer: "Yes, qualified female Quran teachers (Alimas and Qariahs) are available for sisters and young children.",
-      explanation: "Our female tutors provide a comfortable, private, and supportive learning environment for Noorani Qaida, Tajweed, Quran reading, and Hifz. You can select your tutor gender preference during registration."
-    },
-    {
-      id: "uk-faq-5",
+      id: "uk-faq-7",
       question: "Can absolute beginners join without prior Arabic knowledge?",
       directAnswer: "Yes, beginners of all ages can start with zero prior knowledge of the Arabic language.",
       explanation: "Beginners start with the Noorani Qaida course, which systematically teaches Arabic letter recognition, letter joining, short vowels (Harakat), and correct articulation points (Makharij) before transitioning to reading full Quranic verses."
     },
     {
-      id: "uk-faq-6",
+      id: "uk-faq-8",
       question: "Do you teach Quran with Tajweed rules?",
       directAnswer: "Yes, Tajweed rules are integrated into recitation lessons and also available as a dedicated structured course.",
       explanation: "Tutors teach essential rules including Makharij (letter articulation points), Ghunnah (nasalisation), Ikhfa, Idghaam, Qalqalah, Madd elongation, and Waqf stopping signs, ensuring accurate and melodious recitation."
     },
     {
-      id: "uk-faq-7",
+      id: "uk-faq-9",
       question: "Are classes available across all UK cities and regions?",
       directAnswer: "Yes, OQTutor provides online Quran classes to students across England, Scotland, Wales, and Northern Ireland.",
       explanation: "Because all classes are 100% online, students from London, Birmingham, Manchester, Leicester, Bradford, Luton, Glasgow, Edinburgh, Cardiff, Belfast, and any other UK town can connect with qualified tutors without commuting in traffic."
     },
     {
-      id: "uk-faq-8",
-      question: "How flexible is scheduling around UK school and work timetables?",
-      directAnswer: "Class schedules are completely flexible and operate directly in UK local time (GMT and BST).",
-      explanation: "You can schedule classes after school (4:00 PM to 8:00 PM), on weekends, or during evenings. If family plans change or during UK school half-terms and holidays, you can easily reschedule or pause sessions without penalty."
-    },
-    {
-      id: "uk-faq-9",
+      id: "uk-faq-10",
       question: "How often are classes held and how long is each lesson?",
       directAnswer: "Each lesson is 30 minutes long, with plans available for 3, 5, or 7 sessions per week.",
       explanation: "The 30-minute duration optimizes focus and retention for both children and adult learners. You can select the weekly frequency that best matches your learning goals, budget, and family routine."
-    },
-    {
-      id: "uk-faq-10",
-      question: "Is there a free trial class before enrolling in a paid plan?",
-      directAnswer: "Yes, OQTutor offers a free trial class with no upfront payment or long-term commitment required.",
-      explanation: "The trial lesson allows you to experience our one-to-one teaching style, assess the student's current level, meet your assigned tutor, and see how our online classroom works before selecting a monthly plan."
     }
   ];
 
@@ -575,7 +576,7 @@ export default async function UKQuranClassesPage() {
 
                 {/* H1 Heading */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes UK for Children &amp; Adults | One-to-One Quran Tutors
+                  1-on-1 Online Quran Classes in the UK for Kids &amp; Adults
                 </h1>
 
                 {/* Supporting Paragraph */}
@@ -657,6 +658,13 @@ export default async function UKQuranClassesPage() {
             </div>
           </div>
         </section>
+        
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip
+          timezoneText="Flexible Afternoon & Weekend Slots (GMT / BST)"
+          tutorText="Choice of Ijazah-Certified Male or Female Quran Tutors"
+          trialText="100% Free 1-on-1 Assessment & Trial Class"
+        />
 
         {/* Section 1: Learn Quran Online From the Comfort of Your Home */}
         <section className="py-16 md:py-24 bg-background relative overflow-hidden">

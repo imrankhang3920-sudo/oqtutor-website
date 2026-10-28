@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import NearbyStatesSection from '@/components/NearbyStatesSection';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,8 +34,8 @@ import {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in California | Live 1-on-1 ($30/Mo + Free Trial)";
-  const metaDescription = "Live 1-on-1 online Quran classes in California for kids & adults. Certified tutors in LA, Bay Area, San Diego & statewide from $30/mo. 3-day free trial!";
+  const metaTitle = "Online Quran Classes in California (LA, Bay Area, San Diego)";
+  const metaDescription = "1-on-1 online Quran classes for California Muslim families (PST timezone). Certified male & female tutors for Noorani Qaida, Tajweed & Hifz. Free Trial!";
   const canonicalUrl = "https://www.oqtutor.com/locations/usa/california";
 
   return {
@@ -237,6 +238,18 @@ export default async function CaliforniaQuranClassesPage() {
 
   const uniqueFaqs: FAQItem[] = [
     {
+      question: "How do online Quran class schedules fit California family routines (PST/PDT)?",
+      answer: "Our classes are fully aligned with Pacific Time (PST/PDT). We offer morning slots before school, after-school afternoon slots (3:30 PM - 7:30 PM PT), evening lessons for adults, and flexible weekend times across Los Angeles, the Bay Area, San Diego, and Sacramento."
+    },
+    {
+      question: "Can we request an Ijazah-certified female Quran tutor (Alimah) in California?",
+      answer: "Yes. We have qualified, background-vetted female Quran teachers available for young girls, children, and adult sisters seeking dedicated 1-on-1 female instruction in a secure, comfortable private virtual classroom."
+    },
+    {
+      question: "How do we book our free 1-on-1 assessment and trial class in California?",
+      answer: "You can book a free 30-minute trial class directly on our website with zero obligation and no credit card required. Choose your convenient Pacific Time slot and connect directly with your assigned instructor."
+    },
+    {
       question: "Does Daylight Saving Time Affect Class Scheduling?",
       answer: "Yes, minimally. When California springs forward in March (2:00 AM → 3:00 AM) or falls back in November, all Pacific Time slots automatically adjust without requiring manual recalculation, keeping your lesson aligned with your household clock."
     },
@@ -270,6 +283,47 @@ export default async function CaliforniaQuranClassesPage() {
       answer: "California faces wildfire season (Sept–Dec), power outages (PSPS), and natural emergencies. If disruptions or evacuations affect your area, OQTutor allows you to pause and reschedule all missed lessons at a later date without any penalty."
     }
   ];
+
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "OQTutor California",
+    "url": "https://www.oqtutor.com/locations/usa/california",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "1-on-1 online Quran classes for California Muslim families across Los Angeles, San Francisco Bay Area, San Diego, and Sacramento with certified male and female tutors.",
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "California"
+      },
+      {
+        "@type": "City",
+        "name": "Los Angeles"
+      },
+      {
+        "@type": "City",
+        "name": "San Francisco"
+      },
+      {
+        "@type": "City",
+        "name": "San Diego"
+      },
+      {
+        "@type": "City",
+        "name": "San Jose"
+      },
+      {
+        "@type": "City",
+        "name": "Sacramento"
+      }
+    ],
+    "serviceType": "Online Quran Classes",
+    "parentOrganization": {
+      "@type": "EducationalOrganization",
+      "name": "OQTutor",
+      "url": "https://www.oqtutor.com"
+    }
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -383,6 +437,10 @@ export default async function CaliforniaQuranClassesPage() {
       {/* Schema Structured Data */}
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
@@ -442,7 +500,7 @@ export default async function CaliforniaQuranClassesPage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-foreground">
-                Online Quran Classes in <span className="text-primary">California</span> - Live 1-on-1 (SF Bay Area, LA, San Diego)
+                1-on-1 Online Quran Classes in California for Kids &amp; Adults
               </h1>
 
               <div className="h-1 w-20 bg-secondary mt-3 mb-5 rounded-full" />
@@ -518,8 +576,8 @@ export default async function CaliforniaQuranClassesPage() {
           </div>
         </section>
 
-        {/* TRUST POINTS BAR */}
-        <TrustStatsBar />
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip timezoneText="Pacific Time (PST / PDT) After-School & Weekend Slots" />
 
         {/* ========================================================================= */}
         {/* SECTION 1: CHALLENGES */}

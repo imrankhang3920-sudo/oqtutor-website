@@ -25,7 +25,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/locations/uk`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/canada`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/australia`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/online-quran-classes-singapore`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/locations/singapore`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
 
     // State & City Location Pages (Priority: 0.7)

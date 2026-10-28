@@ -4,6 +4,7 @@ import { verifyAdminToken } from '@/lib/auth';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import LocalSchedulingTrustStrip from '@/components/LocalSchedulingTrustStrip';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,9 +13,12 @@ import { ArrowRight, Clock, Calendar, HelpCircle, Shield, Sparkles, BookOpen } f
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const metaTitle = "Online Quran Classes in London (1-on-1 Male & Female Tutors)";
+  const metaDescription = "Trusted 1-on-1 online Quran classes for London Muslim families. Learn Noorani Qaida, Tajweed & Hifz after school or on weekends (UK time). Free Trial Class!";
+
   return {
-    title: "Online Quran Classes London for Kids & Adults | Qualified Tutors",
-    description: "One-to-one online Quran classes for London families. Qualified, DBS-checked male & female tutors, GMT/BST scheduling, free trial. Serving all London boroughs.",
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical: "https://www.oqtutor.com/locations/uk/london",
       languages: {
@@ -27,8 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       url: "https://www.oqtutor.com/locations/uk/london",
-      title: "Online Quran Classes London for Kids & Adults | Qualified Tutors",
-      description: "One-to-one online Quran classes for London families. Qualified, DBS-checked male & female tutors, GMT/BST scheduling, free trial. Serving all London boroughs.",
+      title: metaTitle,
+      description: metaDescription,
       images: [
         {
           url: "https://www.oqtutor.com/logo.jpg",
@@ -40,8 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Online Quran Classes London for Kids & Adults | Qualified Tutors",
-      description: "One-to-one online Quran classes for London families. Qualified, DBS-checked male & female tutors, GMT/BST scheduling, free trial. Serving all London boroughs.",
+      title: metaTitle,
+      description: metaDescription,
       images: ["https://www.oqtutor.com/logo.jpg"],
     },
   };
@@ -57,20 +61,20 @@ export default async function LondonQuranClassesPage() {
 
   const londonFaqs = [
     {
+      question: "Can we schedule online Quran classes around London school and work hours (GMT/BST)?",
+      answer: "Yes. All classes are scheduled directly in GMT/BST to seamlessly accommodate London school timetables, after-school clubs, and commute routines. Families can book 30-minute private lessons on weekday late afternoons, evenings, or weekends with full holiday pause flexibility."
+    },
+    {
+      question: "Can I request a certified female Quran teacher (Ustazah) in London?",
+      answer: "Yes, absolutely. OQTutor provides DBS-vetted, certified female Quran teachers (Ustazahs) for young girls, teenage sisters, and adult women in a secure, supportive, and private home environment."
+    },
+    {
+      question: "How do I book a 1-on-1 free trial Quran class in London?",
+      answer: "Booking a free trial takes less than a minute. Choose your child's age, course interest, and preferred London timetable. You will receive a 100% free live 1-on-1 assessment lesson with zero credit card required."
+    },
+    {
       question: "Do you teach students in every London borough, or only certain areas?",
-      answer: "Yes — because classes are fully online, we teach families anywhere in Greater London, including areas with no nearby physical madrasa."
-    },
-    {
-      question: "What time zone do London lessons run on?",
-      answer: "All scheduling is set to GMT/BST automatically, so lesson times shift with UK clock changes — you don't need to adjust anything manually."
-    },
-    {
-      question: "Can two siblings at different London schools share one plan?",
-      answer: "Each plan is built around one student's pace, but siblings can be booked back-to-back in the same evening slot so you're only managing one login window."
-    },
-    {
-      question: "Is there a London-based contact number, or only the head office line?",
-      answer: "Support is available via UK phone, WhatsApp, and email from a single support line covering all UK locations — see Contact for current numbers."
+      answer: "Yes — because classes are fully online, we teach families anywhere in Greater London (including Tower Hamlets, Newham, Redbridge, Ealing, Brent, and Barnet), saving hours of stressful driving across London traffic."
     },
     {
       question: "How does half-term affect my child's schedule?",
@@ -122,23 +126,23 @@ export default async function LondonQuranClassesPage() {
     ]
   };
 
-  const serviceSchema = {
+  const educationalOrgSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Online Quran Tuition",
-    "areaServed": {
-      "@type": "City",
-      "name": "London",
-      "containedInPlace": {
-        "@type": "Country",
-        "name": "United Kingdom"
+    "@type": "EducationalOrganization",
+    "name": "OQTutor - Online Quran Classes London",
+    "url": "https://www.oqtutor.com/locations/uk/london",
+    "logo": "https://www.oqtutor.com/logo.jpg",
+    "description": "Trusted 1-on-1 online Quran classes for London Muslim families. Learn Noorani Qaida, Tajweed & Hifz after school or on weekends (UK time).",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "London",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
       }
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "OQTutor",
-      "url": "https://www.oqtutor.com"
-    }
+    ]
   };
 
   return (
@@ -154,7 +158,7 @@ export default async function LondonQuranClassesPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
       />
 
       <Navbar adminLoggedIn={adminLoggedIn} />
@@ -185,7 +189,7 @@ export default async function LondonQuranClassesPage() {
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Online Quran Classes in London for Kids &amp; Adults | Qualified Tutors – OQTutor
+                  Live 1-on-1 Online Quran Classes in London for Kids &amp; Adults
                 </h1>
 
                 <p className="text-base sm:text-lg text-muted-text font-normal leading-relaxed">
@@ -236,6 +240,13 @@ export default async function LondonQuranClassesPage() {
             </div>
           </div>
         </section>
+
+        {/* Local Scheduling & Trust Strip */}
+        <LocalSchedulingTrustStrip
+          timezoneText="Flexible Afternoon & Weekend Slots (GMT / BST)"
+          tutorText="Choice of Ijazah-Certified Male or Female Quran Tutors"
+          trialText="100% Free 1-on-1 Assessment & Trial Class"
+        />
 
         {/* SECTION 1: Why London Families Choose Online Over a Local Madrasa */}
         <section className="py-16 md:py-20 border-t border-card-border/40 bg-foreground/[0.01]">
