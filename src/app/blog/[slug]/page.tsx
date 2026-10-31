@@ -3657,7 +3657,7 @@ function ArticleContentIllinois() {
           Why Online Quran Learning Is Growing Across Illinois
         </h2>
         <p className="text-base text-muted-text">
-          Muslim families in Chicago, Aurora, Naperville, Schaumburg, Bridgeview, Skokie, Lombard, and Morton Grove are embracing online Quran education because it combines convenience with quality. Your child can access experienced Quran teachers without long commutes or schedule conflicts.
+          Muslim families in Chicago, Aurora, Naperville, Schaumburg, Bridgeview, Skokie, Lombard, and Morton Grove are embracing <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">online Quran classes in Illinois</Link> because virtual tutoring combines family convenience with educational quality. Your child can access experienced Quran teachers on a flexible Central Time schedule without long commutes or schedule conflicts.
         </p>
       </section>
 
