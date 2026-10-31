@@ -13,6 +13,8 @@ export interface HeroData {
   whatsappText: string;
   whatsappNumber: string;
   backgroundImage: string;
+  urgencyBadges?: string[];
+  badges?: string[];
 }
 
 export interface AboutData {

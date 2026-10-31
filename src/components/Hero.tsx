@@ -8,11 +8,12 @@ import Image from 'next/image';
 
 interface HeroProps {
   data: HeroData;
+  urgencyBadges?: string[];
 }
 
-export default function Hero({ data }: HeroProps) {
+export default function Hero({ data, urgencyBadges: customBadges }: HeroProps) {
   // Urgency & Trust checkmarks
-  const urgencyBadges = [
+  const urgencyBadges = customBadges || data.urgencyBadges || data.badges || [
     'No credit card required',
     'Cancel anytime',
     'Expert match guaranteed',

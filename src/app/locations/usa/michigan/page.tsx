@@ -14,8 +14,8 @@ import { CheckCircle, ChevronDown, Star, Shield, HelpCircle, Award, BookOpen, Cl
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaTitle = "Online Quran Classes in Michigan (Dearborn, Detroit) | Free Trial";
-  const metaDescription = "Trusted 1-on-1 online Quran classes in Michigan (EST schedule). Male & female certified tutors for Noorani Qaida, Tajweed & Hifz. Start your Free Trial!";
+  const metaTitle = "Online Quran Classes in Michigan | 1-on-1 EST Tutors (Free Trial)";
+  const metaDescription = "Live 1-on-1 online Quran classes for Michigan kids & adults in Dearborn, Detroit, Canton & Troy. Certified male & female tutors on EST schedules. From $30/mo.";
 
   return {
     title: metaTitle,
@@ -55,12 +55,17 @@ export default async function MichiganQuranClassesPage() {
 
   const customHeroData = {
     title: "1-on-1 Online Quran Classes in Michigan for Kids & Adults",
-    subtitle: "Michigan is home to one of the largest and most established Muslim communities in the United States — from Dearborn and Detroit to Hamtramck, Ann Arbor, Lansing, and Grand Rapids. OQTutor brings certified, one-on-one online Quran education directly to Michigan families, scheduled in Eastern Time (EST) around school and prayer hours. Whether you're a parent looking to give your child a solid foundation in Quran reading, an adult starting your recitation journey from scratch, or working toward Hifz, our live online classes are built around your schedule and pace.",
-    ctaText: "Book Your Free Trial Class",
+    subtitle: "From Dearborn, Detroit, and Hamtramck to Canton, Troy, Ann Arbor, and Grand Rapids, Michigan families trust OQTutor for structured, one-on-one Quran education. Every lesson is taught live in Eastern Time (EST/EDT) by certified male and female scholars—scheduled seamlessly around Michigan public and Islamic school dismissal times, weekend sports, and shifting seasonal Salah hours. Whether your child is starting Noorani Qaida at age 4 or you are an adult mastering Tajweed and Hifz, your tutor adapts 100% to your pace.",
+    ctaText: "Book Your 3-Day Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: dbData.hero.whatsappText,
     whatsappNumber: dbData.hero.whatsappNumber,
     backgroundImage: dbData.hero.backgroundImage || "/hero-bg.jpg",
+    urgencyBadges: [
+      "3-Day Free Trial Included",
+      "No Credit Card Required",
+      "Cancel or Reschedule Anytime",
+    ],
   };
 
   const faqSchema = {
@@ -69,10 +74,10 @@ export default async function MichiganQuranClassesPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is there a free trial class?",
+        "name": "Is there a 3-day free trial?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. New students can take a live trial class with an OQTutor teacher before enrolling in a paid plan."
+          "text": "Yes. New students can take a live 3-day free trial with an OQTutor teacher before enrolling in a paid plan."
         }
       },
       {
@@ -180,7 +185,7 @@ export default async function MichiganQuranClassesPage() {
         <>
           Yes. New students can register for a live{" "}
           <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
-            free trial class
+            3-day free trial
           </Link>{" "}
           with an OQTutor teacher before subscribing.
         </>
@@ -307,7 +312,7 @@ export default async function MichiganQuranClassesPage() {
       <Navbar adminLoggedIn={adminLoggedIn} />
 
       <main className="flex-grow">
-        <Hero data={customHeroData} />
+        <Hero data={customHeroData} urgencyBadges={customHeroData.urgencyBadges} />
 
         {/* Section 1: Why Choose OQTutor */}
         <section className="py-16 md:py-24 relative overflow-hidden bg-background">
@@ -318,7 +323,7 @@ export default async function MichiganQuranClassesPage() {
                 Why Us
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Why Families in Dearborn, Detroit, Troy &amp; Canton Choose OQTutor
+                Why Muslim Families Across Metro Detroit &amp; Michigan Choose OQTutor
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
             </div>
@@ -367,7 +372,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">Scheduling Built Around Michigan Life</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Between school pickups, work shifts, and evening prayers, Michigan families are busy. We offer morning, afternoon, evening, and weekend slots so <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Quran learning</Link> fits into your routine.
+                    Between school pickups, work shifts, and seasonal winter Maghrib shifts, Michigan families are busy. We offer flexible Eastern Time after-school slots (3:30 PM – 9:00 PM EST) as well as morning and weekend slots so <Link href="/how-it-works" className="text-primary hover:underline font-semibold">Quran learning</Link> fits seamlessly into your routine.
                   </p>
                 </div>
               </div>
@@ -379,7 +384,7 @@ export default async function MichiganQuranClassesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">No Commute, No Compromise</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Skip the drive across town. Learn from your living room with the same quality of instruction — or better, thanks to our interactive portal and screen-sharing tools for <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">pronunciation correction</Link>.
+                    Avoid stressful Michigan winter snow commutes along I-94 and I-75. Learn safely from your living room with the same high quality of instruction — or better, thanks to our interactive portal and screen-sharing tools for <Link href="/courses/tajweed" className="text-primary hover:underline font-semibold">pronunciation correction</Link>.
                   </p>
                 </div>
               </div>
@@ -389,9 +394,9 @@ export default async function MichiganQuranClassesPage() {
                   <div className="p-3.5 bg-primary/10 text-primary w-fit rounded-2xl mb-6">
                     <BookOpen className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3">Free Placement Trial</h3>
+                  <h3 className="text-lg font-bold text-foreground mb-3">3-Day Free Trial</h3>
                   <p className="text-xs sm:text-sm text-muted-text leading-relaxed font-normal">
-                    Try a live class with an OQTutor teacher before you commit to a plan, so you and your child can see the teaching style firsthand by booking a <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">free trial class</Link>.
+                    Try live classes with an OQTutor teacher before you commit to a plan, so you and your child can see the teaching style firsthand by booking a <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">3-day free trial</Link>.
                   </p>
                 </div>
               </div>
@@ -400,7 +405,7 @@ export default async function MichiganQuranClassesPage() {
         </section>
 
         {/* Section 2: Our Quran Courses */}
-        <section className="py-16 md:py-24 bg-foreground/[0.01] border-t border-card-border">
+        <section id="courses" className="py-16 md:py-24 bg-foreground/[0.01] border-t border-card-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
@@ -472,7 +477,7 @@ export default async function MichiganQuranClassesPage() {
                     Word-by-word and verse-by-verse translation classes for students who want to connect what they recite in Salah to its meaning in English.
                   </p>
                 </div>
-                <Link href="/courses/arabic" className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group">
+                <Link href="/courses/tafseer" className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group">
                   <span>Explore Course</span>
                   <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -504,11 +509,11 @@ export default async function MichiganQuranClassesPage() {
                   Michigan Reach
                 </span>
                 <h2 className="text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Serving Muslim Families in Dearborn, Detroit, Troy &amp; Canton with Flexible EST Scheduling
+                  Serving Dearborn, Canton, Troy, Ann Arbor &amp; All of Michigan on EST Time
                 </h2>
                 <div className="h-1 w-16 bg-secondary rounded-full" />
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                  OQTutor's <Link href="/how-it-works" className="text-primary hover:underline font-semibold font-sans">online classes</Link> reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified <Link href="/tutors" className="text-primary hover:underline font-semibold font-sans">online tutor</Link> — only your schedule does. If you reside outside Michigan, explore regional directories like <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York Quran Classes</Link> or our national <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA Locations Hub</Link>.
+                  OQTutor's <Link href="/how-it-works" className="text-primary hover:underline font-semibold font-sans">online classes</Link> reach students throughout Michigan, including Dearborn & Dearborn Heights, Detroit, Hamtramck, Ann Arbor, Sterling Heights, Canton & Livonia, Lansing, and Grand Rapids. Because classes are entirely online, your city or zip code never limits your access to a qualified <Link href="/tutors" className="text-primary hover:underline font-semibold font-sans">online tutor</Link> — only your schedule does. If you reside outside Michigan, explore neighbouring state directories like <Link href="/locations/usa/illinois" className="text-primary hover:underline font-semibold font-sans">Illinois Quran Classes</Link>, regional pages like <Link href="/locations/usa/new-york" className="text-primary hover:underline font-semibold font-sans">New York Quran Classes</Link>, or our national <Link href="/locations/usa" className="text-primary hover:underline font-semibold font-sans">USA Locations Hub</Link>.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
@@ -564,7 +569,7 @@ export default async function MichiganQuranClassesPage() {
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 { title: "Register", desc: "Tell us the student's age, current Quran reading level, and course of interest." },
-                { title: "Free Trial Class", desc: "We match you with a tutor and schedule a live trial session." },
+                { title: "3-Day Free Trial", desc: "We match you with a certified tutor and schedule your live 3-day free trial sessions." },
                 { title: "Get Placed on a Path", desc: "Based on the trial, we recommend the right starting point and course pace." },
                 { title: "Start Regular Classes", desc: "Choose a weekly schedule and begin consistent, live instruction." },
                 { title: "Track Progress", desc: "Parents receive regular updates on recitation, memorization, and behavior." }
@@ -591,7 +596,7 @@ export default async function MichiganQuranClassesPage() {
                 Pricing Plans
               </span>
               <h2 className="mt-4 text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                Affordable Rates &amp; Flexible EST Scheduling for Michigan Families
+                Affordable Monthly Plans for Michigan Families — Starting at $30/Month
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-xs sm:text-sm text-muted-text max-w-md mx-auto">
@@ -789,14 +794,14 @@ export default async function MichiganQuranClassesPage() {
                 Start Learning Quran Online Today
               </h3>
               <p className="text-sm md:text-base text-muted-text max-w-xl mx-auto leading-relaxed font-normal">
-                Give your family consistent, high-quality Quran education without leaving home. Book a free trial class and see why Michigan families are choosing OQTutor.
+                Give your family consistent, high-quality Quran education without leaving home. Book a 3-day free trial and see why Michigan families are choosing OQTutor.
               </p>
               <div className="pt-2">
                 <Link
                   href="/book-free-trial"
                   className="inline-flex items-center space-x-2.5 px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
                 >
-                  <span>Book Your Free Trial Class</span>
+                  <span>Book Your 3-Day Free Trial</span>
                   <ArrowRight className="h-4.5 w-4.5" />
                 </Link>
               </div>
