@@ -1,3 +1,4 @@
+// Michigan Location Page - Live 1-on-1 Online Quran Classes (EST)
 import { cookies } from 'next/headers';
 import { readDB } from '@/data/db';
 import { verifyAdminToken } from '@/lib/auth';
