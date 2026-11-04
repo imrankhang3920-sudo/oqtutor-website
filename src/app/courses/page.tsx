@@ -17,14 +17,14 @@ import {
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
-  description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
+  title: 'Online Quran Courses | Kids, Adults, Tafseer, Hifz',
+  description: 'Explore Quran reading, tajweed, hifz, tafseer and Arabic courses. Live one-on-one classes with a 3-day free trial.',
   alternates: {
     canonical: 'https://www.oqtutor.com/courses',
   },
   openGraph: {
-    title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
-    description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
+    title: 'Online Quran Courses | Kids, Adults, Tafseer, Hifz',
+    description: 'Explore Quran reading, tajweed, hifz, tafseer and Arabic courses. Live one-on-one classes with a 3-day free trial.',
     url: 'https://www.oqtutor.com/courses',
     siteName: 'OQTutor',
     type: 'website',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Online Quran Courses – 1-on-1 Classes for Kids & Adults | Free Trial',
-    description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
+    title: 'Online Quran Courses | Kids, Adults, Tafseer, Hifz',
+    description: 'Explore Quran reading, tajweed, hifz, tafseer and Arabic courses. Live one-on-one classes with a 3-day free trial.',
     images: ['https://www.oqtutor.com/online-quran-classes-usa.jpg'],
   },
 };
@@ -419,8 +419,8 @@ export default async function CoursesPage() {
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Online Quran Courses for Kids & Adults',
-    description: 'Explore online Quran courses for kids and adults, including Noorani Qaida, Quran Reading, Tajweed, Hifz, Tafseer, Islamic Studies, and Arabic at OQTutor.',
+    name: 'Online Quran Courses | Kids, Adults, Tafseer, Hifz',
+    description: 'Explore Quran reading, tajweed, hifz, tafseer and Arabic courses. Live one-on-one classes with a 3-day free trial.',
     url: 'https://www.oqtutor.com/courses',
     mainEntity: {
       '@type': 'ItemList',
