@@ -20,6 +20,7 @@ import ArticleContentQuranicArabicVsModernStandardArabic from './ArticleContentQ
 import ArticleContentOnlineIslamicStudiesKids from './ArticleContentOnlineIslamicStudiesKids';
 import ArticleContentOnlineIslamicStudiesCurriculumKids from './ArticleContentOnlineIslamicStudiesCurriculumKids';
 import ArticleContentKidsUsa from './ArticleContentKidsUsa';
+import ArticleContentMakharijAlHuruf from './ArticleContentMakharijAlHuruf';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -65,11 +66,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
   const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
+  const isMakharijBlog = resolvedParams.slug === 'mastering-makharij-al-huruf-heavy-and-throat-arabic-letters';
   const isOnlineIslamicStudiesCurriculumKidsBlog = resolvedParams.slug === 'online-islamic-studies-curriculum-for-kids';
   const isOnlineIslamicStudiesKidsBlog = resolvedParams.slug === 'online-islamic-studies-for-kids';
-  const isGlobalBlog = isOnlineIslamicStudiesCurriculumKidsBlog || isOnlineIslamicStudiesKidsBlog || isQuranicVsMsaBlog || isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
+  const isGlobalBlog = isMakharijBlog || isOnlineIslamicStudiesCurriculumKidsBlog || isOnlineIslamicStudiesKidsBlog || isQuranicVsMsaBlog || isWhyJuzAmmaTafseerEssentialBlog || isTafseerIbnKathirVsJalalaynBlog || isRoleParentsBlog || isTafseerOnlineBlog || isNeverReadQuranSisterBlog || isWhyNooraniQaidaEssentialBlog || isUSABlog || isTutorBlog || isTajweedBlog || isHifzBlog || isConsistentHifzBlog || isOnlineVsInPersonBlog || isTarteelVsTajweedBlog || isChallengesBlog || isMaleFemaleTeacherBlog || isWeekendQuranBlog || isAdultUsaBlog || isBeginnersBlog || isBrainRewireBlog || isUKCompleteGuideBlog || isAfterNooraniQaidaBlog || isImprovePronunciationBlog;
 
-  const metaTitle = isOnlineIslamicStudiesCurriculumKidsBlog
+  const metaTitle = isMakharijBlog
+    ? 'Mastering Makharij al Huruf: Heavy & Throat Arabic Letters'
+    : isOnlineIslamicStudiesCurriculumKidsBlog
     ? 'Online Islamic Studies Curriculum: What Kids Should Learn'
     : isOnlineIslamicStudiesKidsBlog
     ? 'Online Islamic Studies for Kids: 6 Things Every Child Should Learn | OQTutor'
@@ -121,7 +125,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
 
-  const metaDescription = isOnlineIslamicStudiesCurriculumKidsBlog
+  const metaDescription = isMakharijBlog
+    ? 'Learn how to pronounce heavy and throat Arabic letters with accurate Makharij al Huruf. Master Qaaf, Ayn, and Tafkheem rules with authentic Tajweed steps.'
+    : isOnlineIslamicStudiesCurriculumKidsBlog
     ? 'Discover what every child should learn in an online Islamic Studies curriculum. Explore age milestones, Salah, Aqeedah, Seerah, and verified research.'
     : isOnlineIslamicStudiesKidsBlog
     ? 'What should kids learn beyond Quran reading? A 6-pillar Islamic Studies roadmap for ages 4-16, plus a 3-day free trial.'
@@ -217,6 +223,7 @@ export default async function BlogPostPage({ params }: Props) {
   const isTafseerIbnKathirVsJalalaynBlog = resolvedParams.slug === 'tafseer-ibn-kathir-vs-al-jalalayn-beginners-guide';
   const isWhyJuzAmmaTafseerEssentialBlog = resolvedParams.slug === 'why-studying-juz-amma-tafseer-essential-guide';
   const isQuranicVsMsaBlog = resolvedParams.slug === 'quranic-arabic-vs-modern-standard-arabic';
+  const isMakharijBlog = resolvedParams.slug === 'mastering-makharij-al-huruf-heavy-and-throat-arabic-letters';
   const isOnlineIslamicStudiesCurriculumKidsBlog = resolvedParams.slug === 'online-islamic-studies-curriculum-for-kids';
   const isOnlineIslamicStudiesKidsBlog = resolvedParams.slug === 'online-islamic-studies-for-kids';
 
@@ -229,7 +236,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      {!isKidsUsaBlog && (
+      {!isKidsUsaBlog && !isMakharijBlog && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -372,6 +379,87 @@ export default async function BlogPostPage({ params }: Props) {
                       "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "Yes. Experienced male and female teachers are available."
+                      }
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      )}
+
+      {isMakharijBlog && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Article",
+                  "headline": "Mastering Makharij al Huruf: How to Pronounce Heavy and Throat Arabic Letters",
+                  "description": "Learn how to pronounce heavy and throat Arabic letters with accurate Makharij al Huruf. Master Qaaf, Ayn, and Tafkheem rules with authentic Tajweed steps.",
+                  "author": {
+                    "@type": "Organization",
+                    "name": "OQTutor Editorial Team",
+                    "url": "https://www.oqtutor.com"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "OQTutor",
+                    "url": "https://www.oqtutor.com",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://www.oqtutor.com/logo.jpg"
+                    }
+                  },
+                  "mainEntityOfPage": "https://www.oqtutor.com/blog/mastering-makharij-al-huruf-heavy-and-throat-arabic-letters",
+                  "datePublished": "2026-11-05",
+                  "dateModified": "2026-11-05",
+                  "image": "https://www.oqtutor.com/blog/mastering-makharij-al-huruf-heavy-and-throat-arabic-letters/certified-tajweed-tutor-teaching-young-boy-makharij.webp",
+                  "keywords": [
+                    "Makharij al Huruf",
+                    "how to pronounce Arabic throat letters",
+                    "heavy letters in Tajweed",
+                    "Al Halq letters",
+                    "Tafkheem letters khussa daghtin qidh",
+                    "Qaaf vs Kaaf pronunciation"
+                  ]
+                },
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "What is the hardest Arabic letter for English speakers to pronounce?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most native English speakers find Ayn (ع) from the middle of the throat and Daad (ض) from the sides of the tongue the most challenging at first. In fact, Arabic is famously called Lughat al Daad (the Language of Daad) because that specific side tongue articulation is unique to Arabic. With guided exercises, students usually master both within a few weeks."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Does poor pronunciation invalidate my Salah (prayer)?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Islamic scholars distinguish between two types of mistakes in recitation: Lahn Jali (major, obvious errors) and Lahn Khafi (minor, subtle errors). Swapping one letter for another in Surah Al Fatiha (such as turning An'amta with an Ayn into An'amta with a Hamzah) is a major error that changes the meaning. However, if a beginner or new Muslim is actively trying their best to learn, Allah is Most Merciful. In Sahih Muslim (Hadith 798), the Prophet ﷺ promised that a person who stumbles and struggles while reciting the Quran receives a double reward."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "Can adults still fix their Makharij after years of reading the old way?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, 100 percent. Whether you are twenty five or sixty five, your tongue is a muscle that responds to training. Many students in our Arabic Language and Hifz ul Quran programs unlearn decades old pronunciation habits in just four to eight weeks of focused 1 on 1 coaching."
+                      }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What is the best age for kids to learn proper Makharij al Huruf?",
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ages 4 to 8 are the golden window for phonetics. Young children have remarkable neuroplasticity and can mimic throat and heavy letters effortlessly when they learn Noorani Qaida from a qualified tutor right from the start."
                       }
                     }
                   ]
@@ -2441,7 +2529,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
 
-          {blog.coverImage && (
+          {blog.coverImage && !isMakharijBlog && (
             <div className="relative mb-10 h-64 sm:h-96 overflow-hidden rounded-3xl border border-card-border shadow-xl">
               <Image
                 src={blog.coverImage}
@@ -2456,7 +2544,9 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Body Article Content */}
           <div className="glass p-6 sm:p-12 rounded-3xl border border-card-border shadow-xl space-y-8 text-foreground/90 leading-relaxed text-base">
-            {isOnlineIslamicStudiesCurriculumKidsBlog ? (
+            {isMakharijBlog ? (
+              <ArticleContentMakharijAlHuruf />
+            ) : isOnlineIslamicStudiesCurriculumKidsBlog ? (
               <ArticleContentOnlineIslamicStudiesCurriculumKids />
             ) : isOnlineIslamicStudiesKidsBlog ? (
               <ArticleContentOnlineIslamicStudiesKids />

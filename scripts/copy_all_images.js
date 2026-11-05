@@ -21,6 +21,11 @@ if (!fs.existsSync(roleParentsDir)) {
   fs.mkdirSync(roleParentsDir, { recursive: true });
 }
 
+const makharijDir = path.join(__dirname, '../public/blog/mastering-makharij-al-huruf-heavy-and-throat-arabic-letters');
+if (!fs.existsSync(makharijDir)) {
+  fs.mkdirSync(makharijDir, { recursive: true });
+}
+
 const quranicArabicVsMsaDir = path.join(__dirname, '../public/blog/quranic-arabic-vs-modern-standard-arabic');
 if (!fs.existsSync(quranicArabicVsMsaDir)) {
   fs.mkdirSync(quranicArabicVsMsaDir, { recursive: true });
@@ -141,6 +146,21 @@ const sourceFiles = [
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\64e0131b-5522-4c39-a25a-3e369ccfe21f\\.user_uploaded\\media_1792286789545.png',
     fallbackSrc: path.join(__dirname, '../public/parents-role.jpg'),
     dest: path.join(quranicArabicVsMsaDir, 'family-father-son-quranic-arabic-learning.png')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\add2857b-085b-431b-ae32-1efdaf17194f\\.user_uploaded\\media_1793843504742_b8f2776b.webp',
+    fallbackSrc: path.join(makharijDir, 'certified-tajweed-tutor-teaching-young-boy-makharij.webp'),
+    dest: path.join(makharijDir, 'certified-tajweed-tutor-teaching-young-boy-makharij.webp')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\add2857b-085b-431b-ae32-1efdaf17194f\\.user_uploaded\\media_1793843504767_a56e2238.jpg',
+    fallbackSrc: path.join(makharijDir, 'adult-learner-practicing-arabic-throat-letters.jpg'),
+    dest: path.join(makharijDir, 'adult-learner-practicing-arabic-throat-letters.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\add2857b-085b-431b-ae32-1efdaf17194f\\.user_uploaded\\media_1793843504742_d7d797e0.jpg',
+    fallbackSrc: path.join(makharijDir, 'muslim-father-son-learning-heavy-light-letters.jpg'),
+    dest: path.join(makharijDir, 'muslim-father-son-learning-heavy-light-letters.jpg')
   }
 ];
 

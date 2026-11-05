@@ -4122,6 +4122,18 @@
   ],
   "blogs": [
     {
+      "id": "blog-mastering-makharij-al-huruf-heavy-and-throat-arabic-letters",
+      "title": "Mastering Makharij al Huruf: How to Pronounce Heavy and Throat Arabic Letters",
+      "category": "Tajweed Guides",
+      "description": "Learn how to pronounce heavy and throat Arabic letters with accurate Makharij al Huruf. Master Qaaf, Ayn, and Tafkheem rules with authentic Tajweed steps.",
+      "readTime": "8 min read",
+      "slug": "mastering-makharij-al-huruf-heavy-and-throat-arabic-letters",
+      "coverImage": "/blog/mastering-makharij-al-huruf-heavy-and-throat-arabic-letters/certified-tajweed-tutor-teaching-young-boy-makharij.webp",
+      "publishedAt": "November 5, 2026",
+      "updatedAt": "November 5, 2026",
+      "authorName": "OQTutor Editorial Team"
+    },
+    {
       "id": "blog-best-online-quran-classes-for-beginners",
       "title": "What Are the Best Online Quran Classes for Beginners?",
       "category": "Beginner Quran Guides",
@@ -4550,7 +4562,6 @@
       "slug": "how-to-overcome-common-challenges-in-online-quran-classes",
       "publishedAt": "July 25, 2026"
     },
-
     {
       "id": "blog-weekend-quran-classes",
       "title": "How Weekend Quran Classes Help Students Learn Tajweed at Their Own Pace",
@@ -4560,7 +4571,6 @@
       "slug": "weekend-quran-classes-tajweed-own-pace",
       "coverImage": "/blog/weekend-quran/weekend-quran-class-1.jpg",
       "publishedAt": "July 23, 2026"
-
     },
     {
       "id": "blog-usa-quran-classes",
@@ -4573,7 +4583,6 @@
       "publishedAt": "July 21, 2026",
       "updatedAt": "October 4, 2026"
     },
-
     {
       "id": "blog-how-long-does-it-take-for-a-child-to-complete-the-quran-online",
       "title": "How Long Does It Take for a Child to Complete the Quran Online? (Realistic Timeline & Parent Guide)",
@@ -4756,15 +4765,51 @@
     "ctaText": "Book Free Trial",
     "ctaLink": "/book-free-trial",
     "menuItems": [
-      { "id": "nav-1", "label": "Home", "url": "/" },
-      { "id": "nav-2", "label": "Courses", "url": "/courses" },
-      { "id": "nav-3", "label": "How It Works", "url": "/how-it-works" },
-      { "id": "nav-4", "label": "Pricing", "url": "/pricing" },
-      { "id": "nav-5", "label": "Tutors", "url": "/tutors" },
-      { "id": "nav-6", "label": "About Us", "url": "/about" },
-      { "id": "nav-7", "label": "FAQ", "url": "/faq" },
-      { "id": "nav-8", "label": "Blog", "url": "/blog" },
-      { "id": "nav-9", "label": "Contact", "url": "/contact" }
+      {
+        "id": "nav-1",
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "id": "nav-2",
+        "label": "Courses",
+        "url": "/courses"
+      },
+      {
+        "id": "nav-3",
+        "label": "How It Works",
+        "url": "/how-it-works"
+      },
+      {
+        "id": "nav-4",
+        "label": "Pricing",
+        "url": "/pricing"
+      },
+      {
+        "id": "nav-5",
+        "label": "Tutors",
+        "url": "/tutors"
+      },
+      {
+        "id": "nav-6",
+        "label": "About Us",
+        "url": "/about"
+      },
+      {
+        "id": "nav-7",
+        "label": "FAQ",
+        "url": "/faq"
+      },
+      {
+        "id": "nav-8",
+        "label": "Blog",
+        "url": "/blog"
+      },
+      {
+        "id": "nav-9",
+        "label": "Contact",
+        "url": "/contact"
+      }
     ]
   },
   "footerNav": {
@@ -4772,8 +4817,14 @@
     "copyrightText": "© 2026 OQTutor. All rights reserved.",
     "columns": [],
     "socialLinks": [
-      { "platform": "facebook", "url": "https://www.facebook.com/oqtutor" },
-      { "platform": "instagram", "url": "https://www.instagram.com/oqtutor/" }
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/oqtutor"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oqtutor/"
+      }
     ]
   },
   "mediaLibrary": []
