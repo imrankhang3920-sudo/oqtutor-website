@@ -120,7 +120,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : isBeginnersBlog
-    ? 'Best Online Quran Classes for Beginners (Step-by-Step Guide) | OQTutor'
+    ? 'Online Quran Classes for Beginners | 3-Day Free Trial'
     : isMaleFemaleTeacherBlog
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
@@ -141,6 +141,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'What is the exact difference between Tajweed and Tarteel in the Quran? See our side-by-side comparison table, Surah Al-Muzzammil proof, & pronunciation rules.'
     : isKidsUsaBlog
     ? 'Compare top 1-on-1 online Quran classes for kids in the USA. Certified tutors, flexible US time zones, and a 3-day free trial. Plans from $30/mo.'
+    : isBeginnersBlog
+    ? 'New to the Quran? Start from the basics with patient one-on-one tutors. Learn to read correctly at your own pace. Try 3 days free.'
     : blog.description;
 
   const coverImgUrl = blog.coverImage
@@ -1120,7 +1122,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "How long does it take for a beginner to read Quran fluently?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "With 3 to 4 classes per week and 15 minutes of daily practice, most beginners complete Noorani Qaida in 3 to 5 months and begin reading the Quran independently with basic Tajweed within 6 to 12 months."
+                    "text": "Every student progresses at their own pace. With consistent lessons and 15 minutes of daily practice, beginners typically master Arabic letters and Noorani Qaida fundamentals before advancing to fluent Quran reading. Your tutor tailors each lesson to your individual learning speed."
                   }
                 },
                 {
@@ -2505,6 +2507,8 @@ export default async function BlogPostPage({ params }: Props) {
                 ? 'Tajweed vs. Tarteel: 5 Key Differences Every Quran Student Should Know'
                 : isOnlineVsInPersonBlog
                 ? 'Online vs In-Person Quran Classes: Which Is Better?'
+                : isBeginnersBlog
+                ? 'Best Online Quran Classes for Beginners'
                 : isBrainRewireBlog
                 ? 'Why Memorizing the Quran Rewires Your Brain: 7 Neuroscience Benefits of Hifz'
                 : blog.title}
@@ -11706,11 +11710,11 @@ function ArticleContentBeginnersGuide() {
       </div>
 
       <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        Starting your Quran learning journey can feel intimidating when you don&apos;t know where to begin. You might know a few Arabic letters, recognize some short Surahs, or be starting from absolute zero with no Arabic background. The good news is that with a structured roadmap and a patient teacher, anyone—regardless of age—can learn to recite the Holy Quran with clarity and confidence.
+        Starting your journey with online Quran classes for beginners can feel intimidating when you don&apos;t know where to begin. You might know a few Arabic letters, recognize some short Surahs, or be starting from absolute zero with no Arabic background. The good news is that with a structured roadmap and patient one-on-one tutors, anyone—regardless of age—can learn to read correctly at their own pace with clarity and confidence.
       </p>
 
       <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-        At <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>, beginner education is designed around foundational mastery rather than rushing through chapters. Whether you are a parent seeking <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> or an adult starting later in life, this comprehensive guide outlines what makes a beginner course truly effective.
+        At <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>, beginner education is designed around foundational mastery rather than rushing through chapters. Whether you are a parent seeking <Link href="/courses/quran-for-kids" className="text-primary font-semibold hover:underline">online Quran classes for kids</Link> or an adult starting fresh in our dedicated <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Quran classes for adults</Link>, this comprehensive guide outlines what makes a beginner course truly effective.
       </p>
 
       {/* Featured Visual Image */}
@@ -11736,7 +11740,7 @@ function ArticleContentBeginnersGuide() {
           What Should Beginners Look for in an Online Quran Class?
         </h2>
         <p className="text-base text-muted-text">
-          Choosing an online Quran program should not depend solely on aggressive marketing or the cheapest price. Beginners require a nurturing, structured environment where bad pronunciation habits are corrected gently before they become permanent.
+          Choosing an online Quran program should not depend solely on aggressive marketing or the cheapest price. Beginners require a nurturing, structured environment where bad pronunciation habits are corrected gently before they become permanent. At OQTutor, transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link> ensure high quality without surprise fees: plans start at $30/month (plans: $30, $40, $50 per month).
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -11766,7 +11770,7 @@ function ArticleContentBeginnersGuide() {
               <span>Structured Phonics Curriculum</span>
             </div>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              A systematic progression from Arabic letter shapes to <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> and complete verses prevents cognitive overload.
+              A systematic progression from Arabic letter shapes to <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> and complete verses prevents cognitive overload. Read our guide on <Link href="/blog/why-noorani-qaida-essential" className="text-primary font-semibold hover:underline">why Noorani Qaida is essential for beginners</Link>.
             </p>
           </div>
 
@@ -11776,7 +11780,7 @@ function ArticleContentBeginnersGuide() {
               <span>Flexible Class Timings</span>
             </div>
             <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
-              Morning, afternoon, evening, and weekend slots across all US time zones (EST, CST, MST, PST) ensure seamless integration with work or school.
+              Classes are conducted live on Zoom or Google Meet across all US time zones (EST, CST, MST, PST) to fit comfortably around work or school.
             </p>
           </div>
         </div>
@@ -11818,7 +11822,7 @@ function ArticleContentBeginnersGuide() {
               <h3 className="text-lg font-bold text-foreground">Compound Letter Joining &amp; Word Formation</h3>
             </div>
             <p className="text-sm text-muted-text pl-11 leading-relaxed">
-              Practice reading 2, 3, and 4-letter joined Arabic words. This forms the transition bridge from isolated Qaida drills to actual Quranic text.
+              Practice reading 2, 3, and 4-letter joined Arabic words. This forms the transition bridge from isolated Qaida drills into our <Link href="/courses/quran-reading" className="text-primary font-semibold hover:underline">Quran reading course</Link>.
             </p>
           </div>
 
@@ -11866,7 +11870,7 @@ function ArticleContentBeginnersGuide() {
             <tbody className="divide-y divide-card-border/60">
               <tr>
                 <td className="p-3.5 font-semibold text-foreground">Active Recitation Time</td>
-                <td className="p-3.5 text-primary font-bold">100% of class (30 min)</td>
+                <td className="p-3.5 text-primary font-bold">100% of session (class length: 30 to 40 minutes)</td>
                 <td className="p-3.5 text-muted-text">2–5 minutes</td>
                 <td className="p-3.5 text-muted-text">0 min (passive listening)</td>
               </tr>
@@ -11960,7 +11964,7 @@ function ArticleContentBeginnersGuide() {
               How long does it take for a beginner to read Quran fluently?
             </h3>
             <p className="text-sm text-muted-text leading-relaxed">
-              With 3 to 4 classes per week and 15 minutes of daily practice, most beginners complete Noorani Qaida in 3 to 5 months and begin reading the Quran independently with basic Tajweed within 6 to 12 months.
+              Every student progresses at their own pace. With consistent lessons and 15 minutes of daily practice, beginners typically master Arabic letters and Noorani Qaida fundamentals before advancing to fluent Quran reading. Your tutor tailors each lesson to your individual learning speed.
             </p>
           </div>
 
@@ -12015,13 +12019,18 @@ function ArticleContentBeginnersGuide() {
               Noorani Qaida Course: Master Arabic Alphabet &amp; Phonetics
             </Link>
           </li>
+          <li>
+            <Link href="/blog/why-noorani-qaida-essential" className="text-primary font-semibold hover:underline">
+              Why Is Noorani Qaida Essential for Beginners? (Complete Guide)
+            </Link>
+          </li>
         </ul>
       </section>
 
       {/* Final Thoughts & CTA */}
       <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-          Start Your Quran Journey with a Free Trial
+          Start Your Quran Journey with a 3-Day Free Trial
         </h2>
         <p className="text-base text-muted-text">
           Every Hafiz and skilled Qari started with the single letter Alif. The key to mastering the Holy Quran is starting with clear direction, regular practice, and a compassionate teacher who believes in your potential.
@@ -12039,15 +12048,15 @@ function ArticleContentBeginnersGuide() {
             <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
               Book Your Free Beginner Trial Quran Class
             </h3>
-            <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-              Join hundreds of beginners across the USA, UK, Canada, and Australia learning Quran online. Free 30-minute trial lesson, flexible schedule, no credit card required.
+            <p className="text-sm sm:text-base text-muted-text max-w-xl mx-auto leading-relaxed">
+              New to the Quran? Start with a 3-day free trial of live one-on-one online classes, taught at your pace.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/book-free-trial"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
               >
-                <span>Book Free Trial Class</span>
+                <span>Book Your 3-Day Free Trial</span>
                 <ArrowRight className="h-4.5 w-4.5" />
               </Link>
               <Link
