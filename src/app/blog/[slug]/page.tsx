@@ -21,6 +21,7 @@ import ArticleContentOnlineIslamicStudiesKids from './ArticleContentOnlineIslami
 import ArticleContentOnlineIslamicStudiesCurriculumKids from './ArticleContentOnlineIslamicStudiesCurriculumKids';
 import ArticleContentKidsUsa from './ArticleContentKidsUsa';
 import ArticleContentMakharijAlHuruf from './ArticleContentMakharijAlHuruf';
+import ArticleContentOnlineVsInPerson from './ArticleContentOnlineVsInPerson';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -112,7 +113,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
     : isOnlineVsInPersonBlog
-    ? 'Online vs In-Person Quran Classes: Which Is Better?'
+    ? 'Online vs. In-Person Quran Classes: Which Learning Path Brings You Closer to the Quran? | OQTutor'
     : isKidsUsaBlog
     ? 'Online Quran Classes for Kids in the USA (2026): Compared'
     : isTarteelVsTajweedBlog
@@ -136,7 +137,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isBrainRewireBlog
     ? 'Discover the neuroscience of Hifz: how memorizing the Quran boosts memory, focus, neuroplasticity, and cognitive health in children and adults.'
     : isOnlineVsInPersonBlog
-    ? 'Comparing online and in-person Quran classes? See the pros and cons, and how to choose what fits your family\'s schedule.'
+    ? 'Comparing online vs in-person Quran classes? Explore the real-world differences in scheduling, cost, 1-on-1 attention, teacher credentials, and safety to choose the right path for your family.'
     : isTarteelVsTajweedBlog
     ? 'What is the exact difference between Tajweed and Tarteel in the Quran? See our side-by-side comparison table, Surah Al-Muzzammil proof, & pronunciation rules.'
     : isKidsUsaBlog
@@ -2035,10 +2036,10 @@ export default async function BlogPostPage({ params }: Props) {
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "Can a beginner learn the Quran effectively through online classes?",
+                  "name": "Can a complete beginner learn the Quran effectively through online classes?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes — with the right teacher, one-on-one online sessions work well for beginners since the whole lesson is focused on correcting pronunciation and building the basics of Tajweed."
+                    "text": "Yes. In fact, 1-on-1 online sessions are ideal for beginners starting with Noorani Qaida because the teacher spends the entire lesson focused on your specific pronunciation and mouth positioning without classroom distractions."
                   }
                 },
                 {
@@ -2046,7 +2047,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "How do I know if an online Quran teacher is qualified and trustworthy?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Check for a verified Ijazah, ask about their experience with your specific age group or level, and take the 3-day free trial seriously before you commit. Reviews or references from other parents help too."
+                    "text": "Always verify that the tutor holds a formal Ijazah, has experience teaching your specific age group, and speaks fluent English to explain rules clearly. Reputable platforms like OQTutor vet teachers rigorously and offer a free trial class so you can evaluate the tutor first."
                   }
                 },
                 {
@@ -2054,7 +2055,7 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "Are in-person Quran classes better for young children than online ones?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Often, yes — the structure and peer environment can help younger kids stay engaged. But it really depends on the child; some do just as well, or better, one-on-one."
+                    "text": "It depends on the child. Some 4-to-6-year-olds thrive on the physical structure and peer energy of a classroom. However, many children who get distracted by noisy classmates actually focus much better in short, engaging 1-on-1 online lessons where the tutor uses visual whiteboards and interactive rewards."
                   }
                 },
                 {
@@ -2062,39 +2063,39 @@ export default async function BlogPostPage({ params }: Props) {
                   "name": "What equipment or internet setup do I need for online Quran classes?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Just a stable connection, a device with a camera and mic (classes are held live on Zoom or Google Meet), a quiet space, and a physical Quran or reliable app."
+                    "text": "All you need is a stable internet connection, a tablet or computer with a webcam, a quiet space, and a simple headset with a microphone so your teacher can clearly hear every Tajweed nuance. Your teacher will display the digital Mushaf directly on your screen."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Is it possible to memorize the Quran (Hifz) through online classes?",
+                  "name": "Is it possible to memorize the entire Quran (Hifz) through online classes?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, plenty of students complete Hifz fully online — it comes down to having a consistent teacher, a solid revision routine, and daily discipline."
+                    "text": "Absolutely. Thousands of students complete their Hifz-ul-Quran entirely online. Because 1-on-1 sessions dedicate 100% of the class time to your new lesson (Sabaq), recent revision (Sabqi), and old revision (Manzil), online Hifz students often progress faster than students waiting in line in a crowded madrasah."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "How do find a reliable in-person Quran class in my area?",
+                  "name": "Can I request a female Quran teacher for myself or my daughter?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Start by asking around at local mosques and Islamic centers, and always confirm the teacher's credentials before signing up."
+                    "text": "Yes. One of the biggest advantages of online learning with OQTutor is instant access to certified, experienced female Quran tutors—allowing sisters and young girls to learn comfortably from home."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Can adults who have never studied the Quran before join either type of class?",
+                  "name": "Can adults who have never studied the Quran before join online classes?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Definitely. A lot of adult beginners actually prefer online one-on-one classes, since there's no pressure of being the only adult in a room full of younger students."
+                    "text": "Definitely. Most adult beginners and converts strongly prefer 1-on-1 online classes because they provide a private, judgment-free environment where you never have to feel self-conscious about learning alongside young children."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "What should I look for when comparing online Quran learning platforms or tutors?",
+                  "name": "What happens if we need to miss or reschedule an online class?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Look at teacher credentials, whether it's one-on-one or group, how transparent the pricing is, and whether they actually track your Tajweed progress over time — not just attendance."
+                    "text": "Unlike traditional in-person classes where a missed day is lost forever, OQTutor allows you to easily reschedule sessions with advance notice, ensuring you or your child never fall behind during busy weeks, illnesses, or family travel."
                   }
                 }
               ]
@@ -2506,7 +2507,7 @@ export default async function BlogPostPage({ params }: Props) {
                 : isTarteelVsTajweedBlog
                 ? 'Tajweed vs. Tarteel: 5 Key Differences Every Quran Student Should Know'
                 : isOnlineVsInPersonBlog
-                ? 'Online vs In-Person Quran Classes: Which Is Better?'
+                ? 'Online vs. In-Person Quran Classes: Which Learning Path Brings You Closer to the Quran?'
                 : isBeginnersBlog
                 ? 'Best Online Quran Classes for Beginners'
                 : isBrainRewireBlog
@@ -2533,7 +2534,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
 
-          {blog.coverImage && !isMakharijBlog && (
+          {blog.coverImage && !isMakharijBlog && !isOnlineVsInPersonBlog && (
             <div className="relative mb-10 h-64 sm:h-96 overflow-hidden rounded-3xl border border-card-border shadow-xl">
               <Image
                 src={blog.coverImage}
@@ -5012,274 +5013,6 @@ function ArticleContentHifz() {
         <p className="text-base text-muted-text">
           If you or your child are considering starting or restarting a Hifz journey, you can <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">book a free trial class</Link> with one of OQTutor's certified Hifz tutors to build a personalized memorization and revision plan. For more guidance on getting started, visit our <Link href="/faq" className="text-primary font-semibold hover:underline">FAQ page</Link>.
         </p>
-      </section>
-
-    </article>
-  );
-}
-
-function ArticleContentOnlineVsInPerson() {
-  return (
-    <article className="prose prose-slate max-w-none space-y-8 text-foreground/90 leading-relaxed font-normal">
-      
-      {/* Intro */}
-      <section className="space-y-4">
-        <p className="text-base sm:text-lg leading-relaxed text-muted-text font-medium">
-          If you've been going back and forth on this decision, you're not alone. It's one of the questions we hear most often from parents and adult learners alike: should we sign up for <Link href="/courses" className="text-primary font-semibold hover:underline">online Quran classes</Link>, or find a local teacher and attend in-person Quran classes?
-        </p>
-        <p className="text-base text-muted-text">
-          There's no single right answer. A lot depends on your schedule, where you live, your child's personality (or your own, if you're the one learning), and honestly, what you can realistically stick with. Let's walk through the real differences so you can figure out what actually fits your situation, instead of guessing.
-        </p>
-      </section>
-
-      {/* Section I */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          I. Understanding the Core Differences Between Online and In-Person Quran Classes
-        </h2>
-        
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. How Each Format Delivers Instruction and Interaction</h3>
-          <p className="text-base text-muted-text">
-            Strip away the format, and both types of classes are trying to do the same thing: pass on correct recitation, solid <Link href="/courses/tajweed" className="text-primary font-semibold hover:underline">Tajweed classes</Link>, and a real understanding of the Quran from teacher to student. The difference is just in the delivery. In a physical class, the teacher sits with you (or your child), watches how the mouth moves, listens closely, and corrects on the spot. Online, that same correction happens through a screen — video call, shared Mushaf, and an <Link href="/tutors" className="text-primary font-semibold hover:underline">online Quran teacher</Link> who's trained to catch mistakes by ear just as sharply.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. The Role of Technology in Shaping the Online Learning Experience</h3>
-          <p className="text-base text-muted-text">
-            Online learning lives and dies by a few practical things: a decent internet connection, a quiet corner of the house, and a device that isn't about to freeze mid-lesson. Beyond that, most programs now use some kind of app or portal so parents can see attendance, homework, and how <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz memorization</Link> is progressing — which, honestly, is something a lot of in-person setups don't offer at all.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. How Traditional Classroom Settings Define In-Person Quran Education</h3>
-          <p className="text-base text-muted-text">
-            In-person classes carry a different feel altogether. Whether it's a mosque hall, a home-based halaqah, or a full madrasah, there's something about physically showing up — the routine of it, sitting with other students, the teacher right there in front of you — that builds its own kind of discipline. The trade-off is that you're tied to a location and a fixed time slot, which isn't always practical when you're searching for "Quran classes near me."
-          </p>
-        </div>
-      </section>
-
-      {/* Section II */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          II. Flexibility, Scheduling, and Accessibility for Different Types of Learners
-        </h2>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. How Online Classes Fit Into Busy and Irregular Daily Routines</h3>
-          <p className="text-base text-muted-text">
-            If you're juggling work, school runs, or you're simply in a different time zone than everyone else, online classes are usually the more forgiving option. Need to move a session because of a late meeting? A quick message to the teacher usually sorts it. Try doing that with a class that starts at a fixed time across town.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. Geographic Limitations and How In-Person Classes Affect Enrollment</h3>
-          <p className="text-base text-muted-text">
-            Here's the thing about in-person classes — they only work if there's a good one near you. Families in smaller towns, or areas without an established Islamic center, often don't have that option at all, or they're driving 30-40 minutes each way just to get to one. Online classes sidestep this completely. It doesn't matter if you're in a big city or a quiet suburb in the USA, Canada, UK, Australia, or Singapore — a qualified teacher is just a video call away.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. Special Considerations for Children, Adults, Converts, and Non-Arabic Speakers</h3>
-          <p className="text-base text-muted-text">
-            Not every learner needs the same thing. Younger kids often do well with the structure and peer presence of a physical class — it keeps them engaged in a way a screen sometimes can't, especially when looking for a <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Quran teacher for kids</Link>. Adults, on the other hand, especially those with busy lives or who are learning later than they'd like, tend to prefer the privacy of one-on-one online sessions. And for converts or non-Arabic speakers, having a teacher who can explain things clearly in English, at their own pace, without the pressure of a classroom full of people, makes a real difference.
-          </p>
-        </div>
-      </section>
-
-      {/* Section III */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          III. Quality of Learning, Teacher Credentials, and Student Progress
-        </h2>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. How to Evaluate Qualified Quran Teachers in Both Settings</h3>
-          <p className="text-base text-muted-text">
-            This part matters regardless of format. A good teacher should have a verified Ijazah, a solid grasp of Tajweed, and real experience teaching at the level you need — whether that's <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida</Link> for a complete beginner or Hifz revision for someone further along. Don't be afraid to ask for credentials upfront, and take the <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link> seriously before committing to anything.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. The Effect of One-on-One Attention Versus Group Learning on Student Performance</h3>
-          <p className="text-base text-muted-text">
-            This is probably the biggest practical difference between the two. Most online Quran teaching is one-on-one, meaning that for the full lesson (class length: 30 to 40 minutes), the teacher's attention is only on your child (or on you). In-person classes, especially at mosques, are more often group-based — which is great for building community, but it does mean the teacher's time gets split across several students.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. Tracking Tajweed Accuracy, Memorization, and Long-Term Retention in Each Format</h3>
-          <p className="text-base text-muted-text">
-            Online platforms tend to be more structured about tracking progress — recorded sessions, revision logs, that sort of thing. In-person teachers usually keep track more informally, through their own notes and familiarity with the student over time. Neither approach is inherently better here; what actually moves the needle is consistency from the teacher and effort from the student.
-          </p>
-        </div>
-      </section>
-
-      {/* Section IV */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          IV. Cost, Resources, and Practical Considerations for Families and Individuals
-        </h2>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. Comparing Tuition Fees, Hidden Costs, and Overall Affordability</h3>
-          <p className="text-base text-muted-text">
-            Online classes are usually cheaper overall — there's no building to maintain, no commute, and transparent <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link> where plans start at $30/month (plans: $30, $40, $50 per month). In-person classes can come with extra costs that aren't always obvious upfront: registration fees, books, uniforms if it's a full-time madrasah, plus fuel or transit every week.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. Required Materials, Equipment, and Learning Tools for Each Format</h3>
-          <p className="text-base text-muted-text">
-            For online classes, which are conducted live via Zoom or Google Meet, you'll need a stable connection, a camera-equipped device, somewhere quiet to sit, and a Mushaf or a good Quran app. In-person classes are simpler on this front — usually just a physical Quran, a notebook, and appropriate clothing, since the venue handles the rest.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. Time and Transportation Factors That Influence the Final Decision</h3>
-          <p className="text-base text-muted-text">
-            It's easy to compare tuition fees side by side and forget about the hidden cost of time — the driving, the school pickups you have to work around, the weather that cancels a class last minute. Online classes remove that whole layer of logistics, which for a lot of busy households ends up being the real deciding factor.
-          </p>
-        </div>
-      </section>
-
-      {/* Section V */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          V. Social, Spiritual, and Emotional Benefits of Each Learning Environment
-        </h2>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. Building a Sense of Community and Brotherhood or Sisterhood in Physical Classes</h3>
-          <p className="text-base text-muted-text">
-            There's genuinely something special about learning the Quran shoulder to shoulder with other students — the shared iftars, group recitation, friendships that form around a mosque or madrasah. For a lot of families, that sense of belonging to a local community is worth a lot on its own.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. How Online Learning Can Still Support Spiritual Growth and Consistent Motivation</h3>
-          <p className="text-base text-muted-text">
-            That said, online classes aren't a lesser spiritual experience just because they happen on a screen. A dedicated one-on-one teacher, consistent encouragement, and the comfort of learning at home can go a long way. In fact, some students who feel too shy to recite in front of a group actually open up more one-on-one and end up progressing faster.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. The Psychological Impact of Learning Environment on Student Confidence and Dedication</h3>
-          <p className="text-base text-muted-text">
-            Some kids (and adults) do better with a bit of peer pressure and structure around them. Others feel more relaxed reciting without an audience. Knowing which one describes you or your child is honestly just as important as comparing curriculums or teacher credentials.
-          </p>
-        </div>
-      </section>
-
-      {/* Section VI */}
-      <section className="space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3">
-          VI. Making the Right Choice Based on Personal Goals and Circumstances
-        </h2>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">A. Key Questions to Ask Yourself Before Choosing a Learning Format</h3>
-          <p className="text-base text-muted-text">
-            Before you decide, it's worth sitting down and asking: what's the actual goal here — Tajweed correction, full Hifz, or just learning to read comfortably? How much individual attention is needed? What does your week actually look like, realistically? And is there even a trustworthy, qualified option nearby?
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">B. Situations Where Online Classes Are the More Practical Option</h3>
-          <p className="text-base text-muted-text">
-            Online tends to be the better fit for busy families, adult beginners, converts, non-Arabic speakers, anyone without a good teacher nearby, or simply anyone who values focused one-on-one time and a flexible schedule.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-foreground">C. Situations Where In-Person Classes Deliver a Stronger Learning Outcome</h3>
-          <p className="text-base text-muted-text">
-            In-person classes tend to shine for young children who need structure and peer accountability, families who prioritize being part of a local community, and learners in intensive, full-time Hifz programs where a distraction-free physical setting really matters.
-          </p>
-        </div>
-      </section>
-
-      {/* Summary */}
-      <section className="space-y-4 pt-4 border-t border-card-border">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-          Summary
-        </h2>
-        <p className="text-base text-muted-text">
-          There isn't a universal winner here — online and in-person Quran classes each do different things well. Online gives you flexibility, affordability, and focused one-on-one time, which suits busy schedules and anyone without local access to a qualified teacher. In-person gives you community, structure, and face-to-face mentorship, which can matter a lot for young children or anyone who learns better in a group. The right call really comes down to your goals, your lifestyle, where you live, your budget, and how committed you are to sticking with it.
-        </p>
-      </section>
-
-      {/* FAQs */}
-      <section className="space-y-6 pt-6 border-t border-card-border">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-          Frequently Asked Questions (FAQs)
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-bold text-foreground">Q1. Can a beginner learn the Quran effectively through online classes?</h4>
-            <p className="text-sm text-muted-text mt-1">Yes — with the right teacher, one-on-one online sessions work well for beginners since the whole lesson is focused on correcting pronunciation and building the basics of Tajweed.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q2. How do I know if an online Quran teacher is qualified and trustworthy?</h4>
-            <p className="text-sm text-muted-text mt-1">Check for a verified Ijazah, ask about their experience with your specific age group or level, and take the 3-day free trial seriously before you commit. Reviews or references from other parents help too.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q3. Are in-person Quran classes better for young children than online ones?</h4>
-            <p className="text-sm text-muted-text mt-1">Often, yes — the structure and peer environment can help younger kids stay engaged. But it really depends on the child; some do just as well, or better, one-on-one.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q4. What equipment or internet setup do I need for online Quran classes?</h4>
-            <p className="text-sm text-muted-text mt-1">Just a stable connection, a device with a camera and mic (classes are held live on Zoom or Google Meet), a quiet space, and a physical Quran or reliable app.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q5. Is it possible to memorize the Quran (Hifz) through online classes?</h4>
-            <p className="text-sm text-muted-text mt-1">Yes, plenty of students complete Hifz fully online — it comes down to having a consistent teacher, a solid revision routine, and daily discipline.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q6. How do I find a reliable in-person Quran class in my local area?</h4>
-            <p className="text-sm text-muted-text mt-1">Start by asking around at local mosques and Islamic centers, and always confirm the teacher's credentials before signing up.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q7. Can adults who have never studied the Quran before join either type of class?</h4>
-            <p className="text-sm text-muted-text mt-1">Definitely. A lot of adult beginners actually prefer online one-on-one classes, since there's no pressure of being the only adult in a room full of younger students.</p>
-          </div>
-          <div>
-            <h4 className="font-bold text-foreground">Q8. What should I look for when comparing online Quran learning platforms or tutors?</h4>
-            <p className="text-sm text-muted-text mt-1">Look at teacher credentials, whether it&apos;s one-on-one or group, how transparent the pricing is, and whether they actually track your Tajweed progress over time — not just attendance.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* End-of-Article CTA Block */}
-      <section className="pt-8 border-t border-card-border not-prose">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 text-center space-y-4 shadow-lg">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 inline-block">
-            Start Your Journey
-          </span>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground">
-            Find the Right Path for Your Quran Journey
-          </h3>
-          <p className="text-base sm:text-lg text-muted-text max-w-xl mx-auto leading-relaxed">
-            Not sure which is right for your family? Start with a 3-day free trial of live one-on-one online Quran classes.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <Link
-              href="/book-free-trial"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
-            >
-              <span>Book Your 3-Day Free Trial</span>
-              <ArrowRight className="h-4.5 w-4.5" />
-            </Link>
-            <Link
-              href="/courses"
-              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full glass hover:bg-primary/10 text-foreground text-sm font-semibold border border-card-border transition-all"
-            >
-              <span>Explore Courses</span>
-            </Link>
-          </div>
-        </div>
       </section>
 
     </article>

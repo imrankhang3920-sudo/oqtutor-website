@@ -31,6 +31,11 @@ if (!fs.existsSync(quranicArabicVsMsaDir)) {
   fs.mkdirSync(quranicArabicVsMsaDir, { recursive: true });
 }
 
+const onlineVsInPersonDir = path.join(__dirname, '../public/blog/online-vs-in-person-quran-classes');
+if (!fs.existsSync(onlineVsInPersonDir)) {
+  fs.mkdirSync(onlineVsInPersonDir, { recursive: true });
+}
+
 const sourceFiles = [
   {
     src: 'C:\\Users\\dell\\.gemini\\antigravity-ide\\brain\\a6885662-8090-4b7a-9498-46d37159f9d4\\.user_uploaded\\media_1787914968931.jpg',
@@ -162,6 +167,22 @@ const sourceFiles = [
     fallbackSrc: path.join(makharijDir, 'muslim-father-son-learning-heavy-light-letters.jpg'),
     dest: path.join(makharijDir, 'muslim-father-son-learning-heavy-light-letters.jpg')
   }
+,
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\60ac42fe-9967-4537-897b-76430f9a6bb4\\.user_uploaded\\media_1794072804960_5c5ea6d2.jpg',
+    fallbackSrc: path.join(onlineVsInPersonDir, 'online-vs-in-person-quran-classes-cover.jpg'),
+    dest: path.join(onlineVsInPersonDir, 'online-vs-in-person-quran-classes-cover.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\60ac42fe-9967-4537-897b-76430f9a6bb4\\.user_uploaded\\media_1794072804961_97d9554c.jpg',
+    fallbackSrc: path.join(onlineVsInPersonDir, 'boy-learning-quran-online-headset.jpg'),
+    dest: path.join(onlineVsInPersonDir, 'boy-learning-quran-online-headset.jpg')
+  },
+  {
+    src: 'C:\\Users\\dell\\.gemini\\antigravity\\brain\\60ac42fe-9967-4537-897b-76430f9a6bb4\\.user_uploaded\\media_1794072804979_7659bb46.jpg',
+    fallbackSrc: path.join(onlineVsInPersonDir, 'girl-student-quran-lesson-online.jpg'),
+    dest: path.join(onlineVsInPersonDir, 'girl-student-quran-lesson-online.jpg')
+  },
 ];
 
 sourceFiles.forEach(({ src, fallbackSrc, dest }) => {
