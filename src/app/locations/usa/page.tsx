@@ -24,10 +24,7 @@ import {
   CheckCheck, 
   UserCheck, 
   Compass, 
-  FileText,
-  Calendar,
-  Video,
-  Layers
+  FileText
 } from 'lucide-react';
 
 const LAST_UPDATED = "November 2026";
@@ -110,28 +107,24 @@ export default async function USALocationsHubPage() {
 
   const usaHowItWorksSteps = [
     {
-      icon: Calendar,
       title: 'Book Your 3-Day Free Trial',
       text: "Choose your preferred course and a class time that fits your family's schedule in your US time zone. Start your 3-day free trial with no credit card required.",
       linkText: 'Book 3-day free trial',
       linkHref: '/book-free-trial',
     },
     {
-      icon: Video,
       title: 'Meet Your Male or Female Tutor',
       text: "Join a live 1-on-1 session on Zoom or Google Meet. Your certified male or female tutor assesses the student's reading level and recommends a tailored learning path.",
       linkText: 'Meet our male & female tutors',
       linkHref: '/tutors',
     },
     {
-      icon: Layers,
       title: 'Choose Your Flexible Plan',
       text: 'Plans start at $30/month for 30-40 minute live classes. Zero registration fees, and you can reschedule, pause, or cancel anytime.',
       linkText: 'View pricing & monthly plans',
       linkHref: '/pricing',
     },
     {
-      icon: BookOpen,
       title: 'Learn with Live 1-on-1 Classes',
       text: 'Your dedicated tutor listens to your recitation, corrects Tajweed mistakes on the spot, and provides structured weekly progress updates.',
       linkText: 'Explore Quran & Tajweed courses',

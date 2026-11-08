@@ -271,7 +271,8 @@ export default function HowItWorksSection({
               <ol className="space-y-8 sm:space-y-10" aria-label="How it works step sequence">
                 {steps.map((step, idx) => {
                   const isActive = activeStep === idx;
-                  const IconComponent = step.icon || Sparkles;
+                  const defaultIcons = [Calendar, Video, Layers, BookOpen];
+                  const IconComponent = step.icon || defaultIcons[idx % defaultIcons.length] || Sparkles;
 
                   return (
                     <li key={idx}>
