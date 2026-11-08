@@ -111,7 +111,7 @@ export default function FeaturedCourses() {
                     </span>
                     <span className="text-xs text-muted-text flex items-center gap-1 font-medium">
                       <Clock className="h-3.5 w-3.5" />
-                      <span>30 min / class</span>
+                      <span>30-40 min / class</span>
                     </span>
                   </div>
 

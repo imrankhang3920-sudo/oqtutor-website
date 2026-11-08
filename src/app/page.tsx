@@ -25,7 +25,7 @@ import Script from 'next/script';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaDescription = "Learn Quran Online | One to One Quran Classes for Kids and Adults. Certified male & female tutors for Tajweed, Hifz & Noorani Qaida. Book your free trial!";
+  const metaDescription = "Live one-to-one online Quran classes for kids and adults. Certified male & female tutors for Tajweed, Hifz & Noorani Qaida. Try 3 days free.";
   const metaTitle = "Learn Quran Online | One to One Quran Classes for Kids and Adults | OQTutor";
 
   return {
@@ -73,7 +73,7 @@ export default async function HomePage() {
   // Personalized & High-Conversion Hero Data
   const homepageHeroData = {
     ...(dbData.hero || {}),
-    title: dbData.hero?.title || "Learn Quran Online at Your Own Pace with Expert Teachers",
+    title: dbData.hero?.title || "Online Quran Classes for Kids & Adults, Taught One-to-One",
     subtitle: dbData.hero?.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.",
     ctaText: dbData.hero?.ctaText || "Book Your 3-Day Free Trial",
     ctaLink: dbData.hero?.ctaLink || "#book-trial",

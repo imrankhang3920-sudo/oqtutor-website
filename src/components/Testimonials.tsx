@@ -28,7 +28,7 @@ export default function Testimonials({ data, testimonials }: TestimonialsProps) 
       relation: 'Adult Tajweed & Hifz Student',
       location: 'London (UK)',
       rating: 5,
-      text: 'As a busy physician, finding time for Quran memorization seemed impossible. OQTutor allowed me to book 30-minute classes early morning before my hospital shifts. I have successfully memorized Juz Amma and Juz Tabarak with certified Ijazah guidance.',
+      text: 'As a busy physician, finding time for Quran memorization seemed impossible. OQTutor allowed me to book 30-40 minute classes early morning before my hospital shifts. I have successfully memorized Juz Amma and Juz Tabarak with certified Ijazah guidance.',
     },
     {
       id: 'rev-3',

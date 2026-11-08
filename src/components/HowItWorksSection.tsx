@@ -64,7 +64,7 @@ const DEFAULT_STEPS: StepItem[] = [
   {
     icon: Layers,
     title: 'Choose Your Flexible Plan',
-    text: 'Plans start at $30/month for 30-minute live classes. Zero registration fees, and you can reschedule, pause, or cancel anytime.',
+    text: 'Plans start at $30/month for 30-40 minute live classes. Zero registration fees, and you can reschedule, pause, or cancel anytime.',
     linkText: 'View pricing & monthly plans',
     linkHref: '/pricing',
   },

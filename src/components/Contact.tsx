@@ -267,7 +267,7 @@ export default function Contact({ data }: { data: ContactData }) {
           </h2>
           <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
           <p className="mt-4 text-sm text-muted-text max-w-2xl mx-auto">
-            Book your 3 free 1-on-1 trial classes now. No credit card required. Speak to our coordinator to design your schedule.
+            Book your 3-day free 1-on-1 trial now. No credit card required. Speak to our coordinator to design your schedule.
           </p>
         </div>
 
@@ -349,7 +349,7 @@ export default function Contact({ data }: { data: ContactData }) {
           <div className="lg:col-span-7">
             <div className="glass rounded-3xl border-card-border p-8 sm:p-10 shadow-2xl relative">
               <h3 className="text-2xl font-bold text-foreground mb-1">Book Your 3-Day Free Trial</h3>
-              <p className="text-xs text-muted-text mb-8">No credit card required. 100% free 1-on-1 trial classes.</p>
+              <p className="text-xs text-muted-text mb-8">No credit card required. 100% free 3-day 1-on-1 trial.</p>
 
               {error && (
                 <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-semibold leading-relaxed">
@@ -530,7 +530,7 @@ export default function Contact({ data }: { data: ContactData }) {
                   </button>
 
                   <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-text font-medium">
-                    <span>✓ 3 Free 1-on-1 Classes</span>
+                    <span>✓ 3-Day Free 1-on-1 Trial</span>
                     <span>•</span>
                     <span>✓ No Credit Card Required</span>
                     <span>•</span>

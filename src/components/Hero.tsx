@@ -19,7 +19,7 @@ export default function Hero({ data, urgencyBadges: customBadges }: HeroProps) {
     'Expert match guaranteed',
   ];
 
-  const titleText = data.title || "Learn Quran Online at Your Own Pace with Expert Teachers";
+  const titleText = data.title || "Online Quran Classes for Kids & Adults, Taught One-to-One";
   const subtitleText = data.subtitle || "Learn Quran online with one to one classes for kids and adults. Study Quran reading, Tajweed, memorization, and Islamic Studies with qualified male and female teachers from the comfort of home.";
 
   const renderFormattedTitle = (title: string) => {
@@ -177,7 +177,7 @@ export default function Hero({ data, urgencyBadges: customBadges }: HeroProps) {
                 },
                 { 
                   icon: Clock,
-                  title: '30-Minute Focused Classes', 
+                  title: '30-40 Minute Focused Classes', 
                   desc: 'Optimal attention span for young learners with flexible scheduling 24/7.' 
                 },
                 { 

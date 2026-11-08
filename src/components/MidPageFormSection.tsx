@@ -86,7 +86,7 @@ export default function MidPageFormSection({
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4 text-secondary" />
-              <span>30-minute 1-on-1 classes</span>
+              <span>30-40 minute 1-on-1 classes</span>
             </span>
             <span className="flex items-center gap-1.5">
               <Users className="h-4 w-4 text-primary" />

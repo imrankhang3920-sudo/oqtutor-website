@@ -10,7 +10,7 @@ export const DEFAULT_HOMEPAGE_FAQS: FAQData[] = [
   {
     id: 'faq-trial',
     question: 'How does the 3-day free trial work, and is a credit card required?',
-    answer: 'You receive three 30-minute live 1-on-1 classes completely free with no credit card required. During the trial, you meet your assigned male or female tutor on Zoom or Google Meet, get an accurate reading level assessment, and experience our interactive teaching method before choosing a monthly plan.',
+    answer: 'You receive three 30-40 minute live 1-on-1 classes completely free with no credit card required. During the trial, you meet your assigned male or female tutor on Zoom or Google Meet, get an accurate reading level assessment, and experience our interactive teaching method before choosing a monthly plan.',
     category: 'classes',
   },
   {
@@ -22,7 +22,7 @@ export const DEFAULT_HOMEPAGE_FAQS: FAQData[] = [
   {
     id: 'faq-age',
     question: 'What age is best for kids to start online Quran classes?',
-    answer: 'Most children start comfortably at ages 4 to 5 with our Noorani Qaida for Kids course. Our tutors use digital flashcards, phonics breakdowns, and interactive screen sharing to keep 30-minute sessions engaging for young learners. We also offer structured tracks for older kids, teens, and adult beginners.',
+    answer: 'Most children start comfortably at ages 4 to 5 with our Noorani Qaida for Kids course. Our tutors use digital flashcards, phonics breakdowns, and interactive screen sharing to keep 30-40 minute sessions engaging for young learners. We also offer structured tracks for older kids, teens, and adult beginners.',
     category: 'classes',
   },
   {

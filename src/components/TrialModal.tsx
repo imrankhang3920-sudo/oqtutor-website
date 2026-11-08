@@ -52,7 +52,7 @@ export default function TrialModal({
   isOpen,
   onClose,
   title = "Book Your Free Trial Class",
-  subtitle = "30-minute personalized lesson. No credit card required."
+  subtitle = "30-40 minute personalized lesson. No credit card required."
 }: TrialModalProps) {
   const [selectedCountry, setSelectedCountry] = useState(countriesData[0]);
   const [phoneVal, setPhoneVal] = useState('');

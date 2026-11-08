@@ -45,7 +45,7 @@ const defaultCards: HelpCardItem[] = [
   {
     icon: CreditCard,
     title: 'Pricing & FAQs',
-    text: 'Plans start at $30/month for 30-minute 1-on-1 classes on Zoom or Google Meet. Zero registration fees.',
+    text: 'Plans start at $30/month for 30-40 minute 1-on-1 classes on Zoom or Google Meet. Zero registration fees.',
     buttonText: 'View pricing & plans',
     href: '/pricing',
     eventName: 'pricing_click',
