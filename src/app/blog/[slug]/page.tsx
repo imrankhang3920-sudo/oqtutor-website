@@ -2623,7 +2623,7 @@ export default async function BlogPostPage({ params }: Props) {
                   {blog.description}
                 </p>
                 <p>
-                  At <Link href="/" className="text-primary hover:underline font-semibold">OQTutor Online Quran Academy</Link>, we provide authentic one-on-one <Link href="/courses" className="text-primary hover:underline font-semibold">online Quran classes</Link> for Muslim families across the United States, United Kingdom, Canada, and Australia. Our team of certified male and <Link href="/tutors" className="text-primary hover:underline font-semibold">female Quran teachers</Link> specializes in personalized instruction for kids, adults, and new Muslims.
+                  At <Link href="/" className="text-primary hover:underline font-semibold">OQTutor Online Quran Academy</Link>, we provide authentic one-on-one <Link href="/courses" className="text-primary hover:underline font-semibold">online Quran classes</Link> for Muslim families across the <Link href="/locations/usa" className="text-primary hover:underline font-semibold">United States</Link>, <Link href="/locations/uk" className="text-primary hover:underline font-semibold">United Kingdom</Link>, <Link href="/locations/canada" className="text-primary hover:underline font-semibold">Canada</Link>, and <Link href="/locations/australia" className="text-primary hover:underline font-semibold">Australia</Link>. Our team of certified male and <Link href="/tutors" className="text-primary hover:underline font-semibold">female Quran teachers</Link> specializes in personalized instruction for kids, adults, and new Muslims.
                 </p>
                 <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 space-y-3">
                   <h3 className="text-lg font-bold text-foreground">Ready to Begin Your Quran Learning Journey?</h3>
@@ -2999,7 +2999,7 @@ function ArticleContentUSA() {
           Introduction: Finding Reliable Online Quran Classes in the USA
         </h2>
         <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-          Living in the United States brings wonderful opportunities for Muslim families, but it also presents unique scheduling and cultural challenges when raising children with strong Islamic foundations. Finding a qualified local Qari or Qaria who lives nearby, matches your busy family routine, and teaches with modern pedagogical techniques can feel nearly impossible. This is why enrolling in live <Link href="/courses" className="text-primary font-semibold hover:underline">Online Quran Classes USA</Link> has quickly become the preferred choice for thousands of Muslim households across <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Texas</Link>, <Link href="/locations/usa/california" className="text-primary font-semibold hover:underline">California</Link>, <Link href="/locations/usa/new-york" className="text-primary font-semibold hover:underline">New York</Link>, Florida, <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">Illinois</Link> (<Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">online Quran classes in Illinois</Link>), <Link href="/locations/usa/michigan" className="text-primary font-semibold hover:underline">Michigan</Link>, and nationwide.
+          Living in the United States brings wonderful opportunities for Muslim families, but it also presents unique scheduling and cultural challenges when raising children with strong Islamic foundations. Finding a qualified local Qari or Qaria who lives nearby, matches your busy family routine, and teaches with modern pedagogical techniques can feel nearly impossible. This is why enrolling in live <Link href="/locations/usa" className="text-primary font-semibold hover:underline">Online Quran Classes in the USA</Link> has quickly become the preferred choice for thousands of Muslim households across <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Texas</Link>, <Link href="/locations/usa/california" className="text-primary font-semibold hover:underline">California</Link>, <Link href="/locations/usa/new-york" className="text-primary font-semibold hover:underline">New York</Link>, Florida, <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">Illinois</Link> (<Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">online Quran classes in Illinois</Link>), <Link href="/locations/usa/michigan" className="text-primary font-semibold hover:underline">Michigan</Link>, and nationwide.
         </p>
         <p className="text-base leading-relaxed text-muted-text">
           Through modern virtual classrooms on Zoom or Google Meet, interactive digital whiteboards, and flexible scheduling across Eastern, Central, Mountain, and Pacific time zones, your entire family can now <Link href="/" className="text-primary font-semibold hover:underline">learn Quran online</Link> from the comfort and safety of home. Whether you want your child to master basic Arabic phonetics, perfect their Tajweed, or embark on a sacred memorization journey, choosing a professional <Link href="/" className="text-primary font-semibold hover:underline">Online Quran Academy USA</Link> ensures authentic spiritual education without compromising your daily routines.
@@ -3474,6 +3474,11 @@ function ArticleContentUSA() {
           <li>
             <Link href="/blog/beginners-guide-mastering-tajweed-rules" className="text-primary font-semibold hover:underline">
               Beginner&apos;s Guide to Mastering Tajweed Rules
+            </Link>
+          </li>
+          <li>
+            <Link href="/locations/usa" className="text-primary font-semibold hover:underline">
+              Online Quran Classes in the USA: Nationwide Hub &amp; State Schedules
             </Link>
           </li>
           <li>
@@ -7964,6 +7969,11 @@ function ArticleContentUSParentsTutor() {
             </Link>
           </li>
           <li>
+            <Link href="/locations/usa" className="text-primary font-semibold hover:underline">
+              Online Quran Classes in the USA: Nationwide Hub &amp; State Schedules
+            </Link>
+          </li>
+          <li>
             <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">
               Online Quran Classes in Texas: Complete Family Guide
             </Link>
@@ -11743,6 +11753,11 @@ function ArticleContentBeginnersGuide() {
             </Link>
           </li>
           <li>
+            <Link href="/locations/usa" className="text-primary font-semibold hover:underline">
+              Online Quran Classes in the USA: Nationwide Hub &amp; State Schedules
+            </Link>
+          </li>
+          <li>
             <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">
               Online Quran Classes in Texas: Complete Family Guide
             </Link>
@@ -12287,6 +12302,11 @@ function ArticleContentBrainRewiring() {
           <li>
             <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">
               Best Online Quran Classes for Kids in USA
+            </Link>
+          </li>
+          <li>
+            <Link href="/locations/usa" className="text-primary font-semibold hover:underline">
+              Online Quran Classes in the USA: Nationwide Hub &amp; State Schedules
             </Link>
           </li>
           <li>

@@ -245,6 +245,15 @@ export default async function USALocationsHubPage() {
       anchorText: "Study Quran Tafseer & Meaning"
     },
     {
+      id: "quran-for-adults",
+      title: "Online Quran Classes for Adults",
+      tag: "Adults & Professionals",
+      description: "Flexible, private one-on-one Quran reading, Tajweed correction, and memorization tailored for busy adult schedules.",
+      icon: UserCheck,
+      link: "/courses/quran-for-adults",
+      anchorText: "Learn Quran for Adults"
+    },
+    {
       id: "female-quran-teacher",
       title: "Classes with Female Quran Teachers",
       tag: "Sisters & Children",
@@ -317,7 +326,15 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-1",
       question: "What are the best online Quran classes in the USA?",
-      answer: "The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Look for an academy that assesses the student's entry level and offers a trial class so you can evaluate the teacher's patience and communication before committing."
+      answer: (
+        <>
+          The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Read our comprehensive guide to{' '}
+          <Link href="/blog/online-quran-classes-usa" className="text-primary hover:underline font-semibold">
+            online Quran classes in the USA
+          </Link>{' '}
+          to learn how to evaluate academies and choose the best tutor for your family.
+        </>
+      )
     },
     {
       id: "usa-faq-2",
@@ -339,16 +356,24 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-4",
       question: "Can children learn Quran online?",
-      answer: "Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home."
+      answer: (
+        <>
+          Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home. For detailed comparisons and parent tips, explore our guide to the{' '}
+          <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary hover:underline font-semibold">
+            best online Quran classes for kids in the USA
+          </Link>.
+        </>
+      )
     },
     {
       id: "usa-faq-5",
       question: "Can adults learn Quran online?",
       answer: (
         <>
-          Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs in our{' '}
+          Yes. Adult courses are designed around work and family commitments with early morning, evening, and weekend slots. Through our specialized{' '}
+          <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">online Quran classes for adults</Link>, lessons progress at your individual pace in complete privacy with certified male or female scholars. Whether you are learning Arabic letters from scratch, refining Tajweed rules, memorizing specific Surahs in our{' '}
           <Link href="/courses/hifz" className="text-primary hover:underline font-semibold">Hifz program</Link>, or studying{' '}
-          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Quran Tafseer</Link>, lessons progress at your individual pace in complete privacy with male or female scholars. Read our guide on{' '}
+          <Link href="/courses/tafseer" className="text-primary hover:underline font-semibold">Quran Tafseer</Link>, tutors adapt each session to your personal goals. Read our guide on{' '}
           <Link href="/blog/online-quran-classes-usa-for-adults" className="text-primary hover:underline font-semibold">online Quran classes in the USA for adults</Link>, and discover why{' '}
           <Link href="/blog/quran-memorization-adults-never-late" className="text-primary hover:underline font-semibold">Quran memorization for adults is never too late</Link>.
         </>
@@ -623,7 +648,7 @@ export default async function USALocationsHubPage() {
                 Quick Answer: What Are the Best Online Quran Classes in the USA?
               </h2>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. <Link href="/" className="text-primary font-semibold hover:underline">OQTutor</Link> meets these standards with certified male and female tutors, personalized study tracks across all our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> from Noorani Qaida to Hifz, and a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free placement trial</Link> before enrollment.
+                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. <Link href="/" className="text-primary font-semibold hover:underline">OQTutor</Link> meets these standards with certified male and female tutors, personalized study tracks across all our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> from Noorani Qaida to <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link> and specialized <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Quran for adults</Link>, alongside a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free placement trial</Link> before enrollment.
               </p>
             </div>
           </div>
@@ -641,7 +666,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                OQTutor offers live, one-on-one online Quran classes for children and adults across the USA, helping learners develop their Quran reading, pronunciation, and recitation skills with personal guidance.
+                <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link> offers live, one-on-one online Quran classes for children and adults across the USA, helping learners develop their Quran reading, pronunciation, and recitation skills with personal guidance. For a comprehensive overview of schedules, curriculum options, and tutor selection, read our guide on <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link>.
               </p>
             </div>
 
@@ -851,7 +876,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Many adults wish to learn Quran recitation or improve their Tajweed but struggle to fit traditional madrasah classes into busy work and family schedules. Our adult programs offer flexible, respectful, and private learning at your own pace. Explore our complete guide to <Link href="/blog/online-quran-classes-usa-for-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for adults</Link> for practical insights on getting started.
+                Many adults wish to learn Quran recitation or improve their Tajweed but struggle to fit traditional madrasah classes into busy work and family schedules. Our dedicated <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">online Quran classes for adults</Link> offer flexible, respectful, and private learning at your own pace. Explore our complete guide to <Link href="/blog/online-quran-classes-usa-for-adults" className="text-primary font-semibold hover:underline">online Quran classes in the USA for adults</Link> for practical insights on getting started.
               </p>
             </div>
 
@@ -874,6 +899,16 @@ export default async function USALocationsHubPage() {
                   Memorize selected Surahs in our <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz Quran program</Link> or study word-by-word Quran translation and classical Tafseer in our <Link href="/courses/tafseer" className="text-primary font-semibold hover:underline">Quran Tafseer course</Link>. Discover why <Link href="/blog/quran-memorization-adults-never-late" className="text-primary font-semibold hover:underline">Quran memorization for adults is never too late</Link>.
                 </p>
               </div>
+            </div>
+
+            <div className="text-center mt-10">
+              <Link 
+                href="/courses/quran-for-adults" 
+                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20 hover:bg-primary hover:text-white text-primary text-xs sm:text-sm font-bold transition-all shadow-sm"
+              >
+                <span>View Full Quran Classes for Adults Syllabus</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -1341,7 +1376,7 @@ export default async function USALocationsHubPage() {
               Start Learning the Quran Online
             </h2>
             <p className="text-xs sm:text-base text-muted-text max-w-xl mx-auto leading-relaxed font-normal">
-              Book a free trial class with certified male or female tutors. Meet your instructor, evaluate their teaching approach, and establish a personalized Quran learning plan for yourself or your child — completely risk-free.
+              Book a free trial class with certified male or female tutors at <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>. Meet your instructor, evaluate their teaching approach, and establish a personalized Quran learning plan for yourself or your child — completely risk-free.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
