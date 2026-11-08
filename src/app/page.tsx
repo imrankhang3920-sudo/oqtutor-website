@@ -25,7 +25,7 @@ import Script from 'next/script';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metaDescription = "Live one-to-one online Quran classes for kids and adults. Certified male & female tutors for Tajweed, Hifz & Noorani Qaida. Try 3 days free.";
+  const metaDescription = "Online Quran classes with certified male & female tutors. Live one-to-one lessons for kids and adults in Tajweed, Hifz & Noorani Qaida. Try 3 days free.";
   const metaTitle = "Learn Quran Online | One to One Quran Classes for Kids and Adults | OQTutor";
 
   return {
