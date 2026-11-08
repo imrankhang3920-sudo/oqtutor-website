@@ -24,14 +24,19 @@ import {
   CheckCheck, 
   UserCheck, 
   Compass, 
-  FileText
+  FileText,
+  Calendar,
+  Video,
+  Layers
 } from 'lucide-react';
+
+const LAST_UPDATED = "November 2026";
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaTitle = "Online Quran Classes in USA for Kids & Adults | Free Trial";
-  const metaDescription = "Top-rated 1-on-1 online Quran classes in the USA. Certified male & female Quran teachers across EST, CST, MST & PST timezones. Book your Free Trial Class!";
+  const metaDescription = "Online Quran classes in the USA for kids & adults. Live one-to-one lessons with certified tutors in your time zone. From $30/month. 3-day free trial.";
   
   return {
     title: metaTitle,
@@ -96,12 +101,43 @@ export default async function USALocationsHubPage() {
   const customHeroData = {
     title: "1-on-1 Online Quran Classes in the USA for Kids & Adults",
     subtitle: "Learn Quran online in the USA with qualified male and female teachers. Get personalized Quran, Tajweed, Hifz, Noorani Qaida, and Islamic Studies classes for kids and adults with flexible US time zones.",
-    ctaText: "Book Free Placement Trial",
+    ctaText: "Book Your 3-Day Free Trial",
     ctaLink: "/book-free-trial",
     whatsappText: heroFallback.whatsappText || "",
     whatsappNumber: heroFallback.whatsappNumber || "",
-    backgroundImage: heroFallback.backgroundImage || "/hero-bg.jpg",
+    backgroundImage: "/images/hero-bg.webp",
   };
+
+  const usaHowItWorksSteps = [
+    {
+      icon: Calendar,
+      title: 'Book Your 3-Day Free Trial',
+      text: "Choose your preferred course and a class time that fits your family's schedule in your US time zone. Start your 3-day free trial with no credit card required.",
+      linkText: 'Book 3-day free trial',
+      linkHref: '/book-free-trial',
+    },
+    {
+      icon: Video,
+      title: 'Meet Your Male or Female Tutor',
+      text: "Join a live 1-on-1 session on Zoom or Google Meet. Your certified male or female tutor assesses the student's reading level and recommends a tailored learning path.",
+      linkText: 'Meet our male & female tutors',
+      linkHref: '/tutors',
+    },
+    {
+      icon: Layers,
+      title: 'Choose Your Flexible Plan',
+      text: 'Plans start at $30/month for 30-40 minute live classes. Zero registration fees, and you can reschedule, pause, or cancel anytime.',
+      linkText: 'View pricing & monthly plans',
+      linkHref: '/pricing',
+    },
+    {
+      icon: BookOpen,
+      title: 'Learn with Live 1-on-1 Classes',
+      text: 'Your dedicated tutor listens to your recitation, corrects Tajweed mistakes on the spot, and provides structured weekly progress updates.',
+      linkText: 'Explore Quran & Tajweed courses',
+      linkHref: '/courses',
+    },
+  ];
 
   const activeStates = [
     {
@@ -266,8 +302,8 @@ export default async function USALocationsHubPage() {
 
   const blogGuides = [
     {
-      title: "Online Quran Classes in the USA: Complete Guide",
-      desc: "A comprehensive guide on curriculum tracks, scheduling flexibility, and verified one-to-one tutoring across the US.",
+      title: "How to Choose Online Quran Classes in the USA",
+      desc: "A buyer's guide on evaluating curriculum tracks, teacher credentials, scheduling flexibility, and trial classes.",
       link: "/blog/online-quran-classes-usa"
     },
     {
@@ -328,9 +364,9 @@ export default async function USALocationsHubPage() {
       question: "What are the best online Quran classes in the USA?",
       answer: (
         <>
-          The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Read our comprehensive guide to{' '}
+          The best classes provide qualified teachers, private one-to-one lessons, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate material for kids, and transparent progress updates. Read our comprehensive guide on{' '}
           <Link href="/blog/online-quran-classes-usa" className="text-primary hover:underline font-semibold">
-            online Quran classes in the USA
+            how to choose online Quran classes in the USA
           </Link>{' '}
           to learn how to evaluate academies and choose the best tutor for your family.
         </>
@@ -339,7 +375,7 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-2",
       question: "How do I choose an online Quran tutor for my child?",
-      answer: "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking a placement trial allows you to observe how your child interacts with the tutor in real time."
+      answer: "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking the 3-day free trial allows you to observe how your child interacts with the tutor in real time."
     },
     {
       id: "usa-faq-3",
@@ -358,7 +394,7 @@ export default async function USALocationsHubPage() {
       question: "Can children learn Quran online?",
       answer: (
         <>
-          Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home. For detailed comparisons and parent tips, explore our guide to the{' '}
+          Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 to 40 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home. For detailed comparisons and parent tips, explore our guide to the{' '}
           <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary hover:underline font-semibold">
             best online Quran classes for kids in the USA
           </Link>.
@@ -436,25 +472,21 @@ export default async function USALocationsHubPage() {
     {
       id: "usa-faq-11",
       question: "How much do online Quran classes cost?",
-      answer: "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 minutes of private one-to-one instruction with no hidden fees or contracts."
+      answer: "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 to 40 minutes of private one-to-one instruction with no hidden fees or contracts."
     },
     {
       id: "usa-faq-12",
-      question: "Is there a trial class?",
+      question: "Is there a free trial?",
       answer: (
         <>
-          Yes. OQTutor provides a{' '}
-          <Link href="/book-free-trial" className="text-primary hover:underline font-semibold">
-            free trial class
-          </Link>{' '}
-          with no credit card or financial commitment required. During the session, the teacher assesses the student&apos;s current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals.
+          Yes. OQTutor provides a 3-day free trial with no credit card or financial commitment required. During the session, the teacher assesses the student&apos;s current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals.
         </>
       )
     },
     {
       id: "usa-faq-13",
       question: "How do online Quran classes work?",
-      answer: "After booking a trial, you connect with your assigned tutor via video conference (such as Zoom) using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
+      answer: "After booking a trial, you connect with your assigned tutor via Zoom or Google Meet using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
     }
   ];
 
@@ -476,7 +508,7 @@ export default async function USALocationsHubPage() {
         "name": "How do I choose an online Quran tutor for my child?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking a placement trial allows you to observe how your child interacts with the tutor in real time."
+          "text": "Focus on three factors: verified teaching qualifications, experience with children, and patience during pronunciation correction. Ask if lessons are truly one-on-one, whether classes fit your local time zone, and if female teachers are available if preferred. Booking the 3-day free trial allows you to observe how your child interacts with the tutor in real time."
         }
       },
       {
@@ -492,7 +524,7 @@ export default async function USALocationsHubPage() {
         "name": "Can children learn Quran online?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home."
+          "text": "Children learn effectively online through interactive digital classrooms. Sessions are kept to 30 to 40 minutes to match young attention spans, combining digital Mushaf tools, screen sharing, and gentle encouragement. Tutors focus on building accurate recitation habits and a positive relationship with the Quran from the comfort of home."
         }
       },
       {
@@ -548,15 +580,15 @@ export default async function USALocationsHubPage() {
         "name": "How much do online Quran classes cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 minutes of private one-to-one instruction with no hidden fees or contracts."
+          "text": "Tuition is structured into straightforward monthly plans based on weekly class frequency: $30 per month for 3 classes per week, $40 per month for 5 classes per week, and $50 per month for daily (7 classes/week) sessions. Each lesson is 30 to 40 minutes of private one-to-one instruction with no hidden fees or contracts."
         }
       },
       {
         "@type": "Question",
-        "name": "Is there a trial class?",
+        "name": "Is there a free trial?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. OQTutor provides a free trial class with no credit card or financial commitment required. During the session, the teacher assesses the student's current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals."
+          "text": "Yes. OQTutor provides a 3-day free trial with no credit card or financial commitment required. During the session, the teacher assesses the student's current reading level, introduces the online portal, and outlines a personalized learning plan tailored to your goals."
         }
       },
       {
@@ -564,7 +596,7 @@ export default async function USALocationsHubPage() {
         "name": "How do online Quran classes work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "After booking a trial, you connect with your assigned tutor via video conference (such as Zoom) using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
+          "text": "After booking a trial, you connect with your assigned tutor via Zoom or Google Meet using a laptop, tablet, or computer. Both student and teacher view the digital Quran or Qaida together on screen. The tutor listens to recitation, corrects pronunciation in real time, and sends lesson summaries after class."
         }
       }
     ]
@@ -583,7 +615,13 @@ export default async function USALocationsHubPage() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "USA Online Quran Classes",
+        "name": "Locations",
+        "item": "https://www.oqtutor.com/locations"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "USA",
         "item": "https://www.oqtutor.com/locations/usa"
       }
     ]
@@ -644,11 +682,14 @@ export default async function USALocationsHubPage() {
                 <Sparkles className="h-4 w-4 shrink-0" />
                 <span>Quick Answer</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight mb-3">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight mb-2">
                 Quick Answer: What Are the Best Online Quran Classes in the USA?
               </h2>
+              <p className="text-xs text-muted-text/80 mb-3 font-medium">
+                Last updated: {LAST_UPDATED}
+              </p>
               <p className="text-sm sm:text-base text-muted-text leading-relaxed font-normal">
-                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. <Link href="/" className="text-primary font-semibold hover:underline">OQTutor</Link> meets these standards with certified male and female tutors, personalized study tracks across all our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> from Noorani Qaida to <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link> and specialized <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Quran for adults</Link>, alongside a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free placement trial</Link> before enrollment.
+                The best online Quran classes in the USA provide qualified teachers, live one-to-one instruction, structured Tajweed rules, flexible scheduling across US time zones, age-appropriate lessons for children, and transparent progress tracking. <Link href="/" className="text-primary font-semibold hover:underline">OQTutor</Link> meets these standards with certified male and female tutors, personalized study tracks across all our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> from Noorani Qaida to <Link href="/courses/hifz" className="text-primary font-semibold hover:underline">Hifz</Link> and specialized <Link href="/courses/quran-for-adults" className="text-primary font-semibold hover:underline">Quran for adults</Link>, alongside a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link> before enrollment.
               </p>
             </div>
           </div>
@@ -666,7 +707,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link> offers live, one-on-one online Quran classes for children and adults across the USA, helping learners develop their Quran reading, pronunciation, and recitation skills with personal guidance. For a comprehensive overview of schedules, curriculum options, and tutor selection, read our guide on <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link>.
+                <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link> offers live, one-on-one online Quran classes for children and adults across the USA, helping learners develop their Quran reading, pronunciation, and recitation skills with personal guidance. For a comprehensive overview of schedules, curriculum options, and tutor selection, read our guide on <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">how to choose online Quran classes in the USA</Link>.
               </p>
             </div>
 
@@ -848,7 +889,7 @@ export default async function USALocationsHubPage() {
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>30-minute sessions optimal for young attention spans</span>
+                    <span>30-40 minute sessions optimal for young attention spans</span>
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
@@ -856,7 +897,7 @@ export default async function USALocationsHubPage() {
                   </li>
                   <li className="flex items-center space-x-2.5">
                     <CheckCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>Read our guides on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link>, <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary font-semibold hover:underline">best online Quran classes for beginners</Link>, and our complete overview of <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link></span>
+                    <span>Read our guides on <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">best online Quran classes for kids in the USA</Link>, <Link href="/blog/best-online-quran-classes-for-beginners" className="text-primary font-semibold hover:underline">best online Quran classes for beginners</Link>, and our complete guide to choosing <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link></span>
                   </li>
                 </ul>
               </div>
@@ -1144,7 +1185,11 @@ export default async function USALocationsHubPage() {
         </section>
 
         {/* Section 9: How OQTutor Online Quran Classes Work */}
-        <HowItWorksSection id="usa-how-it-works" />
+        <HowItWorksSection 
+          id="usa-how-it-works" 
+          subtitle="From free trial to confident recitation for families across the USA. No confusion and no long-term contracts."
+          steps={usaHowItWorksSteps}
+        />
 
         {/* Section 10: Online Quran Classes Pricing */}
         <section className="py-16 md:py-24 border-t border-card-border/40 bg-foreground/[0.01]">
@@ -1158,7 +1203,7 @@ export default async function USALocationsHubPage() {
               </h2>
               <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
               <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
-                Simple monthly plans based on weekly class frequency. Every plan includes private one-to-one lessons, certified tutors, and flexible scheduling with no long-term contracts. Get started today with a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">free trial class</Link>.
+                Simple monthly plans based on weekly class frequency. Every plan includes private one-to-one lessons, certified tutors, and flexible scheduling with no long-term contracts. Get started today with a <Link href="/book-free-trial" className="text-primary font-semibold hover:underline">3-day free trial</Link>.
               </p>
             </div>
 
@@ -1170,7 +1215,7 @@ export default async function USALocationsHubPage() {
                   frequency: "/ month",
                   classes: "3 Classes / Week",
                   desc: "Ideal for steady, foundational learning.",
-                  features: ["30-minute private 1-on-1 sessions", "Male or Female tutor selection", "Basic Tajweed & Noorani Qaida", "Flexible schedule adjustment"]
+                  features: ["30-40 minute private 1-on-1 sessions", "Male or Female tutor selection", "Basic Tajweed & Noorani Qaida", "Flexible schedule adjustment"]
                 },
                 {
                   title: "Standard Plan",
@@ -1179,7 +1224,7 @@ export default async function USALocationsHubPage() {
                   popular: true,
                   classes: "5 Classes / Week",
                   desc: "Most popular for consistent progress.",
-                  features: ["30-minute private 1-on-1 sessions", "Male or Female tutor selection", "Advanced Tajweed & Quran Reading", "Islamic Studies & Duas included", "Monthly progress reports"]
+                  features: ["30-40 minute private 1-on-1 sessions", "Male or Female tutor selection", "Advanced Tajweed & Quran Reading", "Islamic Studies & Duas included", "Monthly progress reports"]
                 },
                 {
                   title: "Premium Plan",
@@ -1187,7 +1232,7 @@ export default async function USALocationsHubPage() {
                   frequency: "/ month",
                   classes: "Daily (7 Classes / Week)",
                   desc: "Recommended for intensive Hifz students.",
-                  features: ["30-minute private 1-on-1 sessions", "Male or Female tutor selection", "Customized Hifz memorization track", "Quran Translation & Tafseer", "Priority schedule management"]
+                  features: ["30-40 minute private 1-on-1 sessions", "Male or Female tutor selection", "Customized Hifz memorization track", "Quran Translation & Tafseer", "Priority schedule management"]
                 }
               ].map((plan, idx) => (
                 <div key={idx} className={`glass p-8 rounded-3xl border ${plan.popular ? 'border-primary shadow-xl bg-primary/[0.02]' : 'border-card-border'} flex flex-col justify-between relative`}>
@@ -1223,14 +1268,14 @@ export default async function USALocationsHubPage() {
                           : 'glass border border-card-border hover:border-primary text-foreground'
                       }`}
                     >
-                      Book Free Trial
+                      Book 3-Day Free Trial
                     </Link>
                   </div>
                 </div>
               ))}
             </div>
             <p className="text-center text-xs text-muted-text mt-8">
-              All plans begin with a free trial class. No credit card required to register.
+              All plans begin with a 3-day free trial. No credit card required to register.
             </p>
           </div>
         </section>
@@ -1376,14 +1421,14 @@ export default async function USALocationsHubPage() {
               Start Learning the Quran Online
             </h2>
             <p className="text-xs sm:text-base text-muted-text max-w-xl mx-auto leading-relaxed font-normal">
-              Book a free trial class with certified male or female tutors at <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>. Meet your instructor, evaluate their teaching approach, and establish a personalized Quran learning plan for yourself or your child — completely risk-free.
+              Start a 3-day free trial with certified male or female tutors at <Link href="/" className="text-primary font-semibold hover:underline">OQTutor Online Quran Academy</Link>. Meet your instructor, evaluate their teaching approach, and establish a personalized Quran learning plan for yourself or your child — completely risk-free.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
                 href="/book-free-trial" 
                 className="inline-flex items-center space-x-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white text-sm sm:text-base font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <span>Book Free Placement Trial</span>
+                <span>Book Your 3-Day Free Trial</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link 
@@ -1402,7 +1447,10 @@ export default async function USALocationsHubPage() {
           </div>
         </section>
 
-        <HelpSection whatsappUrl={dbData?.contact?.whatsapp} />
+        <HelpSection 
+          whatsappUrl={dbData?.contact?.whatsapp} 
+          intro="Whether you are choosing a first course for your child in the USA or starting from zero as an adult, there are several ways to get guidance."
+        />
       </main>
 
       <Footer data={dbData?.contact} footerConfig={dbData?.footerNav} />

@@ -44,6 +44,7 @@ export default function Footer({
   ];
 
   const stateLinks = [
+    { name: 'Online Quran Classes USA', href: '/locations/usa' },
     { name: 'Quran Classes Illinois', href: '/locations/usa/illinois' },
     { name: 'Quran Classes Michigan', href: '/locations/usa/michigan' },
     { name: 'Quran Classes New York', href: '/locations/usa/new-york' },
@@ -58,7 +59,7 @@ export default function Footer({
     { name: 'Kids Quran Classes USA', href: '/blog/best-online-quran-classes-for-kids-in-usa' },
     { name: 'Choosing an Online Tutor', href: '/blog/select-right-online-quran-tutor' },
     { name: 'Quran Completion Timeline', href: '/blog/how-long-does-it-take-for-a-child-to-complete-the-quran-online' },
-    { name: 'Online Quran Classes USA', href: '/blog/online-quran-classes-usa' },
+    { name: 'How to Choose Classes in the USA', href: '/blog/online-quran-classes-usa' },
   ];
 
   const socialLinks = [

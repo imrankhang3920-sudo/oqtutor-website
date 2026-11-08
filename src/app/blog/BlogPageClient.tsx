@@ -304,7 +304,7 @@ function BlogContent({
                     href="/blog/online-quran-classes-usa"
                     className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 text-foreground transition-all duration-200"
                   >
-                    Online Quran Classes USA
+                    How to Choose Classes in USA
                   </Link>
                 </div>
               </div>

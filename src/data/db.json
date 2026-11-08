@@ -6,7 +6,7 @@
     "ctaLink": "#book-trial",
     "whatsappText": "Chat on WhatsApp",
     "whatsappNumber": "+923478704442",
-    "backgroundImage": "https://images.unsplash.com/photo-1609599006353-e629f1d40968?q=80&w=1600&auto=format&fit=crop"
+    "backgroundImage": "/images/hero-bg.webp"
   },
   "about": {
     "title": "About OQTutor",
@@ -4319,9 +4319,9 @@
     },
     {
       "id": "blog-usa-quran-classes",
-      "title": "Online Quran Classes USA: Learn the Quran Online with Certified Teachers",
+      "title": "How to Choose Online Quran Classes in the USA: A Complete Guide",
       "category": "Quran Learning Tips",
-      "description": "Comprehensive guide for Muslim families in the United States seeking qualified male and female online Quran tutors, Tajweed courses, and one-on-one Hifz programs.",
+      "description": "Not sure how to choose online Quran classes in the USA? Learn what to check in teachers, schedules, curriculum and cost before you enrol.",
       "readTime": "10 min read",
       "slug": "online-quran-classes-usa",
       "publishedAt": "August 18, 2026"
@@ -4577,9 +4577,9 @@
     },
     {
       "id": "blog-usa-quran-classes",
-      "title": "Online Quran Classes USA: 1-on-1 Qualified Tutors",
+      "title": "How to Choose Online Quran Classes in the USA: A Complete Guide",
       "category": "Quran Learning Tips",
-      "description": "Join live 1-on-1 online Quran classes in the USA for kids, adults, and sisters. Learn Noorani Qaida, Tajweed, and Hifz with certified tutors. Free 3-day trial.",
+      "description": "Not sure how to choose online Quran classes in the USA? Learn what to check in teachers, schedules, curriculum and cost before you enrol.",
       "readTime": "12 min read",
       "slug": "online-quran-classes-usa",
       "coverImage": "/online-quran-classes-usa-kids-adults-1.jpg",

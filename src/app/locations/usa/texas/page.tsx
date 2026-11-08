@@ -939,7 +939,7 @@ export default async function TexasQuranClassesPage() {
                     USA Guide
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in the USA: Complete Practical Guide
+                    How to Choose Online Quran Classes in the USA: Complete Guide
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
                     Learn how 1-on-1 online Quran classes work across America, including vetting criteria, curriculum tracks, and scheduling.
@@ -973,22 +973,22 @@ export default async function TexasQuranClassesPage() {
               </Link>
 
               <Link
-                href="/blog/online-quran-classes-usa"
+                href="/locations/usa"
                 className="group glass p-6 rounded-3xl border border-card-border hover:border-primary/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider px-2.5 py-1 bg-emerald-500/10 rounded-full inline-block">
-                    Curriculum Overview
+                    USA Hub
                   </span>
                   <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                    Online Quran Classes in the USA: Complete Guide
+                    Online Quran Classes in the USA: All Locations
                   </h3>
                   <p className="text-xs text-muted-text leading-relaxed">
-                    Comprehensive overview of Noorani Qaida, Tajweed, and Hifz tracks for students of all ages across the United States.
+                    Comprehensive overview of live 1-on-1 classes, state schedules, and curriculum tracks across the United States.
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-card-border/60 text-xs font-semibold text-primary inline-flex items-center">
-                  <span>Read Guide</span>
+                  <span>Explore USA Classes</span>
                   <ArrowRight className="h-3.5 w-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>

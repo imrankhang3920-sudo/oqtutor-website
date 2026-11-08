@@ -210,6 +210,12 @@ export default function Navbar({
                   ├ New York
                 </Link>
                 <Link
+                  href="/locations/usa/new-jersey"
+                  className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
+                >
+                  ├ New Jersey
+                </Link>
+                <Link
                   href="/locations/usa/texas"
                   className="block pl-8 pr-4 py-1.5 text-[11px] font-semibold rounded-lg hover:bg-foreground/5 hover:text-primary text-foreground/80 transition-all"
                 >
@@ -523,6 +529,13 @@ export default function Navbar({
                     className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
                   >
                     New York
+                  </Link>
+                  <Link
+                    href="/locations/usa/new-jersey"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center py-1 px-2.5 rounded-lg border border-card-border/60 bg-foreground/[0.01] text-[10px] font-semibold hover:text-primary transition-colors text-foreground"
+                  >
+                    New Jersey
                   </Link>
                   <Link
                     href="/locations/usa/texas"

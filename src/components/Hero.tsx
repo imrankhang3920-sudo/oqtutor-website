@@ -44,7 +44,7 @@ export default function Hero({ data, urgencyBadges: customBadges }: HeroProps) {
       {/* Background Image with Gradient Overlay (LCP Optimized) */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src={data.backgroundImage || "https://images.unsplash.com/photo-1609599006353-e629f1d40968?q=80&w=1600&auto=format&fit=crop"}
+          src={data.backgroundImage || "/images/hero-bg.webp"}
           alt="Online Quran Classes for Kids"
           fill
           priority

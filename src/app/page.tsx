@@ -79,7 +79,7 @@ export default async function HomePage() {
     ctaLink: dbData.hero?.ctaLink || "#book-trial",
     whatsappText: dbData.hero?.whatsappText || "Chat on WhatsApp",
     whatsappNumber: dbData.hero?.whatsappNumber || "+923478704442",
-    backgroundImage: dbData.hero?.backgroundImage || "https://images.unsplash.com/photo-1609599006353-e629f1d40968?q=80&w=1600&auto=format&fit=crop"
+    backgroundImage: dbData.hero?.backgroundImage || "/images/hero-bg.webp"
   };
 
   // Schema Markup Data

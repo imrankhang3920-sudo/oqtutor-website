@@ -124,9 +124,9 @@ const courseFaqs: Array<{
       'Adults can begin from complete beginner Noorani Qaida or choose reading correction, Tajweed, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to adult schedules.',
     answer: (
       <>
-        Adults and reverts can begin from complete beginner Noorani Qaida or choose reading fluency, Tajweed correction, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to busy work and family schedules. See our guide to{' '}
+        Adults and reverts can begin from complete beginner Noorani Qaida or choose reading fluency, Tajweed correction, Hifz, or Tafseer based on personal background. All adult lessons are 100% private and 1-on-1, providing a patient, supportive, and confidential learning environment tailored to busy work and family schedules. See our guide on{' '}
         <Link href="/blog/online-quran-classes-usa" className="text-primary hover:underline font-semibold">
-          1-on-1 Quran tutors in the USA
+          how to choose online Quran classes in the USA
         </Link>{' '}
         or visit{' '}
         <Link href="/courses/quran-for-adults" className="text-primary hover:underline font-semibold">
@@ -999,7 +999,7 @@ function CourseCard({ course }: { course: any }) {
     ],
     'quran-for-adults': [
       { label: 'Explore Quran for Adults', href: '/courses/quran-for-adults' },
-      { label: '1-on-1 Adult Tutors in USA', href: '/blog/online-quran-classes-usa' },
+      { label: 'How to Choose Classes in USA', href: '/blog/online-quran-classes-usa' },
     ],
     'noorani-qaida': [
       { label: 'Beginner Classes Guide', href: '/blog/best-online-quran-classes-for-beginners' },

@@ -15,7 +15,7 @@ const blogItems: BlogPreviewItem[] = [
   {
     image: '/online-quran-classes-usa-kids-adults-1.jpg',
     category: 'USA Complete Guide',
-    title: 'Online Quran Classes USA: 1-on-1 Qualified Tutors',
+    title: 'How to Choose Online Quran Classes in the USA (Complete Guide)',
     link: '/blog/online-quran-classes-usa',
   },
   {
