@@ -4,6 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageCircle, ChevronDown, Search } from 'lucide-react';
 import { ContactData } from '@/data/db';
+import {
+  getContactSelection,
+  clearContactSelection,
+  normalizeCourseSlug,
+  courseSlugToContactDisplayName,
+} from '@/lib/selectionState';
 
 interface CountryItem {
   code: string;
@@ -98,22 +104,54 @@ export default function Contact({ data }: { data: ContactData }) {
     'Quran for Adults',
   ];
 
-  // Auto-detect course selection from URL campaign query parameters (e.g., ?source=ArabicLanguage&interest=Enrollment)
+  // Auto-detect course selection from client state or campaign query parameters (e.g., ?source=ArabicLanguage&interest=Enrollment)
   useEffect(() => {
+    // 1. Check client-side storage first
+    const stored = getContactSelection();
+    let matchedCourse: string | undefined;
+
+    if (stored?.courseSlug) {
+      matchedCourse = courseSlugToContactDisplayName(stored.courseSlug);
+    } else if (stored?.source || stored?.interest || stored?.course) {
+      const probe = (stored.course || stored.source || stored.interest || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      matchedCourse = coursesList.find(c => {
+        const norm = c.toLowerCase().replace(/[^a-z0-9]/g, '');
+        return norm.includes(probe) || probe.includes(norm);
+      });
+    }
+
+    // 2. Fallback to URL search parameters (ad campaigns, old bookmarks)
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const sourceParam = params.get('source');
-      if (sourceParam) {
-        const normalizedSource = sourceParam.toLowerCase().replace(/[^a-z0-9]/g, '');
-        const matched = coursesList.find(c => {
-          const normalizedCourse = c.toLowerCase().replace(/[^a-z0-9]/g, '');
-          return normalizedCourse.includes(normalizedSource) || normalizedSource.includes(normalizedCourse);
-        });
-        if (matched) {
-          setFormData(prev => ({ ...prev, course: matched }));
+      const courseParam = params.get('course');
+      const interestParam = params.get('interest');
+
+      if (!matchedCourse && (sourceParam || courseParam || interestParam)) {
+        // Try slug normalization first
+        const slug = normalizeCourseSlug(courseParam || sourceParam || interestParam);
+        if (slug) {
+          matchedCourse = courseSlugToContactDisplayName(slug);
+        } else {
+          const raw = (courseParam || sourceParam || interestParam || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+          matchedCourse = coursesList.find(c => {
+            const norm = c.toLowerCase().replace(/[^a-z0-9]/g, '');
+            return norm.includes(raw) || raw.includes(norm);
+          });
         }
       }
+
+      // If URL had query parameters, clean the browser address bar without reload
+      if (window.location.search) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
     }
+
+    if (matchedCourse && coursesList.includes(matchedCourse)) {
+      setFormData(prev => ({ ...prev, course: matchedCourse! }));
+    }
+
+    clearContactSelection();
   }, []);
 
   // Auto-detect country based on Timezone and Geolocation IP API

@@ -13,6 +13,7 @@ import Image from 'next/image';
 import { CourseData, ContactData, TestimonialData, PricingData } from '@/data/db';
 import Testimonials from '@/components/Testimonials';
 import AvailableStatesBlock from '@/components/AvailableStatesBlock';
+import TrialSelectLink from '@/components/TrialSelectLink';
 
 interface HifzCourseContentProps {
   course: CourseData;
@@ -860,8 +861,10 @@ export default function HifzCourseContent({
                 </div>
 
                 <div className="mt-10">
-                  <Link
-                    href={`/book-free-trial?plan=${encodeURIComponent(plan.title)}`}
+                  <TrialSelectLink
+                    plan={plan.title}
+                    courseSlug="hifz"
+                    course="Hifz Program"
                     className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                       plan.isPopular
                         ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30'
@@ -869,7 +872,7 @@ export default function HifzCourseContent({
                     }`}
                   >
                     {plan.ctaText || 'Book Free Trial'}
-                  </Link>
+                  </TrialSelectLink>
                 </div>
               </div>
             ))}

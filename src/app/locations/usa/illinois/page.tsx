@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import TrialSelectLink from '@/components/TrialSelectLink';
 import { 
   CheckCircle, Clock, Users, BookOpen, ShieldCheck, 
   ArrowRight, MapPin, Sparkles, Laptop, Award, Star,
@@ -1217,12 +1218,13 @@ export default async function IllinoisQuranClassesPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Link
-                    href="/book-free-trial?plan=Starter"
+                  <TrialSelectLink
+                    plan="Starter Plan"
+                    planSlug="starter"
                     className="flex items-center justify-center w-full py-3.5 px-6 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border transition-all"
                   >
                     Start 3-Day Free Trial
-                  </Link>
+                  </TrialSelectLink>
                   <p className="text-[10px] text-center text-muted-text mt-2.5">No credit card required to start</p>
                 </div>
               </div>
@@ -1281,12 +1283,13 @@ export default async function IllinoisQuranClassesPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Link
-                    href="/book-free-trial?plan=Standard"
+                  <TrialSelectLink
+                    plan="Standard Plan"
+                    planSlug="standard"
                     className="flex items-center justify-center w-full py-3.5 px-6 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
                   >
                     Start 3-Day Free Trial
-                  </Link>
+                  </TrialSelectLink>
                   <p className="text-[10px] text-center text-muted-text mt-2.5">3-day free trial, no credit card required</p>
                 </div>
               </div>
@@ -1341,12 +1344,13 @@ export default async function IllinoisQuranClassesPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Link
-                    href="/book-free-trial?plan=Premium"
+                  <TrialSelectLink
+                    plan="Premium Plan"
+                    planSlug="premium"
                     className="flex items-center justify-center w-full py-3.5 px-6 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-foreground/5 hover:bg-foreground/10 text-foreground border border-card-border transition-all"
                   >
                     Start 3-Day Free Trial
-                  </Link>
+                  </TrialSelectLink>
                   <p className="text-[10px] text-center text-muted-text mt-2.5">No contracts • Cancel anytime</p>
                 </div>
               </div>

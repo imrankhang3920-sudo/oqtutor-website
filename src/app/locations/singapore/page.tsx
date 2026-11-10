@@ -1251,9 +1251,7 @@ export default async function SingaporeQuranClassesPage() {
               </Link>
 
               <a
-                href={`https://wa.me/923478704442?text=${encodeURIComponent(
-                  "Assalamu Alaikum! I am interested in online Quran classes for my family in Singapore. Could you provide more details about SGT time slots and tutor availability?"
-                )}`}
+                href={`https://wa.me/923478704442?text=${encodeURIComponent("Assalamu Alaikum! I am interested in online Quran classes for my family in Singapore. Could you provide more details about SGT time slots and tutor availability?")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-700/80 hover:bg-emerald-700 text-white font-semibold text-sm sm:text-base border border-white/20 transition-all duration-300"

@@ -6,6 +6,13 @@ import Footer from '@/components/Footer';
 import { ContactData } from '@/data/db';
 import { Send, ShieldCheck, ChevronDown, Search } from 'lucide-react';
 import { trackQualifyLead, trackPurchase, trackFacebookEvent, trackGAEvent } from '@/lib/analytics';
+import {
+  getTrialSelection,
+  clearTrialSelection,
+  normalizeCourseSlug,
+  courseSlugToDisplayName,
+  normalizePlanSlug,
+} from '@/lib/selectionState';
 
 interface CountryItem {
   code: string;
@@ -68,10 +75,14 @@ function formatPhoneNumber(value: string, format: string) {
 
 export default function BookFreeTrialClient({
   contactData,
-  selectedPlan
+  selectedPlan,
+  initialCourse,
+  initialGender,
 }: {
   contactData: ContactData;
   selectedPlan?: string;
+  initialCourse?: string;
+  initialGender?: string;
 }) {
   const [selectedCountry, setSelectedCountry] = useState(countriesData[0]); // Default to UK
   const [phoneVal, setPhoneVal] = useState('');
@@ -126,19 +137,74 @@ export default function BookFreeTrialClient({
     });
   }, []);
 
+  // Handle trial plan, course, and tutor preference selection from client storage or fallback params
   useEffect(() => {
-    if (selectedPlan) {
-      let price = 0;
-      const lowerPlan = selectedPlan.toLowerCase();
-      if (lowerPlan.includes('starter')) price = 30;
-      else if (lowerPlan.includes('standard')) price = 40;
-      else if (lowerPlan.includes('premium')) price = 50;
+    const stored = getTrialSelection();
 
-      if (price > 0) {
-        trackPurchase(selectedPlan, price);
+    let effPlan = stored?.plan || selectedPlan;
+    let effCourse = stored?.course;
+    let effGender = stored?.gender || initialGender;
+
+    if (!effCourse && stored?.courseSlug) {
+      effCourse = courseSlugToDisplayName(stored.courseSlug);
+    }
+
+    if (!effCourse && initialCourse) {
+      const slug = normalizeCourseSlug(initialCourse);
+      effCourse = courseSlugToDisplayName(slug);
+    }
+
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const urlPlan = params.get('plan');
+      const urlCourse = params.get('course');
+      const urlGender = params.get('gender');
+
+      if (!effPlan && urlPlan) {
+        effPlan = urlPlan;
+      }
+      if (!effCourse && urlCourse) {
+        const slug = normalizeCourseSlug(urlCourse);
+        effCourse = courseSlugToDisplayName(slug);
+      }
+      if (!effGender && urlGender) {
+        const lower = urlGender.toLowerCase();
+        if (lower === 'female' || lower === 'male') {
+          effGender = lower as 'female' | 'male';
+        }
+      }
+
+      // If URL contained query parameters, clean the browser address bar without reload
+      if (window.location.search) {
+        window.history.replaceState({}, '', window.location.pathname);
       }
     }
-  }, [selectedPlan]);
+
+    if (effCourse && courses.includes(effCourse)) {
+      setFormData(prev => ({ ...prev, course: effCourse! }));
+    }
+
+    if (effGender === 'female') {
+      setFormData(prev => ({
+        ...prev,
+        message: prev.message ? prev.message : 'Preference: Female Tutor',
+      }));
+    }
+
+    if (effPlan) {
+      const planSlug = normalizePlanSlug(effPlan);
+      let price = 0;
+      if (planSlug === 'starter') price = 30;
+      else if (planSlug === 'standard') price = 40;
+      else if (planSlug === 'premium') price = 50;
+
+      if (price > 0) {
+        trackPurchase(effPlan, price);
+      }
+    }
+
+    clearTrialSelection();
+  }, [selectedPlan, initialCourse, initialGender]);
 
   // Auto-detect country based on Timezone and Geolocation IP API
   useEffect(() => {

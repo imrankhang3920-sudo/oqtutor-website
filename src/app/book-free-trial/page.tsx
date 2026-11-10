@@ -30,6 +30,8 @@ export default async function BookFreeTrialPage({ searchParams }: Props) {
   const dbData = readDB();
   const resolvedParams = await searchParams;
   const plan = typeof resolvedParams.plan === 'string' ? resolvedParams.plan : undefined;
+  const course = typeof resolvedParams.course === 'string' ? resolvedParams.course : undefined;
+  const gender = typeof resolvedParams.gender === 'string' ? resolvedParams.gender : undefined;
 
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Home', url: '/' },
@@ -42,7 +44,12 @@ export default async function BookFreeTrialPage({ searchParams }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <BookFreeTrialClient contactData={dbData.contact} selectedPlan={plan} />
+      <BookFreeTrialClient
+        contactData={dbData.contact}
+        selectedPlan={plan}
+        initialCourse={course}
+        initialGender={gender}
+      />
     </>
   );
 }

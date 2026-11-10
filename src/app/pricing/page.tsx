@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import ServingLocationsSection from '@/components/ServingLocationsSection';
 import StickyFormButton from '@/components/StickyFormButton';
 import Link from 'next/link';
+import TrialSelectLink from '@/components/TrialSelectLink';
 import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -139,8 +140,8 @@ export default async function PricingPage() {
                   </div>
 
                   <div className="mt-10">
-                    <Link
-                      href={`/book-free-trial?plan=${encodeURIComponent(plan.title)}`}
+                    <TrialSelectLink
+                      plan={plan.title}
                       className={`flex items-center justify-center w-full py-3.5 px-6 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                         plan.isPopular
                           ? 'bg-primary text-white hover:bg-primary-hover shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30'
@@ -148,7 +149,7 @@ export default async function PricingPage() {
                       }`}
                     >
                       {plan.ctaText}
-                    </Link>
+                    </TrialSelectLink>
                   </div>
                 </div>
               ))}

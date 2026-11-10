@@ -10,6 +10,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import TrialSelectLink from '@/components/TrialSelectLink';
 import { 
   CheckCircle, 
   MapPin, 
@@ -1253,8 +1254,8 @@ export default async function USALocationsHubPage() {
                   </div>
 
                   <div className="pt-8">
-                    <Link
-                      href="/book-free-trial"
+                    <TrialSelectLink
+                      plan={plan.title}
                       className={`w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider text-center block transition-all ${
                         plan.popular
                           ? 'bg-primary hover:bg-primary-hover text-white shadow-md'
@@ -1262,7 +1263,7 @@ export default async function USALocationsHubPage() {
                       }`}
                     >
                       Book 3-Day Free Trial
-                    </Link>
+                    </TrialSelectLink>
                   </div>
                 </div>
               ))}

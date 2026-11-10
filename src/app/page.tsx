@@ -17,6 +17,7 @@ import StickyFormButton from '@/components/StickyFormButton';
 import ScrollTriggerForm from '@/components/ScrollTriggerForm';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 import { createFaqPageSchema, siteConfig } from '@/lib/structuredData';
 import Script from 'next/script';
 
@@ -62,7 +63,19 @@ export async function generateMetadata(): Promise<Metadata> {
 
 import { getDBAsync } from '@/data/db';
 
-export default async function HomePage() {
+interface HomePageProps {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function HomePage(props: HomePageProps) {
+  const searchParams = props.searchParams ? await props.searchParams : {};
+  if (searchParams && ('NA' in searchParams || 'na' in searchParams)) {
+    permanentRedirect('/locations/usa');
+  }
+  if (searchParams && ('SA' in searchParams || 'sa' in searchParams)) {
+    permanentRedirect('/locations');
+  }
+
   const dbData = (await getDBAsync()) || {};
   
   // Check if admin is logged in
