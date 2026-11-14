@@ -97,11 +97,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isImprovePronunciationBlog
     ? 'How to Improve Your Quran Pronunciation: A Practical Guide for Beginners | OQTutor'
     : isAfterNooraniQaidaBlog
-    ? 'What Should a Child Learn After Noorani Qaida? A Step-by-Step Guide | OQTutor'
+    ? 'What to Learn After Noorani Qaida: Next Steps for Kids'
     : isUKCompleteGuideBlog
     ? 'Online Quran Classes in the UK: Practical Guide | OQTutor'
     : isBrainRewireBlog
-    ? 'How Memorizing the Quran Rewires Your Brain (7 Science Facts)'
+    ? 'How Memorizing the Quran Changes Your Brain'
     : isBalanceBlog
     ? 'How to Help Children Balance Quran Learning With School and Extracurricular Activities | OQTutor'
     : isMistakesBlog
@@ -113,11 +113,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isConsistentHifzBlog
     ? 'How to Build a Consistent Hifz Quran Revision Routine'
     : isOnlineVsInPersonBlog
-    ? 'Online vs. In-Person Quran Classes: Which Learning Path Brings You Closer to the Quran? | OQTutor'
+    ? 'Online vs In-Person Quran Classes: Which Is Better?'
     : isKidsUsaBlog
     ? 'Online Quran Classes for Kids in the USA (2026): Compared'
     : isTarteelVsTajweedBlog
-    ? 'Tajweed vs. Tarteel: 5 Key Differences (+ Quran Examples)'
+    ? "Tajweed vs Tarteel: What's the Difference?"
     : isWeekendQuranBlog
     ? 'Weekend Quran Classes with Tajweed | Learn at Your Own Pace'
     : isBeginnersBlog
@@ -126,7 +126,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Choosing Between a Male or Female Quran Teacher: Complete Guide | OQTutor'
     : `${blog.title} | OQTutor`;
 
-  const metaDescription = isMakharijBlog
+  const metaDescription = isAfterNooraniQaidaBlog
+    ? 'Finished Noorani Qaida? Here is the step-by-step path: Quran reading, tajweed basics and short surahs. Book a 3-day free trial.'
+    : isMakharijBlog
     ? 'Learn how to pronounce heavy and throat Arabic letters with accurate Makharij al Huruf. Master Qaaf, Ayn, and Tafkheem rules with authentic Tajweed steps.'
     : isOnlineIslamicStudiesCurriculumKidsBlog
     ? 'Discover what every child should learn in an online Islamic Studies curriculum. Explore age milestones, Salah, Aqeedah, Seerah, and verified research.'
@@ -135,11 +137,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : isQuranicVsMsaBlog
     ? 'Confused between Quranic and Modern Standard Arabic? Compare vocabulary, grammar, and timelines to choose the right starting point for you or your child.'
     : isBrainRewireBlog
-    ? 'Discover the neuroscience of Hifz: how memorizing the Quran boosts memory, focus, neuroplasticity, and cognitive health in children and adults.'
+    ? 'See what Quran memorization does for focus, memory and discipline, plus practical tips to begin. Start with a 3-day free trial with a Hifz tutor.'
     : isOnlineVsInPersonBlog
-    ? 'Comparing online vs in-person Quran classes? Explore the real-world differences in scheduling, cost, 1-on-1 attention, teacher credentials, and safety to choose the right path for your family.'
+    ? 'Compare cost, flexibility, teacher quality and progress in online vs in-person Quran classes. Plans from $30/month with a 3-day free trial.'
     : isTarteelVsTajweedBlog
-    ? 'What is the exact difference between Tajweed and Tarteel in the Quran? See our side-by-side comparison table, Surah Al-Muzzammil proof, & pronunciation rules.'
+    ? 'Tarteel means reciting slowly and clearly, while tajweed is the set of rules. Learn how they differ and how to practice both. Try a 3-day free trial.'
     : isKidsUsaBlog
     ? 'Compare top 1-on-1 online Quran classes for kids in the USA. Certified tutors, flexible US time zones, and a 3-day free trial. Plans from $30/mo.'
     : isBeginnersBlog
@@ -4935,6 +4937,27 @@ function ArticleContentHifz() {
   );
 }
 
+function BlogConversionCTA() {
+  return (
+    <div className="my-8 not-prose">
+      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 border border-primary/20 text-center space-y-4 shadow-sm">
+        <p className="text-base sm:text-lg font-semibold text-foreground max-w-xl mx-auto leading-relaxed">
+          Want your child or yourself to learn with a qualified tutor? Start a 3-day free trial.
+        </p>
+        <div>
+          <Link
+            href="/book-free-trial"
+            className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+          >
+            <span>Start a 3-Day Free Trial</span>
+            <ArrowRight className="h-4.5 w-4.5" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ArticleContentTarteelVsTajweed() {
   return (
     <article className="prose prose-slate max-w-none space-y-10 text-foreground/90 leading-relaxed font-normal">
@@ -5199,6 +5222,8 @@ function ArticleContentTarteelVsTajweed() {
           </table>
         </div>
       </section>
+
+      <BlogConversionCTA />
 
       {/* Section 4: Tajweed vs Tarteel vs Tilawah */}
       <section className="space-y-4">
@@ -5683,6 +5708,8 @@ function ArticleContentTarteelVsTajweed() {
           </div>
         </div>
       </section>
+
+      <BlogConversionCTA />
 
       {/* Conclusion & Subtle CTA */}
       <section className="space-y-4 pt-6 border-t border-card-border not-prose">
@@ -11928,6 +11955,8 @@ function ArticleContentBrainRewiring() {
         </p>
       </section>
 
+      <BlogConversionCTA />
+
       {/* Section 4: Language Processing and Cognitive Development */}
       <section id="language-processing" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight flex items-center space-x-2">
@@ -12248,6 +12277,8 @@ function ArticleContentBrainRewiring() {
         </ul>
       </section>
 
+      <BlogConversionCTA />
+
       {/* Final Thoughts & CTA */}
       <section className="space-y-4 pt-6 border-t border-card-border scroll-mt-24">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
@@ -12267,7 +12298,7 @@ function ArticleContentBrainRewiring() {
               Book Your Free 1-on-1 Quran Trial Class
             </h3>
             <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-              Join thousands of Muslim families worldwide learning Quran online with certified male and female tutors. Free 30-minute trial lesson, flexible timings, zero credit card required.
+              Join thousands of Muslim families worldwide learning Quran online with certified male and female tutors. 3-day free trial (30-40 minute classes), flexible timings, zero credit card required.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -13286,6 +13317,8 @@ function ArticleContentAfterNooraniQaida() {
         </div>
       </section>
 
+      <BlogConversionCTA />
+
       {/* Step 5: Strengthen Memorization Skills */}
       <section id="step-5-memorization" className="space-y-4 scroll-mt-24 pt-4 border-t border-card-border">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight border-b border-card-border pb-3 flex items-center space-x-2">
@@ -13782,6 +13815,8 @@ function ArticleContentAfterNooraniQaida() {
         <p className="text-base text-muted-text">
           Most importantly, allow the child to progress at a pace that builds confidence rather than pressure. With patience and consistent practice, Noorani Qaida can become the foundation for a much deeper and more rewarding Quran learning journey.
         </p>
+
+        <BlogConversionCTA />
 
         {/* Free Trial CTA Banner */}
         <div className="pt-6 not-prose">

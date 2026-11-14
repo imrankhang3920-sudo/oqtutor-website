@@ -25,15 +25,15 @@ import {
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
-  description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
+  title: 'How Online Quran Classes Work | OQTutor',
+  description: 'Book a free trial, meet your tutor on Zoom or Google Meet and start 30-40 minute one-on-one Quran classes. Simple steps, 3-day free trial.',
   alternates: {
     canonical: 'https://www.oqtutor.com/how-it-works',
   },
   openGraph: {
     url: 'https://www.oqtutor.com/how-it-works',
-    title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
-    description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
+    title: 'How Online Quran Classes Work | OQTutor',
+    description: 'Book a free trial, meet your tutor on Zoom or Google Meet and start 30-40 minute one-on-one Quran classes. Simple steps, 3-day free trial.',
     images: [
       {
         url: 'https://www.oqtutor.com/logo.jpg',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How OQTutor Works: Start Live 1-on-1 Quran Classes in 3 Steps',
-    description: 'See how our live 1-on-1 online Quran classes work: 1) Book your free assessment, 2) Match with a certified male/female tutor, 3) Learn on your schedule.',
+    title: 'How Online Quran Classes Work | OQTutor',
+    description: 'Book a free trial, meet your tutor on Zoom or Google Meet and start 30-40 minute one-on-one Quran classes. Simple steps, 3-day free trial.',
     images: ['https://www.oqtutor.com/logo.jpg'],
   },
 };
@@ -73,7 +73,7 @@ export default async function HowItWorksPage() {
       id: 'step-2',
       number: '02',
       title: 'Attend the Evaluation Class',
-      mainText: 'Join your tutor for a live, 1-on-1 30-minute session via Zoom or Teams—just click the link, no technical setup needed. Your tutor will share the digital Qaida or Mushaf on screen, gently assess the student\'s current reading level, and recommend a personalized learning roadmap.',
+      mainText: 'Join your tutor for a live, 1-on-1 30-40 minute session via Zoom or Google Meet—just click the link, no technical setup needed. Your tutor will share the digital Qaida or Mushaf on screen, gently assess the student\'s current reading level, and recommend a personalized learning roadmap.',
       icon: Video,
       color: 'bg-secondary/10 text-secondary border-secondary/20',
     },
@@ -139,7 +139,7 @@ export default async function HowItWorksPage() {
     },
     {
       title: 'One-Click Video App',
-      description: 'We conduct classes via Zoom, Microsoft Teams, or Skype. Simply click the invite link we send to your WhatsApp or Email.',
+      description: 'We conduct classes via Zoom or Google Meet. Simply click the invite link we send to your WhatsApp or Email.',
       icon: Video,
     },
     {
@@ -188,7 +188,7 @@ export default async function HowItWorksPage() {
   const faqQuestions = [
     {
       question: 'How do online Quran classes work?',
-      answer: 'Online Quran classes at OQTutor are live, 1-on-1 interactive video sessions conducted via Zoom or Skype. The tutor shares their screen to display the Noorani Qaida or Quran, using digital pointer tools to guide the student line-by-line while providing real-time pronunciation and Tajweed correction.'
+      answer: 'Online Quran classes at OQTutor are live, 1-on-1 interactive video sessions conducted via Zoom or Google Meet. The tutor shares their screen to display the Noorani Qaida or Quran, using digital pointer tools to guide the student line-by-line while providing real-time pronunciation and Tajweed correction.'
     },
     {
       question: 'Is the 3-day trial class really free?',
@@ -245,7 +245,7 @@ export default async function HowItWorksPage() {
         "itemListElement": [
           {
             "@type": "HowToDirection",
-            "text": "Join your tutor for a live, 1-on-1 30-minute session via Zoom or Teams—just click the link, no technical setup needed. Your tutor will share the digital Qaida or Mushaf on screen, gently assess the student's current reading level, and recommend a personalized learning roadmap."
+            "text": "Join your tutor for a live, 1-on-1 30-40 minute session via Zoom or Google Meet—just click the link, no technical setup needed. Your tutor will share the digital Qaida or Mushaf on screen, gently assess the student's current reading level, and recommend a personalized learning roadmap."
           }
         ]
       },

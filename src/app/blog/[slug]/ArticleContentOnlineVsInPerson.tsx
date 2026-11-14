@@ -179,7 +179,7 @@ export default function ArticleContentOnlineVsInPerson() {
                 <td className="p-4 sm:p-5 text-foreground/90 bg-primary/[0.02]">
                   <div className="flex items-start space-x-2">
                     <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0 mt-0.5" />
-                    <span><strong className="text-primary">$40 – $100/month</strong> (plus zero commute cost).</span>
+                    <span><strong className="text-primary">$30 – $50/month</strong> (plus zero commute cost).</span>
                   </div>
                 </td>
                 <td className="p-4 sm:p-5 text-muted-text">
@@ -457,10 +457,10 @@ export default function ArticleContentOnlineVsInPerson() {
             <div className="p-6 rounded-2xl glass border border-primary/20 bg-primary/[0.02] space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">Online Tuition</span>
-                <span className="text-xl font-extrabold text-foreground">$40 – $100 / mo</span>
+                <span className="text-xl font-extrabold text-foreground">$30 – $50 / mo</span>
               </div>
               <p className="text-sm text-muted-text leading-relaxed">
-                Includes dedicated 1-on-1 private tutoring, interactive digital software, and flexible scheduling. Transparent <Link href="/pricing" className="text-primary hover:underline font-semibold">pricing plans</Link> with sibling discounts and <strong>$0 commute cost</strong>.
+                Includes dedicated 1-on-1 private tutoring, interactive digital software, and flexible scheduling. Transparent <Link href="/pricing" className="text-primary hover:underline font-semibold">pricing plans</Link> from $30/month with sibling discounts and <strong>$0 commute cost</strong>.
               </p>
             </div>
 

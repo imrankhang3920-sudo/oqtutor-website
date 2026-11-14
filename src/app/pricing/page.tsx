@@ -13,22 +13,22 @@ import { Check, X, Shield, Users, CreditCard, Sparkles } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
-  description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
+  title: 'Online Quran Classes Pricing: Plans from $30/Month',
+  description: 'Simple monthly plans at $30, $40 and $50. One-on-one 30-40 minute classes with qualified tutors. Start with a 3-day free trial.',
   alternates: {
     canonical: 'https://www.oqtutor.com/pricing',
   },
   openGraph: {
-    title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
-    description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
+    title: 'Online Quran Classes Pricing: Plans from $30/Month',
+    description: 'Simple monthly plans at $30, $40 and $50. One-on-one 30-40 minute classes with qualified tutors. Start with a 3-day free trial.',
     url: 'https://www.oqtutor.com/pricing',
     siteName: 'OQTutor',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Online Quran Classes Pricing & Plans | Free Trial – OQTutor',
-    description: 'Affordable 1-on-1 online Quran classes for kids & adults. Flexible monthly plans, family discounts, no contracts, and 100% free trial class before paying.',
+    title: 'Online Quran Classes Pricing: Plans from $30/Month',
+    description: 'Simple monthly plans at $30, $40 and $50. One-on-one 30-40 minute classes with qualified tutors. Start with a 3-day free trial.',
   },
 };
 
@@ -62,7 +62,7 @@ export default async function PricingPage() {
 
   const comparisonFeatures = [
     { name: 'Class Frequency', Starter: '3 Classes / Week', Standard: '5 Classes / Week', Premium: 'Daily (7 / Week)' },
-    { name: 'Session Duration', Starter: '30 Minutes', Standard: '30 Minutes', Premium: '30 Minutes' },
+    { name: 'Session Duration', Starter: '30-40 Minutes', Standard: '30-40 Minutes', Premium: '30-40 Minutes' },
     { name: 'One-on-One Classes', Starter: true, Standard: true, Premium: true },
     { name: 'Male / Female Tutors', Starter: true, Standard: true, Premium: true },
     { name: 'Noorani Qaida & Basic Tajweed', Starter: true, Standard: true, Premium: true },
