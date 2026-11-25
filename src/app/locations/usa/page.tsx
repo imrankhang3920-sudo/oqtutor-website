@@ -311,7 +311,7 @@ export default async function USALocationsHubPage() {
       link: "/blog/select-right-online-quran-tutor"
     },
     {
-      title: "Best Online Quran Classes for Kids in USA",
+      title: "Top Online Quran Classes for Kids in the USA (Parent Guide)",
       desc: "A practical guide for parents evaluating teacher patience, lesson duration, and engagement strategies.",
       link: "/blog/best-online-quran-classes-for-kids-in-usa"
     },
@@ -1313,6 +1313,69 @@ export default async function USALocationsHubPage() {
           </div>
         </section>
 
+        {/* Section 11b: Popular States */}
+        <section id="popular-states" className="py-16 md:py-20 border-t border-card-border/40 bg-background">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 border border-primary/20 rounded-full px-4.5 py-1.5 inline-block">
+                State Hubs
+              </span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight">
+                Popular States
+              </h2>
+              <div className="h-1 w-20 bg-secondary mx-auto mt-4 rounded-full" />
+              <p className="mt-4 text-sm sm:text-base text-muted-text font-normal leading-relaxed">
+                Muslim families across the country rely on OQTutor for live 1-on-1 Quran instruction scheduled in their local time zone. Explore our dedicated state pages below.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Families across New York City, Long Island, and upstate communities can schedule flexible Eastern Time sessions through our{' '}
+                  <Link href="/locations/usa/new-york" className="text-primary font-semibold hover:underline">Online Quran Classes in New York</Link>{' '}
+                  program.
+                </p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Parents in Houston, Dallas-Fort Worth, Austin, and San Antonio can enroll in{' '}
+                  <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Online Quran Classes in Texas</Link>{' '}
+                  designed around Central Time school calendars.
+                </p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Students in Dearborn, Detroit, Ann Arbor, and surrounding towns benefit from personalized{' '}
+                  <Link href="/locations/usa/michigan" className="text-primary font-semibold hover:underline">Online Quran Classes in Michigan</Link>{' '}
+                  taught live from home.
+                </p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Busy households in Jersey City, Edison, Paterson, and across the state can join{' '}
+                  <Link href="/locations/usa/new-jersey" className="text-primary font-semibold hover:underline">Online Quran Classes in New Jersey</Link>{' '}
+                  without evening traffic.
+                </p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Learners in Los Angeles, the Bay Area, San Diego, and Sacramento enjoy convenient Pacific Time{' '}
+                  <Link href="/locations/usa/california" className="text-primary font-semibold hover:underline">Online Quran Classes in California</Link>{' '}
+                  seven days a week.
+                </p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-card-border space-y-2">
+                <p className="text-xs sm:text-sm text-muted-text leading-relaxed">
+                  Muslim families in Chicago, Naperville, Schaumburg, and nearby suburbs can start{' '}
+                  <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">Online Quran Classes in Illinois</Link>{' '}
+                  with certified male and female teachers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 12: Online Quran Classes by State */}
         <section className="py-16 md:py-24 border-t border-card-border/40 bg-foreground/[0.01]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1397,6 +1460,32 @@ export default async function USALocationsHubPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 13b: Read more */}
+        <section id="read-more" className="py-12 md:py-16 border-t border-card-border/40 bg-foreground/[0.01]">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="glass p-8 sm:p-10 rounded-3xl border border-card-border space-y-5">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 border border-secondary/20 rounded-full px-4 py-1 inline-block">
+                  Further Reading
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                  Read more
+                </h2>
+              </div>
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                If you are comparing programs for children, start with our detailed parent guide on the{' '}
+                <Link href="/blog/best-online-quran-classes-for-kids-in-usa" className="text-primary font-semibold hover:underline">Best online Quran classes for kids in USA</Link>{' '}
+                covering curriculum progression, teacher vetting, and US pricing.
+              </p>
+              <p className="text-sm sm:text-base text-muted-text leading-relaxed">
+                To understand teacher credentials, US time-zone scheduling, and what to check before enrolling, read{' '}
+                <Link href="/blog/online-quran-classes-usa" className="text-primary font-semibold hover:underline">How online Quran classes work in the USA</Link>{' '}
+                before booking your 3-day free trial.
+              </p>
             </div>
           </div>
         </section>

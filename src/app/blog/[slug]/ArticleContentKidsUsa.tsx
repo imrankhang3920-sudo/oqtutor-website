@@ -887,7 +887,7 @@ export default function ArticleContentKidsUsa() {
           The vast majority of Muslim families in the United States speak English, Urdu, Somali, Bengali, Turkish, or other languages at home rather than Arabic. Parents frequently worry: <em>Can my child learn to recite the Quran with authentic Tajweed if neither of us speaks Arabic?</em> The answer is an emphatic yes.
         </p>
         <p className="text-base text-muted-text leading-relaxed">
-          The classical Arabic of the Quran is a phonetic system mastered through dedicated phonemic training, not everyday conversational fluency. Starting with Noorani Qaida, children learn the precise tongue placement, throat acoustics, and lip movements required for each unique Arabic sound—such as the deep <em>‘Ayn (ع)</em>, the emphatic <em>Dhad (ض)</em>, and the soft <em>Haa (ح)</em>. Because our instructors are fluent in English and trained in teaching Western youth, they explain vocal mechanics using clear English analogies without intimidating linguistic jargon. Your child learns to read the actual words of the Mushaf fluently without needing prior Arabic knowledge, while parents receive clear progress reports in English.
+          The classical Arabic of the Quran is a phonetic system mastered through dedicated phonemic training, not everyday conversational fluency. Starting with <Link href="/courses/noorani-qaida" className="text-primary font-semibold hover:underline">Noorani Qaida for kids</Link>, children learn the precise tongue placement, throat acoustics, and lip movements required for each unique Arabic sound—such as the deep <em>‘Ayn (ع)</em>, the emphatic <em>Dhad (ض)</em>, and the soft <em>Haa (ح)</em>. Because our instructors are fluent in English and trained in teaching Western youth, they explain vocal mechanics using clear English analogies without intimidating linguistic jargon. Your child learns to read the actual words of the Mushaf fluently without needing prior Arabic knowledge, while parents receive clear progress reports in English.
         </p>
       </section>
 
@@ -962,7 +962,7 @@ export default function ArticleContentKidsUsa() {
           What to Look for: Parent Checklist Before Enrolling
         </h2>
         <p className="text-base text-muted-text">
-          Follow this practical 6-step checklist to select the ideal online Quran academy for your child:
+          Follow this practical 6-step checklist when comparing <Link href="/locations/usa" className="text-primary font-semibold hover:underline">Quran classes in the USA</Link> to select the ideal online academy for your child:
         </p>
         <div className="space-y-3 not-prose">
           {[
@@ -1325,7 +1325,7 @@ export default function ArticleContentKidsUsa() {
             Meet Our Dedicated Quran Teachers
           </h2>
           <p className="text-base text-muted-text mt-2">
-            Our male and female instructors specialize in gentle, encouraging instruction for young learners in the USA:
+            Our male and female instructors specialize in gentle, encouraging instruction for young learners in the USA—<Link href="/tutors" className="text-primary font-semibold hover:underline">meet our Quran teachers</Link> and explore their profiles below:
           </p>
         </div>
 
@@ -1709,7 +1709,7 @@ export default function ArticleContentKidsUsa() {
             Start Your Child&apos;s Quran Journey with OQTutor
           </h2>
           <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
-            Discover how personalized one-on-one Quran tutoring can help your child read, understand, and love the Holy Quran with confidence. Book your 3-day free trial today with no credit card required.
+            Discover how personalized one-on-one Quran tutoring can help your child read, understand, and love the Holy Quran with confidence, and <Link href="/locations/usa" className="text-primary font-semibold hover:underline">book a free trial with our USA Quran teachers</Link> today with no credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
@@ -1729,6 +1729,27 @@ export default function ArticleContentKidsUsa() {
           <p className="text-[11px] text-muted-text pt-2">
             Have questions before booking? Learn <Link href="/how-it-works" className="text-primary hover:underline font-semibold">how online classes work</Link> or contact our academic support team.
           </p>
+        </div>
+      </section>
+
+      {/* USA Hub CTA Box */}
+      <section className="not-prose pt-2">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-primary/15 via-card to-secondary/15 border border-primary/30 text-center space-y-4 shadow-xl">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+            Learn Quran Online From Anywhere in the USA
+          </h3>
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
+            Start with a 3-day free trial and enjoy live 30-minute one-on-one classes with certified male and female tutors—no credit card or registration fee required.
+          </p>
+          <div className="pt-1">
+            <Link
+              href="/locations/usa"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+            >
+              <span>Explore USA Online Quran Classes</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

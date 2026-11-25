@@ -3018,7 +3018,7 @@ function ArticleContentUSA() {
           Introduction: Finding Reliable Online Quran Classes in the USA
         </h2>
         <p className="text-base sm:text-lg leading-relaxed text-muted-text">
-          Choosing the right online Quran academy for your family in the United States requires careful thought. With numerous virtual platforms available, knowing how to evaluate teacher qualifications, scheduling flexibility across time zones, lesson structure, and child safety is essential before you enroll. If you are looking to find and book private tutoring, explore our <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link>. In this guide, we break down everything you need to check—from evaluating trial sessions and comparing 1-on-1 vs group formats to selecting certified tutors—so you can make an informed choice for yourself or your child.
+          Choosing the right online Quran academy for your family in the United States requires careful thought. With numerous virtual platforms available, knowing how to evaluate teacher qualifications, scheduling flexibility across time zones, lesson structure, and child safety is essential before you enroll. If you are looking to find and book private tutoring, explore our <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes USA</Link> program. In this guide, we break down everything you need to check—from evaluating trial sessions and comparing 1-on-1 vs group formats to selecting certified tutors—so you can make an informed choice for yourself or your child.
         </p>
         <p className="text-base leading-relaxed text-muted-text">
           Through modern virtual classrooms on Zoom or Google Meet, interactive digital whiteboards, and flexible scheduling across Eastern, Central, Mountain, and Pacific time zones, your entire family can now <Link href="/" className="text-primary font-semibold hover:underline">learn Quran online</Link> from the comfort and safety of home. Whether you want your child to master basic Arabic phonetics, perfect their Tajweed, or embark on a sacred memorization journey, choosing a professional <Link href="/" className="text-primary font-semibold hover:underline">Online Quran Academy USA</Link> ensures authentic spiritual education without compromising your daily routines.
@@ -3180,7 +3180,7 @@ function ArticleContentUSA() {
           Structured Learning Tracks: Choosing the Right Curriculum
         </h2>
         <p className="text-base text-muted-text">
-          Whether you are enrolling a young child or returning to study as an adult, finding an academy with clearly structured curricula ensures steady progress. Students typically advance from foundational Noorani Qaida phonics to fluent Quran recitation with Tajweed, or pursue specialized tracks such as Hifz memorization, Tafseer, and Islamic Studies. To explore detailed curriculum syllabi and course prerequisites, browse our <Link href="/courses" className="text-primary font-semibold hover:underline">Quran courses</Link> or view our <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link> hub.
+          Whether you are enrolling a young child or returning to study as an adult, finding an academy with clearly structured curricula ensures steady progress. Students typically advance from foundational Noorani Qaida phonics to fluent Quran recitation with Tajweed, or pursue specialized tracks such as Hifz memorization, Tafseer, and Islamic Studies. To explore detailed curriculum syllabi and course prerequisites, browse <Link href="/courses" className="text-primary font-semibold hover:underline">all Quran courses</Link> across every proficiency level.
         </p>
       </section>
 
@@ -3239,7 +3239,7 @@ function ArticleContentUSA() {
           Evaluating Pricing and Membership Terms
         </h2>
         <p className="text-base text-muted-text">
-          When comparing online Quran programs, look for transparent monthly pricing without registration fees or binding long-term contracts. At OQTutor, straightforward monthly plans start from $30 per month for live 30 to 40 minute one-on-one sessions, and all enrollments begin with a 3-day free trial. For a full breakdown of weekly class frequencies and plan details, see our <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link> or visit our <Link href="/locations/usa" className="text-primary font-semibold hover:underline">USA classes hub</Link>.
+          When comparing online Quran programs, look for transparent monthly pricing without registration fees or binding long-term contracts. At OQTutor, straightforward monthly plans start from $30 per month for live 30 to 40 minute one-on-one sessions, and all enrollments begin with a 3-day free trial. For a full breakdown of weekly class frequencies and plan details, see our <Link href="/pricing" className="text-primary font-semibold hover:underline">pricing plans</Link> or explore <Link href="/locations/usa" className="text-primary font-semibold hover:underline">affordable Quran classes in the USA</Link>.
         </p>
       </section>
 
@@ -3249,7 +3249,7 @@ function ArticleContentUSA() {
           Time Zone Flexibility Across the USA
         </h2>
         <p className="text-base text-muted-text">
-          Reliable academies should accommodate your family&apos;s routine across Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones with morning, after-school, and weekend slots. OQTutor provides dedicated scheduling and regional support for students in <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Texas</Link>, <Link href="/locations/usa/california" className="text-primary font-semibold hover:underline">California</Link>, <Link href="/locations/usa/new-york" className="text-primary font-semibold hover:underline">New York</Link>, <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">Illinois</Link>, <Link href="/locations/usa/michigan" className="text-primary font-semibold hover:underline">Michigan</Link>, and nationwide. To check schedules and local guides for your state, visit our main <Link href="/locations/usa" className="text-primary font-semibold hover:underline">online Quran classes in the USA</Link> hub.
+          Reliable academies should accommodate your family&apos;s routine across Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST) time zones with morning, after-school, and weekend slots. OQTutor provides dedicated scheduling and regional support for students taking <Link href="/locations/usa/new-york" className="text-primary font-semibold hover:underline">Quran classes in New York</Link>, as well as across <Link href="/locations/usa/texas" className="text-primary font-semibold hover:underline">Texas</Link>, <Link href="/locations/usa/california" className="text-primary font-semibold hover:underline">California</Link>, <Link href="/locations/usa/illinois" className="text-primary font-semibold hover:underline">Illinois</Link>, <Link href="/locations/usa/michigan" className="text-primary font-semibold hover:underline">Michigan</Link>, and nationwide.
         </p>
       </section>
 
@@ -3425,7 +3425,7 @@ function ArticleContentUSA() {
               Book Your 3-Day Free Trial Today
             </h3>
             <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto">
-              Join hundreds of Muslim families across the United States learning Quran online with certified male and female tutors. 3-day free trial with no credit card required.
+              Join hundreds of Muslim families across the United States learning Quran online with certified male and female tutors—<Link href="/locations/usa" className="text-primary font-semibold hover:underline">see our USA Quran classes and start a free trial</Link> with no credit card required.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -3436,12 +3436,33 @@ function ArticleContentUSA() {
                 <ArrowRight className="h-4.5 w-4.5" />
               </Link>
               <Link
-                href="/locations/usa"
+                href="/pricing"
                 className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full glass border border-card-border hover:border-primary text-foreground text-sm font-semibold transition-all duration-300"
               >
-                <span>Explore our online Quran classes in the USA</span>
+                <span>View Pricing Plans</span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* USA Hub CTA Box */}
+      <section className="not-prose pt-2">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-primary/15 via-card-bg to-secondary/15 border border-primary/30 text-center space-y-4 shadow-xl">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-foreground">
+            Learn Quran Online From Anywhere in the USA
+          </h3>
+          <p className="text-xs sm:text-sm text-muted-text max-w-xl mx-auto leading-relaxed">
+            Start with a 3-day free trial and enjoy live 30-minute one-on-one classes with certified male and female tutors—no credit card or registration fee required.
+          </p>
+          <div className="pt-1">
+            <Link
+              href="/locations/usa"
+              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-xl transition-all duration-300"
+            >
+              <span>Explore USA Online Quran Classes</span>
+              <ArrowRight className="h-4.5 w-4.5" />
+            </Link>
           </div>
         </div>
       </section>
